@@ -1,0 +1,82 @@
+{
+  "suffix": "mnsc.2023.00163",
+  "doi": "10.1287/mnsc.2023.00163",
+  "journal": "mnsc",
+  "title": "The Value of Logistic Flexibility in E-commerce",
+  "year": 2026,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "eligible_reason": "Reported design is a near/far difference-in-differences around pickup-station openings: felm(GMV ~ After + Station*After | town_id + year_week + week_day). The post-opening indicator After (Days >= 0, days relative to the nearest newly opened station) is defined for treated AND control locations and enters as a separate unit-specific time-varying regressor next to the treatment Station x After, which the protocol excludes (additional treatment / time-varying regressor). Fixed effects are at the town (area) level rather than the location level, and the day-of-week FE is a nonredundant additive FE. Independently, the README states that all shipped data are synthetic, and the files in synthetic_data/ are Git LFS pointer stubs (127-134 bytes each), so no analysis data are actually present.",
+  "design_notes": "Location-day panel (Bai2025_agg_synthetic_data.rda: location_id, year_week, week_day, Days, distance, town_id, GMV, Items_value, Orders, Newcomers). Station = 1 if distance to nearest newly opened station <= 0.4 km (treated), control = farther locations within an observation radius (0.65-0.80 km in robustness). After = 1 if Days >= 0. Table 2: four outcomes (GMV, Items_value, Orders, Newcomers), coefficient on After:Station, FE town_id + year_week + week_day, lfe::felm default (non-clustered) SEs. Parallel-trend test: Days + Days*Station on pre-period rows. Robustness: treatment radius 0.25-0.40 km and observation radius 0.65-0.80 km (Figures 2-3). Hundreds of station openings at different dates (abstract), so the underlying variation is staggered in principle, but cohorts cannot be verified from the package.",
+  "estimators_reported": [
+    "twfe_static_near_far_with_post_main_effect (lfe::felm)",
+    "linear_pre_trend_test"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "n_adoption_cohorts_note": "Unknown; station openings occur on many dates (abstract: hundreds of stations) but the data cannot be read (LFS pointers).",
+  "never_treated_present": true,
+  "never_treated_note": "Locations beyond the 0.4 km treatment radius never have Station x After = 1, but they still receive an After switch at their nearest station's opening.",
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "near_miss_specs": [
+    {
+      "spec_id": "T2_GMV",
+      "code_file": "logistic-flexibility-main/Bai2025-Empirical Evidence.Rmd",
+      "code_line": 36,
+      "outcome": "GMV",
+      "treatment_var": "After:Station (After = Days>=0; Station = distance<=0.4)",
+      "unit_var": "location_id (FE at town_id)",
+      "time_var": "year_week (+ week_day); panel is location-day",
+      "fe": "town_id + year_week + week_day",
+      "controls": "After and Station main effects",
+      "weights": "none",
+      "cluster": "none (felm default)",
+      "sample_condition": "all locations in data",
+      "static_or_event": "static",
+      "reported_location": "Table 2 col 1",
+      "data_file": "synthetic_data/Bai2025_agg_synthetic_data.rda (LFS pointer; synthetic)",
+      "exclusion_reason": "separate After regressor; town-level not location FE; week_day FE; synthetic data not shipped"
+    },
+    {
+      "spec_id": "T2_Items_value",
+      "code_file": "logistic-flexibility-main/Bai2025-Empirical Evidence.Rmd",
+      "code_line": 37,
+      "outcome": "Items_value",
+      "reported_location": "Table 2 col 2",
+      "exclusion_reason": "as T2_GMV"
+    },
+    {
+      "spec_id": "T2_Orders",
+      "code_file": "logistic-flexibility-main/Bai2025-Empirical Evidence.Rmd",
+      "code_line": 38,
+      "outcome": "Orders",
+      "reported_location": "Table 2 col 3",
+      "exclusion_reason": "as T2_GMV"
+    },
+    {
+      "spec_id": "T2_Newcomers",
+      "code_file": "logistic-flexibility-main/Bai2025-Empirical Evidence.Rmd",
+      "code_line": 39,
+      "outcome": "Newcomers",
+      "reported_location": "Table 2 col 4",
+      "exclusion_reason": "as T2_GMV"
+    }
+  ],
+  "data_access": "synthetic",
+  "data_files_present": false,
+  "data_files": [
+    "synthetic_data/Bai2025_agg_synthetic_data.rda (Git LFS pointer, 133 bytes; real size 27.2 MB)",
+    "synthetic_data/customer_*.csv/.pickle, gaussian_params.csv, prob_slot.csv, station_coordinates_perturbed.csv (all LFS pointers; structural model inputs)"
+  ],
+  "software": "r (reduced form, lfe); python (structural model)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "README: actual data under NDA; synthetic data 'mimic key statistical properties' and 'exact numerical outputs may differ'. Package archive was downloaded as a ZIP so the LFS-tracked data files are stubs; cloning the GitHub repo with git-lfs would retrieve the synthetic files only. Even with data, the reported specification is not a clean staggered TWFE because of the After main effect and town-level FE. Not worth pursuing."
+}

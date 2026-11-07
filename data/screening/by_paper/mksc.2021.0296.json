@@ -1,0 +1,60 @@
+{
+ "suffix": "mksc.2021.0296",
+ "doi": "10.1287/mksc.2021.0296",
+ "journal": "mksc",
+ "title": "Getting a Break in Bargaining: An Upside of Time Delays",
+ "authors": "Preyas S. Desai; Pranav Jindal",
+ "year": 2024,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2021.0296",
+ "regressions_path": "./data/packages/mksc.2021.0296_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (five randomized lab/online bargaining experiments)",
+ "ineligible_specs": [
+  {
+   "spec_id": "study_regressions",
+   "reported_location": "Studies 1-5",
+   "exclusion_reason": "between-subject randomized experiments (purchase/price on condition dummies); no panel or staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Randomized bargaining experiments comparing delay conditions.",
+ "design_notes": "Regression inventory lists lm() of purchase/negotiated price on delay and threshold dummies (S2-code1.R).",
+ "estimators_reported": [
+  "t-tests",
+  "OLS with condition dummies",
+  "SAS models (study 2)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "study1.csv",
+  "study2.csv",
+  "study3.csv",
+  "study4.csv",
+  "study5.csv"
+ ],
+ "data_files_note": "Raw experimental data with data dictionary.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data as collected.",
+ "software": "r",
+ "software_notes": "R and SAS",
+ "screener_notes": "No article text available; design read from readme and code. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

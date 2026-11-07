@@ -1,0 +1,31 @@
+{
+  "suffix": "0022243720936230",
+  "doi": "10.1177/0022243720936230",
+  "journal": "jmr",
+  "title": "Bayesian Synthetic Control Methods",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Synthetic control with a single treated unit and a single adoption date. Not a TWFE DiD.",
+  "design_notes": "Methods paper proposing Bayesian synthetic control estimators (horseshoe, spike-and-slab, Bayesian lasso etc.), compared with standard SCM, panel data (Hsiao-Ching-Wan) and elastic net in simulations and in one application: Washington state soda tax (2010) using state-level weekly Nielsen retail scanner data. Washington is the only treated unit.",
+  "estimators_reported": [
+    "Bayesian synthetic control",
+    "standard SCM",
+    "panel data method (Hsiao, Ching, Wan 2012)",
+    "lasso / elastic net SCM"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: synthetic control with one treated state. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Application uses Nielsen retail scanner data (licensed); estimation code is in Web Appendix B per the text."
+}

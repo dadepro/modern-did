@@ -1,0 +1,89 @@
+{
+ "suffix": "mnsc.2021.4048",
+ "doi": "10.1287/mnsc.2021.4048",
+ "journal": "mnsc",
+ "title": "Monetary Incentives and Knowledge Spillover: Evidence from a Natural Experiment",
+ "authors": "Jing Wang; Gen Li; Kai-Lung Hui",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.4048",
+ "regressions_path": "./data/packages/mnsc.2021.4048_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Staggered setting (Zhihu users first host a paid Live talk in months 0-23 after the May 2016 launch; 24 distinct first_month values, never-host comparison users), but the authors never estimate a pooled staggered TWFE. Every main-text DiD (Table 2 and Tables 3, 4, 6-11, Figure 7; codes/Table2-...-main.txt) is a batch-specific regression: hosts whose first talk falls in one six-month window (G1: months 0-5, G2: 6-11, G3: 12-17, G4: 18-23) vs CEM-matched non-hosts, with after = test_month >= window start, i.e., a single common onset per regression (cohort-by-cohort 2x2), and every column is weighted by CEM weights (xtreg ... [pweight=cem_answer_amount_weights], fe). CEM analytic weights are excluded (5c ruling, mnsc.2020.03920), so the columns fail both the staggered-timing rule and the weighting rule. The only individual-date version (Appendix Table B1) is appendix-only, CEM-weighted, assigns random pseudo adoption dates to non-hosts and restricts each unit to its own +/-6-month window. The pooled version (Appendix Table E1) uses one common date (test_month >= 0).",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "main (cohort-batched single-date CEM-weighted DiD)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 24,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not eligible as reported. Each main-text regression is xtreg log_y did i.test_month [pweight=cem_answer_amount_weights] if window, fe with did = treatment x after and after = 1{test_month >= batch start} (0, 6, 12 or 18), so all treated users in a regression share one onset date even though their first live talks are spread over six months; the four batches are estimated separately (not stacked, not pooled). All DiD columns use CEM weights. Table 9-11 long-term specifications add four did1-did4 period interactions within the same single-onset batch structure; Table 6/H3/G1/H6 split or interact by reputation and fee subgroups; Table 3 is a placebo with a fake onset. Poisson FE (xtpoisson) columns are also reported. No column satisfies every rule.",
+ "design_notes": "User-month panel (answer_panel_adlink.dta: 565,998 rows, 6,086 users = 2,024 hosts + 4,062 non-hosts after dropping organization accounts; test_month -65..27, month 0 = May 14-June 13, 2016). Outcomes: log answers, log characters per answer, log vote-ups per answer (and article analogues in Table A1). CEM on pre-period answer quantity, length, vote-ups and tenure. xtreg fe with pweights implies user-clustered SEs. A Hull-comparable staggered design could be built from first_month (24 monthly cohorts, never-hosts as controls), but it is not a reported specification.",
+ "estimators_reported": [
+  "twfe_single_date_cem_weighted_by_cohort_batch",
+  "poisson_fe",
+  "psm_did_appendix",
+  "individual_cutoff_cem_did_appendix"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 2 (G1-G4 x 3 outcomes), Figures 4-6",
+   "reason": "single common onset per batch regression; CEM pweights"
+  },
+  {
+   "location": "Tables 3, 4, 7, 8, Figure 7",
+   "reason": "same batch single-onset CEM-weighted design (falsification, look-ahead matching, excluding ads, reciprocity, earlier matching point)"
+  },
+  {
+   "location": "Tables 6, 10, 11 (and H3, G1, H6 appendix)",
+   "reason": "subgroup splits or subgroup-by-treatment interactions within the batch design; CEM weights; multiple period-specific did terms (Tables 9-11)"
+  },
+  {
+   "location": "Table 5",
+   "reason": "cross-sectional OLS of first-talk revenue/fee on prior reputation (hosts only)"
+  },
+  {
+   "location": "Appendix Table B1",
+   "reason": "individual adoption dates but CEM-weighted, pseudo-dates for non-hosts, unit-specific windows; appendix only"
+  },
+  {
+   "location": "Appendix Tables C2, E1, D1, D2, F1, F2",
+   "reason": "PSM DiD, pooled single-date DiD, auxiliary tests; appendix only"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "answer_panel_adlink.dta",
+  "answer_panel.dta",
+  "article_panel_adlink.dta",
+  "article_panel.dta",
+  "live_host_id.dta",
+  "nonhost_id.dta",
+  "mainspeaker_info.dta",
+  "livetalk_information.dta",
+  "user_demographic.dta",
+  "live_fee_subgroup_multiple_firsttime.dta",
+  "zhihu_recent_activity.dta",
+  "answer_rating_G3_k2k.dta",
+  "answer_panel_rating_G3_k2k.dta",
+  "control_random_5678.dta",
+  "control_random_individual.dta"
+ ],
+ "data_files_note": "Full scraped user-month panels shipped (Zhihu public activity, snowball-sampled non-hosts).",
+ "data_provenance": "original",
+ "data_provenance_note": "Scraped Zhihu activity data, shipped as analysis panels; no transformation or sampling beyond the paper's sample construction.",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Screened from package (readme.txt, all code .txt files, data) and the OpenAlex abstract (CEM + DiD, 9.4%-40.8% more answers). No article text or PDF; table numbering is taken from the code file names and readme. Excluded from 5c as well, because the violation is CEM weighting and single-onset batching, not time-varying controls."
+}

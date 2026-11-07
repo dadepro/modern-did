@@ -1,0 +1,57 @@
+{
+ "suffix": "mnsc.2023.01179",
+ "doi": "10.1287/mnsc.2023.01179",
+ "journal": "mnsc",
+ "title": "It’s Not Who You Know—It’s Who Knows You: Employee Social Capital and Firm Performance",
+ "authors": "DuckKi Cho; Lyungmae Choi; Michael G. Hertzel; Jessie Jiaxu Wang",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_031",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.01179",
+ "regressions_path": "./data/packages/mnsc.2023.01179_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Main tables relate firm Tobin's q to continuous employee-social-capital measures. The causal test (Tables 5, 6, 8) is a continuous-exposure DiD: reg f_q frac_kim2015 c.frac_kim2015#kimpost + time-varying controls with industry-by-year FE, around the 2016 Kim Young-ran Act (kimpost = fyear >= 2015, common date). Table 6 PSM sample and dynamic interactions keep continuous exposure; Table 7 is a cross-sectional announcement-return event study. Continuous treatment, single date, no firm FE.",
+ "design_notes": "Stata (ESC_MS.do) and SAS data prep. Korean listed firms 2010-2018.",
+ "estimators_reported": [
+  "pooled_ols_continuous",
+  "continuous_exposure_did_common_date",
+  "psm_robustness",
+  "event_window_returns"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 5, 6, 8",
+   "reason": "continuous exposure x single post date (2016 Act); time-varying controls; industry-year FE without firm FE"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "ForReg_MS.dta",
+  "ForReg_ext_MS.dta",
+  "ForEvtSty_MS.dta"
+ ],
+ "data_files_note": "Readme PDF: datasets for Tables 5-8 and Figure 2 shipped; individual network data for Tables 1-4 confidential (Deg_by_Emp_MS.dta not shared).",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' firm-year analysis data shipped for Tables 5-8; network-level inputs withheld.",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Not a staggered binary design."
+}

@@ -1,0 +1,156 @@
+{
+  "summary": [
+    {
+      "sample": "all",
+      "estimator": "csa",
+      "n": 90,
+      "papers": 10,
+      "corr": 0.805,
+      "flip": 0.2889,
+      "sig_flip": 0.1444,
+      "se_ratio": 2.458,
+      "flip_pw": 0.3364,
+      "sig_flip_pw": 0.1982,
+      "mean_abs_diff_sd": 0.091
+    },
+    {
+      "sample": "all",
+      "estimator": "bjs",
+      "n": 100,
+      "papers": 11,
+      "corr": 0.9914,
+      "flip": 0.03,
+      "sig_flip": 0.01,
+      "se_ratio": 1.0447,
+      "flip_pw": 0.0083,
+      "sig_flip_pw": 0.0028,
+      "mean_abs_diff_sd": 0.0189
+    },
+    {
+      "sample": "no_mediator_controls",
+      "estimator": "csa",
+      "n": 84,
+      "papers": 9,
+      "corr": 0.8147,
+      "flip": 0.25,
+      "sig_flip": 0.1071,
+      "se_ratio": 2.5029,
+      "flip_pw": 0.2812,
+      "sig_flip_pw": 0.1462,
+      "mean_abs_diff_sd": 0.0902
+    },
+    {
+      "sample": "no_mediator_controls",
+      "estimator": "bjs",
+      "n": 94,
+      "papers": 10,
+      "corr": 0.9916,
+      "flip": 0.0319,
+      "sig_flip": 0.0106,
+      "se_ratio": 1.0482,
+      "flip_pw": 0.0091,
+      "sig_flip_pw": 0.003,
+      "mean_abs_diff_sd": 0.0196
+    }
+  ],
+  "by_paper": [
+    {
+      "suffix": "mnsc.2020.03920",
+      "rows": 15,
+      "csa_rows": 15,
+      "bjs_rows": 15,
+      "flip_csa": 0.2,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2021.01010",
+      "rows": 4,
+      "csa_rows": 4,
+      "bjs_rows": 4,
+      "flip_csa": 1,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2022.01760",
+      "rows": 15,
+      "csa_rows": 12,
+      "bjs_rows": 15,
+      "flip_csa": 0.0833,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2022.02057",
+      "rows": 5,
+      "csa_rows": 5,
+      "bjs_rows": 5,
+      "flip_csa": 0.2,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2022.03486",
+      "rows": 2,
+      "csa_rows": 2,
+      "bjs_rows": 2,
+      "flip_csa": 0,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2022.03920",
+      "rows": 8,
+      "csa_rows": 8,
+      "bjs_rows": 8,
+      "flip_csa": 0.75,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2022.4588",
+      "rows": 3,
+      "csa_rows": 3,
+      "bjs_rows": 3,
+      "flip_csa": 0,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2023.00087",
+      "rows": 8,
+      "csa_rows": 8,
+      "bjs_rows": 8,
+      "flip_csa": 0.5,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2023.03143",
+      "rows": 6,
+      "csa_rows": 6,
+      "bjs_rows": 6,
+      "flip_csa": 0.3333,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2023.4968",
+      "rows": 6,
+      "csa_rows": 6,
+      "bjs_rows": 6,
+      "flip_csa": 0.8333,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2024.08765",
+      "rows": 3,
+      "csa_rows": 3,
+      "bjs_rows": 3,
+      "flip_csa": 0,
+      "flip_bjs": 0
+    },
+    {
+      "suffix": "mnsc.2025.00954",
+      "rows": 33,
+      "csa_rows": 33,
+      "bjs_rows": 33,
+      "flip_csa": 0.2424,
+      "flip_bjs": 0.0909
+    }
+  ],
+  "n_rows": 114,
+  "n_papers": 12
+}

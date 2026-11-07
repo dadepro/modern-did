@@ -1,0 +1,42 @@
+{
+ "suffix": "mnsc.2023.03818",
+ "doi": "10.1287/mnsc.2023.03818",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Efficient Switchback Experiments with Surrogate Variables: Estimation and Experimental Design",
+ "authors": "Hongyu Chen; David Simchi-Levi",
+ "department": "data science (per abstract)",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Methodological paper on switchback experimental design and importance-sampling estimation with surrogate variables; the package contains simulation notebooks only (no regressions, no observational DiD). The 'staggered' full-text hit refers to experimental designs, not to staggered-adoption DiD.",
+ "design_notes": "main.ipynb, appendix.ipynb, theory.ipynb, exp_setup.py: Monte Carlo experiments; only statsmodels import is a conditional kernel density estimator.",
+ "estimators_reported": [
+  "simulation-based evaluation of switchback estimators"
+ ],
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "No observational design.",
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "none required (all data simulated inside the notebooks); environment.yml"
+ ],
+ "data_files_note": "Simulation study; no empirical dataset.",
+ "software": "python",
+ "software_notes": "Python/Jupyter (numpy, statsmodels).",
+ "replication_feasible": "no",
+ "priority": 3,
+ "priority_note": "Not a DiD paper.",
+ "screener_notes": "Screened from package only (no article text, no README)."
+}

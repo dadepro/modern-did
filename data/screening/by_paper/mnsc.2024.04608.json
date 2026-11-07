@@ -1,0 +1,136 @@
+{
+ "doi": "10.1287/mnsc.2024.04608",
+ "journal": "mnsc",
+ "year": 2021,
+ "title": "Investing in Lending Technology: IT Spending in Banking",
+ "screened_from": "package_only",
+ "eligible": true,
+ "eligible_design": true,
+ "eligible_reason": "Code contains a staggered state-level binary treatment ('after' / 'entry_year': 7 states treated in 2013, 2014, 2015, 2016) estimated with bank-by-county and year fixed effects, with no-control static TWFE columns (Table 10) and an unstacked event study (Figure 4). The code comment points to Wang and Overby (2021), which suggests the event is the staggered state entry of an online lender; this should be confirmed against the article text.",
+ "design_notes": "Inferred from code/1d_Figure4.do and code/2h_Table10.do. Unit: bank x county (rssdid##fips; g2 = group(rssdid fips)); time: year (data 2010-2019). Treatment: after = 1 if year >= entry_year of the bank-county's state, with entry_year = 2013 for state_code 13 (GA) and 41 (OR), 2014 for 23 (ME) and 26 (MI), 2015 for 33 (NH), 2016 for 18 (IN) and 11 (DC). Outcomes: ls = standardized, 1/99-winsorized log(1+software IT spending), lc = same for communication IT spending (Aberdeen ATDC bank-county data). Figure 4: event-study dummies lag_3_entry, lag_2_entry, base (=t-1), lead_0..lead_3 (t=0..3) all included, so the omitted category is relative time <= -4 or >= 4; sample restricted to treated states with entry 2013-2015 (entry_year~=. & state_code not 11/18); FE fips##rssdid + year; cluster fips; no weights. Table 10 ('staggered benchmark'): ls/lc on after, FE rssdid##fips + year, [aw=loan_amnt], cluster fips, sample k==1 = the 7 treated states within cohort windows [entry-3, entry+2] (14,220 bank-county-years, 3,749 units); no never-treated states in either DiD sample, identification from not-yet-treated cohorts. Other Table 10 columns add county controls interacted with year (lcra, lest, dlu, gdppc_r) or split 'after' by bank size / personal-loan share. The bootstrap block estimates cohort-by-cohort regressions (keep1/keep2/keep3) and averages them (stacked-type, ineligible). Most other tables (2-9) are cross-sectional or IV regressions unrelated to the DiD.",
+ "estimators_reported": [
+  "TWFE static (reghdfe, weighted by loan amount)",
+  "TWFE event study (unstacked, reghdfe)",
+  "cohort-by-cohort weighted average with bootstrap SEs (stacked-type)"
+ ],
+ "main_or_robustness": "robustness/secondary (DiD is one of several identification strategies; main tables are cross-sectional and IV)",
+ "n_eligible_specs": 4,
+ "n_adoption_cohorts": 4,
+ "never_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [
+  "S3",
+  "S4"
+ ],
+ "specs": [
+  {
+   "spec_id": "S1",
+   "code_file": "code/1d_Figure4.do",
+   "code_line": 116,
+   "outcome": "ls (std. winsorized log(1+software))",
+   "treatment_var": "event-time dummies lag_3_entry lag_2_entry base lead_0_entry lead_1_entry lead_2_entry lead_3_entry, built from after/entry_year (state-level, binary)",
+   "unit_var": "rssdid x fips (fips##rssdid)",
+   "time_var": "year",
+   "fe": "fips##rssdid, year",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "fips",
+   "sample_condition": "entry_year~=. & state_code~=11 & state_code~=18 (treated states, cohorts 2013-2015; years 2010-2019)",
+   "static_or_event": "event",
+   "event_bins": "-3,-2,-1(base, included),0,1,2,3; omitted = relative time <= -4 or >= 4",
+   "reported_location": "Figure 4, software panel",
+   "data_file": "data/raw/analysis_county_new.dta",
+   "notes": "ls constructed in the do-file (lines 10-31: log(1+software), winsor2 1/99, std). Unusual normalization: t-1 is a regressor, reference is the pooled far leads/lags."
+  },
+  {
+   "spec_id": "S2",
+   "code_file": "code/1d_Figure4.do",
+   "code_line": 119,
+   "outcome": "lc (std. winsorized log(1+communication))",
+   "treatment_var": "same event-time dummies as S1",
+   "unit_var": "rssdid x fips",
+   "time_var": "year",
+   "fe": "fips##rssdid, year",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "fips",
+   "sample_condition": "entry_year~=. & state_code~=11 & state_code~=18",
+   "static_or_event": "event",
+   "event_bins": "as S1",
+   "reported_location": "Figure 4, communication panel",
+   "data_file": "data/raw/analysis_county_new.dta",
+   "notes": ""
+  },
+  {
+   "spec_id": "S3",
+   "code_file": "code/2h_Table10.do",
+   "code_line": 17,
+   "outcome": "ls",
+   "treatment_var": "after (=1 if year>=entry_year of state; pre-built in data file; matches Figure 4 construction)",
+   "unit_var": "rssdid x fips (rssdid##fips)",
+   "time_var": "year",
+   "fe": "rssdid##fips, year",
+   "controls": "none",
+   "weights": "aw = loan_amnt",
+   "cluster": "fips",
+   "sample_condition": "k==1 (7 treated states within [entry-3, entry+2] windows; 14,220 obs)",
+   "static_or_event": "static",
+   "reported_location": "Table 10, no-control column (exact column unknown without text)",
+   "data_file": "data/raw/analysis_county_new_fintech.dta",
+   "notes": "k is missing for all other states, so never-treated states are excluded; cohorts 2013 (GA, OR), 2014 (ME, MI), 2015 (NH), 2016 (IN, DC)."
+  },
+  {
+   "spec_id": "S4",
+   "code_file": "code/2h_Table10.do",
+   "code_line": 18,
+   "outcome": "lc",
+   "treatment_var": "after",
+   "unit_var": "rssdid x fips",
+   "time_var": "year",
+   "fe": "rssdid##fips, year",
+   "controls": "none",
+   "weights": "aw = loan_amnt",
+   "cluster": "fips",
+   "sample_condition": "k==1",
+   "static_or_event": "static",
+   "reported_location": "Table 10, no-control column",
+   "data_file": "data/raw/analysis_county_new_fintech.dta",
+   "notes": ""
+  }
+ ],
+ "ineligible_specs": [
+  {
+   "location": "Table 10 [2h_Table10.do lines 13-14]; 1d_Figure4.do lines 133-134",
+   "reason": "time-varying county controls interacted with year (c.lcra#i.year c.lest#i.year c.dlu#i.year c.gdppc_r#i.year)"
+  },
+  {
+   "location": "Table 10 heterogeneity [2h_Table10.do lines 47-64]",
+   "reason": "treatment split by bank-size half / personal-loan share (subgroup x treatment), extra fips##h FE"
+  },
+  {
+   "location": "Table 10 bootstrap block [lines 68-195]",
+   "reason": "cohort-by-cohort regressions averaged with fixed weights (stacked-type), size_group FE"
+  },
+  {
+   "location": "Figure 4 with controls [1d_Figure4.do lines 141-153]",
+   "reason": "time-varying controls x year"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "synthetic",
+ "data_files_present": true,
+ "package_files": {
+  "present": [
+   "data/raw/analysis_county_new.dta (119,841 rows; Figure 4 input)",
+   "data/raw/analysis_county_new_fintech.dta (244,443 rows; Table 10 input with after, k, ls, lc, loan_amnt)",
+   "data/work/for_boot.dta",
+   "other raw .dta for cross-sectional tables"
+  ],
+  "note": "README states the package ships 'pseudo-data that reproduce all figures and tables' because Aberdeen ATDC IT-spending data are licensed; the files carry real FIPS and RSSD identifiers and realistic values, so they may be the real merged data with the proprietary variables perturbed. Treat re-estimated results as provisional until clarified with the authors."
+ },
+ "software": "stata",
+ "replication_feasible": "maybe",
+ "priority": 2,
+ "screener_notes": "Year in frame (2021) looks wrong for DOI mnsc.2024.04608 (likely published 2025); re-check. Flags ft_callaway/cite_callaway_santanna_2021/cite_sun_abraham_2021 indicate the text discusses modern estimators, but no csdid/eventstudyinteract code is in the package. Confirm from the article what the 'entry' event is (code comment: 'see Wang and Overby (2021)') and which Table 10 columns are control-free."
+}

@@ -1,0 +1,37 @@
+{
+ "doi": "10.1287/mnsc.2018.3045",
+ "journal": "mnsc",
+ "year": 2018,
+ "title": "The Effect of Financial Reporting Quality on Corporate Investment Efficiency: Evidence from the Adoption of SFAS No. 123R",
+ "eligible_design": false,
+ "eligible_reason": "Single common adoption date. SFAS 123R applies to all firms in the same post period (fiscal years 2006-2007 vs 2003-2005). Treatment is HeavyESO x Post, a treated-group-by-post interaction with a triple interaction (HeavyESO x Post x OverFirm) and time-varying controls.",
+ "design_notes": "Eq. (1): Investment_it on HeavyESO_i x Post_t, HeavyESO x Post x OverFirm, Post x OverFirm, HeavyESO x OverFirm, OverFirm, plus time-varying controls (AQ, governance, etc.), firm FE and year FE, SEs clustered by firm. Post=1 for 2006-2007 for all firms. HeavyESO is a time-invariant above-industry-median indicator (or decile rank in col 2), i.e. an intensity/exposure design with a single date. Sample: ExecuComp industrial firms 2003-2007. Section 5.2 adds Voluntary x Post for firms that began expensing in 2002-early 2003, also with Post fixed at 2006-2007. Published in MS 65(5):2249-2266 (2019).",
+ "estimators_reported": [
+  "TWFE (firm and year FE, treated-group x post triple interaction)"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 3 Panel A cols (1)-(2); Tables 4-5; Table A2",
+   "reason": "single adoption date (Post 2006-2007 common to all firms); triple interaction with OverFirm; time-varying controls; continuous decile-rank HeavyESO in col (2)"
+  },
+  {
+   "location": "Table 3 Panel B (alternative pre-periods)",
+   "reason": "same single-date design"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Data are Compustat, ExecuComp, CRSP (licensed). No package. Text is the SSRN/author-accessible version; no data-availability statement. Flag came only from 'difference-in-differences' wording."
+}

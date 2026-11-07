@@ -1,0 +1,648 @@
+{
+ "suffix": "mksc.2022.1409",
+ "spec_id": "F4_lnairbnb_balanced_dynamic",
+ "journal": "mksc",
+ "data_provenance": "real",
+ "data_path": "~/did_packages/_work/mksc.2022.1409/repldid_dedup.csv",
+ "id_var": "zipcode",
+ "time_var": "time",
+ "y_var": "lnairbnb",
+ "gvar": "regulation_time",
+ "weight_var": "",
+ "cluster_var": "zipcode",
+ "xt_vars": [],
+ "sample_filter": "",
+ "log_y": "",
+ "published_coef": null,
+ "published_se": null,
+ "published_estimator": "callaway_santanna_dynamic_overall_att_e0_35_balance_e35",
+ "published_source": "Shown only in Figure 4, left panel (ln(listings), balanced composition) of the published article (papers/mksc/mksc.2022.1409.pdf, Articles in Advance p. 10, main text); no printed value. Authors' code output recorded in authors_code_* (aggte dynamic overall ATT over horizons 0..35 from the authors' code on the deduplicated package data, analytic SE; authors_code_n = n_regsample, 90,394 zipcode-months, since the figure prints no N). No value of this path is quoted in the text. Checked Nov 4 2026. Earlier: Figure shows the horizon path of aggte(type='dynamic', min_e=-35, max_e=35, balance_e=35) (repldid.R es_graph with bal=35); published_coef is that aggregation's overall ATT (equal-weight average of horizons 0..35 over the 6 cohorts with >= 35 post months, g <= 180, on the full-sample att_gt) from the authors' code re-run on the deduplicated package data, analytic SE (bstrap=FALSE as in es_graph).",
+ "authors_code_coef": -0.134651525794333,
+ "authors_code_se": 0.0236914003057354,
+ "authors_code_n": 90394,
+ "replication_status": "exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in authors_code_*; figure-only, no printed value to compare; Figure 4 is in the main text of the published article, checked Nov 4 2026)",
+ "event_pre_min": -35,
+ "event_post_max": 35,
+ "authors_rerun_dyn_overall_e0_35_dedup": -0.12597641189352,
+ "authors_rerun_dyn_overall_e0_35_asis_emul": -0.124681807995995,
+ "authors_rerun_dyn_bal35_overall_dedup": -0.134651525794333,
+ "authors_rerun_simple_att_dedup": -0.180898397344782,
+ "table": "Figure 4",
+ "column": "left panel ln(listings), balanced cohorts",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "notes": "Zipcode-month panel, months 72-215 (Jan 2008-Dec 2019), 755 zipcodes, unbalanced (cities enter the data at different months; two cities exit before Dec 2019). Treatment: binary, absorbing, from the unit-constant timing variable regulation_time (month the short-term-rental regulation took effect; 0 = never; 231 and 246 fall after the sample and are treated as never-treated, as did does). 13 in-sample cohorts (127,150,155,157,173,177,183,198,203,204,210,213,215; 638 zipcodes), 117 never-treated zipcodes (59 never regulated + 58 regulated after Dec 2019), no always-treated units, no switch-offs. Authors report Callaway-Sant'Anna only (did::att_gt, control_group='notyettreated', allow_unbalanced_panel=TRUE, no covariates, no weights, bootstrap SE clustered by zipcode); no TWFE regression exists in the package, the TWFE counterpart is D = 1[regulation_time > 0 & time >= regulation_time] with zipcode FE + month FE, clustered by zipcode. Outcomes are already ln(1+count) in the data file. DATA: the shipped repldid.csv (90,682 rows) has two rows per month for zipcodes 94606 and 94607 in months 72-138 (a second, 144-month series with zero permits), which did 2.5.1 rejects; data_path points to ~/did_packages/_work/mksc.2022.1409/repldid_dedup.csv (90,394 rows), the shipped rows that match the authors' own final-submission repldid.csv (identical file). Project member Davide Proserpio is a coauthor (PROTOCOL Section 6). BALANCED (Figure 4): the authors keep the full-sample att_gt (all 13 cohorts; later cohorts remain not-yet-treated controls) and aggregate with balance_e = 35, so only the 6 cohorts with at least 35 post-treatment months in the data (g <= 215 - 35 = 180: 127, 150, 155, 157, 173, 177; 299 zipcodes) enter the event-study path. Nov 2: the spec now runs on the full sample with balance_e = 35 (field balance_e, implemented in the estimator code) instead of the earlier sample restriction to g <= 180, which had removed the later cohorts as controls. EVENT STUDY (Nov 2 audit): event_structure records the published structure (single horizons -35..35, reference -1, endpoint bins <= -36 and >= 36 for the TWFE counterpart; post summary = equal-weight mean of horizons 0..35 = aggte's dynamic overall ATT). The pipeline's CSA uses the universal base period (post horizons identical to the authors' varying-base path; pre horizons differ).",
+ "pipeline_caveat": "Nov 2: the pipeline's Callaway-Sant'Anna step is did::att_gt(allow_unbalanced_panel = TRUE, control_group = 'notyettreated'), the same unbalanced-panel cells as the authors' code (PROTOCOL 5b revised Nov 2); the composition-fixed cells (units observed in both g-1 and t) are only a diagnostic column (csa_fc). Remaining differences from the published numbers: did 2.5.1 vs the authors' 2022 build, and the deduplicated data (see log).",
+ "event_structure": {
+  "bins": [
+   [
+    null,
+    -36
+   ],
+   [
+    -35,
+    -35
+   ],
+   [
+    -34,
+    -34
+   ],
+   [
+    -33,
+    -33
+   ],
+   [
+    -32,
+    -32
+   ],
+   [
+    -31,
+    -31
+   ],
+   [
+    -30,
+    -30
+   ],
+   [
+    -29,
+    -29
+   ],
+   [
+    -28,
+    -28
+   ],
+   [
+    -27,
+    -27
+   ],
+   [
+    -26,
+    -26
+   ],
+   [
+    -25,
+    -25
+   ],
+   [
+    -24,
+    -24
+   ],
+   [
+    -23,
+    -23
+   ],
+   [
+    -22,
+    -22
+   ],
+   [
+    -21,
+    -21
+   ],
+   [
+    -20,
+    -20
+   ],
+   [
+    -19,
+    -19
+   ],
+   [
+    -18,
+    -18
+   ],
+   [
+    -17,
+    -17
+   ],
+   [
+    -16,
+    -16
+   ],
+   [
+    -15,
+    -15
+   ],
+   [
+    -14,
+    -14
+   ],
+   [
+    -13,
+    -13
+   ],
+   [
+    -12,
+    -12
+   ],
+   [
+    -11,
+    -11
+   ],
+   [
+    -10,
+    -10
+   ],
+   [
+    -9,
+    -9
+   ],
+   [
+    -8,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    9,
+    9
+   ],
+   [
+    10,
+    10
+   ],
+   [
+    11,
+    11
+   ],
+   [
+    12,
+    12
+   ],
+   [
+    13,
+    13
+   ],
+   [
+    14,
+    14
+   ],
+   [
+    15,
+    15
+   ],
+   [
+    16,
+    16
+   ],
+   [
+    17,
+    17
+   ],
+   [
+    18,
+    18
+   ],
+   [
+    19,
+    19
+   ],
+   [
+    20,
+    20
+   ],
+   [
+    21,
+    21
+   ],
+   [
+    22,
+    22
+   ],
+   [
+    23,
+    23
+   ],
+   [
+    24,
+    24
+   ],
+   [
+    25,
+    25
+   ],
+   [
+    26,
+    26
+   ],
+   [
+    27,
+    27
+   ],
+   [
+    28,
+    28
+   ],
+   [
+    29,
+    29
+   ],
+   [
+    30,
+    30
+   ],
+   [
+    31,
+    31
+   ],
+   [
+    32,
+    32
+   ],
+   [
+    33,
+    33
+   ],
+   [
+    34,
+    34
+   ],
+   [
+    35,
+    35
+   ],
+   [
+    36,
+    null
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "ref",
+  "post_summary": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    9,
+    9
+   ],
+   [
+    10,
+    10
+   ],
+   [
+    11,
+    11
+   ],
+   [
+    12,
+    12
+   ],
+   [
+    13,
+    13
+   ],
+   [
+    14,
+    14
+   ],
+   [
+    15,
+    15
+   ],
+   [
+    16,
+    16
+   ],
+   [
+    17,
+    17
+   ],
+   [
+    18,
+    18
+   ],
+   [
+    19,
+    19
+   ],
+   [
+    20,
+    20
+   ],
+   [
+    21,
+    21
+   ],
+   [
+    22,
+    22
+   ],
+   [
+    23,
+    23
+   ],
+   [
+    24,
+    24
+   ],
+   [
+    25,
+    25
+   ],
+   [
+    26,
+    26
+   ],
+   [
+    27,
+    27
+   ],
+   [
+    28,
+    28
+   ],
+   [
+    29,
+    29
+   ],
+   [
+    30,
+    30
+   ],
+   [
+    31,
+    31
+   ],
+   [
+    32,
+    32
+   ],
+   [
+    33,
+    33
+   ],
+   [
+    34,
+    34
+   ],
+   [
+    35,
+    35
+   ]
+  ],
+  "pre_summary": [
+   [
+    -35,
+    -35
+   ],
+   [
+    -34,
+    -34
+   ],
+   [
+    -33,
+    -33
+   ],
+   [
+    -32,
+    -32
+   ],
+   [
+    -31,
+    -31
+   ],
+   [
+    -30,
+    -30
+   ],
+   [
+    -29,
+    -29
+   ],
+   [
+    -28,
+    -28
+   ],
+   [
+    -27,
+    -27
+   ],
+   [
+    -26,
+    -26
+   ],
+   [
+    -25,
+    -25
+   ],
+   [
+    -24,
+    -24
+   ],
+   [
+    -23,
+    -23
+   ],
+   [
+    -22,
+    -22
+   ],
+   [
+    -21,
+    -21
+   ],
+   [
+    -20,
+    -20
+   ],
+   [
+    -19,
+    -19
+   ],
+   [
+    -18,
+    -18
+   ],
+   [
+    -17,
+    -17
+   ],
+   [
+    -16,
+    -16
+   ],
+   [
+    -15,
+    -15
+   ],
+   [
+    -14,
+    -14
+   ],
+   [
+    -13,
+    -13
+   ],
+   [
+    -12,
+    -12
+   ],
+   [
+    -11,
+    -11
+   ],
+   [
+    -10,
+    -10
+   ],
+   [
+    -9,
+    -9
+   ],
+   [
+    -8,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "repldid.R es_graph() (line 45): aggte(attgt, type='dynamic', min_e=-35, max_e=35, balance_e=bal, na.rm=TRUE, bstrap=FALSE); att_gt line 57, es_graph(..., 35, 35) line 87; event time e = time - regulation_time in months (time = months since Jan 2002); published bins = single horizons -35..35, did's varying base period (e = -1 estimated, post horizons relative to g-1).",
+  "verified": "Authors' published estimator is did::aggte(type='dynamic', min_e=-35, max_e=35, balance_e=35) on att_gt(control_group='notyettreated', allow_unbalanced_panel=TRUE, base_period default 'varying'). Pipeline index: months 72-215 consecutive, rel = t - g equals the authors' e = time - regulation_time for every treated-unit row (0 mismatches); no pre-sample adopters, no always-treated units, adoption after month 215 -> never treated. Pooling the authors' did cells (dedup data, saved att_gt objects) within each single-horizon bin with cohort-size weights over the 6 cohorts with g <= 180 (= balance_e = 35) reproduces the logged aggte path e = -35..35 to 2.8e-16 (did 2.5.1 re-run of repldid.R; varying-base pre horizons included), and the equal-weight mean of horizons 0..35 equals published_coef (-0.134652; diff 1.7e-16). Post horizons are identical under the pipeline's universal base period; the figure's pre-period horizons use did's varying base period, so the pipeline's pre summary (universal base) is not the published pre path. The paper reports no TWFE regression: the TWFE counterpart estimates single-horizon indicators -35..35 (ref -1) with endpoint bins <= -36 and >= 36 (relative times outside the published window are not pooled with the reference, as did does not use them either); this equals the legacy coding (fixest max abs diff to the Nov 1 TWFE paths 5.1e-16 on the legacy g <= 180 sample). Sample: the authors ran on the shipped repldid.csv with the duplicate 94606/94607 series (emulated re-run: dynamic overall differs by ~0.001); the pipeline uses repldid_dedup.csv (90,394 rows; see log)."
+ },
+ "authors_csa_settings": {
+  "control_group": "notyettreated",
+  "allow_unbalanced_panel": true,
+  "anticipation": 0,
+  "xformla": null,
+  "base_period": "varying (did default; post horizons unaffected)",
+  "aggregation": "dynamic",
+  "min_e": -35,
+  "max_e": 35,
+  "balance_e": 35,
+  "se": "analytic in the figures (bstrap=FALSE in aggte)"
+ },
+ "balance_e": 35,
+ "legacy_g180_authors_rerun_twfe_raw": 0.0506526245765752,
+ "legacy_g180_authors_rerun_twfe_raw_se": 0.0809082386068649,
+ "legacy_g180_twfe_es_post_avg_raw": -0.00881501614680673,
+ "legacy_g180_twfe_es_pre_avg_raw": -0.0681403394866137,
+ "legacy_g180_diag_csa_composition_fixed_static_raw": -0.280407673086926,
+ "legacy_g180_diag_csa_composition_fixed_post0_35_raw": -0.179871706762022,
+ "legacy_g180_y_sd_unweighted_regsample": 2.29001908907358,
+ "legacy_g180_n_regsample": 54765,
+ "y_sd_unweighted_regsample": 2.30076478513259,
+ "n_regsample": 90394,
+ "legacy_note": "legacy_g180_* fields were computed on the superseded sample restriction (6 cohorts g <= 180 plus never-treated, 54,765 rows); y_sd_unweighted_regsample and n_regsample now refer to the full sample (90,394 rows).",
+ "csa_weights": "did",
+ "csa_weights_note": "Nov 2: the published CSA comes from R did (or staggered, whose estimates did reproduces), which weights cells by fixed cohort shares; Hull's DiD-averaging weights cells by treated-observation counts. 'did' reproduces the published number (main analysis, option B); the strict-Hull run (CSA_STRICT_HULL=1, option A) ignores this field."
+}

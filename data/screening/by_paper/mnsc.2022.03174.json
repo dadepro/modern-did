@@ -1,0 +1,63 @@
+{
+ "doi": "10.1287/mnsc.2022.03174",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Does Trading Spur Specialization? Evidence from Patenting",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Binary staggered treatment exists (patent exchange established in the firm's province; first-treatment years 2006, 2007, 2008, 2009 across 26 provinces, 5 never treated), but Treat never enters alone in a linear TWFE: Tables 1-3 and 5-7 pair it with continuous interactions (Treat x net patents sold / licensed out / R&D efficiency) and estimate patent counts by Poisson (ppmlhdfe); Table 4 has Treat alone but with time-varying patent-, assignee- and province-level controls and an extra technology-class FE.",
+ "design_notes": "From Master.do and ReadMe.txt. Firm-level files: unit firm_ID, FE firm_ID + ind_year_group (industry x year); Treat = 1 if a patent exchange exists in the firm's province by that year; key regressors are Treat_NetNumSold (Treat x net # patents sold), Treat_NetNumLicensedOut, Treat_RnDEfficiency, and triple interactions with HighLiquid / Constrained; Innovation_Output (count) via ppmlhdfe, CARs_of_New_Product via reghdfe; controls Assets RnD Capex ROA Leverage in even columns; cluster province_ID. Table 5 (Dynamic_DiD.dta): relative-time dummies Treat_Lag_4_Plus..Treat_Fwd_4_Plus and their interactions with NetNumSold. Table 4 (Innovation_Scope.dta, 1.9m patents 2001-2019): reghdfe Distance_Iota_2_3 Treat Patent_Stock Patent_Experience Citations_Received Population GDP RnD Fiscal_Revenue, a(assignee_ID tech_class year). Cohorts from Innovation_Scope.dta: 13 provinces first treated 2006, 3 in 2007, 8 in 2008, 2 in 2009; 5 of 31 provinces never treated.",
+ "estimators_reported": [
+  "Poisson pseudo-ML with firm and industry-year FE (ppmlhdfe)",
+  "TWFE (reghdfe) with Treat x continuous interactions",
+  "TWFE with Treat and time-varying controls (Table 4)",
+  "dynamic DiD with relative-time dummies x continuous interaction (Table 5)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 4,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 1-3, 6-7 (Innovation_Output columns)",
+   "reason": "Poisson (ppmlhdfe); continuous Treat x X interactions"
+  },
+  {
+   "location": "Tables 1-3, 6-7 (CARs columns) [Master.do lines 205-208 etc.]",
+   "reason": "linear, but Treat x continuous interaction as additional treatment regressor; even columns add time-varying firm controls"
+  },
+  {
+   "location": "Table 4 [Master.do lines 253-256]",
+   "reason": "Treat alone but time-varying controls (Patent_Stock, Patent_Experience, Citations_Received, Population, GDP, RnD, Fiscal_Revenue) and extra tech_class FE"
+  },
+  {
+   "location": "Table 5 [Master.do lines 265-274]",
+   "reason": "relative-time dummies interacted with continuous NetNumSold; Poisson for counts"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "package_files": {
+  "present": [
+   "Specialization_Patent_Trading.dta (32,688 firm-years)",
+   "Specialization_Patent_Licensing.dta",
+   "Specialization_RnD_Efficiency.dta",
+   "Innovation_Scope.dta (1,897,579 patents)",
+   "Dynamic_DiD.dta",
+   "Specialization_Financial_Constraints.dta",
+   "Descriptive_Statistics.dta",
+   "Table_*_Results.tex"
+  ],
+  "note": "Analysis files shipped by authors; sources are CNIPA (public) and CSMAR (licensed via WRDS). Firm-level files carry ind_year_group but no plain year variable."
+ },
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Near-miss: Table 4 column with Treat alone would be eligible without its time-varying controls; Table 1 CARs column (1) would be eligible without Treat_NetNumSold. Neither is reported as such. Flags cite_baker_larcker_wang_2022 / cite_cengiz_et_al_2019 suggest the text discusses stacked DiD; no such code in the kit."
+}

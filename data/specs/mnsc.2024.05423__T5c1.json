@@ -1,0 +1,83 @@
+{
+  "suffix": "mnsc.2024.05423",
+  "journal": "mnsc",
+  "data_provenance": "original",
+  "data_path": "~/did_packages/_work/mnsc.2024.05423/firm_panel_le50.rds",
+  "id_var": "fcrdn",
+  "time_var": "year",
+  "treat_var": "top1000_owner",
+  "weight_var": "",
+  "cluster_var": "fcrdn",
+  "xt_vars": [
+    "grp_state_first"
+  ],
+  "sample_filter": "",
+  "log_y": "",
+  "published_estimator": "twfe",
+  "static_or_event": "static",
+  "code_file": "revised_replication_package_2025_11_30/code/master_stata.do",
+  "main_or_robustness": "main",
+  "main_text_status": "main text, verified against the published article Nov 4 2026 (Table 5 'Misconduct', p. 13 of the Articles-in-Advance PDF, papers/mnsc/mnsc.2024.05423.pdf); earlier: inferred from README (Table1-Table7 = main paper); no article text",
+  "published_source": "Printed Table 5, column (1) of the published article (papers/mnsc/mnsc.2024.05423.pdf, Articles in Advance p. 13), read Nov 4 2026: Top Advisor Owner -0.00815* (0.0046), Observations 95,216, outcome = firm misconduct indicator at t+1, firm FE and state x year FE; the coefficient is printed with 5 decimals and the SE with 4; equals the authors' code output -0.0081463 (0.0046331), N 95,216, to the printed decimals. Earlier: No article text or PDF and no log in the package (README promises log/full_analysis_log.smcl, not shipped). published_coef/se are the authors' own reghdfe output, produced by running their master_stata.do commands verbatim (work dir authors_t2_t5.do, Stata MP 16.1, reghdfe 5.7.3) on the shipped final_firm_level_sample.dta; esttab prints se(4), so the paper shows these rounded to 4 decimals.",
+  "spec_id": "T5c1",
+  "y_var": "f_misconduct",
+  "table": "5",
+  "column": "1",
+  "code_line": 214,
+  "published_coef": -0.00815,
+  "published_se": 0.0046,
+  "published_n": 95216,
+  "authors_code_coef": -0.0081463,
+  "authors_code_se": 0.0046331,
+  "authors_code_n": 95216,
+  "authors_code": {
+    "source": "reghdfe f.misconduct top1000_owner, absorb(fcrdn year#grp_state) cluster(fcrdn) after drop if number_employee >50 (no xtset in the Table 5 block; the saved .dta carries xtset fcrdn year, delta 1, so f. resolves the same way)",
+    "stata_coef": -0.0081463,
+    "stata_se": 0.0046331,
+    "n_obs": 95216,
+    "singletons_dropped": 2470,
+    "n_clusters": 15172,
+    "fixest_coef": -0.0081463,
+    "fixest_se": 0.0046331,
+    "fixest_n": 95216
+  },
+  "twfe_variants": {
+    "A_authors_timevarying_state_all_rows": {
+      "coef": -0.0081463,
+      "se": 0.0046331,
+      "n": 95216
+    },
+    "B_fixed_first_state_all_rows": {
+      "coef": -0.0083574,
+      "se": 0.0046159,
+      "n": 95218
+    },
+    "D_timevarying_state_switchoff_rows_dropped": {
+      "coef": 0.0016585,
+      "se": 0.0033369,
+      "n": 94835
+    },
+    "C_fixed_first_state_switchoff_rows_dropped_pipeline": {
+      "coef": 0.0008735,
+      "se": 0.0032905,
+      "n": 94837
+    }
+  },
+  "y_sd_regsample": 0.064849,
+  "rows_dropped_switch_off": 368,
+  "expected_twfe_sd_units": 0.01347,
+  "preferred": false,
+  "preferred_status": "not the screening record's preferred spec; no article text",
+  "in_abstract_intro": false,
+  "in_abstract_intro_status": "abstract's misconduct claim ('advisors are less likely to engage in misconduct') refers to the advisor-level columns; firm-level column unverified (no intro text)",
+  "replication_status": "exact (authors' code output -0.0081463 (0.0046331), N 95,216, equals printed Table 5 column (1) -0.00815 (0.0046), N 95,216, to the printed decimals; fixest equals the authors' reghdfe output to 7 decimals; linear probability model; verified against the article Nov 4 2026)",
+  "notes": "Table 5 col 1: outcome F.misconduct = indicator for >= 1 firm misconduct event in t+1 (LPM). Firm-level panel of RIA firms with <= 50 employees (Form ADV), 2009-2020, firm CRD fcrdn x year; treatment top1000_owner = firm owned by a Barron's Top-1000 advisor in year t. Prepared data (work dir build_data.R): final_firm_level_sample.dta, drop rows with number_employee > 50 OR missing (Stata's '>50' is true for missing; 16,310 rows dropped, 127,229 kept), then the t+1 lead exactly as Stata's f. under xtset fcrdn year: y of the same firm in year+1 in the FILTERED panel, missing when that year is absent (gap, exit, or year+1 dropped by the employee filter). The sample restriction is built into the prepared file, so sample_filter is empty; adoption is dated on this filtered panel. Pipeline deviations: (1) Hull fn 6: treatment switches off (152 switch-off events, 496 post-adoption rows with top1000_owner = 0 in the filtered panel); run_spec drops post-adoption rows with D = 0; (2) the authors' year#grp_state FE use the firm's CURRENT state, which varies within firm for 1,433 of 21,865 firms (27 of 278 ever-treated); the pipeline uses xt = grp_state_first (first non-missing state in year order) so the state x year FE are a fixed characteristic x year; rows with missing grp_state (6,534 rows) keep NA and drop, as in the authors' absorb(). twfe_variants decomposes the effect: A authors, B fixed state, D switch-offs dropped, C both (pipeline). Year 2020 rows have no t+1 outcome, so the estimation years are 2009-2019 and firms first treated in 2020 (8) are never-treated in the pipeline (their only treated rows lack an outcome in the authors' regression too). 104 of 278 ever-treated firms are treated in their first observed year (37 in 2009 = always-treated in the sample window; the rest enter treated later and have no pre-period). Excluded from the pipeline: Table 2 col 1 (no firm FE), col 3 (adds l_top1000_owner), col 4 and Table 5 col 2 (ppmlhdfe Poisson); advisor-level Tables 3-7 (continuous norm_ranking, time-varying license/tenure controls, RD cutoff); Figures 1-2 (PanelMatch); Table IA8 (stacked).",
+  "runspec_check": "run_spec TWFE 0.01346973 SD units x y_sd_regsample 0.0648493 = 0.0008735 = twfe_variants.C; SE 0.05074085 x 0.0648493 = 0.0032905 = C's SE. Authors' coefficient in the same SD units: -0.0081463 / 0.0648493 = -0.125619; the sign flip comes from dropping the 368 post-adoption switch-off rows (D: +0.0017 raw), not from fixing state (B: -0.0084).",
+  "n_obs": 97318,
+  "n_units": 17636,
+  "n_cohorts": 11,
+  "treated_rows": 958,
+  "ever_treated_units": 265,
+  "bjs_imputed_treated_rows": 533,
+  "pipeline_caveat": "99 of 265 ever-treated firms have no untreated row in the estimation sample (36 always-treated from 2009), so BJS imputes 533 of 958 treated rows (reproduced manually, work dir bjs_check.R). CSA is csa_manual (unbalanced panel) and ignores xt. g_shift_units = 16."
+}

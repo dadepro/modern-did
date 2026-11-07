@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437211070589",
+  "doi": "10.1177/00222437211070589",
+  "journal": "jmr",
+  "title": "Default Effects of Credit Card Minimum Payments",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "Matched-control DiD in event time (six months pre and post a card's switch to automatic minimum payment, control = Mahalanobis-matched nonswitching card-months). Estimated as a single-hurdle Type II Tobit selection model with exp() second stage, time-varying covariates, and Switcher x months-from-switch dummies. No unit or calendar-time fixed effects. Also IV and a lab experiment.",
+  "design_notes": "JMR 59(4), 2022. Section 'Difference-in-Differences Estimates' (Figure 2, Table 6): outcome = monthly repayment amount per card; treatment = Switcher_i x D_{i,t} (dummies for months -5..+5 from switch); covariates include card balance, utilization, spending, merchant APR, cash APR, charge-off rate (time-varying) and tenure. Matching per Ho et al. 2011; 3,311 treated and 3,239 control cards, 39,732 card-months per group. Table 7 is IV (peer switching rate); Table 8 onward is a randomized experiment. Calendar switch dates vary (Jan 2013 to Nov 2014) but the estimator is event-time with matched controls, nonlinear, with controls.",
+  "estimators_reported": [
+    "matched DiD (event-time interactions)",
+    "single-hurdle Type II Tobit",
+    "2SLS IV",
+    "randomized online experiment"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Matching-based DiD, nonlinear selection model, time-varying controls, no unit and calendar FE. Data from U.K. card issuers via Argus Information & Advisory; paper states data are proprietary. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

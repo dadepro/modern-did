@@ -1,0 +1,45 @@
+{
+ "suffix": "mnsc.2021.01335",
+ "doi": "10.1287/mnsc.2021.01335",
+ "journal": "mnsc",
+ "title": "Transient Customer Response to Data Breaches of Their Information",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_004",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single-date event: the food-delivery platform breach on 18 May 2017 hits all customers at once; the DiD compares digital vs cash payment orders (c.t#c.digital with week-zone FE) around that date. Bank and grocery breaches are separate single-date events. Entry/exit analyses are cross-sectional logit/OLS. Data are not shipped (confidentiality agreement; on-site access at NUS).",
+ "design_notes": "Week-payment-type-zone panel; reghdfe ln_count c.t#c.digital digital, absorb(week_zone), cluster city2; windows 2017w16-w23 and w16-w31 excluding w20-w27. Customer-level logit of quitting and OLS of digital share.",
+ "estimators_reported": [
+  "two-group single-date DiD",
+  "logit",
+  "OLS"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "T2_ln_count_digital_post",
+   "eligible": false,
+   "exclusion_reason": "single common breach date; data not shipped",
+   "code_file": "replication_package_MS-FTFIN-21-01335/code_all.do",
+   "outcome": "ln_count",
+   "treatment_var": "t x digital",
+   "reported_location": "Table 2"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "README: data from a food delivery platform cannot be made public; only code, log, dictionary and output files are shipped.",
+ "data_files_present": false,
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not staggered; no data. Screened from package only."
+}

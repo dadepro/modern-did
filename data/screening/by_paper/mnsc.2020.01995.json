@@ -1,0 +1,49 @@
+{
+ "suffix": "mnsc.2020.01995",
+ "doi": "10.1287/mnsc.2020.01995",
+ "journal": "mnsc",
+ "title": "Round Number Preferences and Left-Digit Bias: Evidence from Credit Card Repayments",
+ "authors": "Hiroaki Sakaguchi; John Gathergood; Neil Stewart",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mnsc/mnsc.2020.01995",
+ "regressions_path": "./data/packages/mnsc.2020.01995_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a DiD. Regression-discontinuity designs on credit-card statements: repayment outcomes (round-number payment dummies, log repayment) regressed on before/after indicators and polynomials in the distance h to a round-number threshold of the minimum payment or of the balance (feols/felm, two-way clustered by AccountNumber and Cycle, no fixed effects). Table A6-A9 regress repayment on high-order polynomials of the minimum payment. The package ships only a mock dataset.",
+ "design_notes": "R (fixest, lfe); codes/script_A.R ... script_M.R, data built from data/data_0.csv by create_data_*.R. Main Tables 1-4 (script_B, script_C): before:h + after:h + after polynomial RD specifications.",
+ "estimators_reported": [
+  "regression_discontinuity",
+  "bunching_descriptives"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 1-4, A3-A13, B1-B6, C1-C5",
+   "reason": "RD on minimum-payment / balance thresholds; no treatment adoption over time, no unit or time FE"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Code and Simulated Data/data/data_0.csv"
+ ],
+ "data_files_note": "README: 'data_0.csv is a minimum mock data file' (240,000 rows); folder named 'Code and Simulated Data'. Original UK credit card data are proprietary.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Mock/simulated data only.",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text). code_prescore 2 likely triggered by before/after terms of the RD."
+}

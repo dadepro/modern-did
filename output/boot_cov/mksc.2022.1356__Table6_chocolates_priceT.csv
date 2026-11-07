@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mksc.2022.1356,Table6_chocolates_priceT,static,999,-1.30020012082129e-05,0.000136505654333336,0.0165379774434995,0.113374461379823,0.0186594591646482,-0.00693445876450743,0.442353221116962,999,999,999,4.16333634234434e-17,6.93889390390723e-17,4.16333634234434e-16,TRUE,42,

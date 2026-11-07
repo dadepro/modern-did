@@ -1,0 +1,28 @@
+{
+ "doi": "10.1287/mnsc.2024.08287",
+ "journal": "mnsc",
+ "year": 2026,
+ "title": "Collaboration, Workplace Practice Adoption, and Performance: Evidence from a Field Experiment",
+ "eligible_design": false,
+ "eligible_reason": "Randomized controlled trial of about 5,000 Chilean SMEs with firm-level randomization stratified by visit month and cross-randomized email treatments. Main text analysis is ANCOVA (Y_jst = b1*Collaboration_js + g*Y_js0 + delta_s + e_jst) on cumulative outcomes. A difference-in-differences estimator appears only as a corroboration in Online Appendix Figure A.10, not in the main text.",
+ "design_notes": "Main text Tables 3-5 report cross-sectional ITT estimates with baseline outcome controls and strata fixed effects; month fixed effects are deliberately excluded. Supplemental material (online appendix and data files) is referenced at an INFORMS DOI.",
+ "estimators_reported": [
+  "randomized ANCOVA ITT regression",
+  "DiD (online appendix only)"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: RCT with ANCOVA in the main text; the DiD is appendix-only and reflects a randomized pre/post comparison, not staggered adoption. Data availability inferred from the Supplemental Material line (data files at the INFORMS DOI); not verified."
+}

@@ -1,0 +1,62 @@
+{
+ "suffix": "mksc.2015.0906",
+ "doi": "10.1287/mksc.2015.0906",
+ "journal": "mksc",
+ "title": "Consumer Uncertainty and Purchase Decision Reversals: Theory and Evidence",
+ "authors": "Jeffrey D. Shulman; Marcus Cunha; Julian K. Saint Clair",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0906",
+ "regressions_path": "./data/packages/mksc.2015.0906_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (analytical model plus lab experiment ANCOVA and archival IV-PPML/IV-probit on course drops)",
+ "ineligible_specs": [
+  {
+   "spec_id": "course_drops_ivppml",
+   "reported_location": "archival analysis table",
+   "exclusion_reason": "cross-section of 202 course sections; IV Poisson (ivppml) and IV probit of drops on syllabus posting with year and department dummies; no unit FE, IV, nonlinear"
+  },
+  {
+   "spec_id": "humidifier_ancova",
+   "reported_location": "experiment table",
+   "exclusion_reason": "between-subject ANCOVA on randomized experiment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Cross-sectional IV-PPML of course drops on syllabus posting plus lab ANCOVA.",
+ "design_notes": "Syntax in 'Replication stimuli_variable description_syntax.docx': UNIANOVA for experiment; ivppml and ivprobit for archival course-drop data.",
+ "estimators_reported": [
+  "ANCOVA",
+  "IV Poisson (ivppml)",
+  "IV probit"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "MKSC_replication data (course drops).dta",
+  "MKSC_replication data (humidifier experiment).sav"
+ ],
+ "data_files_note": "file names.txt and docx describe variables and syntax.",
+ "data_provenance": "original",
+ "data_provenance_note": "Archival and experimental data shipped.",
+ "software": "stata",
+ "software_notes": "Stata (ivppml) and SPSS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

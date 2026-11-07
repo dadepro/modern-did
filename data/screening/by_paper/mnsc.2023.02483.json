@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2023.02483",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Competition Avoidance vs. Herding in Job Search: Evidence from Large-Scale Field Experiments on an Online Job Board",
+ "eligible_design": false,
+ "eligible_reason": "Three randomized field experiments on a job board (plus a survey choice experiment) that randomize information shown at the application/vacancy level. Regressions use experiment, application-order, vacancy-age and vacancy fixed effects on cross-sectional application data. No units adopting a binary treatment at staggered calendar dates.",
+ "design_notes": "Fixed effects are experiment, order-of-application, vacancy age and vacancy FE. The 'two-way fixed effects' flag arises from vacancy and application-order FE in randomized-experiment regressions, not a staggered DiD.",
+ "estimators_reported": [
+  "randomized experiment regressions with fixed effects"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: randomized experiments, no staggered adoption. Platform data likely proprietary."
+}

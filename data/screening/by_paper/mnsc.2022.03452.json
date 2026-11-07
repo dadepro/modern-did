@@ -1,0 +1,113 @@
+{
+ "doi": "10.1287/mnsc.2022.03452",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "The Color of Hedge Fund Activism",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Matched-control, event-window (stacked) design, excluded by PROTOCOL Section 2. Each hedge-fund activism event (caseid) consists of the target bank (activ=1) and matched non-target banks (activ=0) that are assigned the target's 13D filing date as their pseudo-event date (date_filed is populated for controls; in every data file each caseid has a single year_filed shared by target and controls; 27 of 134 banks in filing_activism.dta appear in more than one caseid). Every regression sample is restricted to event_year in [-3, 3] (e.g., baseline_code.do lines 246, 446, 873, 931, 1232, 1318). The headline specifications are triple differences (post x treat x minority) with bank-by-year (bhc_year) and MSA-by-year FE that absorb the DiD term, loan-level data, and time-varying controls (lines 272-280, Table 7). The few two-way DiD specifications (Table 8: total_discrimination_counts on post_treat with entity + filing_year FE, lines 878-881; Table 12 Panel A: max_acquisition on post_treat with entity + bank_year + caseid FE, lines 1114-1117) still use pseudo-dated matched controls within a +/-3 event window, so they are matching-based/stacked rather than a staggered TWFE on a calendar panel with never- or not-yet-treated controls. Branch-count outcomes (Tables 10, 14) use ppmlhdfe (Poisson).",
+ "design_notes": "Single do-file (baseline_code.do, 1,544 lines; duplicate copy in data/ with Windows paths). Datasets: mortgage_activism_origination.dta (HMDA loan applications to target and matched banks; 1.66 GB), mcdash_activism.dta (HMDA-GSE-McDash matched loans, interest rates and performance), mortgage_activism_all_action.dta (withdrawn/incomplete applications), filing_activism.dta (bank-year counts of lending-discrimination keywords in filings), activism_mortgage_officer.dta (bank-county-year loan-officer turnover), activism_sod.dta (bank-county-year branch counts), activism_nmls_county.dta (bank-county-year loan officers), activism_acquiror.dta / activism_target.dta (bank-year acquisitions), activism_tract_cra_branch.dta (bank-tract-year branches), mortgage_census.dta (CRA vs non-CRA tracts), mortgage_activism_2018_2021.dta (newer HMDA), roa_capital/capital/small.dta (event-level splits). Treatment construction: treat = activ; post = year > year(date_filed); post_treat = post*treat; black = minority applicant; event_year = year - year_filed; events filed 2007-2009 dropped (keep if year_filed<2007 | year_filed>2009). Filing years span 2000-2014 (12 cohorts after exclusion). Figure 2 (line 241): dynamic DDD, black x treat x event-year dummies (-5..+5) with bhc_year, msa_year, race, sex FE and event-year x treat, event-year x black FE, clustered by entity_rssd. Clustering throughout by bank (entity).",
+ "estimators_reported": [
+  "TWFE triple-difference (reghdfe; BHC-year + MSA-year FE; loan-level controls)",
+  "TWFE DiD on matched bank-year / bank-county-year panels (entity + year FE, +/-3 year event window)",
+  "Dynamic triple-difference event study (Figure 2)",
+  "Poisson pseudo-ML (ppmlhdfe) for branch counts"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 12,
+ "n_adoption_cohorts_note": "filing years 2000-2006 and 2010-2014 (2007-2009 excluded); but controls carry matched pseudo-event dates, so this is not a staggered calendar-panel design",
+ "never_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "modern_estimator_note": "Full text cites Goodman-Bacon (2021), Callaway-Sant'Anna (2021), de Chaisemartin-D'Haultfoeuille (2020) but no modern estimator appears in the code.",
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 7 cols (1)-(3); baseline_code.do lines 272-280",
+   "outcome": "denial",
+   "treatment_var": "post_treat_black (post x treat x black), with post_treat, post_black, treat_black, black, treat, post",
+   "fe": "bhc_year + msa_year (cols 1-2, col 2 adds applicant_race sex msa); entity + msa_year (col 3)",
+   "controls": "wloan_to_income log_income co_app (cols 2-3), bank controls (col 3)",
+   "cluster": "entity",
+   "reason": "triple difference (subgroup-by-treatment interaction); bank-by-year FE; time-varying controls; matched +/-3 event window"
+  },
+  {
+   "location": "Figure 2; line 241",
+   "reason": "dynamic triple difference with event-time x treat and event-time x black FE"
+  },
+  {
+   "location": "Tables 11, 15, 16, 17, 18 and heterogeneity splits (lines 291-420, 1252-1370, 1379-1544)",
+   "reason": "same triple-difference structure on subsamples (low ROA, capital, size, CRA tracts, 2018-2021 HMDA)"
+  },
+  {
+   "location": "Table 8 cols (1)-(2); lines 878-881",
+   "outcome": "total_discrimination_counts",
+   "treatment_var": "post_treat (post x treat); post = filing_year > year(date_filed)",
+   "unit_var": "entity",
+   "time_var": "filing_year",
+   "fe": "entity + filing_year",
+   "controls": "none (col 1); bank controls (col 2)",
+   "cluster": "entity",
+   "sample_condition": "event_year in [-3,3]; year_filed not in 2007-2009",
+   "data_file": "data/filing_activism.dta (2,321 bank-years, 134 banks, 112 caseids)",
+   "reason": "matched controls with pseudo-event dates, +/-3 event window (stacked/matching-based); banks repeated across caseids"
+  },
+  {
+   "location": "Table 9 (Turnover), lines 889-898",
+   "reason": "triple difference with high-discrimination-county indicator; time-varying bank controls"
+  },
+  {
+   "location": "Table 10 and Table 14 (number_branch, wnumber_lo), lines 960-970, 1010-1060, 1236-1245",
+   "reason": "Poisson (ppmlhdfe) and triple differences"
+  },
+  {
+   "location": "Table 12 Panel A (max_acquisition), lines 1114-1117",
+   "outcome": "max_acquisition",
+   "treatment_var": "post_treat",
+   "fe": "entity + bank_year + caseid",
+   "cluster": "entity",
+   "reason": "matched event design with caseid FE (stacked); pseudo-dated controls"
+  },
+  {
+   "location": "Table 12 Panel A (acquired), lines 1170-1173",
+   "reason": "cross-sectional regression of acquired on treat with year FE, not a DiD"
+  },
+  {
+   "location": "Table 13 (int_rt, dlq90p, foreclosure), lines 520-690",
+   "outcome": "int_rt, dlq90p, foreclosure",
+   "treatment_var": "post_treat_black (int_rt) / post_treat (performance)",
+   "fe": "msa_year + bhc_year + source; entity + year",
+   "controls": "loan and credit controls in most columns",
+   "cluster": "entity",
+   "reason": "loan-level matched event window; triple difference for rates; performance regressions with time-varying controls in all but col 1, and pseudo-dated matched controls throughout"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "data/mortgage_activism_origination.dta (1.66 GB)",
+  "data/mortgage_activism_all_action.dta (1.30 GB)",
+  "data/mortgage_census.dta (213 MB)",
+  "data/mcdash_activism.dta (161 MB)",
+  "data/mortgage_activism_2018_2021.dta (64 MB)",
+  "data/activism_tract_cra_branch.dta (371 MB)",
+  "data/activism_acquiror.dta",
+  "data/activism_nmls_county.dta",
+  "data/activism_sod.dta",
+  "data/filing_activism.dta",
+  "data/activism_mortgage_officer.dta",
+  "data/activism_target.dta",
+  "data/roa_capital.dta",
+  "data/capital.dta",
+  "data/small.dta",
+  "output/ and output2/: outreg2 tables and Stata logs"
+ ],
+ "software": "stata",
+ "software_detail": "Stata/SE 18; reghdfe, ppmlhdfe, outreg2, winsor, desctable, ietoolkit",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "README (readme.rtf) states all data needed are included (HMDA, 13D filings, call reports, FDIC SOD, NMLS, FFIEC, GSE loan-level data, McDash from Black Knight). Full code and data are present and could reproduce the authors' tables, but the design (matched target/control banks with pseudo-event dates, +/-3 year windows, triple differences) is outside the protocol. Finance department (accepted by Victoria Ivashina)."
+}

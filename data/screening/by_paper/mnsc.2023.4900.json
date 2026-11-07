@@ -1,0 +1,43 @@
+{
+  "suffix": "mnsc.2023.4900",
+  "doi": "10.1287/mnsc.2023.4900",
+  "journal": "mnsc",
+  "title": "The Impact of Derivatives on Spot Markets: Evidence from the Introduction of Bitcoin Futures Contracts",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single-event DiD: Treatment = BTC-USD exchange pairs (vs other fiat-currency BTC pairs), Post = month >= 201801 after the December 2017 CBOE/CME bitcoin futures launch, Treatment_Post with exchange-pair, month and currency-pair FE (and triple differences with short-selling, arbitrage-risk, capital-control and attention indicators). The ETH analysis (Tables 9, 11) is another single-date event. One adoption date per design, so not staggered.",
+  "design_notes": "MS_Code_ARS_2023.do sections A-F on MS_ARS_2023_DATA.xlsx (aggregated exchange-pair, exchange, flow and ETH sheets). Table 3/5: PriceSynchronicity_3m_w, PriceIntegration_3m_w on Treatment_Post, absorb(i.ExchangePair_ i.monthdummy_ i.CurrencyPair_), cluster ExchangePair_, excluding Jan-Feb 2018. Table 10: quarterly Treatment_Q* dynamics. Table 6A: 14-day volume interactions.",
+  "estimators_reported": [
+    "single_event_did",
+    "single_event_ddd",
+    "single_event_dynamic_quarters"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "Single event (bitcoin futures introduction, December 2017); ETH futures single event.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_files_present": true,
+  "data_files": [
+    "MS_ARS_2023_DATA.xlsx (aggregated measures, 8 sheets)"
+  ],
+  "data_files_note": "readme.txt: raw tick data proprietary under NDA; package ships authors' aggregated exchange-pair/month measures.",
+  "data_provenance": "original",
+  "software": "stata",
+  "software_notes": "Stata reghdfe; MATLAB for Figure 3.",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Single-date design.",
+  "screener_notes": "Screened from package only."
+}

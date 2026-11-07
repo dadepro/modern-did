@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2021.4103,T4_c1_lnkidneystransplanted_static,static,999,0.00173955015563041,0.00230619905058714,0.0444645320034324,0.0492301096158768,0.0613058970224424,0.794680262644001,0.846020354658417,999,999,999,2.77555756156289e-17,0,5.55111512312578e-17,TRUE,39,

@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2020.01306,mnsc.2020.01306_T4_top_wageperworker_ln,static,999,0.00306167169543494,0.00341397555994303,0.0542182516887275,0.119355233048375,0.0744475829792854,0.47312036785444,0.84579340797119,999,999,999,1.38777878078145e-17,8.32667268468867e-17,5.16253706450698e-15,TRUE,9434,

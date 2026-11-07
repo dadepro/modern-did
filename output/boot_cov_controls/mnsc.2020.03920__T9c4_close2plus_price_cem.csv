@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2020.03920,T9c4_close2plus_price_cem,static,999,,0.00104701902107448,0.0332584459703444,,0.036811402823614,,0.855205038583865,999,0,999,2.77555756156289e-17,0,0.0412587959094713,FALSE,65,

@@ -1,0 +1,70 @@
+{
+ "suffix": "mnsc.2023.4961",
+ "doi": "10.1287/mnsc.2023.4961",
+ "journal": "mnsc",
+ "title": "Are Financial Statements More Comparable When GAAP Restricts Managers’ Discretion?",
+ "authors": "Spencer Young",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_031",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4961",
+ "regressions_path": "./data/packages/mnsc.2023.4961_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Not a staggered binary adoption design. Main tests regress comparability on a continuous standard-restrictiveness score (dscorerr) with time-varying controls and industry-year (or firm) FE. Validation DiDs use single standards with common dates and pooled treated dummies: Table 4 SFAS 86 (software x post1, post after Dec 1986) and CECL (bank x post, Dec 2020), with industry and year FE but no firm FE; Table 5 SFAS 141 (MACT = merger in the year, post = fyear >= 2002, common), with controls.",
+ "design_notes": "SAS (proc surveyreg) and Stata. Firm-pair comparability (De Franco et al.) outcomes; mediation bootstraps in Table 9.",
+ "estimators_reported": [
+  "pooled_ols_continuous",
+  "firm_fe_continuous",
+  "single_date_did_pooled_treated",
+  "sureg"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 4 cols 1-2",
+   "reason": "single-date standards; pooled treated dummy with industry FE, no unit FE"
+  },
+  {
+   "location": "Table 5 cols 1-2",
+   "reason": "common post date (fyear >= 2002); MACT is a time-varying merger indicator; time-varying controls"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "TABLE3.dta",
+  "TABLE5.dta",
+  "TABLE7.dta",
+  "table9col1and2.dta",
+  "table9col3and4.dta",
+  "table9col5and6.dta",
+  "table3and8.sas7bdat",
+  "table4col1.sas7bdat",
+  "table4col2.sas7bdat",
+  "table6.sas7bdat",
+  "descriptives_tables.sas7bdat"
+ ],
+ "data_files_note": "ReadMe.txt: replication files for every table shipped; some raw Compustat/IBES inputs not shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' analysis datasets shipped (standardized variables).",
+ "software": "sas",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Code is a mix of SAS and Stata. Not a staggered design.",
+ "hand_check_nov4": "Not a near-miss: single-date standards (SFAS 86 in 1986, CECL in 2020, SFAS 141 in 2002) with pooled treated dummies and no firm FE, main regressor continuous; n_adoption_cohorts 1. The row entered near_miss.csv by keyword and passed code/20's staggered filter only because the phrase 'No staggered binary adoption' matches its 'staggered binary' pattern; eligible_reason reworded ('Not a staggered ...') so the filter excludes it. near_miss and the 5c flag stay false."
+}

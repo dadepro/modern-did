@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2014.0864",
+ "doi": "10.1287/mksc.2014.0864",
+ "journal": "mksc",
+ "title": "Synergy or Interference: The Effect of Product Placement on Commercial Break Audience Decline",
+ "authors": "David A. Schweidel; Natasha Zhang Foutz; Robin J. Tanner",
+ "year": 2014,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2014.0864",
+ "regressions_path": "./data/packages/mksc.2014.0864_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (hierarchical Bayesian model of second-by-second audience decline during commercials as a function of preceding product placements)",
+ "ineligible_specs": [
+  {
+   "spec_id": "audience_change_hb",
+   "reported_location": "main estimation",
+   "exclusion_reason": "ad-level linear model with program, category and brand-within-category random effects, network/month/half-hour/genre dummies and placement-match indicators (WinBUGS); no unit FE with staggered binary adoption; not a DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Ad-level hierarchical Bayesian regression of audience decline on placements.",
+ "design_notes": "MKSC code.txt (WinBUGS) on 74,224 advertisements; treatment indicators IncImmed/IncPrior vary across ads within breaks, no adoption timing.",
+ "estimators_reported": [
+  "hierarchical Bayesian linear regression (WinBUGS)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "MKSC.2014.0864data/data for MKSC.txt"
+ ],
+ "data_files_note": "Calibration (estimation) sample with network, genre, program, category, brand, month and half-hour identifiers anonymized.",
+ "data_provenance": "original",
+ "data_provenance_note": "Estimation sample with anonymized identifiers; values not reported as altered.",
+ "software": "other",
+ "software_notes": "WinBUGS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

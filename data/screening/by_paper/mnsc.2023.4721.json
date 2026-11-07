@@ -1,0 +1,50 @@
+{
+ "suffix": "mnsc.2023.4721",
+ "doi": "10.1287/mnsc.2023.4721",
+ "journal": "mnsc",
+ "title": "Asymmetric Information and R&D Disclosure: Evidence from Scientific Publications",
+ "year": "2023",
+ "authors": "Stefano Horst Baruffaldi; Markus Simeth; David Wehrheim",
+ "eligible_design": false,
+ "eligible_reason": "Stacked DiD: 43 brokerage merger/closure events (2001-2011), each forming its own treated/control cohort with a six-year window; firms appear in multiple event stacks (1,384 of 1,504 firms; 107,621 duplicated firm-years) and regressions include event (E_ID) fixed effects with POST and TREATED defined within stack. Stacked designs are excluded by the protocol.",
+ "design_notes": "bsw2022+data+T2.dta: 122,429 firm-event-year rows, 23,035 firm-event pairs, FYEAR 1997-2014. Table 2: areg Y TREATED_X_POST POST TREATED [controls] i.E_ID i.FYEAR, abs(FIRM_ID) cl(FIRM_ID), outcomes COV, BASPRD, LN_PUB, IHS_PUB. Table 3 same on a propensity-score matched sample with aw=_weight. Table 4 heterogeneity splits (high/low x TREATED_X_POST). Table 5 alternative outcomes with controls. Figure 1 stacked event-study dummies TREATED_d_window1-6. Table 6 is an OLS attention regression. No unstacked firm-level first-treatment variable is provided; an unstacked TWFE would have to be reconstructed from E_ID event dates.",
+ "estimators_reported": [
+  "stacked TWFE DiD (areg with event FE)",
+  "stacked event study (Figure 1)",
+  "PSM-weighted stacked DiD (Table 3)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 11,
+ "n_adoption_cohorts_note": "11 distinct event years across 43 events (stacked); not an unstacked staggered design.",
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 2-5, Figure 1",
+   "reason": "stacked DiD with event-cohort FE; firms repeated across stacks"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "bsw2022+data+T1.dta",
+  "bsw2022+data+T2.dta",
+  "bsw2022+data+T3.dta",
+  "bsw2022+data+T4+A+1-4.dta",
+  "bsw2022+data+T4+B+1-4.dta",
+  "bsw2022+data+T4+C+1-4.dta",
+  "bsw2022+data+T5.dta",
+  "bsw2022+data+T6.dta",
+  "bsw2022+data+FIG1.dta"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Anonymized final analysis datasets (Compustat/CRSP/IBES/Scopus-derived) are included with a single master do-file. The design is Hong-Kacperczyk style stacked brokerage-shock DiD; eligible only if the protocol were relaxed to allow stacked designs. Recorded as not eligible."
+}

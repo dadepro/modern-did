@@ -1,0 +1,31 @@
+{
+ "suffix": "0022243720919709",
+ "doi": "10.1177/0022243720919709",
+ "journal": "jmr",
+ "title": "When Consumption Regulations Backfire: The Role of Political Ideology",
+ "year": "2020",
+ "eligible_design": false,
+ "design_notes": "Study 1 is a natural experiment on California's hands-free phone law (effective January 1, 2017) using hourly unique website visits from a telecom operator for 58 counties, December-January 2015/16 vs. 2016/17. Model is a triple-difference (Conservatism x After x Treatment) with Poisson and negative binomial estimators and county-level controls (cars, trucks, commute time); county dummies in Panel B. Studies 2-4 are lab experiments.",
+ "eligible_reason": "Single law date in one state; nonlinear count models (Poisson, negative binomial); triple-difference with continuous conservatism interaction; no staggered adoption.",
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "estimators_reported": [
+  "Poisson DiD",
+  "negative binomial DiD",
+  "triple difference"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Hourly web-traffic data from a proprietary telecom analytics tool; no replication package. Ineligible on design.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

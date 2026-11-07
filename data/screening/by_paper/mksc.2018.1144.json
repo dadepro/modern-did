@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2018.1144",
+ "doi": "10.1287/mksc.2018.1144",
+ "journal": "mksc",
+ "title": "Recommending Products When Consumers Learn Their Preference Weights",
+ "authors": "Daria Dzyabura; John R. Hauser",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1144",
+ "regressions_path": "./data/packages/mksc.2018.1144_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (theory of preference-weight learning; synthetic-data simulations and an MTurk bike experiment)",
+ "ineligible_specs": [
+  {
+   "spec_id": "simulations_bike_study",
+   "reported_location": "Figures 3-4; bike study tables",
+   "exclusion_reason": "simulation of recommendation systems and a before/after stated-preference MTurk experiment; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Model plus synthetic-data simulations and a randomized MTurk bike recommendation study.",
+ "design_notes": "MATLAB: Simulations Replication/vary_set_to_0.m and BikeStudy Replication/Mturk_analysis.m (both nested zips already extracted).",
+ "estimators_reported": [
+  "simulation",
+  "experimental comparison of means"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "BikeStudy Replication/*_before, *_after (stated preferences)"
+ ],
+ "data_files_note": "MTurk preference data shipped; simulations generate their own data.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental MTurk data as collected.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

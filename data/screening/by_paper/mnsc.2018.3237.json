@@ -1,0 +1,28 @@
+{
+  "suffix": "mnsc.2018.3237",
+  "doi": "10.1287/mnsc.2018.3237",
+  "journal": "mnsc",
+  "title": "Discretionary Remote Working Helps Mothers Without Harming Non-mothers: Evidence from a Field Experiment",
+  "year": "2019",
+  "eligible_design": false,
+  "eligible_reason": "Randomized ABAB/BABA cross-over field experiment, not a staggered adoption DiD. Treatment (remote-working week) switches on and off repeatedly. After dropping post-adoption off weeks, the ABAB cohort has no untreated observations, so no pair of cohorts with both untreated and treated observations exists. Borderline TWFE form (individual and week FE, binary treated-week indicator), but randomized and non-absorbing.",
+  "design_notes": "187 employees at Abcam, 4 weekly surveys (748 person-weeks). Tables 4-7: outcome on binary 'Remote working week' with individual and week fixed effects, by subgroup (full, men, women, parents, non-parents, mothers, fathers). E.g., Table 4 col 1 family-to-work conflict -0.0416 (SE 0.0487), N=748; col 6 mothers -0.492 (SE 0.133), N=132.",
+  "estimators_reported": [
+    "TWFE on randomized cross-over (individual and week FE)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 2,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Stata mentioned only for randomization. No data availability statement in manuscript (LBS Research Online version). Excluded on design grounds; flagged borderline because the regression is a two-way FE model with a binary treatment indicator. Subgroup columns would also be separate subsamples, not interactions."
+}

@@ -1,0 +1,60 @@
+{
+ "suffix": "mksc.2022.1408",
+ "doi": "10.1287/mksc.2022.1408",
+ "journal": "mksc",
+ "title": "Frontiers: Polarized America: From Political Polarization to Preference Polarization",
+ "authors": "Verena Schoenmueller; Oded Netzer; Florian Stahl",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1408",
+ "regressions_path": "./data/packages/mksc.2022.1408_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not staggered. All regressions use a single common pre/post date around the 2016 presidential election (pre_post = month > 10 on Twitter, month_year > 11 in Nielsen, dummy_pre_post_election in YouGov). Twitter: xtreg democratic_basket i.pre_post##i.democrat c.month##i.democrat, fe (user FE, party-specific linear trends, no calendar-time FE). Nielsen Tables 3-4: pre_post x continuous county Clinton vote share with share-specific trends and a price control. YouGov: pre_post x democrat with month x democrat. BrandEvents.csv lists brand political events but is used only in descriptive figures.",
+ "design_notes": "Stata (Twitter, Nielsen, YouGov do-files), R for Figures 1-5, Python for Nielsen extraction. Twitter user-month panel of followers of either party (TwitterBasket_2016_2017_2018.csv, wide format). Cluster user_id or store.",
+ "estimators_reported": [
+  "fe_group_x_post_common_date_with_group_trends",
+  "continuous_exposure_x_post"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Twitter section tables",
+   "reason": "single common post date (2016 election); party x post with party-specific linear trends; no calendar-time FE"
+  },
+  {
+   "location": "Nielsen Tables 3-4",
+   "reason": "continuous Clinton vote share x post with share-specific trends and price control; data not shipped"
+  },
+  {
+   "location": "YouGov section / Figure 5",
+   "reason": "common post date; data not shipped"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "ReplicationFiles/Twitter/TwitterBasket_2016_2017_2018.csv",
+  "ReplicationFiles/Twitter/Brand_Figures_RLPP.csv",
+  "ReplicationFiles/Twitter/BrandEvents.csv",
+  "ReplicationFiles/Nielsen/Voting_Data_2016.dta"
+ ],
+ "data_files_note": "Twitter data shipped (anonymized user IDs, 242 MB); Nielsen and YouGov data must be acquired from Kilts and YouGov.",
+ "data_provenance": "original",
+ "data_provenance_note": "Twitter panel with anonymized user ids; Nielsen/YouGov not shipped.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). Election is a single common event; no staggered adoption."
+}

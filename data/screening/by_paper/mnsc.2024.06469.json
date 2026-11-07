@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2024.06469",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Can Digital Aid Deliver During Humanitarian Crises?",
+ "eligible_design": false,
+ "eligible_reason": "Randomized controlled trial in Afghanistan with a phase-in/waitlist design (treatment group paid in the first two months, control in the next two). Main analysis is an ANCOVA ITT regression with baseline outcome value, strata fixed effects and survey-round fixed effects, using only the first two months. Single randomized start date and no unit fixed effects.",
+ "design_notes": "Baseline equation (Appendix 2, Eq. 1): Y_itn = g0 + g1*1[Treatment Group]_in + g2*X_i0n + g3*Y_i0n + g4*1[t=2] + e_itn, clustered at individual. The text mentions a 'staggered' payment schedule, not staggered adoption across units.",
+ "estimators_reported": [
+  "randomized ANCOVA ITT regression"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: RCT with ANCOVA and a single phase-in date."
+}

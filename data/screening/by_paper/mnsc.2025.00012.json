@@ -1,0 +1,128 @@
+{
+ "doi": "10.1287/mnsc.2025.00012",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "From Food Deserts to Fresh Food: The Role of Digital Accessibility in Nutrition Assistance Programs",
+ "screened_from": "package_only",
+ "eligible_design": true,
+ "near_miss": true,
+ "near_miss_reason": "Time-varying controls are the sole violation of the staggered state-month specifications: the Callaway-Sant'Anna estimates of Table 6 and Figure 2 (csdid with not-yet-treated controls, state as unit, 12 launch-month cohorts April 2019-May 2022) include the time-varying state-month COVID covariates cases, deaths, mask_mandate and stay_at_home (Stata code.do lines 300-335). The household-level regressions of Tables 3-5, 7, 9-14 and Figure 1 add household demographics and treat x policy interactions on top of the controls and so fail a further rule. Staggered binary design: SNAP Online Purchasing Pilot launched at state-specific months; all states adopt by May 2022 (no never-treated states). NielsenIQ-derived data are not shipped.",
+ "near_miss_5c_controls_only": true,
+ "borderline": true,
+ "eligible_reason": "The underlying design qualifies: the SNAP Online Purchasing Pilot launched in states at 12 distinct months between April 2019 and May 2022 (hard-coded gvar in data_construction.sas lines 357-387), treatment is binary and absorbing (post = year_month > gvar), and Table 6 / Figure 2 report Callaway-Sant'Anna (csdid, notyet) at the state-month level with state as the unit. But no reported specification is eligible as published: the csdid runs include time-varying COVID covariates (cases, deaths, mask_mandate, stay_at_home), and the household-level TWFE regressions (Tables 3-5, 7, 9-10, 12-14) include time-varying household demographics, state-level COVID controls, and treat x (stimulus/stay-at-home/mask/cases/deaths/SNAP-increase) interactions (additional treatments). Moreover the main analysis data (item_month_balance, item_month_state) are derived from NielsenIQ Consumer Panel data and are not in the package. Strictly ineligible; candidate csdid specs listed under ineligible_specs.",
+ "design_notes": "Stata code (Data and Code/Stata code.do, 350 lines) run on SAS-built datasets. Household-month panel item_month_balance: treat = SNAP-income-eligible household (by Household_Income x Household_Size bins, lines 38-55; alternative bandwidths at lines 173-281), post = state launch (from SAS), spec: reghdfe Y stay_at_home act i.demographics c.treat#c.post c.treat#c.act c.treat#c.act2 c.treat#c.act3 c.treat#c.stay_at_home c.treat#c.increase c.treat#c.mask_mandate c.treat#c.cases c.treat#c.deaths, absorb(Household_Cd state_month) cluster(Fips_State_Cd), sample 2018m4-2022m10 (Tables 3-4 at lines 90-99; headline 7.1% fresh-food effect is Table 4). Figure 1 (line 104): treat x relative-period dummies (period = year_month - gvar2 + 65, base 28) with the same controls. Table 5: food-desert subsample. Table 7: nonfood placebo. Table 8: New York only, single date (post_ny), household FE + year-month FE. Table 9: falsification with fake_post. Table 12-13: entropy, large-retailer share, junk food. Table 14: heterogeneity by digital accessibility (coverage_level) and habit tercile. Table 6 / Figure 2 (lines 292-335): csdid on state-month aggregates separately for SNAP-eligible and non-eligible households, with covariates, notyet controls; event_plot. Table 11 (lines 339-348): Instacart zip-month data, low_income x post with time-varying controls, absorb(state_month postal_code). All 50 states + DC have a launch date, so there are no never-treated states; csdid uses not-yet-treated controls. Launch cohorts (year_month index): 16 (NY, 2019m4), 26 (WA, 2020m2), 28, 29, 30, 31, 32, 33, 34 (2020m4-2020m10), 40 (ME, 2021m4), 52 (LA, MT, 2022m4), 53 (AK, 2022m5).",
+ "estimators_reported": [
+  "TWFE static (reghdfe; household FE + state-month FE; treat x post with controls)",
+  "TWFE event study (Figure 1; treat x relative-period dummies)",
+  "Callaway-Sant'Anna csdid with covariates, not-yet-treated controls (Table 6, Figure 2)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_candidate_specs_if_covariates_dropped": 3,
+ "n_adoption_cohorts": 12,
+ "never_treated_present": false,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid, notyet)"
+ ],
+ "preferred_spec_ids": [
+  "00012_cand_02"
+ ],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "spec_id": "00012_cand_01",
+   "code_file": "Data and Code/Stata code.do",
+   "code_line": 300,
+   "outcome": "food",
+   "outcome_label": "Monthly food spending (level)",
+   "treatment_var": "gvar = state SNAP Online launch month (year_month index, 2018m1 = 1), hard-coded by Fips_State_Cd in data_construction.sas lines 357-387; csdid builds the treatment from gvar",
+   "unit_var": "Fips_State_Cd (state)",
+   "time_var": "year_month (monthly index)",
+   "fe": "state and month (csdid, not-yet-treated controls)",
+   "controls": "cases deaths mask_mandate stay_at_home (time-varying state-month COVID covariates inside csdid)",
+   "weights": "none",
+   "cluster": "state (csdid default, ivar)",
+   "sample_condition": "state-month aggregates of SNAP-eligible households (drop if treat==0) if year_month>3; data from 2018m1; non-SNAP-eligible placebo panel estimated identically at lines 326-335",
+   "static_or_event": "static (estat simple) and event study (estat event window -10 10, Figure 2)",
+   "data_file": "item_month_state (NielsenIQ-derived, NOT in package; built by data_construction.sas)",
+   "reported_location": "Table 6 col (1); Figure 2 (estat event, window -10 10)",
+   "eligible_as_is": false,
+   "exclusion_reason": "csdid includes time-varying covariates (cases, deaths, mask_mandate, stay_at_home). Would be eligible without them; underlying data not in the package."
+  },
+  {
+   "spec_id": "00012_cand_02",
+   "code_file": "Data and Code/Stata code.do",
+   "code_line": 307,
+   "outcome": "all_fresh",
+   "outcome_label": "Monthly fresh food spending (level)",
+   "treatment_var": "gvar = state SNAP Online launch month (year_month index, 2018m1 = 1), hard-coded by Fips_State_Cd in data_construction.sas lines 357-387; csdid builds the treatment from gvar",
+   "unit_var": "Fips_State_Cd (state)",
+   "time_var": "year_month (monthly index)",
+   "fe": "state and month (csdid, not-yet-treated controls)",
+   "controls": "cases deaths mask_mandate stay_at_home (time-varying state-month COVID covariates inside csdid)",
+   "weights": "none",
+   "cluster": "state (csdid default, ivar)",
+   "sample_condition": "state-month aggregates of SNAP-eligible households (drop if treat==0) if year_month>3 & year_month<=40; data from 2018m1; non-SNAP-eligible placebo panel estimated identically at lines 326-335",
+   "static_or_event": "static (estat simple) and event study (estat event window -10 10, Figure 2)",
+   "data_file": "item_month_state (NielsenIQ-derived, NOT in package; built by data_construction.sas)",
+   "reported_location": "Table 6 col (2); Figure 2",
+   "eligible_as_is": false,
+   "exclusion_reason": "csdid includes time-varying covariates (cases, deaths, mask_mandate, stay_at_home). Would be eligible without them; underlying data not in the package."
+  },
+  {
+   "spec_id": "00012_cand_03",
+   "code_file": "Data and Code/Stata code.do",
+   "code_line": 315,
+   "outcome": "fresh_pct",
+   "outcome_label": "Fresh share of food spending x100",
+   "treatment_var": "gvar = state SNAP Online launch month (year_month index, 2018m1 = 1), hard-coded by Fips_State_Cd in data_construction.sas lines 357-387; csdid builds the treatment from gvar",
+   "unit_var": "Fips_State_Cd (state)",
+   "time_var": "year_month (monthly index)",
+   "fe": "state and month (csdid, not-yet-treated controls)",
+   "controls": "cases deaths mask_mandate stay_at_home (time-varying state-month COVID covariates inside csdid)",
+   "weights": "none",
+   "cluster": "state (csdid default, ivar)",
+   "sample_condition": "state-month aggregates of SNAP-eligible households (drop if treat==0) if year_month>3; data from 2018m1; non-SNAP-eligible placebo panel estimated identically at lines 326-335",
+   "static_or_event": "static (estat simple) and event study (estat event window -10 10, Figure 2)",
+   "data_file": "item_month_state (NielsenIQ-derived, NOT in package; built by data_construction.sas)",
+   "reported_location": "Table 6 col (3)",
+   "eligible_as_is": false,
+   "exclusion_reason": "csdid includes time-varying covariates (cases, deaths, mask_mandate, stay_at_home). Would be eligible without them; underlying data not in the package."
+  },
+  {
+   "location": "Tables 3-5, 7, 9, 10, 12, 13, 14; Figure 1 (Stata code.do lines 90-289)",
+   "outcome": "food, food_ln, all_fresh, all_fresh_ln, fresh_pct, nonfood, entropy, large_retailer_pct, junk, junk_pct, high_price_cnt",
+   "treatment_var": "c.treat#c.post (treat = SNAP-eligible household; post = state launch)",
+   "fe": "Household_Cd + state_month (sometimes + i.Household_Income#i.Household_Size)",
+   "cluster": "Fips_State_Cd",
+   "reason": "time-varying controls (household demographics by panel year, stay_at_home, act) and treat x COVID-policy interactions (additional treatments); household-level data not in package"
+  },
+  {
+   "location": "Table 8 (lines 126-130)",
+   "reason": "New York only: single adoption date"
+  },
+  {
+   "location": "Table 11 (lines 344-348)",
+   "treatment_var": "c.low_income#c.post on Instacart zip-month sample",
+   "reason": "time-varying controls interacted with low_income; zip-level Instacart sample is a random subsample under NDA"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "Data and Code/insta_month_tran.dta (random NDA sample of Instacart zip-month orders, 57,853 rows: year month postal_code num spend STATE stay_at_home cases deaths mask_mandate act increase state_month low_income post num_ln spend_ln) - Table 11 only",
+  "Data and Code/supplementary data for generating final data/*.sas7bdat (entry_zip, mask_mandate, mask_mandate2, covid_state_month, zip_fooddesert, nanda_brdband1420Z_02P, stay_at_home_county_time) - inputs to the SAS build",
+  "Data and Code/figure 1 data.xlsx (coefficients)",
+  "MISSING: item_month_balance (household-month) and item_month_state (state-month), both require NielsenIQ Consumer Panel (Kilts) access"
+ ],
+ "software": "stata",
+ "software_detail": "Stata (reghdfe, csdid, event_plot); SAS for data construction",
+ "replication_feasible": "no",
+ "priority": 3,
+ "priority_note": "3 under the strict rule and given missing NielsenIQ data; would be 2 if a no-covariate csdid is accepted and Kilts NielsenIQ access is available.",
+ "screener_notes": "README (Readme.docx) is explicit that NielsenIQ-derived files are not included and must be rebuilt from Panelist/Trip/Purchase/Product 2018-2022 via data_construction.sas. Information Systems department (accepted by D. J. Wu). Full-text flags also mention Sun-Abraham and Goodman-Bacon; not implemented in the package code.",
+ "eligible": false,
+ "hand_check_nov4": "Near-miss, controls-only (Table 6 / Figure 2 csdid columns: the only violation is the COVID covariates; article Table 6 'Alternative Approach: Staggered DiD' confirms the main-text location). Record coded under the earlier rule with no near_miss field. Added eligible=false so code/17 picks the flag up. Data not shipped."
+}

@@ -1,0 +1,70 @@
+{
+ "suffix": "mnsc.2021.3996",
+ "doi": "10.1287/mnsc.2021.3996",
+ "journal": "mnsc",
+ "title": "The Role of Marketplace Lending in Credit Markets: Evidence from Bank Mergers",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_004",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "The merger shock is not an absorbing staggered treatment: bankmerger = 1 only in the year a zip3 market has a branch of a large merging bank (code2_master_results.do lines 86-89), so it is a one-year pulse that can recur, and outcomes are first differences (wdif_num_branches_bm, lead1pdif_*). Table 4 adds a time-varying predicted demand_shift control (and a lagged outcome change in cols 3, 5), Tables 5-7 are 2SLS/IV with time-varying controls, Table 8 uses the kernel-matching diff command, Table 7 interacts a continuous fitted value with period. LendingClub request data (requests.dta) are not shipped.",
+ "design_notes": "zip3 x year panel 2009-2016. Treatment: indicator for a large independent bank merger affecting a branch in the market in year t (non-absorbing). Table 4: xtreg FE of the winsorized change in branches on bankmerger + demand_shift + i.year (cols 2-3), weighted OLS without unit FE (cols 4-5), xtabond (col 6). Tables 5-6: xtivreg of lead changes in LC requests on wdif_num_branches_bm instrumented by bankmerger (placebo mergers in Table 6) with demand_shift small_banks pop_density branch_density and year dummies. Table 7: continuous fitted-value x period interactions. Tables 8-9: diff (kernel, rcs, bootstrap).",
+ "estimators_reported": [
+  "FE regression of first differences on merger-year pulse (with controls)",
+  "2SLS/IV (xtivreg)",
+  "Arellano-Bond",
+  "kernel-matching DiD (diff)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "T4_c2_branchchange_bankmerger",
+   "eligible": false,
+   "exclusion_reason": "non-absorbing one-year merger pulse on a first-differenced outcome; time-varying control demand_shift (fitted from house price, population, income, age changes)",
+   "code_file": "data_appendix_MS-FIN-19-03165/code2_master_results.do",
+   "code_line": 160,
+   "outcome": "wdif_num_branches_bm",
+   "treatment_var": "bankmerger",
+   "unit_var": "zip3code",
+   "time_var": "year",
+   "reported_location": "Table 4, column (2)"
+  },
+  {
+   "spec_id": "T5_T6_IV",
+   "eligible": false,
+   "exclusion_reason": "2SLS/IV with time-varying controls",
+   "code_file": "data_appendix_MS-FIN-19-03165/code2_master_results.do",
+   "code_line": 172,
+   "reported_location": "Tables 5-6"
+  },
+  {
+   "spec_id": "T8_T9_kernel_diff",
+   "eligible": false,
+   "exclusion_reason": "kernel-matching DiD (diff, kernel rcs) with controls",
+   "code_file": "data_appendix_MS-FIN-19-03165/code2_master_results.do",
+   "reported_location": "Tables 8-9"
+  }
+ ],
+ "data_access": "partial",
+ "data_provenance": "original",
+ "data_provenance_note": "Branch (FDIC SOD), merger (FFIEC), demographic and credit-stress files are shipped; the LendingClub loan files behind requests.dta are withheld for privacy, so master.dta and Tables 5-9 cannot be rebuilt.",
+ "data_files_present": true,
+ "data_files": [
+  "branch_data.dta",
+  "bankbranch.dta",
+  "demog_economic.dta",
+  "raw files/*.csv,xlsx",
+  "requests.dta NOT shipped"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Design fails on treatment definition (merger-year pulse, first-differenced outcomes) independently of controls; not a near-miss. Screened from package only."
+}

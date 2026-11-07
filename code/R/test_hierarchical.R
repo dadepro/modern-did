@@ -1,0 +1,15 @@
+source("code/R/hierarchical.R")
+# Simulated check: 60 papers x ~15 specs, true rho = 0.9, SDs ~0.2, precision-dependent means
+set.seed(11)
+K <- 900; paper <- rep(1:60, each = 15)
+sT <- exp(rnorm(K, log(0.08), 0.6)); sM <- sT * exp(rnorm(K, log(1.4), 0.2))
+QT <- log(sT) - mean(log(sT))
+tauT <- exp(log(0.19) + 0.1 * QT); tauM <- exp(log(0.21) + 0.1 * QT)
+z1 <- rnorm(K); z2 <- 0.9 * z1 + sqrt(1 - 0.81) * rnorm(K)
+thT <- 0.05 + 0.02 * QT + tauT * z1; thM <- 0.05 + 0.02 * QT + tauM * z2
+bT <- thT + sT * rnorm(K); bM <- thM + sM * rnorm(K)
+d <- data.frame(bT, sT, bM, sM, cov = 0.3 * sT * sM, paper)
+fit <- hier_fit(d)
+cat("converged:", fit$conv, " rho:", round(fit$rho, 3), "\n")
+print(hier_summary(fit))
+cat("true sign-reversal rate in sim:", mean(thT * thM < 0), "\n")

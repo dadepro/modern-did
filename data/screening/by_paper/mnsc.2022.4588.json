@@ -1,0 +1,63 @@
+{
+ "doi": "10.1287/mnsc.2022.4588",
+ "journal": "mnsc",
+ "year": 2022,
+ "title": "Scoring a Touchdown with Variable Pricing: Evidence from a Quasi-Experiment in the NFL Ticket Markets",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Staggered binary adoption exists (15 teams adopt variable pricing in 2014, 3 in 2015, 14 never), but every reported regression includes time-varying team-season/game controls (datp1, sb_pres_odd, sb_week_odd, net_movement), the main columns use propensity-score weights (IPW) and add the continuous interaction vp_datp1 as an additional treatment regressor. The only control-free DiD is a 2x2 regression without fixed effects quoted in the Section 4.1 prose.",
+ "design_notes": "Inferred from Codes/PrimaryMarketTables.do, SecondaryMarketTables.do and the data. Unit: home team (ts / t_short); time: NFL season (year, 2012-2015) with game-week FE (nflweek) and opponent FE (os); observation = home game. Treatment vp = 1 for teams on variable pricing (treated1: switched 2014; treated2: cle, den, nyj switched 2015). Table 3: reg capa_util vp [vp_datp1] atp12 datp1 sb_pres_odd sb_week_odd ln_g_inc_demean ln_g_eth_demean med_inc_demean pop_mil_demean net_movement i.nflweek i.year i.os i.ts, sample year 2012-2015, non-international games, excluding sfo, min, ten; cols 1-2 [pweight=psweight10a], cols 3-4 unweighted; robust SEs. Table 9 / Figure 2: relative-season dummies (vp_23, vp_2, vp1, vp2) with the same controls and weights. Secondary-market tables use daily resale prices with similar controls. Table 6 adds tobit and Poisson.",
+ "estimators_reported": [
+  "TWFE static with IPW (reg with i.ts i.year i.nflweek i.os)",
+  "TWFE relative-time dummies (Table 9, Figure 2)",
+  "tobit",
+  "Poisson"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 2,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 3 cols (1)-(4) [PrimaryMarketTables.do lines 40-50]",
+   "reason": "time-varying controls (datp1, sb_pres_odd, sb_week_odd, net_movement); cols 1-2 IPW weights; cols 2,4 add vp_datp1"
+  },
+  {
+   "location": "Tables 4-7, 10, 13, 14",
+   "reason": "same controls plus IPW and additional treatment interactions"
+  },
+  {
+   "location": "Table 9 / Figure 2 [lines 133-201]",
+   "reason": "relative-time dummies with time-varying controls, IPW, vp_datp1"
+  },
+  {
+   "location": "Section 4.1 model-free 2x2 [line 13]",
+   "reason": "no unit or time fixed effects (vp post treated1 only)"
+  },
+  {
+   "location": "Tables 11-12 (resale market)",
+   "reason": "time-varying controls, IPW"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "package_files": {
+  "present": [
+   "Data/PrimaryMarket.dta (1,024 games, 77 vars)",
+   "Data/ResaleMarket.dta",
+   "Data/R_data.csv",
+   "Data/AttractivePrediction.dta",
+   "Data/homegame.xlsx"
+  ]
+ },
+ "software": "stata; r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Near-miss: Table 3 col (3) is unweighted TWFE with team, season, week and opponent FE, but with time-varying controls in every column; dropping them would be a new specification, not a replication of a reported one. Only two adoption cohorts (2014, 2015). Abstract reports the 1.59% effect from the IPW specification."
+}

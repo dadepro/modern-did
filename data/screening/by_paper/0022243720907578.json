@@ -1,0 +1,28 @@
+{
+  "suffix": "0022243720907578",
+  "doi": "10.1177/0022243720907578",
+  "journal": "jmr",
+  "title": "The Anatomy of the Advertising Budget Decision: How Analytics and Heuristics Drive Sales Performance",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Not a difference-in-differences or event-study paper; structural time-series model.",
+  "design_notes": "Structural state-space model of brand advertising budgeting (baseline, adaptive experimentation, ad-to-sales ratio, competitive parity), estimated with a Kalman filter on monthly brand-level sales and advertising for eight brands in three categories (IRI and Nielsen scanner data, ad spend from Nielsen). 'Differences-in-differences' appears only in a literature remark on endogeneity strategies. No treatment, no adoption dates.",
+  "estimators_reported": [
+    "Kalman filter state-space model"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: no DiD design. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Brand-level monthly data from IRI/Nielsen and advertising trackers (licensed)."
+}

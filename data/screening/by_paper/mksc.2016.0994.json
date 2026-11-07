@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2016.0994",
+ "doi": "10.1287/mksc.2016.0994",
+ "journal": "mksc",
+ "title": "Idea Generation, Creativity, and Prototypicality",
+ "authors": "Olivier Toubia; Oded Netzer",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0994",
+ "regressions_path": "./data/packages/mksc.2016.0994_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (semantic-network prototypicality and judged creativity of ideas; eight studies)",
+ "ineligible_specs": [
+  {
+   "spec_id": "re_regressions",
+   "reported_location": "study regression tables",
+   "exclusion_reason": "random-effects (xtreg, re) regressions of creativity ratings on semantic-network measures; no treatment adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Random-effects regressions of idea creativity ratings on semantic measures.",
+ "design_notes": "randomeffectsR1.do (268 xtreg ... re commands) on stata_study*.csv; docx titled 'Idea Generation, Creativity, and Incentives' (working title; same authors' studies, not a mismatch).",
+ "estimators_reported": [
+  "random-effects GLS"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "809 stata_study*.csv files"
+ ],
+ "data_files_note": "Formatted study-level CSVs.",
+ "data_provenance": "original",
+ "data_provenance_note": "Formatted idea and rating data as used.",
+ "software": "stata",
+ "software_notes": "Stata (v1..vK anonymous column names)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

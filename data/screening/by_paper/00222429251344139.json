@@ -1,0 +1,56 @@
+{
+  "suffix": "00222429251344139",
+  "doi": "10.1177/00222429251344139",
+  "journal": "jm",
+  "title": "Automated Versus Human Agents: A Meta-Analysis of Customer Responses to Robots, Chatbots, and Algorithms and Their Contingencies",
+  "authors": "Katja Gelbrich, Holger Roschk, Sandra Miederer, Alina Kerath",
+  "year": 2025,
+  "screened_from": "package_only",
+  "package_dir": "~/did_packages/jm/00222429251344139/",
+  "package_source": {
+    "repository": "Harvard Dataverse, collection jom",
+    "dataset_doi": "10.7910/DVN/GJLPI4",
+    "dataset_title": "Replication Data for: Automated Versus Human Agents: A Meta-Analysis of Customer Responses to Robots, Chatbots, and Algorithms and Their Contingencies",
+    "dataset_version": "1.0",
+    "released": "2025-09-19",
+    "n_files": 11,
+    "n_public_files": 11,
+    "restricted_files_not_requested": [],
+    "public_files_downloaded": 0,
+    "public_files_md5_match": 0,
+    "tabular_files_fetched_as_original": 0,
+    "skipped_or_failed": [
+      {
+        "id": 11355311,
+        "label": "0_Readme_JM.docx",
+        "status": "failed"
+      }
+    ],
+    "downloaded": "2026-11-02"
+  },
+  "jm_doi_source": "Crossref title search (deposit has no JM DOI); top match: ['10.1177/00222429251344139', 'Automated Versus Human Agents: A Meta-Analysis of Customer Responses to Robots, Chatbots, and Algorithms and Their Contingencies', 70.459114]",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "near_miss_5c_controls_only": false,
+  "eligible_reason": "Meta-analysis (943 effect sizes from 327 studies of automated vs human agents). No DiD.",
+  "design_notes": "Deposit doi:10.7910/DVN/GJLPI4 carries no JM DOI; matched by Crossref title search to 10.1177/00222429251344139. All 11 files are unrestricted but under a file embargo until 2027-09-20 (the API returns 403 'Not authorized'), so nothing was downloaded. File names: R scripts for Tables 3-5 and Figures 2-3 plus 'meta agents_JM.xlsx'.",
+  "estimators_reported": [
+    "meta-analysis (pooled effect sizes, meta-regression)"
+  ],
+  "main_or_robustness": "none",
+  "n_eligible_specs": 0,
+  "specs": [],
+  "data_access": "public after embargo (2027-09-20)",
+  "data_files_present": false,
+  "data_provenance": "not_shipped",
+  "data_provenance_note": "Embargoed until 2027-09-20; not downloadable now.",
+  "software": "r",
+  "replication_feasible": "no",
+  "priority": 3,
+  "main_text_unverified": false,
+  "screener_notes": "Ruled out from the Crossref abstract and the deposit description and file names (meta-analysis). Package directory is empty because of the embargo.",
+  "files_embargoed_until": "2027-09-20",
+  "download_note": "All 11 unrestricted files are embargoed; the first request returned HTTP 403 and the remaining files were not attempted."
+}

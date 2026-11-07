@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2022.4394,T5b_amt_fullscore_alt_abovep75_pct,static,999,0.000402067996152689,0.00119933884111315,0.0478903348948785,0.0706304086122769,0.0793321990203481,0.118866619739055,0.31567815666679,999,999,999,1.73472347597681e-17,4.85722573273506e-17,0,TRUE,34,

@@ -1,0 +1,43 @@
+{
+ "suffix": "mksc.2025.0547",
+ "doi": "10.1287/mksc.2025.0547",
+ "journal": "mksc",
+ "year": 2026,
+ "title": "AI in Disguise—Quasi-Experimental Analysis of a Large-Scale Deployment of AI-Generated Ads",
+ "authors": "Yannick Exner; Jochen Hartmann; Ziqian Ding; Shunyuan Zhang; Oded Netzer",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "No staggered DiD. The 'sibling ads' quasi-experiment compares AI-generated and human-made ad images launched by the same advertiser in the same campaign settings at the same time: ad-day CTR regressed on an effect-coded AI-image indicator (a fixed ad attribute, not a treatment that switches on over time) with cohort (glbl_cohort_id / camp_id / synd_id) and date fixed effects, impression weights, binomial logit (fixest::feglm) and a long list of ad/image/text controls. Nonlinear model, cross-sectional treatment, and no unit-specific adoption dates. The 'staggered' full-text hit refers to the gradual roll-out of the GenAI Ad Maker. The advertiser adoption regression is a cross-sectional logit.",
+ "design_notes": "01_formulas.R: v_ctr ~ ec_ai_image + ec_ai_title + text and image features (+ ec_ai_image * mc_looks_like_ai_01) | c_date + glbl_cohort_id (Table 1), variants with camp_id or synd_id FE; estimated by feglm(binomial logit, weights = v_impr, cluster = cohort). Stopping analyses use feols on ad-level survival-type outcomes. No post x treated interaction anywhere.",
+ "estimators_reported": [
+  "weighted logit with cohort and date FE (fixest::feglm)",
+  "OLS/feols for perceived-artificiality drivers and stopping analyses",
+  "advertiser-level adoption logit"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 0,
+ "n_adoption_cohorts_note": "Not an adoption design.",
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "synthetic",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package/masked_data.RData (syn_date, syn_inst, syn_camp, syn_synd, syn_img, syn_img_newer_model)"
+ ],
+ "data_files_note": "README: 'statistically masked data' derived from proprietary Taboola data: IDs anonymized, calendar dates replaced by relative day indices, impressions/clicks/conversions rescaled by a random campaign-level factor with stochastic rounding, spend rescaled with an additional ad-specific random factor; 'numerical estimates obtained from the released data need not exactly match those reported in the paper'. Recorded as synthetic (masked/rescaled), not original data.",
+ "software": "r",
+ "software_notes": "R (fixest feglm/feols, tidyverse), Quarto notebook replication.qmd.",
+ "replication_feasible": "no",
+ "priority": 3,
+ "priority_note": "Not a DiD design; masked data.",
+ "screener_notes": "Screened from package only (no article text)."
+}

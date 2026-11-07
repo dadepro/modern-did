@@ -1,0 +1,30 @@
+{
+  "suffix": "mnsc.2021.01010",
+  "journal": "mnsc",
+  "data_path": "~/did_packages/mnsc/mnsc.2021.01010/fooddeliver.dta",
+  "id_var": "rest_numericID",
+  "time_var": "Week_Num",
+  "treat_var": "onplatform_weekly",
+  "weight_var": "",
+  "cluster_var": "rest_numericID",
+  "xt_vars": [],
+  "log_y": "log1p",
+  "table": "4",
+  "static_or_event": "static",
+  "preferred": null,
+  "in_abstract_intro": null,
+  "controls": [
+    "community_mobility_weekavg"
+  ],
+  "analysis_set": "controls",
+  "spec_id": "T4_c3_takeout_matched",
+  "y_var": "takeout_visits",
+  "sample_filter": "matched == 1",
+  "column": "3",
+  "published_coef": 0.036106,
+  "published_se": 0.008522,
+  "published_n": 126810,
+  "published_source": "Authors' code output (FoodDeliver.R, Table 4) re-run on the shipped data; no article text available. Mobility control coefficient reported in the same regression.",
+  "replication_status": "exact (authors' code output; article not available to compare)",
+  "notes": "Table 4 of FoodDeliver.R (lfe::felm(log1p(y) ~ onplatform_weekly + community_mobility_weekavg | Week_Num + rest_numericID | 0 | rest_numericID)). Restaurant-week panel, 53 weeks (2018-12-31 to 2019-12-30; Week_Num is week-of-year in a single year, so it is calendar time), unbalanced. Treatment onplatform_weekly = restaurant has joined any on-demand delivery platform; absorbing (0 switch-offs). Only protocol violation: the time-varying county-by-week mobility control community_mobility_weekavg (PROTOCOL 5c). No weights; clustered by restaurant. PUBLISHED COEFFICIENT = AUTHORS' CODE OUTPUT: no article text or PDF in the project; published_coef/se are from re-running the authors' felm call on the shipped fooddeliver.dta (fixest gives the same point estimate to 6 decimals). Column numbers are inferred from the code order (before-matching takeout, dine-in; after-matching takeout, dine-in) and must be checked against the article PDF. Matched subsample (matched == 1; 1:1 matched restaurants, unweighted, treated as a sample restriction under PROTOCOL 5b): 2,964 restaurants, 1,991 never treated (66.9% of rows), 4 always treated (0.03% of rows), 969 switchers over 49 adoption weeks. preferred and in_abstract_intro set to null: unknown without the article text."
+}

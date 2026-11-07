@@ -1,0 +1,42 @@
+{
+ "doi": "10.1287/mnsc.2023.4775",
+ "journal": "mnsc",
+ "year": 2023,
+ "title": "Forward to the Past: Short-Term Effects of the Rent Freeze in Berlin",
+ "eligible_design": false,
+ "eligible_reason": "Single policy (Berlin rent freeze) with one announcement date (June 2019) and one enactment date (Feb 2020) common to all treated listings; two-group, pre/post hedonic DiD estimated by penalized least squares (GAM) on repeated cross-sections of listings with no unit FE or calendar-time FE.",
+ "design_notes": "Models (A), (B.1), (B.2): log(rent_it) on C_i (covered by freeze), Transition/Post-A/Post-E period dummies, C x period interactions, and time-invariant hedonic covariates including a smooth location spline. Table 6 main results: Treatment x Post-E = -0.113 (SE 0.019, N=26,842) in Strategy A; -0.075 (SE 0.022, N=3,314) in B.2. Table 5 reports monthly treatment effects (time dummies x treatment), Table 8 is a spatial difference-in-discontinuity at the Berlin-Brandenburg border, Table 9 is volume effects. Treated and control apartments are defined by building-year cutoff (new construction exempt). Not a staggered design.",
+ "estimators_reported": [
+  "hedonic DiD (GAM, penalized least squares)",
+  "difference-in-discontinuity"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 6 (Strategies A, B.1, B.2)",
+   "reason": "single adoption date; no unit FE; GAM with smooth location terms"
+  },
+  {
+   "location": "Table 5",
+   "reason": "monthly time dummies x treatment on repeated cross-section, single event date, no unit FE"
+  },
+  {
+   "location": "Table 8",
+   "reason": "spatial difference-in-discontinuity"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Listing data from VALUE Marktdaten (commercial). Online tables referenced in the paper. Flag from 'difference-in-differences' wording."
+}

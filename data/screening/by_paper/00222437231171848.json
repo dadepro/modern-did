@@ -1,0 +1,30 @@
+{
+ "suffix": "00222437231171848",
+ "doi": "10.1177/00222437231171848",
+ "journal": "jmr",
+ "title": "The Early Impact of GDPR Compliance on Display Advertising: The Case of an Ad Publisher",
+ "year": "2023",
+ "eligible_design": false,
+ "eligible_reason": "Single event date for all EU users (consent pop-up from April 18, 2018) versus non-EU users; no staggered adoption. Specification also carries multiple nonredundant additive and interacted fixed effects.",
+ "design_notes": "Model 1 (Table 5): Y_acwpt = a + b Treated_c x Post_t + FE(ad) + FE(country) + FE(web page) + FE(ad slot position) + FE(date) + pairwise interaction FE (ad x country, ad x position, ad x web page, country x position, country x web page, position x web page) + e. Treated = EU IP address; Post = date >= April 18, 2018. Daily ad-country-web page-position panel, N = 3,920,212; SEs clustered at ad and web page. Table 5 coefficients: revenue per click -.022 (.00049); CTR -.00018 (.0000081); bid price -.025 (.00051); conversion rate -.0017 (.000042); advertisers' surplus -.0036 (.00014). Figure 3 daily event-study version, same single date.",
+ "estimators_reported": [
+  "OLS DiD with high-dimensional FE (Table 5)",
+  "daily event study (Figure 3)",
+  "triple-difference heterogeneity models"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: one adoption date. Data are confidential ad-server data from an ad publisher (figures shown only in relative scale at the data provider's request). No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

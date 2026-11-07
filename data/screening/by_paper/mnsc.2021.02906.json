@@ -1,0 +1,41 @@
+{
+  "suffix": "mnsc.2021.02906",
+  "doi": "10.1287/mnsc.2021.02906",
+  "journal": "mnsc",
+  "title": "Moral Support and Performance",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date: the Argentinean ban on visiting supporters (law) applies to all first-division league games from August 2013. Regressions (Tables 2-6) are match-level OLS/logit of visitor_loser on law with club or match-pair FE and robust/clustered SEs; cup games (Table 4) serve as a placebo sample. No unit-specific adoption timing.",
+  "design_notes": "Package replication_package_MS-BDE-21-02906: ReadME.md, do/00_run_all.do, Table_1-6.do, Figure_1-4.do, dta/data_1_liga.dta (league matches), data_2_copa.dta (cup), data_3_lineups.dta, data_4_squad_values.dta, data_5_lineup_values.dta, Variable_labels.xlsx, tex/ for assembling output.",
+  "estimators_reported": [
+    "ols_single_date_pre_post",
+    "logit"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public (package data)",
+  "data_files_present": true,
+  "data_files": [
+    "dta/data_1_liga.dta",
+    "dta/data_2_copa.dta",
+    "dta/data_3_lineups.dta",
+    "dta/data_4_squad_values.dta",
+    "dta/data_5_lineup_values.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Goodman-Bacon cited but not applicable (single date)."
+}

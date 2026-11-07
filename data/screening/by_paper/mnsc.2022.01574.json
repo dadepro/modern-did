@@ -1,0 +1,42 @@
+{
+  "suffix": "mnsc.2022.01574",
+  "doi": "10.1287/mnsc.2022.01574",
+  "journal": "mnsc",
+  "title": "Project Networks and Reallocation Externalities",
+  "year": 2025,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "eligible_reason": "Not a staggered-adoption TWFE design. Table 4 estimates feols(winsorized_delay ~ treat_contractor | awarding_agency_code + recipient_duns + product_or_service_code) on coarsened-exact-matched samples with CEM weights, where treat_contractor (= rec_concurrent_storm_indicator) is a quarter-specific indicator that a major storm hit a county where the project's contractor has a concurrent project: a transitory shock that switches on and off, not an absorbing treatment. The regressions have no project (unit) FE and no calendar-quarter FE (quarter enters only as an exact-matching stratum), agency-node columns add a time-varying control (time to completion), and the delay-probability columns are logit. The package also ships only a random sample with scrambled DUNS for code validation, not the analysis data.",
+  "design_notes": "Project-quarter panel (transactions.csv: 2.6M USAspending federal contracts 2011-2015 matched to NOAA storm events). Table 4: delay in days (winsorized) and delay indicator on treat_contractor / treat_awarding_office, six CEM granularities (MatchIt method='cem', matching on revenue, employees, offers, duration, budget, NAICS2, PSC2, price structure, quarter, state), FE agency + contractor DUNS + task code, cluster project, weights = CEM weights. Table 5: second-tier disruptions. Table 6: directly disrupted projects. Tables 7, 9: mechanisms on treatment-effect distribution. Figure 8: TE distribution.",
+  "estimators_reported": [
+    "cem_weighted_fe_ols (fixest feols)",
+    "cem_weighted_fe_logit (feglm binomial)",
+    "mechanism_cross_sectional_regressions"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "n_adoption_cohorts_note": "Not an adoption design; storm indicator varies quarter by quarter.",
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_access_note": "README: original USAspending and NOAA vintages (June/July 2019) overwritten and no longer available; Compustat licensed; only a random sample with scrambled DUNS is shipped, explicitly 'not to replicate the tables and figures'. Log PDFs from the original data are included.",
+  "data_files_present": false,
+  "data_files": [
+    "sample_data/transactions.csv (442k rows; random sample, scrambled DUNS; code validation only)",
+    "sample_data/second_tier_disruptions.csv",
+    "sample_data/disruption_event_and_adjacent_projects_contractor.csv",
+    "sample_data/agency_linkages.csv",
+    "sample_data/contractor_linkages.csv"
+  ],
+  "software": "r (fixest, MatchIt); python (data construction)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Callaway-Sant'Anna is cited but not used. Treatment is a repeated transitory shock with CEM matching and no unit/time FE; excluded on design grounds and on data grounds."
+}

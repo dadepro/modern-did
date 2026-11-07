@@ -1,0 +1,11 @@
+opre|difference-in-differences|0|6|2023.2444 2024.1009 2023.0557 2020.1989 2016.1556 2024.1250
+opre|staggered|0|0|
+opre|Callaway|0|2|2019.1915 2015.1444
+opre|Goodman-Bacon|0|0|
+opre|Borusyak|0|0|
+opre|two-way fixed effects|0|0|
+opre|difference-in-difference|0|2|2022.0157 2023.0415
+opre|differences-in-differences|0|0|
+opre|diff-in-diff|0|0|
+opre|Sun and Abraham|0|0|
+opre|de Chaisemartin|0|0|

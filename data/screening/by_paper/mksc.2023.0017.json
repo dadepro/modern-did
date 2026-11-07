@@ -1,0 +1,63 @@
+{
+ "suffix": "mksc.2023.0017",
+ "doi": "10.1287/mksc.2023.0017",
+ "journal": "mksc",
+ "title": "Heterogeneous Complementarity and Team Design: The Case of Real Estate Agents",
+ "authors": "Yan Xu; Mantian Mandy Hu; Junhong Chu; Andrew T. Ching",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_022",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0017",
+ "regressions_path": "./data/packages/mksc.2023.0017_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not a DiD design. Structural teamwork model with latent agent types estimated in Matlab; descriptive regressions are logits of house sale on collaboration measures and house characteristics (descriptives/code/tables.do) and areg of share of high-type collaborators on its lag with agent FE. No treatment adoption dates. Lianjia data under NDA, not shipped; only a Monte Carlo package with simulated data.",
+ "design_notes": "Stata (logit, reg, areg) for descriptives; Matlab for structural estimation and counterfactuals.",
+ "estimators_reported": [
+  "logit",
+  "ols_descriptive",
+  "structural_model"
+ ],
+ "specs": [
+  {
+   "spec_id": "T1/T2",
+   "eligible": false,
+   "exclusion_reason": "logit of sale on collaboration measures with agent and time dummies; no treatment adoption design",
+   "code_file": "replication package/descriptives/code/tables.do",
+   "reported_location": "Tables 1-2"
+  },
+  {
+   "spec_id": "T3-T6",
+   "eligible": false,
+   "exclusion_reason": "structural model estimates",
+   "code_file": "replication package/analysis",
+   "reported_location": "Tables 3-6"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "replication package/Monte Carlo/*/output/DGP_MonteCarlo.csv"
+ ],
+ "data_files_note": "README.pdf: Lianjia data under NDA, available only on HKU Business School servers; the Monte Carlo folder contains simulated data for the structural model.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Original data not shipped; Monte Carlo simulated data only.",
+ "software": "other",
+ "software_notes": "Stata and Matlab",
+ "screener_notes": "Screened from package only (no article text or PDF). Structural paper; ineligible on design and data."
+}

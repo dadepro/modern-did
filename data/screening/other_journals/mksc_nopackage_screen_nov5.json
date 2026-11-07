@@ -1,0 +1,54 @@
+[
+ {
+  "suffix": "mksc.2013.0775",
+  "verdict": "ineligible",
+  "confidence": "high",
+  "design": "368 IRI panel households choosing among five grocery/mass retail chains in Charlotte, NC (Sept 2002-Sept 2004); no treatment, no adoption dates, no comparison group.",
+  "reason": "The paper estimates a structural mixed nested logit of store choice and category incidence with a spatial ideal-point parameterization by simulated maximum likelihood (Section 6; Tables 5-6). Tables 7-9 are post-estimation decompositions and counterfactual merchandising scores. There is no policy change, binary treatment, or difference-in-differences anywhere in the article.",
+  "qualifying_specs": [],
+  "appendix_only_specs": "none (web appendix holds identification proofs, merchandising parameter estimates, and CDI splits)",
+  "notes": "Pure structural choice model; 'natural experiment' in Section 5.1 is only a descriptive recomputation of CDIs by spend group, not a causal design.",
+  "data_statement": "No availability statement; data provided by Information Resources, Inc. (proprietary scanner panel), and interview information is available by contacting the third author.",
+  "journal": "mksc",
+  "source": "text screen Nov 5 evening (Opus), batchF_9.jsonl"
+ },
+ {
+  "suffix": "mksc.2023.0369",
+  "verdict": "ineligible",
+  "confidence": "high",
+  "design": "Rejoinder to a commentary; no units, treatment, or estimation of its own.",
+  "reason": "The article is a three-page rejoinder (Wlomert, Papies, Clement, Spann) to Tushnet's comment and contains no regression. Its only table (Table 1) reports 2019 per-stream payouts and market shares by streaming service from a public industry source. The empirical quasi-experiment (GEMA-YouTube agreement) lives in the original Frontiers article, Marketing Science 43(1):1-12, not here.",
+  "qualifying_specs": [],
+  "appendix_only_specs": "none",
+  "notes": "If the original Wlomert et al. (2023) Frontiers article is in the candidate pool, screen it separately; this rejoinder adds no specification.",
+  "data_statement": "No data or code availability statement; Table 1 comes from thetrichordist.com (2020), and acknowledgments note an anonymous music label provided data access for the original study.",
+  "journal": "mksc",
+  "source": "text screen Nov 5 evening (Opus), batchF_9.jsonl"
+ },
+ {
+  "suffix": "mksc.2024.focusonaus.v43.n2",
+  "verdict": "ineligible",
+  "confidence": "high",
+  "design": "none (front matter)",
+  "reason": "Not a research article: author focus / front matter ('Focus on Authors'). No empirical analysis; flagged as a candidate only through an abstract or citation signal.",
+  "qualifying_specs": [],
+  "appendix_only_specs": "none",
+  "notes": "verdict from the item type and title; no article text obtained (not indexed by EBSCO)",
+  "data_statement": "not applicable",
+  "journal": "mksc",
+  "source": "front matter ruling Nov 5 evening (lead), no text"
+ },
+ {
+  "suffix": "mksc.2013.0819",
+  "verdict": "ineligible",
+  "confidence": "high",
+  "design": "none (front matter)",
+  "reason": "Not a research article: author focus / front matter ('Focus on Authors'). No empirical analysis; flagged as a candidate only through an abstract or citation signal.",
+  "qualifying_specs": [],
+  "appendix_only_specs": "none",
+  "notes": "verdict from the item type and title; no article text obtained (not indexed by EBSCO)",
+  "data_statement": "not applicable",
+  "journal": "mksc",
+  "source": "front matter ruling Nov 5 evening (lead), no text"
+ }
+]

@@ -1,0 +1,30 @@
+{
+ "suffix": "00222437221080163",
+ "doi": "10.1177/00222437221080163",
+ "journal": "jmr",
+ "title": "The Impact of Subscription Programs on Customer Purchases",
+ "year": "2022",
+ "eligible_design": false,
+ "design_notes": "Customer-month panel (April 2015 to March 2017) from an Asian personal-care retailer. DD: Y_it = tau*Member_it + customer FE + month FE (Eq. 1; Eq. 2 adds log price and log baseline budget plus gift cards). Main analysis uses a single cohort of 721 members who joined in April 2016 (month of adoption dropped), embedded in a generalized random forest that matches each member to weighted nonmembers (671 members, 11,745 nonmembers after common-support trimming). Robustness uses late adopters (Aug-Nov 2016 joiners) as controls and other single cohorts separately; none is a pooled staggered TWFE.",
+ "eligible_reason": "Single adoption month (April 2016) in the main analysis; matching-based DiD (GRF) with extra time-varying controls in Eq. 2; cohort robustness is cohort-by-cohort, not staggered.",
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "estimators_reported": [
+  "DD with GRF matching",
+  "doubly robust ATE"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Firm transaction data under a nondisclosure agreement; the article says some detailed results are available from the authors on request. Ineligible on design.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

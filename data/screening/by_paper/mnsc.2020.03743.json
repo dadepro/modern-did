@@ -1,0 +1,43 @@
+{
+  "suffix": "mnsc.2020.03743",
+  "doi": "10.1287/mnsc.2020.03743",
+  "journal": "mnsc",
+  "title": "Director Liability Protection and the Quality of Independent Directors",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date: the 1999 Ninth Circuit Silicon Graphics ruling; treat = firms in Ninth Circuit states, post = year >= 1999 (1996-2002 window). Baseline (Table 2) and dynamic DiD (Table 3) are Poisson (ppmlhdfe) with director, board and firm controls; univariate DiD (Table 2a) uses reghdfe with firm FE only and no year FE. No staggered adoption; nonlinear model with controls.",
+  "design_notes": "Package: README.txt, 'code for main tables.do' (Stata 17; Tables 1-12, Figures 1-2), Codebook.xlsx, datasets/info_newdir.dta (new independent director appointments), info_newdir_adjacent.dta, matchv_adjacent.dta, multiYs.dta, info_leftdir.dta, change_ROA.dta.",
+  "estimators_reported": [
+    "ppml_did_single_date_with_controls",
+    "twfe_univariate_did_no_year_fe",
+    "dynamic_did_single_date"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public (package data; BoardEx/Compustat-derived)",
+  "data_files_present": true,
+  "data_files": [
+    "datasets/info_newdir.dta",
+    "datasets/info_newdir_adjacent.dta",
+    "datasets/matchv_adjacent.dta",
+    "datasets/multiYs.dta",
+    "datasets/info_leftdir.dta",
+    "datasets/change_ROA.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": ""
+}

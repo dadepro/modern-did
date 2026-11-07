@@ -1,0 +1,30 @@
+{
+  "suffix": "0022243720964130",
+  "doi": "10.1177/0022243720964130",
+  "journal": "jmr",
+  "title": "Investigating the Academic Performance and Disciplinary Consequences of School District Internet Access Spending",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Continuous treatment (log(1+SDIAS), school district internet-access spending) in a school-year panel with school and year fixed effects, time-varying controls, IV (E-rate reimbursement), and conditional fixed-effects Poisson for disciplinary outcomes. No binary adoption design.",
+  "design_notes": "JMR 58(1), 2021. Texas schools 2000-2014 (about 9,124 schools, 1,243 districts). Tables 3 and 4 (academic outcomes, FE + controls + IV), Table 7 (interaction of log(1+SDIAS) with a binary household-internet indicator), Tables 8-9 (Poisson). The Bertrand-Duflo-Mullainathan citation concerns clustering.",
+  "estimators_reported": [
+    "TWFE with continuous regressor",
+    "2SLS IV",
+    "conditional FE Poisson"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Continuous treatment, IV, Poisson, time-varying controls. Sources named in text are public (USAC E-rate data, TEA/AEIS and TAPR, FCC Form 477, Census), but no package was provided. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

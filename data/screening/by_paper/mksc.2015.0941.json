@@ -1,0 +1,61 @@
+{
+ "suffix": "mksc.2015.0941",
+ "doi": "10.1287/mksc.2015.0941",
+ "journal": "mksc",
+ "title": "Satisfaction Spillovers Across Categories",
+ "authors": "Xiaojing Dong; Pradeep K. Chintagunta",
+ "year": 2015,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0941",
+ "regressions_path": "./data/packages/mksc.2015.0941_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (descriptive Bayesian model of cross-category retention given satisfaction, banking and investment services)",
+ "ineligible_specs": [
+  {
+   "spec_id": "retention_mvprobit",
+   "reported_location": "main estimation (main.m)",
+   "exclusion_reason": "Bayesian multivariate probit (truncated-normal data augmentation) of 2011 retention on 2010 satisfaction across categories; nonlinear, two-wave survey; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian multivariate probit of retention on cross-category satisfaction.",
+ "design_notes": "MATLAB Gibbs sampler: main.m with draw_*.m; data 2010/2011 survey files (.dat, .mat).",
+ "estimators_reported": [
+  "Bayesian multivariate probit (MCMC)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "2010benchmark_bankinvst_other.dat",
+  "2010 morevars.dat",
+  "2011 morevars.dat",
+  "2010_Q49.dat",
+  "switchdata.mat",
+  "satisdata.mat",
+  "switchdata_col.mat",
+  "useind.mat"
+ ],
+ "data_files_note": "Survey data shipped; readme only names main.m. Posterior draw files (*_save.mat, post_*.mat) also included.",
+ "data_provenance": "original",
+ "data_provenance_note": "Appears to be the estimation survey data; no statement of noise or simulation.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

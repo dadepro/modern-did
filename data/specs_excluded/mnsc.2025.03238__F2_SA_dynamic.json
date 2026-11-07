@@ -1,0 +1,135 @@
+{
+  "suffix": "mnsc.2025.03238",
+  "spec_id": "F2_SA_dynamic",
+  "excluded_reason": "Sun-Abraham event study that does not coincide with Callaway-Sant'Anna, so not eligible (PROTOCOL Section 2 admits Sun-Abraham only when it coincides with CSA): the published interaction-weighted estimator (eventstudyinteract, never-treated controls) pools rel <= -6 with the reference and conditions on firm-by-year fixed effects, which DiD-averaging cannot reproduce. Published path reproduced (fixest IW, max abs diff 4.3e-08) before exclusion.",
+  "excluded_date": "2026-11-02",
+  "excluded_by": "meta-3 per team-lead ruling (Nov 2 evening)",
+  "journal": "mnsc",
+  "data_path": "~/did_packages/_work/mnsc.2025.03238/t4_panel.rds",
+  "id_var": "pair_id",
+  "time_var": "year",
+  "y_var": "new_default",
+  "gvar": "g_bank",
+  "weight_var": "",
+  "cluster_var": "creditorcode",
+  "xt_vars": [
+    "firmcode"
+  ],
+  "sample_filter": "",
+  "log_y": "",
+  "published_coef": 0.0146502,
+  "published_se": null,
+  "published_n": 234609,
+  "published_source": "Article Figure 1(b) (graphical; PDF p. 9). The authors' shipped replication.log lines 6500-6530 (eventstudyinteract output) give pre5..pre2 -.0033188 -.0026824 -.0029133 -.001343 and post0..post4 .005393 .01173 .0127482 .0214928 .021887 (conventional SEs .0022336 .002175 .0020802 .002097 .0020565 .0020207 .0021356 .0027115 .0027934; eventstudyinteract is run without vce(cluster)). The nine plotted markers digitized from the published figure fit these values with max abs residual 3.1e-05 (linear pixel calibration; implied zero at the dashed zero line), so the figure is the log output. published_coef = equal-weight mean of post0..post4 = 0.0146502; pre mean (pre5..pre2) = -0.0025644. No SE for the average (covariances not shipped).",
+  "table": "Figure 1",
+  "column": "panel (b): Sun-Abraham interaction-weighted event study, never-treated control cohort (code_figures.do calls it Figure 2)",
+  "static_or_event": "event",
+  "event_pre_min": -5,
+  "event_post_max": 4,
+  "event_structure": {
+    "bins": [
+      [
+        -5,
+        -5
+      ],
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "ref": [
+      [
+        -1,
+        -1
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pre_summary": [
+      [
+        -5,
+        -5
+      ],
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ]
+    ],
+    "source": "code_build_intermediate.do lines 76-100: rel_time = year - cohort_year (designation year: 2016 for SBI 236328 and ICICI 96379, 2018 for HDFC 88297); pre5..pre2 = 1{rel_time = -5..-2}, pre1 zeroed (omitted reference), post0..post4 = 1{rel_time = 0..4}; all zero for never-designated banks. code_figures.do lines 130-135: eventstudyinteract new_default pre5 pre4 pre3 pre2 post0 post1 post2 post3 post4, absorb(firmcode##year creditorcode##firmcode) cohort(first_treat) control_cohort(never_treat) -> article Figure 1(b) (the package calls it Figure 2). Years 2010-2020 are consecutive, so rel = t - g = rel_time. Treated rows at rel <= -6 (cohort 2016 in 2010; cohort 2018 in 2010-2012) have all indicators zero and are pooled with the reference, both in the IW regression and in its TWFE counterpart (article eq. (2), Figure 1(a)), hence uncovered = \"ref\"; every post-period row is covered (max rel 4 for 2016, 2 for 2018).",
+    "verified": "fixest reproduces the nine published Sun-Abraham IW coefficients (Figure 1(b) = replication.log lines 6510-6518) with max abs diff 4.3e-08: cohort-by-bin interactions built from es_assign (2016 x 9 bins, 2018 x 7 non-empty bins), firmcode^year + pair FE, singletons dropped (N 234,609 as in the log), IW weights = cohort shares among all 93,975 treated-cohort rows at each relative time (eventstudyinteract's obs = 93,975). es_assign bins equal the authors' pre5..post4 dummies on all 356,787 rows; 19,445 treated rows sit in the reference (rel -1: 9,380; rel <= -6: 10,065). TWFE with the same indicators and no controls: post mean 0.0148737, pre mean -0.0025328 (identical with singletons kept). scratchpad/meta3/mnsc.2025.03238/verify_sa.R/.log"
+  },
+  "preferred": false,
+  "in_abstract_intro": true,
+  "replication_status": "exact (Nov 2 audit: published Figure 1(b) digitized = authors' replication.log eventstudyinteract output, max residual 3.1e-05; fixest IW with the event_structure reproduces the nine coefficients, max abs diff 4.3e-08)",
+  "notes": "Article Figure 1(b) (PDF p. 9; the package's code_figures.do calls it Figure 2): Sun-Abraham interaction-weighted event study of new_default (1 if the firm defaults on the bank in the year) on DSIB designation, eventstudyinteract new_default pre5-pre2 post0-post4, absorb(firmcode##year creditorcode##firmcode), cohort(first_treat), control_cohort(never_treat), code_figures.do lines 130-135; conventional (unclustered) SEs. Data: Intermediate dta/MCA_Default_Yearly v2.dta, 2010-2020; prepared copy ~/did_packages/_work/mnsc.2025.03238/t4_panel.rds (356,787 bank-firm-years, 55,966 pairs = unit pair_id, 46 banks, 21,101 firms; g_bank = 2016 for SBI 236328 and ICICI 96379, 2018 for HDFC 88297, NA for 43 never-designated banks; sib_ind = 1[year >= g_bank] on every row; no switch-offs). xt_vars firmcode reproduces the firm-by-year FE; cluster creditorcode (the authors' IW is unclustered; Figure 1(a) and Table 4 cluster by bank). Two cohorts with 3 treated banks; 73.7% of rows never treated; no pre-sample adopters (no adoption_var). 2,678 treated-bank pairs are first observed at or after designation (rel >= 0 only); they enter with their true rel. Event structure: single-year bins -5..-2 and 0..4, reference rel -1 with rel <= -6 pooled into it (authors' dummies are zero there), see event_structure. WHY THIS SPEC WAS A PLACEHOLDER (Nov 1): the replication agent wrote the JSON and ran run_spec.R (~/did_packages/_work/mnsc.2025.03238/run_F2_SA_dynamic.log) but never filled notes/status; that run used the legacy binning (rel <= -6 as its own endpoint bin, so TWFE post 0.0972 SD differs from the authors' pooled reference), BJS failed (did2s first stage with firm-by-year FE tried a 354.8 GiB dense coercion: bjs_note 'vector memory limit'), and CSA ignored the firm-by-year FE (xt) and used composition-fixed cells on the unbalanced pair panel. The same BJS failure affects T4_c1_new_default_static. Status fixed Nov 2 (meta3-B). OPEN ISSUES for the lead: (1) eligibility: PROTOCOL admits Sun-Abraham only when it coincides with CSA; here the IW pools rel <= -6 with the reference and conditions on firm-by-year FE, which did::att_gt cannot (pipeline CSA drops xt), so the pipeline's DiD-averaging estimate will not equal the published IW path; (2) BJS needs a memory-feasible implementation with 21,101 x 11 firm-year FE; (3) only 3 treated clusters: the leverage screen fails (T4: G_eff 5.83, L_max 0.31). Article text now in the project (data/text/mnsc/mnsc.2025.03238.txt); the aggregate SA ATTs in code_figures.do (0.0139235, 0.019098) are not reported in the article. in_abstract_intro set true (Nov 2): the introduction states \"An event-study analysis shows no evidence of pretrends\" (text line 138), which refers to Figure 1 (panels a and b); judgment call, the sentence does not name the estimator.",
+  "published_estimator": "sun_abraham_iw_event_post_avg_e0_4 (eventstudyinteract, never-treated control cohort, firm-by-year and bank-firm FE)",
+  "data_provenance": "real",
+  "csa_authors_settings": {
+    "estimator": "Sun-Abraham IW (Stata eventstudyinteract), not Callaway-Sant'Anna",
+    "control_group": "never",
+    "reference": "rel -1 plus rel <= -6 (excluded relative times pooled)",
+    "fe": "firmcode##year and creditorcode##firmcode (firm-by-year FE not representable in did::att_gt)",
+    "weights": "IW: cohort shares among treated-cohort rows at each relative time",
+    "se": "conventional (no vce option)",
+    "drop_e_above": null,
+    "balance_e": null
+  },
+  "in_abstract_intro_verified": true
+}

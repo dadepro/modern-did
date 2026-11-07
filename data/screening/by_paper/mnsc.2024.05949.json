@@ -1,0 +1,230 @@
+{
+ "suffix": "mnsc.2024.05949",
+ "doi": "10.1287/mnsc.2024.05949",
+ "journal": "mnsc",
+ "title": "Creditor Rights, Bank-Borrower Relationships and Bank Power",
+ "year": 2025,
+ "authors": "Marco Ghitti; Florencio Lopez-de-Silanes; Rafael Almeida da Matta",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.05949",
+ "eligible": true,
+ "eligible_design": true,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Table III rows A1-A2 report Callaway-Sant'Anna estimates (csdid, no covariates) on a firm-quarter panel with a binary absorbing treatment switching on at firm-specific quarters (first quarter the firm's rating exceeds the median), with never-treated (A1) or not-yet-treated (A2) controls and multiple cohorts (2010q1-2014q2). PROTOCOL Sec. 2 makes explicitly reported CSA estimates of such a design eligible; a TWFE counterpart (Id_Debtor + Quarter FE) can be constructed. Caveat: this 'treatment' is the firm's risk status, used by the authors as a robustness device, whereas the headline design (High Risk x continuous creditor-rights index with controls) is ineligible.",
+ "design_notes": "Universe of corporate credits of a large Italian bank, 2009q4-2014q2, credit-level and firm-level quarterly panels (not shipped). Main specs: xtreg y credit controls firm controls Exp2_CC Exp2_CRI i.Quarter i.Industry i.Sisba_Family i.Segment_Size i.Prov, fe i(Id_Debtor) vce(cluster Id_Debtor). Table III robustness rows: A1/A2 csdid with gvar treated; A3 firm-level baseline with controls; B-I alternative treatment definitions (High Risk x Reform 2010 dummies), macro interactions, clustering, subsamples. Figures: csdid event-study plots.",
+ "estimators_reported": [
+  "TWFE with continuous treatment intensity and controls (xtreg fe)",
+  "Callaway-Sant'Anna csdid (Table III A1-A2; figures)",
+  "reghdfe with two-way clustering (Table III F)"
+ ],
+ "main_or_robustness": "robustness (CSA rows in main-text Table III; main design is continuous-intensity)",
+ "n_eligible_specs": 5,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid, dripw; never-treated and not-yet-treated controls)"
+ ],
+ "preferred_spec_ids": [
+  "mnsc.2024.05949_T3_A1_A2_csdid_granted"
+ ],
+ "published_estimates": [
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_granted",
+   "location": "Table III row A1 (never treated)",
+   "coef_se": "-0.5858 (0.0090), z=-64.9",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_granted",
+   "location": "Table III row A2 (not yet treated)",
+   "coef_se": "-0.5608 (0.0090)",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_IR_Spread",
+   "location": "Table III row A1 (never treated)",
+   "coef_se": "0.5130 (0.5869), z=0.87",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_IR_Spread",
+   "location": "Table III row A2 (not yet treated)",
+   "coef_se": "0.0737 (0.5796)",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_RR",
+   "location": "Table III row A1 (never treated)",
+   "coef_se": "-5.8252 (0.0626), z=-93.1",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_RR",
+   "location": "Table III row A2 (not yet treated)",
+   "coef_se": "-5.9812 (0.0617)",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_UTP_Off",
+   "location": "Table III row A1 (never treated)",
+   "coef_se": "0.0386 (0.0007), z=54.7",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_UTP_Off",
+   "location": "Table III row A2 (not yet treated)",
+   "coef_se": "0.0375 (0.0007)",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_Legal_Dpmt",
+   "location": "Table III row A1 (never treated)",
+   "coef_se": "0.0925 (0.0010), z=95.4",
+   "source": "log_RobustnessTables.smcl estat simple"
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_Legal_Dpmt",
+   "location": "Table III row A2 (not yet treated)",
+   "coef_se": "0.0906 (0.0010)",
+   "source": "log_RobustnessTables.smcl estat simple"
+  }
+ ],
+ "specs": [
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_granted",
+   "eligible": true,
+   "code_file": "robustness_reg_replication.do",
+   "code_line": "29-45 (A1, never-treated) and 52-68 (A2, notyet)",
+   "outcome": "granted",
+   "outcome_label": "credit granted (amount)",
+   "treatment_var": "treated (csdid gvar)",
+   "treatment_definition": "treated = quarter in which the firm first becomes High Risk (bank internal rating above the median), 0 before and for firms never high-risk (comment in robustness_reg_replication.do line 71: 'dummy equal to 1 from the first quarter when a firm is treated (i.e High Risk > median) and 0 before'); absorbing by construction. Cohorts span Stata quarters 200-217 (2010q1-2014q2) per the log (groups g200..g214 listed).",
+   "unit_var": "Id_Debtor (borrowing firm)",
+   "time_var": "Quarter (2009q4-2014q2, Stata quarterly date 199-217)",
+   "fe": "Callaway-Sant'Anna group-time ATTs (csdid default dripw), no covariates; TWFE counterpart would use Id_Debtor + Quarter FE",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "csdid default (Id_Debtor)",
+   "sample_condition": "credit_firm_data_CS.dta: firm-quarter panel aggregated from credit-level data of one large Italian bank; unbalanced panel (csdid uses pair-balanced observations)",
+   "static_or_event": "static (estat simple; dynamic ATTs also printed in log)",
+   "data_file": "credit_firm_data_CS.dta (NOT shipped)",
+   "reported_location": "Table III, rows A1 (never-treated control) and A2 (not-yet-treated control)",
+   "notes": "csdid y, ivar(Id_Debtor) time(Quarter) gvar(treated) [notyet]; estat simple. Reported as a robustness row of the main-text Table III; the paper's headline design (Tables II, IV-VI) is High Risk x CRI (continuous creditor-rights index) with controls and is ineligible. Treatment here is an endogenous firm state (becoming high-risk), not a policy; lead to judge whether this counts as the paper's DiD design."
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_IR_Spread",
+   "eligible": true,
+   "code_file": "robustness_reg_replication.do",
+   "code_line": "29-45 (A1, never-treated) and 52-68 (A2, notyet)",
+   "outcome": "IR_Spread",
+   "outcome_label": "interest rate spread",
+   "treatment_var": "treated (csdid gvar)",
+   "treatment_definition": "treated = quarter in which the firm first becomes High Risk (bank internal rating above the median), 0 before and for firms never high-risk (comment in robustness_reg_replication.do line 71: 'dummy equal to 1 from the first quarter when a firm is treated (i.e High Risk > median) and 0 before'); absorbing by construction. Cohorts span Stata quarters 200-217 (2010q1-2014q2) per the log (groups g200..g214 listed).",
+   "unit_var": "Id_Debtor (borrowing firm)",
+   "time_var": "Quarter (2009q4-2014q2, Stata quarterly date 199-217)",
+   "fe": "Callaway-Sant'Anna group-time ATTs (csdid default dripw), no covariates; TWFE counterpart would use Id_Debtor + Quarter FE",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "csdid default (Id_Debtor)",
+   "sample_condition": "credit_firm_data_CS.dta: firm-quarter panel aggregated from credit-level data of one large Italian bank; unbalanced panel (csdid uses pair-balanced observations)",
+   "static_or_event": "static (estat simple; dynamic ATTs also printed in log)",
+   "data_file": "credit_firm_data_CS.dta (NOT shipped)",
+   "reported_location": "Table III, rows A1 (never-treated control) and A2 (not-yet-treated control)",
+   "notes": "csdid y, ivar(Id_Debtor) time(Quarter) gvar(treated) [notyet]; estat simple. Reported as a robustness row of the main-text Table III; the paper's headline design (Tables II, IV-VI) is High Risk x CRI (continuous creditor-rights index) with controls and is ineligible. Treatment here is an endogenous firm state (becoming high-risk), not a policy; lead to judge whether this counts as the paper's DiD design."
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_RR",
+   "eligible": true,
+   "code_file": "robustness_reg_replication.do",
+   "code_line": "29-45 (A1, never-treated) and 52-68 (A2, notyet)",
+   "outcome": "RR",
+   "outcome_label": "expected recovery rate",
+   "treatment_var": "treated (csdid gvar)",
+   "treatment_definition": "treated = quarter in which the firm first becomes High Risk (bank internal rating above the median), 0 before and for firms never high-risk (comment in robustness_reg_replication.do line 71: 'dummy equal to 1 from the first quarter when a firm is treated (i.e High Risk > median) and 0 before'); absorbing by construction. Cohorts span Stata quarters 200-217 (2010q1-2014q2) per the log (groups g200..g214 listed).",
+   "unit_var": "Id_Debtor (borrowing firm)",
+   "time_var": "Quarter (2009q4-2014q2, Stata quarterly date 199-217)",
+   "fe": "Callaway-Sant'Anna group-time ATTs (csdid default dripw), no covariates; TWFE counterpart would use Id_Debtor + Quarter FE",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "csdid default (Id_Debtor)",
+   "sample_condition": "credit_firm_data_CS.dta: firm-quarter panel aggregated from credit-level data of one large Italian bank; unbalanced panel (csdid uses pair-balanced observations)",
+   "static_or_event": "static (estat simple; dynamic ATTs also printed in log)",
+   "data_file": "credit_firm_data_CS.dta (NOT shipped)",
+   "reported_location": "Table III, rows A1 (never-treated control) and A2 (not-yet-treated control)",
+   "notes": "csdid y, ivar(Id_Debtor) time(Quarter) gvar(treated) [notyet]; estat simple. Reported as a robustness row of the main-text Table III; the paper's headline design (Tables II, IV-VI) is High Risk x CRI (continuous creditor-rights index) with controls and is ineligible. Treatment here is an endogenous firm state (becoming high-risk), not a policy; lead to judge whether this counts as the paper's DiD design."
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_UTP_Off",
+   "eligible": true,
+   "code_file": "robustness_reg_replication.do",
+   "code_line": "29-45 (A1, never-treated) and 52-68 (A2, notyet)",
+   "outcome": "UTP_Off",
+   "outcome_label": "unlikely-to-pay / credit suspension indicator",
+   "treatment_var": "treated (csdid gvar)",
+   "treatment_definition": "treated = quarter in which the firm first becomes High Risk (bank internal rating above the median), 0 before and for firms never high-risk (comment in robustness_reg_replication.do line 71: 'dummy equal to 1 from the first quarter when a firm is treated (i.e High Risk > median) and 0 before'); absorbing by construction. Cohorts span Stata quarters 200-217 (2010q1-2014q2) per the log (groups g200..g214 listed).",
+   "unit_var": "Id_Debtor (borrowing firm)",
+   "time_var": "Quarter (2009q4-2014q2, Stata quarterly date 199-217)",
+   "fe": "Callaway-Sant'Anna group-time ATTs (csdid default dripw), no covariates; TWFE counterpart would use Id_Debtor + Quarter FE",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "csdid default (Id_Debtor)",
+   "sample_condition": "credit_firm_data_CS.dta: firm-quarter panel aggregated from credit-level data of one large Italian bank; unbalanced panel (csdid uses pair-balanced observations)",
+   "static_or_event": "static (estat simple; dynamic ATTs also printed in log)",
+   "data_file": "credit_firm_data_CS.dta (NOT shipped)",
+   "reported_location": "Table III, rows A1 (never-treated control) and A2 (not-yet-treated control)",
+   "notes": "csdid y, ivar(Id_Debtor) time(Quarter) gvar(treated) [notyet]; estat simple. Reported as a robustness row of the main-text Table III; the paper's headline design (Tables II, IV-VI) is High Risk x CRI (continuous creditor-rights index) with controls and is ineligible. Treatment here is an endogenous firm state (becoming high-risk), not a policy; lead to judge whether this counts as the paper's DiD design."
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T3_A1_A2_csdid_Legal_Dpmt",
+   "eligible": true,
+   "code_file": "robustness_reg_replication.do",
+   "code_line": "29-45 (A1, never-treated) and 52-68 (A2, notyet)",
+   "outcome": "Legal_Dpmt",
+   "outcome_label": "transfer to legal department indicator",
+   "treatment_var": "treated (csdid gvar)",
+   "treatment_definition": "treated = quarter in which the firm first becomes High Risk (bank internal rating above the median), 0 before and for firms never high-risk (comment in robustness_reg_replication.do line 71: 'dummy equal to 1 from the first quarter when a firm is treated (i.e High Risk > median) and 0 before'); absorbing by construction. Cohorts span Stata quarters 200-217 (2010q1-2014q2) per the log (groups g200..g214 listed).",
+   "unit_var": "Id_Debtor (borrowing firm)",
+   "time_var": "Quarter (2009q4-2014q2, Stata quarterly date 199-217)",
+   "fe": "Callaway-Sant'Anna group-time ATTs (csdid default dripw), no covariates; TWFE counterpart would use Id_Debtor + Quarter FE",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "csdid default (Id_Debtor)",
+   "sample_condition": "credit_firm_data_CS.dta: firm-quarter panel aggregated from credit-level data of one large Italian bank; unbalanced panel (csdid uses pair-balanced observations)",
+   "static_or_event": "static (estat simple; dynamic ATTs also printed in log)",
+   "data_file": "credit_firm_data_CS.dta (NOT shipped)",
+   "reported_location": "Table III, rows A1 (never-treated control) and A2 (not-yet-treated control)",
+   "notes": "csdid y, ivar(Id_Debtor) time(Quarter) gvar(treated) [notyet]; estat simple. Reported as a robustness row of the main-text Table III; the paper's headline design (Tables II, IV-VI) is High Risk x CRI (continuous creditor-rights index) with controls and is ineligible. Treatment here is an endogenous firm state (becoming high-risk), not a policy; lead to judge whether this counts as the paper's DiD design."
+  },
+  {
+   "spec_id": "mnsc.2024.05949_T2_main_HighRisk_x_CRI",
+   "eligible": false,
+   "exclusion_reason": "continuous treatment intensity (Exp2_CRI = High Risk x creditor rights index; Exp2_CC) with many time-varying credit and firm controls and multiple additive FE (Industry, Sisba_Family, Segment_Size, Prov)",
+   "code_file": "main_reg_replication.do",
+   "code_line": "72-96 (Table II Panel A)",
+   "outcome": "granted, IR_Spread, RR, UTP_Off, Legal_Dpmt",
+   "treatment_var": "Exp2_CC Exp2_CRI",
+   "unit_var": "Id_Debtor",
+   "time_var": "Quarter",
+   "fe": "Id_Debtor (xtreg fe) + i.Quarter + i.Industry i.Sisba_Family i.Segment_Size i.Prov",
+   "controls": "Mortgage Pledge Confidi Personal Other Legal_Dpmt UTP Restr PastDue New_Credit MT LT rev assets Leverage EBITDA_Margin BDebt_Asset",
+   "cluster": "Id_Debtor",
+   "static_or_event": "static",
+   "reported_location": "Tables II, IV, V, VI; Table III rows A3-I"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "No data shipped (bank NDA); log_MainTables.smcl and log_RobustnessTables.smcl contain full output; data dictionary PDF"
+ ],
+ "data_provenance": "real",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 2,
+ "screener_notes": "Screened from package only (readme PDF, main_reg_replication.do, robustness_reg_replication.do, logs). Treatment variable 'treated' is defined only in a code comment; the construction script is not shipped.",
+ "n_adoption_cohorts_note": "Quarterly cohorts 2010q1-2014q2 (groups g200, g210, g214 among others visible in the log); exact count not recoverable without data.",
+ "software_notes": "Stata SE 15.1 (17.0 for Table I); xtreg, reghdfe, csdid, estout",
+ "priority_note": "Eligible CSA rows but data unavailable; estimates recoverable from logs."
+}

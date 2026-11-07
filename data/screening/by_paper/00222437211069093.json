@@ -1,0 +1,28 @@
+{
+  "suffix": "00222437211069093",
+  "doi": "10.1177/00222437211069093",
+  "journal": "jmr",
+  "title": "The Bulletproof Glass Effect: Unintended Consequences of Privacy Notices",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences or event-study design. Content analysis, manager survey, one field study and five online experiments.",
+  "design_notes": "Seven studies: content analysis of privacy notices, manager survey, a field study and online experiments comparing privacy-notice conditions. No panel, no staggered adoption.",
+  "estimators_reported": [
+    "randomized experiments (between-subjects comparisons)"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Materials on OSF (view-only link in text) but irrelevant because no eligible design."
+}

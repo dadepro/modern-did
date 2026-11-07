@@ -1,0 +1,60 @@
+{
+ "suffix": "mksc.2024.0964",
+ "doi": "10.1287/mksc.2024.0964",
+ "journal": "mksc",
+ "title": "The Challenges of Deploying an Algorithmic Pricing Tool: Evidence from Airbnb",
+ "authors": "Mohsen Foroughifar; Nitin Mehta",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mksc/mksc.2024.0964",
+ "regressions_path": "./data/packages/mksc.2024.0964_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Property-day Airbnb panel (Austin, LA, SF, Seattle) with property (propid) and calendar-day (time) FE, in which hosts start using Smart Pricing (SP) at host-specific dates after the SP launch (adopt_date varies; Figure 1 right) and switch between Base, Custom and Smart pricing day by day. Every reported reduced-form column violates the rules: Table 2 (reghdfe price/rev 1.custom#i.month [pw=iweight_CP], absorb(propid time)) and Table 3 (1.base#i.month 1.custom#i.month [pw=ipw], SP as the reference) use inverse-propensity weights from logit/mlogit on host covariates, interact the pricing-method indicators with calendar month (12 treatment-by-month coefficients), and Table 3 has a multi-valued (three-method) treatment that switches on and off daily. Figure 2 (xtreg smart_mean i.months_since_adopt i.ym, random effects by default) uses adopters' post-adoption months only. Appendix Tables A10-A11 use a single common post-launch date with propid, month and weekend FE. Not a 5c case (no time-varying controls; violations are IPW, treatment x month interactions and multi-valued treatment).",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "No qualifying specification: IPW weights, treatment-by-calendar-month interactions and a multi-valued, switching pricing-method treatment in every reduced-form column; the remaining analysis is structural (MATLAB). Data are noised/de-identified and are not in the package (external Dropbox link).",
+ "design_notes": "Stata reduced_form.do (Tables 1-3, Figures 1-2, Appendix A4-A11, Figures A1-A2), MATLAB structural demand/supply and counterfactuals, Python booking-probability model, R Table A9. Data file referenced: ../data/rf_analysis_anonymized.dta (4,574,430 property-day rows x 37 columns per README_data_variable.docx); variables include custom, smart, base, price_method, adopt_date (first checkin_date using SP), checkin_date (days relative to SP launch). Cluster propid. Figure A2 pre-trend plots add lead indicators F2-F6 for custom/SP adopters on top of the IPW treatment-by-month model.",
+ "estimators_reported": [
+  "twfe_ipw_treatment_by_month",
+  "random_effects_event_time_adopters_only",
+  "structural"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 2 cols 1-2 (Austin, CP vs BP, pre-SP)",
+   "reason": "IPW (logit pscore) weights; custom x calendar-month interactions; daily switching treatment"
+  },
+  {
+   "location": "Table 3 cols 1-2 (Austin, SP vs CP vs BP)",
+   "reason": "IPW (mlogit) weights; multi-valued treatment (base, custom vs smart) x month interactions"
+  },
+  {
+   "location": "Figure 2",
+   "reason": "xtreg random effects on months since SP adoption, adopters' post-adoption periods only"
+  },
+  {
+   "location": "Appendix Tables A6-A7, A10-A11; Figures A1-A2; city tables",
+   "reason": "appendix; IPW, single common post date (SP launch) with month/weekend FE, or sensitivity analyses"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "No data in the package directory; Dropbox_link_to_the_datasets_used_in_the_paper(1).docx points to an external Data-Mohsen-JMP.zip. README: underlying Airbnb/AirDNA data are proprietary and listing-level data have been noised/de-identified.",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Noised/de-identified listing-level data (fuzzed), hosted outside the package.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package code, READMEs and OpenAlex abstract (no article text). Adoption timing could not be checked in data (not shipped). near_miss set because a staggered SP adoption with unit and day FE exists; lead may prefer near_miss = false given multiple non-control violations and switching daily treatment. Same setting as mksc.2021.1295 (Airbnb Smart Pricing, near miss)."
+}

@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2019.1179",
+ "doi": "10.1287/mksc.2019.1179",
+ "journal": "mksc",
+ "title": "Opinion Leaders and Product Variety",
+ "authors": "Dmitri Kuksov; Chenxi Liao",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1179",
+ "regressions_path": "./data/packages/mksc.2019.1179_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (analytical model of opinion leaders and product variety; small MTurk survey analyzed with ANOVA)",
+ "ineligible_specs": [
+  {
+   "spec_id": "survey_anova",
+   "reported_location": "survey results",
+   "exclusion_reason": "MTurk survey with 4 conditions analyzed by ANOVA; theory paper"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Game-theoretic model with a supporting MTurk survey (ANOVA across four conditions).",
+ "design_notes": "Package holds only Survey Data.xlsx, Survey Questions.docx and procedure.txt; no regression code.",
+ "estimators_reported": [
+  "ANOVA"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "data disclosure/Survey Data.xlsx"
+ ],
+ "data_files_note": "Survey data shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Survey responses as collected.",
+ "software": "other",
+ "software_notes": "no code shipped (ANOVA)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

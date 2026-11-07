@@ -1,0 +1,55 @@
+{
+ "suffix": "mnsc.2018.3097",
+ "doi": "10.1287/mnsc.2018.3097",
+ "journal": "mnsc",
+ "title": "",
+ "authors": "",
+ "year": null,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mnsc/mnsc.2018.3097",
+ "regressions_path": "./data/packages/mnsc.2018.3097_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Laboratory/online experiments (Studies 1a, 1b, 2, 3; N = 94-242 participants) on emotional reactions to outcomes relative to multiple goals (English/Math grades, lunges/pushups). StudiesDescription.docx gives SAS proc mixed (REML, unstructured repeated-measures covariance) models of emotion ratings on randomized conditions and contrasts. No observational panel, no treatment timing, no DiD.",
+ "design_notes": "Title and authors are not in the OpenAlex frame or candidates.csv; the package contains only Results_Study1a/1b/2/3.xlsx and StudiesDescription.docx.",
+ "estimators_reported": [
+  "mixed_model_reml_experiment"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Studies 1a-3",
+   "reason": "randomized within/between-subject experiments, mixed models; not DiD"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Results_Study1a.xlsx",
+  "Results_Study1b.xlsx",
+  "Results_Study2.xlsx",
+  "Results_Study3.xlsx"
+ ],
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data shipped as collected.",
+ "software": "other",
+ "software_note": "SAS (proc mixed syntax in StudiesDescription.docx); no code files",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Screened from package only (no title, abstract, text or PDF available). Not a near-miss."
+}

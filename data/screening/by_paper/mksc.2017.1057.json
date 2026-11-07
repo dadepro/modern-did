@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2017.1057",
+ "doi": "10.1287/mksc.2017.1057",
+ "journal": "mksc",
+ "title": "Some Customers Would Rather Leave Without Saying Goodbye",
+ "authors": "Eva Ascarza; Oded Netzer; Bruce G. S. Hardie",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2017.1057",
+ "regressions_path": "./data/packages/mksc.2017.1057_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian hidden-state model of silent vs. overt customer churn, MCMC)",
+ "ineligible_specs": [
+  {
+   "spec_id": "churn_mcmc",
+   "reported_location": "estimation tables",
+   "exclusion_reason": "Bayesian latent-attrition model; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian latent-attrition model distinguishing silent and overt churn.",
+ "design_notes": "MATLAB run_model.m with like_function.m (MCMC).",
+ "estimators_reported": [
+  "Bayesian latent attrition model (MCMC)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "replication_data_codes/full_data.mat"
+ ],
+ "data_files_note": "_read_me: NDA; a random sample of noisy observations (added shock) is provided as an example.",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Random sample with added noise (fuzzed).",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract missing in data/frame; design judged from package code/data."
+}

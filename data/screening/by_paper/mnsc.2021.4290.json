@@ -1,0 +1,64 @@
+{
+ "suffix": "mnsc.2021.4290",
+ "doi": "10.1287/mnsc.2021.4290",
+ "journal": "mnsc",
+ "title": "Proprietary Costs and Corporate Lobbying Against Changes in Mandatory Disclosure",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_004",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "SFAS 131 is a single mandate effective for fiscal years beginning after 15 Dec 1997; in LobbyingFirm_panel.dta the adoption year (adoption == 0) is fyear 1998 for 105 firms and fyear 1999 for 17 firms, i.e. calendar timing differs only by fiscal-year end, with fyear FE. Under the PROTOCOL 6 ruling for mnsc.2022.4515 this is a single-policy design, not staggered adoption. The treatment is chg x post (segment-changing lobbying firms vs non-changing firms that also adopt), and every reported column also includes time-varying controls (size, leverage, con4, avginv, beta, sale_growth); Tables 5-7 part 2 add robust-regression (robreg mm) weights.",
+ "design_notes": "Firm-year panel 1992-2000 of 122 firms that lobbied against SFAS 131 (77 change firms, 45 non-change). Table 4: reghdfe roa on chg x pre/post event indicators + controls, absorb(gvkey fyear), cluster sic2. Table 5 Panels C-D: non-lobbying firms by lobbying-industry indicator with robreg weights. Tables 6-7: chg_large_post / chg_small_post intensity split; sales growth, margin, turnover outcomes. Table 2: probit of lobbying.",
+ "estimators_reported": [
+  "twfe_static with controls",
+  "twfe event study (pre/post bins) with controls",
+  "robust-regression weighted TWFE",
+  "probit"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "2 fiscal-year cohorts (1998, 1999) of one mandate; not counted as staggered",
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "T4_roa_chg_post_eventbins",
+   "eligible": false,
+   "exclusion_reason": "single mandate with timing differing only by fiscal-year end (single-policy design); time-varying controls in every column",
+   "code_file": "replication_package_MS-ACC-20-00093/Tables 3_4_6(1)_7(1).do",
+   "code_line": 58,
+   "outcome": "roa",
+   "treatment_var": "chg x post (chg_pre6..chg_post)",
+   "unit_var": "gvkey_num",
+   "time_var": "fyear",
+   "reported_location": "Table 4"
+  },
+  {
+   "spec_id": "T5CD_weighted",
+   "eligible": false,
+   "exclusion_reason": "single-policy design; time-varying controls; robreg mm weights",
+   "code_file": "replication_package_MS-ACC-20-00093/Tables 5CD_6(2)_7(2).do",
+   "code_line": 52,
+   "reported_location": "Table 5 Panels C-D, Tables 6-7 part 2"
+  }
+ ],
+ "data_access": "public",
+ "data_provenance": "original",
+ "data_provenance_note": "Compustat-derived firm-year panels and hand-collected lobbying data shipped as .dta.",
+ "data_files_present": true,
+ "data_files": [
+  "LobbyingFirm.dta",
+  "LobbyingFirm_panel.dta",
+  "NonLobbyingFirm.dta",
+  "NonLobbyingFirm_panel.dta",
+  "FirmYear_comp_panel.dta"
+ ],
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Fails on design (single-mandate, fiscal-year-end timing, as mnsc.2022.4515), so not a near-miss even though controls are the other violation. Screened from package only."
+}

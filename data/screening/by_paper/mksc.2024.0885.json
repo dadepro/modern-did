@@ -1,0 +1,63 @@
+{
+  "suffix": "mksc.2024.0885",
+  "doi": "10.1287/mksc.2024.0885",
+  "journal": "mksc",
+  "title": "Consumer Impatience, Technological Innovation, and Market Structure",
+  "year": 2026,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No DiD or event-study design. The paper estimates a structural demand model for pizza delivery (fn_estimation.py) with an IV first stage for price and delivery time (feols(del ~ mgprice + deltime | index + yearweek) and IV variants in fn_iv_.R, continuous regressors, pizzeria and year-week FE), then simulates counterfactual delivery-time reductions and a premium-delivery policy. The 'introduction of a technology that reduces delivery time' in the abstract is a counterfactual simulation, not an observed staggered adoption.",
+  "design_notes": "Online pizza-delivery order data (anonymized). code_result/fn_iv_.R: Table 3 and A.2-A.3 IV/OLS with pizzeria (index) and yearweek FE, two-way clustering; code_estimation/fn_estimation.py: demand estimation; fn_fe_.R: t-tests of pizzeria FE; counterfactual R scripts. No treatment indicator anywhere in the code (grep for treat/did/event found nothing).",
+  "estimators_reported": [
+    "structural_demand_model",
+    "iv_first_stage_feols",
+    "counterfactual_simulation"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "T3_iv_first_stage",
+      "eligible": false,
+      "exclusion_reason": "continuous regressors, IV; not a DiD",
+      "code_file": "replication_code/code_result/fn_iv_.R",
+      "code_line": 28,
+      "outcome": "del",
+      "treatment_var": "mgprice, deltime (continuous)",
+      "treatment_definition": "price and delivery time",
+      "unit_var": "index (pizzeria)",
+      "time_var": "yearweek",
+      "fe": "factor(index) + factor(yearweek)",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "index + yearweek (two-way)",
+      "sample_condition": "df_reg",
+      "static_or_event": "static",
+      "data_file": "replication_code/data/data_result/df_reg.csv",
+      "reported_location": "Table 3 / A.2-A.3",
+      "notes": "fixest::feols"
+    }
+  ],
+  "data_access": "partial",
+  "data_files_present": true,
+  "data_files": [
+    "replication_code/data/data_estimation/*.csv (choice.csv, X_mat.csv, df_orderinfo.csv, df_gapinfo.csv, df_logs.csv)",
+    "replication_code/data/data_result/*.csv (df_reg.csv, pizzlist.csv, estimation draws, counterfactual outputs)"
+  ],
+  "data_files_note": "readme.txt: 'Provided for reference. Data anonymized'.",
+  "software": "r",
+  "software_notes": "R (fixest, dplyr) and Python (demand estimation, notebooks).",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible: structural/IV design, no staggered adoption.",
+  "screener_notes": "Screened from package only (readme.txt, fn_iv_.R, fn_fe_.R, grep of all R/py/ipynb)."
+}

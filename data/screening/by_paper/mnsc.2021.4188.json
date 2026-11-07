@@ -1,0 +1,62 @@
+{
+ "suffix": "mnsc.2021.4188",
+ "doi": "10.1287/mnsc.2021.4188",
+ "journal": "mnsc",
+ "title": "Credit Stimulus, Executive Ownership, and Firm Leverage",
+ "authors": "Rajdeep Chakraborti; Sandeep Dahiya; Lei Ge; Pedro Gete",
+ "year": 2021,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.4188",
+ "regressions_path": "./data/packages/mnsc.2021.4188_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "main (continuous-exposure DiD around the 2009 Chinese stimulus)",
+ "ineligible_specs": [
+  {
+   "spec_id": "main_tables",
+   "reported_location": "Tables 2 and 5-7 (book/market leverage on executive ownership x Credit Push/post2009)",
+   "exclusion_reason": "single common date (post2009 for all firms); continuous treatment intensity (per_execuStock, top25_share) or ownership-quartile dummies; time-varying firm controls ($x_list)"
+  },
+  {
+   "spec_id": "T3_T4_quartiles",
+   "reported_location": "Tables 3-4 (ownership quartile dummies x Credit Push)",
+   "exclusion_reason": "time-invariant 2008 ownership quartiles x common post date; controls"
+  },
+  {
+   "spec_id": "year_interactions",
+   "reported_location": "dynamic version (ownership x year9..year15)",
+   "exclusion_reason": "continuous exposure x year around one common date; controls"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "Not staggered. The shock is China's 2009 credit stimulus, common to all firms (post2009). Treatment intensity is continuous executive stock ownership (or its quartiles/top-25 share), and every column includes time-varying firm controls; some add industry-by-year FE. No binary staggered adoption.",
+ "design_notes": "CDGG CHINA STIMULUS MASTER DO.do: reg leverage c.per_execuStock##c.post2009 $x_list [i.year_ind_19], firm-level CSMAR panel.",
+ "estimators_reported": [
+  "continuous_exposure_did_single_date (OLS with controls)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme: DATA1-DATA6 built from CSMAR, Wind, Bloomberg and CBIRC (paid subscriptions) and not shared; package ships do-files, log, variable dictionary and a data-access PDF.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "",
+ "software": "stata",
+ "software_notes": "",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2021.4188.txt). Clear exclusion on design and data."
+}

@@ -1,0 +1,66 @@
+{
+ "suffix": "mnsc.2021.03681",
+ "doi": "10.1287/mnsc.2021.03681",
+ "journal": "mnsc",
+ "title": "Consequences of Performance-Enhancing Misconduct: Insights from Professional Road Cycling, 2000–2010",
+ "authors": "Christopher B. Yenkey; Donald A. Palmer",
+ "year": 2025,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.03681",
+ "regressions_path": "./data/packages/mnsc.2021.03681_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "not applicable (panel logit of career interruption)",
+ "ineligible_specs": [
+  {
+   "spec_id": "T4_models1_4",
+   "reported_location": "Table 4, Models 1-4 (rider's own doping involvement)",
+   "exclusion_reason": "random-effects panel logit (xtlogit, odds ratios) of yearly career interruption on doping-incident indicators/categories with many time-varying controls; nonlinear, no unit FE"
+  },
+  {
+   "spec_id": "T5_models5_7",
+   "reported_location": "Table 5, Models 5-7 (teammates' doping)",
+   "exclusion_reason": "count or categorical teammate-doping exposure in RE logit with controls"
+  },
+  {
+   "spec_id": "T6_models8_10",
+   "reported_location": "Table 6, Models 8-10 (managers)",
+   "exclusion_reason": "RE logit with counts of riders' doping incidents and controls"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "Not a DiD. Rider-year and manager-year panels (2000-2010) model the probability of career interruption (stopout) with random-effects logit on contemporaneous doping-incident indicators, counts and categories plus performance, age, team-tier and tenure controls and year FE. Exposure is not an absorbing staggered adoption and the models are nonlinear.",
+ "design_notes": "YenkeyPalmer_code_for_replication_text_file.txt: xtlogit stopout NRDopeIncidentAllDummy ... i.Year i.teamnationnumber, or vce(cluster RiderID); appendix Table A5 uses conditional FE logit.",
+ "estimators_reported": [
+  "random-effects panel logit",
+  "conditional FE logit (appendix)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "YenkeyPalmer_rider_dataset_posted_for_replication.dta",
+  "YenkeyPalmer_manager_dataset_posted_for_replication.dta"
+ ],
+ "data_files_note": "Rider-year and manager-year analysis datasets shipped; code provided as a .txt file.",
+ "data_provenance": "original",
+ "data_provenance_note": "Compiled from public cycling and doping sources.",
+ "software": "stata",
+ "software_notes": "code in a .txt file (Stata 18)",
+ "screener_notes": "Published PDF text checked for table titles (Tables 4-6: discrete-time event history estimates; no DiD). Empty regression inventory because the code is shipped as a .txt file. Clear exclusion."
+}

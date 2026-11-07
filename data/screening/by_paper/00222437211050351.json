@@ -1,0 +1,32 @@
+{
+ "suffix": "00222437211050351",
+ "doi": "10.1177/00222437211050351",
+ "journal": "jmr",
+ "title": "Home-Tutoring Services Assisted with Technology: Investigating the Role of Artificial Intelligence Using a Randomized Field Experiment",
+ "year": "2021",
+ "eligible_design": false,
+ "design_notes": "Randomized controlled trial with regional pairs: AI-generated reports available to tutors in 5 treatment regions from one date (period 0), 5 control regions. DiD models: Eq. 1 event-study with Treat x period dummies (j=-5..3, baseline -1) plus controls X and region FE; Eq. 2 Treat, After, Treat x After with controls and region FE (Table 2 col 1, 14,122 obs); Eq. 3 adds student FE (Table 2 col 2, Treat x After = .096, SE .012). Table 7 (expanded sample, 6,330 obs): first-week viewers vs. viewers from week 7 on, After and Treat x After with student and tutor FE; again one treatment date. Matched (PSM) sample also used.",
+ "eligible_reason": "All treated units start on one date (single adoption date, randomized assignment); main specifications include time-varying student/tutor controls and region FE and use a After indicator rather than calendar-time FE; PSM used for matched sample; IV appears for treatment on the treated.",
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "estimators_reported": [
+  "DiD with After indicator",
+  "DiD with student FE",
+  "event-study (single date)",
+  "IV (TOT)"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Data from a private education company in South Korea; no data availability statement or package. Table 7 robustness is a two-group, one-date comparison (early vs. late viewers), so not staggered either.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

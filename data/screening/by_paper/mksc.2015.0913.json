@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2015.0913",
+ "doi": "10.1287/mksc.2015.0913",
+ "journal": "mksc",
+ "title": "The Impacts of Advertising Assets and R&D Assets on Reducing Bankruptcy Risk",
+ "authors": "Niket Jindal; Leigh M. McAlister",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0913",
+ "regressions_path": "./data/packages/mksc.2015.0913_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (firm-year bankruptcy hazard model with advertising/R&D stocks x market turbulence)",
+ "ineligible_specs": [
+  {
+   "spec_id": "bankruptcy_cloglog",
+   "reported_location": "Table 2",
+   "exclusion_reason": "random-effects complementary log-log hazard with control-function residuals, continuous ad/R&D x turbulence regressors and time-varying financial controls; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. RE cloglog bankruptcy hazard on continuous ad and R&D stocks.",
+ "design_notes": "bank.do: xtreg re first stages, then xtcloglog bank adturb rdturb adv rnd + controls, re vce(cluster gvkey).",
+ "estimators_reported": [
+  "random-effects cloglog hazard with control function"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "README: bank.do reproduces Table 2; no data shipped (Compustat-type firm data).",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data in package.",
+ "software": "stata",
+ "software_notes": "Stata",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

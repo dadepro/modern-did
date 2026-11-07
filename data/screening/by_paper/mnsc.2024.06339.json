@@ -1,0 +1,47 @@
+{
+ "suffix": "mnsc.2024.06339",
+ "doi": "10.1287/mnsc.2024.06339",
+ "journal": "mnsc",
+ "title": "When Consumer Financial Protection Spills Over: Student Loan Borrowing Under the CARD Act",
+ "year": 2026,
+ "authors": "Alexander L. Brown; Daniel Grodzicki; Paolina C. Medina",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.06339",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Main-text design has a single policy date: Post = 1[Semester >= 2011-3] (01_cleanup.do line 302) and Treat = sophomore or junior standing (a within-student time-varying status, line 305), estimated on student-semester records with Semester x median-income FE, class-standing dummies and demographic controls, clustered by student (03_borrowing_regs.do lines 42-62); event study interacts Treat with semester dummies. No unit FE and no unit-specific adoption dates in the main text. An appendix Callaway-Sant'Anna check (08_csdid.R) defines cohorts by first-enrollment year (semtreat = 9/11/13 for 2010/2011/2012 entrants) with not-yet-treated controls, but it is an appendix robustness and its design differs from the main text.",
+ "design_notes": "Administrative financial-aid records of a large US public university (confidential); outcomes YL/TL/YFafsa (borrowing indicators and amounts). Figures 1-2: reghdfe y DS*_Treat Sophomore Junior Senior Male Minority InStateStudent ufreshfafsa, abs(Semester#MedInc) vce(cluster StudentID). Figure 3 academic outcomes with FirstEnrollYear and MedInc FE. Survey analysis Tables 2-5; welfare Table 6. Replication data are cell-level aggregates (cells with >100 students, ~60% of sample).",
+ "estimators_reported": [
+  "two-group DiD / event study with controls (reghdfe, Semester x MedInc FE)",
+  "Callaway-Sant'Anna att_gt (appendix, cohorts by enrollment year)",
+  "cross-sectional survey regressions",
+  "welfare calibration"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (did::att_gt, appendix)"
+ ],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "data/aggregate_borrowing.dta|csv, data/aggregate_outcomes.dta|csv (cell means, >100 students per cell)",
+  "output/master_log_raw_data.log (full regression output on confidential micro data)"
+ ],
+ "data_provenance": "real",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (README.md, 01_cleanup.do, 03_borrowing_regs.do, 08_csdid.R).",
+ "n_adoption_cohorts_note": "Main text: one policy date. Appendix csdid: 3 enrollment-year cohorts (2010, 2011, 2012).",
+ "data_files_note": "Raw student records under NDA; only aggregates shipped.",
+ "software_notes": "Stata 17 (reghdfe, coefplot, estout) + R (did) for appendix"
+}

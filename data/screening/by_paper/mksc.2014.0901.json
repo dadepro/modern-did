@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2014.0901",
+ "doi": "10.1287/mksc.2014.0901",
+ "journal": "mksc",
+ "title": "Scalable Rejection Sampling for Bayesian Hierarchical Models",
+ "authors": "Michael I. Braun; Paul Damien",
+ "year": 2015,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2014.0901",
+ "regressions_path": "./data/packages/mksc.2014.0901_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (methods paper: rejection-sampling algorithm for Bayesian hierarchical models)",
+ "ineligible_specs": [
+  {
+   "spec_id": "bd_algorithm_examples",
+   "reported_location": "illustrations (hierarchical binary choice, conjugate normal, multivariate t, cheese)",
+   "exclusion_reason": "Bayesian hierarchical models used to demonstrate a sampler; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Methods paper on scalable rejection sampling for hierarchical Bayesian models.",
+ "design_notes": "BD2015 R package (C++ via CppAD); inst/examples conjugate.R, run_mvt.R, scale.R simulate data; cheese.R loads data(cheese) from bayesm.",
+ "estimators_reported": [
+  "Bayesian hierarchical models (rejection sampling)"
+ ],
+ "data_access": "public",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "No data files; examples simulate data in code or load the public bayesm cheese dataset.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated data in examples; cheese example uses external public bayesm data.",
+ "software": "r",
+ "software_notes": "R package with C++ (CppAD, CppADutils)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

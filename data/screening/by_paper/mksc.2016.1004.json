@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2016.1004",
+ "doi": "10.1287/mksc.2016.1004",
+ "journal": "mksc",
+ "title": "Product Line Bundling: Why Airlines Bundle High-End While Hotels Bundle Low-End",
+ "authors": "Steven M. Shugan; Jihwan Moon; Qiaoni Shi; Nanda S. Kumar",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2016.1004",
+ "regressions_path": "./data/packages/mksc.2016.1004_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (analytical model of product-line bundling; empirical section is a cross-sectional count regression of add-on bundles on product level by industry)",
+ "ineligible_specs": [
+  {
+   "spec_id": "poisson_bundles",
+   "reported_location": "empirical section table",
+   "exclusion_reason": "cross-sectional Poisson of number of ancillary bundles (AP) on product locality (PL) x industry dummies; no time dimension, no treatment adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Cross-sectional Poisson regression of add-on bundle counts on product-line position by industry (brands across 8 industries).",
+ "design_notes": "DATA/Stata Code.txt (UTF-16): poisson AP li1-li8 i1-i7 on Data.xlsx sheet UBBU; one observation per brand-product level.",
+ "estimators_reported": [
+  "Poisson regression (cross-sectional)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "DATA/Data.xlsx"
+ ],
+ "data_files_note": "readme.txt documents variables Industry, Industry Name, Brand, AP, PL, Price.",
+ "data_provenance": "original",
+ "data_provenance_note": "Hand-collected brand-level data shipped in full.",
+ "software": "stata",
+ "software_notes": "Stata (code file saved as UTF-16 text; regression inventory scan missed it)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

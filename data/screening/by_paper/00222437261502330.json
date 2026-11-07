@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437261502330",
+  "doi": "10.1177/00222437261502330",
+  "journal": "jmr",
+  "title": "EXPRESS: Expanding Markets or Capturing Share? The Competitive Effects of Subscriptions on Spending in Restaurant Delivery",
+  "year": "2026",
+  "eligible_design": false,
+  "eligible_reason": "Staggered subscription adoption, but estimated as a propensity-score-matched stacked DiD with cohort-by-customer-type-by-month time effects and a time-varying control (monthly grocery spend). Matching and stacked designs are excluded.",
+  "design_notes": "Consumer Edge card-transaction panel of individuals; treatment = signing up for Postmates Unlimited (Sept 2017 - Aug 2018 cohorts), study period through July 2019. Each subscriber is matched one-to-one without replacement (propensity score on pre-treatment spending at focal and competing firms, exact match on tenure and calendar time) to a non-subscriber. Equation (1): Y_it = beta Post_it x Treat_i + phi_i + xi_{g(i),t} + theta Control_it + e_it, where xi is a fixed effect for adoption cohort x customer type (singlehomer / multihomer) x month and Control_it = total monthly grocery spend (time-varying). Table 2 main estimate: log(1+focal spend) = 0.644 (SE .044), N = 74,448; Table 6 gives alternatives (CEM matching, unmatched 7,013,646 obs, IHS, levels, exclude month 0). All variants keep the cohort-by-type time fixed effects (stacked/matched structure) and the grocery-spend control, and use customer-clustered SEs. The paper states that a plain TWFE without cohort-specific time effects fails to deliver parallel pre-trends (Web Appendix 3.1).",
+  "estimators_reported": [
+    "matched stacked DiD (cohort-specific time FE)",
+    "coarsened exact matching DiD",
+    "generalized random forests (robustness)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: matching-based stacked DiD with a time-varying control; no unstacked TWFE or event-study specification is reported in the main text. A no-matching variant exists (Table 6 analysis 3) but keeps cohort-by-type-by-time FE and the grocery control. Data supplied by Consumer Edge under license; synthetic data and code deposited in JMR Dataverse doi 10.7910/DVN/QZYBRG (stated as unpublished at time of manuscript).",
+  "data_note": "Real data not public; Dataverse deposit holds synthetic data."
+}

@@ -1,0 +1,47 @@
+{
+ "suffix": "mnsc.2022.4611",
+ "doi": "10.1287/mnsc.2022.4611",
+ "journal": "mnsc",
+ "title": "Anticorruption, Government Subsidies, and Innovation: Evidence from China",
+ "year": "2022",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "The staggered shocks (removal of provincial heads; departures of provincial technology-bureau heads) enter only as interactions that shift the slope of subsidies on firm R&D efficiency and on entertainment-and-travel costs. Every specification includes continuous, time-varying firm covariates (lagged R&D efficiency, lagged ETC, lagged subsidy) and their interactions with the post indicator; most add $ControlVar1/2 time-varying controls and lagged outcomes. No specification estimates a level effect of a binary treatment with unit and time FE and no time-varying controls.",
+ "design_notes": "Stata reghdfe (replicationcode.do, data main_dataset.dta: 1,331 listed firms x 2007-2018, 12,158 firm-years; firm IDs anonymized). Treatments: lpostremoval (lagged post-removal of provincial party secretary/governor on corruption charges) and lpostdeparture (lagged post unanticipated departure of the provincial technology bureau head), assigned at province (prodummy) level. In the data lpostremoval first switches on in 2013-2018 for 20 provinces (6 cohorts; 11 never), lpostdeparture in 2008-2017 for 23 provinces (8 cohorts; 8 never); both indicators also switch back off within firms (109 and 809 firm-year switch-offs), consistent with a windowed post-event indicator. Table 5 Panel A/B: reghdfe subsidy_s lrdefficiency laetc_s lpostremoval [lrdefficiency_postremoval laetc_postremoval] [$ControlVar1] [i.year#c.lrdefficiency ...], absorb(inddummy prodummy year) or absorb(firm year), vce(cluster firm); the coefficient of interest is the interaction (change in the merit sensitivity of subsidies), and lrdefficiency/laetc_s are continuous time-varying regressors in every column. Panel C uses above-median indicator interactions. Tables 6-7: pat_us/cite_us on lsubsidy_s, lsubsidy_postremoval, lpostremoval, lagged outcome, controls. Tables 8-9: subsample splits (DEF_dummy, CA_dummy).",
+ "estimators_reported": [
+  "reghdfe TWFE with treatment-by-covariate interactions and time-varying controls (industry+province+year FE or firm+year FE), clustered by firm"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "6 province cohorts for removal (2013-2018); 8 for departure (2008-2017)",
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 5 Panels A-B cols 1-7 (replicationcode.do lines 38-50, 55-67)",
+   "reason": "continuous time-varying covariates lrdefficiency and laetc_s in every column; columns of interest are treatment x covariate interactions; cols 5-7 add $ControlVar1 and covariate-by-year/province slopes; treatment indicator switches off"
+  },
+  {
+   "location": "Table 5 Panel C (lines 90-103)",
+   "reason": "subgroup-by-treatment interactions"
+  },
+  {
+   "location": "Tables 6-7 (lines 114-175)",
+   "reason": "continuous lagged subsidy regressor, lagged outcome, time-varying controls"
+  },
+  {
+   "location": "Tables 8-9 (lines 186-240)",
+   "reason": "subsample splits of the interaction specifications above"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Package: ~/did_packages/mnsc/mnsc.2022.4611/replication_package_MS-ENI-21-00153/ (Readme.docx, replicationcode.do, main_dataset.dta). Data sources: InnoJoy patents, hand-collected subsidies and ETC from annual reports, CSMAR financials; regression-ready file shipped. A level-effect TWFE (subsidy_s on lpostremoval with firm and year FE) could be run from the data but is not reported in the paper and is not the paper's object of interest."
+}

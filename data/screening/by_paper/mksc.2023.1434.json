@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2023.1434",
+ "doi": "10.1287/mksc.2023.1434",
+ "journal": "mksc",
+ "title": "Can AI Help in Ideation? A Theory-Based Model for Idea Screening in Crowdsourcing Contests",
+ "authors": "J. Jason Bell; Christian Pescher; Gerard J. Tellis; Johann Füller",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2023.1434",
+ "regressions_path": "./data/packages/mksc.2023.1434_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (cross-sectional idea-screening models: logit/lasso and cross-validation on contest ideas)",
+ "ineligible_specs": [
+  {
+   "spec_id": "idea_screening",
+   "reported_location": "main tables (screening efficiency)",
+   "exclusion_reason": "cross-sectional logit/lasso prediction of shortlisting/winning; no staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Predicts which crowdsourced ideas are shortlisted from text atypicality measures.",
+ "design_notes": "R code in idea-screening-main/Code.",
+ "estimators_reported": [
+  "logit",
+  "lasso",
+  "two-stage screening model"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "Data/example_cv_data.csv",
+  "Data/example_two_stage_data.csv"
+ ],
+ "data_files_note": "Files labelled 'example' data with anonymized contest names; README does not state whether values are actual.",
+ "data_provenance": "original",
+ "data_provenance_note": "No disguise statement; contest identifiers anonymized; labelled as example data (provenance not fully clear, moot for eligibility).",
+ "software": "r",
+ "software_notes": "R",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

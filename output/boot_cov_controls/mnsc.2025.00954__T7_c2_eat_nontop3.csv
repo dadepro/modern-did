@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2025.00954,T7_c2_eat_nontop3,static,999,,0.000106342163442128,0.0102194011962118,,0.0104856690363423,,0.992393466752597,999,0,999,1.38777878078145e-17,4.71844785465692e-16,,FALSE,5629,

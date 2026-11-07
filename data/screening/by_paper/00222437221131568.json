@@ -1,0 +1,30 @@
+{
+  "suffix": "00222437221131568",
+  "doi": "10.1177/00222437221131568",
+  "journal": "jmr",
+  "title": "Lobbying and Product Recalls: A Study of the U.S. Automobile Industry",
+  "year": "2022",
+  "eligible_design": false,
+  "eligible_reason": "Main design is an IV regression of recall counts on continuous firm lobbying expenditure in a firm-quarter panel (firm, year, quarter fixed effects). The only DiD is a single-firm case check (GM, Flint water crisis) summarized in prose and the Web Appendix, with one treated firm and one event date.",
+  "design_notes": "JMR 60(4), 2023. Nine years of multisource automotive data. Endogenous continuous lobbying instrumented; ordered probit via conditional mixed process as a robustness check (Web Appendix Table W8). The GM Flint DiD is in the 'Robustness Assessments' paragraph, not a main table.",
+  "estimators_reported": [
+    "2SLS IV",
+    "ordered probit CMP",
+    "single-firm DiD (Web Appendix)"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Continuous treatment with IV; the DiD is a single-unit, single-date appendix check. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

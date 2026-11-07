@@ -1,0 +1,30 @@
+{
+  "suffix": "00222437231180171",
+  "doi": "10.1177/00222437231180171",
+  "journal": "jmr",
+  "title": "TV Advertising and Online Sales: A Case Study of Intertemporal Substitution Effects for an Online Travel Platform",
+  "year": "2023",
+  "eligible_design": false,
+  "eligible_reason": "Single-start field test: 11 treated counties begin a TV campaign simultaneously (15-day campaign after four weeks without TV ads), against 115 control counties, analyzed with synthetic difference-in-differences. One adoption date, and the estimator is synthetic DiD or an event study around individual ad airings (minute level).",
+  "design_notes": "Main estimates use SDID with county, date and hour-of-day fixed effects weighted by SDID unit and time weights (Table 4, ln(Sessions+1) and ln(Sales+1) at 2-60 minute windows, SEs clustered by county; Figure 3 shows day-level trends). Table 3 is an event study around individual TV ad incidences in treated counties (30-minute windows, 24-hour attribution). Distributed-lag SDID models estimate intertemporal substitution. Six weeks of data in 2015 from one online travel agency in one country.",
+  "estimators_reported": [
+    "synthetic difference-in-differences",
+    "event study around ad airings",
+    "distributed-lag SDID"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Clickstream and TV ad schedule data are provided by the cooperating firm and the TV network (text near line 268). Not eligible: one adoption date and synthetic DiD."
+}

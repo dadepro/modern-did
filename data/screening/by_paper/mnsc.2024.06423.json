@@ -1,0 +1,41 @@
+{
+ "suffix": "mnsc.2024.06423",
+ "doi": "10.1287/mnsc.2024.06423",
+ "journal": "mnsc",
+ "title": "Does Personalized Pricing Increase Competition? Evidence from NIL in College Football",
+ "year": 2025,
+ "authors": "Ivan Li; Timothy P. Derdenger",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.06423",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single adoption date. The NIL policy takes effect for all programs at T_NIL (2021); the DiD in NIL_functions.R::compute_did_effects defines NIL = 1[year >= T_NIL] and treat = NIL x domestic (international recruits as controls), estimated by feols with position FE, recruit covariates (rating, rank, height, weight) and clustering by position; event study i(year, domestic, ref=2020) with year FE. No unit-specific adoption dates. Other estimators are IPW/AIPW/causal-forest treatment-effect estimators and conference-level DiDs with I(year>=2021).",
+ "design_notes": "Recruit-level data from collegefootballdata.com (2013-2024 classes) plus Knight-Newhouse spending, College Scorecard, DMA/TV data. NIL_ATE.R: compute_treatment_effects (IPW, AIPW via grf, OLS) and compute_did_effects (pre/post 2021 x domestic). NIL_regressions.R: draft outcome regressions (Table 6), betting spread regressions (Table 12). Appendix.R: conference-level pre/post regressions.",
+ "estimators_reported": [
+  "two-group pre/post DiD with covariates (feols/fepois, position FE)",
+  "IPW/AIPW/causal forest ATE/ATT",
+  "OLS/GLM"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "data/*.csv (28 scraped CFBD files, spending, TV, DMA geojson); College Scorecard files must be downloaded separately"
+ ],
+ "data_provenance": "real",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (_readme, NIL_functions.R, NIL_regressions.R, Appendix.R). Not staggered.",
+ "software_notes": "R 4.4.1: fixest, grf, WeightIt, MatchIt, binsreg, rdrobust; Python notebook for scraping"
+}

@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2018.1116",
+ "doi": "10.1287/mksc.2018.1116",
+ "journal": "mksc",
+ "title": "Inspiration from the “Biggest Loser”: Social Interactions in a Weight Loss Program",
+ "authors": "Kosuke Uetake; Nathan Yang",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1116",
+ "regressions_path": "./data/packages/mksc.2018.1116_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (peer effects in weight-loss meetings; FE and IV panel regressions with lagged outcomes)",
+ "ineligible_specs": [
+  {
+   "spec_id": "peer_effects_iv",
+   "reported_location": "main table",
+   "exclusion_reason": "xtreg/xtivreg with lagged dependent variable and peer outcomes instrumented; IV and lagged outcomes, no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Linear-in-means peer-effects model with lagged outcomes and IV.",
+ "design_notes": "estimation.do: xtreg y y_l1 ymax ymin ymean, fe; xtivreg with instruments.",
+ "estimators_reported": [
+  "FE OLS",
+  "FE 2SLS"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "data.csv",
+  "data.mat"
+ ],
+ "data_files_note": "readme: simulated data due to NDA (sim_data.m).",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated per readme.",
+ "software": "stata",
+ "software_notes": "Stata and MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

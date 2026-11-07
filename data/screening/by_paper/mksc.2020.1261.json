@@ -1,0 +1,73 @@
+{
+ "suffix": "mksc.2020.1261",
+ "doi": "10.1287/mksc.2020.1261",
+ "journal": "mksc",
+ "title": "Price Salience and Product Choice",
+ "authors": "Tom Blake; Sarah Moshary; Kane Sweeney; Steven Tadelis",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2020.1261",
+ "regressions_path": "./data/packages/mksc.2020.1261_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Randomized field experiments on StubHub (2012 and August 2015 upfront vs back-end fee arms), not a staggered-adoption DiD. The headline estimates (Tables 2-3, 7, funnel, covariate balance) are produced by SQL on proprietary data and are not in the package. The shipped Stata regressions are: (i) percent_chosen.do, cross-sectional reg of choice percentile / purchase on the AIP arm dummy (2012 experiment); (ii) weekly_spending.do, reg total_spent treatment#week i.week on buyers who purchased during the 2015 experiment: arm-by-week interactions with a pooled arm dummy and no buyer FE; the arms differ only during the experiment window (BF arm switched Aug 19 2015, the rest of the site at the Sep 1 2015 rollout), so this is a two-arm experiment around a common start date, not staggered adoption; (iii) round_listings.do, log listings on position/round x post (single date Aug 31 2015) with date FE; (iv) googletrends.do, site x post (single date Sep 1 2015) for StubHub/Ticketmaster/SeatGeek with date FE. All post dates are common to every treated unit.",
+ "design_notes": "Stata (reg, areg). Seven do-files in code_price_salience2/. Data are proprietary StubHub data; the package ships only simulated .dta/.xlsx files generated with runiform()/rnormal() that do not mimic the true moments (readme.txt). Remaining tables come from SQL code not included.",
+ "estimators_reported": [
+  "experimental_difference_in_means",
+  "ols_arm_by_week_interactions",
+  "ols_single_date_did"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "2012 experiment table (percent_chosen.do)",
+   "reason": "cross-sectional randomized-arm comparison, no panel"
+  },
+  {
+   "location": "weekly spending figure (weekly_spending.do, weekly_exclude_one.pdf)",
+   "reason": "arm x week interactions with pooled arm dummy, no unit FE; two-arm experiment around a common start date; simulated data"
+  },
+  {
+   "location": "round/position listings table (round_listings.do, round_high.tex)",
+   "reason": "single common post date (Aug 31 2015), time series by listing type"
+  },
+  {
+   "location": "Google Trends table (googletrends.do)",
+   "reason": "single common post date (Sep 1 2015), three sites; column 3 adds site-specific trends"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "simulated_data/event_study_purchasing_simulate.dta",
+  "simulated_data/round_listings_simulated.dta",
+  "simulated_data/position_simulated.dta",
+  "simulated_data/AIP_hive_joined_v3_simulated.dta",
+  "simulated_data/AIP_MLSonly_chosen_percent_simulated.dta",
+  "simulated_data/listing_quality_simulated.xlsx",
+  "simulated_data/n_tickets_viewed_simulated.dta",
+  "simulated_data/rows_simulated.dta"
+ ],
+ "data_files_note": "readme.txt: most data are proprietary; package ships synthetic files whose moments do not mimic the true data.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated with Stata random number generators per readme.txt.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). code_prescore 2 is driven by x post interactions with date FE around single common dates; no staggered adoption exists, and data are synthetic in any case."
+}

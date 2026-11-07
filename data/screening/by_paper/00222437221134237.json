@@ -1,0 +1,29 @@
+{
+  "suffix": "00222437221134237",
+  "doi": "10.1177/00222437221134237",
+  "journal": "jmr",
+  "title": "The Daily Me Versus the Daily Others: How Do Recommendation Algorithms Change User Interests? Evidence from a Knowledge-Sharing Platform",
+  "year": "2022",
+  "eligible_design": false,
+  "eligible_reason": "Single intervention date applied to all users simultaneously; RDiT time-series design with time-varying controls and polynomial trends, not a unit/time TWFE.",
+  "design_notes": "Regression discontinuity in time (RDiT) around one platform-wide intervention: Zhihu switched from content-based to social-filtering recommendation around noon on Aug 16, 2012. Eq. 1: ln(Y_jt) = a + b After_t + polynomial in t (order chosen by BIC) interacted with After_t + day-of-week and month FE + ln new users and ln new topics, on daily platform-level counts in a 30-day window (Tables 1-4). User-segment and topic-segment tables aggregate users or topics to segment-day series and re-run the same RDiT. No staggered adoption, no unit-level panel with unit FE in the main results, time-varying controls and flexible time polynomials.",
+  "estimators_reported": [
+    "RDiT OLS (Tables 1-4)",
+    "donut RDiT robustness"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: RDiT, one date. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Zhihu internal data sets provided to the authors under cooperation (not public)."
+}

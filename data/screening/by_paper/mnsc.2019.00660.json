@@ -1,0 +1,55 @@
+{
+ "suffix": "mnsc.2019.00660",
+ "doi": "10.1287/mnsc.2019.00660",
+ "journal": "mnsc",
+ "title": "Overconfidence in Probability Distributions: People Know They Don’t Know but They Don’t Know What to Do About It",
+ "authors": "Jack B. Soll; Asa B. Palley; Joshua Klayman; Don A. Moore",
+ "year": 2019,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mnsc/mnsc.2019.00660",
+ "regressions_path": "./data/packages/mnsc.2019.00660_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Preregistered judgment experiments (Studies 1-4 plus a Study 3 replication) on interval and probability-distribution elicitation. Regressions (Study3analysis.R, Study4analysis.R) are lm() of calibration measures on randomized format x judgment type x confidence. No panel, no treatment timing, no DiD.",
+ "design_notes": "Participant-level and trial-level experimental data with data dictionaries; OSF preregistration referenced.",
+ "estimators_reported": [
+  "ols_experiment"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Studies 1-4",
+   "reason": "randomized experiments, cross-sectional OLS/means; not DiD"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "study1data.csv",
+  "study2data.csv",
+  "study3data.csv",
+  "study3replicationData.csv",
+  "study4data.csv"
+ ],
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data shipped as collected.",
+ "software": "r",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Screened from package (readme.txt, R scripts); OpenAlex abstract empty. Not a near-miss."
+}

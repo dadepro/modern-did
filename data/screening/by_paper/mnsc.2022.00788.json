@@ -1,0 +1,40 @@
+{
+ "suffix": "mnsc.2022.00788",
+ "doi": "10.1287/mnsc.2022.00788",
+ "journal": "mnsc",
+ "title": "Industry-University Collaboration and Commercializing Chinese Corporate Innovation",
+ "year": "2024",
+ "authors": "David H. Hsu; Po-Hsuan Hsu; Kaiguo Zhou; Tong Zhou",
+ "eligible_design": false,
+ "eligible_reason": "No staggered binary treatment. Regressors are firms' trailing five-year industry-university collaboration experience (patiuc/papiuc as log counts or a non-absorbing any-collaboration dummy) with firm, province-year and industry-year FE and a block of time-varying firm controls; Tables 4-6 and 10 add interactions with firm characteristics. Panel regressions, not a DiD/event-study design.",
+ "design_notes": "reghdfe Y_log patiuc_{d,log} [ttoutput_log pattotal_log rdratio + 11 firm controls], absorb(panelid provyear induyear) vce(cluster panelid). patiuc_d = 1[patiuc > 0] can switch on and off (rolling five-year window) and is not an adoption indicator. SAS construction code plus Stata regression code; the NBS firm census ('industrynew') and the constructed BASELINE/CONDI/CHANNEL/TECHCOMP datasets are not included; only 'Shared dataset.dta' with the key IUC and innovation variables is provided.",
+ "estimators_reported": [
+  "high-dimensional FE OLS (reghdfe)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 2-10",
+   "reason": "continuous / non-absorbing regressor, time-varying controls; not a DiD"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": false,
+ "data_files": [
+  "Shared dataset.dta (key variables only; regression datasets missing)"
+ ],
+ "software": "stata",
+ "software_notes": "SAS for data construction, Stata (reghdfe) for regressions",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Full-text 'staggered' / Cengiz et al. hits likely refer to a robustness discussion in the text, not to code in the package."
+}

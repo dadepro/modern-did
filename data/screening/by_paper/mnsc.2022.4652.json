@@ -1,0 +1,31 @@
+{
+  "suffix": "mnsc.2022.4652",
+  "doi": "10.1287/mnsc.2022.4652",
+  "journal": "mnsc",
+  "title": "Managing Pandemics: How to Contain COVID-19 Through Internal and External Lockdowns and Their Release",
+  "year": "2023",
+  "eligible_design": false,
+  "eligible_reason": "Staggered country-level lockdown adoption with country and day fixed effects, but every main-text specification includes extra treatment variables: a continuous DaysAfterMeasure trend, a Release indicator, and a 7-day Anticipation indicator, in a first-difference (growth-rate) model. Reported effects are marginal effects combining Measure and DaysAfterMeasure. Excluded as continuous/additional treatment regressors. No Measure-only version is reported in the main text (robustness 'available upon request').",
+  "design_notes": "Country-day panel, first 100 days after each country's first lockdown, outcome dlc = change in log(cases+1) (also deaths). Equation (5): dlc_it = b1 Measure_it + b2 DaysAfterMeasure_it + b3 Release_it + b4 Anticipation7days_it + FE_i + FE_t + e_it, clustered by country. Separate regressions by measure type (internal, external, seven sub-classes) in Figure 5; Table S5 (internal measures, anticipation 7 days): Measure -0.016 (SE 0.014), DaysAfterMeasure -0.001 (0.000), Anticipation 0.091 (0.013), Release -0.013 (0.004), N=38,405. Countries that never implemented a measure are in the baseline sample (text: 6 countries only outside measures, 8 only within-country measures).",
+  "estimators_reported": [
+    "TWFE first-difference model with country and day FE"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Data built by LexisNexis web scraping plus Google Mobility, HDI; no public data statement found. If the protocol is later relaxed to allow time-since-treatment and anticipation terms, Table S5 and Tables S9, S10 and S23-S24 (cited as sources for Figures 5 and 10) would be the specs to revisit.",
+  "staggered_design_present": true,
+  "ineligible_with_controls": false,
+  "ineligibility_cause": "additional_treatment_regressors_and_time_since_treatment_trend"
+}

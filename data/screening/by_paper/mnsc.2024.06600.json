@@ -1,0 +1,44 @@
+{
+  "suffix": "mnsc.2024.06600",
+  "doi": "10.1287/mnsc.2024.06600",
+  "journal": "mnsc",
+  "title": "Evaluating the Impact of Privacy Regulation on E-Commerce Firms: Evidence from Apple's App Tracking Transparency",
+  "year": 2025,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date (Apple ATT, April 2021) for all firms; treated groups are defined by baseline exposure (top quartile of pre-ATT Meta or iOS revenue share) and estimated with after##treated TWFE (reghdfe, viewid + month FE), xtevent event studies, and did_had (de Chaisemartin et al. heterogeneous-adoption design with continuous exposure). Advertising-side regressions are time-dummy regressions by platform/objective. No unit-specific adoption dates; shipped data are synthetic (ads) or noise-added (revenue).",
+  "design_notes": "Package final_replication_files: README.txt, code/full_replication.R (lfe::felm, SYNTHETIC flag), code/replication_revenue.do (reghdfe log_trans_rev after##treated, absorb(viewid month) cluster(viewid); xtevent; did_had), data/merged_data_all.dta (firm x month revenue panel with additive noise, ~130k rows), fb/google/tiktok_synthetic.csv, att_adoption.dta.",
+  "estimators_reported": [
+    "twfe_single_date_exposure_groups",
+    "event_study_single_date (xtevent)",
+    "did_had_continuous_exposure"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": true,
+  "modern_estimators_named": [
+    "did_had (de Chaisemartin, D'Haultfoeuille et al. heterogeneous adoption design)"
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "synthetic",
+  "data_files_present": true,
+  "data_files": [
+    "data/merged_data_all.dta (noise-added)",
+    "data/fb_synthetic.csv",
+    "data/google_synthetic.csv",
+    "data/tiktok_synthetic.csv",
+    "data/att_adoption.dta"
+  ],
+  "software": "r, stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": ""
+}

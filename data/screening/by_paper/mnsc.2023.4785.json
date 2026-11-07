@@ -1,0 +1,60 @@
+{
+  "suffix": "mnsc.2023.4785",
+  "doi": "10.1287/mnsc.2023.4785",
+  "journal": "mnsc",
+  "title": "The Information in Hedge Fund Option Holdings",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No binary staggered treatment. All regressions in 'stata command.do' are stock-quarter panel regressions of future DGTW-adjusted returns (futureqtrreta) or earnings surprises (sue3) on the continuous net-options variable diffinsthf2 (and its positive/negative parts), short interest, controls and year-quarter dummies (i.yq), two-way clustered by permno and yq via cluster2. No unit fixed effects, no adoption event; interactions with period/VIX/TED market-stress indicators are not staggered treatments. The ft_callaway flag is a false positive.",
+  "design_notes": "Hedge fund 13F option positions 2004Q4-2015Q3 merged with CRSP/Compustat/Markit/OPRA; SAS data construction (AHP1-3.sas), Stata regressions (Tables 2-4, 6-8).",
+  "estimators_reported": [
+    "pooled_panel_ols_time_dummies_two_way_cluster"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "T2_c1_futureret_on_netoptions",
+      "eligible": false,
+      "exclusion_reason": "continuous regressor; no unit FE; not a DiD",
+      "code_file": "replication_package_MS-FIN-21-02616/stata command.do",
+      "code_line": 14,
+      "outcome": "futureqtrreta",
+      "treatment_var": "diffinsthf2 (continuous net hedge-fund option position)",
+      "treatment_definition": "net (call minus put) HF option holdings",
+      "unit_var": "permno",
+      "time_var": "yq",
+      "fe": "i.yq only",
+      "controls": "none (col 1); avgreluspread logdolvol logme realizedvol pastqtrreta iot_hf (col 2)",
+      "weights": "none",
+      "cluster": "permno and yq (cluster2)",
+      "sample_condition": "full",
+      "static_or_event": "static",
+      "data_file": "d:\\finaldata.dta (not shipped)",
+      "reported_location": "Table 2",
+      "notes": ""
+    }
+  ],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "data_files": [
+    "sampledata.xlsx (316 KB; 30% stratified random sample of the Net Options variable only)",
+    "finaldata.dta NOT shipped; WRDS/Markit/OPRA licensed"
+  ],
+  "software": "stata",
+  "software_notes": "SAS for data construction (AHP1.sas, AHP2.sas; AHP3.sas referenced in ReadMe but not present), Stata for regressions (cluster2).",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible: no DiD design.",
+  "screener_notes": "Screened from package only (ReadMe.txt, variable definition.txt, stata command.do read in full). Regression list empty because the pipeline did not parse 'stata command.do'."
+}

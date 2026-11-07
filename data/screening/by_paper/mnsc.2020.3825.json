@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2020.3825",
+ "journal": "mnsc",
+ "year": 2021,
+ "title": "Performance Pay and Prior Learning—Evidence from a Retail Chain",
+ "eligible_design": false,
+ "eligible_reason": "Two randomized field experiments (district managers Nov 2015-Jan 2016; store managers Nov 2016-Jan 2017). Within each experiment all treated units start on one common date, so there is no staggered adoption. The regressions also include time-varying refurbishment controls and manager fixed effects, and treatment switches off after three months.",
+ "design_notes": "Table 1 (Exp I columns 1-3, Exp II columns 4-5): Y_dt = b0 + b1*Treatment_dt + g*X_dt + a_d + delta_t, store/district and month FE, X = refurbishment dummies (time-varying), clustered by district. Treatment = assigned-to-bonus x treatment months. The two experiments are estimated separately on different units (district managers vs. stores) and are not pooled into one staggered panel.",
+ "estimators_reported": [
+  "static TWFE DiD on randomized single-date treatment"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: single adoption date per experiment, time-varying controls in the reported version, separate samples. Proprietary retail chain data; no package in batch."
+}

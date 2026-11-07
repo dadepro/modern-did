@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2024.4989",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "The Digital Lives of the Poor: Entertainment Traps and Information Isolation",
+ "eligible_design": false,
+ "eligible_reason": "Randomized experiment assigning participants to a capped or standard data plan. Estimating equation is Y_it = a + b*T_i + psi*H_it + tau*T_i*H_it + g*Z_i + delta_t with date fixed effects, no unit fixed effects. Treatment is time-invariant random assignment; 'staggered' refers only to staggered enrollment dates, not staggered treatment adoption.",
+ "design_notes": "Main text Eq. (1). Controls Z_i are baseline covariates; H_it is a within-plan-cycle indicator (second half of a 4-week plan), not a treatment adoption indicator. Clustered at participant. Pre-registered (AEARCTR-0004594).",
+ "estimators_reported": [
+  "randomized ITT regression with date fixed effects"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: RCT. Full-text hit for 'staggered' is the staggered enrollment sentence."
+}

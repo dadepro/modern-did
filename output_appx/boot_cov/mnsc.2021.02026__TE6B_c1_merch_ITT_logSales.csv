@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2021.02026,TE6B_c1_merch_ITT_logSales,static,999,0.000186448620231877,0.00029043807598754,0.016189344905301,0.0198209253551508,0.0183144623697609,0.581039921191649,0.979557876940462,999,999,999,8.67361737988404e-19,2.77555756156289e-17,1.81712284108571e-16,TRUE,31,

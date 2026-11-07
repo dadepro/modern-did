@@ -1,0 +1,130 @@
+{
+ "suffix": "mnsc.2020.01838",
+ "spec_id": "F4a_from_patents_eventstudy",
+ "journal": "mnsc",
+ "data_path": "~/did_packages/_work/mnsc.2020.01838/patent_from_prepared.rds",
+ "id_var": "uid",
+ "time_var": "year",
+ "y_var": "ihs_patent_utility",
+ "treat_var": "",
+ "gvar": "g_form",
+ "weight_var": "",
+ "cluster_var": "cl",
+ "xt_vars": [
+  "naics4"
+ ],
+ "sample_filter": "",
+ "log_y": "",
+ "data_provenance": "real",
+ "published_coef": null,
+ "published_se": null,
+ "table": "Figure 4, Panel (a)",
+ "column": "event-study points",
+ "static_or_event": "event",
+ "preferred": true,
+ "in_abstract_intro": false,
+ "reverse_event": false,
+ "treatment_label": "",
+ "event_pre_min": -4,
+ "event_post_max": 4,
+ "authors_code_event_coefs": {
+  "TreatY:TimeFromYY-4": -0.121530287285814,
+  "TreatY:TimeFromYY-3": -0.0276229388284663,
+  "TreatY:TimeFromYY-2": -0.00599634192214378,
+  "TreatY:TimeFromYY1": 0.119374900539765,
+  "TreatY:TimeFromYY2": 0.250220556846555,
+  "TreatY:TimeFromYY3": 0.244478070543718,
+  "TreatY:TimeFromYY4": 0.347699160871175
+ },
+ "authors_code_event_se": {
+  "TreatY:TimeFromYY-4": 0.0906530890568843,
+  "TreatY:TimeFromYY-3": 0.0810446912022928,
+  "TreatY:TimeFromYY-2": 0.0747736402457575,
+  "TreatY:TimeFromYY1": 0.0695520933318423,
+  "TreatY:TimeFromYY2": 0.0761099468337814,
+  "TreatY:TimeFromYY3": 0.114994031121964,
+  "TreatY:TimeFromYY4": 0.106951731552384
+ },
+ "authors_code_n": 432448,
+ "published_source": "Figure 4, panel (a) of the published article (Management Science 71(11), 2025, pp. 9628-9649; papers/mnsc/mnsc.2020.01838.pdf): point estimates are plotted, not printed. authors_code_* = output of Replicate.R line 206 on the shipped data, which the figure plots. Panel labels checked against the article (Nov 2).",
+ "pipeline_sample_twfe_post_avg_raw": 0.240461009927813,
+ "pipeline_sample_twfe_pre_avg_raw": -0.0514537551096733,
+ "pipeline_sample_twfe_post_avg_std_expected": 0.309472292049343,
+ "y_sd_regsample_expected": 0.777003357345715,
+ "replication_status": "exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)",
+ "notes": "Kang (2025), 'Price-Fixing Cartels and Firm Innovation', Management Science 71(11). Package: Replicate.R + final cleaned/merged .rds files (real processed data; raw DOJ/VitalLaw, PatentsView and licensed Compustat not shipped). FE: unit + 4-digit-NAICS (patents) or Compustat industry group (R&D) x year (authors: felm(... | assignee_id + paste0(cl, year) | 0 | cl)); here xt_vars = naics4 (= cl) so the time FE is year + year x cl; SE clustered by cl. No controls, no weights. Outcomes are IHS-transformed counts/amounts, precomputed as ihs_* (log(x + sqrt(x^2 + 1)), as in Replicate.R). Formation design (primary set): data_reg_patent_from.rds; treated = colluding assignees observed at formation-relative years -4..-1 and +1..+4 (the formation year itself is not in the file; TimeFromYY = year - formation year, verified), post rows all before breakup; controls = all other patenting assignees 1976-2020 (never treated). gvar g_form = formation year (ID_From); D = 1[year >= g_form] equals the authors' TreatY x POST row by row. 3 treated units with pre-sample formation (1975 or earlier) are always-treated in-sample (kept, as in the authors' sample). Unit id uid = assignee_id except for the one assignee in three cartel episodes (226bee8a..., formations 1988/1995/1998 with overlapping windows, the source of all duplicated assignee-years), which is split into three assignee x episode units so that every unit has one adoption date and no duplicated unit-years; this is the only difference from the authors' regression sample and FE. Event study: authors' TreatY x factor(TimeFromYY), reference -1, coefficients at -4,-3,-2,+1..+4. run_spec rel = year - g_form, so rel = TimeFromYY; rel 0 (formation year) has no rows; pre summary = rel -4..-2, post summary = rel +1..+4 (event_structure; single-year bins, reference -1). Nov 2 audit: event_structure records the authors' bins and reference; sample_filter 'pre_sample_adopter == FALSE' removed, pre-sample adopters kept at their true dates (gvar already holds the calendar year; no adoption_var needed). See the log's Nov 2 section.",
+ "event_structure": {
+  "bins": [
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "drop",
+  "post_summary": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ]
+  ],
+  "pre_summary": [
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "Replicate.R line 206: felm(depvar ~ TreatY + TreatY:TimeFromYY | assignee_id + paste0(cl, year) | 0 | cl) on data_reg_patent_from.rds; TimeFromYY is a factor whose first level is -1, so felm drops TreatY:TimeFromYY-1 (collinear with the unit FE): reference -1 (article, Figure 4 notes: 'Year -1 is used as the baseline'; year 0 omitted). Treated rows exist only at TimeFromYY -4..-1, +1..+4 (window trimmed in the shipped file). gvar g_form = formation year ID_From, so rel = t - g = TimeFromYY in the annual period index (years 1976-2020 consecutive). 'drop': the shipped file contains treated rows only inside the authors' coded window (the event year itself is omitted), so no ever-treated row falls outside bins and ref (0 rows, checked Nov 2); 'drop' and 'ref' are equivalent here. Pre-sample adopters (3 units with event year before 1976) are kept at their true date (gvar holds the calendar year; PROTOCOL Nov 2 ruling (b)); all their in-sample rows are post rows inside the window.",
+  "verified": "fixest (es_assign bins; FE assignee_id + cl^year; cluster cl) on the authors' sample (all 432,448 rows of data_reg_patent_from.rds, incl. the 3 pre-sample units at their true dates) reproduces the 7 coefficients of Replicate.R: max abs diff 3.6e-11 (SE max diff 3.4e-05, felm vs fixest small-sample factor). Pipeline unit id (episode split of one multi-cartel assignee) moves the coefficients by at most 3.7e-04; otherwise the pipeline sample equals the authors'. No numbers are printed in the article; the figure plots the code output on the shipped data."
+ },
+ "pipeline_sample_twfe_source": "Nov 2: fixest on the pipeline sample (pre-sample adopters kept at true dates, uid FE + cl^year) with event_structure; post (pre) = equal-weight mean of the post_summary (pre_summary) bins, std = post / population SD of y over all estimation rows."
+}

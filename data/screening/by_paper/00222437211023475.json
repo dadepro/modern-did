@@ -1,0 +1,63 @@
+{
+  "doi": "10.1177/00222437211023475",
+  "suffix": "00222437211023475",
+  "journal": "jmr",
+  "title": "The Minimum Wage and Consumer Nutrition",
+  "authors": "Mike Palazzolo; Adithya Pattabhiramaiah",
+  "year": "2020",
+  "year_in_article": "2021 (JMR 58(5))",
+  "eligible": false,
+  "eligible_design": false,
+  "eligible_reason": "Continuous treatment intensity, not a binary switch-on. The treatment variable is I(MWASE)_h x ln(MW_lt) (log of the locality minimum wage in month t; the level MW_lt for the health-index outcomes), so the coefficient is an elasticity with respect to the minimum wage. Minimum wages change 309 times across localities between 2007 and 2016 (staggered in timing) but each change has a different magnitude and localities are treated repeatedly. The protocol excludes treatment-intensity or continuous regressors. No binary 'any increase' specification is reported in the main text.",
+  "design_notes": "Equation 1: ln(Cal_ht) = alpha_hl + beta*I(MWASE)_h*ln(MW_lt) + lambda_lt + e; household-locality FE, locality x month FE (spec 1), month FE (spec 2a/2b), region x month FE (spec 3a/3b); specs 2b and 3b add a time-varying log cost-of-food index. Specs 2 and 3 use only minimum-wage households (control = MW households in localities without a change). Tables 3 (calories, N=560,197 / 93,930), 4 (HEI and NPM health indices, calorie-weighted), 5-6 (quartile x treatment interactions with quartile x month FE). Clustered at locality. Goodman-Bacon (2020) cited to discuss timing variation in specs 2-3; robustness uses short pre/post windows (Web Appendix E), Oster (2019) bounds, real wages, EITC-month exclusion.",
+  "estimators_reported": ["TWFE with continuous treatment (elasticity)", "quartile x treatment heterogeneity with quartile x month FE"],
+  "main_or_robustness": "main (continuous-treatment DiD)",
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "n_eligible_specs": 0,
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "spec_id": "T3_spec1_dailycal",
+      "reported_location": "Table 3, Specification 1, Elasticity: daily calories",
+      "outcome": "ln(average daily calories purchased + 1), household-month",
+      "treatment_var": "I(MWASE)_h x ln(MW_lt) (continuous)",
+      "fe": "household-locality FE, locality x month FE, household-size FE",
+      "controls": "none",
+      "cluster": "locality",
+      "coef": 0.459, "se": 0.175, "n_obs": 560197,
+      "exclusion_reason": "continuous treatment (log minimum wage), repeated treatment changes per locality"
+    },
+    {
+      "spec_id": "T3_spec2a_dailycal",
+      "reported_location": "Table 3, Specification 2a, Elasticity: daily calories",
+      "outcome": "ln(average daily calories purchased + 1)",
+      "treatment_var": "ln(MW_lt) among minimum-wage households (continuous)",
+      "fe": "household-locality FE, month FE",
+      "controls": "none",
+      "cluster": "locality",
+      "coef": 0.367, "se": 0.165, "n_obs": 93930,
+      "exclusion_reason": "continuous treatment; 2b adds time-varying cost-of-food control"
+    }
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {"spec_id": "T3_spec1_dailycal", "table": "Table 3", "column": "1", "coef": 0.459, "se": 0.175, "n_obs": 560197},
+    {"spec_id": "T3_spec1_calperadult", "table": "Table 3", "column": "1", "coef": 0.589, "se": 0.170, "n_obs": 560197},
+    {"spec_id": "T3_spec2a_dailycal", "table": "Table 3", "column": "2a", "coef": 0.367, "se": 0.165, "n_obs": 93930},
+    {"spec_id": "T3_spec3a_dailycal", "table": "Table 3", "column": "3a", "coef": 0.362, "se": 0.176, "n_obs": 93930},
+    {"spec_id": "T4_spec1_HEI", "table": "Table 4", "column": "1", "coef": -0.004, "se": 0.008, "n_obs": 553416},
+    {"spec_id": "T4_spec1_NPM", "table": "Table 4", "column": "1", "coef": 0.058, "se": 0.055, "n_obs": 551715}
+  ],
+  "data_access": "proprietary",
+  "data_availability_statement": "No availability statement. Nielsen Homescan panel 2007-2016 via the Kilts Center (licensed) merged with Label Insight nutrition-label data (proprietary); minimum wage series compiled by authors.",
+  "data_files_present": false,
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "package_dir": null,
+  "regressions_path": null,
+  "screener_notes": "Software inferred from use of Oster's Stata routine psacalc. A binary version (first minimum-wage increase as adoption) could in principle be built from the same data but is not reported in the main text, so the paper fails the main-text requirement. Not a candidate for re-estimation."
+}

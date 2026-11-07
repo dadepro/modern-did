@@ -1,0 +1,75 @@
+{
+ "doi": "10.1287/mksc.2020.1282",
+ "journal": "mksc",
+ "year": 2021,
+ "title": "Digitization and Flexibility: Evidence from the South Korean Movie Market",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Treatment is continuous. The regressor 'digital' is the share of a theater's screens that are digital (0-1). In the package data it takes 44 distinct values and 11% of theater-weeks are strictly between 0 and 1 (18% in the daypart data). PROTOCOL Section 2 excludes treatment-intensity/continuous regressors. Tables 2, 5, 6 and 7 additionally interact the share with size x period or daypart (subgroup-by-treatment interactions). No binary adoption indicator is constructed anywhere in the code.",
+ "design_notes": "Single R script (replication/files/scripts.R, lfe::felm). Theater x year-week panel 2006-2016 (573 weeks). Table 1: log(pv) [product variety] on digital with (col 1) no FE, (col 2) week FE, (col 3) week + theater FE, (col 4) week + theater-year FE; SE clustered by theater; second panel splits the digital coefficient by period (year>=2011). Table 2: digital x size x I(year>=2011) with week + theater FE or week + theater-year FE. Table 3: descriptive 2x2 difference of means for 2008 (diff() function, lines 77-90), digital dichotomized at >0 only there. Tables 4-5: same as Tables 1-2 with log(sc) [supply concentration]. Tables 6-7: theater x week x daypart data, digital x factor(daypart) with week + theater-year + theater-daypart FE, estimated separately by size (1-3) and period (<2011, >=2011). Theater-level digital share rises gradually over 2006-2016 (mean 0.71 in sample).",
+ "estimators_reported": [
+  "TWFE with continuous treatment share (felm; week + theater FE, week + theater-year FE)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 1 cols (1)-(4) and by-period panel; scripts.R lines 36-39, 49-52",
+   "outcome": "log(pv)",
+   "treatment_var": "digital (continuous share of digital screens)",
+   "fe": "none / week / week+theater / week+theater_year",
+   "cluster": "theater",
+   "reason": "continuous treatment intensity; col (4) also uses theater-year FE"
+  },
+  {
+   "location": "Table 2; scripts.R lines 65-66",
+   "outcome": "log(pv)",
+   "treatment_var": "digital:factor(size):I(year>=2011)",
+   "reason": "continuous treatment interacted with subgroup (size) and period"
+  },
+  {
+   "location": "Table 3; scripts.R lines 77-90",
+   "reason": "descriptive 2x2 mean comparison within 2008, not a regression"
+  },
+  {
+   "location": "Table 4 cols (1)-(4) and by-period panel; scripts.R lines 96-99, 109-112",
+   "outcome": "log(sc)",
+   "treatment_var": "digital",
+   "fe": "none / week / week+theater / week+theater_year",
+   "cluster": "theater",
+   "reason": "continuous treatment intensity"
+  },
+  {
+   "location": "Table 5; scripts.R lines 125-126",
+   "outcome": "log(sc)",
+   "treatment_var": "digital:factor(size):I(year>=2011)",
+   "reason": "continuous treatment interacted with subgroup and period"
+  },
+  {
+   "location": "Tables 6-7; scripts.R lines 137-142, 156-161",
+   "outcome": "log(pv), log(sc)",
+   "treatment_var": "digital:factor(daypart)",
+   "fe": "week + theater_year + theater_daypart",
+   "sample_condition": "by size (1,2,3) and period (year<2011, year>=2011); Table 7 adds sc!=0",
+   "reason": "continuous treatment interacted with daypart; theater-year FE"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "replication/files/dt_theater.rda (13,432 theater-weeks, 50 theaters; theater, size, week, year, digital, pv, sc)",
+  "replication/files/dt_theater_daypart.rda (76,393 rows, 47 theaters; adds daypart)"
+ ],
+ "software": "r",
+ "software_detail": "R 3.6.3, lfe 2.5-1998, stargazer, data.table, tidyverse",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "README (replication/Readme.txt): source data are public at kobis.or.kr (Korean), but only a random sample of 50 theaters is provided, and 'estimates and standard errors may differ to those reported in the paper'. Even if the design were eligible, published estimates could not be reproduced from the package. Full-text flags (Callaway, de Chaisemartin, Goodman-Bacon, staggered) presumably come from a discussion in the text; nothing in the code implements a binary staggered design."
+}

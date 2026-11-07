@@ -1,0 +1,67 @@
+{
+ "doi": "10.1287/mnsc.2022.4571",
+ "journal": "mnsc",
+ "year": 2023,
+ "title": "The Impact of Management on Clinical Performance: Evidence from Physician Practice Management Companies",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Staggered acquisition design (physician practices acquired by three PPMCs at physician-specific years), but no reported specification satisfies the rules: every main regression includes patient-level time-varying controls (insurance, race, comorbidity indicators) and/or three separate PPMC treatment indicators plus transition-year dummies as additional treatment regressors. The main analytic data (Florida AHCA inpatient discharges, SK&A practice data) are not in the package.",
+ "design_notes": "Inferred from _code/6_variables_provider_practice.do and 7_analysis.do (no article text). Unit: physician (licnum); time: year (2006-2014); observations are births (patient-level) in Florida. Treatment: physician's practice joins PPMC k (k=1,2,3) in year ppmc{k}_year_joined; ppmc{k}_join_ind = 1 from join year on; main_ppmc{k} = switch_ppmc{k} (join indicator x 'main switcher' flag) set to 0 in the join year, with the join year absorbed by transition{k} dummies; main_ppmc = any of the three. Event-time dummies ppmc{k}_tminus{t}/tplus{t} = treated*(tsjyr==t) within PPMC group k, t-1 omitted. FE in main columns: licnum + year#ppmc (PPMC group x year; ppmc=0 for never-acquired), alternatives year#ahcaid (hospital), year#pt_zip, year. Cluster ska_group (SK&A practice organization). Regression sample low_reg = treated==1 & lowrisk==1 where treated = ppmc{k}_main_switch==1 (main switchers, defined in redacted cleaning code; whether never-acquired physicians enter the regression sample cannot be verified). Controls local: private medicaid medicaid_managed selfpay black latinx white com* (patient-level, time-varying). Table 4 uses continuous patient-exposure shares (ppmc{k}_share*_main). Join years span roughly 2007-2014 (Figure 3 share series), so multiple cohorts, exact count unknown.",
+ "estimators_reported": [
+  "TWFE static with three PPMC treatment indicators + transition dummies (reghdfe)",
+  "TWFE event study by PPMC (relative-time dummies, reghdfe)",
+  "continuous exposure-share regressions (Table 4)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 3 cols (1)-(5) [7_analysis.do lines 154-171]",
+   "reason": "time-varying patient controls in every column; col 1 pooled main_ppmc + transition dummy; cols 2-5 three PPMC indicators + three transition dummies"
+  },
+  {
+   "location": "Figure 4 [line 181]",
+   "reason": "no controls, but three PPMC treatment indicators plus transition dummies (additional treatment regressors); outcomes are comorbidity indicators"
+  },
+  {
+   "location": "Table 4 [lines 202-210]",
+   "reason": "continuous exposure-share treatment (ppmc{k}_share*_main)"
+  },
+  {
+   "location": "Figure 5 event studies [lines 223-227]",
+   "reason": "three separate event-study paths in one regression plus time-varying controls"
+  },
+  {
+   "location": "Figures 6-7 [lines 263-305]",
+   "reason": "three PPMC indicators + transition dummies; most panels with time-varying controls; panels c/d of Fig 6-7 without controls still multi-treatment"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "package_files": {
+  "present": [
+   "_data/fl_license/fl_licnum_all_2020.txt (raw FL licensure, 695MB)",
+   "_data/physician_compare/Physician_Compare_National_Downloadable_File.csv (raw)",
+   "_results/analysis_output_ACTUAL.log (Stata log of actual run, contains Figure 3 shares; regression output further down)",
+   "_results/analysis_output_synthetic.log"
+  ],
+  "missing": [
+   "main_analytic_data.dta (analysis file)",
+   "_data/inpatient/ (empty; FL AHCA inpatient data must be purchased)",
+   "_data/ska/ (empty; SK&A via WRDS/IQVIA)"
+  ],
+  "synthetic": "7_synthetic.do generates a synthetic dataset for code validation only (README: does NOT replicate results)"
+ },
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (no article text). The analysis_output_ACTUAL.log could be mined for published coefficients if needed, but no specification is eligible as reported. Flags ft_borusyak/ft_staggered likely reflect text discussion of staggered-DiD issues; nothing in the code implements a modern estimator."
+}

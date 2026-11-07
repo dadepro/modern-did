@@ -1,0 +1,67 @@
+{
+ "suffix": "mnsc.2024.08673",
+ "doi": "10.1287/mnsc.2024.08673",
+ "journal": "mnsc",
+ "title": "The Impact of Voluntary Carbon Goal Announcements on Stock Returns",
+ "authors": "Lukas Schnabel; Setareh Heidari; Stefan J. Hock; Sascha Raithel",
+ "year": 2026,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.08673",
+ "regressions_path": "./data/packages/mnsc.2024.08673_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (short-window stock-return event study and cross-sectional CAR regressions)",
+ "ineligible_specs": [
+  {
+   "spec_id": "car_mean",
+   "reported_location": "main CAR results (-2,+2 window; Figure 3)",
+   "exclusion_reason": "financial event study of cumulative abnormal returns for 188 announcements; no unit and calendar-time FE panel"
+  },
+  {
+   "spec_id": "car_cross_section_ols",
+   "reported_location": "moderation regressions (media topics, emission scopes)",
+   "exclusion_reason": "cross-sectional OLS of CAR on announcement characteristics with time-varying controls and industry dummies; not DiD"
+  },
+  {
+   "spec_id": "placebo_probit",
+   "reported_location": "placebo analysis (web appendix E)",
+   "exclusion_reason": "probit; nonlinear"
+  }
+ ],
+ "eligible_reason": "Not a DiD design. The paper is a short-window financial event study: CARs around 188 voluntary carbon-goal announcements, then cross-sectional OLS of CARs on announcement and media characteristics.",
+ "design_notes": "Stata Main Analyses.do: reg CARm2p2 focalvar controls industry, rob. Eventus/CRSP abnormal returns.",
+ "estimators_reported": [
+  "market-model CAR event study",
+  "cross-sectional OLS",
+  "probit (placebo)"
+ ],
+ "data_access": "partial",
+ "data_files_present": false,
+ "data_files": [
+  "Data Disclosure/data/dataset.xlsx",
+  "Data Disclosure/data/placebo.xlsx"
+ ],
+ "data_files_note": "dataset.xlsx (188 x 194) ships only hand-coded announcement variables; abnormal returns (ARm10..ARp10), PERMNO, financial controls, ESG and emissions columns are empty (commercial data withheld).",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Outcome (abnormal returns) and controls withheld as commercial data.",
+ "software": "stata",
+ "software_notes": "Stata 18, Python (text processing), R (topic modeling)",
+ "screener_notes": "Published text confirms CAR event-study design. Not a near miss."
+}

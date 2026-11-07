@@ -1,0 +1,41 @@
+{
+ "suffix": "mnsc.2022.00286",
+ "doi": "10.1287/mnsc.2022.00286",
+ "journal": "mnsc",
+ "title": "The Role of Monitoring Effect in Risk Classification: Evidence from Telematics Adoption",
+ "year": 2025,
+ "authors": "Ho Cheung Brian Lee; Xinxin Li; Siyuan Liu",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.00286",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single adoption date. Field experiment with a treatment group of drivers whose telematics device is activated on 1 June 2018 and deactivated on 1 September 2018 for everyone (final_run.do lines 211-228: period2_date = 01jun2018, period3_date = 01sep2018 for all drivers). Table 3: reghdfe harsh c.treat#c.(activation_stage deactivation_stage), absorb(id date) vce(cluster id). Two-group pre/post design with common dates; fails the at-least-two-adoption-dates rule. Treatment also switches off for all units simultaneously.",
+ "design_notes": "Driver-day panel (driver_data.dta -> data.dta), March-December 2018, stages: pre-activation (Mar-May), activation (Jun-Aug), post-activation (Sep-Dec). Treat = randomized treatment group. Tables 3-4: TWFE-style regressions with driver and date FE, treat x stage indicators and treat x stage x preharsh interactions (Table 4), stage-day trends. Tables 5-6: misclassification analysis and cross-sectional regressions; Appendix: ppmlhdfe, normalized outcomes, driver-level regressions.",
+ "estimators_reported": [
+  "two-way FE regression with treat x stage interactions (reghdfe, id and date FE)",
+  "ppmlhdfe",
+  "OLS/logit cross-sectional"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "driver_data.dta not shipped (NDA with insurer); stat.xlsx summary statistics; log_main_file.smcl, log_appendix_A/B_file.smcl"
+ ],
+ "data_provenance": "real",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (README.pdf, final_run.do, logs).",
+ "software_notes": "Stata 18; reghdfe, ppmlhdfe, coefplot, matselrc"
+}

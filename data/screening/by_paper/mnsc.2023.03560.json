@@ -1,0 +1,75 @@
+{
+ "suffix": "mnsc.2023.03560",
+ "doi": "10.1287/mnsc.2023.03560",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Robbing Peter to Pay Paul: The Impact of California’s Cap-and-Trade Program on Toxic Emissions",
+ "authors": "Narae Lee; Aseem Kaul",
+ "department": "business strategy (manuscript ID MS-FTBST-2023-03560)",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single adoption date and continuous treatment. The headline regressor 'stringency' (inverse of industry-wide free allowances per facility) is continuous; the one binary specification, CA_after2013 (Table 2), switches on for all California cap-and-trade facilities in 2013, i.e. one adoption cohort versus never-treated matched facilities. Every column also includes time-varying controls (max_chem, since_inspection, since_EPA_action), matching weights and facility and year FE (xtreg fe, cluster state). Figure 2 uses eventdd with timeToTreat = year - 2014 for CA facilities, again a single date. Fails the at-least-two-adoption-cohorts rule, so it is not a near-miss either.",
+ "design_notes": "MSFT2023_03560Code.do: xtset newid year; Table 2 loop (line 30-32) over stringency / auction / CA_after2013: xtreg log_Toxic `j' max_chem since_inspection since_EPA_action i.year [weight=weight], fe cluster(state), if sample==1. Panel 2010-2018, 1,044 facilities, 8,239 facility-years in the replication data. Table 3-4: mechanisms and splits with the continuous stringency. The shipped data omit D&B variables (employees, owner information), so the README warns results differ from the paper.",
+ "estimators_reported": [
+  "TWFE with continuous treatment and time-varying controls (xtreg fe)",
+  "TWFE single-date binary DiD (CA_after2013, Table 2 one column)",
+  "eventdd event study around 2013/2014 (Figure 2)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "n_adoption_cohorts_note": "All treated facilities (CA, GHG-reporting) treated from 2013.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [
+  {
+   "location": "Table 2, CA_after2013 column (package log on replication data WITHOUT D&B controls; not the published number)",
+   "coef": 0.2656,
+   "se": 0.0769,
+   "n_obs": 8239,
+   "n_units": 1044,
+   "source": "testlog.log line 355"
+  }
+ ],
+ "specs": [
+  {
+   "spec_id": "mnsc.2023.03560_T2_CA_after2013",
+   "eligible": false,
+   "exclusion_reason": "single adoption date (2013); time-varying controls in every column",
+   "code_file": "MSFTBST2023_03560_replication/MSFT2023_03560Code.do",
+   "code_line": "31 (loop line 30; `j' = CA_after2013)",
+   "outcome": "log_Toxic",
+   "treatment_var": "CA_after2013",
+   "treatment_definition": "1 if facility is in California and year >= 2013",
+   "unit_var": "newid (facility)",
+   "time_var": "year",
+   "fe": "newid (xtreg fe) + i.year",
+   "controls": "max_chem since_inspection since_EPA_action (time-varying)",
+   "weights": "[weight=weight] (matched-sample weights)",
+   "cluster": "state",
+   "sample_condition": "sample==1 (no ownership change, reports GHG)",
+   "static_or_event": "static",
+   "data_file": "MSFTBST2023_03560Database_Replication.dta",
+   "reported_location": "Table 2, column with CA_after2013",
+   "notes": "Other Table 2 columns use continuous stringency or auction price."
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "MSFTBST2023_03560Database_Replication.dta (24.9 MB; facility-year panel; D&B employee and owner variables removed)"
+ ],
+ "data_files_note": "README: D&B subscription variables excluded; 'running the code without these variables does not produce identical results to those in the table'.",
+ "software": "stata",
+ "software_notes": "Stata SE 16.1 (xtreg, estpost, eventdd).",
+ "replication_feasible": "no",
+ "priority": 3,
+ "priority_note": "Not eligible (single cohort, continuous treatment, time-varying controls).",
+ "screener_notes": "Screened from package only (no article text). README read from MNSC-readme.docx."
+}

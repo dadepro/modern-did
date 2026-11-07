@@ -1,0 +1,61 @@
+{
+ "suffix": "mnsc.2023.02773",
+ "doi": "10.1287/mnsc.2023.02773",
+ "journal": "mnsc",
+ "title": "Does Agglomeration Enhance Property Value?",
+ "authors": "Crocker Herbert Liu; Chen Zheng; Bing Zhu",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.02773",
+ "regressions_path": "./data/packages/mnsc.2023.02773_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "No binary staggered-adoption DiD. Tables 4-16 are transaction-level hedonic regressions of log price per square metre, NOI and cap rate (and lease-level rent) on continuous agglomeration indices (neighbourhood specialization, within-building specialization, BN spillover location quotients) plus time-varying property controls, transaction-year, MSA and REIT FE (zb_issue_regression_dummy_tenant_ran.m), with a Bartik-instrument second stage in Table 7. Table 17 and Figure 3 are REIT event studies of daily abnormal returns around building transactions: event-time dummies (-11..11, end-binned) interacted with high-specialization indicators and with every property characteristic (dummy_didtran*), day and firm FE (zb_issue_regression_dummy_event2.m). The estimand is a characteristic-by-event-time interaction (subgroup-by-treatment interaction with additional characteristic interactions), and REITs experience repeated transaction events.",
+ "design_notes": "MATLAB scripts; master script copied into 'Word Copy of Master Script.docx' (zb_run_tenant_all.m). Event dummies built in zb_creatdummy_event.m with 60-day end bins.",
+ "estimators_reported": [
+  "ols_hedonic_continuous",
+  "iv_bartik",
+  "event_study_abnormal_returns_interacted"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 4-16",
+   "reason": "continuous agglomeration regressors with time-varying controls; cross-sectional transactions; Table 7 IV"
+  },
+  {
+   "location": "Table 17",
+   "reason": "cross-section of cumulative abnormal returns on continuous indices"
+  },
+  {
+   "location": "Figure 3",
+   "reason": "event time x high-specialization (and x property characteristics) interactions; repeated REIT events; not a binary staggered adoption"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "ReadMe_DataFile.docx: S&P Market Intelligence, CoStar, CompStak, RCA, Trepp, Bureau van Dijk, CRSP, NCREIF and LSEG data are commercial/licensed and not included; public CBP, BEA and Zillow series must be downloaded. The package contains only .m files and two docx files.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Licensed commercial real estate and return data; not in package.",
+ "software": "other",
+ "software_note": "MATLAB",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract. Not a near-miss: the treatment of interest is continuous agglomeration, and the only event-time design interacts event dummies with characteristics."
+}

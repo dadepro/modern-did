@@ -1,0 +1,82 @@
+{
+  "suffix": "00222437251350150",
+  "doi": "10.1177/00222437251350150",
+  "journal": "jmr",
+  "title": "How Fatal School Shootings Impact a Community's Consumption",
+  "year": "2025",
+  "eligible_design": false,
+  "eligible_reason": "Closest call in this batch, judged ineligible. Study 1 stacks 63 incident windows (24 weeks before and after each fatal school shooting) and uses the same households one year earlier as a placebo control. Week fixed effects are defined relative to the treatment week (event time), not calendar time, so the regression is an event-aligned stacked design. It also includes household controls, and the Advan/SafeGraph analysis uses synthetic DiD.",
+  "design_notes": "JMR 62(6), 2025. Equation (1): Y_hw = alpha + beta*FSS_hw + mu_h + lambda_w + delta*X_hw + e_hw. h = NielsenIQ Homescan household in a county with a fatal school shooting; w = week; FSS_hw = 1 if the household's county had a shooting by week w (table label 'FSS incident x post (DiD)'); mu_h = household FE; lambda_w = week-relative-to-treatment FE; X_hw = household income, residence type, race, school-age children (the text says it captures 'changes in a household's income'). Each incident contributes 48 weeks in the shooting year and 48 weeks in the prior year (control); N = 8,275 households x 48 weeks x 2 years = 794,400. SEs clustered by household. 63 incidents, 2012-2019 (40 in liberal-leaning, 23 in conservative-leaning counties by 2012 county vote). Table 3 outcome = weekly food spending in dollars; Table 4 outcomes = shopping days, unique stores, unique departments, weekly trips. Table 5 = synthetic DiD ATT on log(total spend) and visit counts for NAICS 445 and 722 using SafeGraph/Advan (2019-2022), neighbor counties as controls. Parallel-trends evidence and the neighboring-county control are in Web Appendices D and E (not main text). No event-study figure or modern estimators in the main text.",
+  "estimators_reported": [
+    "event-aligned stacked DiD with prior-year placebo control and household FE",
+    "synthetic DiD (Table 5)",
+    "randomized online experiments (Studies 2-4)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 63,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Stacked, event-time design with week-relative FE (no calendar-time FE), household time-varying controls, and a prior-year placebo control; Table 5 is synthetic DiD. If the lead wants event-aligned windows treated as eligible, re-estimation would need household-by-incident stacking, which the protocol excludes. Data: NielsenIQ Homescan via the Kilts Center (licensed), Advan and SafeGraph via Dewey (licensed), CHDS K-12 shooting database (public). No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only.",
+  "ineligible_specs": [
+    {
+      "location": "Table 3, Panel A",
+      "outcome": "weekly food spending ($)",
+      "coef": -1.292,
+      "se": 0.2593,
+      "n_obs": 794400,
+      "reason": "stacked event-aligned design; relative-week FE; time-varying household controls",
+      "no_controls_version_in_main_text": false
+    },
+    {
+      "location": "Table 3, Panel B (40 liberal-county incidents)",
+      "coef": -1.481,
+      "se": 0.3102,
+      "n_obs": 556224,
+      "reason": "same; subsample"
+    },
+    {
+      "location": "Table 3, Panel C (23 conservative-county incidents)",
+      "coef": -0.8257,
+      "se": 0.4746,
+      "n_obs": 238176,
+      "reason": "same; subsample"
+    },
+    {
+      "location": "Table 4, Panels A-C",
+      "outcomes": [
+        "shopping days",
+        "unique stores visited",
+        "unique departments shopped",
+        "weekly trips"
+      ],
+      "panel_A_coefs": [
+        -0.0197,
+        -0.0234,
+        -0.0419,
+        -0.0301
+      ],
+      "panel_A_ses": [
+        0.0065,
+        0.0074,
+        0.0094,
+        0.0106
+      ],
+      "n_obs": 794400,
+      "reason": "same"
+    },
+    {
+      "location": "Table 5",
+      "reason": "synthetic difference-in-differences with neighbor-county controls"
+    }
+  ]
+}

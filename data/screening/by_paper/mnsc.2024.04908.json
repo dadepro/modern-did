@@ -1,0 +1,56 @@
+{
+ "suffix": "mnsc.2024.04908",
+ "doi": "10.1287/mnsc.2024.04908",
+ "journal": "mnsc",
+ "title": "Vaccines at Work: Experimental Evidence from a Firm Campaign",
+ "authors": "Manuel Hoffmann; Roberto Mosquera; Adrian Chadi",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.04908",
+ "regressions_path": "./data/packages/mnsc.2024.04908_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a staggered DiD. Randomized encouragement field experiment at an Ecuadorian bank: employees were randomly assigned incentives (treatment1/2/4) and an on-site vaccination day (workweek), and the main results are cross-sectional OLS of vaccination take-up and sickness absence on the randomized arms (Tables 2-5), peer-assignment regressions, and an RD on distance (r, c, cXr). The only unit-FE panel regression (Figure A11 and footnote 26: xtreg sick_flu1_ext i.workweek##i.monthc, fe) interacts the time-invariant random assignment with calendar month around a single campaign date, so there is one common treatment date and it is appendix material.",
+ "design_notes": "Stata; Code/1_data_preparation_cross_section.do, 2_data_preparation_panel.do, 3_analysis.do. Individual-level cross-section plus individual-month health panel (monthc). vce(robust) or cluster unit2.",
+ "estimators_reported": [
+  "rct_ols",
+  "regression_discontinuity",
+  "panel_fe_assignment_by_month_appendix"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 2-5",
+   "reason": "cross-sectional OLS on randomized arms; no adoption timing"
+  },
+  {
+   "location": "Figure A11; footnote 26",
+   "reason": "randomized workweek assignment x calendar month with individual FE; single common campaign date (not staggered); appendix"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "MS Data and Source Files/Data/Original/original_data_cross_section.dta",
+  "MS Data and Source Files/Data/Original/original_data_illness.dta",
+  "MS Data and Source Files/Data/Original/original_data_swipe_*.dta"
+ ],
+ "data_files_note": "README: the bank authorized an anonymized version of the proprietary data; results requiring income (summary stats, RD estimates, some robustness) cannot be replicated. Data/Final is empty and is built by the data-preparation do-files.",
+ "data_provenance": "original",
+ "data_provenance_note": "Anonymized original records with income withheld; no statement of noise or synthesis.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, README and OpenAlex abstract (no article text)."
+}

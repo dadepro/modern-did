@@ -1,0 +1,28 @@
+{
+  "suffix": "0022243720969401",
+  "doi": "10.1177/0022243720969401",
+  "journal": "jmr",
+  "title": "The Impact of Soda Taxes: Pass-Through, Tax Avoidance, and Nutritional Effects",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Single adoption date: only Philadelphia taxed sweetened beverages, effective Jan 1, 2017; treated stores are all in one city and share one start date.",
+  "design_notes": "Classic two-group DiD on IRI store-week scanner data (Jan 2015 - Sep 2018). Equation (1): y_st = a (Philly_s x AfterTax_t) + gamma_s + delta_t + e_st with store and week fixed effects; unit = store x week (tax-status level aggregates, and product-size / category / chain splits); treated = stores in Philadelphia, controls = stores in surrounding 3-digit zips more than 6 miles from the city limit; first four months after Jan 1, 2017 dropped in main regressions. Equation (2) adds After x store-characteristic interactions (time-varying-by-time controls, subgroup interactions). Two-way clustering by store and week. No staggered timing; other tax cities (Berkeley, Seattle, etc.) are discussed only in the literature review and not estimated.",
+  "estimators_reported": [
+    "static TWFE DiD (single policy date)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": null,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: one adoption date (Jan 1, 2017). Data are IRI retail scanner data (licensed, not redistributable) plus demographic data. No replication package listed in batch file. Screened from article text only."
+}

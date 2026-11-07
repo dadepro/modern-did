@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2023.0045",
+ "doi": "10.1287/mksc.2023.0045",
+ "journal": "mksc",
+ "title": "Using Text Analysis in Parallel Mediation Analysis",
+ "authors": "Judy Zhang; H. Alice Li; Greg M. Allenby",
+ "year": 2024,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0045",
+ "regressions_path": "./data/packages/mksc.2023.0045_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian parallel mediation model with seeded topic model on text)",
+ "ineligible_specs": [
+  {
+   "spec_id": "mcmc_mediation",
+   "reported_location": "main tables (mediation estimates)",
+   "exclusion_reason": "Bayesian text-based mediation model on experimental responses; no panel or staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Methods paper estimating a Bayesian parallel mediation model on a document-word matrix from an experiment.",
+ "design_notes": "R MCMC code in three steps.",
+ "estimators_reported": [
+  "Bayesian MCMC mediation model with seeded LDA"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "W_mtx.csv",
+  "Dictionary.csv",
+  "seed words_*.csv"
+ ],
+ "data_files_note": "Document-word matrix and dictionary shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "ReadMe.rtf describes the data files without any disguise statement.",
+ "software": "r",
+ "software_notes": "R (bayesm, extraDistr)",
+ "screener_notes": "No article text available; design read from ReadMe and code. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

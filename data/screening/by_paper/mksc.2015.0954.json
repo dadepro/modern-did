@@ -1,0 +1,58 @@
+{
+ "suffix": "mksc.2015.0954",
+ "doi": "10.1287/mksc.2015.0954",
+ "journal": "mksc",
+ "title": "Practice Prize Paper—Incorporating Emotions into Evaluation and Choice Models: Application to Kmart Australia",
+ "authors": "Ken Roberts; John Heath Roberts; Peter J. Danaher; Rohan Raghavan",
+ "year": 2015,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0954",
+ "regressions_path": "./data/packages/mksc.2015.0954_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Practice Prize: survey-based evaluation/choice models with emotions, plus an aggregate time-series advertising response model for Kmart transactions)",
+ "ineligible_specs": [
+  {
+   "spec_id": "kmart_adv_response",
+   "reported_location": "aggregate econometric model (SAS proc model)",
+   "exclusion_reason": "single-firm weekly time series of log transactions on log price, adstocked TV advertising (instrumented by a first-stage regression on lags), campaign-period dummies and holiday dummies with AR(1) errors; no cross-sectional units, no DiD"
+  },
+  {
+   "spec_id": "emotion_choice_models",
+   "reported_location": "survey evaluation/choice models",
+   "exclusion_reason": "individual-level survey models of store choice likelihood on cognitions and emotions; not in package; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Single-retailer advertising time-series model plus survey-based emotion/choice models.",
+ "design_notes": "Package is one SAS file (mksc.2015.0954.sas, CRLF line endings): proc reg first stage for TV advertising, adstock construction, campaign dummies (mums, bombom), proc model with %ar(1). It reads data.xlsx, which is not shipped.",
+ "estimators_reported": [
+  "nonlinear time-series regression with AR(1) errors (SAS proc model)",
+  "OLS first stage"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "Code imports data.xlsx (Kmart weekly transactions, sales, advertising); file absent from package and archive.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Only code shipped.",
+ "software": "other",
+ "software_notes": "SAS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

@@ -1,0 +1,147 @@
+{
+  "suffix": "mnsc.2021.03484",
+  "spec_id": "F2_eventdd_erp_integration",
+  "journal": "mnsc",
+  "screening_spec_id": "mnsc.2021.03484_F2_eventdd_erp_integration",
+  "data_provenance": "original",
+  "data_path": "~/did_packages/_work/mnsc.2021.03484/sample_nov2_adoption.rds",
+  "id_var": "gvkey",
+  "time_var": "year",
+  "y_var": "gwavg_erp_d_adopted",
+  "treat_var": "utsa_dummy",
+  "adoption_var": "g_true",
+  "adoption_var_note": "g_true (calendar year, same units as year; NA = never-adopting state) in sample_nov2_adoption.rds: UTSA adoption year of the firm's HQ state, so firms in 1980-1998 adopter states are pre-sample adopters with true event time (rel up to 29) and firms in 2012/2013/2018 adopter states have leads, as in the authors' eventdd timevar. treat_var utsa_dummy is kept so run_spec drops the 105 switch-off rows. Run_spec semantics (code-agent, Nov 2): adoption_var only moves the date of units that treat_var treats; firms in states adopting after 2009 (2012/2013/2018) and 24 other firms whose date falls after their last row stay never-treated (the authors give the post-2009 adopters lead dummies). Checked with the data-preparation block of the current run_spec.R (no stop; 1,474 units dated earlier, 1,462 pre-sample).",
+  "weight_var": "",
+  "cluster_var": "group_state_id",
+  "xt_vars": [
+    "sic2"
+  ],
+  "sample_filter": "",
+  "log_y": "",
+  "published_coef": null,
+  "authors_code_coef_0_3": 0.051582918,
+  "published_se": null,
+  "authors_code_se_0_3": 0.018859167,
+  "published_n": null,
+  "published_estimator": "twfe_event_study",
+  "authors_code_coef": 0.046903724,
+  "authors_code_se": 0.019689242,
+  "authors_code_n": 15243,
+  "published_source": "Shown only in Figure 2 of the published article; no printed value. Authors' code output recorded in authors_code_* (Nov 4 2026: post-summary average 0.046903724, delta-method SE 0.019689242, N 15,243; published_event_coefs / published_event_se are likewise the authors' eventdd-equivalent code output, not printed numbers). Table 3 of the article prints a dynamic specification (UTSA-4 .. UTSA+4+, N 15,243) that adds the time-varying firm and state controls, so it is not the Figure 2 regression and is not used here. Earlier: Figure 2 (article p. 1223) is graphical only. published_coef (Nov 2) = equal-weight average of the eventdd coefficients at event years 0..3 (the accumulated +4 end bin excluded, as in event_structure.post_summary) from the eventdd-equivalent regression (ABH_main_tests.do line 195; eventdd is not installed, so reghdfe with relative-time dummies accumulated at <= -4 and >= +4, baseline -1, never-adopting states as reference, run in Stata MP 16.1 and fixest with identical coefficients); SE by delta method from fixest's state-clustered vcov with singletons dropped as in reghdfe. The plotted markers agree with these coefficients. Earlier equal-weight averages over 0..4 / -4..-2 kept in published_post_avg_equal_weight / published_pre_avg_equal_weight. CONSTRUCTED value (no number printed). Nov 2 summary rule (team-lead: summaries average every reported bin, endpoint bins included): published_coef is now the equal-weight average of event years 0..3 and the accumulated >= +4 bin (all plotted in Figure 2) in the authors' normalization, 0.04690372 (delta-method SE 0.019689, cluster state); the previous value 0.051582918 is kept in published_coef_0_3. Pre-summary average -0.007595658.",
+  "authors_code_event_coefs": {
+    "-4": -0.005559119,
+    "-3": -0.018595825,
+    "-2": 0.001367971,
+    "0": 0.041169096,
+    "1": 0.046125522,
+    "2": 0.06174645,
+    "3": 0.057290602,
+    "4": 0.028186947
+  },
+  "authors_code_event_se": {
+    "-4": 0.0278868,
+    "-3": 0.01791525,
+    "-2": 0.02011069,
+    "0": 0.01407566,
+    "1": 0.02393132,
+    "2": 0.03370639,
+    "3": 0.02042426,
+    "4": 0.02391815
+  },
+  "authors_code_post_avg_equal_weight": 0.046903724,
+  "authors_code_pre_avg_equal_weight": -0.007595658,
+  "table": "Figure 2",
+  "column": "event-study plot",
+  "static_or_event": "event",
+  "event_pre_min": -4,
+  "event_post_max": 4,
+  "event_structure": {
+    "bins": [
+      [
+        null,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        -1,
+        -1
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        null
+      ]
+    ],
+    "pre_summary": [
+      [
+        null,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ]
+    ],
+    "source": "ABH_main_tests.do line 195: eventdd gwavg_erp_d_adopted, timevar(time_relative_to_utsa) method(hdfe, absorb(gvkey sic2#year) cluster(group_state_id)) lags(4) leads(4) accum baseline(-1). time_relative_to_utsa = year - utsa_year of the firm's CURRENT HQ state (checked on every row); with g = the firm's first UTSA year, rel = t - g = time_relative_to_utsa (years 1999-2009 consecutive). accum: relative times <= -4 and >= 4 are accumulated into the end bins, so bins = (<= -4), -3, -2, 0, 1, 2, 3, (>= 4), reference -1; firms in never-adopting states (missing timevar) have all indicators zero. Every relative time is in a bin or the reference (nothing uncovered). True relative time: firms in states that adopted 1980-1998 enter at rel 1..29 (mostly the >= 4 bin; 1995-1998 adopters at +1..+3 in 1999-2002) and firms in states adopting 2012/2013/2018 at leads -3..-19 -> adoption_var. Summaries: post rel 0..3, pre rel -3..-2 (the accumulated end bins, drawn in a different colour in Figure 2, are not averaged).",
+    "verified": "fixest with indicators from es_assign on the authors' coding (row-level g = utsa_year of the current state; never-adopting states all-zero) reproduces the 8 eventdd-equivalent reghdfe coefficients (published_event_coefs) to 4.9e-10 (storage rounding), N 15,522 (15,243 after reghdfe's singleton drop, same coefficients). Figure 2 (article p. 1223) agrees visually (-0.006, -0.019, 0.001, 0, 0.041, 0.046, 0.062, 0.057, 0.028). post_summary avg (0..3) 0.0515829 (0.0188592), pre_summary avg (-3..-2) -0.0086139. Pipeline rule (adoption_var g_true, 105 switch-off rows dropped, N 15,417): post 0.0515170 (0.0224521) = 0.13281 SD, pre 0.0051360. Script ~/did_packages/_work/mnsc.2021.03484/nov2_build_verify.R. Nov 2 summary rule: with the reported endpoint bins added to the summaries, the authors'-normalization post average is 0.04690372 (SE 0.019689) and the pre average -0.007595658 (scratchpad/meta3/rule2/). Pipeline-rule TWFE (raw) for the new post summary: 0.0528220 (0.0227164); pre 0.0001230. Expected pipeline TWFE under run_spec's actual adoption_var rule (scratchpad/meta3/rule2/pipe_twfe_adopt.R; cluster state, singletons kept): post_summary (0..3, [4,inf)) 0.0517194 (0.0231262), pre 0.0013904 (0.0215423); supersedes 0.0528220 above (computed with lead dummies for post-sample adopters).",
+    "summary_rule": "Nov 2 rule: a bin is summarized iff the paper reports its coefficient, open endpoint bins included (Figure 2 plots the accumulated -4 and +4 bins)."
+  },
+  "preferred": false,
+  "in_abstract_intro": false,
+  "replication_status": "exact (package reconstructed: the eventdd-equivalent reghdfe regression is reproduced identically in Stata MP 16.1 and fixest; Figure 2 matched visually against the article; figure-only, no printed value; verified Nov 4 2026)",
+  "code_file": "replication_package_MS-ACC-21-03484/code/ABH_main_tests.do",
+  "code_line": "195",
+  "notes": "Same sample, FE and clustering as Table 2 column 1. Authors' relative time = year - utsa_year of the firm's current HQ state: never-adopting states (1,211 rows) are the reference group; always-treated states (adopted 1980-1998) enter at their true relative time (1995-1998 adopters appear in bins +1 to +3 in 1999-2002, all others in the +4 bin); states adopting in 2012-2018 appear in the lead bins. run_spec.R instead derives relative time from the firm-level first year with utsa_dummy = 1, so the 1,478 always-treated firms sit at relative time 0..4 in 1999-2003 and drop into the +5 bin afterwards, and post-2009 adopters are never-treated controls. Endpoint bins in the runner are -5 and +5 (outside the averaging window), versus the authors' accumulated -4 and +4. The 105 switch-off rows are dropped by the runner. These differences are recorded as deviations; the runner's post/pre averages are therefore not expected to equal the equal-weight averages of the authors' bins (post 0.0469, pre -0.0076 in raw units; 0.1213 and -0.0196 in SD units with SD 0.38676). NOV 2 AUDIT (supersedes the timing deviation above): event_structure keeps eventdd's bins (<= -4, -3, -2, 0..3, >= 4; ref -1) and adoption_var = g_true gives every firm its true first UTSA year, so firms in states that adopted 1980-1998 enter at their true relative time (pre-sample adopters: 1,462 firms; always-treated for DiD-averaging and imputation) and firms in states adopting 2012/2013/2018 get lead indicators (379 firms; untreated within the sample). data_path = sample_nov2_adoption.rds (package dta columns needed by this spec plus g_true, mover, switch_off; built by ~/did_packages/_work/mnsc.2021.03484/nov2_build_verify.R). Rule for g_true: firms in one HQ state (2,057) get their state's utsa_year; for the 107 HQ movers, treated at entry -> the entry state's utsa_year, observed untreated first -> the later of the state's year and the year after the last untreated row (= move year for the 24 firms moving into an already-treated state), never treated -> utsa_year of the last observed state. treat_var utsa_dummy is kept so run_spec drops the 105 switch-off rows (20 firms). Residual differences from the authors' Figure 2 regression: the switch-off rows and movers' single date (authors: current state's date each year). Pipeline-rule TWFE (raw): post_summary 0.0515170 (0.0224521), pre_summary 0.0051360 (0.0196656); treating the post-sample adopters as never-treated instead changes the post average to 0.0515327.",
+  "run_spec_result": "run_spec.R 2026-11-01: post (0..4) TWFE 0.16168 (0.04862), CSA 0.11138 (0.03459), BJS 0.19563 (0.05700); pre (-4..-2) TWFE 0.02377 (0.06719), CSA -0.06838 (0.07340), BJS 0.02563 (0.02176). Runner relative time differs from authors' eventdd timing (always-treated at 0..4; endpoint bins -5/+5); authors' bins' equal-weight post average is 0.1213 SD. See data/replication_logs/mnsc.2021.03484.md."
+}

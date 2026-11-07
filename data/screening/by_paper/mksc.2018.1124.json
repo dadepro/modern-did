@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2018.1124",
+ "doi": "10.1287/mksc.2018.1124",
+ "journal": "mksc",
+ "title": "Accounting for Discrepancies Between Online and Offline Product Evaluations",
+ "authors": "Daria Dzyabura; Srikanth Jagabathula; Eitan Muller",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1124",
+ "regressions_path": "./data/packages/mksc.2018.1124_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (online vs offline conjoint ratings and choices; partworth adjustment method)",
+ "ineligible_specs": [
+  {
+   "spec_id": "conjoint_studies",
+   "reported_location": "Studies 1-2",
+   "exclusion_reason": "within-subject conjoint experiments (ratings and choices online vs offline); no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Conjoint experiments comparing online and offline partworths, plus a statistical adjustment method.",
+ "design_notes": "Package ships only CSV design/response files and readme.docx; no estimation code.",
+ "estimators_reported": [
+  "conjoint estimation",
+  "hierarchical Bayes / choice models"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Study1_*.csv",
+  "Study2_*.csv",
+  "ratings_design_matrix.csv"
+ ],
+ "data_files_note": "Experimental data shipped; no code.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data as collected.",
+ "software": "other",
+ "software_notes": "no code shipped",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

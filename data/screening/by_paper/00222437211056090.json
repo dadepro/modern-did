@@ -1,0 +1,28 @@
+{
+  "suffix": "00222437211056090",
+  "doi": "10.1177/00222437211056090",
+  "journal": "jmr",
+  "title": "Variety Effects in Mobile Advertising",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences design. Effect of a continuous ad-variety measure on next-ad click-through, identified from quasi-random ad assignment within sessions.",
+  "design_notes": "Impression-level data from a mobile in-app ad network; treatment is a continuous variety index of prior ads in the session, not a binary adoption. No staggered adoption dates.",
+  "estimators_reported": [
+    "regression models exploiting quasi-experimental ad assignment"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Data come from a leading Asian mobile in-app ad network (proprietary)."
+}

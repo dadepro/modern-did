@@ -1,0 +1,40 @@
+{
+  "suffix": "mnsc.2023.4832",
+  "doi": "10.1287/mnsc.2023.4832",
+  "journal": "mnsc",
+  "title": "Covid-19 Vaccines As a Condition of Employment: Impact on Uptake, Staffing, and Mortality in Elderly Care Homes",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date: the English care-home vaccine mandate (event1) starts in the same week for every English local authority (post = yw >= max(yw if event1==1)). Main estimates (Figures 4-6, Tables 2-3) use the generalized synthetic control / interactive fixed effects estimator (fect, method ife) with covariates; Figure 7 / Table 3 use a triple-difference event study (xtreg i.england##i.pre##i.D_staff ... with covariates). No staggered adoption, synthetic-control-type estimator, and covariates throughout.",
+  "design_notes": "Package replication_package_MS-HCM-22-03405: Datasets/COVID_paper.dta (LA-week panel), carenational_mansci.dta, carela_mansci.dta, relative_time.dta; do_files/master_main.do, FIG4-7.do, Table2-4.do, appendix FIGA*.do; ado_files include fect.ado. Weekly LA-level data for England and Wales, care homes vs other social care vs domestic deaths.",
+  "estimators_reported": [
+    "generalized_synthetic_control (fect ife)",
+    "triple_difference_event_study_with_covariates"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public (package data)",
+  "data_files_present": true,
+  "data_files": [
+    "replication_package_MS-HCM-22-03405/Datasets/COVID_paper.dta",
+    "carenational_mansci.dta",
+    "carela_mansci.dta",
+    "relative_time.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Sun-Abraham flag in full-text search likely a citation; no eventstudyinteract in code."
+}

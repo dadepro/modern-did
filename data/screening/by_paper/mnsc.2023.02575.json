@@ -1,0 +1,62 @@
+{
+ "suffix": "mnsc.2023.02575",
+ "doi": "10.1287/mnsc.2023.02575",
+ "journal": "mnsc",
+ "title": "Estimating Effects of Long-Term Treatments",
+ "authors": "Shan Huang; Chen Wang; Yuan Yuan; Jinglong Zhao; Jing-Jing Zhang",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.02575",
+ "regressions_path": "./data/packages/mnsc.2023.02575_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Methods paper on a longitudinal surrogate framework for estimating long-term treatment effects from short-term A/B tests. Empirical applications are two randomized WeChat experiments (Experiment_1/2 estimation.ipynb: linear surrogate model, VAR, Athey et al. surrogate index) plus synthetic experiments. Treatment is randomized at a single launch; no staggered adoption, no TWFE DiD.",
+ "design_notes": "Python notebooks using statsmodels OLS/VAR/AutoReg on user-level experimental metrics; simulations generate synthetic treatment/control panels.",
+ "estimators_reported": [
+  "surrogate_index",
+  "linear_surrogate_model",
+  "var",
+  "ols"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Experiments 1-2 (main text)",
+   "reason": "randomized A/B tests with a single common launch; surrogate-index estimators, not DiD"
+  },
+  {
+   "location": "Synthetic experiments",
+   "reason": "simulated data"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "Simulations/main_sim1_treat.csv",
+  "Simulations/main_sim1_control.csv",
+  "Simulations/main_sim2_treat.csv",
+  "Simulations/main_sim2_control.csv"
+ ],
+ "data_files_note": "README.md: the Experiment_1/2 notebooks 'cannot be executed because they lack the actual experimental data'; only simulated datasets for the synthetic experiments are shipped.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "WeChat experimental data not shipped; the only shipped CSVs are synthetic simulation draws.",
+ "software": "python",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package README, notebooks and OpenAlex abstract. Not a near-miss."
+}

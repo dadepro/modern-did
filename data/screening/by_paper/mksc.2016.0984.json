@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2016.0984",
+ "doi": "10.1287/mksc.2016.0984",
+ "journal": "mksc",
+ "title": "A Video-Based Automated Recommender (VAR) System for Garments",
+ "authors": "Shasha Lu; Xiao Li; Min Ding",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0984",
+ "regressions_path": "./data/packages/mksc.2016.0984_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (video-based automated garment recommender; in-store comparison with self-explicated and try-on methods)",
+ "ineligible_specs": [
+  {
+   "spec_id": "var_system",
+   "reported_location": "empirical test tables",
+   "exclusion_reason": "computer-vision recommender evaluated against alternatives; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Video-based recommender evaluated in an in-store experiment.",
+ "design_notes": "Only pseudo-code documents for facial expression and hand-position detection.",
+ "estimators_reported": [
+  "experimental comparison"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "Readme: video data contain personal information; not provided.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data shipped.",
+ "software": "other",
+ "software_notes": "pseudo-code only (MATLAB on request)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

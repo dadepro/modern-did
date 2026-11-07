@@ -1,0 +1,29 @@
+{
+ "suffix": "00222437221115616",
+ "doi": "10.1177/00222437221115616",
+ "journal": "jmr",
+ "title": "Product-Harm Crises and Spillover Effects: A Case Study of the Volkswagen Diesel Emissions Scandal in eBay Used Car Auction Markets",
+ "year": "2022",
+ "eligible_design": false,
+ "eligible_reason": "Single event date (EPA announcement, September 18, 2015) on a repeated cross-section of auction listings, with time-varying listing controls. Synthetic control reported as robustness.",
+ "design_notes": "Equation 1: ln(P_i) = b0 + b1 Scandal_i + b2 Volkswagen_i + b3 Scandal_i x Volkswagen_i + Controls_i + e_i. Controls include log car age, log mileage, photos, seller feedback, start price, reserve and Buy-It-Now dummies, number of bidders, listing duration, plus year, month, body-type FE, optionally seller and car-make FE. Unit is an auction listing (eBay Motors, Nov 2014-Aug 2016), SEs clustered at make-model-year. Table 2: non-violating VW diesel (model years 2000-2008) DiD about -15 percent (cols 1-3), VW gasoline 9-11 percent (cols 4-9). No unit FE for stable units, no calendar-time FE beyond year and month dummies.",
+ "estimators_reported": [
+  "OLS DiD on repeated cross-section",
+  "synthetic control (Figure 3, robustness)"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: one event date, time-varying controls, no stable units. Source of the eBay Motors listing data (scraped or vendor) is not stated in the text. The text file is the City St George's accepted manuscript, not the published version. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

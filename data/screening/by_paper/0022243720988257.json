@@ -1,0 +1,32 @@
+{
+ "suffix": "0022243720988257",
+ "doi": "10.1177/0022243720988257",
+ "journal": "jmr",
+ "title": "The Dark Side of Mobile App Adoption: Examining the Impact on Customers' Multichannel Purchase",
+ "year": "2021",
+ "eligible_design": false,
+ "design_notes": "Hotel group data, Jan 2011 to Feb 2015, 60,000 customers in six app-adoption cohorts (adoption months spread Aug 2011 to Feb 2015); all customers eventually adopt before Feb 2015. Main analysis (Eq. 1, Table 2) builds ten treatment-control cohort pairs (e.g., Cohort 1 vs. Cohorts 3-6) and estimates a standard two-period DID on pre/post averages (six months before and after adoption, adoption month dropped) with time-varying reservation controls x_it and demographics, plus Heckman (inverse Mills ratio) and 1:1 propensity-score matching variants. Robustness: multiperiod panel DID per pair (Eq. 4) with month dummies, customer FE, controls and three instruments; Eq. 5 adds a time trend.",
+ "eligible_reason": "Each estimate compares one treated cohort with not-yet-adopters over a single adoption date (cohort-pair 2x2, not a pooled staggered TWFE); includes time-varying controls, Heckman correction, matching, and IV in the panel version; main estimate uses pre/post-collapsed two-period data.",
+ "n_adoption_cohorts": 6,
+ "never_treated_present": false,
+ "estimators_reported": [
+  "two-period DID by cohort pair",
+  "DID with Heckman correction",
+  "DID with PSM",
+  "multiperiod panel DID with IV (robustness)"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Proprietary customer-level reservation and app-usage data from a hotel group; no package or data statement. Borderline in the sense that the underlying data are staggered across six cohorts and one could pool them in a TWFE, but the paper never reports such a specification, so nothing qualifies for the main-text rule.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

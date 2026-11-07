@@ -1,0 +1,44 @@
+{
+  "suffix": "00222437211020013",
+  "doi": "10.1177/00222437211020013",
+  "journal": "jmr",
+  "title": "Do Activity-Based Incentive Plans Work? Evidence from a Large-Scale Field Intervention",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "All 305 treated territories in one sales business unit receive ABI interventions at the same dates (Intervention 1 in months 16-21, Intervention 2 in months 22-24, then removal). Tables 2-3 are within-unit before/after regressions with territory and month/year dummies and no comparison group. The comparison with 22 untreated business units uses synthetic control and generalized synthetic control (interactive fixed effects), which are excluded. No staggered adoption.",
+  "design_notes": "JMR 58(4), 2021. Table 2: outcome = composite activity score (CAS), individual level (N=9,355) and territory level (N=6,386), regressors INTV1 and INTV2 with territory, month, and year dummies. Table 3: outcome = territory-month sales (N=10,927), Model 1 INTV1, INTV2, Target; Model 2 adds NReps and NReps x INTV interactions; SEs clustered by territory. Tables 4-7 are SCM and generalized SCM (3 latent factors, two-way FE). Keywords list synthetic control. All treated territories share the same intervention months, so there is one cohort per intervention.",
+  "estimators_reported": [
+    "within-unit TWFE-style regression (common timing)",
+    "synthetic control (SCM)",
+    "generalized synthetic control (interactive FE)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Common treatment timing across all treated territories; comparison design is synthetic control. Data are from a South Asian pharmaceutical firm plus syndicated market data, with sales scaled to preserve confidentiality. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only.",
+  "ineligible_specs": [
+    {
+      "location": "Table 2, Models 1-2",
+      "reason": "single adoption date for all treated units, no untreated comparison unit in the regression"
+    },
+    {
+      "location": "Table 3, Models 1-2",
+      "reason": "single adoption date for all treated units, no untreated comparison unit; Target and NReps controls and interactions"
+    },
+    {
+      "location": "Tables 4-7",
+      "reason": "synthetic control and generalized synthetic control"
+    }
+  ]
+}

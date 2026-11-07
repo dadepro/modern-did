@@ -1,0 +1,30 @@
+{
+  "suffix": "mksc.2020.1251",
+  "doi": "10.1287/mksc.2020.1251",
+  "journal": "mksc",
+  "title": "Economic Impact of Category Captaincy: An Examination of Assortments and Prices",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Structural (moment-inequality) paper. The only DiD-style reduced-form analyses (Tables A6, 6) use one chain that switched from captaincy to retailer management and two chains that switched captain, with tiny samples (n = 68 and 515) and brand-level triple interactions (Captain's Products x Treated x Treatment).",
+  "design_notes": "Main identification is a structural model of assortment, pricing and captain selection (Table 7 inequality estimates). Descriptive/reduced-form Tables 2-5 and A1 (chain FE + time FE regression of sales/assortment on captaincy status) are not event-timing designs: 24 chains observed mostly under one arrangement; only one chain moved from no-captaincy to captaincy. Table 6 Scenario 1: single region, 2 chains, one switches (single date). Scenario 2: three regions, two chains switch from the same manufacturer to another (captain identity change, not a binary on/off treatment), regression includes interaction with captain's products.",
+  "estimators_reported": [
+    "structural moment-inequality estimator",
+    "OLS reduced-form regressions with brand/region/time dummies (Table 6)",
+    "chain and time FE regression (Table A1)"
+  ],
+  "main_or_robustness": "robustness (reduced-form support for structural model)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: structural paper; auxiliary DiD has one or two switching chains, subgroup/triple interactions, no staggered binary adoption. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data: Nielsen Storeview store-week data plus a national food manufacturer's captaincy records (licensed/proprietary)."
+}

@@ -1,0 +1,59 @@
+{
+ "suffix": "mksc.2017.1060",
+ "doi": "10.1287/mksc.2017.1060",
+ "journal": "mksc",
+ "title": "Rising Prices Under Declining Preferences: The Case of the U.S. Print Newspaper Industry",
+ "authors": "Adithya Pattabhiramaiah; Srinivasaraghavan Sriram; Shrihari Sridhar",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2017.1060",
+ "regressions_path": "./data/packages/mksc.2017.1060_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (structural model of newspaper reader demand and advertising with IV/GMM and micro-moments)",
+ "ineligible_specs": [
+  {
+   "spec_id": "reader_demand_structural",
+   "reported_location": "estimation tables",
+   "exclusion_reason": "nested/structural demand for subscription bundles with instruments and micro-moments; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural demand model for print newspaper subscriptions with IV (GAUSS).",
+ "design_notes": "MKSC_JMP_code_submit.gss: OLS/IV logit-share demand by county-month with county dummies and instruments, then structural optimization (optmum).",
+ "estimators_reported": [
+  "structural demand estimation (OLS/IV share regressions, GMM)"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "InsampleCountyReadershipData_Monthly_3bundles_2006-2011_nonwtprices.xlsx",
+  "Indiv_data_sampled_smallerdataset.xlsx",
+  "County_is_ndm_or_not.xls",
+  "Instruments_and_prices_readerdemand.xls",
+  "Instruments_GoogleTrends_cleaned.xlsx",
+  "AggAdvtgDataMonthly-for_CES_2001-2010_byOption_printonly_QCorrected.xls"
+ ],
+ "data_files_note": "Readme: NDA data; identifiers masked, readership and ad revenues scaled by an undisclosed constant; individual data is a randomized sub-sample.",
+ "data_provenance": "authors_transformed",
+ "data_provenance_note": "Linearly rescaled by undisclosed constant, masked identifiers; individual file is a random subsample.",
+ "software": "other",
+ "software_notes": "GAUSS 14",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract missing in data/frame; design judged from package code/data."
+}

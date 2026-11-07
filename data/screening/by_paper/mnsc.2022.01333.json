@@ -1,0 +1,200 @@
+{
+  "suffix": "mnsc.2022.01333",
+  "doi": "10.1287/mnsc.2022.01333",
+  "journal": "mnsc",
+  "title": "Communication Quality and the Cost of Language: Evidence from Stack Overflow",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible_design": true,
+  "eligible": true,
+  "eligible_reason": "Staggered introduction of four non-English Stack Overflow sites (Russian 2010, Portuguese 2013, Japanese 2014, Spanish 2015) treats non-native-English answerers at four distinct dates, with a never-treated random sample of English-only users as controls. Table 3 reports, for two outcomes (numCodes, isBestAnswer), a no-controls TWFE column (xtreg Y after i.weekdate, fe; user FE + week FE) and a no-controls Borusyak-Jaravel-Spiess imputation column (did_imputation Y user weekdate event_week). Binary absorbing treatment, unit and calendar-time FE, no controls: eligible. The remaining Table 3 columns add answer-level time-varying controls and are not eligible.",
+  "design_notes": "Answer-level data (323,850 answers, 5,339 users, 472 weeks Jul 2008 - Aug 2017), repeated cross-section assigned to users: unit = user (xtset user), calendar time = weekdate; several answers per user-week (mean 3.7). Treated group = users active in both English and another language (286,801 answers); control = random sample of English-only users (37,049 answers, TreatmentGroup == 'Control'). Cohort variable 'cohort' takes 5 values (4 language cohorts + control) and is the cluster variable in all Table 3 regressions. after agrees with (weekdate >= event_week) for 99.94% of treated rows (small timing discrepancy, event_day based); use the authors' after for TWFE and event_week for BJS/CSA. Table 3 columns TWFE 1-3 / BJS 1-3 add question_numcodes, question_answer_count, question_view_count (time-varying answer-level controls) and TWFE 3 / BJS 3 add same_language and picture_empathy FE: not eligible. Tables 4-5: after x question-quality / incentive category interactions (subgroup-by-treatment): not eligible. Appendix EC tables repeat the design on subsamples (not main text). Section 8 analyses (UsersNoEng_Posts.dta, new vs old joiners) are not DiD.",
+  "estimators_reported": [
+    "twfe_static (xtreg fe, user + week FE)",
+    "borusyak_jaravel_spiess (did_imputation)",
+    "twfe_static_with_controls",
+    "bjs_with_controls",
+    "heterogeneity_by_category (Tables 4-5)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 4,
+  "n_eligible_specs_note": "2 TWFE specs (numCodes, isBestAnswer) plus their 2 reported BJS counterparts; the TWFE/BJS pair for one outcome is one design.",
+  "n_adoption_cohorts": 4,
+  "n_adoption_cohorts_note": "Russian 2010-10-08, Portuguese 2013-12-10, Japanese 2014-09-24, Spanish 2015-10-29 (event_week).",
+  "never_treated_present": true,
+  "never_treated_note": "TreatmentGroup == 'Control': 37,049 answers from English-only users (random sample), event_week missing.",
+  "always_treated_present": false,
+  "always_treated_note": "Russian cohort treated 2010-10-08; sample starts 2008-07-29, so all cohorts have pre-periods (verify per user).",
+  "reports_modern_estimator": true,
+  "modern_estimators_named": [
+    "borusyak_jaravel_spiess (did_imputation, Stata)"
+  ],
+  "preferred_spec_ids": [
+    "T3_numCodes_twfe_basic",
+    "T3_numCodes_bjs_basic"
+  ],
+  "preferred_spec_note": "unclear without article text; numCodes is the primary quality measure (Table 3 first panel), isBestAnswer the secondary one.",
+  "published_estimates": [
+    {
+      "spec_id": "T3_numCodes_twfe_basic",
+      "coef": 0.378,
+      "se": 0.0929,
+      "n_obs": 323850,
+      "source": "authors' replication output Outputs/Correct.tex col (1) 'TWFE'; Table 3 in the paper is a manual merge of Correct.tex and CorrectBestAnswer.tex, so published column numbers may differ"
+    },
+    {
+      "spec_id": "T3_numCodes_bjs_basic",
+      "coef": 0.574,
+      "se": 0.0445,
+      "n_obs": 323850,
+      "source": "Outputs/Correct.tex col (5) 'BJS'"
+    },
+    {
+      "spec_id": "T3_isBestAnswer_twfe_basic",
+      "coef": 0.0225,
+      "se": 0.00365,
+      "n_obs": 323850,
+      "source": "Outputs/CorrectBestAnswer.tex col (1) 'TWFE'"
+    },
+    {
+      "spec_id": "T3_isBestAnswer_bjs_basic",
+      "coef": 0.105,
+      "se": 0.00594,
+      "n_obs": 323850,
+      "source": "Outputs/CorrectBestAnswer.tex col (5) 'BJS'"
+    }
+  ],
+  "specs": [
+    {
+      "spec_id": "T3_numCodes_twfe_basic",
+      "estimator_reported": "twfe_static",
+      "code_file": "Code/Table3.do",
+      "code_line": 20,
+      "code": "xtreg numCodes after i.weekdate, fe cluster(cohort)   [xtset user at line 10]",
+      "outcome": "numCodes (number of code snippets in the answer; quality proxy)",
+      "outcome_transform": "level",
+      "treatment_var": "after",
+      "treatment_definition": "after (= 1 once weekdate >= event_week, the week the author's native-language Stack Overflow site opened; event_week by main_second_language: SOR Russian 2010-10-08, SOP Portuguese 2013-12-10, SOJ Japanese 2014-09-24, SOS Spanish 2015-10-29; control users have event_week missing and after = 0). BJS cohort variable: event_week.",
+      "unit_var": "user (numeric id; equals AccountId / OwnerUserId; 5,339 users)",
+      "assignment_unit": "user (via main_second_language cohort)",
+      "time_var": "weekdate (weekly, 472 weeks)",
+      "fe": "user + weekdate",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "cohort (5 clusters)",
+      "sample_condition": "all 323,850 answers",
+      "static_or_event": "static",
+      "reported_location": "Table 3, numCodes panel, column 'TWFE' (col 1 of Outputs/Correct.tex)",
+      "data_file": "Data/finJRSP_estimationdata_torun_NEWVER.dta",
+      "notes": "Observation = answer; multiple answers per user-week. Only 5 clusters: leverage screen (effective clusters >= 10) will likely fail; consider user-level clustering as a recorded deviation."
+    },
+    {
+      "spec_id": "T3_numCodes_bjs_basic",
+      "estimator_reported": "borusyak_jaravel_spiess",
+      "code_file": "Code/Table3.do",
+      "code_line": 19,
+      "code": "did_imputation numCodes user weekdate event_week, cluster(cohort)",
+      "outcome": "numCodes",
+      "outcome_transform": "level",
+      "treatment_var": "event_week (cohort date; treated when weekdate >= event_week)",
+      "treatment_definition": "after (= 1 once weekdate >= event_week, the week the author's native-language Stack Overflow site opened; event_week by main_second_language: SOR Russian 2010-10-08, SOP Portuguese 2013-12-10, SOJ Japanese 2014-09-24, SOS Spanish 2015-10-29; control users have event_week missing and after = 0). BJS cohort variable: event_week.",
+      "unit_var": "user",
+      "assignment_unit": "user",
+      "time_var": "weekdate",
+      "fe": "user + weekdate",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "cohort (5 clusters)",
+      "sample_condition": "all 323,850 answers",
+      "static_or_event": "static (BJS average over treated observations)",
+      "reported_location": "Table 3, numCodes panel, column 'BJS' (col 5 of Outputs/Correct.tex)",
+      "data_file": "Data/finJRSP_estimationdata_torun_NEWVER.dta",
+      "notes": "Modern-estimator counterpart of T3_numCodes_twfe_basic."
+    },
+    {
+      "spec_id": "T3_isBestAnswer_twfe_basic",
+      "estimator_reported": "twfe_static",
+      "code_file": "Code/Table3.do",
+      "code_line": 61,
+      "code": "xtreg isBestAnswer after i.weekdate, fe cluster(cohort)   [xtset user at line 57]",
+      "outcome": "isBestAnswer (answer accepted by questioner, 0/1)",
+      "outcome_transform": "level (binary)",
+      "treatment_var": "after",
+      "treatment_definition": "after (= 1 once weekdate >= event_week, the week the author's native-language Stack Overflow site opened; event_week by main_second_language: SOR Russian 2010-10-08, SOP Portuguese 2013-12-10, SOJ Japanese 2014-09-24, SOS Spanish 2015-10-29; control users have event_week missing and after = 0). BJS cohort variable: event_week.",
+      "unit_var": "user",
+      "assignment_unit": "user",
+      "time_var": "weekdate",
+      "fe": "user + weekdate",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "cohort (5 clusters)",
+      "sample_condition": "all 323,850 answers",
+      "static_or_event": "static",
+      "reported_location": "Table 3, isBestAnswer panel, column 'TWFE' (col 1 of Outputs/CorrectBestAnswer.tex)",
+      "data_file": "Data/finJRSP_estimationdata_torun_NEWVER.dta",
+      "notes": ""
+    },
+    {
+      "spec_id": "T3_isBestAnswer_bjs_basic",
+      "estimator_reported": "borusyak_jaravel_spiess",
+      "code_file": "Code/Table3.do",
+      "code_line": 60,
+      "code": "did_imputation isBestAnswer user weekdate event_week, cluster(cohort)",
+      "outcome": "isBestAnswer",
+      "outcome_transform": "level (binary)",
+      "treatment_var": "event_week",
+      "treatment_definition": "after (= 1 once weekdate >= event_week, the week the author's native-language Stack Overflow site opened; event_week by main_second_language: SOR Russian 2010-10-08, SOP Portuguese 2013-12-10, SOJ Japanese 2014-09-24, SOS Spanish 2015-10-29; control users have event_week missing and after = 0). BJS cohort variable: event_week.",
+      "unit_var": "user",
+      "assignment_unit": "user",
+      "time_var": "weekdate",
+      "fe": "user + weekdate",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "cohort (5 clusters)",
+      "sample_condition": "all 323,850 answers",
+      "static_or_event": "static (BJS)",
+      "reported_location": "Table 3, isBestAnswer panel, column 'BJS' (col 5 of Outputs/CorrectBestAnswer.tex)",
+      "data_file": "Data/finJRSP_estimationdata_torun_NEWVER.dta",
+      "notes": ""
+    }
+  ],
+  "ineligible_main_text_specs": [
+    {
+      "location": "Table 3 cols TWFE 1 / BJS 1 (both outcomes)",
+      "code_file": "Code/Table3.do",
+      "code_line": "23-24, 64-65",
+      "exclusion_reason": "time-varying control question_numcodes"
+    },
+    {
+      "location": "Table 3 cols TWFE 2 / BJS 2",
+      "code_file": "Code/Table3.do",
+      "code_line": "27-28, 68-69",
+      "exclusion_reason": "time-varying controls question_numcodes question_answer_count question_view_count"
+    },
+    {
+      "location": "Table 3 cols TWFE 3 / BJS 3",
+      "code_file": "Code/Table3.do",
+      "code_line": "31-32, 72-73",
+      "exclusion_reason": "time-varying controls plus extra additive FE same_language, picture_empathy"
+    },
+    {
+      "location": "Table 4 (question quality categories), Table 5 (incentive categories)",
+      "code_file": "Code/Table4.do, Code/Table5.do",
+      "exclusion_reason": "after x category interactions (subgroup-by-treatment) with controls"
+    }
+  ],
+  "data_access": "public",
+  "data_access_note": "Stack Exchange data dump (archive.org) processed by the author; final estimation dataset shipped.",
+  "data_files_present": true,
+  "data_files": [
+    "Data/finJRSP_estimationdata_torun_NEWVER.dta (323,850 rows x 86 vars; Table 3-5 and EC tables)",
+    "Data/UsersNoEng_Posts.dta / .pkl (Section 8, not DiD)",
+    "Data/UsersNoEng_Posts_wWeekDate.dta",
+    "Data/titles_todrop_for_STATA.dta",
+    "Data/EnglishTitles.pkl"
+  ],
+  "software": "stata (regressions; did_imputation, reghdfe, estout); python (figures, descriptives)",
+  "replication_feasible": "yes",
+  "priority": 1,
+  "screener_notes": "Clean staggered design with 4 cohorts and never-treated controls; author already reports BJS next to TWFE (BJS roughly 1.5x TWFE for numCodes, 4.7x for isBestAnswer). Key implementation details: unit = user, time = week, observation = answer (unbalanced, repeated cross-section within user-week); authors cluster on 5 cohorts, which will fail the protocol's leverage screen, so record a deviation (e.g., cluster by user) if needed. Published Table 3 is a manual merge of two output tables; confirm column mapping and the exact published coefficients against the article PDF when available."
+}

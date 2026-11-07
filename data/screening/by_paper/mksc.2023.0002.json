@@ -1,0 +1,78 @@
+{
+ "suffix": "mksc.2023.0002",
+ "doi": "10.1287/mksc.2023.0002",
+ "journal": "mksc",
+ "title": "Optimizing Reserve Prices in Display Advertising Auctions",
+ "authors": "Hana Choi; Carl F. Mela",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_027",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0002",
+ "regressions_path": "./data/packages/mksc.2023.0002_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "robustness (reduced-form experimental evidence for the structural model)",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Single common start date, not staggered. Reserve-price field experiment on 12 treatment/control ad-unit pairs; in the shipped data every pair has the same pre (days 17408-17454) and post (17457-17503) windows. did_eCPM.R computes 2x2 DiD ratios of aggregated eCPM; did_bid_cpm.R runs felm(y ~ I(is_treatment*is_post) + is_treatment + ad_requests_market | days + advertiser_id), i.e., a pooled treated-group dummy in place of ad-unit FE plus a time-varying market-request control. The data are simulated (NDA).",
+ "design_notes": "R (lfe::felm) for the experiment; MATLAB for structural estimation and counterfactuals. Observation unit advertiser-DSP-day-ad unit.",
+ "estimators_reported": [
+  "2x2_did_experiment",
+  "structural_auction_model"
+ ],
+ "specs": [
+  {
+   "spec_id": "eCPM_DiD",
+   "eligible": false,
+   "exclusion_reason": "single common date; aggregated 2x2 means, no regression FE",
+   "code_file": "MKSC-23-0002.R2.DataCode/did_eCPM.R",
+   "code_line": 27,
+   "outcome": "eCPM_scaled",
+   "treatment_var": "is_treatment x is_post",
+   "reported_location": "eCPM DiD table/figure (number unknown)"
+  },
+  {
+   "spec_id": "bid_imp_pay_DiD",
+   "eligible": false,
+   "exclusion_reason": "single common date; treated-group dummy instead of ad-unit FE; time-varying control ad_requests_market",
+   "code_file": "MKSC-23-0002.R2.DataCode/did_bid_cpm.R",
+   "code_line": 13,
+   "outcome": "avg_bid_cpm_scaled / ad_impressions_scaled / total_payment_scaled",
+   "treatment_var": "I(is_treatment * is_post)",
+   "unit_var": "ad_unit_id",
+   "time_var": "days",
+   "fe": "days + advertiser_id",
+   "controls": [
+    "ad_requests_market"
+   ],
+   "weights": "bids (bid CPM model)",
+   "cluster": "advertiser_id",
+   "reported_location": "bidding-behaviour table (number unknown)"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "MKSC-23-0002.R2.DataCode/experiment_data.RData",
+  "MKSC-23-0002.R2.DataCode/estimation_data.mat"
+ ],
+ "data_files_note": "readme.txt: 'Due to NDA restrictions, all data included in this package are simulated'.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Authors state all shipped data are simulated.",
+ "software": "r",
+ "software_notes": "R (lfe) for DiD; MATLAB for structural model",
+ "screener_notes": "Screened from package only (no article text or PDF). Common-date experiment, simulated data."
+}

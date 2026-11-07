@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2019.1162",
+ "doi": "10.1287/mksc.2019.1162",
+ "journal": "mksc",
+ "title": "Using Conditional Restricted Boltzmann Machines to Model Complex Consumer Shopping Patterns",
+ "authors": "Feihong Xia; Rabikar Chatterjee; Jerrold H. May",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1162",
+ "regressions_path": "./data/packages/mksc.2019.1162_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (conditional restricted Boltzmann machine for cross-product purchase patterns)",
+ "ineligible_specs": [
+  {
+   "spec_id": "crbm",
+   "reported_location": "model comparison tables",
+   "exclusion_reason": "machine-learning predictive model; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Predictive neural-network model of shopping baskets.",
+ "design_notes": "MATLAB run.m/train.m/test.m.",
+ "estimators_reported": [
+  "conditional restricted Boltzmann machine"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme: simdata.m generates simulated data.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated by simdata.m.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

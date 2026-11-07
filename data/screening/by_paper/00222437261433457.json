@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437261433457",
+  "doi": "10.1177/00222437261433457",
+  "journal": "jmr",
+  "title": "Increasing App Engagement Behaviors via Goal-Enabling Technology Features: The Role of Goal Difficulty Dimensions",
+  "year": "2026",
+  "eligible_design": false,
+  "eligible_reason": "Staggered adoption of a binary app feature, but estimated with staggered synthetic control (Ben-Michael, Feller, Rothstein 2022) feeding a hierarchical heterogeneous-treatment-effect model with an IV control-function; no TWFE or CS/BJS specification.",
+  "design_notes": "Investment app that introduced goal-enabling technology features (GETF); customers adopt at different times. Step 1: staggered synthetic control constructs a counterfactual for each adopter using customers who adopt later (holdout window) as donor pool, weights chosen on L = 21 pre-adoption periods. Step 2: hierarchical model of customer-level treatment effects as a function of goal-difficulty dimensions, with an IV-based control function. Plus a field experiment. Never-adopters are discarded. Synthetic control, matching on pre-period outcomes, IV and hierarchical Bayesian modeling are all excluded by the protocol.",
+  "estimators_reported": [
+    "staggered synthetic control",
+    "hierarchical Bayesian HTE model",
+    "IV control function",
+    "field experiment"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: synthetic control + IV + hierarchical model. Data statement: alternative disclosure plan; data not available, code and simulated data requestable through JMR Dataverse doi 10.7910/DVN/CJDOEZ. Screened from article text only."
+}

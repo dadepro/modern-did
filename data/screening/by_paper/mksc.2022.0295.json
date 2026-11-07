@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2022.0295",
+ "doi": "10.1287/mksc.2022.0295",
+ "journal": "mksc",
+ "title": "Frontiers: Inequalities in Dealers’ Interest Rate Markups? A Gender- and Race-Based Analysis",
+ "authors": "O. Cem Ozturk; Cheng He; Pradeep K. Chintagunta",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2022.0295",
+ "regressions_path": "./data/packages/mksc.2022.0295_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not a DiD. Transaction-level cross-sectional regressions of the dealer interest-rate markup on buyer gender (female) and neighborhood minority share with about 25 transaction and demographic controls and vehicle-model, dealer, year-week and buyer-zip FE (Tables 2-4, Figures 2-3). The regressors of interest are buyer characteristics, not a treatment that switches on over time.",
+ "design_notes": "Stata final_code.do, single file. reghdfe markup female i.minority_grp ... , absorb(INDEX TRANSMISSION FUELTYPE ...) cluster(RETAILERID); INDEX is a four-way FE (vehicle model, dealer, year-week, buyer zip). Table 4 interacts female and minority_grp with moderators; Figure 2 interacts them with state.",
+ "estimators_reported": [
+  "ols_cross_sectional_with_fe"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 2-3",
+   "reason": "cross-sectional gender/race gap regressions with controls; no switching treatment"
+  },
+  {
+   "location": "Table 4, Figures 2-3",
+   "reason": "gender/minority x moderator or x state interactions"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "final_data.dta"
+ ],
+ "data_files_note": "README: proprietary transaction data from a marketing agency (2004-2015); only a subsample is provided (112,529 transactions shipped), merged with ACS and county vote data.",
+ "data_provenance": "random_subsample",
+ "data_provenance_note": "README says 'we only provide a subsample of this dataset'; sampling scheme not described.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). No panel treatment timing at all."
+}

@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2014.0897",
+ "doi": "10.1287/mksc.2014.0897",
+ "journal": "mksc",
+ "title": "Construction of Heterogeneous Conjoint Choice Designs: A New Approach",
+ "authors": "Qing Liu; Yihui Tang",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2014.0897",
+ "regressions_path": "./data/packages/mksc.2014.0897_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (construction of heterogeneous conjoint choice designs; simulation and MTurk validation study)",
+ "ineligible_specs": [
+  {
+   "spec_id": "choice_design_eval",
+   "reported_location": "simulation and empirical-study tables",
+   "exclusion_reason": "design-efficiency comparison and hierarchical Bayes logit (RSGHB, bayesm) on MTurk conjoint data; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Conjoint choice-design construction method with MTurk validation.",
+ "design_notes": "SAS design-construction macros; R 'empirical data analysis.R' for MTurk data.",
+ "estimators_reported": [
+  "hierarchical Bayes logit / design efficiency"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Mturk_PROP.csv",
+  "Mturk_SAW.csv",
+  "*.sas7bdat"
+ ],
+ "data_files_note": "Readme.docx documents the MTurk data.",
+ "data_provenance": "original",
+ "data_provenance_note": "MTurk conjoint responses shipped.",
+ "software": "other",
+ "software_notes": "SAS and R",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

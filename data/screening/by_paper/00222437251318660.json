@@ -1,0 +1,30 @@
+{
+ "eligible_design": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_expected": false,
+ "package_dir": null,
+ "journal": "jmr",
+ "doi": "10.1177/00222437251318660",
+ "year": 2025,
+ "title": "Cross-Channel Effects of Failure in a Retailer's Mobile App",
+ "eligible_reason": "Single exogenous app failure on one date (April 11, 2018, 12-2 p.m. CT). Treated = users who tried to access the app during the failure window; control = users who accessed the app that day but outside the window. Equation 1 is a two-period (14 days pre vs 14 days post) 2x2 DiD with shopper-group FE and a pre/post time FE: only one adoption date, so no staggered cohorts. A second failure in November 2014 is analysed separately as robustness, not pooled into a multi-cohort panel.",
+ "design_notes": "Eq. (1): Y_it = a0 + a1 F_i P_t + mu_i + lambda_t + nu_it, i = shopper, t = pre/post two-week period; 'shopper group FE' is treated/control indicator. N = 273,378 (70,568 treated, 66,121 control users in Table 2 descriptives; 136,689 users). Table 3 DID: frequency -.024 (.008), quantity -.057 (.020), value -2.181 (.681); SEs clustered/robust at individual level. Web Appendix Tables W8/W20 re-estimate with daily FE (28 obs per user) but still a single failure date.",
+ "estimators_reported": [
+  "2x2 DiD (two-way FE with group and pre/post FE)"
+ ],
+ "main_or_robustness": "main",
+ "data_access": "proprietary",
+ "screener_notes": "Ineligible: single treatment date. Data are firm-provided transaction/app logs for a US consumer-electronics omnichannel retailer; no replication package in batch.",
+ "suffix": "00222437251318660"
+}

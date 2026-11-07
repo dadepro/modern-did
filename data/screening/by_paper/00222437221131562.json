@@ -1,0 +1,28 @@
+{
+  "suffix": "00222437221131562",
+  "doi": "10.1177/00222437221131562",
+  "journal": "jmr",
+  "title": "From Free to Paid: Monetizing a Non-Advertising-Based App",
+  "year": "2022",
+  "eligible_design": false,
+  "eligible_reason": "Randomized field experiments (city-level randomization into four pricing and product-design arms). All treated cities switch from free to paid at one launch date; outcomes are cross-sectional user subscription choices. No DiD or event-study design. The 'staggered' text hit refers to peaks in orders (Figure 4), not staggered adoption.",
+  "design_notes": "JMR 60(4), 2023. Experiment 1: 99 cities randomized in a 2x2 (hard vs soft landing; with vs without exclusive secondary offerings), 80-day run; Experiment 2: 72 cities. User-level subscription choices analyzed with ANOVA, logit, generalized random forests. Plus Prolific survey experiment and a firm-implementation section. No unit panel, no calendar-time fixed effects.",
+  "estimators_reported": [
+    "randomized experiment (ANOVA, logit, generalized random forest)"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Single launch date; randomized experiment, not DiD. Data from an app firm in China. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

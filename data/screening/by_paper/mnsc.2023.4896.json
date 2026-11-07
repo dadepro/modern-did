@@ -1,0 +1,125 @@
+{
+ "suffix": "mnsc.2023.4896",
+ "doi": "10.1287/mnsc.2023.4896",
+ "journal": "mnsc",
+ "title": "Buying the Verdict",
+ "authors": "Lauren H. Cohen; Umit G. Gurun",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_018",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4896",
+ "regressions_path": "./data/packages/mnsc.2023.4896_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": true,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Firm x DMA x year panel (Audit Analytics litigation, Kantar ad spending), 1995-2013. Treatment defendant (copied into sued_all) = 1 if the firm is a defendant in a trial in a court mapped to that DMA in year t; it switches on at firm-DMA-specific years (many first-suit cohorts 1995-2012) and most firm-DMA pairs are never sued. Table 3 (baseline) columns 1 and 2 are plain TWFE with no controls: reghdfe initiate sued_all, absorb(permnoxdma year) and reghdfe adspend_t1 sued_all if adspend_t0>0, absorb(permnoxdma year), clustered by permno x year. Columns 3-4 add adspend_t0 (the lagged outcome, since the outcome is adspend_t1) and total_dma_ad (time-varying); all Table 4, 6, 7, 8, 9 columns and Exhibit 1 also include adspend_t0; Table 5 adds total_dma_ad (time-varying control only). The treatment is a transient lawsuit-year indicator that switches off and on again (269 post-first-suit rows with treatment 0 vs 193 treated rows in the shipped extract), so the Hull fn. 6 switch-off rule (drop post-adoption rows with treatment 0) leaves essentially first-suit-year effects. ELIGIBLE with a data flag: the package ships a 20-firm extract (7,236 rows) of the estimation file, not the full sample (published N = 485,704 for Table 3 col 1).",
+ "design_notes": "Stata reghdfe, code in replication_package_MS-FIN-21-01549/bv_main.do (single do-file; log_of_results.smcl holds the authors' full-sample output). Unit = permnoxdma (firm x DMA), time = year, FE permnoxdma + year, cluster permnoxyear. adspend_t1 = log ad expense in t+1 (variable dictionary), adspend_t0 = log ad expense in t; initiate = 1 if the firm advertises in the DMA for the first time (in the extract initiate == 1 exactly when adspend_t0 == 0; 127 of 193 defendant rows have initiate == 1, so many firm-DMA cells enter the panel through the lawsuit). Panel is highly unbalanced (153 of 823 firm-DMA cells observed once; 315 internal year gaps) and 48 of 92 treated cells are treated in their first observed year (always-treated, dropped by CSA). Published Table 3 (log): col 1 initiate 0.2539 (0.0062), N 485,704; col 2 adspend_t1 0.1696 (0.0623), N 478,840; col 3 (with adspend_t0) 0.2358 (0.0539) is the abstract's 23% (t = 4.37). Table 4 col 2 recodes treatment to exclude first-time suits (x_sued_f) and Table 6 splits treatment by litigation type (extra treatment regressors). Table 10 regresses verdict outcomes (defwon) on ad spending (not DiD). Appendix II uses firm x year and DMA FE; Appendix III a difference specification.",
+ "estimators_reported": [
+  "twfe_static",
+  "twfe_static_with_lagged_outcome",
+  "dynamic_panel_appendix"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 2,
+ "n_adoption_cohorts": 18,
+ "n_adoption_cohorts_note": "First-suit years 1995-2012 in the shipped 20-firm extract (14 cohorts with an untreated pre-period in the extract); full sample not shipped.",
+ "never_treated_present": true,
+ "always_treated_present": true,
+ "treatment_switches_off": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [
+  {
+   "spec_id": "T3c1_initiate",
+   "code_file": "replication_package_MS-FIN-21-01549/bv_main.do",
+   "code_line": 216,
+   "data_file": "replication_package_MS-FIN-21-01549/bv_inputfiles/combined_lit_ad.dta",
+   "outcome": "initiate (=1 if the firm advertises in the DMA for the first time; next-year entry into DMA advertising)",
+   "treatment_var": "sued_all (replace sued_all = defendant)",
+   "treatment_definition": "defendant = 1 if the firm is a defendant in a trial in a court mapped to DMA d in year t",
+   "unit_var": "permnoxdma",
+   "time_var": "year",
+   "fe": [
+    "permnoxdma",
+    "year"
+   ],
+   "controls": [],
+   "weights": "",
+   "cluster": "permnoxyear",
+   "sample_condition": "e(sample) of the same regression (keep if e(sample)); singletons dropped by reghdfe",
+   "static_or_event": "static",
+   "reported_location": "Table 3, column 1",
+   "published_estimates": {
+    "coef": 0.2539262,
+    "se": 0.0062068,
+    "n_obs": 485704
+   },
+   "data_provenance": "random_subsample",
+   "notes": "Treatment switches off and on (lawsuit-year indicator); drop post-first-suit rows with defendant == 0 (Hull fn. 6). Shipped data are a 20-firm extract, so the published coefficient cannot be reproduced."
+  },
+  {
+   "spec_id": "T3c2_adspend_t1",
+   "code_file": "replication_package_MS-FIN-21-01549/bv_main.do",
+   "code_line": 218,
+   "data_file": "replication_package_MS-FIN-21-01549/bv_inputfiles/combined_lit_ad.dta",
+   "outcome": "adspend_t1 (log total ad expense of the firm in the DMA in year t+1)",
+   "treatment_var": "sued_all (replace sued_all = defendant)",
+   "treatment_definition": "defendant = 1 if the firm is a defendant in a trial in a court mapped to DMA d in year t",
+   "unit_var": "permnoxdma",
+   "time_var": "year",
+   "fe": [
+    "permnoxdma",
+    "year"
+   ],
+   "controls": [],
+   "weights": "",
+   "cluster": "permnoxyear",
+   "sample_condition": "adspend_t0 > 0 (firm advertised in the DMA in year t); estimated on the Table 3 col 1 e(sample)",
+   "static_or_event": "static",
+   "reported_location": "Table 3, column 2",
+   "published_estimates": {
+    "coef": 0.169648,
+    "se": 0.0623098,
+    "n_obs": 478840
+   },
+   "data_provenance": "random_subsample",
+   "notes": "Sample condition is on a time-varying (concurrent) spending variable; recorded as published. Switch-off rule as in T3c1."
+  }
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 3, columns 3-4",
+   "reason": "adspend_t0 is the lagged outcome (outcome adspend_t1); col 4 also adds total_dma_ad"
+  },
+  {
+   "location": "Tables 4, 6, 7, 8, 9; Exhibit 1",
+   "reason": "lagged outcome adspend_t0 in every column; Tables 6-9 also add extra treatment regressors or subgroup-by-treatment interactions"
+  },
+  {
+   "location": "Table 5, columns 1-2",
+   "reason": "time-varying control total_dma_ad only (5c-type column, but the paper is already eligible via Table 3)"
+  },
+  {
+   "location": "Table 10",
+   "reason": "verdict outcome regressed on ad spending; not a DiD"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-FIN-21-01549/bv_inputfiles/combined_lit_ad.dta",
+  "replication_package_MS-FIN-21-01549/bv_inputfiles/combined_lit_ad_spell.dta"
+ ],
+ "data_files_note": "combined_lit_ad.dta ships 7,236 rows (20 permnos, 101 DMAs, 823 firm-DMA cells, 1995-2013); the authors' log shows 485,704 observations and 62,485 firm-DMA cells for Table 3 col 1. README lists licensed sources (Audit Analytics, Kantar Media Stradegy, Nielsen, CRSP/Compustat, RavenPack) and says several linking files are provided only to subscribers; it does not say that the shipped files are extracts or how the 20 firms were chosen.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Ruling Nov 1 ~22:45: the package ships a 20-firm extract (7,236 rows) of a 485,704-row regression sample with no stated sampling rule; treated as an excerpt (not a random subsample), as mnsc.2023.00153. eligible_design stays true.",
+ "software": "stata",
+ "replication_feasible": "maybe",
+ "priority": 2,
+ "screener_notes": "Screened from package, authors' log and OpenAlex abstract (no article text). Lead should decide whether a 20-firm extract of unstated selection counts as a usable random subsample (5b) or as not shipped; if the latter, set eligible = false (eligible_design stays true)."
+}

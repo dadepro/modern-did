@@ -1,0 +1,38 @@
+{
+ "suffix": "mnsc.2021.4133",
+ "doi": "10.1287/mnsc.2021.4133",
+ "journal": "mnsc",
+ "title": "Industry Networks and the Geography of Firm Behavior",
+ "year": "2021",
+ "authors": "William Grieser; James Paul LeSage; Morad Zekhnini",
+ "eligible_design": false,
+ "eligible_reason": "Bayesian spatial autoregressive / spatial Durbin models (MATLAB, LeSage toolbox) with convex combinations of geographic, TNIC and supply-chain weight matrices. The quasi-experiment (Tariff.m) uses 3-digit SIC tariff cuts (sic3_tar4, sic3_diftar4, cut) as regressors in SDM models with FF48 or SIC3 fixed effects and spatial spillovers; no TWFE DiD with a staggered binary treatment and unit plus year FE.",
+ "design_notes": "samplecreate.do builds the Compustat-based sample; main.m and Tariff.m estimate SAR/SDM via MCMC. Regression extractor found no Stata/R regression commands (empty regressions file). Data (Compustat, Hoberg-Phillips TNIC, Pierce-Schott tariffs) are proprietary or third-party and not included; only a directory listing of the original data folder.",
+ "estimators_reported": [
+  "Bayesian spatial Durbin / SAR models (MATLAB)"
+ ],
+ "main_or_robustness": "robustness",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 3-10 (main.m, Tariff.m)",
+   "reason": "spatial econometric models; tariff shocks as continuous/indicator regressors without unit and year TWFE DiD structure"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "software": "other",
+ "software_notes": "MATLAB (jplv7 spatial econometrics toolbox) with Stata sample construction",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Full-text 'Callaway' and 'difference-in-differences' hits are not reflected in any TWFE code in the package."
+}

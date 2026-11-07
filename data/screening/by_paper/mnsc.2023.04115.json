@@ -1,0 +1,75 @@
+{
+  "suffix": "mnsc.2023.04115",
+  "doi": "10.1287/mnsc.2023.04115",
+  "journal": "mnsc",
+  "title": "Navigating the Rugged Data Landscape: The Impact of Data-Extrapolation Technologies on Knowledge Production",
+  "year": 2026,
+  "authors": "Soomi Kim",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date. The treatment treat_ryr = bright_ryr_1998 x 1[year >= 2004] (Step1_ConstructData.do line 235): protein-sequence clusters that already had a solved structure by 1998 ('bright' clusters) are treated from 2004 onward, when molecular-replacement (data-extrapolation) technology became widely usable; dark clusters are controls. One common treatment year for all treated clusters, so the at-least-two-adoption-dates rule fails. Specifications are otherwise TWFE (reghdfe l1flow_tot3d_dyr treat_ryr, absorb(year id_numeric) cluster(id_numeric)) and a calendar-year event study (y`h'_bright_ryr for 1999-2019 with 2003 omitted, Figure 2).",
+  "design_notes": "Cluster x year panel 1999-2019 (clusters discovered by 1998; cluster_panel.dta built by Step1 from PDB/UniProt inputs). Table 2 (Step2_Analyses.do lines 143-153): outcomes l1flow_tot3d_dyr = ln(1 + new structures deposited) and z1998flow_tot3d_dyr (levels), FE year + id_numeric, optional cluster_age and stock_total_recoded FE, cluster(id_numeric). Tables 3-6: outcome splits (published/unpublished, patents, function, resolution, R-free, citations, mentions, PI rank/experience). Figure 2: year x bright interactions, 2003 reference. The ft_callaway flag is not matched by any csdid/att_gt call in the code.",
+  "estimators_reported": [
+    "twfe_single_adoption_date (Tables 2-6)",
+    "twfe_calendar_year_event_study (Figure 2)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "All bright clusters treated from 2004.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "mnsc.2023.04115_T2_c1_l1flow",
+      "eligible": false,
+      "exclusion_reason": "single adoption date (2004 for all bright clusters)",
+      "code_file": "replication_package/Code/Step2_Analyses.do",
+      "code_line": 143,
+      "outcome": "l1flow_tot3d_dyr = ln(1 + structures deposited in cluster-year)",
+      "treatment_var": "treat_ryr",
+      "treatment_definition": "bright_ryr_1998 x 1[year >= 2004] (Step1 line 235)",
+      "unit_var": "id_numeric (cluster)",
+      "time_var": "year (1999-2019)",
+      "fe": "year + id_numeric",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "id_numeric",
+      "sample_condition": "clusters with min_clusteryr <= 1998, years 1999-2019",
+      "static_or_event": "static",
+      "data_file": "DataWorking/cluster_panel.dta (not shipped; built by Step1 from DataInput/*.dta)",
+      "reported_location": "Table 2, column 1",
+      "notes": "Col 2 adds cluster_age and stock_total_recoded FE; cols 3-4 use levels outcome."
+    }
+  ],
+  "ineligible_specs": [
+    {
+      "location": "Tables 3-6, Figure 2",
+      "reason": "single adoption date"
+    }
+  ],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "DataInput/structure_phasetype.dta",
+    "DataInput/pdb_uniprot_xwalk.dta",
+    "DataInput/cluster_accession.dta",
+    "DataInput/cluster_accession_2003details.dta",
+    "DataWorking/ and Output/ are empty (built by Step1/Step2)",
+    "LogFiles/Step1_ConstructData.log, Step2_Analyses.log"
+  ],
+  "data_files_note": "Public PDB/UniProt-derived inputs are shipped; the analysis panel must be rebuilt with Step1_ConstructData.do.",
+  "software": "stata",
+  "software_detail": "Stata MP 19.5 (reghdfe, outreg2, parmest, grstyle)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible (single adoption date).",
+  "screener_notes": "Screened from package only (no article text). Treatment definition confirmed at Step1_ConstructData.do line 235."
+}

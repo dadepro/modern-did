@@ -1,0 +1,52 @@
+{
+ "doi": "10.1287/mnsc.2019.3358",
+ "journal": "mnsc",
+ "year": 2019,
+ "title": "The Effect of Franchising on Store Performance: Evidence from an Ownership Change",
+ "eligible_design": false,
+ "eligible_reason": "Main identification is a structural nonlinear-least-squares demand model. The reduced-form fixed-effects regression (store FE, year and quarter controls) reports only a single prose estimate of 0.19 (Table 6 col 2 is in the appendix). All switching stores change ownership in 2008 (exact quarter unobserved, treated as a single date), and every store is franchised from 2009, so there is no untreated comparison unit in the post period. The remaining columns include time-varying demographic controls.",
+ "design_notes": "Eq. (11): log(r_jt) = f_jt*delta + x_jt*pi + xi_j + eps_jt, store FE, quarterly sales of Applebee's stores in Texas (alcohol sales via mixed beverage tax), robust SEs. f_jt = franchised indicator. Initially franchised stores have f=1 throughout (33 of 93 stores at start of 2007), the other stores switch in 2008 after IHOP's acquisition, and the author states he does not observe when in 2008 changes occur, so a separate '2008 effect' is estimated in the appendix and the structural model splits beta into beta_08 and beta_09. Section 5.1 prose: delta_FE = 0.19 (p<0.01) versus naive 0.085. Appendix Table 6: col 1 (no FE) 0.0852 (SE 0.0240); col 2 0.191 (SE 0.0430); cols 3-5 with demographic controls 0.151/0.155/0.153 (SE 0.0480/0.0484/0.0478), N=3,223-3,317. Table 7 adds store-level or ownership-level trends. Main structural estimates (Table 3, NLS) imply a 7 percent effect.",
+ "estimators_reported": [
+  "store-FE linear regression (prose and appendix)",
+  "nonlinear least squares structural demand model"
+ ],
+ "main_or_robustness": "robustness",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Section 5.1 prose (delta_FE=0.19) and Appendix Table 6 col (2)",
+   "reason": "single adoption date (2008, within-year timing unobserved); no untreated comparison unit after 2008 (always-franchised stores are always-treated); year plus quarter-of-year controls rather than full calendar-quarter FE; appendix table",
+   "published_estimate": {
+    "coef": 0.191,
+    "se": 0.043,
+    "n_obs": null
+   }
+  },
+  {
+   "location": "Appendix Table 6 cols (3)-(5)",
+   "reason": "time-varying demographic controls (Population, White, Competition, Income); extra 2008-effect indicator",
+   "no_controls_version_exists": true
+  },
+  {
+   "location": "Appendix Table 7",
+   "reason": "unit-specific and ownership-group trends"
+  },
+  {
+   "location": "Table 3 (structural model)",
+   "reason": "nonlinear least squares structural model"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Texas Comptroller mixed beverage tax receipts (public), IRS zip-level data, FDDs. No package or data-availability statement in the text. Text is the MPRA Oct 2016 preprint, which may differ from the published MS version. Borderline: if the published version codes treatment by quarter with staggered 2008 dates, it would need rechecking, but the preprint states timing within 2008 is unobserved."
+}

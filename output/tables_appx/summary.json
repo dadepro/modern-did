@@ -1,0 +1,51 @@
+{
+  "summary": [
+    {
+      "estimator": "csa",
+      "n": 342,
+      "papers": 29,
+      "corr": 0.5616,
+      "flip": 0.2515,
+      "sig_flip": 0.1023,
+      "se_ratio": 1.6073,
+      "flip_pw": 0.1968,
+      "sig_flip_pw": 0.1103,
+      "corr_pw": 0.6303
+    },
+    {
+      "estimator": "bjs",
+      "n": 365,
+      "papers": 30,
+      "corr": 0.7249,
+      "flip": 0.1918,
+      "sig_flip": 0.0658,
+      "se_ratio": 1.2672,
+      "flip_pw": 0.1675,
+      "sig_flip_pw": 0.109,
+      "corr_pw": 0.3792
+    }
+  ],
+  "negative_weights": [
+    {
+      "mean_rows": 0.2078,
+      "median_rows": 0.2081,
+      "mean_abs": 0.1025,
+      "median_abs": 0.043,
+      "n": 302
+    }
+  ],
+  "n_specs": 512,
+  "n_papers": 41,
+  "by_journal": [
+    {
+      "journal": "mksc",
+      "specs": 81,
+      "papers": 5
+    },
+    {
+      "journal": "mnsc",
+      "specs": 431,
+      "papers": 36
+    }
+  ]
+}

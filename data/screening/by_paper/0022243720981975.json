@@ -1,0 +1,48 @@
+{
+  "doi": "10.1177/0022243720981975",
+  "suffix": "0022243720981975",
+  "journal": "jmr",
+  "title": "Educational Campaigns for Product Labels: Evidence from On-Shelf Nutritional Labeling",
+  "authors": "Bryan K. Bollinger; Eli B. Liebman; David G. Hammond; Erin P. Hobin; Jocelyn E. Sacco",
+  "year": "2020",
+  "year_in_article": "2021 (JMR 59(1), 2022 issue)",
+  "eligible": false,
+  "eligible_design": false,
+  "eligible_reason": "Single adoption date and no concurrent untreated unit. The Guiding Stars educational campaign ran nationally from January 9 to February 5, 2015 for every store and household at once. The 'two-way fixed effects' design uses the previous year (Sept 2013-Apr 2014) as a nonconcurrent control: treatment = campaign-week dummy x treatment-year dummy, with week-of-year x store FE and a year dummy. There is only one treatment cohort and no untreated unit in any treated period, so no staggered-adoption comparison exists. Specifications also include time-varying controls (quadratic in store-week transactions, star-level price indices).",
+  "design_notes": "Equation 1 (store-week, Table 2): log(y_jwy) = a(D_w x z_y) + b(P_w x z_y) + z_y + store x week-of-year FE + quadratic in n_jwy + star-level price indices; weighted by transactions; clustered by store. Household-store-week version adds household FE, quantity-weighted, clustered by household. Equation 2 (UPC-store-week, Table 3): store x year FE, store x week-of-year FE, store-UPC FE, price and assortment controls, two-way clustering (UPC, store). Equation 3 (household-week-category, Table 4): household-category FE, category x week-of-year FE, category x year FE. Equation 4: fixed-effects multivariate logit. Figure 5: week-of-year x treatment-year 'event study' (single cohort). Robustness in Web Appendix (full year as control, servings weights, levels, three-period aggregation per Bertrand-Duflo-Mullainathan).",
+  "estimators_reported": ["TWFE with previous year as nonconcurrent control (single cohort)", "fixed-effects multivariate logit", "household-level pre-post difference-in-differences correlations"],
+  "main_or_robustness": "not applicable (no staggered design)",
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "n_eligible_specs": 0,
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "spec_id": "T2_HH_threestar_during",
+      "reported_location": "Table 2, HH-level data row, Three-Star Share column (During x Treatment)",
+      "outcome": "log(share of three-star items + .01), household-store-week",
+      "treatment_var": "During-campaign week dummy x treatment-year dummy",
+      "fe": "household FE, store x week-of-year FE, year dummy",
+      "controls": "star-level store-week price indices (time-varying)",
+      "weights": "quantity",
+      "cluster": "household",
+      "coef": 0.031, "se": 0.004, "n_obs": 896889,
+      "exclusion_reason": "single adoption date, no concurrent untreated unit; time-varying controls"
+    }
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {"spec_id": "T2_HH_threestar_during", "table": "Table 2", "column": "HH-level data / Three-Star Share / During", "coef": 0.031, "se": 0.004, "n_obs": 896889}
+  ],
+  "data_access": "proprietary",
+  "data_availability_statement": "None found. Transaction and loyalty-card data from a national Canadian grocery retailer (acknowledged for 'data support'); Guiding Stars ratings from the Guiding Stars Licensing Company; authors' own exit surveys.",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "package_dir": null,
+  "regressions_path": null,
+  "screener_notes": "Cites de Chaisemartin and D'Haultfoeuille (2019) only to motivate the two-way FE approach; the design is a pre-post comparison against the prior year. The Nova Scotia chain analysis (Web Appendix OA.E) is also a single-date campaign. Not a candidate for re-estimation."
+}

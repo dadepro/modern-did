@@ -1,0 +1,41 @@
+{
+  "suffix": "mnsc.2021.4121",
+  "doi": "10.1287/mnsc.2021.4121",
+  "journal": "mnsc",
+  "title": "Globalization and U.S. Corporate Tax Policies: Evidence From Import Competition",
+  "year": 2016,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not eligible: continuous treatment intensity with a single adoption date. The main regressor is postntr = post x ntrgap, where ntrgap is the industry-level NTR tariff gap (continuous) and post = 1 for fiscal years >= 2001 (PNTR granted to China), with firm FE and year FE (xtreg ... i.fyear, fe cluster(ind)); most columns add time-varying firm controls. Table 10 uses binary high-import-penetration or targeted-industry indicators interacted with post-2018, again a single date. No staggered binary adoption.",
+  "design_notes": "Main.do: workfile_1990_2007.dta, treatment postntr = (fyear>=2001)*ntrgap; outcomes cetr, ddbtd (Table 2), getr cfetr mpbtd btd etrdiff (Table 3); Table 4 ntrgap_seg; Table 5 p_ipr_usch1 (import penetration); Tables 6-7 subsample splits; Table 8 tax-haven outcomes; Table 9 offshore counts; Figure B1 ntrgap x year event study with industry trends and state-year FE; Table 10 2015-2019 panel with post-2018 x highImportPenetration / targetIndustry. Controls mb lev roa dfi fi ppe rd cap size. Data: Compustat-derived workfiles included.",
+  "estimators_reported": [
+    "continuous_treatment_twfe",
+    "continuous_treatment_event_study",
+    "binary_single_date_did_with_controls"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_provenance": "real (Compustat-derived workfiles shipped; raw Compustat licensed)",
+  "data_files_present": true,
+  "data_files": [
+    "workfile_1990_2007.dta (7.7 MB)",
+    "workfile_2015-2019.dta",
+    "Main.do",
+    "Readme.pdf"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Frame year 2016 looks wrong for a mnsc.2021.* DOI (published 2021/2022); not relevant to eligibility. Screened from package only."
+}

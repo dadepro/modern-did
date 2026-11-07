@@ -1,0 +1,43 @@
+{
+ "suffix": "mnsc.2022.4591",
+ "doi": "10.1287/mnsc.2022.4591",
+ "journal": "mnsc",
+ "title": "As Wages Increase, Do People Work More or Less? A Wage Frame Effect",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_006",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Online/lab experiments with between-subject wage-frame conditions (PC vs LC); regressions are feols/feglm of work supply on condition dummies. No panel DiD or staggered adoption.",
+ "design_notes": "Studies 1, 2A/2B, 2 follow-up and appendix studies; R code per study (feols/lm/feglm logit) comparing pay-change and load-change frames; preregistrations included.",
+ "estimators_reported": [
+  "OLS on randomized conditions",
+  "logit"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 0,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [],
+ "data_access": "public",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental CSV data for every study are shipped.",
+ "data_files_present": true,
+ "data_files": [
+  "S1/paper_study_1_data_final.csv",
+  "S2/paper_study_2_a_b_data_final.csv",
+  "S2F/paper_study_2_follow_up_data_final.csv",
+  "AS1/additional_study_1_data_final.csv",
+  "AS1F/additional_study_1_follow_up_data_final.csv",
+  "AS2/additional_study_2_data_final.csv"
+ ],
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Code prescore 2 reflects feols calls; design is a randomized framing experiment."
+}

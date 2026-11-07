@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2015.0938",
+ "doi": "10.1287/mksc.2015.0938",
+ "journal": "mksc",
+ "title": "Managing Price Promotions Within a Product Line",
+ "authors": "Maxim Sinitsyn",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0938",
+ "regressions_path": "./data/packages/mksc.2015.0938_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (game-theoretic model of promotion coordination in a product line; descriptive binomial test on store data)",
+ "ineligible_specs": [
+  {
+   "spec_id": "joint_sale_binomial",
+   "reported_location": "Table 4",
+   "exclusion_reason": "descriptive binomial test of joint sale weeks for product pairs; no regression, no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Theory paper; descriptive binomial test of joint promotions.",
+ "design_notes": "One Excel workbook per category computing joint sale weeks and binomial CDF (Table 4).",
+ "estimators_reported": [
+  "descriptive binomial test"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "23 category .xlsx files (Dominick's-style categories)"
+ ],
+ "data_files_note": "readme describes worksheets used for Table 4.",
+ "data_provenance": "original",
+ "data_provenance_note": "Store price data extracts for selected products used in Table 4.",
+ "software": "other",
+ "software_notes": "Excel",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

@@ -1,0 +1,76 @@
+{
+ "suffix": "mnsc.2023.00995",
+ "doi": "10.1287/mnsc.2023.00995",
+ "journal": "mnsc",
+ "title": "The Effect of Social Media on Corporate Innovation: Evidence from Seeking Alpha Coverage",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_004",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "Underlying design is staggered binary SA coverage initiation (153 treated firms, cover_year 2011-2015), but every DiD regression is a stacked design on a PSM-matched sample: one stack per treated firm (153 cohort_ids, controls reused across stacks) with cohort-by-firm and cohort-by-year FE (absorb(firm_cohort year_cohort)), +/-3-year windows. Main innovation outcomes (Tables 4-5, 7-9) are ppmlhdfe (Poisson); linear columns (Table 6 financing/constraint outcomes, appendix patent-value/R&D outcomes) are stacked as well. Stacked DiD and matching-based DiD are excluded by PROTOCOL Sec. 2, so this is not a controls-only near-miss (same treatment as mnsc.2021.01914 and mnsc.2023.04127).",
+ "eligible_reason": "No unstacked firm-year TWFE is reported; all DiD columns use firm_cohort and year_cohort FE on a stacked PSM-matched sample, and the headline columns are Poisson.",
+ "design_notes": "DID_regression.dta: 5,796 rows, 153 treated firms (cover_year 2011: 45, 2012: 54, 2013: 29, 2014: 18, 2015: 7) and 157 PSM-matched control firms, event window [-3, 3] around initiation. Table 2: PSM probit and pre-event predictability. Table 4: ppmlhdfe patents/citations on treat_post (with and without lagged controls). Table 5: dynamic event-time indicators (Poisson). Table 6: reghdfe equity/debt issuance, financial-constraint indices on treat_post (with/without controls), stacked FE. Tables 7-9: split-sample Poisson by channel terciles. Tables 10-11: 2SLS with followers instrument on a firm-year panel with controls.",
+ "estimators_reported": [
+  "stacked DiD (Poisson, ppmlhdfe)",
+  "stacked DiD (OLS, reghdfe)",
+  "stacked event study (Poisson)",
+  "PSM",
+  "2SLS/IV"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 5,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "T4_patents_treat_post",
+   "eligible": false,
+   "exclusion_reason": "stacked DiD (firm_cohort, year_cohort FE) on PSM-matched sample; Poisson",
+   "code_file": "Regressions_codes.do",
+   "code_line": 89,
+   "outcome": "sum_pat_count_w",
+   "treatment_var": "treat_post",
+   "unit_var": "permno (firm_cohort)",
+   "time_var": "year (year_cohort)",
+   "reported_location": "Table 4"
+  },
+  {
+   "spec_id": "T6_financing_treat_post",
+   "eligible": false,
+   "exclusion_reason": "stacked DiD (firm_cohort, year_cohort FE) on PSM-matched sample; even columns add lagged time-varying controls",
+   "code_file": "Regressions_codes.do",
+   "code_line": 120,
+   "outcome": "share_issue0_w, debt_issue0_w, lw_equitycon_full_w, hp_w",
+   "treatment_var": "treat_post",
+   "reported_location": "Table 6"
+  },
+  {
+   "spec_id": "T10_T11_IV",
+   "eligible": false,
+   "exclusion_reason": "2SLS with continuous endogenous regressor and controls",
+   "code_file": "Regressions_codes.do",
+   "reported_location": "Tables 10-11"
+  }
+ ],
+ "data_access": "public",
+ "data_provenance": "original",
+ "data_provenance_note": "Regression samples (DID_regression.dta, PSM.dta, IV files) built from SA, Kogan et al. patents, CRSP, IBES, RavenPack and Compustat are shipped; no statement of synthetic data.",
+ "data_files_present": true,
+ "data_files": [
+  "DID_regression.dta",
+  "PSM.dta",
+  "Main_IV_regressions.dta",
+  "IV_regressions2.dta",
+  "SA_Table1_Data.dta"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "A plain TWFE could be built from the stacked file, but it is not a reported specification. 5b lists stacked-only papers under the modern-estimator near-miss sentence; coded near_miss false to match the 5c sense used for mnsc.2021.01914 and mnsc.2023.04127. Lead may override. Screened from package only.",
+ "eligible_design_note": "set to false Nov 1 ~21:50: stacked-only designs are excluded by the protocol (Hull); consistent with mnsc.2021.01914/03758/2022.01211"
+}

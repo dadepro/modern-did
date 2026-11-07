@@ -1,0 +1,53 @@
+{
+ "suffix": "mksc.2022.1411",
+ "doi": "10.1287/mksc.2022.1411",
+ "journal": "mksc",
+ "title": "Rejoinder: Spilling More Beans on Political Consumerism: It’s More of the Same Tune",
+ "authors": "Jūra Liaukonytė; Anna E. Tuchman; Xinrong Zhu",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1411",
+ "regressions_path": "./data/packages/mksc.2022.1411_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not a panel DiD. The only regressions (aggregate_graph.do, Figure 2) use a single national weekly Spotify subscriber index: a linear pre-trend fit, then reghdfe of the detrended index on event-week dummies post_1-post_8 for one common event (week 162, the Spotify-Rogan controversy) with week-of-year FE. One time series, one event date; no cross-sectional units and no staggered adoption.",
+ "design_notes": "Stata. Rejoinder; two do-files produce Figures 1 and 2 only (Twitter mention counts for Goya/Spotify around their boycott dates; Spotify weekly subscriber index 2019-2022, 180 weeks). Paths point to the authors' server.",
+ "estimators_reported": [
+  "interrupted_time_series_event_dummies"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Figure 2(b)",
+   "reason": "single aggregate time series, single event date, detrended with pre-period linear trend"
+  },
+  {
+   "location": "Figure 1",
+   "reason": "descriptive plots of Twitter mention counts"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "Replication Files/spotify_sales_2.dta",
+  "Replication Files/spotify_goya_twitter.dta"
+ ],
+ "data_files_note": "spotify_sales_2.dta: 180 weekly rows (week, sales, index). spotify_goya_twitter.dta: daily mention counts.",
+ "data_provenance": "original",
+ "data_provenance_note": "Aggregated series as used in the figures.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). Rejoinder to comments on the Goya boycott paper; no staggered design."
+}

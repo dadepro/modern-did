@@ -1,0 +1,45 @@
+{
+ "suffix": "mnsc.2022.4469",
+ "doi": "10.1287/mnsc.2022.4469",
+ "journal": "mnsc",
+ "title": "Proximity and the Management of Innovation",
+ "year": "2022",
+ "authors": "Chloe Kim Glaeser; Stephen Glaeser; Eva Labro",
+ "eligible_design": false,
+ "eligible_reason": "Giroud (2013)-style first-difference design, not TWFE: outcomes are IHS changes in three-year averages (ihs_change_*_3avg), the treatment tequals0 is a 0/1 indicator for a significant travel-time decrease in the current year only (non-absorbing event-year dummy, post_all is defined only in that year), and fixed effects are firm-by-year and state-by-year (file_year#gvkey, file_year#state_num) with no inventor or facility FE. Facility regressions also include the time-varying control change_num_inventors_w.",
+ "design_notes": "Inventor-year (InventorAnalyses.dta, 2.3 GB) and facility-year (FacilityAnalyses.dta, 173 MB, 35,184 rows; analysis sample 13,162 rows, 4,629 gvkey-MSA units, 1995-2007, 530 treated unit-years) panels. Table 2 regresses levels on ihs_distance; Tables 3-5 regress changes on tequals0 with reghdfe absorb(file_year#gvkey file_year#state_num) and multi-way clustering; sample drops travel-time increases (tequals0_term != 1) and movers. Table 6 is a determinants regression. Units have a median of 2 observations, so a unit-FE event study is not what the paper reports.",
+ "estimators_reported": [
+  "first-difference OLS with firm-year and state-year FE (reghdfe)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 3-5 (Final Tables.do lines 17-58, 77-117)",
+   "reason": "first-differenced outcome, non-absorbing event-year treatment, no unit FE; time-varying control in facility panels"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "firmlevel.dta (2.8 MB)",
+  "FacilityAnalyses.dta (173 MB)",
+  "InventorAnalyses.dta (2.35 GB)",
+  "Tbl6PanelA.dta (2.94 GB)",
+  "Tbl6PanelB.dta (186 MB)",
+  "Final Tables.do",
+  "readme.pdf"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "The package directory holds only two zip files and no extracted content; the regressions list is empty. mnsc.2022.4469.zip (173 MB) is a truncated download. _archive_mnsc.2022.4469.zip (827 MB) is a complete zip64 archive that macOS unzip rejects ('End-of-central-directory signature not found') but bsdtar (tar -xf) and Python zipfile read correctly. I extracted Final Tables.do, readme.pdf, firmlevel.dta and FacilityAnalyses.dta to the session scratchpad for screening; nothing was written to the package directory."
+}

@@ -1,0 +1,56 @@
+{
+  "suffix": "mnsc.2024.09016",
+  "doi": "10.1287/mnsc.2024.09016",
+  "journal": "mnsc",
+  "title": "Quality Disclosures and Disappointment: Evidence from the Academy Awards",
+  "authors": "Michelangelo Rossi; Felix Schleef",
+  "year": 2026,
+  "screened_from": "package_with_manuscript_tex",
+  "batch": "r2a_014",
+  "package_dir": "~/did_packages/mnsc/mnsc.2024.09016",
+  "regressions_path": "./data/packages/mnsc.2024.09016_regressions.txt",
+  "package_mismatch": false,
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "near_miss_5c_controls_only": false,
+  "eligible_reason": "Section 4 DiD (Table 3, Figure 4; RUN_DID.do lines 26-80) compares MovieLens ratings of AMPAS-nominated vs non-nominated movies in an 80-day window around each award year's nomination date (1995-2019). Each movie enters once, assigned to one award-year cohort (non-nominated films get a 'reference nomination date'), and the time FE are relative-day FE: reghdfe rating nominated after_nom treated, absorb(movieid diff_date_nom_ref), where diff_date_nom_ref is days relative to the movie's own (reference) nomination date (main_body.tex line 352: 'day fixed effects capture all variations in ratings posted on specific days relative to the nomination date'). after_nom is a post indicator for all movies at their cohort date (extra treatment regressor). This is a cohort-aligned (stacked-type) event-time design with clean controls per cohort and no calendar-time FE, so it is not an eligible design. Even with calendar-date FE the 80-day windows of different award years do not overlap, so date FE would equal cohort x relative-day FE and the design reduces to a stack of single-date DiDs with never-nominated controls (no staggered comparisons). The main results (Section 5) are user-level propensity-score matching on recommender embeddings (areg rating ATT, absorb(movieid)); Section 6 IMDb uses the same matching. Table D16 adds predicted ratings or embeddings as controls.",
+  "design_notes": "Stata reghdfe/areg; Python recommender (LensKit, scikit). Table 3 cols 1-4: no FE; genre+year FE; movie FE; movie + relative-day FE. Figure 4: reghdfe rating i.nominated##ib13.diff_date_nom_5, absorb(movieid diff_date_nom_5) (5-day relative bins). Nomination dates: early February before 2004, mid-January since 2004, one date per year; cohorts aligned on event time.",
+  "estimators_reported": [
+    "event_time_aligned_did",
+    "event_time_event_study",
+    "propensity_score_matching",
+    "ols_movie_fe"
+  ],
+  "main_or_robustness": "main (DiD is the first-pass analysis; matching is the main estimate)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 25,
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {
+      "location": "Table 3, column 4",
+      "coef": -0.018,
+      "note": "Nominated x post with movie and relative-day FE (from main_body.tex)"
+    }
+  ],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "replication_package/analysis/data/ml-25m/ratings.csv",
+    "replication_package/analysis/data/IMDb_data/IMDb_data.csv",
+    "replication_package/analysis/data/Wikipedia_data/awards_until2019_imdbid.xlsx"
+  ],
+  "data_files_note": "Raw MovieLens 25M, scraped IMDb data and AMPAS dates shipped; the processed did_characteristics.dta is not shipped but is built by RUN_cleaning.do.",
+  "data_provenance": "original",
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Title from README/main_body.tex (not in candidates.csv). DiD uses relative-day FE with per-cohort controls (stacked-type), not calendar-time FE.",
+  "year_source": "Crossref issued year (main session, Nov 2 2026)"
+}

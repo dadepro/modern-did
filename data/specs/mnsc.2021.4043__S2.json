@@ -1,0 +1,83 @@
+{
+  "suffix": "mnsc.2021.4043",
+  "journal": "mnsc",
+  "data_provenance": "real",
+  "data_path": "~/did_packages/_work/mnsc.2021.4043/panel_nov2_movers_ak.rds",
+  "id_var": "cert",
+  "time_var": "Time_Quarter",
+  "y_var": "InsLoans_UnimpairedCap",
+  "gvar": "",
+  "treat_var": "Dereg",
+  "adoption_var": "g_true",
+  "adoption_var_note": "g_true (Stata quarter, same units as Time_Quarter; NA = never) in panel_nov2_movers_ak.rds: state's first deregulated quarter (time_0 + 1) for single-state banks, including banks that exit before deregulation (they keep their lead dummies) and late entrants; for the 92 multi-state banks the first treated quarter in their history; Alaska 136 (1994Q1: effective date 1/1/1994, index 2, in Rice and Strahan FEDS 2008-54 Table 1, verified from the source; NOT in the package; sample starts 1994Q2) = the only pre-sample adopter. treat_var Dereg is kept so run_spec drops the 70 switch-off rows. Run_spec semantics (code-agent, Nov 2): adoption_var only moves the date of units that treat_var treats; the 1,239 banks whose true date falls after their last row (exits before their state deregulates, never-treated movers) stay never-treated in every estimator, so unlike the authors' regression they get no lead dummies. Checked with the data-preparation block of the current run_spec.R (no stop; 1,246 units dated earlier, 8 Alaska banks pre-sample at g = 0).",
+  "weight_var": "",
+  "cluster_var": "cert",
+  "xt_vars": [],
+  "sample_filter": "e_sample_fig1 == 1",
+  "log_y": "",
+  "static_or_event": "event",
+  "in_abstract_intro": false,
+  "spec_id": "S2",
+  "published_coef": -0.0058195,
+  "published_coef_bin_1_8": -0.00346824994982408,
+  "published_se": 0.0013336,
+  "published_se_bin_1_8": 0.00106790010868919,
+  "published_source": "Table 3 column 7 (article p. 3799), Deregulation (t; t + 2 years] = -0.0035 (t = -3.25), N = 384,043. Exact value -0.0034682 (0.0010679) from the authors' regression (Comp_InsLending_Code.do line 421) re-run on the package data. Other bins (article / code): <= t-2y -0.0016 (-0.78) / -0.0016312 (0.0021033); (t-2y, t) -0.0007 (-0.63) / -0.0006998 (0.0011037); >= t+2y -0.0082 (-4.52) / -0.0081708 (0.0018070). Nov 2 summary rule (team-lead: summaries average every reported bin, endpoint bins included): published_coef is now the equal-weight average of the (t, t+2y] and > t+2y bins (both printed in Table 3 col 7) in the authors' normalization, -0.0058195 (delta-method SE 0.0013336, cluster bank); the previous value -0.00346824994982408 is kept in published_coef_bin_1_8. Pre-summary average -0.0011655.",
+  "table": "3",
+  "column": "7",
+  "event_pre_min": -9,
+  "event_post_max": 7,
+  "event_structure": {
+    "bins": [
+      [
+        null,
+        -10
+      ],
+      [
+        -9,
+        -2
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        8,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        -1,
+        -1
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        7
+      ],
+      [
+        8,
+        null
+      ]
+    ],
+    "pre_summary": [
+      [
+        null,
+        -10
+      ],
+      [
+        -9,
+        -2
+      ]
+    ],
+    "source": "Comp_InsLending_Code.do lines 205-215 (time_0 = last quarter with Comp_Index == 0 in the bank's CURRENT HQ state, set to missing for states never deregulating by 2005Q2; norm_time = Time_Quarter - time_0, missing for never-deregulating states and for Alaska, whose index is 2 from the first sample quarter); Table 3 col 7 regression lines 372-421: Dereg__2 = 1{norm_time < -8}, Dereg__1 = 1{-8 <= norm_time <= -1}, Dereg_1 = 1{1 <= norm_time <= 8}, Dereg_2 = 1{norm_time > 8}; omitted norm_time 0 (and never-deregulating states, Alaska). rel = norm_time - 1, so bins rel <= -10, -9..-2, 0..7, >= 8, ref rel -1; every relative time is in a bin or the reference (nothing uncovered). Summaries = the two closed bins, (t-2y, t) and (t, t+2y]; the open tails (<= t-2y, >= t+2y) are reported in the table but not averaged, as in the schema's endpoint convention; published_coef = Dereg_1.",
+    "verified": "fixest with indicators from es_assign reproduces the 4 Table 3 col 7 coefficients of the authors' reghdfe (line 421) on the authors' sample and coding, max abs diff 2.62e-14 (SE 1.5e-11); the article prints -0.0016 (-0.78), -0.0007 (-0.63), -0.0035 (-3.25), -0.0082 (-4.52), N 384,043: all match. Pipeline rule on panel_nov2_movers_ak.rds (N 383,973): bins -0.0016892, -0.0008428, -0.0036545 (0.0009300), -0.0084456; post_summary = -0.0036545. Script ~/did_packages/_work/mnsc.2021.4043/nov2_verify_event_structure.R (data built by nov2_build_movers_ak.R). Nov 2 summary rule: with the reported endpoint bins added to the summaries, the authors'-normalization post average is -0.0058195 (SE 0.0013336) and the pre average -0.0011655 (scratchpad/meta3/rule2/). Pipeline-rule TWFE (raw) for the new post summary: -0.0060500 (0.0012233); pre -0.0012660. Expected pipeline TWFE under run_spec's actual adoption_var rule (scratchpad/meta3/rule2/pipe_twfe_adopt.R): post_summary ([0,7], [8,inf)) -0.0060447 (0.0012210), pre -0.0014714 (0.0014186); supersedes -0.0060500 above (computed with lead dummies for the 1,239 later-dated never-treated banks).",
+    "summary_rule": "Nov 2 rule: a bin is summarized iff the paper reports its coefficient, open endpoint bins included (Table 3 col 7 prints all four bins (<-8, [-8,-1], [1,8], >8 in norm_time))."
+  },
+  "preferred": false,
+  "replication_status": "exact (article Table 3 col 7: all four coefficients and t-statistics match at printed precision)",
+  "notes": "Table III binned event study: reghdfe InsLoans_UnimpairedCap Dereg__2 Dereg__1 Dereg_1 Dereg_2 if e_sample_did==1, a(cert Time_Quarter) cl(cert), bins norm_time <-8, [-8,-1], [1,8], >8, omitted norm_time 0 plus never-treated (and AK). run_spec.R with event_pre_min = -9 / event_post_max = 7 (rel = norm_time - 1) uses the same tail bins as the authors (rel <= -10 and rel >= 8) but single-quarter dummies inside; its post-average over rel 0..7 (norm_time 1..8) is the equal-weight analogue of the authors' single [1,8] bin coefficient, so the TWFE comparison is approximate by construction (authors' bin on the run_spec sample = -0.0037516 (0.0009330); equal-weight average of the 8 single-quarter coefficients = -0.0037215, i.e. -0.0273663 SD units, pre-average -0.0009047 = -0.0066528 SD units). Unit = bank (cert), time = quarter (Time_Quarter, 1994Q2-2005Q2 = 45 quarters; 1994Q1 has missing Comp_Index and is excluded by the authors' condition). Treatment = state interstate-branching deregulation: gvar = time_0 + 1 where time_0 is the last quarter with the Johnson-Rice competition index equal to 0 in the bank's state (authors' lines 205-215); 13 adoption cohorts (1995Q1:1 state, 1995Q2:3, 1995Q3:8, 1995Q4:1, 1996Q1:1, 1996Q2:6, 1996Q3:3, 1997Q1:1, 1997Q2:14, 1999Q3:1, 2000Q1:1, 2000Q2:1, 2000Q3:1 as first treated quarter), 8 never-deregulating states (AR CO IA KS MO MS MT NE; 24.4 percent of observations), no switch-offs. Authors' sample: int_sample==1 & Comp_Index!=. & comm==1 (stock commercial banks with nonmissing insider-loan ratios) = e_sample_fig1 = e_sample_did (identical, 384,043 bank-quarters, 12,151 banks after reghdfe singleton drop). Deviations for run_spec.R: (i) AK (always deregulated, 8 banks, 286 obs) is dropped; the authors keep it with all relative-time dummies zero, i.e. in the reference group; (ii) 63 banks whose headquarters state (and thus adoption date) changes within the sample (2,105 obs) are dropped because the estimators need a unit-constant adoption date; the authors assign treatment by current state. Resulting sample 381,652 obs, 12,080 banks, 50 states, SD(y) = 0.1359869. Authors' reghdfe output reproduced to machine precision with fixest on the authors' sample (verify_twfe.R). Article text/PDF not in the project; numbers come from the authors' code run on the package data. NOV 2 AUDIT (supersedes the deviations above): data_path = panel_nov2_movers_ak.rds (built by ~/did_packages/_work/mnsc.2021.4043/nov2_build_movers_ak.R from panel_prepared.rds; old file kept). Movers and Alaska are KEPT, as in mnsc.2020.3707, mnsc.2021.4057, mnsc.2021.4103 and mnsc.2021.4209 (PROTOCOL 5b Nov 2 (d)): sample_filter = e_sample_fig1 == 1 (the authors' sample, 384,043 rows, 12,151 banks); treat_var = Dereg (= 1{Comp_Index != 0} of the bank's CURRENT HQ state, as in the authors' coding) so that run_spec drops post-adoption rows where a bank moved back to an undereg state (70 rows, 10 banks); gvar is blank; adoption_var = g_true = true first deregulated quarter (Stata tq): the state date time_0 + 1 for banks that stay in one state (including banks that exit before their state deregulates, which keep their lead dummies as in the authors' coding, and late entrants, which keep the state date); for the 92 banks with more than one HQ state, the later of the state date and the quarter after the last untreated observation (= first treated quarter for the 74 movers into a deregulated state; 17 movers are never treated, 15 of them with no date); Alaska = 136 (1994Q1): interstate-branching effective date 1/1/1994 with restriction index 2 in Rice and Strahan, 'Does Credit Supply Affect Small-Firm Finance?', FEDS 2008-54, Table 1 (the working-paper version of Rice and Strahan 2010 JF; downloaded Nov 2 from federalreserve.gov, scratchpad/meta3/rs2010/), which the authors' index follows (AK Comp_Index 2 = 4 - 2 in every package quarter; Comp_Index equals 4 minus the Rice-Strahan index in 2,241 of 2,295 state-quarters and the first deregulated quarter matches for 41 of the 42 other deregulating states, the exception being OR, 1995Q1 in the package vs 7/1/1997 in the FEDS table; the published JF table was not accessed). Verified Nov 2 from the source, replacing a date recalled from memory (1/13/1994, same quarter); the package index starts in 1994Q2, so this date is not in the package. Alaska (8 banks, 286 rows) is the only pre-sample adopter: always-treated for DiD-averaging and imputation, TWFE event time rel = 1..45 (rel = Time_Quarter - g_true; quarters consecutive). Authors' coding differs for two groups (TWFE rows): Alaska all-zero in the authors' regression; movers' event time follows the current state's date. Under the authors' bins Alaska (rel 1..45) enters the (t, t+2y] and >= t+2y bins instead of the reference. Expected pipeline TWFE (raw): post_summary [0,7] = -0.0036545 (0.0009300), pre [-9,-2] = -0.0008428."
+}

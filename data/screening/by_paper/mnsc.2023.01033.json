@@ -1,0 +1,58 @@
+{
+ "doi": "10.1287/mnsc.2023.01033",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "Staggered Health Policy Adoption: Spillover Effects and Their Implications",
+ "authors": "Vadim Elenev; Luis Quintero; Alessandro Rebucci; Emilia Simeonova",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Contiguous-county triplet design, not a unit-by-calendar-time TWFE. Each triplet (treated, neighbor, hinterland county) is an 8-day window (t = -4..3) around the treated county's stay-at-home order; counties recur across triplets (stacked event windows). Regressions use county FE plus an event-time Post dummy (no calendar-date FE), time-varying weather controls (temp, precipitation, snowfall) in every column, and two treatment regressors (Post x Treated direct effect and Post x Neighbor spillover). Event study uses event-time dummies interacted with relationship, again without calendar FE. Shipped data are synthetic (noise injected).",
+ "design_notes": "run_all_regressions.py: main_spec = 'post + post:C(relationship) + temp + precipitation + snowfall' with '| county' FE (line 22, 137), weights='pair_pop' (triplet population), cluster = treated-county NPI date x treated-county state (master.ipynb cell 27 default). Outcomes: log_NonMed_visits_by_day, log_Rest_visits_by_day, log_Ret_visits_by_day, hrs_home, fracboth, frac_home (Table 2); DMA splits (Table 3). Triplets built in construct_contiguous_triplets.py (min 4-day adoption gap; hinterland must not adopt or border an adopter within 4 days) and expanded to t in [-4,3] with post = 1[t>=0] (expand_triplets, lines 112-118). Event study (run_eventstudy lines 305-343): C(t, Treatment(-1)) + C(t):C(relationship) + weather | county, Figure 4 / Table A.3. Table 4 (Stata do-file lines 149-152): reghdfe y ib1.relationshipn##post temp precipitation snowfall [pw=triplet_pop], absorb(origin_county) vce(cluster cluster) on directional traffic outcomes. Estimation via linearmodels AbsorbingLS wrapper (feols.py).",
+ "estimators_reported": [
+  "Triplet (treated/neighbor/hinterland) DiD with county FE and event-time Post dummies, weighted, clustered (Python linearmodels)",
+  "Event-time event study within triplets (Figure 4, Table A.3)",
+  "Stata reghdfe directional-traffic variant (Table 4)",
+  "Bootstrapped cluster alternatives (Table A.10)"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 23,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 (6 outcomes); Table 3 (DMA splits); Tables A.6-A.9, A.11-A.13",
+   "reason": "no calendar-time FE (event-time Post within 8-day triplet windows); time-varying weather controls in every column; additional spillover treatment regressor (Post x Neighbor); stacked triplet windows with recurring counties"
+  },
+  {
+   "location": "Figure 4; Table A.3 (event study)",
+   "reason": "event-time dummies x relationship within triplet windows, weather controls, no calendar FE"
+  },
+  {
+   "location": "Table 4; Tables A.2, A.4 (Stata directional regressions)",
+   "reason": "same triplet design (ib1.relationshipn##post + weather controls, county FE only)"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "synthetic",
+ "data_files_present": true,
+ "data_files": [
+  "data/socialDistancingCountyMeasures.dta (county-day: outcomes, stayathome date, weather, population; SYNTHETIC noise)",
+  "data/countyPairsContainment.dta (18,870 adjacent county pairs with NPI dates; 23 distinct SHO dates 2020-03-15 to 2020-04-07; 15% missing = non-adopters)",
+  "data/DailyDirectionalAllC_SHO_rep.dta (directional visits; synthetic)",
+  "data/connectedness.dta",
+  "data/DMA_countyfips.dta",
+  "data/CountiesDemographics.dta",
+  "data/UScounties.* shapefiles",
+  "data/dictionary.csv"
+ ],
+ "software": "python",
+ "software_detail": "Python (pandas, linearmodels AbsorbingLS via custom feols wrapper, statsmodels; master.ipynb) plus Stata 17 (reghdfe, estout) for Table 4 and Figure A.2",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Screened from package only. Design is explicitly built to avoid staggered-TWFE comparisons (Goodman-Bacon cited): each triplet contributes an 8-day window around the treated county's SHO date. Not convertible to an eligible spec without changing the design (would need county x calendar-date panel with date FE and no weather controls). SafeGraph data are proprietary; shipped files have noise injected (synthetic.py), seed withheld."
+}

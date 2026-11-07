@@ -1,0 +1,53 @@
+{
+ "suffix": "mksc.2022.0212",
+ "doi": "10.1287/mksc.2022.0212",
+ "journal": "mksc",
+ "title": "Frontiers: A Simple Forward Difference-in-Differences Method",
+ "authors": "Kathleen T. Li",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_031",
+ "package_dir": "~/did_packages/mksc/mksc.2022.0212",
+ "regressions_path": "./data/packages/mksc.2022.0212_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Methods paper proposing Forward DiD (data-driven selection of control units for a single treated unit) with inference theory. The package illustrates it on the Hsiao-Ching-Wan Hong Kong GDP panel (one treated unit, one date). No TWFE panel with staggered binary adoption.",
+ "design_notes": "MATLAB and R functions (FDID_Matlab.m, Fun_FDID.R). Reports FDID ATT and a conventional DID ATT for the single treated unit.",
+ "estimators_reported": [
+  "forward_did",
+  "classic_did_single_treated_unit"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "empirical application",
+   "reason": "single treated unit, single date; forward DiD control selection (synthetic-control-like)"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "GDP.csv (illustrative public dataset, not the paper's application)"
+ ],
+ "data_files_note": "ForwardDID_Readme.txt: the dataset used in the paper is proprietary; code is released with a public GDP dataset instead.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Paper's own data proprietary and not shipped; only an illustrative public dataset.",
+ "software": "other",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Software: MATLAB and R. Code scan found no regression commands (prescore 0)."
+}

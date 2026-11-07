@@ -1,0 +1,31 @@
+{
+  "suffix": "0022243718824561",
+  "doi": "10.1177/0022243718824561",
+  "journal": "jmr",
+  "title": "Managing Laggards: The Importance of a Deep Sales Bench",
+  "year": "2019",
+  "eligible_design": false,
+  "eligible_reason": "Single adoption date and two periods. The bench program is announced in 58 of 140 districts at the start of one program year, and the DiD compares preprogram year with program year for genetic-matched treated and control salespeople.",
+  "design_notes": "Equation 1: performance (percent to quota) on Treatment_k, Program Start_t, their interaction, advice network, and covariates; two groups, two years (preprogram, program); errors clustered by district. Table 4 Panel A reports the matched-sample DiD of 4.07 (p < .001). Matching uses genetic matching on two years of preperformance, variability, advice network size, tenure and district size. Quantile regression and survivor/discontinuation analyses follow. Study 2 is a randomized lab experiment. No staggered adoption, no unit and calendar-time fixed effects structure.",
+  "estimators_reported": [
+    "matched 2x2 DiD (OLS)",
+    "DiD quantile regression",
+    "genetic matching",
+    "randomized lab experiment"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data are salesperson performance records from a single firm (82 control districts, 58 treated districts; 286 treated and 413 control salespeople before matching). No data-availability statement in the article. Not eligible under PROTOCOL Section 2: one adoption date, two periods, matching-based DiD."
+}

@@ -1,0 +1,279 @@
+{
+ "suffix": "mnsc.2021.02026",
+ "journal": "mnsc",
+ "data_path": "~/did_packages/_work/mnsc.2021.02026/panel_sample_analysis_adopt.rds",
+ "id_var": "ID",
+ "time_var": "week",
+ "weight_var": "",
+ "cluster_var": "ID",
+ "xt_vars": [],
+ "log_y": "",
+ "data_provenance": "random_subsample",
+ "spec_id": "TE5_c1_omit_May12_logSales_es",
+ "y_var": "logSales",
+ "gvar": "gweek",
+ "sample_filter": "TreatmentDate != \"2016-05-12\"",
+ "published_coef": null,
+ "published_se": null,
+ "published_n": 4092183,
+ "table": "Appendix Table E.5",
+ "column": "1 (Omit May12)",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "published_source": "Printed article, Appendix Table E.5, column 1 (Omit May12) (appendix printed in the published article, Management Science 70(11), 2024, pp. 7363-7367; papers/mnsc/mnsc.2021.02026.pdf, text in data/text/mnsc/mnsc.2021.02026.txt); identical to the authors' full-data console log logPanelMainAnalysis_Lines339_351.txt (package code AppendixA54_ITT_RelTime_OmittingEachGroup.R (relative-time felm woMay12), stargazer TableA542 col 1). Printed rounding: 2 decimals (stargazer digits = 2; every SE prints as 0.01).",
+ "published_event_coefs": {
+  "<=-8": -0.01,
+  "-7": -0.01,
+  "-6": -0.002,
+  "-5": 0.004,
+  "-4": 0.01,
+  "-3": 0.004,
+  "-2": 0.004,
+  "-1": -0.003,
+  "+1": 0.02,
+  "+2": 0.03,
+  "+3": 0.03,
+  "+4": 0.05,
+  "+5": 0.05,
+  "+6": 0.07,
+  "+7": 0.06,
+  ">=+8": 0.07
+ },
+ "published_event_se": {
+  "<=-8": 0.01,
+  "-7": 0.01,
+  "-6": 0.01,
+  "-5": 0.01,
+  "-4": 0.01,
+  "-3": 0.01,
+  "-2": 0.01,
+  "-1": 0.01,
+  "+1": 0.01,
+  "+2": 0.01,
+  "+3": 0.01,
+  "+4": 0.01,
+  "+5": 0.01,
+  "+6": 0.01,
+  "+7": 0.01,
+  ">=+8": 0.01
+ },
+ "static_or_event": "event",
+ "event_pre_min": -7,
+ "event_post_max": 7,
+ "event_structure": {
+  "bins": [
+   [
+    null,
+    -9
+   ],
+   [
+    -8,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    null
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "ref",
+  "post_summary": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    null
+   ]
+  ],
+  "pre_summary": [
+   [
+    null,
+    -9
+   ],
+   [
+    -8,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "AppendixA54_ITT_RelTime_OmittingEachGroup.R (relative-time felm woMay12), stargazer TableA542 col 1: felm(y ~ RelTrtWeek8pre + Pre7..Pre1 + Post1..Post7 + RelTrtWeek8onward | ID + WeekEndingDate | 0 | ID), RelTrtWeek = round((WeekEndingDate - TreatmentDate)/7), RelTrtWeek 0 omitted; the same code and bins as the main-text event study (PanelMainAnalysis.R lines 111-136). Bins recorded on relweek_m1 = RelTrtWeek - 1 (event_time_authors_var): authors' <=-8 -> <= -9, -7..-1 -> -8..-2, omitted 0 -> -1, +1..+7 -> 0..6, >=+8 -> >= 7. Structure copied from Fig_eventstudy_logSales.",
+  "verified": "TWFE with these bins on relweek_m1 reproduces the authors' 16 relative-week coefficients on the shipped 10% sample (max abs diff 0.0e+00, N 409,538); the printed full-data path cannot be re-estimated from the package."
+ },
+ "presample_adopters_nov2": "None (first access week 11 of 23). The Aug 8 group adopts after the panel (adoption_var gweek_true = 24).",
+ "adoption_var": "gweek_true",
+ "adoption_var_note": "Lead decision (Nov 2): adoption dates from the original treatment history. gweek_true = first week with WeekEndingDate >= TreatmentDate (same rule as gweek and SHaccess), extended past the panel: equal to gweek for the six in-window cohorts and 24 for the Aug 8, 2016 group (5,772 sellers), whose access falls after the last panel week (23). Within the sample D = SHaccess = 0 for that group (checked), so DiD-averaging treats it as never treated; its post-sample date is used only for event-time coding (TWFE leads, BJS lead regression), as in the authors' regression. Built by ~/did_packages/_work/mnsc.2021.02026/adopt_dates.R; gvar gweek (NA for the group) is kept.",
+ "event_time_authors_var": "relweek_m1",
+ "event_time_authors_note": "Lead decision (Nov 2): relweek_m1 = RelTrtWeek - 1, the authors' event week (round((WeekEndingDate - TreatmentDate)/7), PanelMainAnalysis.R lines 111-136) shifted so that their omitted week 0 is -1; defined for every seller (all have an access date, the Aug 8 group relative to Aug 8; no NA). TWFE indicators and the imputation estimator's bins use event_structure on relweek_m1; DiD-averaging (CSA) uses calendar rel = t - g (g from adoption_var gweek_true) with the same boundaries, which differs only for the May 12/19 cohorts (one week).",
+ "appendix_printed": true,
+ "main_text": false,
+ "template_spec_id": "Fig_eventstudy_logSales",
+ "template_difference": "Main-text event study Fig_eventstudy_logSales (Figure 4) re-estimated without the May12 access cohort (access date 2016-05-12, first treated week 11); same bins and omitted week; the Aug 8 group is always kept.",
+ "notes": "PRINTED-APPENDIX SPECIFICATION (Nov 4, 2026): outside the main-text sample; for the appendix-inclusive sensitivity analysis. Main-text event study Fig_eventstudy_logSales (Figure 4) re-estimated without the May12 access cohort (access date 2016-05-12, first treated week 11); same bins and omitted week; the Aug 8 group is always kept. Event study: TWFE indicators and imputation bins on relweek_m1 (the authors' event week), DiD-averaging on calendar rel = t - g with g from gweek_true (Aug 8 group dated week 24, so it carries lead bins as in the authors' regression); calendar and authors' bins differ only for the May 12/19 cohorts (one week), as in Fig_eventstudy_logSales. published_coef/published_se are null as in the main-text event-study spec; the printed per-bin path is in published_event_coefs / published_event_se. Bar-Gill, Brynjolfsson and Hak (2024), eBay Seller Hub (SH) randomized staggered rollout. Seller x week panel, 23 Saturday week-ending dates 2016-03-05..2016-08-06. Treatment SHaccess = 1[WeekEndingDate >= TreatmentDate], absorbing; 6 in-window access cohorts (May 12, May 19, Jun 6, Jun 13, Jun 21, Jul 26 2016 = weeks 11, 12, 15, 16, 17, 22) plus the Aug 8 group, never treated in-window. gvar = gweek (first panel week with SHaccess = 1, computed on the balanced panel before any restriction; NA for the Aug 8 group); D = 1[week >= gweek] equals SHaccess row by row. Seller FE + week FE, no controls, no weights, SE clustered by seller (authors: lfe::felm, exactDOF = T). DATA: the package ships a 10% random seller sample (18,422 of 184,222 sellers); the full data need eBay legal approval, so the printed full-data values can be reproduced only up to sampling error. Log outcomes precomputed in panel_sample_analysis*.rds (build_panel.R).",
+ "subsample_event_coefs": {
+  "<=-8": 0.0296994051414392,
+  "-7": 0.0349986596639534,
+  "-6": 0.00326161780096954,
+  "-5": 0.0449968296367938,
+  "-4": 0.0268590586156125,
+  "-3": 0.00368285522093121,
+  "-2": 0.0200887954941668,
+  "-1": 0.0137925635168101,
+  "+1": 0.00436981795361869,
+  "+2": 0.0257462641736428,
+  "+3": -0.00921930062809227,
+  "+4": 0.0187967914039557,
+  "+5": 0.0425620827311609,
+  "+6": 0.0226838841544822,
+  "+7": 0.0182510302394742,
+  ">=+8": -0.00628937566833564
+ },
+ "subsample_event_se": {
+  "<=-8": 0.0305024474337468,
+  "-7": 0.027422973441605,
+  "-6": 0.0265477538607618,
+  "-5": 0.0250741384119603,
+  "-4": 0.0236883213288001,
+  "-3": 0.0224321920859837,
+  "-2": 0.0206628826135816,
+  "-1": 0.0179420324831613,
+  "+1": 0.0206809055163914,
+  "+2": 0.0237083105046192,
+  "+3": 0.0265785413429999,
+  "+4": 0.0282147266815349,
+  "+5": 0.0291980562754817,
+  "+6": 0.030398441577295,
+  "+7": 0.0314791023423896,
+  ">=+8": 0.0372813888929869
+ },
+ "subsample_n": 409538,
+ "subsample_n_sellers": 17806,
+ "subsample_n_cohorts": 5,
+ "subsample_never_sellers": 5772,
+ "y_sd_unweighted_regsample": 2.87128442346016,
+ "subsample_n_vs_published_n": 0.1001,
+ "subsample_event_z_vs_printed": {
+  "<=-8": 1.3,
+  "-7": 1.64,
+  "-6": 0.2,
+  "-5": 1.64,
+  "-4": 0.71,
+  "-3": -0.01,
+  "-2": 0.78,
+  "-1": 0.94,
+  "+1": -0.76,
+  "+2": -0.18,
+  "+3": -1.48,
+  "+4": -1.11,
+  "+5": -0.25,
+  "+6": -1.56,
+  "+7": -1.33,
+  ">=+8": -2.05
+ },
+ "replication_status": "approximate (random_subsample: fixest reproduces the authors' relative-week felm exactly on the shipped 10% sample; full-data path not reproducible from shipped data; printed values rounded to 2 decimals; 1 of 16 subsample bins beyond 1.96 subsample SEs of the printed value; post bins max |z| = 2.05)"
+}

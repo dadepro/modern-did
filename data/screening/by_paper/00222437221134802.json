@@ -1,0 +1,28 @@
+{
+  "suffix": "00222437221134802",
+  "doi": "10.1177/00222437221134802",
+  "journal": "jmr",
+  "title": "Beyond Sentiment: The Value and Measurement of Consumer Certainty in Language",
+  "year": "2022",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences design. Construction and validation of a text-based Certainty Lexicon; predictive regressions with Twitter, reviews and commercial outcomes.",
+  "design_notes": "Lexicon validation across social media datasets, lab experiments and online reviews; Super Bowl commercial tweets analysis is a prediction exercise, not a staggered adoption design.",
+  "estimators_reported": [
+    "lexicon validation; OLS/predictive regressions"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Lexicon is public (CertaintyLexicon.com) but no DiD."
+}

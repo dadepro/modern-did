@@ -1,0 +1,30 @@
+{
+  "suffix": "0022243718817513",
+  "doi": "10.1177/0022243718817513",
+  "journal": "jmr",
+  "title": "Targeted Promotions on an E-Book Platform: Crowding Out, Heterogeneity, and Opportunity Costs",
+  "year": "2019",
+  "eligible_design": false,
+  "eligible_reason": "Randomized experiment with a single treatment date; the only DiD is a 2x2 robustness check in the Web Appendix.",
+  "design_notes": "Randomized field experiments on an Asian e-book app (Study 1, N = 20,436 targeted-fit customers; Study 2, N = 77,731; supplemental event-ticket study). Main comparisons are cross-sectional between randomized arms. A pre/post DiD specification is mentioned only as a robustness check in Web Appendix B. All treated users are treated on the same promotion date. The paper's second part is a targeting / machine-learning exercise.",
+  "estimators_reported": [
+    "randomized experiment OLS",
+    "pre/post DiD (Web Appendix B only)",
+    "causal forest-style targeting"
+  ],
+  "main_or_robustness": "robustness",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: randomized experiment, single treatment date. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data come from a cooperating e-book platform and are not public."
+}

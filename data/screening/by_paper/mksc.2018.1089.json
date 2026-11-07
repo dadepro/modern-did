@@ -1,0 +1,31 @@
+{
+  "suffix": "mksc.2018.1089",
+  "doi": "10.1287/mksc.2018.1089",
+  "journal": "mksc",
+  "title": "Can Emerging Markets Tilt Global Product Design? Impacts of Chinese Colorism on Hollywood Castings",
+  "year": "2018",
+  "eligible_design": false,
+  "eligible_reason": "Single policy date (February 2012 relaxation of China's film-import quota; POST = 1[release year >= 2014]); film-level repeated cross-section with release-year FE, no unit FE; treatment is EXPOSURE x POST where EXPOSURE is a predicted China-entry probability (continuous) or its top-decile dummy (2x2). Includes film-characteristic controls X.",
+  "design_notes": "Eq. (1): SHARELIGHT_i = a + b*EXPOSURE_i*POST_t(i) + Theta*X_i + lambda_t(i) + e_i. Table 5 reports b for DEXPOSURE (binary 2x2) and CEXPOSURE1/2 (continuous intensity). Table 6 is a year-interaction path (EXPOSURE x 1[year=t'], t'>=2010, 2009 omitted) used as a pre-trend/anticipation check. Table 7 matched samples, Table 8 falsification, Tables 12-14 Probit/multinomial models of China entry. Exactly one adoption date, units are films (not stable units observed over time), continuous exposure.",
+  "estimators_reported": [
+    "OLS DiD with release-year FE (Table 5)",
+    "OLS EXPOSURE x year interactions (Table 6)",
+    "matching-based DiD (Table 7)",
+    "Probit (Tables 2, 13)"
+  ],
+  "main_or_robustness": "main (but single-date, not staggered)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: one adoption date, continuous exposure, no unit FE. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data are IMDb-based films with hand-coded actor skin colour; no data-availability statement in the working-paper text (SSRN Oct 2017 version)."
+}

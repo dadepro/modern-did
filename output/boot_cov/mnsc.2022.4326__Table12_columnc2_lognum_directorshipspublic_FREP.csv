@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2022.4326,Table12_columnc2_lognum_directorshipspublic_FREP,static,999,0.0371953399648183,0.0325545143439104,0.176390044541704,0.248144999330978,0.195455454520225,0.849784753688137,0.944255137152226,999,999,999,0,2.22044604925031e-16,1.11022302462516e-16,TRUE,32,

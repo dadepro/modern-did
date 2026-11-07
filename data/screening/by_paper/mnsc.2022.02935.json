@@ -1,0 +1,57 @@
+{
+ "suffix": "mnsc.2022.02935",
+ "doi": "10.1287/mnsc.2022.02935",
+ "journal": "mnsc",
+ "title": "What Makes HFTs Tick? Tick Size Changes and Information Advantage in a Market with Fast and Slow Traders",
+ "authors": "Alain Chaboud; Avery Dao; Clara Vega; Filip Žikeš",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_031",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.02935",
+ "regressions_path": "./data/packages/mnsc.2022.02935_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Event studies around two market-wide EBS tick-size changes (decrease 7 Mar 2011, increase 24 Sep 2012) for EUR/USD and USD/JPY: before/after means and a spot-vs-futures DiD (reg y treated after did, optionally + implied vol + trend) in a 60-day window. Common event dates per change, pooled treated dummy, no unit FE; logits for Tables 8-9.",
+ "design_notes": "Stata and Python. Units are two currency pairs x spot/futures markets; daily data.",
+ "estimators_reported": [
+  "before_after_means",
+  "two_group_did_common_date",
+  "logit"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 11",
+   "reason": "spot vs futures DiD at a single event date; pooled treated dummy; some columns add implied volatility and a linear trend"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "lambda_daily_eurusd_v2.dta",
+  "eurusd_daily_spread.dta",
+  "usdjpy_daily_depth.dta",
+  "+ ~50 other .dta/.xlsx/.csv"
+ ],
+ "data_files_note": "ReadMe.docx: EBS and Thomson Reuters Tick History data are proprietary; the package provides fake data sets with the documented variables.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "README states the shipped datasets are fake.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not staggered; data are fake."
+}

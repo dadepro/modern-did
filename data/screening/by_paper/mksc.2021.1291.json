@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2021.1291",
+ "doi": "10.1287/mksc.2021.1291",
+ "journal": "mksc",
+ "title": "Informational and Noninformational Advertising Content",
+ "authors": "Yi-Lin Tsai; Elisabeth Honka",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2021.1291",
+ "regressions_path": "./data/packages/mksc.2021.1291_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not a DiD. All regressions (Tables 7-9, Code.do) are linear probability models of consumer-level survey outcomes (awareness, consideration, purchase) on continuous brand-DMA-month advertising spending (advertising) or on content-specific spending (informational, noninformational, bothcontents, missing), with brand x DMA, brand x state x month, brand x wave x online x demographic FE (border-DMA variant with brand x border x month FE), plus state_dependence and price_ind regressors in the purchase stage. Treatment is a continuous intensity, not a binary switch-on.",
+ "design_notes": "Stata reghdfe, pweight sampleweight, cluster new_dma. Two datasets: Data-complete-sample.dta and Data-border-sample.dta. Identification from within-brand-DMA variation in ad spending and DMA border discontinuities.",
+ "estimators_reported": [
+  "lpm_continuous_treatment_hdfe",
+  "border_discontinuity"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 7-9 (all 24 + 24 LPMs)",
+   "reason": "continuous advertising spending regressor; additional time-varying regressors (state_dependence, price_ind) in purchase stage"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Supplementary/Data-complete-sample.dta",
+  "Supplementary/Data-border-sample.dta"
+ ],
+ "data_files_note": "Readme.txt: data protected by NDA, so the authors provide fake datasets instead.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Fake datasets per Readme.txt.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). code_prescore 2 is driven by reghdfe with DMA and month FE; the regressor is continuous ad spending."
+}

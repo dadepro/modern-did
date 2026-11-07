@@ -1,0 +1,259 @@
+{
+  "doi": "10.1177/00222437231179021",
+  "suffix": "00222437231179021",
+  "journal": "jmr",
+  "title": "Wheels to Meals: Measuring the Impact of Micromobility on Restaurant Demand",
+  "authors": "Kyeongbin Kim; Daniel Minh McCarthy",
+  "year": "2023",
+  "year_in_article": "2023 (JMR 61(1), 2024 issue)",
+  "eligible": false,
+  "eligible_design": true,
+  "near_miss": true,
+  "near_miss_reason": "Assignment-unit-specific linear trends (city-specific linear time trends theta_c * t) in every reported column (Equation 1; Tables 2-6); Table 2 and Table 3 columns 1-3 are additionally estimated with CEM or PSM matching weights (matching-based DiD), while Table 3 columns 4-6 (unmatched) violate only the unit-trend rule. Staggered binary e-scooter entry at city-specific dates (June-October 2018, 49 treated cities), individual and week FE, never-treated control cities. Earnest card-panel data are proprietary and not shipped.",
+  "near_miss_5c_controls_only": false,
+  "eligible_reason": "The design qualifies (binary e-scooter entry switching on at city-specific dates between June and October 2018 for 49 treated cities, 49 never-treated matched control cities, individual and week FE), but no main-text specification satisfies the protocol. Every estimate is from Equation 1, which includes city-specific linear time trends theta_c * t; the protocol excludes unit-specific (here assignment-unit-specific) trends. The preferred specification (Table 2) and Table 3 columns 1-3 are additionally estimated on coarsened-exact-matched or propensity-score-matched samples (matching-based DiD). Table 3 columns 4-6 are unmatched but still include the city trends. No trend-free TWFE or event-study path is reported in the main text (Web Appendix H re-estimates trends on pretreatment data only, still a trend specification).",
+  "design_notes": "Equation 1: log(Spend_it + 1) = b0 + b1*ScooterEntry_c(i)t + phi_i (individual FE) + xi_t (week FE) + theta_c*t (city-specific linear trend) + e_it. Earnest Analytics credit/debit card panel, 46,451 individuals in 98 cities, weekly, Jan 2017-Feb 2020. Treated individuals = e-scooter users in treated cities; controls from matched cities. CEM (preferred), PSM and unmatched samples; SEs clustered by city. Figure 3 and Equation 2 give a pretrend check (linear trend difference). Robustness: IHS outcome (Table 4), placebo categories (Table 6), permutation test, quadratic trends and pre-period-estimated trends (Web Appendix G-H), daily/monthly/five-month time units (Web Appendix G). Goodman-Bacon (2021) cited to motivate trends and the collapsed-time robustness check.",
+  "estimators_reported": [
+    "TWFE with city-specific linear trends on CEM-matched sample",
+    "same on PSM-matched sample",
+    "same on unmatched sample"
+  ],
+  "main_or_robustness": "main",
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "n_eligible_specs": 0,
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "spec_id": "T2_c1",
+      "reported_location": "Table 2, column 1 (Total)",
+      "outcome": "log(1 + weekly in-store restaurant spending), individual-week",
+      "treatment_var": "ScooterEntry_c(i)t = 1 if city c allowed e-scooters by week t",
+      "unit": "individual-week",
+      "assignment_unit": "city",
+      "time_var": "week",
+      "fe": "individual FE, week FE, city-specific linear trend",
+      "controls": "none (trend only)",
+      "weights": "CEM weights",
+      "cluster": "city",
+      "sample_condition": "CEM-matched sample; e-scooter users in 49 treated cities and matched individuals in 49 control cities; Jan 2017-Feb 2020",
+      "static_or_event": "static",
+      "coef": 0.05172,
+      "se": 0.01711,
+      "n_obs": 7664415,
+      "preferred_spec": "y",
+      "in_abstract_or_intro": "y",
+      "exclusion_reason": "city-specific linear trends (unit-specific trends); CEM matching",
+      "no_trend_version_exists": false
+    },
+    {
+      "spec_id": "T2_c2",
+      "reported_location": "Table 2, column 2 (Fast Food)",
+      "outcome": "log(1 + weekly fast-food spending)",
+      "fe": "individual FE, week FE, city trend",
+      "weights": "CEM",
+      "cluster": "city",
+      "coef": 0.04503,
+      "se": 0.01688,
+      "n_obs": 7647750,
+      "exclusion_reason": "city trends; CEM"
+    },
+    {
+      "spec_id": "T2_c3",
+      "reported_location": "Table 2, column 3 (Sit-Down)",
+      "outcome": "log(1 + weekly sit-down restaurant spending)",
+      "fe": "individual FE, week FE, city trend",
+      "weights": "CEM",
+      "cluster": "city",
+      "coef": 0.01727,
+      "se": 0.00548,
+      "n_obs": 7196145,
+      "exclusion_reason": "city trends; CEM"
+    },
+    {
+      "spec_id": "T3_c1",
+      "reported_location": "Table 3, column 1 (PSM, Total)",
+      "outcome": "log(1 + total restaurant spending)",
+      "weights": "PSM",
+      "coef": 0.03452,
+      "se": 0.01632,
+      "n_obs": 4539810,
+      "exclusion_reason": "city trends; PSM"
+    },
+    {
+      "spec_id": "T3_c2",
+      "reported_location": "Table 3, column 2 (PSM, Fast Food)",
+      "coef": 0.03018,
+      "se": 0.01594,
+      "n_obs": 4530900,
+      "exclusion_reason": "city trends; PSM"
+    },
+    {
+      "spec_id": "T3_c3",
+      "reported_location": "Table 3, column 3 (PSM, Sit-Down)",
+      "coef": 0.01098,
+      "se": 0.00407,
+      "n_obs": 4244295,
+      "exclusion_reason": "city trends; PSM"
+    },
+    {
+      "spec_id": "T3_c4",
+      "reported_location": "Table 3, column 4 (Unmatched, Total)",
+      "outcome": "log(1 + total restaurant spending)",
+      "fe": "individual FE, week FE, city-specific linear trend",
+      "weights": "none",
+      "cluster": "city",
+      "sample_condition": "all e-scooter users in treated cities and all individuals in control cities (unmatched)",
+      "coef": 0.04442,
+      "se": 0.01319,
+      "n_obs": 15840825,
+      "exclusion_reason": "city-specific linear trends; closest candidate if trends were dropped (not reported)"
+    },
+    {
+      "spec_id": "T3_c5",
+      "reported_location": "Table 3, column 5 (Unmatched, Fast Food)",
+      "coef": 0.03808,
+      "se": 0.01274,
+      "n_obs": 15806835,
+      "exclusion_reason": "city trends"
+    },
+    {
+      "spec_id": "T3_c6",
+      "reported_location": "Table 3, column 6 (Unmatched, Sit-Down)",
+      "coef": 0.01456,
+      "se": 0.00524,
+      "n_obs": 14967975,
+      "exclusion_reason": "city trends"
+    },
+    {
+      "spec_id": "T4_c1",
+      "reported_location": "Table 4, column 1 (IHS, Total)",
+      "outcome": "asinh(weekly restaurant spending)",
+      "coef": 0.06203,
+      "se": 0.02046,
+      "n_obs": 7664415,
+      "exclusion_reason": "city trends; CEM"
+    },
+    {
+      "spec_id": "T4_c2",
+      "reported_location": "Table 4, column 2 (IHS, Fast Food)",
+      "coef": 0.05455,
+      "se": 0.02027,
+      "n_obs": 7647750,
+      "exclusion_reason": "city trends; CEM"
+    },
+    {
+      "spec_id": "T4_c3",
+      "reported_location": "Table 4, column 3 (IHS, Sit-Down)",
+      "coef": 0.02058,
+      "se": 0.00653,
+      "n_obs": 7196145,
+      "exclusion_reason": "city trends; CEM"
+    },
+    {
+      "spec_id": "T5_c1",
+      "reported_location": "Table 5, column 1 (All but Restaurants)",
+      "outcome": "log(1 + local spending excluding in-store restaurants)",
+      "coef": 0.03818,
+      "se": 0.03081,
+      "n_obs": 7695765,
+      "exclusion_reason": "city trends; CEM"
+    },
+    {
+      "spec_id": "T6_c1",
+      "reported_location": "Table 6, column 1 (placebo: Online Grocers)",
+      "coef": 0.00732,
+      "se": 0.02296,
+      "n_obs": 394845,
+      "exclusion_reason": "city trends; CEM; placebo outcome"
+    },
+    {
+      "spec_id": "T6_c2",
+      "reported_location": "Table 6, column 2 (placebo: Mass Transit)",
+      "coef": 0.00435,
+      "se": 0.01681,
+      "n_obs": 298980,
+      "exclusion_reason": "city trends; CEM; placebo outcome"
+    },
+    {
+      "spec_id": "T6_c3",
+      "reported_location": "Table 6, column 3 (placebo: Air Travel)",
+      "coef": 0.00813,
+      "se": 0.00817,
+      "n_obs": 4713060,
+      "exclusion_reason": "city trends; CEM; placebo outcome"
+    },
+    {
+      "spec_id": "F4_heterogeneity",
+      "reported_location": "Figure 4, Panels A-F",
+      "outcome": "log(1 + restaurant spending) by company-size, AOV, new/repeat, age, temperature, transit terciles",
+      "coef": null,
+      "se": null,
+      "n_obs": null,
+      "exclusion_reason": "city trends; CEM; subgroup regressions with coefficients shown only in the figure"
+    }
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {
+      "spec_id": "T2_c1",
+      "table": "Table 2",
+      "column": "1",
+      "coef": 0.05172,
+      "se": 0.01711,
+      "n_obs": 7664415
+    },
+    {
+      "spec_id": "T2_c2",
+      "table": "Table 2",
+      "column": "2",
+      "coef": 0.04503,
+      "se": 0.01688,
+      "n_obs": 7647750
+    },
+    {
+      "spec_id": "T2_c3",
+      "table": "Table 2",
+      "column": "3",
+      "coef": 0.01727,
+      "se": 0.00548,
+      "n_obs": 7196145
+    },
+    {
+      "spec_id": "T3_c4",
+      "table": "Table 3",
+      "column": "4",
+      "coef": 0.04442,
+      "se": 0.01319,
+      "n_obs": 15840825
+    },
+    {
+      "spec_id": "T3_c5",
+      "table": "Table 3",
+      "column": "5",
+      "coef": 0.03808,
+      "se": 0.01274,
+      "n_obs": 15806835
+    },
+    {
+      "spec_id": "T3_c6",
+      "table": "Table 3",
+      "column": "6",
+      "coef": 0.01456,
+      "se": 0.00524,
+      "n_obs": 14967975
+    }
+  ],
+  "data_access": "proprietary",
+  "data_availability_statement": "No availability statement found. Individual-level credit and debit card panel from Earnest Analytics (acknowledged for 'providing access'); city e-scooter entry dates compiled by the authors (Web Appendix B).",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "package_dir": null,
+  "regressions_path": null,
+  "screener_notes": "Design-level the paper is a textbook staggered DiD with never-treated controls (54 cities entered June-Oct 2018, 5 dropped by matching; 15 earlier and 29 later entrants excluded). The only barrier is the city-specific linear trend in every reported column (plus CEM/PSM weights in the preferred columns). If the lead decides that assignment-unit linear trends are tolerable, Table 3 columns 4-6 (unmatched) would be the cleanest candidates; I excluded them following the protocol's unit-specific-trends rule. Exact adoption dates by city are in Web Appendix B, not in the main text, so the number of weekly cohorts is unknown.",
+  "hand_check_nov4": "Near-miss (unit trends; matching weights). Record coded under the earlier rule (eligible_design true, n_eligible_specs 0) and never entered near_miss.csv; every main-text column carries city-specific linear trends per the record's spec list and Equation 1, so the staggered binary design fails only on restrictions. Not controls-only."
+}

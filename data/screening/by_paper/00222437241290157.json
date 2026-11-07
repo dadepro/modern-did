@@ -1,0 +1,32 @@
+{
+ "eligible_design": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_expected": false,
+ "package_dir": null,
+ "journal": "jmr",
+ "doi": "10.1177/00222437241290157",
+ "year": 2024,
+ "title": "Are We Worse Off After Policy Repeals? Evidence from Two Green Policies",
+ "eligible_reason": "Main method is Bayesian synthetic control (BSCM, horseshoe prior) run separately for each treated city and policy (Austin ban: implementation then repeal announced July 11 2018; Dallas $.05 fee: Jan 1 2015 start, repealed June 2015; also Seattle and Washington DC implementation) against 14-15 control cities. Synthetic control is excluded by the protocol, and there is no pooled TWFE or event study with unit and time FE. Generalized synthetic control (Xu 2017) is only a robustness check.",
+ "design_notes": "Unit: city-week (first three zip digits, 22 cities), outcome = standard-normalised trash bag quantity sales and price from NielsenIQ Retail Scanner. Effects reported as percentage gaps with 95% credible intervals; placebo in time and in space; random-effects meta-analysis over placebos.",
+ "estimators_reported": [
+  "Bayesian synthetic control (BSCM)",
+  "generalized synthetic control (robustness)",
+  "Bayesian lasso / elastic net benchmark models"
+ ],
+ "main_or_robustness": "main",
+ "data_access": "proprietary",
+ "screener_notes": "Ineligible: synthetic control per treated city; no TWFE. Data: NielsenIQ Retail Scanner (Kilts, licensed); no package in batch.",
+ "suffix": "00222437241290157"
+}

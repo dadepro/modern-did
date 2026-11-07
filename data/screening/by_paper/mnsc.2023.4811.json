@@ -1,0 +1,38 @@
+{
+  "suffix": "mnsc.2023.4811",
+  "doi": "10.1287/mnsc.2023.4811",
+  "journal": "mnsc",
+  "title": "Effort Peer Effects in Team Production: Evidence from Professional Football",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No binary staggered treatment. All regressions (Tables 2-7, A1, 2A) regress player or team outcomes on continuous peer-effort measures (plaavspeed, teamdist_ex_mean, dist_gap, team_dist/opp_dist) with player/section/game or contest-pair/round FE; Tables 4, 5 and 7 use IV (season-average peer distance instruments) via ivreghdfe; Table 6 is a first-difference-around-substitution design with IV. Peer-effects regression, not a DiD.",
+  "design_notes": "Package replication_package_MS-BDE-21-00762: do/master_forrep.do runs data_prep, Tables_2_3_1A, Tables_4_5_7, subs_databuilder, Table_6, figures, Table_2A. Data dta/orig_DB_forrep.dta and dta/UCL_DB.dta with codebooks (xls). 106 regression commands, all reghdfe/ivreghdfe with continuous regressors and control sets (dhomegame rank_gap player_cumsections, pre-section controls, crowd controls). Flag cite_dcdh_2020 presumably refers to a citation in discussion only.",
+  "estimators_reported": [
+    "ols_fe_continuous_regressor",
+    "iv_2sls"
+  ],
+  "main_or_robustness": "not applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public (package data)",
+  "data_files_present": true,
+  "data_files": [
+    "replication_package_MS-BDE-21-00762/dta/orig_DB_forrep.dta",
+    "replication_package_MS-BDE-21-00762/dta/UCL_DB.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not a DiD paper."
+}

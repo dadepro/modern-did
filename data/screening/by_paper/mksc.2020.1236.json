@@ -1,0 +1,74 @@
+{
+ "suffix": "mksc.2020.1236",
+ "doi": "10.1287/mksc.2020.1236",
+ "journal": "mksc",
+ "title": "Value of Aggregators",
+ "authors": "Selin Akca; Anita Rao",
+ "year": 2020,
+ "screened_from": "package_only",
+ "batch": "r2a_028",
+ "package_dir": "~/did_packages/mksc/mksc.2020.1236",
+ "regressions_path": "./data/packages/mksc.2020.1236_regressions.txt",
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_mismatch": false,
+ "eligible_reason": "Single-date event: the American Airlines-Orbitz dispute removed AA fares from Orbitz for all consumers at the same time (disp = months 1-5, disp_treatment = disp x year 2011). Individual-domain browsing regressions (xtreg, fe) compare dispute months in 2011 with the same months in 2010/2012, with ad-spend controls and domain interactions; DB1B fare regressions are IV. Not a staggered design; treatment also switches off after five months.",
+ "design_notes": "Stata xtreg fe (machine-id x domain panel of comScore browsing), R plm, MATLAB likelihood (purchase model, Table 17), ivreghdfe on DB1B route data (Tables 18-19). Treatment window common to all units.",
+ "estimators_reported": [
+  "did_single_event_fe",
+  "iv_2sls",
+  "structural_mle"
+ ],
+ "specs": [
+  {
+   "spec_id": "T5-T14",
+   "eligible": false,
+   "code_file": "Code/1. Total Sites (Control Lonely Planet).do",
+   "reported_location": "Tables 5-14",
+   "exclusion_reason": "common dispute window (single adoption date), switches off; time-varying ad-spend control tot_exp; domain-by-dispute interactions"
+  },
+  {
+   "spec_id": "T17",
+   "eligible": false,
+   "code_file": "Code/main.m",
+   "reported_location": "Table 17",
+   "exclusion_reason": "structural likelihood model"
+  },
+  {
+   "spec_id": "T18-T19",
+   "eligible": false,
+   "code_file": "Code/9.DB1B Estimation.do",
+   "reported_location": "Tables 18-19",
+   "exclusion_reason": "IV (ivreghdfe) with single dispute window"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Data/control_search_stata.dta",
+  "Data/control_search_stata_zip.dta",
+  "Data/b2_stata.dta",
+  "Data/*_2010_2012_control.dta",
+  "Data/DB1BData/*"
+ ],
+ "data_files_note": "Code Readme: 'All browsing files are samples: code will run on these files, but will not replicate tables. Please purchase data directly from comScore.' DB1B and fuel-cost inputs are public.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "comScore browsing data shipped only as samples with no stated random sampling rule (do not replicate tables); counts as not_shipped.",
+ "software": "stata",
+ "software_notes": "Stata (xtreg, ivreghdfe), R (data construction), MATLAB (purchase model)",
+ "screener_notes": "Screened from package only (no article text or PDF). Single common event; not staggered; comScore data samples only."
+}

@@ -1,0 +1,59 @@
+{
+  "suffix": "mnsc.2021.4098",
+  "doi": "10.1287/mnsc.2021.4098",
+  "journal": "mnsc",
+  "title": "Frenemies: Corporate Advertising Under Common Ownership",
+  "year": 2021,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not eligible: stacked merger-cohort design. Each financial-institution merger (1983-2011) defines a cohort of treated firms (newly commonly owned with a competitor) and control firms observed in a +/-3-year window around the announcement; observations are stacked with firm-by-merger fixed effects (Firmerid) and a relative-time Post dummy (Treat_Post Post Treat), clustered by merger. There are no calendar-time fixed effects and the panel is stacked, both excluded by PROTOCOL Section 2. Most columns also add ten lagged time-varying firm controls.",
+  "design_notes": "Regression.do Table 3: reg LnAD Treat_Post Post Treat (col 1); reghdfe LnAD Treat_Post Post Treat, absorb(Firmerid) vce(cluster mergerid) (col 2, no controls); + $Control_Ln (col 3); same for ADAssets and ADSales. Tables 4-12 are subsample splits (high_50, head, High503, High500, industries), PSM sample, alternative windows, profit outcomes, continuous common-ownership share (Shares_Post), and pre-trend dummies (Treat_Pre_2, Treat_Pre_1, Table A2). Derived analysis datasets (derived/T3.DiD_sample.dta etc.) are included; raw inputs are WRDS (Thomson 13F, Compustat, CRSP) and He-Huang (2017) merger list.",
+  "estimators_reported": [
+    "stacked_did_firm_merger_fe",
+    "stacked_did_with_lagged_controls",
+    "psm_matched_stacked_did",
+    "continuous_ownership_share_did"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": "many merger events (stacked cohorts), but no calendar-time FE",
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "T3_c2_LnAD_nocontrols",
+      "eligible": false,
+      "exclusion_reason": "stacked design with firm-merger FE and relative-time Post; no calendar-time FE",
+      "code_file": "replication_package_MS-MKG-19-02242/dofile/Regression.do",
+      "code_line": 61,
+      "outcome": "LnAD (log(1+advertising))",
+      "treatment_var": "Treat_Post (= Treat x Post)",
+      "unit_var": "Firmerid (firm x merger)",
+      "time_var": "year_rel / Post (relative to merger announcement)",
+      "fe": "Firmerid",
+      "controls": "none (col 2); $Control_Ln lagged firm controls (col 3)",
+      "cluster": "mergerid",
+      "data_file": "derived/T3.DiD_sample.dta",
+      "reported_location": "Table 3, column 2"
+    }
+  ],
+  "data_access": "partial",
+  "data_provenance": "real (derived WRDS-based analysis files included; raw WRDS inputs licensed)",
+  "data_files_present": true,
+  "data_files": [
+    "derived/T3.DiD_sample.dta (1.1 MB)",
+    "derived/T4A.psm.dta, T4B.overlapio.dta, T4C.1year/2year.dta, T4D.change_control_firms.dta, T5.profit.dta, T6.TNIC3HHI.dta, T7-T12 .dta, TA2.parallel_trend.dta, Fig3.dta",
+    "results/*.csv",
+    "logfile_reg.log"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "If the lead wants to treat stacked designs differently, the underlying treatment (first exposure to common ownership via a mutual-fund merger) is staggered across firms, but reconstructing an unstacked firm-year panel with calendar-year FE would be a new design, not a replication of a reported specification. Screened from package only."
+}

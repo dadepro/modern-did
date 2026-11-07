@@ -1,0 +1,97 @@
+{
+ "suffix": "mnsc.2023.00830",
+ "doi": "10.1287/mnsc.2023.00830",
+ "journal": "mnsc",
+ "title": "Relational Resonance and Content Creation",
+ "authors": "Tingting Song; Yi‐Chun Ho",
+ "year": 2024,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.00830",
+ "regressions_path": "./data/packages/mnsc.2023.00830_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Staggered binary design (responsive tie RT switches on at initiator-specific weeks: 814 treated initiators across 53 adoption weeks, 814 rolling-entry-matched never-responded controls, 54 weeks, no switch-offs), but every main-text column is a Bayesian hierarchical model with random (not fixed) initiator intercepts and random RT slopes, 14 lagged time-varying controls, and control-function residuals (gr.RT, gr.Upload) as extra regressors; the Volume model is Poisson. The Figure 7 relative-time model drops initiator effects entirely and keeps the controls and correction terms. Several violations, so not a 5c controls-only case.",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 53,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "main",
+ "ineligible_specs": [
+  {
+   "spec_id": "T4_c1_LikesRatio",
+   "reported_location": "Table 4, column (1)",
+   "coef": 0.011,
+   "n_obs": 45068,
+   "exclusion_reason": "random initiator intercepts and RT slopes (Bayesian MCMC) instead of unit FE; time-varying lagged controls; selection-correction residuals gr.RT and gr.Upload"
+  },
+  {
+   "spec_id": "T4_c2_dSubsRatio",
+   "reported_location": "Table 4, column (2)",
+   "coef": 0.029,
+   "n_obs": 45068,
+   "exclusion_reason": "same as T4_c1"
+  },
+  {
+   "spec_id": "T4_c3_Volume",
+   "reported_location": "Table 4, column (3)",
+   "coef": -0.277,
+   "n_obs": 65541,
+   "exclusion_reason": "Poisson hierarchical model plus the violations of T4_c1"
+  },
+  {
+   "spec_id": "T3_models",
+   "reported_location": "Table 3 (DIC model comparison)",
+   "exclusion_reason": "model-fit comparison of nested random-effects specifications; no treatment estimates"
+  },
+  {
+   "spec_id": "T9_CEM_altmatching",
+   "reported_location": "Table 9",
+   "exclusion_reason": "same hierarchical model on CEM and alternative matched samples"
+  },
+  {
+   "spec_id": "T10_moderation",
+   "reported_location": "Table 10",
+   "exclusion_reason": "RT x continuous moderator; number of ties (continuous)"
+  },
+  {
+   "spec_id": "F7_relative_time",
+   "reported_location": "Figure 7",
+   "exclusion_reason": "no initiator FE (pooled model), time-varying controls and correction terms; leads/lags de-trended"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "No qualifying column. Design is staggered (RT turns on at 53 different weeks with never-responded matched controls), but all estimates come from a Bayesian hierarchical random-coefficient model (main_code.R, MCMC) with time-varying controls and control-function residuals; the volume equation is Poisson. Random effects in place of unit FE are not eligible (5b).",
+ "design_notes": "Main_data.dta: 1,628 initiators x weeks 1-54 (65,541 rows; 45,068 with engagement outcomes), RT absorbing, 814 ever-treated, first RT weeks 2-54. Model (Section 4.2): LikesRatio/dSubsRatio = alpha_i + beta_i RT_{i,t-1} + gamma X_{i,t-1} + gr terms + week FE, with alpha_i, beta_i random. Matching by rolling entry matching (REM.dta). Table 4 RT: 0.011 (LikesRatio), 0.029 (dSubsRatio), -0.277 (Volume).",
+ "estimators_reported": [
+  "bayesian_hierarchical_random_coefficients (MCMC) with controls and control functions",
+  "Poisson hierarchical model",
+  "relative-time model without unit effects (Figure 7)",
+  "SEM on online experiment"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Data/Main_data.dta",
+  "Data/REM.dta",
+  "Data/CEM.dta",
+  "Data/Raw_Data.dta",
+  "Data/Experiment_data.dta"
+ ],
+ "data_files_note": "Full analysis panel and matching inputs shipped (77 MB).",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' YouTube creator panel after rolling-entry matching.",
+ "software": "r",
+ "software_notes": "R (custom MCMC, REM), Stata for descriptives/CEM",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2023.00830.txt); adoption timing checked in Main_data.dta. Near miss with several violations (random effects, controls, control functions), so it is excluded from 5c. TWFE counterparts could be built from the shipped panel (id, week, RT), but no such column is reported."
+}

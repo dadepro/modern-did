@@ -1,0 +1,77 @@
+{
+ "suffix": "00222437221076160",
+ "doi": "10.1177/00222437221076160",
+ "journal": "jmr",
+ "title": "How Does the Adoption of Ad Blockers Affect News Consumption?",
+ "year": "2022",
+ "eligible_design": false,
+ "eligible_reason": "Design is staggered (user-specific adoption weeks 12-16, never-adopters as controls) with user and week FE, but every main-text specification is estimated on a coarsened-exact-matching (CEM) matched sample, which PROTOCOL.md Section 2 excludes as matching-based DiD. The unmatched version appears only in a Web Appendix. Data are proprietary and no package is available, so replication is infeasible regardless.",
+ "design_notes": "Equation 1: Y_it = a_i + d_t + b1 I1_it + b2 I2_it + e_it, with Y = log(1 + article views) or log(1 + breadth). Primary analysis: adopters (6,366 users adopting in weeks 12-16; cohorts 1,124 / 3,269 / 1,167 / 384 / 422) vs. nonadopters (38,270 users), then CEM on demographics, pre-treatment behavior, first/last observed week, browser; matched sample 574 treated and 748 control users, 9,370 user-weeks. Estimation window weeks 7-16. Table 4 cols 1-2 (Ad Blocker Adoption): article views b1 .297 (.038), b2 .155 (.049); breadth b1 .198 (.027), b2 .096 (.036); N = 9,370. Cols 3-4 (early adopters wk 12 vs late adopters wk 14, N = 1,423) have a single treatment date. Cols 5-6 (abandonment, N = 1,009) also matched. Tables 5 and 6 re-estimate the same matched specification for mechanism outcomes and subsamples. The abstract's 21.0%-43.2% increase in articles read comes from Table 4 col 1. SEs clustered by user.",
+ "estimators_reported": [
+  "TWFE with user and week FE on CEM-matched sample (Tables 4-6)",
+  "propensity-score-matching and unmatched robustness (Web Appendix only)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 5,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "treatment_var": "I1 = 1 in adoption week and the following week; I2 = 1 in the remaining weeks since adoption (up to week 16). Adoption week is user-specific (weeks 12-16).",
+   "unit_var": "user (registered news-site user)",
+   "time_var": "week (weeks 7-16 estimation window)",
+   "fe": "user FE, week FE",
+   "controls": "none",
+   "weights": "not reported (CEM-matched sample, matching weights unclear)",
+   "cluster": "user",
+   "static_or_event": "two-bin event study (0-1 weeks, remaining weeks) against all pre-adoption weeks",
+   "spec_id": "T4_adoption_articleviews",
+   "reported_location": "Table 4, Ad Blocker Adoption, Article Views",
+   "outcome": "log(article views + 1), user-week",
+   "coef": {
+    "b1_oneweek": 0.297,
+    "b2_fiveweek": 0.155
+   },
+   "se": {
+    "b1_oneweek": 0.038,
+    "b2_fiveweek": 0.049
+   },
+   "n_obs": 9370,
+   "exclusion_reason": "matching-based DiD (CEM matched sample); two post-treatment bins instead of a single binary treatment; borderline, would otherwise qualify as a staggered design with never-adopters"
+  },
+  {
+   "treatment_var": "I1 = 1 in adoption week and the following week; I2 = 1 in the remaining weeks since adoption (up to week 16). Adoption week is user-specific (weeks 12-16).",
+   "unit_var": "user (registered news-site user)",
+   "time_var": "week (weeks 7-16 estimation window)",
+   "fe": "user FE, week FE",
+   "controls": "none",
+   "weights": "not reported (CEM-matched sample, matching weights unclear)",
+   "cluster": "user",
+   "static_or_event": "two-bin event study (0-1 weeks, remaining weeks) against all pre-adoption weeks",
+   "spec_id": "T4_adoption_breadth",
+   "reported_location": "Table 4, Ad Blocker Adoption, Breadth",
+   "outcome": "log(breadth + 1), user-week",
+   "coef": {
+    "b1_oneweek": 0.198,
+    "b2_fiveweek": 0.096
+   },
+   "se": {
+    "b1_oneweek": 0.027,
+    "b2_fiveweek": 0.036
+   },
+   "n_obs": 9370,
+   "exclusion_reason": "matching-based DiD (CEM matched sample); borderline"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Marked ineligible only because of the matching exclusion; treat as the one borderline paper in this batch. If the lead relaxes the matching rule, candidate specs are Table 4 cols 1-2 (primary, in abstract), Table 5 Panels A-B (10 outcomes, same specification), Table 6 (subsamples), plus the abandonment columns (Table 4 cols 5-6) which may also be staggered. Unmatched estimates exist only in the Web Appendix (Tables W20 etc.), not in the main text. Data: proprietary clickstream from an anonymous European news publisher; not obtainable without the publisher. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

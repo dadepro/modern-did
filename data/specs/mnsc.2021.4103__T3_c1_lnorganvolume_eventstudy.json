@@ -1,0 +1,173 @@
+{
+  "suffix": "mnsc.2021.4103",
+  "journal": "mnsc",
+  "data_provenance": "original",
+  "id_var": "pair_id",
+  "time_var": "year",
+  "gvar": "gyear",
+  "treat_var": "",
+  "weight_var": "",
+  "cluster_var": "pair_id",
+  "xt_vars": [],
+  "log_y": "",
+  "code_file": "replication_package_MS-OPM-20-01137/MainAnalysis.do",
+  "spec_id": "T3_c1_lnorganvolume_eventstudy",
+  "screening_spec_id": "mnsc.2021.4103_T3_c1_lnorganvolume_eventstudy",
+  "data_path": "~/did_packages/_work/mnsc.2021.4103/panel_main_dist800.csv",
+  "y_var": "LnOrganVolume",
+  "sample_filter": "airport_dist >= 800",
+  "published_coef": 0.071,
+  "published_coef_0_2": 0.0627864,
+  "published_se": null,
+  "published_se_0_2": 0.0360849,
+  "published_coef_ref_m1": 0.0450967,
+  "published_se_ref_m1": 0.0416623,
+  "published_n": 9184,
+  "published_estimator": "equal-weight average of the authors' event-time coefficients 0, 1, 2 and 3+ (every post bin printed in Table 3 col 1) in the authors' normalization (reference rel <= -4 pooled with control pairs). Earlier values: 0..2 average 0.0627864 (published_coef_0_2); Nov 1 re-normalization to rel = -1, 0.0450967 (published_coef_ref_m1)",
+  "published_event_coefs": {
+    "-3": 0.013,
+    "-2": -0.021,
+    "-1": 0.018,
+    "0": 0.089,
+    "1": 0.05,
+    "2": 0.05,
+    "3+": 0.095
+  },
+  "published_event_se": {
+    "-3": 0.044,
+    "-2": 0.041,
+    "-1": 0.04,
+    "0": 0.053,
+    "1": 0.041,
+    "2": 0.046,
+    "3+": 0.035
+  },
+  "published_event_reference": "rel <= -4 (pooled with never-treated pairs)",
+  "published_post_avg_equal_weight": 0.070874,
+  "published_post_avg_equal_weight_se": 0.0328222,
+  "published_pre_avg_equal_weight": 0.0032638,
+  "table": "3",
+  "column": "1",
+  "static_or_event": "event",
+  "event_pre_min": -3,
+  "event_post_max": 2,
+  "event_structure": {
+    "bins": [
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        null,
+        -4
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        null
+      ]
+    ],
+    "pre_summary": [
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "source": "MainAnalysis.do lines 40-47 (Treatment3YrBefore..Treatment2YrAfter = 1{treatment_pair == 1 & tx_year - EventYear == -3..2}, Treatment3YrAfter = 1{tx_year - EventYear >= 3}) and line 242 (reg with all seven, TxYear* ODPair*, vce(cl OrgDestAirport)). Event time = tx_year - EventYear = rel = t - g with g = gyear (EventYear of treated pairs; years 2002-2017 consecutive). Omitted: rel <= -4 of treated pairs, pooled with the control pairs -> ref [null,-4]; every relative time is in a bin or the reference (nothing uncovered). EventYear is the true opening year of the first direct route (pairs with a direct flight before 2002 are excluded by construction, article Section 4), so the 2002 cohort adopts in the first sample year and no adoption_var is needed. Summaries: post = the three single years 0, 1, 2 (the open 3+ bin is reported but not averaged, endpoint convention); pre = rel -3, -2, -1 (all reported pre bins; the reference is rel <= -4).",
+    "verified": "fixest with indicators from es_assign reproduces the authors' seven Table 3 col 1 coefficients (line 242 dummies re-estimated in fixest) to 1.4e-16 and the article's printed values (Table 3 col 1, p. 3669: 0.013, -0.021, 0.018, 0.089, 0.050, 0.050, 0.095) to 0.0004 (rounding; SEs to 0.0005 with Stata reg dof); N 9,184. post_summary avg 0.0627864 (0.0360849), pre_summary avg 0.0032638 (0.0291741). Script ~/did_packages/_work/mnsc.2021.4103/nov2_verify_event_structure.R. Nov 2 summary rule: with the reported endpoint bins added to the summaries, the authors'-normalization post average is 0.070874 (SE 0.032822) and the pre average 0.0032638 (scratchpad/meta3/rule2/).",
+    "summary_rule": "Nov 2 rule: a bin is summarized iff the paper reports its coefficient, open endpoint bins included (Table 3 col 1 prints the 3+ bin)."
+  },
+  "preferred": false,
+  "in_abstract_intro": false,
+  "replication_status": "exact (authors' code output 0.070874 (0.0328222), N 9184, equals printed Table 3 column (1) post-bin average 0.071 (SE not printed), N 9,184, to the printed decimals; all seven printed bins match the code to 3 decimals; verified against the article Nov 4 2026)",
+  "code_line": 242,
+  "outcome_description": "ln(1 + number of shared cadaveric kidneys)",
+  "notes": "Origin-destination airport-pair x year panel 2002-2017, balanced. pair_id = integer code of OrgDestAirport (unit FE and cluster, as vce(cl OrgDestAirport)). gyear = EventYear for treated pairs (treatment_pair==1), NA for never-treated control pairs; D = 1[year >= gyear] equals the authors' TreatmentAfter on every row (checked). Treatment is absorbing (no switch-offs). The 2002 cohort is treated in the first panel year (always-treated): kept in TWFE/BJS samples as in the authors' regression; did::att_gt drops it. Authors' line 242: reg LnOrganVolume Treatment3YrBefore Treatment2YrBefore Treatment1YrBefore Treatment0YrAfter Treatment1YrAfter Treatment2YrAfter Treatment3YrAfter TxYear* ODPair* if airport_dist >= 800, vce(cl OrgDestAirport); single-year dummies for rel -3..2, a 3+ bin, and rel <= -4 omitted together with the control pairs. fixest reproduces all seven published coefficients and SEs to the third decimal (verify_T3_eventstudy.csv). Window chosen so that run_spec.R's bins (<=-4 bin, -3, -2, ref -1, 0, 1, 2, >=3 bin) partition relative time exactly as the authors do; only the omitted cell differs. Because the bins cover every treated row, their sum is the treated-pair indicator, which pair FE absorb, so the runner model is an exact reparametrization: each runner coefficient = authors' coefficient minus the rel -1 coefficient (0.0177; e.g. rel 0: 0.0890 - 0.0177 = 0.0713). Published-equivalent post average (rel 0..2, ref -1) = 0.0450967 (SE 0.0416623) raw = 0.18260 SD; pre average (rel -3, -2) = -0.0216388 (0.0481383) raw = -0.08761 SD. In the authors' own normalization the post average is 0.0628 (0.0361). The authors' headline 3+ bin (0.095) is the endpoint bin and is not part of the runner's post average. NOV 2 AUDIT: event_structure keeps the authors' bins and reference (ref = rel <= -4 pooled with control pairs; bins -3, -2, -1, 0, 1, 2, 3+), replacing the rel = -1 re-normalization described above; the runner now estimates the authors' coefficients directly (post_summary rel 0..2 = 0.0627864 raw = 0.25422 SD with population SD 0.2469761; pre_summary rel -3..-1 = 0.0032638 raw = 0.01321 SD). No pre-sample adopters: the 2002 cohort opened its first direct route in 2002 (article Section 4 excludes pairs connected before 2002).",
+  "published_source": "Printed Table 3, column (1) of the published article (papers/mnsc/mnsc.2021.4103.pdf, p. 3669, main text), read Nov 4 2026; table number and values identical to the accepted manuscript in the package. published_coef = equal-weight mean of the printed post bins covered by event_structure.post_summary (year of treatment 0.089, 1 year after 0.050, 2 years after 0.050, 3 and more years after 0.095) = 0.071; no SE is printed for that average, so published_se is null (printed per-bin SEs in published_event_se); equals the authors' code output 0.070874 (delta-method SE 0.0328222) to the printed decimals, and each of the seven printed bins equals the code bin to 3 decimals. Earlier: Tr_Tx_final_main_body.pdf (accepted manuscript inside the package); authors' regression re-run in fixest on the shipped analysis .dta (Stata reg with ODPair*/TxYear* dummy sets = fixest pair + year FE with ssc(fixef.K='full')); Nov 2: checked against the typeset article (data/text/mnsc/mnsc.2021.4103.txt, Table 3 col 1, p. 3669): identical to the manuscript values Nov 2 summary rule (team-lead: summaries average every reported bin, endpoint bins included): published_coef is now the equal-weight average of event years 0, 1, 2 and 3+ (all printed in Table 3 col 1) in the authors' normalization, 0.070874 (delta-method SE 0.032822, cluster pair, Stata dof); the previous value 0.0627864 is kept in published_coef_0_2. Pre-summary average 0.0032638.",
+  "authors_code_coef": 0.070874,
+  "authors_code_se": 0.0328222,
+  "authors_code_n": 9184,
+  "run_spec_result": [
+    {
+      "window": "post",
+      "twfe": "0.182595456663362",
+      "twfe_se": "0.168689373585462",
+      "csa": "0.199760083837331",
+      "csa_se": "0.161695891605517",
+      "bjs": "0.237140366023858",
+      "bjs_se": "0.135389632279764",
+      "csa_note": "",
+      "bjs_note": "",
+      "n": "9184",
+      "n_units": "574",
+      "n_cohorts": "12",
+      "share_never": "0.893728222996516",
+      "y_sd_regsample": "0.246976142837531"
+    },
+    {
+      "window": "pre",
+      "twfe": "-0.0876149197552033",
+      "twfe_se": "0.194910530708969",
+      "csa": "-0.119006660439172",
+      "csa_se": "0.199086832255406",
+      "bjs": "-0.031834546803106",
+      "bjs_se": "0.107812419671832",
+      "csa_note": "",
+      "bjs_note": "",
+      "n": "9184",
+      "n_units": "574",
+      "n_cohorts": "12",
+      "share_never": "0.893728222996516",
+      "y_sd_regsample": "0.246976142837531"
+    }
+  ],
+  "run_spec_date": "2026-11-01"
+}

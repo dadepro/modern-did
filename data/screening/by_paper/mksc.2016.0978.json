@@ -1,0 +1,58 @@
+{
+ "suffix": "mksc.2016.0978",
+ "doi": "10.1287/mksc.2016.0978",
+ "journal": "mksc",
+ "title": "Anticipated vs. Actual Synergy in Merger Partner Selection and Post-Merger Innovation",
+ "authors": "Vithala R. Rao; Yu Yu; Nita Umashankar",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0978",
+ "regressions_path": "./data/packages/mksc.2016.0978_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (joint two-sided matching model of merger partner selection and post-merger patent outcomes, MCMC)",
+ "ineligible_specs": [
+  {
+   "spec_id": "matching_outcome_mcmc",
+   "reported_location": "estimation tables",
+   "exclusion_reason": "Bayesian roommate-matching model jointly estimated with post-merger innovation equation; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian matching model of merger partner choice linked to post-merger innovation.",
+ "design_notes": "R code 01-04 with compiled bayesmc_2012X.so; MCMC over 81 markets.",
+ "estimators_reported": [
+  "Bayesian matching model (MCMC)"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "sample_X_out.csv",
+  "sample_X2.csv",
+  "sample_Xd.csv",
+  "sample_market_size.csv",
+  "sample_match.csv"
+ ],
+ "data_files_note": "readme: sample of 8 of 81 markets; results will not match the paper.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Small extract (8 of 81 markets) with no stated random sampling rule.",
+ "software": "r",
+ "software_notes": "R with compiled C library (Linux)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

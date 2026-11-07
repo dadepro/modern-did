@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2021.0293",
+ "doi": "10.1287/mksc.2021.0293",
+ "journal": "mksc",
+ "title": "Do Sellers Benefit from Sponsored Product Listings? Evidence from an Online Marketplace",
+ "authors": "Mingyu Joo; Jiaqi Shi; Vibhanshu Abhishek",
+ "year": 2024,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2021.0293",
+ "regressions_path": "./data/packages/mksc.2021.0293_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (listing-level click/conversion logits of sponsored vs organic listings with query-product FE; no time dimension)",
+ "ineligible_specs": [
+  {
+   "spec_id": "click_conversion_logits",
+   "reported_location": "Section 4.3 main tables (click and conversion tendency by position)",
+   "exclusion_reason": "cross-sectional logit (bife) of clicked/buynow on sponsored x position-cluster with query-product FE; no adoption timing, no calendar-time FE, nonlinear"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Sponsored vs organic listings are compared within query-product cells across ad positions in search-impression data; there is no staggered adoption and no time dimension.",
+ "design_notes": "Mechanism splits by Nelson search/experience categories and rating; ROI back-of-envelope in Section 5.",
+ "estimators_reported": [
+  "binary logit with query-product FE (bife)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "1.Sponsored_listings_sample.csv"
+ ],
+ "data_files_note": "17% random sample of the impression data; DVs synthesized, ratings disguised, IDs anonymized (readme.docx).",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "readme.docx: 'Dependent variables are synthesized to disguise the actual numbers of clicks/conversions'; high_rating 'true values disguised'.",
+ "software": "r",
+ "software_notes": "R (bife, fixest)",
+ "screener_notes": "No article text available; design read from readme and 2.Sponsored_listings_model.R. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

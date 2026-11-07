@@ -1,0 +1,55 @@
+{
+ "suffix": "mnsc.2023.4883",
+ "doi": "10.1287/mnsc.2023.4883",
+ "journal": "mnsc",
+ "title": "Emotional Engagement and Trading Performance",
+ "authors": "Peter L. Bossaerts; Felix Fattinger; Kristian Rotaru; Kaitong Xu",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_028",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4883",
+ "regressions_path": "./data/packages/mnsc.2023.4883_regressions.txt",
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_mismatch": false,
+ "eligible_reason": "Laboratory asset-market experiment with heart-rate and skin-conductance recordings; analysis uses VAR/Granger causality and cointegration per subject-session and cross-sectional earnings regressions. No DiD.",
+ "design_notes": "Python (statsmodels VAR, adfuller, cointegration) and MATLAB live scripts for figures.",
+ "estimators_reported": [
+  "var_granger",
+  "cointegration"
+ ],
+ "specs": [
+  {
+   "spec_id": "figs_1-7",
+   "eligible": false,
+   "code_file": "replication_package_MS-FIN-20-02751/DataProcessing.py",
+   "reported_location": "Figures 1-7",
+   "exclusion_reason": "lab experiment time-series analysis; no DiD design"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-FIN-20-02751/*.csv"
+ ],
+ "data_files_note": "Market, dividend, heart-rate and SCR data from the experiment shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Raw experiment data shipped.",
+ "software": "python",
+ "software_notes": "Python and MATLAB",
+ "screener_notes": "Screened from package only (no article text or PDF). Lab experiment; not DiD."
+}

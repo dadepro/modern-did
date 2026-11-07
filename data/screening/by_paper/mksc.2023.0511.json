@@ -1,0 +1,47 @@
+{
+ "suffix": "mksc.2023.0511",
+ "doi": "10.1287/mksc.2023.0511",
+ "journal": "mksc",
+ "year": 2026,
+ "title": "A Deep-DiD Method to Estimate Heterogeneous Treatment Effects: Application to Content Creator Selection",
+ "authors": "Yan Cheng; Jingbo Wang; Xinyu Cao; Zuo-Jun Max Shen; Yuhui Zhang",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Methodological paper proposing a deep-neural-network DiD estimator of heterogeneous treatment effects. The replication package (code_for_release_blackandwhite) contains only PyTorch simulation scripts (figure_2..figure_6, table_1_hyperparameters), pre-generated simulated data (simulated_data/*.txt) and plotting code; there is no regression command and no empirical application data (the content-creator platform data are not shipped). No linear TWFE/event-study specification on real data can be identified, so no qualifying staggered binary design is recorded.",
+ "design_notes": "Package = Monte Carlo simulations varying beta/fixed-effect strength, N, T, misspecification, and a random-forest comparison; outputs are PDF figures and a hyperparameter table. The empirical application (creator selection) is described only in the paper; its data and code are absent. The Deep-DiD estimator itself is a nonlinear (neural network) model, which would be excluded even if the application data were available.",
+ "estimators_reported": [
+  "Deep-DiD (two deep neural networks embedded in a DiD framework) on simulated data",
+  "random forest comparison (simulation)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "not identifiable from the package (simulation only)",
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "all package code (code/*.py)",
+   "reason": "simulation scripts for a nonlinear DNN estimator; no empirical regression"
+  }
+ ],
+ "data_access": "synthetic",
+ "data_access_detail": "Only simulated data (JSON in .txt files) are shipped; the platform data used in the empirical application are not included.",
+ "data_files_present": false,
+ "data_files": [
+  "code_for_release_blackandwhite/simulated_data/*.txt (simulated)"
+ ],
+ "software": "python",
+ "software_detail": "Python (PyTorch, NumPy, Matplotlib; conda environment_windows.yml)",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Full text not available; the abstract confirms this is a methods paper. If the published version reports a conventional TWFE benchmark on the creator data, it cannot be replicated from this package."
+}

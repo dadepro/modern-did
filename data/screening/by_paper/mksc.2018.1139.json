@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2018.1139",
+ "doi": "10.1287/mksc.2018.1139",
+ "journal": "mksc",
+ "title": "Social TV, Advertising, and Sales: Are Social Shows Good for Advertisers?",
+ "authors": "Beth L. Fossen; David A. Schweidel",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1139",
+ "regressions_path": "./data/packages/mksc.2018.1139_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (ad-level Bayesian bivariate regression of post-ad web traffic and sales on program social chatter)",
+ "ineligible_specs": [
+  {
+   "spec_id": "winbugs_ad_level",
+   "reported_location": "main results table",
+   "exclusion_reason": "ad-airing-level multivariate normal model in WinBUGS with retailer and program random effects and pre-ad outcomes; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Ad-level Bayesian regression of online shopping response on program chatter, with lagged pre-ad outcomes.",
+ "design_notes": "WinBUGS model code; outcomes log sessions/quantities after each ad airing; regressors include LOG_SES_5PRE (lagged outcome).",
+ "estimators_reported": [
+  "Bayesian multivariate regression (WinBUGS)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Replication/Replication WinBUGS Data.txt"
+ ],
+ "data_files_note": "Start Here file: some variables disguised under NDA.",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Variables disguised per NDA.",
+ "software": "other",
+ "software_notes": "WinBUGS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

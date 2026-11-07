@@ -1,0 +1,43 @@
+{
+  "suffix": "mnsc.2024.04405",
+  "doi": "10.1287/mnsc.2024.04405",
+  "journal": "mnsc",
+  "title": "Does Q&A Boost Engagement? Health Messaging Experiments in the United States and Ghana",
+  "year": 2025,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": null,
+  "eligible_reason": "The paper reports preregistered randomized field experiments (Ghana and Michigan SMS messaging, plus a social-media ad experiment) comparing Q&A-style with direct-statement messages; outcomes are cross-sectional information-seeking and self-reported behaviour by arm. No staggered adoption. PACKAGE MISMATCH: the archive stored for this DOI (_archive_mnsc.2024.04405.zip, readme dated 2025-07-19) is the replication package for 'Base Rate Neglect as a Source of Inaccurate Statistical Discrimination' by Hagmann, Sajons and Tinsley (online hiring experiments, lm(choice ~ condition * sample) in man/manuscript.qmd), not for the Kirgios et al. paper. Neither paper has an eligible design.",
+  "design_notes": "Package content: statisticalDiscrimination.Rproj, man/manuscript.qmd (Quarto manuscript with inline R), data/hiring_study_{gender,neutral,race,infochoice}.Rds, Qualtrics .qsf files and AsPredicted PDFs for four hiring experiments; all regressions are lm() of hiring choice on condition x sample with optional participant/candidate controls. The frame's 'ft_staggered' flag for the Q&A paper is a false positive (likely 'staggered' message timing in the SMS design).",
+  "estimators_reported": [
+    "rct_ols_cross_sectional (mismatched package)"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "n_adoption_cohorts_note": "No staggered binary adoption in the reported designs.",
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": true,
+  "data_files": [
+    "data/hiring_raw.Rds, hiring_study_gender.Rds, hiring_study_infochoice.Rds, hiring_study_neutral.Rds, hiring_study_race.Rds, simulations.Rds (for the WRONG paper)",
+    "inst/ext/*.csv raw Qualtrics exports",
+    "man/manuscript.qmd, R/*.R, readme.rtf"
+  ],
+  "data_files_note": "Data files present belong to the Hagmann-Sajons-Tinsley statistical-discrimination package, not to the Q&A messaging paper. The correct supplement for 10.1287/mnsc.2024.04405 should be re-downloaded if this paper is ever needed.",
+  "data_provenance": "n/a (wrong package)",
+  "software": "r",
+  "software_notes": "R / Quarto (lm, modelsummary).",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not an eligible design.",
+  "screener_notes": "Screened from package only. ACTION FOR LEAD: package_dir ~/did_packages/mnsc/mnsc.2024.04405 holds the wrong replication package (title in readme.rtf: 'Base Rate Neglect as a Source of Inaccurate Statistical Discrimination'); the archive itself is mismatched, so the download/DOI mapping should be checked. Eligibility verdict (not eligible) holds for both papers since both are RCTs without staggered adoption."
+}

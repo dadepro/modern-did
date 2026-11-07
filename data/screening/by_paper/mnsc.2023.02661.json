@@ -1,0 +1,42 @@
+{
+ "suffix": "mnsc.2023.02661",
+ "doi": "10.1287/mnsc.2023.02661",
+ "journal": "mnsc",
+ "title": "Long Lags and Large Returns: Experimental Evidence from Advertising to Businesses",
+ "year": 2025,
+ "authors": "Michael Thomas; Marcel Goić; Kirthi Kalyanam",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.02661",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Not a staggered binary adoption design. Geography-based switchback experiment randomizing when display ads are on or off by DMA-month; analysis regresses revenue, orders and web visits on 0-12 lags of advertising spend (continuous cost_lag), OLS and IV (adsOn lags as instruments), free or polynomial lag structures, with bootstrap SEs (analysis.R lines 56-110). Treatment is a continuous exposure that switches on and off repeatedly, not a one-time adoption.",
+ "design_notes": "Shipped repository (LongLagsSimulation) simulates data from the experiment (simulateDGP.R) and runs the paper's distributed-lag regressions on simulated data (analysis.R with feols/fepois; utilityFunctionsLocal.R). Panel key: DMA x yearmo. Full-text hits for 'staggered' and 'two-way fixed effects' refer to the switchback design discussion.",
+ "estimators_reported": [
+  "distributed-lag OLS (feols)",
+  "distributed-lag IV",
+  "polynomial lag models",
+  "bootstrap inference"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 0,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "synthetic",
+ "data_files_present": true,
+ "data_files": [
+  "LongLagsSimulation/data (simulated via simulateDGP.R; real experimental data not shipped)"
+ ],
+ "data_provenance": "synthetic",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (README.md, analysis/code/analysis.R).",
+ "software_notes": "R (fixest, data.table, future.apply); gslab_make Python build system"
+}

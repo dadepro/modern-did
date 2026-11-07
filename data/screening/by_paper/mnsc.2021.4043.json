@@ -1,0 +1,111 @@
+{
+ "doi": "10.1287/mnsc.2021.4043",
+ "journal": "mnsc",
+ "year": 2021,
+ "title": "Competition and Agency Problems Within Banks: Evidence from Insider Lending",
+ "screened_from": "package_only",
+ "eligible": true,
+ "eligible_design": true,
+ "eligible_reason": "Staggered state-level interstate branching deregulation (13 distinct deregulation quarters between 1995Q1 and 2000Q3 across 42 states; 8 never-deregulating states) estimated with bank and quarter fixed effects. The paper's headline regressor is a continuous 0-4 competition index (ineligible), but two reported specifications use binary relative-time indicators without controls: the Figure 1 quarterly event study and the Table III binned event-study column.",
+ "design_notes": "From Comp_InsLending_Code.do (analysis section lines 198-676) and Comp_InsLending_Data.dta. Unit: bank (cert, FDIC certificate); time: quarter (Time_Quarter, 1994Q1-2005Q2; 1994Q1 has missing Comp_Index). Treatment: state deregulation. Comp_Index is the authors' competition index (values 0-4; 0 = not yet deregulated); Dereg = (Comp_Index != 0). time_0 = last quarter with Comp_Index==0 in the bank's state; norm_time = Time_Quarter - time_0, so norm_time==0 is the last pre-deregulation quarter (omitted period). States with Comp_Index==0 through 2005Q2 (AR, CO, IA, KS, MO, MS, MT, NE) have norm_time missing and all relative-time indicators zero (never treated). AK has Comp_Index>0 throughout (always treated); its indicators are also all zero. No state switches back to 0. Cohort distribution (time_0): 1994Q4:1, 1995Q1:3, 1995Q2:8, 1995Q3:1, 1995Q4:1, 1996Q1:6, 1996Q2:3, 1996Q4:1, 1997Q1:14, 1999Q2:1, 1999Q4:1, 2000Q1:1, 2000Q2:1. Sample: int_sample = nonmissing insider-loan ratios & stock institutions; comm = commercial banks (bkclass not SA/SB); approx. 384,240 bank-quarters, 12,348 banks, 51 states. Outcome InsLoans_UnimpairedCap = insider loans / (Tier1 + Tier2 capital), trimmed to [0,1]. Figure 1: reghdfe InsLoans_UnimpairedCap treat__1-treat_42 (varlist range covering leads -24..-1 and lags +1..+42), a(cert Time_Quarter) cl(cert). Table III: col 1 Comp_Index with cert+quarter FE (defines e_sample_did); cols 2-6 add state FE variants and controls (log_PersInc, D_log_PersInc, HHI, market share, bank controls); col with Dereg + controls; final col Dereg__2 Dereg__1 Dereg_1 Dereg_2 (bins <-8, -8..-1, 1..8, >8) without controls. Table IV / Figure 2: triple difference with commercial-bank interaction and state x quarter FE. Table V: subsamples with continuous index. Table VII: IV. Table VIII (Comp_OpCosts_Inter_Code.do): Dereg with controls.",
+ "estimators_reported": [
+  "TWFE static with continuous competition index (reghdfe)",
+  "TWFE static with binary Dereg + controls",
+  "TWFE event study, quarterly relative-time dummies (Figure 1)",
+  "TWFE binned event study (Table III)",
+  "triple-difference TWFE (Table IV, Figure 2)",
+  "IV (Table VII)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 2,
+ "n_adoption_cohorts": 13,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [
+  "S1"
+ ],
+ "specs": [
+  {
+   "spec_id": "S1",
+   "code_file": "replication_package_MS-FIN-20-01768/Comp_InsLending_Code.do",
+   "code_line": 227,
+   "outcome": "InsLoans_UnimpairedCap (insider loans / (Tier1+Tier2))",
+   "treatment_var": "treat__q = (norm_time==-q) for q=1..24 and treat_q = (norm_time==q) for q=1..42, where norm_time = Time_Quarter - time_0 and time_0 = last quarter with Comp_Index==0 in the bank's state (binary deregulation Dereg = Comp_Index!=0)",
+   "unit_var": "cert",
+   "time_var": "Time_Quarter",
+   "fe": "cert, Time_Quarter",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "cert",
+   "sample_condition": "int_sample==1 & Comp_Index!=. & comm==1 (stock commercial banks with nonmissing insider-loan ratios)",
+   "static_or_event": "event",
+   "event_bins": "single quarters -24..-1 and +1..+42; omitted: norm_time==0 (last untreated quarter) plus never-/always-treated and norm_time<-24",
+   "reported_location": "Figure 1 (plots -8..+8)",
+   "data_file": "replication_package_MS-FIN-20-01768/Comp_InsLending_Data.dta",
+   "notes": "Variables built at lines 205-225 (stalp_g, comm, int_sample, time_0, norm_time, treat dummies). Static TWFE counterpart with Dereg and no controls is not reported (Dereg static column includes controls)."
+  },
+  {
+   "spec_id": "S2",
+   "code_file": "replication_package_MS-FIN-20-01768/Comp_InsLending_Code.do",
+   "code_line": 421,
+   "outcome": "InsLoans_UnimpairedCap",
+   "treatment_var": "Dereg__2 = norm_time<-8; Dereg__1 = -8<=norm_time<=-1; Dereg_1 = 1<=norm_time<=8; Dereg_2 = norm_time>8 (binary deregulation Dereg = Comp_Index!=0)",
+   "unit_var": "cert",
+   "time_var": "Time_Quarter",
+   "fe": "cert, Time_Quarter",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "cert",
+   "sample_condition": "e_sample_did==1 (estimation sample of Table III col 1: comm==1 & int_sample==1 & Comp_Index!=. & outcome nonmissing)",
+   "static_or_event": "event",
+   "event_bins": "binned: <-8, [-8,-1], [1,8], >8; omitted norm_time==0 and never-/always-treated",
+   "reported_location": "Table III, last column (binned dynamic effects)",
+   "data_file": "replication_package_MS-FIN-20-01768/Comp_InsLending_Data.dta",
+   "notes": "Variables built at lines 372-401 (time_0, norm_time, Dereg, Dereg bins)."
+  }
+ ],
+ "ineligible_specs": [
+  {
+   "location": "Table III cols with Comp_Index [lines 405-417]",
+   "reason": "continuous 0-4 treatment intensity; several columns add time-varying controls"
+  },
+  {
+   "location": "Table III Dereg static column [line 419]",
+   "reason": "binary Dereg but with time-varying controls (log_HHI_Deps_jt log_mkt_share_Deps_jt log_PersInc D_log_PersInc and bank controls)"
+  },
+  {
+   "location": "Table IV, Figure 2 [lines 289, 451-484]",
+   "reason": "triple difference (x commercial-bank indicator) with state x quarter FE"
+  },
+  {
+   "location": "Table V",
+   "reason": "continuous index, controls, subsamples"
+  },
+  {
+   "location": "Table VII",
+   "reason": "IV and deregulation-determinant controls"
+  },
+  {
+   "location": "Table VIII (Comp_OpCosts_Inter_Code.do)",
+   "reason": "Dereg with time-varying controls; other outcomes"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "package_files": {
+  "present": [
+   "Comp_InsLending_Data.dta (482,717 bank-quarters, 55 vars; FDIC SDI + SOD + Comp_Index merged)",
+   "Det_Dereg_Data.dta",
+   "Comp_OpCosts_Inter_Data.dta",
+   "HHI_mkt_share.dta",
+   "readme.pdf"
+  ],
+  "note": "Raw sources FDIC SDI/SOD (public); Comp_Index from Johnson and Rice (2008). No log files, so published coefficients must come from the article."
+ },
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 1,
+ "screener_notes": "Eligible on the binary event-study specifications only; the paper's preferred estimates use the continuous competition index. AK is always treated and enters the reference group together with never-treated states; the CSA/BJS re-estimation should drop AK or treat it as always-treated per protocol. Year in frame is 2021; the article appeared in MS 68(5) 2022 (verify). Need the article to map S2 to its Table III column number and to record coefficients."
+}

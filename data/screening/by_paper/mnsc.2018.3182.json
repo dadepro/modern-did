@@ -1,0 +1,37 @@
+{
+ "doi": "10.1287/mnsc.2018.3182",
+ "journal": "mnsc",
+ "year": 2019,
+ "title": "Regulations and Brain Drain: Evidence from Wall Street Star Analysts' Career Choices",
+ "eligible_design": false,
+ "eligible_reason": "Single reform period (post-reform 2004-2007 vs pre-reform 1995-2001) applied to all analysts, estimated with logistic regression. STAR x D is a group-by-post interaction, not staggered adoption. Nonlinear model and time-varying controls.",
+ "design_notes": "Eq. (1): logit of LeftSell-Side on D (post-reform), STAR, D x STAR, and controls (NFIRM, SANCTIONED, LOGFEE, SENTIMENT, forecast accuracy, experience etc.). Table 4 reports logistic regressions (some with sanctioned-bank effects). Reforms (Global Settlement, SOX 501, NASD/NYSE rules) became effective 2002-2003 and the years 2002-2003 are dropped (robustness includes them in post). No unit FE, no calendar-time FE. Published in MS 65(12):5766-5784.",
+ "estimators_reported": [
+  "logit with D x STAR interaction"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 4 cols (1)-(4)",
+   "reason": "logistic model; single reform date; time-varying controls; no unit or time FE"
+  },
+  {
+   "location": "Table 6",
+   "reason": "same single-date group-by-post structure with controls"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Data are I/B/E/S (Thomson), Institutional Investor All-America Research Team lists and SDC underwriting data (all licensed), plus analyst career-destination data (Table 7). No package or data-availability statement in the text. Accepted-manuscript text screened. Flag from 'difference-in-differences' wording only."
+}

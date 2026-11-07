@@ -1,0 +1,62 @@
+{
+  "suffix": "mksc.2019.1189",
+  "doi": "10.1287/mksc.2019.1189",
+  "journal": "mksc",
+  "title": "Consumer Misinformation and the Brand Premium: A Private Label Blind Taste Test",
+  "year": 2020,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "eligible_reason": "Single adoption date. The treatment is participation in a blind taste test field experiment; the README states that 'treatment occurs (for treated group) in week 26' and the shipped data confirm that all 344 treated households are first treated in week 26 (one cohort). The TWFE regression in DID.R (Y ~ treat_SR + treat_MR + treat_LR | hhid + time) is a two-group, common-timing DiD with three post-period bins, so the staggered-adoption rule (at least two distinct adoption dates) fails. Shipped data are synthetic.",
+  "design_notes": "Household-week multinomial choice panel (52 weeks, 11,096 synthetic households, 7 alternatives incl. no purchase). DID.R keeps purchase occasions of the test national brand (product 1) or test private label (product 4), defines Y = 1 if the private label was chosen, and runs felm(Y ~ treat_SR + treat_MR + treat_LR | hhid + time) with default (iid) standard errors. treat_SR = treated x week 26, treat_MR = treated x weeks 27-29, treat_LR = treated x weeks > 29. MCPanel.R estimates the same ATT by matrix completion with bootstrap SEs; demandestim.R estimates a hierarchical multinomial logit demand model.",
+  "estimators_reported": [
+    "twfe_static_common_timing_binned",
+    "matrix_completion",
+    "hierarchical_mnl"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "All treated households first treated in week 26 (verified in simuldata.Rdata).",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "DID_PL_choice",
+      "eligible": false,
+      "exclusion_reason": "single adoption date (week 26 for all treated households); two-group common-timing DiD",
+      "code_file": "submitted code/code/DID.R",
+      "code_line": 87,
+      "outcome": "Y (=1 if test private label chosen, 0 if test national brand chosen; conditional on buying one of the two)",
+      "treatment_var": "treat_SR, treat_MR, treat_LR",
+      "treatment_definition": "treatmentgrp x 1(week==26), x 1(week in 27-29), x 1(week>29)",
+      "unit_var": "hhid (id)",
+      "time_var": "time (date, week 1-52)",
+      "fe": "hhid + time",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "none (felm default iid SEs)",
+      "sample_condition": "product in {1,4} & Y == product (purchase occasions of the two test products)",
+      "static_or_event": "static (three post bins)",
+      "data_file": "submitted code/data/simuldata.Rdata (synthetic)",
+      "reported_location": "unknown (no article text); the README calls it the DID linear probability ATT",
+      "notes": ""
+    }
+  ],
+  "data_access": "synthetic",
+  "data_files_present": true,
+  "data_files": [
+    "submitted code/data/simuldata.Rdata (synthetic multinomial choice panel, 4.04M rows)"
+  ],
+  "data_files_note": "README: 'Synthetic Data file in /data/simuldata.Rdata'. Real household panel not shipped.",
+  "software": "r",
+  "software_notes": "R 3.4.3, lfe::felm (DID.R), MCPanel (MCPanel.R), custom bayesm C code for the demand model.",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible (single adoption date); synthetic data only.",
+  "screener_notes": "Screened from package only (no article text). Field experiment with a common treatment week; the full-text 'staggered' / 'Goodman-Bacon' / 'de Chaisemartin' hits presumably come from the discussion or the matrix-completion appendix rather than from a staggered design."
+}

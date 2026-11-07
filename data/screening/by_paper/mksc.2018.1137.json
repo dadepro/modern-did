@@ -1,0 +1,61 @@
+{
+ "suffix": "mksc.2018.1137",
+ "doi": "10.1287/mksc.2018.1137",
+ "journal": "mksc",
+ "title": "On the Profitability of Stacked Discounts: Identifying Revenue and Cost Effects of Discount Framing",
+ "authors": "Necati Ertekin; Jeffrey D. Shulman; Haipeng Allan Chen",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1137",
+ "regressions_path": "./data/packages/mksc.2018.1137_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (lab experiment plus endogenous-treatment GMM model of stacked vs single discounts on sales and returns)",
+ "ineligible_specs": [
+  {
+   "spec_id": "lab_experiment",
+   "reported_location": "Section 4",
+   "exclusion_reason": "lab experiment analyzed in SPSS"
+  },
+  {
+   "spec_id": "gmm_endogenous_treatment",
+   "reported_location": "Table 2",
+   "exclusion_reason": "promotion-event cross-section: probit treatment assignment with potential-outcomes GMM (control function); no unit-level staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Endogenous-treatment GMM on promotion events plus a lab experiment.",
+ "design_notes": "Estimation code for Empirical Model.do: probit treatment model and gmm potential-outcome equations for Sales and ReturnRate.",
+ "estimators_reported": [
+  "probit + GMM endogenous treatment effects",
+  "lab experiment ANOVA/regression (SPSS)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Synthetic Data.dta",
+  "lab data.sav"
+ ],
+ "data_files_note": "readme: empirical-model data are synthetic (100,000 obs generated from Table 2 estimates); lab data original.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Secondary data synthetic; lab experiment data original.",
+ "software": "stata",
+ "software_notes": "Stata and SPSS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

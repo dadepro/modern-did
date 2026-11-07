@@ -1,0 +1,135 @@
+{
+  "suffix": "mnsc.2022.03905",
+  "spec_id": "F3_topleft_sw_lowLSM",
+  "excluded_reason": "package code does not reproduce the published figure (authors' csdid: -3.03/4.57/-8.34/39.15 vs figure 0.12/4.00/-23.58/50.42)",
+  "excluded_date": "2026-11-02",
+  "excluded_by": "meta-3 per team-lead ruling (Nov 2 evening)",
+  "journal": "mnsc",
+  "data_provenance": "real",
+  "data_path": "~/did_packages/_work/mnsc.2022.03905/ai_lean_dropoff.csv",
+  "id_var": "newid",
+  "time_var": "year",
+  "y_var": "lead_total_sw",
+  "gvar": "gvar",
+  "weight_var": "",
+  "cluster_var": "newid",
+  "xt_vars": [],
+  "sample_filter": "has_lsm == 0",
+  "log_y": "",
+  "published_coef": 0.1233,
+  "published_se": null,
+  "published_estimator": "csdid_event_post_avg_e0_2 (equal-weight mean of the plotted e = 0, 1, 2 estimates; never-treated controls in the authors' code)",
+  "published_source": "digitized from Figure 3 (top left: software startups, non-LSM adopters; article PDF p. 14, embedded image 2025x1496 px): marker centroids calibrated on the gridlines; e = -2..2 = 3.13, -2.79, 0.14, 2.21, -1.98; post average (e = 0..2) = 0.12. Precision about +-0.1 (top row, 1 px = 0.06 units) and +-0.4 (bottom row, 1 px = 0.4 units); bar midpoints agree within 0.15 where the bar is not clipped. A prior digitization (audit_cs2) gave 3.13, -2.77, 0.14, 2.22, -1.96, post 0.13. published_se = null: the figure shows pointwise 95% CIs only (per-event SEs in published_event_se = CI half-width / 1.96).",
+  "replication_status": "not reproducible from the package (60 csdid emulations tried; scratchpad/audit_cs2). Nov 2: the authors' own csdid call run in Stata 16.1 with csdid 1.81 on the shipped data gives post average -3.0269 (e = -2..2: 2.2418, 1.6361, -0.7042, -4.9521, -3.4243), not the figure's 0.12; 44 variants implied by the article's panel labels (industry split, firm-level LSM adopter status, never vs not-yet-treated controls) also fail (scratchpad/meta3/mnsc.2022.03905/stata/grid.log)",
+  "authors_emul_post_avg_dropped_sample": -3.27959720731659,
+  "authors_emul_control_firms_e0": 9,
+  "table": "Figure 3",
+  "column": "first row, top left",
+  "static_or_event": "event",
+  "event_pre_min": -2,
+  "event_post_max": 2,
+  "event_structure": {
+    "bins": [
+      [
+        null,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        -1,
+        -1
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "pre_summary": [
+      [
+        -2,
+        -2
+      ]
+    ],
+    "source": "AI_Lean_code.txt lines 155 and 159-161: egen gvar = csgvar(ai_treat), tvar(year) ivar(newid); csdid lead_total_sw if has_lsm == 0, ivar(newid) time(year) gvar(gvar); csdid_estat event, window(-2, 2) -> Tm2, Tm1, Tp0, Tp1, Tp2 plotted in Figure 3. Event time e = year - gvar; years 2012-2020 are consecutive in every sample, so e = rel = t - g in the pipeline index. CS event path: single-year bins over the reported window e = -2..2 with the universal-base reference e = -1 (the figure's e = -1 is a varying-base estimate; csdid's post cells use base g - 1 either way). The remaining relative times (rel <= -3, >= 3; the panel spans rel -8..8) are covered by open endpoint bins that are estimated but not summarized, so no treated row is uncovered: pooling them into the reference would make the DiD-averaging bin effects subtract their estimated effects, and dropping rel <= -3 would remove not-yet-treated control rows; csdid itself computes every ATT(g,t) and only the aggregation is windowed.",
+    "verified": "Code-logged values reproduced, published figure not. The authors' csdid call run in Stata 16.1 (csdid 1.81) on the shipped data gives Post_avg -3.0269 (stata/fig3_authors.log); an R pair-balanced emulation with the authors' settings (cells of units observed in g-1 and t, never-treated controls, event-time weights = treated units per cell; scratchpad/meta3/mnsc.2022.03905/emul2.R, verify.log) reproduces Stata's e = 0, 1, 2 estimates with max abs diff 2.4e-07 (all five plotted estimates 3.0e-07). The digitized Figure 3 post average is 0.12, so neither reproduces the published figure. On the pipeline data (112 switch-off rows dropped) the emulated e = 1, 2 move (rel 0 unchanged). The structure leaves no treated row uncovered (es_assign tabulation in verify.log)."
+  },
+  "preferred": false,
+  "in_abstract_intro": false,
+  "in_abstract_intro_verified": true,
+  "outcome": "lead number of software copyrights (count, levels)",
+  "sample": "has_lsm == 0 (firm-years with standardized LSM <= 0; time-varying, row-level restriction)",
+  "notes": "Unbalanced firm-year panel of 1,687 Chinese startups, 2012-2020 (firms enter 2012-2017 and are observed every year through 2020; 10,641 rows). Authors report only csdid event studies here: csdid y [if has_lsm == 0], ivar(newid) time(year) gvar(gvar) [notyet]; csdid_estat event, window(-2,2) (AI_Lean_code.txt lines 148-176); plots only, no tabulated coefficients; no article text in the project, so Figure 3 values were not checked. Treatment: ai_treat = 1[general_AI > -0.9] (no missing general_AI); gvar = egen csgvar(ai_treat) on the FULL panel (shipped gvar column; verified = first year with ai_treat = 1; 0 = never). Full panel: 9 never-treated firms (58 rows), 891 switchers with an untreated pre-period (cohorts 2013:4, 2014:11, 2015:12, 2016:65, 2017:460, 2018:330, 2019:4, 2020:5), 787 firms treated in their first observed year (731 treated in every year, 56 later revert); 101 firms revert below the threshold after adoption (112 rows), dropped per Hull fn 6. data_path is the shipped panel minus those 112 rows (~/did_packages/_work/mnsc.2022.03905/ai_lean_dropoff.csv, built from AI_Lean_data.dta without other changes). gvar (not treat_var) is used so that first-treatment years come from the full panel as in the authors' code; run_spec's treat_var branch would recompute them inside the row-filtered low-LSM sample. PUBLISHED VALUE: Stata csdid/drdid are not installed and may not be installed under the project rules, so published_coef is an R emulation of the authors' call (DiD of means = dripw without covariates; varying base period for pre-periods, g-1 for post; 2x2 cells of firms observed in both years; treated-count weights within event time; Post_avg = mean of e = 0,1,2; Bayesian bootstrap SE over firms, 199 draws). PIPELINE DEVIATIONS: (1) switch-off rows dropped; (2) CSA uses not-yet-treated controls and a universal base period (the authors use never-treated controls, i.e. the 9 never-treated firms, in three of the four panels); (3) TWFE event study bins rel <= -3 and >= 3, reference -1. LOW-LSM SAMPLE: has_lsm varies within firm (1,470 firms), so this is a row-level restriction on a time-varying index; 5,621 rows after the drop, 1,574 firms, 674 treated at entry within the subsample. NOV 2 AUDIT (supersedes the PUBLISHED VALUE text above: Stata 16.1 with csdid 1.81 is installed and was run): article PDF now in the project. Figure 3 column labels are \"Non LSM Adopters\" (left) and \"LSM Adopters\" (right); rows are software startups (top) and physical product startups (bottom); the notes define LSM adopters at the firm level (ever an LSM-related posting/article/report). The shipped code uses no industry split, a row-level has_lsm == 0 for the left panels and all firms for the right panels, so the specs estimate the code's samples, and the code does not reproduce the figure (Stata csdid 1.81 on the authors' call; see replication_status). published_coef is now the figure's digitized post average; the authors' code output is in authors_code_stata_csdid. event_structure added (CS event path -2..2, reference -1, open endpoint bins). Firms treated in their first observed year (787) are left-censored: their true adoption year is not observable before entry (general_AI is observed only from the first panel year), so no adoption_var; gvar keeps the first observed treated year.",
+  "published_event_coefs": {
+    "-2": 3.13,
+    "-1": -2.79,
+    "0": 0.14,
+    "1": 2.21,
+    "2": -1.98
+  },
+  "published_event_se": {
+    "-2": 2.1,
+    "-1": 2.76,
+    "0": 0.83,
+    "1": 3.36,
+    "2": 2.91
+  },
+  "authors_code_stata_csdid": {
+    "post_avg": -3.026857,
+    "post_avg_se": 0.9725662,
+    "event_coefs": {
+      "-2": 2.241761,
+      "-1": 1.636099,
+      "0": -0.7041878,
+      "1": -4.952104,
+      "2": -3.424281
+    },
+    "source": "AI_Lean_code.txt lines 148-176 run verbatim in Stata 16.1 (csdid 1.81, drdid) on AI_Lean_data.dta; scratchpad/meta3/mnsc.2022.03905/stata/fig3_authors.log. Equal to the earlier R emulation (old published_coef -3.026857, SE 0.928436 bootstrap)."
+  },
+  "csa_authors_settings": {
+    "software": "Stata csdid 1.81 + drdid (authors: ssc install csdid, no version pinned)",
+    "control_group": "never",
+    "cells": "pair_balanced: csdid on this unbalanced panel prints \"Will use observations with Pair balanced (observed at t0 and t1)\"; each ATT(g,t) uses units observed in both the base period and t",
+    "base_period": "varying (csdid default; affects pre-period estimates only)",
+    "est_method": "dripw (csdid default; no covariates, so a DiD of means)",
+    "aggregation": "csdid_estat event, window(-2, 2): event-time averages of the ATT(g,t) cells weighted by the number of treated units in each pair-balanced cell (verified: cohort-size weights do not reproduce Stata); Post_avg = mean of e = 0, 1, 2",
+    "always_treated": "csdid ignores units with gvar <= 2012 (first panel year) (\"Units always treated found. These will be ignored\")",
+    "gvar": "egen gvar = csgvar(ai_treat), tvar(year) ivar(newid) on the full panel (first year with ai_treat = 1; 0 = never)",
+    "switch_off_rows": "kept by the authors (treated by gvar); dropped in the pipeline data per Hull fn. 6 (112 rows)",
+    "sample_in_code": "has_lsm == 0 (row-level, std(general_LSM) <= 0)",
+    "sample_in_article": "top left: software startups, non-LSM adopters (industry split and firm-level LSM adopter status per the figure notes; not what the shipped code does)",
+    "drop_e_above": null,
+    "balance_e": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "suffix": "mnsc.2023.01340",
+  "doi": "10.1287/mnsc.2023.01340",
+  "journal": "mnsc",
+  "title": "Do Physicians Improve More from Positive or Negative Feedback?",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date: the ProPublica Surgeon Scorecard release (post indicator, one date in 2015) for all surgeons; the DiD compares physicians receiving positive vs negative feedback (i.post##i.positive_own / positive_peer) with patient and physician controls (adjcomplicationrate i.zone tot_numpeers age female hispanic mscore rscore black medicare commercial) and hospital/procedure/zip FE; quarter-by-valence event-time interactions (ib14.time##i.positive_own); RDD on the report-card threshold. Not staggered; controls in all columns. Physician encounter data (final_analytic_Mar2023, placebo_final, MS_RNR_rdd) are not in the package.",
+  "design_notes": "Package 'Replication Package 1.1': Physician Analysis/ (read_me.rtf, run_all.do, code/Tab1-2, TabA1-A6, Fig2-3, FigA2-A8 .do files, output/*.tex and .ster, log/logoutput_all.log) and Experimental Analysis/ (two .dta files with lab-experiment data and two .do files). Only the experimental data are shipped; the clinical data are referenced via $anly_input and absent.",
+  "estimators_reported": [
+    "did_single_date_by_valence_with_controls",
+    "event_time_interactions",
+    "rdd"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary (clinical encounter data not shipped); experimental data public",
+  "data_files_present": false,
+  "data_files": [
+    "Experimental Analysis/C1_Data_MS_E1.dta",
+    "Experimental Analysis/C2_Data_MS_E2a-E2c.dta (experiments only)"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Flags for Callaway, Sun-Abraham, Goodman-Bacon are citations; no such estimators in code."
+}

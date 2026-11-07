@@ -1,0 +1,32 @@
+{
+ "eligible_design": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_expected": false,
+ "package_dir": null,
+ "journal": "jmr",
+ "doi": "10.1177/00222437251408776",
+ "year": 2025,
+ "title": "Information Disclosure via Platform Endorsement in Online Health Care",
+ "eligible_reason": "Main method is the generalized synthetic control (Xu 2017) with interactive fixed effects plus additive doctor and week FE. All endorsed doctors received the 'Good Doctor of 2018' badge at the same time (announced second week of 2019; badge displayed from about Jan 6 2019), so there is a single adoption date. Synthetic control, PSM-DID and synthetic DiD are all excluded by the protocol.",
+ "design_notes": "Treated: 156 first-time endorsed doctors (plus re-endorsed analysed separately in Web Appendix Table W25); controls: doctors never endorsed by 2019. Panel: doctor-week, Jan 1 2018 - Dec 31 2019. ATT with parametric bootstrap SEs (1,000 draws), e.g. Table 4: phone-call waiting time ATT .009 (.028); duration .007 (.055). Robustness: PSM-DID (Table W12-W15), SDID (W16). None has staggered cohorts.",
+ "estimators_reported": [
+  "generalized synthetic control (gsynth)",
+  "PSM-DID (robustness)",
+  "synthetic difference-in-differences (robustness)"
+ ],
+ "main_or_robustness": "main",
+ "data_access": "proprietary",
+ "screener_notes": "Ineligible: synthetic control, single date. Data availability statement: alternative disclosure plan, data not available due to NDA; code shared only with the Coeditor and Data Editor.",
+ "suffix": "00222437251408776"
+}

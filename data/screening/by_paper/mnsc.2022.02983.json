@@ -1,0 +1,39 @@
+{
+  "suffix": "mnsc.2022.02983",
+  "doi": "10.1287/mnsc.2022.02983",
+  "journal": "mnsc",
+  "title": "Information Search Within a Web Page: Modeling the Full Sequence of Eye Movement Decisions, Subjective Value Updating, and First Clicks",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No DiD or event study. The package contains Bayesian MCMC estimation of a sequential eye-fixation/search model for three experiments (AA, F21, Snacks), posterior predictive simulations and counterfactual layouts. The only lm() calls regress observed on simulated metrics for model fit. No treatment timing, no panel FE regression. The ft_callaway flag is a false positive.",
+  "design_notes": "Eye-tracking experiments; R scripts *_Model{1..7}_MCMC.R, *_RunSimulationsCode.R, *_DescriptiveAnalysis.R. grep for did/feols/felm/reghdfe/plm across all R files returned nothing.",
+  "estimators_reported": [
+    "bayesian_mcmc_search_model"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "Experiment1_AA_Files/AA_Fixation_Data.csv, AA_LikingRatings.csv",
+    "Experiment2_F21_Files/F21_Fixation_Data.csv, F21_LikingRatings.csv, F21_Prices.csv",
+    "Experiment3_Snacks_Files/Snacks_Fixation_Data.csv, Snacks_LikingRatings.csv",
+    "saved MCMC estimate folders"
+  ],
+  "software": "r",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible: no DiD design.",
+  "screener_notes": "Screened from package only (readme.pdf, file tree, grep)."
+}

@@ -1,0 +1,43 @@
+{
+  "suffix": "mnsc.2021.01780",
+  "doi": "10.1287/mnsc.2021.01780",
+  "journal": "mnsc",
+  "title": "Asymmetric Naïveté: Beliefs About Self-Control",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not eligible: online real-effort laboratory experiment with structural (tobit/maximum-likelihood) estimation of present-bias parameters in MATLAB; no panel difference-in-differences or staggered adoption design. The 'staggered' flag refers to staggered participation dates in the experiment, and 'Borusyak' to a citation.",
+  "design_notes": "AsymmetricNaivete_wrapper.m runs reduced-form comparisons of decisions versus predictions (self vs others), tobit structural estimation, likelihood-ratio tests, kernel densities, attrition and mechanism analyses on decisions.csv / predictions_*.csv / users*.csv plus a classroom survey.",
+  "estimators_reported": [
+    "experimental_reduced_form",
+    "structural_tobit_mle"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_provenance": "real (experimental data)",
+  "data_files_present": true,
+  "data_files": [
+    "Data/decisions.csv",
+    "Data/predictions_s.csv, predictions_ot.csv, predictions_of.csv",
+    "Data/users.csv, users_all_info.csv",
+    "Data/pilot_*.csv",
+    "Data/classroom_*.csv",
+    "Data/original_pilot_data.xls"
+  ],
+  "software": "other",
+  "software_notes": "MATLAB",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Screened from package only; readme.txt and file names suffice to rule out a DiD design."
+}

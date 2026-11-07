@@ -1,0 +1,59 @@
+{
+  "suffix": "mksc.2015.0933",
+  "doi": "10.1287/mksc.2015.0933",
+  "journal": "mksc",
+  "title": "Minimum Advertised Pricing: Patterns of Violation in Competitive Retail Markets",
+  "year": 2016,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No panel, no treatment timing. The data are one observation per retailer x SKU x market averaged over the sample period (vio_rate, vio_depth) and the regressions are cross-sectional OLS and 2SLS of violation rate/depth on an authorized-retailer dummy interacted with retailer and market characteristics (reg vio_rate NotAuth AuthX* NotAuthX*, cluster(retailer_id); ivregress 2sls ...). No time dimension, no fixed effects, no adoption event.",
+  "design_notes": "Cross-sectional regressions (Tables 5 and 6) on 'MAP data files/random_5percent.dta' (520 retailer-SKU-market observations, 5% random sample of the annual database). The ft_callaway flag is presumably a false positive (author surname or unrelated citation).",
+  "estimators_reported": [
+    "cross_sectional_ols",
+    "cross_sectional_2sls"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "T5_PanelA_m1",
+      "eligible": false,
+      "exclusion_reason": "cross-sectional OLS; no panel or treatment timing",
+      "code_file": "MAP data files/Table 2,5,6.do",
+      "code_line": 61,
+      "outcome": "vio_rate",
+      "treatment_var": "NotAuth and AuthX*/NotAuthX* interactions (not a treatment)",
+      "treatment_definition": "authorized vs unauthorized retailer status",
+      "unit_var": "retailer_id x SKU x market",
+      "time_var": "none",
+      "fe": "none",
+      "controls": "retailer/market characteristics interacted with Auth/NotAuth",
+      "weights": "none",
+      "cluster": "retailer_id",
+      "sample_condition": "full 5% sample",
+      "static_or_event": "static",
+      "data_file": "MAP data files/random_5percent.dta",
+      "reported_location": "Table 5 Panel A model 1",
+      "notes": ""
+    }
+  ],
+  "data_access": "partial",
+  "data_files_present": true,
+  "data_files": [
+    "MAP data files/random_5percent.dta (5% random sample, 520 obs)"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible: no DiD design.",
+  "screener_notes": "Screened from package only (Readme.txt and Table 2,5,6.do read in full)."
+}

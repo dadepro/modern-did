@@ -1,0 +1,94 @@
+{
+  "suffix": "mksc.2022.1353",
+  "spec_id": "T10a_logrank",
+  "journal": "mksc",
+  "data_path": "~/did_packages/_work/mksc.2022.1353/t10a_panel.rds",
+  "id_var": "id",
+  "time_var": "time_week",
+  "y_var": "logrank",
+  "gvar": "g_st",
+  "weight_var": "",
+  "cluster_var": "id",
+  "xt_vars": [],
+  "sample_filter": "tie_drop == 0",
+  "log_y": "",
+  "published_coef": null,
+  "published_se": null,
+  "published_source": "Table 10(a) column (3) of the published article. The published article is not in the project: papers/mksc/mksc.2022.1353.pdf and data/text/mksc/mksc.2022.1353.txt are the MPRA working paper (Jan 2021, Tables 1-8), which has no Tables 10-11. Printed values and main-text status remain unverified; authors_code holds the authors' do-file re-run on the package data.",
+  "authors_code": {
+    "source": "authors' create-table10-11.do regression re-run in Stata MP 16 with reghdfe 5.7.3 (work copy authors_t10a_t11a.do); fixest reproduces b to 1e-14, SE to 4 decimals and N exactly",
+    "bin_0_2_coef": -0.260392,
+    "bin_0_2_se": 0.022104,
+    "bin_3plus_coef": -0.246366,
+    "bin_3plus_se": 0.028072,
+    "n_obs": 193381,
+    "n_clusters": 3871,
+    "y_sd_esample": 1.980087,
+    "bin_0_2_term": "two_weeks_since",
+    "bin_3plus_term": "after_two_weeks",
+    "static_single_post_coef_authors_rows": -0.254872,
+    "static_single_post_se_authors_rows": 0.023023
+  },
+  "runspec_static_check": {
+    "static_coef_raw": -0.256754,
+    "static_se_raw": 0.02339,
+    "n_obs": 193204,
+    "rows_dropped_switch_off": 177,
+    "y_sd_population": 1.980315,
+    "expected_twfe_sd_units": -0.129653
+  },
+  "table": "Appendix Table B.1",
+  "column": "3",
+  "static_or_event": "event",
+  "preferred": false,
+  "in_abstract_intro": false,
+  "secondary_onset": false,
+  "main_text_status": "unverified: published article not in the project (only the MPRA working paper, which lacks Tables 10-11)",
+  "data_provenance": "real",
+  "replication_status": "exact (vs authors' code re-run; published table not available to compare)",
+  "code_file": "replication/code/create-table10-11.do",
+  "code_line": 36,
+  "event_pre_min": -8,
+  "event_post_max": 4,
+  "treat_bins": "authors' bins in interval_st units: <= 2 wks = 0..2, > 2 wks = 3..4; reference = pre-onset intervals in the window plus all comparison-product weeks. Nov 2: recorded in event_structure as bins [0,2] and [3,inf) with reference <= -1, assigned on event_time_authors_var = interval_st for TWFE and imputation (exact) and on calendar rel for the DiD-averaging cells. event_pre_min/event_post_max are the superseded legacy coding (single-week path, ref -1, endpoints) and are ignored when event_structure is present.",
+  "notes": "Nov 4: printed-appendix specification (Table B.1 of Appendix B of the published article, Marketing Science 41(5)); excluded from the main sample under the main-text rule and included in the appendix analysis of printed-appendix specifications (decision, Nov 4). EVENT version of Table 10(a) column (3) (log Sales Rank). Treatment indicator post_st = 1{interval_st >= 0} = two_weeks_since + after_two_weeks. authors' bins in event time: '<= 2 wks' = interval_st in {0,1,2}, '> 2 wks' = interval_st in {3,4}; reference = interval_st in [-8,-1] and all comparison-product weeks. run_spec event version instead estimates a full relative-time path in CALENDAR weeks (rel = time_week - g, ref -1, endpoints binned at -9 and 5) and reports the equal-weight average of rel 0..4. Authors' regression (line 36): reghdfe logrank two_weeks_since after_two_weeks, absorb(id time_week) cluster(id); no controls, no weights. Table 10(a): two post bins relative to the product's FIRST Facebook recruitment post, [0,2] weeks (two_weeks_since) and [3,4] weeks (after_two_weeks); reference = focal weeks interval_st in [-8,-1] plus all weeks of the 2,714 never-recruited comparison products. Sample (do-file line 10): focal weeks interval_st in [-8,4] (1,490 focal products, calendar weeks 495-549) plus all 108 weeks (469-576) of comparison products; 257,346 rows before outcome NAs. Onset g = first time_week with post_st = 1: 38 cohorts, weeks 502-545 (35 focal products have no interval_st = 0 row, so g is their first observed post week). Data quirk: time_week is the year-week of each 7-day interval, so within a product the calendar offset time_week - interval varies by one week for about a quarter of focal rows, and 14% of rows share a product-week with another row (focal and comparison products alike). reghdfe/fixest accept this. gvar = onset calendar week computed on all rows of the window (so it does not move with outcome missingness); sample_filter tie_drop == 0 drops 177 rows with interval just before onset that fall in the onset calendar week (the switch-off rule run_spec applies to treat_var specs), moving the single-post TWFE from -0.25487 (authors' rows) to -0.25675 (run_spec rows); on the remaining rows 1{time_week >= g} equals the authors' post indicator exactly. Because of the duplicate product-weeks, the CSA step, when it is under the size guard, goes through did::att_gt with panel = FALSE (repeated cross-section), not the composition-fixed cells. Published table values are not available in the project (no article text or PDF); authors_code fields are the authors' code re-run on the package data. Main-text status unverified: Table 13 is Appendix D and Tables 12, 14, 15 are robustness checks, so Tables 10-11 may be appendix tables. Preferred flag inferred by the screener from headline outcomes (ratings, reviews, sales rank); unconfirmed. in_abstract_intro unverified (stored abstract is one sentence). Nov 2 audit: event_structure added; bins on the authors' event time via event_time_authors_var = interval_st (round 2, lead's decision); the constructed static version was moved to data/specs_excluded/.",
+  "event_structure": {
+    "bins": [
+      [
+        0,
+        2
+      ],
+      [
+        3,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        null,
+        -1
+      ]
+    ],
+    "uncovered": "drop",
+    "post_summary": [
+      [
+        0,
+        2
+      ],
+      [
+        3,
+        null
+      ]
+    ],
+    "pre_summary": [],
+    "source": "replication/code/create-table10-11.do lines 5-10 and 33-42 (Table 10(a)): two_weeks_since = 1{interval_st in 0..2}, after_two_weeks = 1{interval_st in 3..4}; sample keeps focal weeks interval_st in [-8,4] plus all comparison-product weeks (trimmed window); reghdfe y two_weeks_since after_two_weeks, absorb(id time_week) cluster(id). The authors' event clock is interval_st (7-day intervals since the first FB post), not the time-FE clock time_week (year-week); calendar rel minus the authors' interval ranges from -4 to +1 weeks across rows. Bins are therefore assigned on event_time_authors_var = interval_st for TWFE and imputation ([0,2] = interval_st 0..2, [3,inf) = 3..4; ref = all pre-onset intervals in the window, plus never-treated comparison products) and on calendar rel = t - g for the DiD-averaging cells. The prepared panel holds only the authors' window, so no row is uncovered under either clock ('drop' records the authors' trimming). tie_drop == 0 removes the pre-onset rows (interval -1 / interval_lt 0) that share the onset calendar week with a post row: they are untreated rows inside a treated calendar cell (g, t >= g).",
+    "verified": "Bins on interval_st equal the authors' dummies (two_weeks_since, after_two_weeks) on every row; no uncovered rows; on the pipeline rows authors' event time >= 0 iff time_week >= g on every row. EXACT on the authors' rows: fixest y ~ i(ebin) | id + time_week (cluster id) reproduces the authors' reghdfe bins (Stata re-run) to 2.5e-15 (SE 1e-09, CSV precision), N 193381 = authors' 193381. Pipeline rows (tie_drop == 0, N 193204, 177 tie rows fewer): bins -0.2623, -0.2482 vs authors' -0.2604, -0.2464; max abs diff 1.93e-03 (9.73e-04 SD), post summary -9.44e-04 SD, all from the dropped tie rows. Calendar bins (used only by the DiD-averaging cells) would give max abs diff 8.05e-03 on the same rows. Tables: ~/did_packages/_work/mksc.2022.1353/nov2_event_time_authors_check.csv, nov2_event_structure_check.csv (scratchpad meta1/verify2_1353.R, verify_1353.R)."
+  },
+  "expected_twfe_raw": -0.25524920446262,
+  "expected_twfe_sd_units": -0.128893226209219,
+  "expected_twfe_source": "Nov 2 (round 2): equal-weight mean of the two TWFE bin coefficients with bins on interval_st on the pipeline rows (tie_drop == 0), divided by the population SD of y on those rows; authors' bin mean = -0.253379",
+  "authors_post_summary_raw": -0.253379317704162,
+  "event_time_authors_var": "interval_st",
+  "event_time_authors_note": "Lead decision (Nov 2): TWFE indicators and the imputation estimator's observation-level bin averages use the event_structure bins and ref on the authors' event time interval_st (= interval_st, 7-day intervals since the first FB post; onset interval 0); NA only for comparison products (never treated). DiD-averaging cells are calendar (g, t) cells and use rel = time_week - g_st with the same bin boundaries. On the pipeline rows the two clocks agree on treatment status for every row and on bin membership for all but 373 of 7,319 treated focal rows.",
+  "appendix_printed": true
+}

@@ -1,0 +1,39 @@
+{
+ "suffix": "mnsc.2021.4291",
+ "doi": "10.1287/mnsc.2021.4291",
+ "journal": "mnsc",
+ "title": "Doing Well by Doing Good: Improving Retail Store Performance with Responsible Scheduling Practices at the Gap, Inc.",
+ "year": "2022",
+ "authors": "Saravanan Kesavan; Susan J. Lambert; Joan C. Williams; Pradeep K. Pendem",
+ "eligible_design": false,
+ "eligible_reason": "Randomized field experiment with a single intervention start (November 2015) in 28 stores; treat = store_treatment x time_treatment is a two-group pre/post DiD with one adoption date. Regressions also include the time-varying control log_traffic. No staggered adoption.",
+ "design_notes": "Tables 2 and 4: areg log_y treat log_traffic i.dept_name, absorb(date_hour) vce(cl dept_name_date) on hourly store data. Table 3: 2SLS LATE with TreatAdoption instrumented by log weeks since intervention. Table 5: logit on employee shift outcomes. The 'staggered' full-text hit likely refers to gradual adoption of intervention components (Figure 3), not staggered treatment timing.",
+ "estimators_reported": [
+  "ITT TWFE DiD (areg, single date, with log_traffic control)",
+  "2SLS LATE",
+  "logit"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 2-5",
+   "reason": "single intervention date; time-varying control log_traffic; IV and logit"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Package contains code (Stata do-file, R script), a Stata log and a README only; Gap, Inc. data are under NDA."
+}

@@ -1,0 +1,70 @@
+{
+ "suffix": "mnsc.2023.4975",
+ "doi": "10.1287/mnsc.2023.4975",
+ "journal": "mnsc",
+ "title": "Attention and Dread: Experimental Evidence on Preferences for Information",
+ "authors": "Armin Falk; Florian Zimmermann",
+ "year": 2023,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4975",
+ "regressions_path": "./data/packages/mnsc.2023.4975_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "not applicable (lab experiment, no DiD design)",
+ "ineligible_specs": [
+  {
+   "spec_id": "T2_c1_probit_AttMain",
+   "reported_location": "Table 2, column (1)",
+   "coef": -0.925,
+   "se": 0.35,
+   "n_obs": 60,
+   "exclusion_reason": "cross-sectional probit of information choice on a between-subject treatment dummy; no panel, no staggered adoption"
+  },
+  {
+   "spec_id": "T2_c2_probit_SL",
+   "reported_location": "Table 2, column (2)",
+   "n_obs": 92,
+   "exclusion_reason": "cross-sectional probit on prior-belief treatment dummies"
+  },
+  {
+   "spec_id": "OA_B_T3_c2_did",
+   "reported_location": "Online Appendix B, Table 3, column (2)",
+   "exclusion_reason": "'difference-in-difference' is a between-subject 2x2 interaction (attention treatment x monetary lottery) in a cross-sectional probit; appendix only"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "Laboratory experiment with between-subject treatments (AttMain vs AttControl, SL05/SLlow/SLhigh, money-lottery variants). Each subject makes one information-timing choice; analyses are binomial tests and cross-sectional probits/OLS with robust SEs. No panel, no unit or time FE, no staggered adoption.",
+ "design_notes": "Published text (MS 70(10):7090-7100): Table 2 probits, N = 60 and 92 subjects. The only 'difference-in-difference' (Online Appendix B Table 3 col 2) interacts the attention treatment with a money-vs-shock lottery dummy across subjects.",
+ "estimators_reported": [
+  "probit (cross-section)",
+  "OLS (cross-section)",
+  "binomial and rank-sum tests"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-BDE-22-01543/data.dta"
+ ],
+ "data_files_note": "Subject-level lab data shipped with do-file, readme.pdf and SupplMaterials.pdf.",
+ "data_provenance": "original",
+ "data_provenance_note": "Original lab data; irrelevant because the design is ineligible.",
+ "software": "stata",
+ "software_notes": "do-file.do",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2023.4975.txt). Clear exclusion: experiment, not a panel DiD."
+}

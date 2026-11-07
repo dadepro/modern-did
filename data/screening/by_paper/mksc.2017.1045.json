@@ -1,0 +1,42 @@
+{
+ "suffix": "mksc.2017.1045",
+ "doi": "10.1287/mksc.2017.1045",
+ "journal": "mksc",
+ "title": "Does Online Word of Mouth Increase Demand? (And How?) Evidence from a Natural Experiment",
+ "authors": "Stephan Seiler; Song Yao; Wenbo Wang",
+ "year": 2017,
+ "screened_from": "package_only",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "main_or_robustness": "main",
+ "eligible_reason": "Not a staggered design. The Sina Weibo comment block covers the same three calendar days (2012-03-31 to 2012-04-02) for every mainland unit, so there is one treatment date and the treatment switches off after three days. The DiD comparisons are mainland vs Hong Kong, Shenzhen vs Hong Kong, high vs low city Weibo penetration, and shows by pre-block comment intensity. The regressions use channel-show pair FE plus weekday dummies only, with no calendar-date FE. The rating outcome is also not shipped.",
+ "design_notes": "Diff_in_diff_regressions.do (Tables 2, 3, 5): areg log_rating censor_dummy [x group interaction] i.weekday, absorb(channel_show_pair), cluster(channel_show_pair). Table 2 columns: (1) single difference for aggregated mainland; (2) mainland x censor vs HK; (3) Shenzhen x censor vs HK; (4) overlapping shows, channel_show_city_pair FE; (5) continuous Baidu index x censor; (6) above-median penetration x censor, + city dummies. Table 3 adds censor x comment-intensity bins, show type, new show, daily frequency and re-run interactions (several treatment interactions). IV_regressions.do (Tables 4, 6, A6) uses censor_dummy as an instrument for comment volume (first stages on Weibo activity with show FE and weekday dummies).",
+ "estimators_reported": [
+  "ols_pair_fe_single_event_did",
+  "iv_2sls"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "main_data.dta (rating, log_rating, AV_rating are all missing: removed under NDA until 12/31/2019)",
+  "daily_tweet_data.dta"
+ ],
+ "data_provenance": "not_shipped",
+ "software": "stata",
+ "software_notes": "Stata 13 .dta files and do-files.",
+ "screener_notes": "Screened from package only (no article text). The README states that the TV rating data were removed because of an NDA. I verified that rating, log_rating and AV_rating are empty in main_data.dta, and that censor_dummy equals 1 on exactly three common dates."
+}

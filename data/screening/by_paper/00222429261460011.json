@@ -1,0 +1,51 @@
+{
+  "suffix": "00222429261460011",
+  "doi": "10.1177/00222429261460011",
+  "journal": "jm",
+  "title": "Surviving Economic Adversity: Governance of Franchise Clusters",
+  "authors": "Xu (Vivian) Zheng, Yajing Fan, Mrinal Ghosh",
+  "year": 2026,
+  "screened_from": "package + published article",
+  "package_dir": "~/did_packages/jm/00222429261460011/",
+  "package_source": {
+    "repository": "Harvard Dataverse, collection jom",
+    "dataset_doi": "10.7910/DVN/GHP3NK",
+    "dataset_title": "Replication Data for: Surviving Economic Adversity: Governance of Franchise Clusters",
+    "dataset_version": "1.1",
+    "released": "2026-08-31",
+    "n_files": 2,
+    "n_public_files": 1,
+    "restricted_files_not_requested": [
+      "JM Dataverse_Franchise Cluster Governance.zip"
+    ],
+    "public_files_downloaded": 1,
+    "public_files_md5_match": 1,
+    "tabular_files_fetched_as_original": 0,
+    "skipped_or_failed": [],
+    "downloaded": "2026-11-02"
+  },
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "near_miss_5c_controls_only": false,
+  "eligible_reason": "Survival analysis of franchised outlet failure (8,677 outlets, 18 franchisors, 2009-2023) with governance moderators; README maps Tables 3-6 and D/E tables to analysis/modeling.do (descriptives, a first-stage regression, hazard models m1-m11). No DiD.",
+  "design_notes": "Only Readme.pdf is public; the package zip is restricted and was not requested. FDD outlet data (purchased from FRANdata) are not provided even in the package ('Franchise Disclosure Files ... Provided FALSE'); BEA/Census county files are provided.",
+  "estimators_reported": [
+    "hazard / survival models",
+    "first-stage regression (selection or IV correction)"
+  ],
+  "main_or_robustness": "none",
+  "n_eligible_specs": 0,
+  "specs": [],
+  "data_access": "partial (licensed FDD data not provided; package zip restricted)",
+  "data_files_present": false,
+  "data_provenance": "not_shipped",
+  "software": "stata, r",
+  "replication_feasible": "no",
+  "priority": 3,
+  "main_text_unverified": false,
+  "screener_notes": "Ruled out from abstract and README.",
+  "article_text": "data/text/jm/00222429261460011.txt; papers/jm/00222429261460011.pdf",
+  "main_text_note": "Article confirms survival (hazard) models of outlet failure with instrumented governance variables (first-stage regressions); no DiD terms."
+}

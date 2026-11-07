@@ -1,0 +1,42 @@
+{
+ "suffix": "mnsc.2023.04127",
+ "doi": "10.1287/mnsc.2023.04127",
+ "journal": "mnsc",
+ "title": "Collaborative Work Management Technologies and Managerial Intensity in U.S. Corporations: An Examination",
+ "year": 2026,
+ "authors": "Piyush Gulati; Arianna Marchetti; Phanish Puranam",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.04127",
+ "eligible": false,
+ "eligible_design": true,
+ "near_miss": false,
+ "near_miss_reason": "Underlying design is staggered binary CWM adoption by firm-year (2010-2019), but every reported regression (Tables 4-6, Figure 4) is a stacked DiD: adopters paired with within-NAICS2 non-adopters in event-time stacks, CEM-matched, with stack-by-firm and stack-by-year FE, CEM frequency weights, and time-varying firm controls (return_on_assets, segment_count, log_emp, log_age_yrs) in all columns. Dropping controls would still leave a stacked design, which PROTOCOL Sec. 2 excludes, so it is recorded as ineligible rather than a controls-only near miss.",
+ "eligible_reason": "Stacked design with time-varying controls and matching weights in every reported column; no unstacked TWFE on the firm-year panel is reported (1-panel-data-analyses.do only plots year-FE trends by treated status for Figures 2-3, 5).",
+ "design_notes": "Firm-year panel of 3,017 Compustat firms 2010-2019 with managerial intensity (Revelio), decentralization scores (Lightcast job postings) and CWM adoption year (treated_yr_cwm). 11-panel-to-stacked.py builds stacks; 12-coarsened-exact-matching.do CEM on pre-period averages; 2-matched-data-analyses.do: reghdfe y i.post_cwm##i.treated controls [aw=freq_weight], absorb(stack_firm stack_year) vce(cluster firm) for Tables 4-6; Figure 4 event study ib4.treated_timeline_pos##i.treated with the same FE and controls. No csdid/did_imputation code despite full-text Callaway mention. README states data_final/*.csv are disguised.",
+ "estimators_reported": [
+  "stacked DiD with CEM weights and controls (reghdfe)",
+  "stacked event study",
+  "year-FE trend plots"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "synthetic",
+ "data_files_present": true,
+ "data_files": [
+  "data_final/panel-data-final.csv (2.7 MB), data_final/matched-data-final.csv (53 MB), *-balance-check.csv -- README: 'disguised data files ... to enable execution of the STATA scripts'"
+ ],
+ "data_provenance": "synthetic",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (ReadMe.docx, code_tables_figures/*.do).",
+ "n_adoption_cohorts_note": "Adoption years 2010-2019 (treated_yr_cwm); count not extracted.",
+ "software_notes": "Stata (reghdfe, cem, coefplot, estout) for tables; Python for raw data construction (Lightcast, Revelio, Compustat; licensed)"
+}

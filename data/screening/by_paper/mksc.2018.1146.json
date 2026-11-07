@@ -1,0 +1,29 @@
+{
+  "suffix": "mksc.2018.1146",
+  "doi": "10.1287/mksc.2018.1146",
+  "journal": "mksc",
+  "title": "Quality Information Disclosure and Patient Reallocation in the Healthcare Industry: Evidence from Cardiac Surgery Report Cards",
+  "year": "2019",
+  "eligible_design": false,
+  "eligible_reason": "Single event (first New Jersey CABG report cards, November 1997) in a single state with no control states; patient-level discrete-choice (conditional logit) models with hospital FE interacted with pre/post periods.",
+  "design_notes": "Author states (Sec. 5) that a DiD would be appropriate only if data from other states were available as a control group, which they are not; identification is within-NJ pre/post (report-card publication) with patient-urgency heterogeneity, plus border vs non-border hospital comparison and a survival-quality analysis with half-year FE. NY and PA also had report cards and are not used as controls. Estimation is nonlinear (choice model) with patient-urgency x policy interactions.",
+  "estimators_reported": [
+    "conditional logit patient-surgeon/hospital choice",
+    "logit risk model with surgeon and half-year FE"
+  ],
+  "main_or_robustness": "main (but single-date, no control group)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: single adoption date, no untreated comparison unit, nonlinear choice model, subgroup-by-policy interactions. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data: New Jersey Dept of Health CABG discharge data and Open Heart Surgery Registry (provided by NJDOH) plus HCUP SID; restricted."
+}

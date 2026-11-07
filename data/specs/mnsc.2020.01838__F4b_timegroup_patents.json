@@ -1,0 +1,106 @@
+{
+ "suffix": "mnsc.2020.01838",
+ "spec_id": "F4b_timegroup_patents",
+ "journal": "mnsc",
+ "data_path": "~/did_packages/_work/mnsc.2020.01838/patent_timegroup_droppost_prepared.rds",
+ "id_var": "uid",
+ "time_var": "year",
+ "y_var": "ihs_patent_utility",
+ "treat_var": "",
+ "gvar": "g_form_m1",
+ "weight_var": "",
+ "cluster_var": "cl",
+ "xt_vars": [
+  "naics4"
+ ],
+ "sample_filter": "",
+ "log_y": "",
+ "data_provenance": "real",
+ "published_coef": null,
+ "published_se": null,
+ "table": "Figure 4, Panel (b)",
+ "column": "3-year-bin path (post-breakup bins dropped)",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "reverse_event": false,
+ "treatment_label": "",
+ "event_pre_min": -6,
+ "event_post_max": 9,
+ "authors_code_event_coefs": {
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))1_PreA": -0.0811455326161783,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))3_OnA": 0.147831975241026,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))4_OnB": 0.320044807408353,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))5_PostA": 0.187211738930765,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))6_PostB": 0.0718975498206298,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))7_PostC": -0.0249119738108995
+ },
+ "authors_code_event_se": {
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))1_PreA": 0.0523768586557545,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))3_OnA": 0.104572151931554,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))4_OnB": 0.121312840535969,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))5_PostA": 0.107430492644546,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))6_PostB": 0.115970455812555,
+  "TreatY:factor(TimeGroup, levels = c(\"2_PreB\", \"1_PreA\", \"3_OnA\", \"4_OnB\", \"5_PostA\", \"6_PostB\", \"7_PostC\"))7_PostC": 0.140713226306773
+ },
+ "authors_code_n": 436000,
+ "published_source": "Figure 4, panel (b) of the published article (Management Science 71(11), 2025, pp. 9628-9649; papers/mnsc/mnsc.2020.01838.pdf): point estimates are plotted, not printed. authors_code_* = output of Replicate.R line 219 on the shipped data, which the figure plots. Panel labels checked against the article (Nov 2).",
+ "pipeline_sample_twfe_post_avg_raw": 0.17081390975251,
+ "pipeline_sample_twfe_pre_avg_raw": -0.126197157894558,
+ "pipeline_sample_twfe_post_avg_std_expected": 0.219323148626805,
+ "y_sd_regsample_expected": 0.778822987094551,
+ "replication_status": "exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; pipeline sample drops the post-breakup bins, see event_structure.verified)",
+ "notes": "Kang (2025), 'Price-Fixing Cartels and Firm Innovation', Management Science 71(11). Package: Replicate.R + final cleaned/merged .rds files (real processed data; raw DOJ/VitalLaw, PatentsView and licensed Compustat not shipped). FE: unit + 4-digit-NAICS (patents) or Compustat industry group (R&D) x year (authors: felm(... | assignee_id + paste0(cl, year) | 0 | cl)); here xt_vars = naics4 (= cl) so the time FE is year + year x cl; SE clustered by cl. No controls, no weights. Outcomes are IHS-transformed counts/amounts, precomputed as ihs_* (log(x + sqrt(x^2 + 1)), as in Replicate.R). Figure 4(b)/(d) 3-year-bin path, data_reg_patent.rds (612 treated assignees; bins 1_PreA = formation-relative years -7..-5, 2_PreB = -4..-2 (reference), 3_OnA = +1..+2, 4_OnB = +3..+8, 5_PostA/6_PostB/7_PostC = breakup-relative +1..+3/+4..+6/+7..+9; relative years -1 and 0 are not in the file). Ruling 5b(d): the post-breakup bins are dropped (collusion switches off at breakup; Hull fn 6), leaving a formation event study on 404 treated units (after the episode split). Bins (Nov 2, event_structure): the authors' three-year groups on the pipeline sample. Because rows at formation-relative -1 and 0 do not exist, gvar g_form_m1 = formation year - 1 (no observed row changes treatment status; gives CSA an observed base period), so rel = formation-relative year + 1: PreA rel -6..-4, PreB (reference) rel -3..-1, OnA rel 2..3, OnB rel 4..9. Authors' bins with all seven bins: see authors_code_event_coefs; with post-breakup bins dropped (pipeline sample, authors' FE): see binned_droppost_coefs. Unit id uid = assignee_id except for the one assignee in three cartel episodes (226bee8a..., formations 1988/1995/1998 with overlapping windows, the source of all duplicated assignee-years), which is split into three assignee x episode units so that every unit has one adoption date and no duplicated unit-years; this is the only difference from the authors' regression sample and FE. Nov 2 audit: event_structure records the authors' bins and reference; sample_filter 'pre_sample_adopter == FALSE' removed, pre-sample adopters kept at their true dates (gvar already holds the calendar year; no adoption_var needed). See the log's Nov 2 section.",
+ "binned_droppost_coefs": {
+  "bin::1_PreA:TreatY": -0.125559373566367,
+  "bin::3_OnA:TreatY": 0.126861576347586,
+  "bin::4_OnB:TreatY": 0.211975349741032
+ },
+ "binned_droppost_se": {
+  "bin::1_PreA:TreatY": 0.0462905322726333,
+  "bin::3_OnA:TreatY": 0.105744840491242,
+  "bin::4_OnB:TreatY": 0.108050451799405
+ },
+ "event_structure": {
+  "bins": [
+   [
+    -6,
+    -4
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    9
+   ]
+  ],
+  "ref": [
+   [
+    -3,
+    -1
+   ]
+  ],
+  "uncovered": "drop",
+  "post_summary": [
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    9
+   ]
+  ],
+  "pre_summary": [
+   [
+    -6,
+    -4
+   ]
+  ],
+  "source": "Replicate.R line 219: felm(depvar ~ TreatY + TreatY:factor(TimeGroup, levels = c('2_PreB','1_PreA','3_OnA','4_OnB','5_PostA','6_PostB','7_PostC')) | assignee_id + paste0(cl, year) | 0 | cl) on data_reg_patent.rds; 2_PreB is the first level and is dropped (collinear with the unit FE), so it is the reference (article, Figure 4 notes: Precollusion2 'serves as the baseline'). In the shipped file the groups are formation-relative years rf = year - ID_From (pre-breakup rows): PreA -7..-5, PreB -4..-2, OnA 1..2, OnB 3..8 (rf -1 and 0 absent; the article's text describes Precollusion2 as 1-3 years before and Collusion1 as 1-3 years after formation, the shipped TimeGroup is used). PostA/B/C are breakup-relative years 1-3/4-6/7-9, i.e. treatment switched off: their 2,472 treated rows are dropped (PROTOCOL 5b switch-off rule, Hull fn. 6; Nov 1 log ruling (d)). gvar g_form_m1 = ID_From - 1, so rel = t - g = rf + 1 in the annual period index (years 1976-2020 consecutive): PreA [-6,-4], ref PreB [-3,-1], OnA [2,3], OnB [4,9] (max observed rf 8). 'drop': the shipped file contains treated rows only inside the authors' coded window (the event year itself is omitted), so no ever-treated row falls outside bins and ref (0 rows, checked Nov 2); 'drop' and 'ref' are equivalent here. Pre-sample adopters (11 units with event year before 1976) are kept at their true date (gvar holds the calendar year; PROTOCOL Nov 2 ruling (b)); all their in-sample rows are post rows inside the window.",
+  "verified": "Published regression: fixest with the authors' seven TimeGroup indicators (reference 2_PreB; FE assignee_id + cl^year; cluster cl) on the full shipped data_reg_patent.rds (436,000 rows, incl. the pre-sample units) reproduces Replicate.R line 219 (PreA -0.0811, OnA 0.1478, OnB 0.3200, as plotted; max abs diff 1.0e-12); the post-breakup groups cannot be written as intervals of formation-relative time, so this check uses TimeGroup directly. The pipeline sample differs from the authors': the 2,472 post-breakup treated rows are dropped, which moves OnA/OnB to 0.1269/0.2120; on that sample fixest with this structure reproduces binned_droppost_coefs (max abs diff 2.0e-12; SE max diff 3.1e-05, felm vs fixest small-sample factor). Pipeline unit id (episode split of one multi-cartel assignee) moves the bins by at most 3.5e-03. No numbers are printed in the article; the figure plots the code output on the shipped data."
+ },
+ "pipeline_sample_twfe_source": "Nov 2: fixest on the pipeline sample (pre-sample adopters kept at true dates, uid FE + cl^year) with event_structure; post (pre) = equal-weight mean of the post_summary (pre_summary) bins, std = post / population SD of y over all estimation rows."
+}

@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2023.1449",
+ "doi": "10.1287/mksc.2023.1449",
+ "journal": "mksc",
+ "title": "Automating the B2B Salesperson Pricing Decisions: A Human-Machine Hybrid Approach",
+ "authors": "Yael Karlinsky-Shichor; Oded Netzer",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2023.1449",
+ "regressions_path": "./data/packages/mksc.2023.1449_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (pricing model of salesperson quotes, Bayesian demand model, ML hybrid)",
+ "ineligible_specs": [
+  {
+   "spec_id": "pricing_demand_models",
+   "reported_location": "main tables",
+   "exclusion_reason": "cross-sectional/quote-level prediction and demand models; no staggered treatment in package"
+  }
+ ],
+ "eligible_reason": "Not a DiD in the shipped code. Quote-level pricing model, demand model and machine-learning hybrid.",
+ "design_notes": "Package contains no code for any field-test analysis described in the article (article text not available to check).",
+ "estimators_reported": [
+  "mixed-effects linear pricing model (lmer)",
+  "Bayesian demand model (Stan)",
+  "random forest hybrid"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "simulatedSalesData.dta"
+ ],
+ "data_files_note": "Data dictionary: 'Simulated sales data at the line level'.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated sales data.",
+ "software": "r",
+ "software_notes": "R (lme4, rstan) and Python",
+ "screener_notes": "No article text available. Even if the article contained a field-test comparison, the shipped data are simulated, so the paper cannot be eligible. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

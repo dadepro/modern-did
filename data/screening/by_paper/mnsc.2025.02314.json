@@ -1,0 +1,58 @@
+{
+ "suffix": "mnsc.2025.02314",
+ "doi": "10.1287/mnsc.2025.02314",
+ "journal": "mnsc",
+ "title": "Centralization vs. Decentralization: First Evidence from the Laboratory",
+ "authors": "Gabriele Camera; Gary Charness; Nir Chemaya",
+ "year": 2026,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2025.02314",
+ "regressions_path": "./data/packages/mnsc.2025.02314_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (laboratory experiment)",
+ "ineligible_specs": [
+  {
+   "spec_id": "lab_logit_treatments",
+   "reported_location": "main regression tables (governance architecture x chat)",
+   "exclusion_reason": "between-subject lab experiment; logit of decisions on treatment dummies with session clustering; not DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD design. A laboratory experiment randomizes sessions to decentralized, centralized or hybrid governance, with and without chat, and estimates logit models of decisions on treatment dummies.",
+ "design_notes": "oTree experiment at Chapman ESI and UCSB; 2-Analysis.do runs logit DEP ib1.treat i.size i.ESI PERIOD $controls, vce(cluster sessionID).",
+ "estimators_reported": [
+  "logit",
+  "nonparametric treatment comparisons"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Replication/Data/all_data.csv",
+  "Replication/Data/dataset.dta",
+  "Replication/Data/WorkData.dta",
+  "Replication/Chat_data/"
+ ],
+ "data_files_note": "Full experimental data and chat logs shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' lab data.",
+ "software": "stata",
+ "software_notes": "Stata; oTree for the experiment",
+ "screener_notes": "Published text confirms lab experiment. Not a near miss."
+}

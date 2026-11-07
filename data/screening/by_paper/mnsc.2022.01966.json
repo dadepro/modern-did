@@ -1,0 +1,85 @@
+{
+ "suffix": "mnsc.2022.01966",
+ "doi": "10.1287/mnsc.2022.01966",
+ "journal": "mnsc",
+ "title": "Fintech Platforms and Mutual Fund Distribution",
+ "year": 2024,
+ "authors": "Claire Yurong Hong; Xiaomeng Lu; Jun Pan",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": true,
+ "near_miss_reason": "A staggered binary treatment exists (dtop2or = fund available for sale on the Tiantian or Ant platform in quarter t; funds join at fund-specific quarters; fund FE nsymbol + quarter FE time; Table 3 header 'Staggered Entrance onto Platform and Flow-Performance Sensitivity'), but every reported column adds (i) time-varying controls logsize and logage, (ii) the lagged outcome flow_1, and (iii) the performance indicator decile10 (or dtop10/dtop1030/dtop3050 ranks) interacted with dtop2or. The paper's coefficient of interest is the interaction (flow-performance sensitivity), not the ATT of platform entry. Half of the columns also omit fund FE (a(time) only).",
+ "eligible_reason": "No reported column is a plain TWFE/event-study regression of an outcome on the binary platform-entry indicator: all include lagged flow, time-varying fund controls and treatment-by-performance interactions, and the object of interest is a heterogeneity coefficient (subgroup-by-treatment interaction), which PROTOCOL Section 2 excludes.",
+ "design_notes": "Fund-quarter panel of Chinese actively managed equity (nstyle==2) and mixed (nstyle==3) funds, 2008-2017 (and 2011-2014 windows). Table 3 (stata code.do lines 6-20): reghdfe flow decile10 dtop2or dtop2or_decile10 logsize logage flow_1, a(time) or a(nsymbol time), cluster(nsymbol time). Table 4: rank bins dtop10/dtop1030/dtop3050 and their dtop2or interactions. Table 5 horse-race of performance horizons (horserace.dta). Table 6 family-level (family.dta). Table 7 retail vs institutional flows. Table 8 volatility outcomes (flowperfstd.dta). Table 9 holding-period returns with a(nstyle time). Data dictionary: dtop2or = 'dummy variable that equals one if a fund is available for sale via Tiantian or Ant platforms for quarter t'.",
+ "estimators_reported": [
+  "twfe_with_controls_lagged_outcome_and_treatment_x_performance_interaction (Tables 3-5, 7-9)",
+  "pooled_ols_time_fe_variants (Tables 3-5 odd columns)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "unknown",
+ "n_adoption_cohorts_note": "Fund-specific platform entry quarters (F_BEGIN_DATE in Wind Cmfsellingagents); platforms launched 2012; not counted from the data in this screen.",
+ "never_treated_present": true,
+ "always_treated_present": "unknown",
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [
+  {
+   "spec_id": "mnsc.2022.01966_T3_c2_flow_equity_2011_2014",
+   "eligible": false,
+   "near_miss": true,
+   "exclusion_reason": "time-varying controls (logsize, logage), lagged outcome flow_1, and decile10 + dtop2or_decile10 interaction; coefficient of interest is the interaction",
+   "code_file": "replication_package_MS-FIN-22-01966/stata code.do",
+   "code_line": 8,
+   "outcome": "flow (quarterly fund flow, %)",
+   "treatment_var": "dtop2or (with decile10 and dtop2or_decile10)",
+   "treatment_definition": "fund available on Tiantian or Ant platform in quarter t (staggered fund-level entry)",
+   "unit_var": "nsymbol",
+   "time_var": "time (quarter)",
+   "fe": "nsymbol + time",
+   "controls": "decile10, dtop2or_decile10, logsize, logage, flow_1",
+   "weights": "none",
+   "cluster": "nsymbol time (two-way)",
+   "sample_condition": "nstyle==2 & year 2011-2014",
+   "static_or_event": "static",
+   "data_file": "replication_package_MS-FIN-22-01966/flowperf.dta",
+   "reported_location": "Table 3 col 2 (equity, 2011-2014, fund FE)",
+   "notes": "Columns 4 (2008-2017), 6 and 8 (mixed funds) analogous at lines 12, 16, 20; odd columns use a(time) only."
+  }
+ ],
+ "ineligible_specs": [
+  {
+   "location": "Table 4 (lines 27-41)",
+   "reason": "rank-bin x platform interactions, controls, lagged flow"
+  },
+  {
+   "location": "Tables 5-9",
+   "reason": "horse-race / family / flow-type / volatility / return specs, all with controls, lagged flow and interactions; Table 9 has no fund FE"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "flowperf.dta",
+  "flowperfstd.dta",
+  "flowperfbin.dta",
+  "horserace.dta",
+  "family.dta",
+  "predictret.dta",
+  "flowperf.sas7bdat",
+  "styleret.sas7bdat",
+  "Figures/figuredata.xlsx",
+  "Datadictionary.xlsx"
+ ],
+ "data_files_note": "Analysis files built from Wind/CSMAR are shipped in Stata and SAS formats; README describes them as the datasets submitted with the final manuscript (no mention of disguising).",
+ "software": "stata",
+ "software_detail": "Stata (reghdfe, outreg) for Tables 3-9; SAS for Tables 1-2, 6 and figure data; Python for figures",
+ "replication_feasible": "maybe",
+ "priority": 3,
+ "priority_note": "Near-miss: staggered binary platform-entry indicator exists, but no reported column estimates its ATT without controls, lagged flow and performance interactions.",
+ "screener_notes": "Screened from package only (no article text). Borderline classification: recorded as eligible_design=true / near_miss=true because dtop2or is a staggered absorbing binary regressor with fund and quarter FE, but note that stripping controls and interactions would change the research question (flow-performance sensitivity), so the lead may prefer to treat this as eligible_design=false.",
+ "eligible_design_note": "set to false Nov 1 ~22:05 (coding rule, PROTOCOL 5b): near-miss with no main-text specification satisfying every design rule"
+}

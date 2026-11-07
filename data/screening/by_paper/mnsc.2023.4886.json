@@ -1,0 +1,74 @@
+{
+ "suffix": "mnsc.2023.4886",
+ "doi": "10.1287/mnsc.2023.4886",
+ "journal": "mnsc",
+ "title": "The Impact of Vertical Integration on Physician Behavior and Healthcare Delivery: Evidence from Gastroenterology Practices",
+ "authors": "Soroush Saghafian; Lina D. Song; Joseph P. Newhouse; Mary Beth Landrum; John T.-A. Hsu",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_025",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4886",
+ "regressions_path": "./data/packages/mnsc.2023.4886_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Treatment-intensity regressor rather than a binary indicator: every main patient- and provider-level column (Analysis Patient Regression Main.R mod1-mod15; Analysis Provider Regression Main.R mod1a-mod1g) enters the three-valued integration status ind_integ (0 independent, 1 partially integrated, 2 integrated; Analysis Summary Statistics.R lines 6-8) linearly, and every column adds time-varying patient and county controls (age, sex, race, esrd_ind, ind_dual, ind_ccw, index, ind_rural, unemp, poverty, under_65, prop_gi, hmo_pen, hhi). Staggered physician integration 2009-2015 with physician (prf_npi) and year FE, but the published treatment is multi-valued and can switch back. Synthetic data only.",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "No main-text column satisfies every rule. Main regressions: felm(outcome ~ patient/area controls + ind_integ | year + prf_npi), two-way clustered by year and physician, on a patient-claim repeated cross-section assigned to GI physicians; ind_integ takes values 0/1/2 (independent / partially integrated / integrated) and enters linearly, and every column has time-varying controls. Section 7 heterogeneity columns interact ind_integ with place_service or ind_anesth (subgroup-by-treatment). Mediation analysis uses lm with year dummies and no unit FE. The only control-free regression (Analysis Anesthesia Mechanism.R line 72, total_anesth ~ ind_integ | year + prf_npi.y, anesthesiologist FE) restricts to binary pairs of the three treatment levels, but the shipped code applies the {0,1} and {1,2} filters sequentially (leaving no variation), its treatment is inherited from affiliated GIs, and its main-text location cannot be confirmed without article text; it is listed but not counted. The data are synthetic in any case.",
+ "design_notes": "R (lfe::felm). Medicare 20% FFS claims 2008-2015; treatment from yearly share of GI claims billed in hospital outpatient settings (GI Integration.R); physicians switch in 2009-2015 (yearly newly integrated counts hard-coded in GI Integration.R), and the yearly measure can switch back. Only synthetic_data.csv (387,168 rows, made-up values) is shipped; the logs in logs/ are synthetic-data runs.",
+ "estimators_reported": [
+  "twfe_static_multivalued_with_controls",
+  "mediation_lm"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 7,
+ "never_treated_present": true,
+ "always_treated_present": true,
+ "treatment_switches_off": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Patient-level results (Analysis Patient Regression Main.R mod1-mod15; anesthesia, complications, polyp detection, time to follow-up, payments)",
+   "reason": "three-valued treatment ind_integ (0/1/2) entered linearly; time-varying patient and county controls in every column"
+  },
+  {
+   "location": "Provider-level results (Analysis Provider Regression Main.R mod1a-mod1g; claims, services, HCPCS, beneficiaries, payments)",
+   "reason": "three-valued treatment; time-varying provider-year controls; second block interacts ind_integ with ind_anesth"
+  },
+  {
+   "location": "Section 7 heterogeneity (Analysis Regression Heterogeneity.R; single vs multispecialty, place of service)",
+   "reason": "subgroup-by-treatment interactions (ind_integ*place_service) and controls"
+  },
+  {
+   "location": "Section 7 anesthesia mechanism, num_aff_anesth (Analysis Anesthesia Mechanism.R line 29)",
+   "reason": "time-varying controls; binary subsets {0,1}/{1,2} of the three-valued treatment"
+  },
+  {
+   "location": "Section 7 anesthesia mechanism, total_anesth per anesthesiologist (Analysis Anesthesia Mechanism.R line 72)",
+   "reason": "no controls, year + anesthesiologist FE, but shipped code filters to {0,1} then {1,2} sequentially (no variation as written); treatment inherited from affiliated GIs; main-text location unverified; synthetic data"
+  },
+  {
+   "location": "Section 7 outcome mechanism (Analysis Outcome Mechanism.R mediate())",
+   "reason": "mediation analysis, lm with year dummies and no unit FE, controls"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "synthetic data/synthetic_data.csv"
+ ],
+ "data_files_note": "readme.pdf: CMS Medicare claims are proprietary and cannot be released even in blurred form (Data Use Agreement attached); package ships 'a short synthetic data set ... with made-up numerical values' whose purpose 'is not to replicate the results'.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Synthetic data with made-up values, stated in readme.pdf section 5.",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from readme.pdf, R code, logs and OpenAlex abstract (no article text). Staggered integration design, but the treatment is three-valued and every main column has time-varying controls; synthetic data only. If the article shows the anesthesiologist-volume regression in the main text with a binary treatment, it would be design-eligible but still excluded for synthetic data.",
+ "hand_check_nov4": "Not controls-only confirmed: the treatment is a three-valued intensity entered linearly in every column, a violation independent of the controls. Flag false kept; reason text now leads with the treatment-intensity regressor so the classifier reads two violations. Borderline near-miss (multi-valued treatment); kept as flagged by the screener. Package only (no article text)."
+}

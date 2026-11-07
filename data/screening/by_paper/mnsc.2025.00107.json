@@ -1,0 +1,44 @@
+{
+ "suffix": "mnsc.2025.00107",
+ "doi": "10.1287/mnsc.2025.00107",
+ "journal": "mnsc",
+ "title": "Does Privacy Matter? Evidence from a Legal Reform",
+ "year": 2026,
+ "authors": "Liran Einav; Ehud Guttel; Ilan Kremer; Guy Lakan; Sarit Weisburd",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2025.00107",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single adoption date. One legal reform (plaintiff anonymity, implemented August 2015; post defined by claim close date) affecting personal-injury claims (claim_type==1) with property-damage claims as controls: areg ln_payment_adjust 1.claim_type#1.post i.claim_type controls i.year_grp i.firm, absorb(city_stat) on a repeated cross-section of claims. The csdid in Figure A5 assigns a single cohort (tyear = 8 for all personal-injury claims), so it is a two-group design.",
+ "design_notes": "Universe of disputed car-accident insurance claims closed 2011-2020 at the five major Israeli insurers (Combined_Clean_Cars.dta), merged with CBS statistical-area demographics, Dun's 100 law firms, CPI and wage indices. Table 2 DiD (claim_type x post) with claimant controls, statistical-area FE, insurer FE, year-group FE; Table 3 triple differences by claimant groups; Table 4 robustness (alternative post dates, windows); event studies by half-year (Figure 3) and csdid (Figure A5).",
+ "estimators_reported": [
+  "two-group DiD with controls (areg)",
+  "triple difference",
+  "event study (claim_type x period)",
+  "Callaway-Sant'Anna csdid (single cohort, appendix Figure A5)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid drimp, appendix Figure A5, single cohort)"
+ ],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "No data shipped (Israeli Capital Markets Authority insurer data under agreement); logs/*.log contain regression output"
+ ],
+ "data_provenance": "real",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (README.pdf, master.do, Analysis/*.do).",
+ "software_notes": "Stata SE (areg, reg, csdid)"
+}

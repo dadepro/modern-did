@@ -1,0 +1,151 @@
+{
+  "suffix": "mnsc.2021.01717",
+  "doi": "10.1287/mnsc.2021.01717",
+  "journal": "mnsc",
+  "title": "Proximity and Knowledge Spillovers: Evidence from the Introduction of New Airline Routes",
+  "year": 2024,
+  "year_note": "frame.csv lists 2021 (submission id); published volume 70 issue 11 (2024).",
+  "screened_from": "package_only",
+  "eligible": true,
+  "eligible_design": true,
+  "near_miss": false,
+  "near_miss_reason": null,
+  "eligible_reason": "Figure 3 (an_Figures.do line 102) is an unstacked, binned event study: reghdfe lognumcit_3yr on relative-time indicators before_treat3, before_treat2, before_treat1, after_treat0, after_treat1, after_treat2, after_treat3 (>= +3) with directed-CBSA-pair (ID) and year fixed effects, no controls, clustered by pair. The binary treatment is a one-time reduction of at least 1.5 hours in the pair's travel time (new flight connection), switching on at pair-specific years; pairs whose travel time never changed are never-treated controls. This satisfies every rule in PROTOCOL.md Section 2. All tabled specifications (Tables 3-8) use the continuous log travel time loghrs (or its lead/lag and interactions) and are not eligible.",
+  "design_notes": "Balanced panel of 110,998 directed CBSA pairs (ID) x years 1980-2010 (Data.dta; 3-year citation window). Main tables: reghdfe log(1 + three-year citations from cit_cbsa to ref_cbsa) on loghrs (log one-way travel time in hours, continuous) with absorb(i.year#i.cit_cbsa i.year#i.ref_cbsa ID), cluster(ID); Table 3 cols 1-2 use absorb(year cit_cbsa ref_cbsa) with logdist and size controls; col 4 adds loghrs_lag1 and loghrs_lead1. Tables 4-8: heterogeneity by citation source, distance/absorptive-capacity/complexity quartiles, alternative windows, knowledge creation outcomes, inventor mobility, period and internet-penetration splits. Figure 3 construction (an_Figures.do lines 34-91): flag within-pair changes in loghrs; keep pairs with no change (numchge == 0) or exactly one change that is a decrease (numdecr == 1 & numchge == 1); yrchge = year of the change; timechge = hours change; event-time dummies relative to yrchge; estimation sample timechge <= -1.5 | timechge == 0. Omitted reference: treated-pair years at t <= -4 plus all never-treated pair-years. an_Figures.log (run on the real Data.dta) reports N = 2,588,996 and 83,516 clusters.",
+  "estimators_reported": [
+    "twfe_continuous_treatment",
+    "twfe_event_study_binned"
+  ],
+  "main_or_robustness": "robustness",
+  "main_or_robustness_note": "The continuous loghrs specification is the paper's main design; the binary event study (Figure 3) supports the dynamics/pre-trend argument.",
+  "n_eligible_specs": 1,
+  "n_adoption_cohorts": null,
+  "n_adoption_cohorts_note": "Pair-specific change years between 1981 and 2010 (up to 30 cohorts); the exact distribution is not recoverable because the shipped Data_synthetic.dta replaces all variable values with random draws.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {
+      "spec_id": "F3_event_study",
+      "source": "an_Figures.log (authors' log on real Data.dta)",
+      "n_obs": 2588996,
+      "n_clusters": 83516,
+      "coefficients": {
+        "before_treat3": [
+          0.0008662,
+          0.0064449
+        ],
+        "before_treat2": [
+          0.0086315,
+          0.0066915
+        ],
+        "before_treat1": [
+          0.0071076,
+          0.0066147
+        ],
+        "after_treat0": [
+          0.0154112,
+          0.0068252
+        ],
+        "after_treat1": [
+          0.0194509,
+          0.0069457
+        ],
+        "after_treat2": [
+          0.0225132,
+          0.0071422
+        ],
+        "after_treat3_plus": [
+          0.0591133,
+          0.0069061
+        ]
+      },
+      "note": "[coef, se]; 90% CIs plotted in Figure 3."
+    }
+  ],
+  "specs": [
+    {
+      "spec_id": "F3_event_study",
+      "eligible": true,
+      "exclusion_reason": null,
+      "code_file": "replication_package_MS-FIN-21-01717/an_Figures.do",
+      "code_line": 102,
+      "outcome": "lognumcit_3yr = log(1 + numcit_3yr), three-year backward citations from cit_cbsa to ref_cbsa",
+      "treatment_var": "before_treat3 before_treat2 before_treat1 after_treat0 after_treat1 after_treat2 after_treat3 (relative-time indicators; after_treat3 bins t >= 3)",
+      "treatment_definition": "treated pair = exactly one within-pair travel-time change over 1980-2010, a reduction of at least 1.5 hours (timechge <= -1.5), occurring in yrchge; control pairs have no change (timechge == 0). Treatment is absorbing from yrchge onward (gen after = year - yrchge >= 0, line 90).",
+      "unit_var": "ID (directed CBSA pair cit_cbsa x ref_cbsa)",
+      "time_var": "year (1980-2010)",
+      "fe": "year + ID",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "ID",
+      "sample_condition": "keep if numchge==0 | (numdecr==1 & numchge==1) (line 51); then if timechge<=-1.5 | timechge==0",
+      "static_or_event": "event_study",
+      "event_bins": "t=-3, -2, -1, 0, +1, +2, >=+3; omitted: t<=-4 and never-treated",
+      "data_file": "Data.dta (NOT shipped; Data_synthetic.dta is a random subsample with randomly generated values)",
+      "data_provenance": "synthetic",
+      "reported_location": "Figure 3",
+      "notes": "Static TWFE counterpart would be reghdfe lognumcit_3yr after, a(year ID) cluster(ID) on the same sample (after defined at line 90 but not estimated)."
+    },
+    {
+      "spec_id": "T3_c3_loghrs",
+      "eligible": false,
+      "exclusion_reason": "continuous treatment (log travel time); time-invariant distance control",
+      "code_file": "replication_package_MS-FIN-21-01717/an_Tables.do",
+      "code_line": 126,
+      "outcome": "lognumcit_3yr",
+      "treatment_var": "loghrs (continuous)",
+      "treatment_definition": "log one-way travel time in hours between the CBSA pair in year t",
+      "unit_var": "ID",
+      "time_var": "year",
+      "fe": "i.year#i.cit_cbsa + i.year#i.ref_cbsa + ID",
+      "controls": "logdist",
+      "weights": "none",
+      "cluster": "ID",
+      "sample_condition": "full panel",
+      "static_or_event": "static",
+      "data_file": "Data.dta (not shipped)",
+      "data_provenance": "synthetic",
+      "reported_location": "Table 3, column 3",
+      "notes": "Columns 1-2 (lines 122, 124) use absorb(year cit_cbsa ref_cbsa) with size controls; column 4 (line 128) adds loghrs_lag1 and loghrs_lead1."
+    },
+    {
+      "spec_id": "T4_T8_loghrs_variants",
+      "eligible": false,
+      "exclusion_reason": "continuous treatment (loghrs) in all columns",
+      "code_file": "replication_package_MS-FIN-21-01717/an_Tables.do",
+      "code_line": 147,
+      "outcome": "log citation counts by source (T4), by subsample/quartile (T5), knowledge-creation outcomes (T6), dmmove/dmcollab (T7), period and internet splits (T8)",
+      "treatment_var": "loghrs (continuous); T8 cols 4-5 interact loghrs with logband / dyadic internet categories",
+      "treatment_definition": "as T3_c3",
+      "unit_var": "ID",
+      "time_var": "year",
+      "fe": "i.year#i.cit_cbsa + i.year#i.ref_cbsa + ID (T6 cols 1-3: i.year#i.ref_cbsa + cit_cbsa + ID)",
+      "controls": "none (T7 col 5 adds dmcollab dmmove)",
+      "weights": "none",
+      "cluster": "ID (T6 cols 1-3: cit_cbsa)",
+      "sample_condition": "various",
+      "static_or_event": "static",
+      "data_file": "Data.dta (not shipped)",
+      "data_provenance": "synthetic",
+      "reported_location": "Tables 4-8",
+      "notes": ""
+    }
+  ],
+  "data_access": "synthetic",
+  "data_access_note": "README: Data_synthetic.dta 'contains a random sample taken from the Data.dta, with the actual values of variables replaced by randomly generated variables ... the output produced by using Data_synthetic.dta does not mirror the actual results.' Raw inputs include non-redistributable ER-586 airline segment data (1977-1989), SDC Platinum and Compustat Segment; T-100, PatentsView, FCC Form 477 and HUD crosswalks are public. Reconstruction code (cr_traveltime.do, cr_patent.do) is shipped.",
+  "data_files_present": false,
+  "data_files": [
+    "Data_synthetic.dta (1,031,975 rows x 55 vars; synthetic values)",
+    "plot_citation.dta (year-level, Figures 1-2 only)",
+    "an_Tables.log, an_Figures.log, cr_patent.log, cr_traveltime.log (real-data logs)"
+  ],
+  "software": "stata",
+  "software_notes": "Stata (reghdfe, eststo/esttab, outreg2).",
+  "replication_feasible": "no",
+  "replication_feasible_note": "Requires the authors' Data.dta (or rebuilding it, which needs the licensed ER-586, SDC and Compustat Segment inputs). Author outreach needed.",
+  "priority": 2,
+  "screener_notes": "Screened from package only (no article text; the OpenAlex abstract is empty). Figure 3's main-text status inferred from the README ('an_Figures.do ... generates all Figures'); confirm against the published PDF. The log file an_Figures.log contains the real-data Figure 3 coefficients recorded under published_estimates."
+}

@@ -1,0 +1,32 @@
+{
+ "eligible_design": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_expected": false,
+ "package_dir": null,
+ "journal": "jmr",
+ "doi": "10.1177/0022243720973943",
+ "year": 2020,
+ "title": "Competition and Firm Service Reliability Decisions: A Study of the Airline Industry",
+ "eligible_reason": "No difference-in-differences design. The paper estimates a simultaneous equation model and a static discrete (incomplete-information) game of airline cancellation and delay choices at the route-airline-quarter level. The only DiD mention is a citation to Fisher, Gallino and Xu (2019). Store/market/year/quarter fixed effects appear as controls in the structural models, and the on-time-bonus 'program' analysis is a counterfactual simulation from the estimated model, not a treatment-timing comparison.",
+ "design_notes": "Data: US BTS on-time and cancellation records (public), Southwest/American/Delta/United, market-quarter. Model-free Figure 1 shows United's 2009 on-time bonus and its 2010 abandonment for two routes, but no regression with adoption dates is estimated. Fixed effects (market, year, quarter, firm) are footnoted in Tables 4-5 notes.",
+ "estimators_reported": [
+  "simultaneous equation model (instrumented)",
+  "static discrete game (maximum likelihood)",
+  "counterfactual simulation"
+ ],
+ "main_or_robustness": "not_applicable",
+ "data_access": "public",
+ "screener_notes": "Screened from article text only; no replication package listed in the batch. Ineligible by design (structural IV/game model, no staggered binary treatment). Candidate flag ft_difference_in_difference came only from a literature-review citation.",
+ "suffix": "0022243720973943"
+}

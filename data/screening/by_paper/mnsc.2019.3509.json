@@ -1,0 +1,59 @@
+{
+ "suffix": "mnsc.2019.3509",
+ "doi": "10.1287/mnsc.2019.3509",
+ "journal": "mnsc",
+ "title": "When and Why Consumers “Accidentally” Endanger Their Products",
+ "authors": "Yaniv Shani; Gil Appel; Shai Danziger; Ron Shachar",
+ "year": 2020,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2019.3509",
+ "regressions_path": "./data/packages/mnsc.2019.3509_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "Study 1a only (field data); other studies are experiments",
+ "ineligible_specs": [
+  {
+   "spec_id": "T1_study1a",
+   "reported_location": "Table 1 (and window variants), Study 1a",
+   "exclusion_reason": "2x2 DiD on two aggregate daily time series (damaged vs used iPhone 4 listings) around one product-launch date per analysis; Weekend and Weekend x Damaged regressors; no unit panel, no staggered adoption"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "Not staggered. Study 1a regresses standardized daily listing counts for two series (damaged vs used iPhone 4) on Damaged, Event, Damaged x Event, Weekend and Weekend x Damaged in a 28- or 14-day window around a single launch (white iPhone 4 in April 2011; iPhone 4S announcement/launch in October 2011), N = 112 series-days. Each analysis has one event date and two 'units'. Studies 1b, 1c, 2, 3a, 3b are online experiments.",
+ "design_notes": "Published text Section 'Study 1a: Damaged Products', equation in Meyer (1995) spirit. The package contains no code.",
+ "estimators_reported": [
+  "2x2_did_single_date (two aggregate series)",
+  "experimental comparisons (ANOVA/t-tests)"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "1B.xlsx",
+  "1C.xlsx",
+  "2.xlsx",
+  "3A.xlsx",
+  "3B.xlsx"
+ ],
+ "data_files_note": "Only experiment data (Studies 1B, 1C, 2, 3A, 3B) as xlsx plus a one-line readme; the scraped listing data for Study 1a and all code are not shipped.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Field data for the only DiD analysis (Study 1a) not shipped; experiment data are original.",
+ "software": "other",
+ "software_notes": "no code shipped",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2019.3509.txt). Empty regression inventory because no code is shipped."
+}

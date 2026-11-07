@@ -1,0 +1,87 @@
+{
+ "suffix": "00222437231222857",
+ "doi": "10.1177/00222437231222857",
+ "journal": "jmr",
+ "title": "The Value of Safety Training for Business-to-Business Firms",
+ "authors": "Yixing Chen; Shrihari Sridhar; Kyuhong Han; Sonam Singh; Vikas Mittal; Taehoon Im",
+ "year": 2024,
+ "publication": "Journal of Marketing Research 61(4), 742-759 (2024); submitted July 20, 2021",
+ "screened_from": "published_article_text_only",
+ "batch": "rescreen_nov4_three",
+ "rescreened_nov4": "Earlier record was built on the wrong document (the text and PDF were NYC Local Law 196, not the article) and left eligibility null; re-screened from the published JMR article text (data/text/jmr/00222437231222857.txt, pdftotext of papers/jmr/00222437231222857.pdf); no replication package exists.",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "No binary treatment that switches on at unit-specific dates is estimated with unit and calendar-time fixed effects in the main text. Study 2 (Local Law 196; Table 8 Panels A-B, Figures 1-3) is a single-date DiD: construction establishments (NAICS 23) in the five New York City counties (T = 1) against all other establishments in the rest of New York State (Panel A) or in six border counties of New York and New Jersey (Panel B), with Post = 1 for 2018 onward for every treated establishment. There is one treated group and one policy date (the law's three compliance phases apply to all treated establishments on the same dates), so treatment timing does not vary across units. Study 1 uses catastrophic accidents at the sites of one oil field services company as an instrument for safety training hours. Table 3 is a 2x2 comparison of seasonal differences around April 2014 (two treated sites, one date). Tables 4, 5 and 7A report IV estimates. The site-level accident indicator of Tables 5-7 (T = 1 in the six months after a site's catastrophic accident, site-specific months 2008-2018) enters regressions of 12-month seasonal differences with year-month fixed effects and no site fixed effects, weighted by site size (first stages in Tables 4B, 5B and 7A column 2; falsification regressions in Table 6; the noncatastrophic major-accident indicator in Table 7B). Seasonal-difference regressions without unit fixed effects are not TWFE; they are coded like the other no-unit-FE and first-difference designs (mnsc.2021.03711, mnsc.2023.04231), so Study 1 is neither eligible nor a near-miss. Study 3 is a stated-choice conjoint experiment (linear probability and logit models, Table 9).",
+ "design_notes": "Study 1: proprietary monthly panel of 1,921 North American sites of a global oil field services company, January 2008 to August 2018 (87,071 site-months; NDA prevents disclosing accident dates, segments and regions). Outcome: safety hazards per capita; regressor: safety training hours per capita, instrumented by T x Post (April 2014 accidents, Table 4: elasticity -0.672 to -0.645) or by T (all catastrophic accidents 2008-2018, Table 5: -0.957 and -0.949). Specification in 12-month seasonal differences with year-month FE, controls (energy consumption per capita, share of certified drivers) in some columns, site-size weights, SE clustered by site. Study 2: OSHA Injury Tracking Application (Form 300A) establishment-year panel 2016-2021, 32,061 New York State establishments (69,374 observations; 53,469 in the FE columns), injury rate = injuries / average employees. Eq. (8): R_ijt = a(T_i x Post_t) + establishment FE + year FE (+ county characteristics measured yearly: population, unemployment rate, median household income, payroll, and establishment hours worked). SE clustered by county-sector. Headline estimates: Table 8 Panel A column 2, -0.0068 (0.0025); Panel B column 2, -0.0054 (0.0027). Study 3: 207 B2B procurement professionals, six paired choices each (2,484 profile observations).",
+ "estimators_reported": [
+  "2x2 DiD of seasonal differences, single date (Table 3)",
+  "OLS in levels and seasonal differences with a continuous training regressor (Tables 4-5, columns 1-2)",
+  "IV/2SLS in seasonal differences with year-month FE, accident timing as instrument (Tables 4, 5, 7A)",
+  "seasonal-difference regressions on a six-month accident indicator with year-month FE, no site FE (first stages; Table 6; Table 7B)",
+  "single-date TWFE DiD with establishment and year FE (Table 8, columns 2-3)",
+  "pooled 2x2 DiD without FE (Table 8, column 1)",
+  "conjoint linear probability model and logit (Table 9)"
+ ],
+ "main_or_robustness": "not applicable: no staggered binary design with unit and calendar-time FE (main designs are IV in seasonal differences and a single-date DiD)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "n_adoption_cohorts_note": "Study 2 has one treated group and one policy date (Post = 2018 onward). Study 1's accident indicator varies by site and month, but it is used as an instrument in seasonal differences without site FE, and the accident dates are confidential.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 3, columns 1-2",
+   "reason": "2x2 DiD of seasonal differences around one date (April 2014, two treated sites); no site FE"
+  },
+  {
+   "location": "Table 4, Panels A-B",
+   "reason": "OLS with a continuous training regressor; IV with T x Post (single April 2014 date) as instrument; first stages in seasonal differences without site FE; controls in columns 1-2 and 4-5"
+  },
+  {
+   "location": "Table 5, Panels A-B",
+   "reason": "IV and first-stage regressions of seasonal differences on the six-month accident indicator T with year-month FE and no site FE; controls in some columns"
+  },
+  {
+   "location": "Table 6, columns 1-6",
+   "reason": "falsification regressions of seasonal differences of six site variables on T, year-month FE, no site FE"
+  },
+  {
+   "location": "Table 7, Panels A-B",
+   "reason": "IV with environmental risk events (A); noncatastrophic major-accident indicator in seasonal differences with controls and no site FE (B)"
+  },
+  {
+   "location": "Table 8, Panels A-B, columns 1-3",
+   "reason": "single policy date (Post = 2018 onward for all treated establishments); column 1 has no FE; column 3 adds county characteristics measured yearly"
+  },
+  {
+   "location": "Figure 3",
+   "reason": "robustness of the single-date DiD (county and sector linear trends, county-year FE, clustering, samples, added controls)"
+  },
+  {
+   "location": "Table 9, columns 1-2",
+   "reason": "conjoint experiment (LPM and logit), not a DiD"
+  }
+ ],
+ "data_access": "partial (Study 1: proprietary site-level data of an oil field services company under a nondisclosure agreement; Study 2: public OSHA Injury Tracking Application Form 300A data and public county statistics; the article has no data availability statement and no replication archive, only a Sage online supplement with web appendices)",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "No replication package (JMR, submitted 2021, before the July 2023 transparency policy). Study 2 inputs are public and could be rebuilt, but the design is a single-date DiD and does not qualify.",
+ "software": null,
+ "software_notes": "Not stated in the article; no code available.",
+ "replication_feasible": "no",
+ "priority": 3,
+ "priority_note": "Not an eligible design: single-date DiD (Study 2) and IV in seasonal differences without unit FE (Study 1).",
+ "package_expected": false,
+ "package_dir": null,
+ "needs_manual_review": false,
+ "screener_notes": "Screened from the published article text (18 pages read in full). The earlier provisional lean (single NYC date in Study 2) is confirmed. Study 1's accident-timing variation is the only unit-specific timing in the paper, and it is never estimated with site fixed effects. Web Appendices B-D (online supplement, not read) hold robustness tables (site trends, levels) and the Deepwater Horizon analysis; online supplements do not count under the main-text rule."
+}

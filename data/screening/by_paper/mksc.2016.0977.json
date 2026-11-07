@@ -1,0 +1,59 @@
+{
+ "suffix": "mksc.2016.0977",
+ "doi": "10.1287/mksc.2016.0977",
+ "journal": "mksc",
+ "title": "Zooming In on Choice: How Do Consumers Search for Cameras Online?",
+ "authors": "Bart J. Bronnenberg; Jun Beom Kim; Carl F. Mela",
+ "year": 2016,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0977",
+ "regressions_path": "./data/packages/mksc.2016.0977_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not a DiD. Descriptive search-behavior paper: tables.do and figures.do regress attribute distances of searched cameras relative to the chosen camera on search-sequence decile indicators with consumer (machine) FE (areg ... abs(machine)), choice on search-position indicators (xtreg fe), and a structural search model estimated in Matlab (Table 4, App. Table 7). No treatment adoption or calendar-time design.",
+ "design_notes": "Stata (areg, xtreg) and Matlab (runmodel.m). comScore-type clickstream search data for digital cameras: searchdata.dta (29,069 search events, 26 vars) and kwdata.dta (2,923 keyword searches).",
+ "estimators_reported": [
+  "descriptive_fe_regressions",
+  "structural_search_model"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "heterogeneity, informativeness, state-dependence, revisiting and funnel tables; figures",
+   "reason": "search-sequence position indicators within consumer; descriptive, no treatment"
+  },
+  {
+   "location": "Table 4, App. Table 7",
+   "reason": "structural search model (Matlab)"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "external/searchdata.dta",
+  "external/kwdata.dta"
+ ],
+ "data_files_note": "Both analysis files shipped; abstract states data are available as supplemental material.",
+ "data_provenance": "original",
+ "data_provenance_note": "No statement of masking or simulation.",
+ "software": "stata",
+ "software_notes": "Stata plus Matlab.",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). code_prescore 2 from areg with consumer FE; no DiD."
+}

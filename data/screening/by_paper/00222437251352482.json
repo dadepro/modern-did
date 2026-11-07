@@ -1,0 +1,29 @@
+{
+  "suffix": "00222437251352482",
+  "doi": "10.1177/00222437251352482",
+  "journal": "jmr",
+  "title": "Fair Lending in Car Financing: Unintended Racial Consequences of Consumer Financial Protection Bureau Supervision of Dealer Markups",
+  "year": "2026",
+  "eligible_design": false,
+  "eligible_reason": "Single intervention date (CFPB supervisory highlights, 2014). Main design is regression discontinuity in time with a 30-day window, a polynomial in time and time-varying controls. The DiD-style year-on-year check in Web Appendix L is two-period with one date. Lender-level adoption of flat compensation is used only descriptively and as an outcome (Table 4, Table W18), not as a staggered DiD.",
+  "design_notes": "Table 3 and 4 use bootstrapped SEs, RDiT with order-1 polynomial in time, multiple fixed effects and controls, 378,758 loan observations. Interactions with credit-union dummy and minority-tercile dummy are subgroup-by-treatment interactions. Lender flat-compensation switches (675 credit unions, 18 banks) are inferred from zero-markup spells.",
+  "estimators_reported": [
+    "RDiT",
+    "year-on-year DiD-style check (appendix only)"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Transaction-level auto loan data from a prominent market research firm (proprietary); credit-score data anonymized. Not eligible: single adoption date, RDiT, controls."
+}

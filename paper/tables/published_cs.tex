@@ -1,0 +1,22 @@
+\begin{table}[htbp]\centering
+\caption{DiD-averaging estimates of papers that publish a Callaway--Sant'Anna estimate}\label{tab:pubcs}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccccc}
+\toprule
+ & & & \multicolumn{3}{c}{Authors' settings vs.\ published} & \multicolumn{3}{c}{Hull's vs.\ authors' settings} \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}
+ & & & & & Max & Median & Max & Sign \\
+Authors' software & Papers & Specs. & Printed & Matched & gap/SE & gap/SE & gap/SE & changes \\
+\midrule
+R \texttt{did} or \texttt{staggered} & 5 & 70 & 44 & 42 & 0.07 & 0.00 & 4.2 & 0 \\
+Stata \texttt{csdid} & 3 & 10 & 10 & 10 & 0.04 & 0.17 & 5.5 & 3 \\
+\midrule
+All & 8 & 80 & 54 & 52 & 0.07 & 0.01 & 5.5 & 3 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{0.95\textwidth}
+{\footnotesize\noindent Notes: Papers that publish a Callaway--Sant'Anna estimate, grouped by the software of the published estimate; specifications count static estimates and event-study post-window averages. ``Printed'' counts specifications with a printed estimate (some event studies are shown only in figures); ``Matched'' counts the specifications for which our estimate under the authors' implementation choices matches the printed estimate to the last printed decimal. Gaps to the published estimate are in units of the published standard error. For 6 specifications of one paper, the protocol drops post-adoption rows in which the treatment switches off; their reference is the authors' estimator re-run on that sample, since the printed estimate, which their code reproduces on the full sample, is not the target. The last three columns compare these estimates with our main estimates, which use the settings of \citet{hull2026}, and report the absolute difference in units of the standard error of the main estimate.\par}
+\end{minipage}
+\end{table}

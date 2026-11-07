@@ -1,0 +1,30 @@
+{
+ "suffix": "00222437241296453",
+ "doi": "10.1177/00222437241296453",
+ "journal": "jmr",
+ "title": "Addressing Endogeneity Using a Two-Stage Copula Generated Regressor Approach",
+ "year": "2024",
+ "eligible_design": false,
+ "eligible_reason": "Econometric methods paper (2sCOPE, IV-free endogeneity correction) with simulations and a price-elasticity application on store-level toothpaste sales. No difference-in-differences design.",
+ "design_notes": "Empirical application: Dominick's store-level toothpaste category sales, Chicago, 373 weeks 1989-1997, price endogeneity with copula control function. 'Difference-in-difference' appears only in the introduction as an example of quasi-experimental methods. Issue: JMR 62(4), 2025.",
+ "estimators_reported": [
+  "2sCOPE copula control function",
+  "OLS",
+  "IV benchmarks"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: no DiD. Application data are the public Kilts Center Dominick's database. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2025.00954,T10_c1_new_restaurant,static,999,,0.000317489201126778,0.0174009186102173,,0.0183885050205528,,0.992225444208819,999,0,999,3.33066907387547e-16,1.13797860024079e-15,,FALSE,4078,

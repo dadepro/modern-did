@@ -1,0 +1,91 @@
+{
+  "suffix": "mnsc.2022.02414",
+  "doi": "10.1287/mnsc.2022.02414",
+  "journal": "mnsc",
+  "title": "Does Bank Monitoring Reduce Corporate Misreporting? Evidence from Foreign Bank Entry in China",
+  "year": 2024,
+  "authors": "Minwen Li; Tanakorn Makaew; Andrew Winton",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": true,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "A staggered binary treatment exists (BankEntry: foreign bank entry into the firm's city after China's 2001 WTO accession, city-specific entry years; Table 6 and Figure 2 use event-time dummies tminus3..tplus3after), but every reported specification is a probit (nonlinear) of a fraud indicator on lagged BankEntry with lagged time-varying firm controls (leverage, EBIT ratio, sales growth, log assets, ownership concentration, state ownership), industry FE, year FE and region FE, and no firm fixed effects (Tables 2, 4, 5, 6; Table 3 margins). Nonlinear model plus time-varying controls and no unit FE: not eligible and not recorded as a near-miss (the obstacle is the probit/no-firm-FE design, not only the controls). The shipped data are pseudo (synthetic).",
+  "design_notes": "Firm-year panel of Chinese listed firms (CSMAR), tsset stkcd year. Table 2 col 1 (line 37): xi: probit FrdGrp1 l.BankEntry l.logasset_w l.leverage_w l.ebitrat_w l.sg_w l.shrcr1_w l.stateownrat_w i.nindcd1 i.year i.region, vce(cluster nindcd1). Cols 2-3: matched-city samples (EntryControl20xx). Table 4-5: subsamples by creditor type / collateral / industry cycle with suest tests. Table 6 (lines 229, 233): probit with tminus3 tminus2 tminus1 tplus1 tplus2 tplus3 tplus3after event-time dummies, i.nindcd1 i.year i.region, years 2000-2010 and 2002-2006. Figure 2: fraud probability before/after.",
+  "estimators_reported": [
+    "probit_did_with_lagged_controls (Tables 2, 4, 5)",
+    "probit_event_time_dummies (Table 6, Figure 2)",
+    "suest coefficient-difference tests"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": "unknown",
+  "n_adoption_cohorts_note": "City-level foreign bank entry years (multiple, post-2001); not counted (data are pseudo).",
+  "never_treated_present": "unknown",
+  "always_treated_present": "unknown",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "mnsc.2022.02414_T2_c1_probit",
+      "eligible": false,
+      "exclusion_reason": "nonlinear probit; lagged time-varying controls; industry/region FE instead of firm FE",
+      "code_file": "Codes for MS Submission_7_5_2024.do",
+      "code_line": 37,
+      "outcome": "FrdGrp1 (fraud indicator)",
+      "treatment_var": "l.BankEntry",
+      "treatment_definition": "lagged indicator that a foreign bank has entered the firm's city (city-specific timing)",
+      "unit_var": "stkcd (firm)",
+      "time_var": "year",
+      "fe": "i.nindcd1 (industry) + i.year + i.region; no firm FE",
+      "controls": "l.logasset_w l.leverage_w l.ebitrat_w l.sg_w l.shrcr1_w l.stateownrat_w",
+      "weights": "none",
+      "cluster": "nindcd1 (industry)",
+      "sample_condition": "all firm-years",
+      "static_or_event": "static",
+      "data_file": "Pseudo Data for MS Submission_7_5_2024.dta (SYNTHETIC)",
+      "reported_location": "Table 2, column 1",
+      "notes": ""
+    },
+    {
+      "spec_id": "mnsc.2022.02414_T6_probit_eventtime",
+      "eligible": false,
+      "exclusion_reason": "nonlinear probit; no firm FE",
+      "code_file": "Codes for MS Submission_7_5_2024.do",
+      "code_line": 229,
+      "outcome": "FrdGrp1",
+      "treatment_var": "tminus3 tminus2 tminus1 tplus1 tplus2 tplus3 tplus3after",
+      "treatment_definition": "event-time dummies around city-level foreign bank entry",
+      "unit_var": "stkcd",
+      "time_var": "year",
+      "fe": "i.nindcd1 + i.year + i.region",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "nindcd1",
+      "sample_condition": "year 2000-2010 (line 229); 2002-2006 (line 233)",
+      "static_or_event": "event_study",
+      "data_file": "Pseudo Data (SYNTHETIC)",
+      "reported_location": "Table 6; Figure 2",
+      "notes": ""
+    }
+  ],
+  "ineligible_specs": [
+    {
+      "location": "Tables 3-5",
+      "reason": "probit margins and subsample probits with controls"
+    }
+  ],
+  "data_access": "synthetic",
+  "data_files_present": true,
+  "data_files": [
+    "Pseudo Data for MS Submission_7_5_2024.dta (SYNTHETIC; README: 'synthetic data to demonstrate the structure of the codes')"
+  ],
+  "software": "stata",
+  "software_detail": "Stata 18/MP (probit, xi, suest, margins, esttab)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible (probit, controls, no firm FE); data synthetic.",
+  "screener_notes": "Screened from package only (no article text). All estimation commands in the do-file are probit (grep of reg/xtreg/reghdfe/probit/logit returned only probit calls)."
+}

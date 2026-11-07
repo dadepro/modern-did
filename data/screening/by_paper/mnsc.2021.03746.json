@@ -1,0 +1,66 @@
+{
+ "doi": "10.1287/mnsc.2021.03746",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "Stepping Sideways to Step up: Lateral Mobility and Career Advancement Inside Organizations",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Matched-sample employee-level DiD around lateral moves at employee-specific years, but no reported column meets the rules: every TWFE column includes time-varying controls (firm tenure, outside experience), post x baseline job-entry-mode interactions, a 'post' main effect that also switches on for matched controls, match-group rather than individual FE, and inverse-frequency pweights; column 1 of Tables 2-3 has no fixed effects. The Callaway-Sant'Anna run (csdid) includes covariates. Confidential personnel data are not in the package.",
+ "design_notes": "From 'Main analysis do file - REDACTED.do'. Data: 8 years (2009-2016) of personnel records from a U.S. healthcare company; lateral movers matched to non-movers (Match_subfunc_or_bu_laterals.txt, Python) into match groups (matchgroupnum = comptransdate x comptransid). treatment = 1 for the lateral mover; post = 1 if year > comptransdate (year of the move) for both mover and matched controls; outcomes consistentpaygrade (promotion), logtotcomp, rating_z. Tables 2-3: reghdfe y i.post##i.treatment i.post##baseprom i.post##baselat i.post##baseacq i.post##basedem i.year py_firmtenure outsideworkexperience [pweight=obswgt], absorb(matchgroupnum) vce(cluster uniqueid matchgroupnum), sample drops controls promoted/demoted in the move year and groups with maxyearsposttransfer<=0; variants with posypt (years-post) x treatment, and buexit/sfexit treatment subtypes. Appendix: csdid dlogtotcomp dpy_firmtenure doutsideworkexperience, time(year) gvar(treatyear) with mean-deviated outcome/covariates; csdid consistentpaygrade ..., reg. Appendix 2: year-by-year cross-sectional areg.",
+ "estimators_reported": [
+  "TWFE-type matched DiD with match-group FE, year FE, controls and pweights (reghdfe)",
+  "event-time (years-post x treatment) interactions",
+  "Callaway-Sant'Anna (csdid) with covariates",
+  "cross-sectional areg by event year"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid)"
+ ],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 col 1, Table 3 col 1 [do lines 282, 295]",
+   "reason": "no unit or time fixed effects (post##treatment only, pweights)"
+  },
+  {
+   "location": "Tables 2-4 remaining columns [lines 285-336]",
+   "reason": "time-varying controls (py_firmtenure, outsideworkexperience); post x entry-mode interactions; post main effect switches on for matched controls; match-group FE; pweights"
+  },
+  {
+   "location": "Appendix csdid [lines 375-377]",
+   "reason": "CSA with time-varying covariates; outcome mean-deviated by match group"
+  },
+  {
+   "location": "Appendix 2 [lines 342-355]",
+   "reason": "cross-sectional regressions by event year, no time FE"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "package_files": {
+  "present": [
+   "Main analysis do file - REDACTED.do",
+   "Main analysis log REDACTED.smcl.txt",
+   "Predicting moves - REDACTED.do",
+   "Predicting moves log REDACTED.smcl.txt",
+   "datacalculationsclean.py",
+   "Match_subfunc_or_bu_laterals.txt",
+   "readme.docx"
+  ],
+  "missing": [
+   "all data (matchedlateralsfbusep20.csv and merged files; confidential company records)"
+  ]
+ },
+ "software": "stata; python",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Move years 2009-2016 imply up to 7 adoption cohorts but the exact count is not recoverable without data. The log files contain the published regression output, but no specification is eligible as reported."
+}

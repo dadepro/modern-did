@@ -1,0 +1,39 @@
+{
+  "suffix": "0022243720971579",
+  "doi": "10.1177/0022243720971579",
+  "journal": "jmr",
+  "title": "Product Quality and Performance in the Internet Age: Evidence from Creationist-Friendly Curriculum",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Single policy date (2008 Louisiana Science Education Act), Louisiana schools vs Texas schools. Two-group, pre/post design with one adoption cohort. Main columns also include district-level socioeconomic controls and controls x After.",
+  "design_notes": "JMR 59(1), 2022. Table 2 (baseline): treatment = Louisiana_i x After_t (After = year >= 2008), unit = school, year FE and school FE, SEs clustered by school district. Columns 1-3 lack school FE; Columns 4-7 have school and year FE but also controls (X_dt district socioeconomic, Z_d x After_t). Column 4: coef .162 (SE .0616), N=12,077; Column 5: .171 (.075), N=10,124 (needs internet data); Column 6 (levels): .152 (.043), N=11,338; Column 7 (science total): .0017 (.0004). Figure 2 is a Louisiana-vs-Texas event study around the one date. Tables 7-8 use Google Trends keyword-by-state(-or-city)-by-year panels with the same Louisiana x After design, and Table 9 is a respondent-level linear probability model. Tables 10-11 are robustness variants.",
+  "estimators_reported": [
+    "TWFE DiD (single treated state)",
+    "event study around one date"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. Single adoption date; no staggered cohorts. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only.",
+  "ineligible_specs": [
+    {
+      "location": "Table 2, Columns 4-7",
+      "reason": "single adoption date (2008); also include district-level time-varying controls; no no-controls TWFE column (Column 2 has year FE only)"
+    },
+    {
+      "location": "Figure 2",
+      "reason": "event study around the single 2008 date"
+    }
+  ]
+}

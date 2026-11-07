@@ -1,0 +1,77 @@
+{
+ "suffix": "mksc.2015.0970",
+ "doi": "10.1287/mksc.2015.0970",
+ "journal": "mksc",
+ "title": "Organizational Debut on the Public Stage: Marketing Myopia and Initial Public Offerings",
+ "authors": "Alok R. Saboo; Anindita Chakravarty; Rajdeep Grewal",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0970",
+ "regressions_path": "./data/packages/mksc.2015.0970_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (myopic marketing at IPO and long-term IPO outcomes; cross-firm regressions with Heckman correction)",
+ "ineligible_specs": [
+  {
+   "spec_id": "first_stage_xtabond",
+   "reported_location": "earnings/marketing surprise models",
+   "exclusion_reason": "Arellano-Bover xtabond2 with lagged outcome to build surprises"
+  },
+  {
+   "spec_id": "ream_probit",
+   "reported_location": "Table 7",
+   "exclusion_reason": "probit selection model"
+  },
+  {
+   "spec_id": "bhar_by_group",
+   "reported_location": "Table 9 (code label)",
+   "exclusion_reason": "means of post-IPO BHAR by year within REAM group; no control group over time"
+  },
+  {
+   "spec_id": "short_term_ols",
+   "reported_location": "Table 8",
+   "exclusion_reason": "cross-sectional OLS of initial returns / book value on REAM with IMR and controls"
+  },
+  {
+   "spec_id": "long_term_wls",
+   "reported_location": "Table 9",
+   "exclusion_reason": "cross-sectional WLS (wls0) of 3/5/7-year BHAR on REAM, REAM x moderators, IMR, controls, group and IPO-year dummies"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Cross-sectional Heckman-corrected regressions of IPO outcomes on myopic marketing group.",
+ "design_notes": "REAM2.do: xtabond2 surprise models, probit for REAM, regress (Table 8) and wls0 (Table 9) of post-IPO outcomes on REAM, moderators, IMR6 and controls.",
+ "estimators_reported": [
+  "dynamic panel GMM (first stage)",
+  "probit",
+  "OLS with Heckman IMR"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Financial_1.xlsx (51 rows, 4 firms)",
+  "SecondStage2.dta (50 firms)"
+ ],
+ "data_files_note": "README: 'sample data file'; identifiers dropped; paper sample is 1,095 IPOs.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Small extract (50 of 1,095 IPOs) with no stated random sampling rule.",
+ "software": "stata",
+ "software_notes": "Stata",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

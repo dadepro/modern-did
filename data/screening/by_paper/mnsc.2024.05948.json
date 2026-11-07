@@ -1,0 +1,50 @@
+{
+  "suffix": "mnsc.2024.05948",
+  "doi": "10.1287/mnsc.2024.05948",
+  "journal": "mnsc",
+  "title": "Takeover Threats and Mandatory Disclosure Avoidance: Evidence from Contract Redactions",
+  "year": 2025,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "eligible_reason": "Every regression includes eleven time-varying firm controls (lnsize mtb lev roa return_ann retvol prodmktfluid rd rd_missing lnanalyst instown_perc) and the treat and post main effects as separate regressors next to treat_post, which the protocol excludes. The sample is a stacked firm x hostile-takeover-deal panel (29 deals, fiscal years 2008-2018; the same firm-year appears up to four times across deals and treated status is deal-specific, sig_evertreat), estimated with firm and year FE in the main columns and firm x deal / year x deal FE in the explicitly stacked columns. Not an unstacked staggered TWFE with a binary absorbing treatment.",
+  "design_notes": "sample_main.dta: 6,022 firm-deal-year rows, 1,447 permnos, 29 SDC hostile-takeover deals (master_deal_no), fyear 2008-2018; treat = peer firm of the target; post = years y+1, y+2 after the announcement (pre2, post1, post2 dummies for Table 4 dynamics). Table 3: reghdfe redact_file_rate / redact_ex_rate treat post treat_post controls, absorb(permno fyear) vce(cluster permno). Table 4: treat x pre2/post1/post2. Table 5A: never-treated controls (sig_evertreat != 1), stacked DiD (firm_deal, fyear_deal FE), entropy balancing [pweight=_webal]. Table 5B: alternative control group. Table 6C/7: contract-type outcomes and splits by trade secrecy / CEO excess pay. Table 8: international M&A-law DiD (ma_law_post, industry + year + country FE, no firm FE). Table 9: industry-level real effects.",
+  "estimators_reported": [
+    "twfe_static_with_controls_and_main_effects (reghdfe, firm + year FE)",
+    "dynamic_did_pre2_post1_post2_with_controls",
+    "stacked_did (firm x deal, year x deal FE)",
+    "entropy_balanced_twfe",
+    "cross_country_law_did_with_controls (Table 8)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 29,
+  "n_adoption_cohorts_note": "29 hostile-takeover deals announced 2009-2016 (deal-specific post windows); design is stacked by deal, not a unit-level absorbing adoption.",
+  "never_treated_present": true,
+  "never_treated_note": "Control peers; Table 5A restricts to firms never treated in any deal (sig_evertreat != 1).",
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [
+    "stacked_did (Table 5A cols 3-4; cites Baker-Larcker-Wang 2022)"
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_access_note": "Final analysis datasets shipped (Compustat/CRSP/SDC/EDGAR-derived).",
+  "data_files_present": true,
+  "data_files": [
+    "sample_main.dta (6,022 rows x 35 vars)",
+    "sample_alt_control.dta",
+    "sample_sync.dta",
+    "sample_coe.dta",
+    "sample_intl.dta",
+    "sample_industry.dta",
+    "sample_download.dta",
+    "sample_redacted_contract.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Time-varying controls and treat/post main effects in every column; stacked firm-deal structure. Not eligible as reported."
+}

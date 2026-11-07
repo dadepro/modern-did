@@ -1,0 +1,41 @@
+{
+  "suffix": "mnsc.2023.4698",
+  "doi": "10.1287/mnsc.2023.4698",
+  "journal": "mnsc",
+  "title": "Social Reference Points and Risk Taking",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Laboratory experiment with six between-subjects treatments (HI/LO social reference point x main/peer-lottery/nonsocial). analysis.do runs cross-sectional OLS of risk taking on treatment indicators and treatment-by-treatment interactions (reg upside hi i.hi##i.non i.hi##i.peerlottery riskattitude_std i.wave, r); the 'difference-in-differences' is a contrast across treatment arms, not a panel with staggered adoption.",
+  "design_notes": "analysis.do (Stata reg, robust SEs) on all.dta; zTree code in all_ztts.7z; instructions and screenshots PDFs.",
+  "estimators_reported": [
+    "ols_between_subject_treatment_contrasts"
+  ],
+  "main_or_robustness": "n/a (lab experiment)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "n_adoption_cohorts_note": "No time dimension; between-subjects design.",
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "all.dta"
+  ],
+  "data_files_note": "Experimental data shipped.",
+  "data_provenance": "original",
+  "software": "stata",
+  "software_notes": "Stata reg.",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not a DiD panel.",
+  "screener_notes": "Screened from package only."
+}

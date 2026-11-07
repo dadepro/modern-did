@@ -1,0 +1,28 @@
+{
+ "suffix": "0022243719853221",
+ "doi": "10.1177/0022243719853221",
+ "journal": "jmr",
+ "title": "Mindful Matching: Ordinal Versus Nominal Attributes",
+ "year": "2019",
+ "eligible_design": false,
+ "eligible_reason": "Consumer-behavior paper with lab and online experiments and a manager survey. The text file is the Web Appendix only and contains no difference-in-differences or panel design.",
+ "design_notes": "Extracted text is the Web Appendix (Study S1 manager survey, tables of literature, pre-tests, stimuli, analysis details for Studies 2a-8, Study S2). Between-subjects randomized experiments. The 'staggered' full-text flag does not correspond to any staggered-adoption design.",
+ "estimators_reported": [
+  "randomized experiments (ANOVA/regression)"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: experimental paper, no DiD. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

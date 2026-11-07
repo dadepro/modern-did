@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2016.1001",
+ "doi": "10.1287/mksc.2016.1001",
+ "journal": "mksc",
+ "title": "Spillover Effects in Seeded Word-of-Mouth Marketing Campaigns",
+ "authors": "Inyoung Chae; Andrew T. Stephen; Yakov Bart; Dai Yao",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2016.1001",
+ "regressions_path": "./data/packages/mksc.2016.1001_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (dynamic panel model of non-seeded WOM on seeded WOM volumes for focal product, brand and category)",
+ "ineligible_specs": [
+  {
+   "spec_id": "nonseed_wom_panel",
+   "reported_location": "main estimation tables",
+   "exclusion_reason": "continuous seeded-post volume regressors (FocalSeedSpec etc., never zero), lagged outcomes, time-varying ad spend and search-trend controls; not a binary staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Continuous seeded-WOM regressors with lagged outcomes; synthetic data only.",
+ "design_notes": "Package ships only syntheticdatafile.csv (156 campaigns j, periods t 1-154, outcome FocalNonseedSpec, seed volumes and lags, ad spend, SearchTrend); no code.",
+ "estimators_reported": [
+  "panel regression with lagged dependent variables (inferred from data structure)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "syntheticdatafile.csv"
+ ],
+ "data_files_note": "Only a synthetic data file; no code or README.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "File named syntheticdatafile.csv; values are continuous noise including negative counts.",
+ "software": "other",
+ "software_notes": "No code shipped",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract missing in data/frame; design judged from package code/data."
+}

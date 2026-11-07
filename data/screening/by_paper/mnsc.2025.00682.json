@@ -1,0 +1,61 @@
+{
+ "suffix": "mnsc.2025.00682",
+ "doi": "10.1287/mnsc.2025.00682",
+ "journal": "mnsc",
+ "title": "Health Shocks and Annuity Choices",
+ "authors": "Johannes Hagen; Michal Hodor; Abigail Hurwitz",
+ "year": 2026,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2025.00682",
+ "regressions_path": "./data/packages/mnsc.2025.00682_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "main_or_robustness": "main (cross-sectional logit of annuitization on pre-retirement cancer diagnosis) plus lab experiment",
+ "ineligible_specs": [
+  {
+   "spec_id": "logit_annuitize_cancer",
+   "reported_location": "Tables 2-4 (marginal effects from logit, Eq. 2)",
+   "exclusion_reason": "cross-sectional logit of the annuity choice at retirement on a pre-retirement cancer diagnosis indicator (i.pre) with controls and year FE; nonlinear, no unit FE, no panel"
+  },
+  {
+   "spec_id": "lab_experiment",
+   "reported_location": "laboratory experiment section",
+   "exclusion_reason": "randomized lab experiment on default effects; not DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD design. Each retiree makes one annuity choice; the paper compares choices of individuals diagnosed with cancer shortly before retirement with others, using logit marginal effects with controls and year FE. A lab experiment complements the register analysis.",
+ "design_notes": "Swedish register + Alecta pension data; 2a_do_analysis.do and 2b_do_analysis_add.do run logit depvar i.pre $controls. Money's worth ratio computations in 3a/3b.",
+ "estimators_reported": [
+  "logit (marginal effects)",
+  "lab experiment treatment comparisons"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "Lab experiment/LabExp.dta",
+  "Register data/data/LifeTable_Sweden_Age65.xlsx"
+ ],
+ "data_files_note": "Register and Alecta data are confidential (IFAU application required); only the lab experiment data and a public life table are shipped.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Main register data not shipped; lab experiment data are original.",
+ "software": "stata",
+ "software_notes": "Stata 18",
+ "screener_notes": "Published text confirms cross-sectional logit design. Not a near miss."
+}

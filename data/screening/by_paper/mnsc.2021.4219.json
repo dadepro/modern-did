@@ -1,0 +1,29 @@
+{
+  "suffix": "mnsc.2021.4219",
+  "doi": "10.1287/mnsc.2021.4219",
+  "journal": "mnsc",
+  "title": "“Just Words? Just Speeches?” On the Economic Value of Charismatic Leadership",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "Randomized field and laboratory experiments with cross-sectional treatment comparisons (charismatic vs standard speech, piece rate). The only 'diff-in-diff' is an interaction of the charisma dummy with experiment dummies in pooled lab regressions (Table 5), not a panel adoption design.",
+  "design_notes": "Field experiment: 106 temporary workers in 15 randomly treated sessions (baseline, piece rate, charisma); outcome is envelopes completed. Lab experiments 1-3: speeches then repeated public goods game. Table 5 pooled OLS/Tobit with Charisma x Experiment interactions and session-clustered SEs. No staggered adoption, no unit and calendar-time FE structure.",
+  "estimators_reported": [
+    "OLS/Tobit treatment comparisons (Table 5)",
+    "Fisher exact and other non-parametric tests"
+  ],
+  "main_or_robustness": "robustness (not a DiD paper)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: randomized experiments. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

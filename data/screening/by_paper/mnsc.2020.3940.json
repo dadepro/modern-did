@@ -1,0 +1,60 @@
+{
+ "suffix": "mnsc.2020.3940",
+ "doi": "10.1287/mnsc.2020.3940",
+ "journal": "mnsc",
+ "title": "Regulating Conflicts of Interest in Medicine Through Public Disclosure: Evidence from a Physician Payments Sunshine Law",
+ "authors": "Matthew Chao; Ian Larkin",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mnsc/mnsc.2020.3940",
+ "regressions_path": "./data/packages/mnsc.2020.3940_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Single-policy DiD/DDD, not staggered adoption. Treatment sunshine_law = 1 for Massachusetts physicians from July 2009 (tm > 593), a single common date; control physicians are in four other states (NY, PA, IL, CA) and never treated. Main specifications (Tables 4-8, ChaoLarkin_Stata_Commands.do) are triple differences areg Rx1 sunshine_law##branded_no_generic i.tm, absorb(doc_drug) (and variants with Prescriber_ID FE, drug x month FE, product FE, and splits by prescriber volume, sales force, drug class); Table 5 uses the August 2008 signing date (again common); Figure 1 is an event study massdoc##branded##months_until_treatment. All treated units share one adoption date, so there is a single adoption cohort.",
+ "design_notes": "Stata areg/reghdfe, physician x drug x month panel (Jul 2007-Jun 2011, 262 drugs, 5,730 physicians, five states), cluster university1 (AMC affiliation). Appendix Table A16 adds a staggered AMC-level own marketing policy (AMC_policy = 1 if AMC_Policy_tm <= tm) alongside sunshine_law, i.e., an extra treatment regressor in an appendix-only column.",
+ "estimators_reported": [
+  "twfe_ddd_single_date",
+  "event_study_single_date",
+  "poisson_fe"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 4-8, Figure 1",
+   "reason": "single common adoption date (Massachusetts, July 2009 / Aug 2008 signing); DDD with branded-drug interaction"
+  },
+  {
+   "location": "Appendix Table A16",
+   "reason": "staggered AMC_policy entered alongside sunshine_law (extra treatment regressor), branded interactions; appendix only"
+  },
+  {
+   "location": "Appendix Poisson table",
+   "reason": "xtpoisson (nonlinear)"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme.txt: prescriptions and affiliations from IMS Health (purchased), sales force data from SDI Health; only the Massachusetts disclosure data are public (archived web link). Package ships do-file, Stata output (docx) and a data dictionary; no data.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "IMS Health proprietary data, contact given in README.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). Abstract confirms a 2009 Massachusetts quasi-experiment with control physicians in other states. Not a near-miss: one adoption cohort."
+}

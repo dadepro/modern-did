@@ -1,0 +1,130 @@
+{
+ "suffix": "mnsc.2020.01838",
+ "spec_id": "F7a_from_competitors_eventstudy",
+ "journal": "mnsc",
+ "data_path": "~/did_packages/_work/mnsc.2020.01838/patent_from_competitors_prepared.rds",
+ "id_var": "uid",
+ "time_var": "year",
+ "y_var": "ihs_patent_utility",
+ "treat_var": "",
+ "gvar": "gN",
+ "weight_var": "",
+ "cluster_var": "cl",
+ "xt_vars": [
+  "naics4"
+ ],
+ "sample_filter": "",
+ "log_y": "",
+ "data_provenance": "real",
+ "published_coef": null,
+ "published_se": null,
+ "table": "Figure 7, Panel (a)",
+ "column": "competitors not in collusion",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "reverse_event": false,
+ "treatment_label": "",
+ "event_pre_min": -4,
+ "event_post_max": 4,
+ "authors_code_event_coefs": {
+  "TreatN:TimeFromNN-4": -0.102150168788379,
+  "TreatN:TimeFromNN-3": -0.0545024578282085,
+  "TreatN:TimeFromNN-2": -0.00804399430181463,
+  "TreatN:TimeFromNN1": 0.0482261060650516,
+  "TreatN:TimeFromNN2": 0.019136490577125,
+  "TreatN:TimeFromNN3": 0.00234131086140463,
+  "TreatN:TimeFromNN4": 0.0331485302644498
+ },
+ "authors_code_event_se": {
+  "TreatN:TimeFromNN-4": 0.0536210339227789,
+  "TreatN:TimeFromNN-3": 0.0424589680890076,
+  "TreatN:TimeFromNN-2": 0.045309434512169,
+  "TreatN:TimeFromNN1": 0.0386764901082753,
+  "TreatN:TimeFromNN2": 0.0373537791662962,
+  "TreatN:TimeFromNN3": 0.0415446117936383,
+  "TreatN:TimeFromNN4": 0.050277988331628
+ },
+ "authors_code_n": 438797,
+ "published_source": "Figure 7, panel (a) of the published article (Management Science 71(11), 2025, pp. 9628-9649; papers/mnsc/mnsc.2020.01838.pdf): point estimates are plotted, not printed. authors_code_* = output of Replicate.R line 408 on the shipped data, which the figure plots. Panel labels checked against the article (Nov 2).",
+ "pipeline_sample_twfe_post_avg_raw": 0.0257131094343532,
+ "pipeline_sample_twfe_pre_avg_raw": -0.0548988736439421,
+ "pipeline_sample_twfe_post_avg_std_expected": 0.0327720998790743,
+ "y_sd_regsample_expected": 0.784603657660997,
+ "replication_status": "exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)",
+ "notes": "Kang (2025), 'Price-Fixing Cartels and Firm Innovation', Management Science 71(11). Package: Replicate.R + final cleaned/merged .rds files (real processed data; raw DOJ/VitalLaw, PatentsView and licensed Compustat not shipped). FE: unit + 4-digit-NAICS (patents) or Compustat industry group (R&D) x year (authors: felm(... | assignee_id + paste0(cl, year) | 0 | cl)); here xt_vars = naics4 (= cl) so the time FE is year + year x cl; SE clustered by cl. No controls, no weights. Outcomes are IHS-transformed counts/amounts, precomputed as ihs_* (log(x + sqrt(x^2 + 1)), as in Replicate.R). Competitor exposure (umbrella effect), eligible under ruling 5b(c): TreatN is a binary, time-invariant flag for non-colluding competitors of a forming cartel and the regressor TreatN x 1[TimeFromNN >= 1] is a binary absorbing indicator (no counts/shares). data_reg_patent_from_competitors.rds: 1,448 exposed assignees (no colluders; TreatY = 0 everywhere), formation-relative years -4..-1, +1..+4 (formation year absent; year - TimeFromNN constant within firm, verified), post rows all pre-breakup; 18 formation years; controls as in the cartelist file. gvar gN = year - TimeFromNN. No duplicated assignee-years. Event window as F4a (pre summary rel -4..-2, post summary rel +1..+4; reference -1). Nov 2 audit: event_structure records the authors' bins and reference; sample_filter 'pre_sample_adopter == FALSE' removed, pre-sample adopters kept at their true dates (gvar already holds the calendar year; no adoption_var needed). See the log's Nov 2 section.",
+ "event_structure": {
+  "bins": [
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "drop",
+  "post_summary": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ]
+  ],
+  "pre_summary": [
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "Replicate.R line 408: felm(depvar ~ TreatN + TreatN:TimeFromNN | assignee_id + paste0(cl, year) | 0 | cl) on data_reg_patent_from_competitors.rds; TimeFromNN is a factor whose first level is -1, so felm drops TreatN:TimeFromNN-1 (collinear with the unit FE): reference -1 (article, Figure 7 notes: 'Year -1 is used as the baseline'; year 0 omitted). Treated rows exist only at TimeFromNN -4..-1, +1..+4 (window trimmed in the shipped file). gvar gN = year - TimeFromNN (formation year, constant within firm), so rel = t - g = TimeFromNN in the annual period index (years 1976-2020 consecutive). 'drop': the shipped file contains treated rows only inside the authors' coded window (the event year itself is omitted), so no ever-treated row falls outside bins and ref (0 rows, checked Nov 2); 'drop' and 'ref' are equivalent here. Pre-sample adopters (10 units with event year before 1976) are kept at their true date (gvar holds the calendar year; PROTOCOL Nov 2 ruling (b)); all their in-sample rows are post rows inside the window.",
+  "verified": "fixest (es_assign bins; FE assignee_id + cl^year; cluster cl) on the authors' sample (all 438,797 rows of data_reg_patent_from_competitors.rds, incl. the 10 pre-sample units at their true dates) reproduces the 7 coefficients of Replicate.R: max abs diff 8.0e-12 (SE max diff 1.1e-05, felm vs fixest small-sample factor). Pipeline sample equals the authors' (no multi-episode units in this file). No numbers are printed in the article; the figure plots the code output on the shipped data."
+ },
+ "pipeline_sample_twfe_source": "Nov 2: fixest on the pipeline sample (pre-sample adopters kept at true dates, uid FE + cl^year) with event_structure; post (pre) = equal-weight mean of the post_summary (pre_summary) bins, std = post / population SD of y over all estimation rows."
+}

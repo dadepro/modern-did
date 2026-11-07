@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2014.0878",
+ "doi": "10.1287/mksc.2014.0878",
+ "journal": "mksc",
+ "title": "Effect of Customer-Centric Structure on Long-Term Financial Performance",
+ "authors": "Ju-Yeon Lee; Shrihari Sridhar; Conor M. Henderson; Robert W. Palmatier",
+ "year": 2014,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2014.0878",
+ "regressions_path": "./data/packages/mksc.2014.0878_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian dueling-mediator model with latent instrumental variables for the endogenous customer-centric structure choice, Fortune 500 firms 1998-2010)",
+ "ineligible_specs": [
+  {
+   "spec_id": "dueling_mediator_liv",
+   "reported_location": "main estimation (WinBUGS pseudo-code)",
+   "exclusion_reason": "Bayesian mediation model (performance on satisfaction and coordinating-cost mediators and on customer_centric_structure) with latent instrumental variables for structure, time-varying firm controls (competitor_structure, competitive_intensity, industry_profitability, firm_scope, firm_size, service ratio, restructuring_charges, industry_growth); no firm or year fixed effects; structure switches on and off within firm; not a DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian mediation with latent instruments; no unit/time FE; structure toggles.",
+ "design_notes": "MKSC.2014.0878Code.txt is WinBUGS pseudo-code (one mediator shown, '...' for controls). customer_centric_structure is a binary firm-year indicator that can switch off and on (firm 1: 1 in years 1-4, 0 in 5-10, 1 in 11-13), so even the underlying variation is not a clean staggered adoption; the estimator is not a DiD, so near_miss is false.",
+ "estimators_reported": [
+  "Bayesian mediation model with latent instrumental variables (WinBUGS)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "MKSC.2014.0878Data.txt (3 firms, 29 firm-years)"
+ ],
+ "data_files_note": "Data file is a 29-row illustrative extract for 3 firms (anonymous firm and year indices) of a Fortune 500 panel; no stated sampling rule. Underlying sources (Compustat, ACSI, hand-coded structure) are licensed.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Small extract with no stated random sampling rule counts as not_shipped (Nov 1 rule).",
+ "software": "other",
+ "software_notes": "WinBUGS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

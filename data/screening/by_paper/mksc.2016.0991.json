@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2016.0991",
+ "doi": "10.1287/mksc.2016.0991",
+ "journal": "mksc",
+ "title": "When Random Assignment Is Not Enough: Accounting for Item Selectivity in Experimental Research",
+ "authors": "Fred M. Feinberg; Linda Court Salisbury; Yuanping Ying",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0991",
+ "regressions_path": "./data/packages/mksc.2016.0991_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian selection model for item selectivity in lab experiments)",
+ "ineligible_specs": [
+  {
+   "spec_id": "item_selectivity_bugs",
+   "reported_location": "study tables",
+   "exclusion_reason": "WinBUGS polytomous selection model on randomized experiments; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian item-selectivity correction for randomized lab experiments.",
+ "design_notes": "WinBUGS .odc code for Studies 2 and 3 with experiment data text files.",
+ "estimators_reported": [
+  "Bayesian selection model (WinBUGS)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Study2/*.txt",
+  "Study3/*.txt"
+ ],
+ "data_files_note": "readme lists WinBUGS data files per study.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data shipped.",
+ "software": "other",
+ "software_notes": "WinBUGS 1.4.3",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2019.1153",
+ "doi": "10.1287/mksc.2019.1153",
+ "journal": "mksc",
+ "title": "The Impact of Hospital Advertising on Patient Demand and Health Outcomes",
+ "authors": "TI Tongil Kim; Diwas Singh KC",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1153",
+ "regressions_path": "./data/packages/mksc.2019.1153_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (structural hospital choice model with advertising; MPEC; ban counterfactuals)",
+ "ineligible_specs": [
+  {
+   "spec_id": "hospital_demand_mpec",
+   "reported_location": "estimation tables",
+   "exclusion_reason": "structural discrete-choice demand (MPEC) with second-stage regression of mean utilities on ad stock; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural patient hospital-choice model estimated by MPEC.",
+ "design_notes": "MATLAB HospAdsMain.m and HospAdsCF.m.",
+ "estimators_reported": [
+  "structural discrete choice (MPEC)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Data_simulated.mat"
+ ],
+ "data_files_note": "readme: NDA; simulated patient data drawn from marginals.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated per readme.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

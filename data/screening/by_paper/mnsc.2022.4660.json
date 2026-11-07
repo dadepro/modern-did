@@ -1,0 +1,128 @@
+{
+ "suffix": "mnsc.2022.4660",
+ "doi": "10.1287/mnsc.2022.4660",
+ "journal": "mnsc",
+ "year": 2023,
+ "department": "Accounting",
+ "title": "RegTech Adoption and the Cost of Capital",
+ "authors": "Sandy Lai; Chen Lin; Xiaorong Ma",
+ "screened_from": "package_only",
+ "eligible": true,
+ "eligible_design": true,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Staggered mandatory EDGAR phase-in (1993-1996) is a binary absorbing firm-level treatment with 15 first-treatment quarters and a large never-treated-within-window group. Table 2 column 1 regresses the implied cost of capital on treat with firm and quarter FE and no controls, clustered by firm (static TWFE). Table 11 reports a Callaway-Sant'Anna csdid estimate (dripw, not-yet-treated controls, simple aggregation) without controls. All other columns add industry-specific linear trends, time-varying controls, pweights, or use the propensity-score-matched sample in which firms appear under multiple edgardate cohorts (stacked) with treatpost.",
+ "design_notes": "Firm-quarter panel 1992Q2-1997Q2 (qofd 129-149), 3,882 firms, anonymized gvkey_num. treat switches on at the firm's EDGAR phase-in quarter (single switch). icc_full2.dta: 2,030 never treated in window, 74 always treated, 1,778 switchers; cohorts by first treated quarter: 135 (270), 136 (569), 137 (93), 138 (49), 139 (256), 140 (233), 141 (79), 142 (124), 143 (63), 144 (51), 145 (34), 146 (7), 147 (5), 148 (9), 149 (10). PSM sample (icc_psm_final.dta, Tables 3-10): 2,107 firms, 8 edgardate cohorts, firms appear under up to 5 cohorts (stacked by cohort), regressors treatpost + treat, FE gvkey_num edgardate qofd, industry trends i.indid#c.qofd and controls. Cengiztest2.dta: stacked (Cengiz et al.) robustness with controls. Callawaytest2.dta: csdid with gvar (7 cohorts, 1,763 never treated, qofd 129-142).",
+ "estimators_reported": [
+  "TWFE static with firm and quarter FE (Table 2 col 1)",
+  "TWFE with industry linear trends and controls (Table 2 cols 2-6, pweight col 6)",
+  "PSM-matched stacked DiD (treatpost) with cohort FE, industry trends and controls (Tables 3-10)",
+  "stacked Cengiz et al. regression (Table 11 Panel B)",
+  "Callaway-Sant'Anna csdid dripw, not-yet-treated, simple aggregation (Table 11; with and without controls)",
+  "falsification outcomes (psm_fals.dta, Table 11)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 2,
+ "n_adoption_cohorts": 15,
+ "n_adoption_cohorts_note": "15 first-treated quarters in icc_full2.dta (Table 2); 7 cohorts in the csdid file Callawaytest2.dta.",
+ "never_treated_present": true,
+ "always_treated_present": true,
+ "always_treated_note": "74 firms have treat = 1 in every observed quarter in icc_full2.dta.",
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (Stata csdid, method dripw, notyet, agg simple)",
+  "stacked DiD (Cengiz et al. 2019)"
+ ],
+ "modern_estimator_location": "analyses.do lines 414-431 (Table 11 Panel B)",
+ "preferred_spec_ids": [
+  "mnsc.2022.4660_T2_c1_icc_twfe"
+ ],
+ "published_estimates": [],
+ "specs": [
+  {
+   "spec_id": "mnsc.2022.4660_T2_c1_icc_twfe",
+   "code_file": "replication_package_MS-ACC-20-02849/analyses.do",
+   "code_line": "14 (data line 7; absvar line 9)",
+   "outcome": "icc",
+   "outcome_label": "Implied cost of equity capital (average of GLS, CT, Easton, OJ models), percent",
+   "treatment_var": "treat (0/1): = 1 from the quarter in which the firm becomes a mandatory EDGAR electronic filer (phase-in group), 0 before; absorbing (each firm switches at most once in icc_full2)",
+   "treatment_definition": "binary staggered EDGAR phase-in indicator; first-treated quarters span qofd 135-149 (1993Q4-1997Q2, 15 cohorts); 2,030 firms untreated throughout the 1992Q2-1997Q2 window, 74 always treated, 1,778 switchers",
+   "unit_var": "gvkey_num (anonymized firm id)",
+   "time_var": "qofd (quarter, 129-149 = 1992Q2-1997Q2)",
+   "fe": "gvkey_num + qofd (firm and quarter FE)",
+   "controls": "none",
+   "weights": "none (weight variable exists; used only in column 6)",
+   "cluster": "gvkey_num",
+   "sample_condition": "full sample icc_full2.dta (40,016 firm-quarters, 3,882 firms)",
+   "static_or_event": "static",
+   "reported_location": "Table 2, column 1",
+   "data_file": "replication_package_MS-ACC-20-02849/icc_full2.dta",
+   "data_provenance": "real (anonymized firm ids)",
+   "eligible": true,
+   "main_text": true,
+   "estimator_reported": "TWFE (reghdfe)",
+   "notes": "reghdfe icc treat, absorb(gvkey_num qofd) vce(cl gvkey_num). Column 2 adds industry-specific linear trends (i.indid#c.qofd), columns 3-6 add controls (logat bm lev loglret stddevret fdiff), alternative ICC measures and pweights: excluded."
+  },
+  {
+   "spec_id": "mnsc.2022.4660_T11_csdid_icc_nocontrols",
+   "code_file": "replication_package_MS-ACC-20-02849/analyses.do",
+   "code_line": "430 (data line 425)",
+   "outcome": "icc",
+   "outcome_label": "Implied cost of equity capital",
+   "treatment_var": "gvar: first EDGAR-treatment quarter by firm (values 134, 135, 138, 139, 141, 142, 143; 0 = never treated within 1992Q2-1995Q3 window), passed to csdid",
+   "treatment_definition": "binary staggered EDGAR adoption (same event as Table 2) coded as cohort variable for Callaway-Sant'Anna; 7 cohorts and 1,763 never-treated firms in Callawaytest2.dta",
+   "unit_var": "gvkey_num",
+   "time_var": "qofd (129-142)",
+   "fe": "Callaway-Sant'Anna group-time ATTs (doubly robust IPW, method(dripw)), not-yet-treated controls (notyet), aggregated agg(simple), wild bootstrap rseed(997)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "gvkey_num (csdid default by ivar)",
+   "sample_condition": "Callawaytest2.dta (21,152 firm-quarters, 3,708 firms)",
+   "static_or_event": "static",
+   "reported_location": "Table 11 (Panel B/robustness), Callaway-Sant'Anna column without controls (exact column not identifiable without text)",
+   "data_file": "replication_package_MS-ACC-20-02849/Callawaytest2.dta",
+   "data_provenance": "real (anonymized)",
+   "eligible": true,
+   "main_text": true,
+   "estimator_reported": "Callaway-Sant'Anna (csdid)",
+   "notes": "csdid icc, ivar(gvkey_num) time(qofd) gvar(gvar) method(dripw) wboot rseed(997) agg(simple) notyet. Line 431 repeats with controls (excluded). Note gvar coding (134-143) differs slightly from the treat timing in icc_full2 (135-149) and the window is shorter."
+  }
+ ],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 col 2 (line 16)",
+   "reason": "industry-specific linear trends i.indid#c.qofd (group-specific trend regressors)"
+  },
+  {
+   "location": "Table 2 cols 3-6 (lines 18-24)",
+   "reason": "time-varying controls, trends, alternative ICC outcomes, pweights"
+  },
+  {
+   "location": "Tables 3B, 4-10, 11 cols 1-8 (icc_psm_final, liqtest, firmrisktest2, emtest, vcapxtest, vcashtest2, iccrobust, psm_fals, psspeg2)",
+   "reason": "PSM-matched sample stacked by edgardate cohort (firms appear under several cohorts), treatpost + treat regressors, industry trends and controls"
+  },
+  {
+   "location": "Table 11 Panel B Cengiz (line 419)",
+   "reason": "stacked design with controls"
+  },
+  {
+   "location": "csdid with controls (line 431)",
+   "reason": "time-varying covariates in CSA"
+  }
+ ],
+ "data_access": "partial",
+ "data_access_detail": "Analysis .dta files shipped with anonymized firm identifiers; underlying Compustat, CRSP, IBES and Thomson data are licensed (WRDS).",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-ACC-20-02849/icc_full2.dta",
+  "replication_package_MS-ACC-20-02849/Callawaytest2.dta",
+  "replication_package_MS-ACC-20-02849/icc_psm_final.dta",
+  "replication_package_MS-ACC-20-02849/Cengiztest2.dta",
+  "+ 11 other .dta"
+ ],
+ "software": "stata",
+ "software_detail": "Stata (reghdfe, csdid, estout)",
+ "replication_feasible": "yes",
+ "priority": 1,
+ "screener_notes": "The README (ReadMe.docx) describes Table 2 as the full-sample cost-of-capital effect. Table/column labels for the csdid estimate come from the code comment 'Table 11 Panel B'; confirm against the published article. The gvar coding in Callawaytest2.dta is one quarter earlier than the treat switch in icc_full2.dta for the same firms; check before pairing TWFE and CSA estimates."
+}

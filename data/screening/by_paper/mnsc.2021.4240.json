@@ -1,0 +1,38 @@
+{
+ "doi": "10.1287/mnsc.2021.4240",
+ "journal": "mnsc",
+ "year": 2022,
+ "title": "The Social Divide of Social Distancing: Shelter-in-Place Behavior in Santiago During the Covid-19 Pandemic",
+ "eligible_design": false,
+ "eligible_reason": "Main-text staggered-lockdown specification (Table 2) interacts the lockdown treatment with socioeconomic-group shares (subgroup-by-treatment interactions) and uses a fractional-days, on-and-off treatment. Table 3 uses continuous mobility as the regressor. No qualifying main-text specification.",
+ "design_notes": "Table 2 / Eq. (3): log(Mobility_it) = delta_i + sum_s tau_ts*D_is + sum_s beta_s*D_is*LockLocal_it + u_it. Zone FE, week-by-SEG-share coefficients (week FE interacted with time-invariant SEG shares), robust SEs. LockLocal_it = fraction of days in week t that zone i is under a localized lockdown, set to 0 during the citywide lockdown (from week 20), so the treatment switches on (group 1: March 27-30, group 2: late April) and off (group 1 lifted mid-April, all set to zero after May 15). Three treatment coefficients, one per SEG (Table 2: -0.089/-0.084/-0.060 for log MobOut; -0.303/-0.112/-0.155 for log MobRisk; N=29,214). Table 3 (municipality and week FE, 411 obs) regresses log R_kt on lagged mobility (continuous) with LockLocal only as a control in cols (5)-(6). A parsimonious homogeneous-effect version of Eq. (3) is mentioned as being in Appendix F, which is not in the extracted text and is not main text.",
+ "estimators_reported": [
+  "TWFE with group-specific treatment effects and week x SEG-share effects"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 2,
+ "never_treated_present": "unclear",
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 col (1) (log MobOut) and col (2) (log MobRisk), three coefficients each",
+   "reason": "subgroup-by-treatment interactions (LockLocal x HighSEG/MedSEG/LowSEG); fractional-days treatment that switches off",
+   "note": "Appendix F homogeneous-effect version could be reconsidered only if the protocol counts appendix specs, which it does not"
+  },
+  {
+   "location": "Table 3 cols (1)-(6)",
+   "reason": "continuous mobility treatment (lagged); LockLocal used as control; outcome log growth rate; threshold sample"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "partial",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Infections, lockdown dates and census data are public (Chilean Ministry of Health and Science, 2017 Census). Mobility data come from a private mobile-phone provider and are proprietary. Text excludes the appendix and data-availability section. Flag from 'staggered' in Section 3.1 describing identification."
+}

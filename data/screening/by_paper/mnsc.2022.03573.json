@@ -1,0 +1,53 @@
+{
+  "suffix": "mnsc.2022.03573",
+  "doi": "10.1287/mnsc.2022.03573",
+  "journal": "mnsc",
+  "title": "Chasing Market Growth and Matching Performance in Two-Sided Platforms: Evidence from the Lazy-Minting Policy in an NFT Marketplace",
+  "year": 2026,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "eligible_reason": "Single adoption date: the lazy-minting policy was introduced on one platform (Rarible, treated_platform = 1) at one date, with Foundation as the control platform; treatment = treated_platform x after. The NFT-level repeated cross-section has platform FE and creation-day FE only (two groups, one switch date), and most columns add NFT-level covariates (sale_type item_type). The headline matching outcome (first_match) is estimated by conditional logit/probit. de Chaisemartin-D'Haultfoeuille (did_multiplegt_old) and drdid are run as appendix robustness, but on the same one-cohort design. Fails the at-least-two-adoption-cohorts rule.",
+  "design_notes": "replication_data.dta: 1.3M NFTs created on Rarible and Foundation, Aug 16 2021 - Feb 7 2022. Table 2: clogit first_match (group(day)) and reghdfe log_first_sale_price treatment sale_type item_type, absorb(treated_platform day) vce(cluster day), full sample and gas-minted (lazy_minted==0) subsample. Event-study version with pre_55..post_55 relative-week dummies. Creator-level creations panel (creator x date FE). Bidder-week panels (bidder + week FE). CEM-matched sample, mediation (medeff), multihomer and SuperRare robustness. Appendix: did_multiplegt_old (lines 411-426 of replication_code.do), drdid (lines 435-438), Stuart (2014) weighting.",
+  "estimators_reported": [
+    "two_group_twfe_static (reghdfe, platform + day FE)",
+    "clogit_fe / probit / logit",
+    "two_group_event_study (pre_5..post_55)",
+    "de_chaisemartin_dhaultfoeuille (did_multiplegt_old, appendix)",
+    "drdid (appendix)",
+    "cem_matched_sample",
+    "mediation_analysis"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "One treated platform (Rarible) switching at a single policy date.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": true,
+  "modern_estimators_named": [
+    "de_chaisemartin_dhaultfoeuille (did_multiplegt_old; appendix robustness, single cohort)",
+    "drdid (Sant'Anna-Zhao doubly robust; appendix)"
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_access_note": "Collected from public Rarible/Foundation APIs; all datasets shipped.",
+  "data_files_present": true,
+  "data_files": [
+    "replication_data.dta (main NFT-level)",
+    "bidder_level.dta",
+    "bidder_price.dta",
+    "buyer_creator_change.dta",
+    "secondary_resales_data.dta",
+    "within_platform_visibility.dta",
+    "opensea_views.dta",
+    "multihomer.dta",
+    "superrare_data.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Two-platform, one-date DiD. Modern-estimator usage is cosmetic (single cohort). Not eligible."
+}

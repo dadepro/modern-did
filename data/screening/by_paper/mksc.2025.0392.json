@@ -1,0 +1,49 @@
+{
+ "suffix": "mksc.2025.0392",
+ "doi": "10.1287/mksc.2025.0392",
+ "journal": "mksc",
+ "title": "Injunctive Norms Outperform Reciprocity: Tip Request Messages Can Increase Tipping Without Reducing Demand",
+ "authors": "Seung Hyun Kim; On Amir; Kenneth C. Wilbur",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mksc/mksc.2025.0392",
+ "regressions_path": "./data/packages/mksc.2025.0392_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a DiD. Two randomized field experiments on Fiverr (web and app): feols(binary_tip ~ message + `Three Defaults`) and feols(binary_tip ~ treatment) with buyer-clustered SEs, on transaction-level data by buyer type and exposure; no fixed effects or adoption timing. The package ships synthetic data.",
+ "design_notes": "R (fixest); Table2.R-Table5.R, Figure5.R, Figure6.R. Web_FE.csv and App_FE.csv. Three Defaults effect identified by comparing Control-message rows across the test and post-test periods (one common switch date).",
+ "estimators_reported": [
+  "rct_ols"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 2-5, Figures 5-6",
+   "reason": "randomized message arms; cross-sectional OLS"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Web_FE.csv",
+  "App_FE.csv"
+ ],
+ "data_files_note": "README: Fiverr NDA; buyer/seller IDs replaced and binary_tip, order_amount, tip_amount synthetically generated from models fit to the real data.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Synthetic outcome and monetary variables.",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, README and OpenAlex abstract (no article text)."
+}

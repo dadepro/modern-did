@@ -1,0 +1,52 @@
+{
+ "suffix": "mnsc.2023.03143",
+ "doi": "10.1287/mnsc.2023.03143",
+ "journal": "mnsc",
+ "title": "Carbon Emissions Trading and Environmental Protection: International Evidence",
+ "year": "2024",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Staggered country-level ETS adoption with country and year FE, but every regression (static Table 2, event-study Figures 1-2, carbon-tax Table 4) includes ten time-varying macro controls ($Control: log GDP, log population, unemployment, log revenue/expenditure/debt, log sector value added). The static specification also adds two lead dummies (ETS_Pre1, ETS_Pre2). No main-text specification without time-varying controls, so zero eligible specifications.",
+ "design_notes": "Stata (single do-file 'Bai Ru 2024.do', data MergedData.dta: 100 countries x 1982-2020, 3,900 rows). Table 2: reg LHS ETS ETS_Pre1 ETS_Pre2 $Control _I* (xi i.year i.Country_id), robust SE, sample 2000-2020; Panel A outcomes LogCO2 LogGHG LogCO2_percapita LogGHG_percapita; Panel B Electricity_Coal Electricity_OilGasCoal Electricity_Nuclear Electricity_Hydroelectric Electricity_Renewable. ETS = 1 from the ETS launch year onward (no switch-offs). In 2000-2020: 34 adopting countries in 7 cohorts (2005: 23 EU countries; 2007: Bulgaria, Romania; 2008: New Zealand, Norway, Switzerland; 2009: United States [RGGI]; 2010: Japan [Tokyo]; 2013: Canada, China, Croatia; 2015: Korea), 66 never-treated. Figures 1A/1B/2: event study with CarbonExchange_dummy_Pre10..Pre1, Pst1..Pst10 (endpoints binned), omitted period 0, same controls. Table 3: continuous LogETSCap on ETS==1 sample. Table 4: CarbonTax (16 adoption cohorts 1990-2019) with CarbonTax_Pre1/Pre2 and controls, 1985-2020. Appendix Table A2: RGGI firm-level (gvkey) DiD with LogAssets LogSales controls, clustered by state.",
+ "estimators_reported": [
+  "TWFE static with lead dummies and time-varying controls (robust SE, no clustering)",
+  "TWFE event study with time-varying controls (Figures 1-2)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "7 ETS cohorts (2005, 2007, 2008, 2009, 2010, 2013, 2015) among 34 adopters; 16 carbon-tax cohorts",
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 Panels A-B (do-file Table 2 block, 9 outcomes)",
+   "reason": "time-varying macro controls; two pre-period lead dummies added to the static treatment indicator"
+  },
+  {
+   "location": "Figures 1A, 1B, 2 (event study; do-file Figure block)",
+   "reason": "time-varying macro controls"
+  },
+  {
+   "location": "Table 3",
+   "reason": "continuous treatment (LogETSCap) on treated-only sample"
+  },
+  {
+   "location": "Table 4 Panels A-B",
+   "reason": "time-varying macro controls; carbon-tax treatment with lead dummies"
+  },
+  {
+   "location": "Appendix Tables A2-A7",
+   "reason": "appendix; time-varying controls; continuous tax-rate regressors"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Package: ~/did_packages/mnsc/mnsc.2023.03143/replication_package_MS-FTFIN-2023-03143/ (Read Me.docx, 'Bai Ru 2024.do', MergedData.dta, RGGI.dta). All variables needed for a no-controls country TWFE or event study are present (ETS, Country_id, year, CarbonExchange_dummy_Pre*/Pst*), but the paper reports none. Standard errors are robust rather than clustered by country; with 100 countries this is a secondary concern. Not eligible under the main-text rule because of time-varying controls."
+}

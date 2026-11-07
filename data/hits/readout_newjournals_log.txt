@@ -1,0 +1,45 @@
+journal|label|total_count|pages_collected|suffixes_collected
+isre|difference-in-differences|170|2|170
+isre|staggered|44|1|44
+isre|Callaway|24|1|24
+isre|Goodman-Bacon|20|1|20
+isre|Borusyak|6|1|6
+isre|two-way fixed effects|42|1|42
+isre|difference-in-difference|44|1|44
+isre|differences-in-differences|8|1|8
+isre|diff-in-diff|1|1|1
+isre|Sun and Abraham|10|1|10
+isre|de Chaisemartin|17|1|17
+msom|difference-in-differences|73|1|73
+msom|staggered|19|1|19
+msom|Callaway|9|1|9
+msom|Goodman-Bacon|9|1|9
+msom|Borusyak|4|1|4
+msom|two-way fixed effects|16|1|16
+msom|difference-in-difference|27|1|27
+msom|differences-in-differences|6|1|6
+msom|diff-in-diff|2|1|2
+msom|Sun and Abraham|2|1|2
+msom|de Chaisemartin|3|1|3
+opre|difference-in-differences|6|1|6
+opre|staggered|0|1|0
+opre|Callaway|2|1|2
+opre|Goodman-Bacon|0|1|0
+opre|Borusyak|0|1|0
+opre|two-way fixed effects|0|1|0
+opre|difference-in-difference|2|1|2
+opre|differences-in-differences|0|1|0
+opre|diff-in-diff|0|1|0
+opre|Sun and Abraham|0|1|0
+opre|de Chaisemartin|0|1|0
+orsc|difference-in-differences|85|1|85
+orsc|staggered|17|1|17
+orsc|Callaway|13|1|13
+orsc|Goodman-Bacon|11|1|11
+orsc|Borusyak|7|1|7
+orsc|two-way fixed effects|13|1|13
+orsc|difference-in-difference|36|1|36
+orsc|differences-in-differences|14|1|14
+orsc|diff-in-diff|7|1|7
+orsc|Sun and Abraham|3|1|3
+orsc|de Chaisemartin|6|1|6

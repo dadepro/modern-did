@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2019.1167",
+ "doi": "10.1287/mksc.2019.1167",
+ "journal": "mksc",
+ "title": "Rankings of Online Travel Agents, Channel Pricing, and Consumer Protection",
+ "authors": "Matthias Hunold; Reinhold Kesler; Ulrich Laitenberger",
+ "year": 2020,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1167",
+ "regressions_path": "./data/packages/mksc.2019.1167_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not a DiD. Main regressions (analyses_booking.do, analyses_expedia.do) regress a hotel's position in the OTA search list (rev_list) on continuous price differences to other channels (direct_spanne, expedia_spanne / booking_spanne, and binned or absolute variants) with hotel FE, month dummies and time-varying controls (price, promo, rating, occupancy, Google Trends); additional regressions model the probability that another channel is cheaper with city FE, and a rank-ordered logit. The research question is OTA ranking responses to channel price differences, not a staggered policy adoption.",
+ "design_notes": "Stata reghdfe (hotel FE bookingid/expediaid), rologit. Scraped Booking.com, Expedia and Kayak search results plus Google Trends.",
+ "estimators_reported": [
+  "ols_hdfe_continuous_regressors",
+  "rank_ordered_logit"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Main ranking tables (Booking and Expedia)",
+   "reason": "continuous price-difference regressors with time-varying controls; not a DiD"
+  },
+  {
+   "location": "Price-comparison tables",
+   "reason": "cross-sectional probability models with city FE"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme.txt: data (booking_final.dta, expedia_final.dta, *_rc.dta) are available only on site at the ZEW library in Mannheim under a data usage contract and may not be removed; the package ships code and variable descriptions only.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Self-collected scraped data held at ZEW research data center.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). code_prescore 2 from reghdfe with hotel FE and month dummies; regressors are continuous price differences."
+}

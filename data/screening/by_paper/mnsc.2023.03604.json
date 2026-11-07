@@ -1,0 +1,38 @@
+{
+  "suffix": "mnsc.2023.03604",
+  "doi": "10.1287/mnsc.2023.03604",
+  "journal": "mnsc",
+  "title": "Unearthing Financial Statement Fraud: Insights from News Coverage Analysis",
+  "year": 2025,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No DiD or event study. The package is a machine-learning fraud-detection pipeline (news scraping, FSFP measure construction, doc2vec business-similarity peer identification, meta-learning over 19 classifiers in detection_model.py, economic-value calculations). The only 'regressions' are sklearn LogisticRegression classifiers. No treatment timing or panel FE regression. The ft_difference_in_differences flag presumably reflects an incidental mention.",
+  "design_notes": "Chinese listed firms; CSMAR/Datago inputs (not shipped); Python 3.9 scripts.",
+  "estimators_reported": [
+    "ml_classification"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_files_present": false,
+  "data_files": [
+    "data/firm_num.csv, FSFP_threshold.csv, audit_fee_indus.csv, eval_chg.xlsx (small auxiliary files)",
+    "model/doc2vec_bus, latent_factors.npy",
+    "data/CSMAR_data and data/Datago_data folders empty (licensed); news data not included for legal reasons"
+  ],
+  "software": "python",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible: no DiD design.",
+  "screener_notes": "Screened from package only (readme.md, grep of all .py files)."
+}

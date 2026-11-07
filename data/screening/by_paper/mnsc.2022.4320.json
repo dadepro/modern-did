@@ -1,0 +1,39 @@
+{
+  "suffix": "mnsc.2022.4320",
+  "doi": "10.1287/mnsc.2022.4320",
+  "journal": "mnsc",
+  "title": "The Capital Market Consequences of Tenure-Based Voting Rights: Evidence from the Florange Act",
+  "year": 2022,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not eligible: single adoption date. The treatment is DVR (firm adopts double voting rights by default under the 2014 Florange Act) interacted with post_4 (fiscal years after 2014), with firm FE and year FE (areg ... c.DVR#c.post_4 ... i.year, absorb(firm_id)); all columns add time-varying firm controls, and the event-study version is DVR##ib2010.year. One policy date, so the two-adoption-dates rule fails. No analysis data are shipped (Thomson Refinitiv/Datastream subscription data plus hand-coded by-laws).",
+  "design_notes": "'Code used to generate outputs.do': outcomes pct_for_owni (foreign institutional ownership), pct_frenchi, pct_insider_fam, long/short-term institutional ownership splits, capex_ta, tobins_Q, ROA, ESG pillar scores; sample dvd_prior==0 (firms without DVR before Florange); DVR vs DVR_ext definitions; psacalc Oster bounds; portfolio return analysis in a separate sample. 'Sample and variable creation.do' builds the panel from nine Refinitiv extracts that are not included.",
+  "estimators_reported": [
+    "single_date_did_with_controls",
+    "single_date_event_study",
+    "oster_bounds",
+    "portfolio_returns"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_provenance": "not shipped (Thomson Refinitiv EIKON/Datastream; manual by-law coding reported in the online appendix)",
+  "data_files_present": false,
+  "data_files": [
+    "none; only do-files, readme.docx, logs/*.smcl"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Flags 'staggered' refer to staggered boards (a control variable), not staggered adoption. Screened from package only."
+}

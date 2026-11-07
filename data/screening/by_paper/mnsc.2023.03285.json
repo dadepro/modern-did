@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2023.03285",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Employee Performance and Mental Well-Being: The Mitigating Effects of Transformational Leadership During Crisis",
+ "eligible_design": false,
+ "eligible_reason": "DiD comparing employees of transformational vs. transactional managers (a time-invariant exposure measure) before vs. during the Covid-19 crisis (Apr 2020-Jan 2021). The crisis is one common shock date for all units, so there is no staggered adoption of a binary treatment.",
+ "design_notes": "Outcomes observed before and during the crisis use Crisis_t x leadership style (Crisis = Apr20-Jan21; Crisis High = Apr20-Aug20, Crisis Low = Sep20-Jan21). A month fixed-effect variant absorbs the Crisis indicator (Table B.13); a controls and clustered-SE variant is Table B.10. Mental well-being outcomes observed only during the crisis use simple differences with week fixed effects. Treatment intensity is continuous (leadership measure), not binary.",
+ "estimators_reported": [
+  "static DiD (single common shock date)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: single common shock date, time-invariant treated group. Employer personnel data likely proprietary."
+}

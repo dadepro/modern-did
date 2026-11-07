@@ -1,0 +1,29 @@
+{
+ "suffix": "00222437211062172",
+ "doi": "10.1177/00222437211062172",
+ "journal": "jmr",
+ "title": "Demand Interactions in Sharing Economies: Evidence from a Natural Experiment Involving Airbnb and Uber/Lyft",
+ "year": "2021",
+ "eligible_design": false,
+ "eligible_reason": "Single treated city (Austin) and single event date (Uber/Lyft exit on May 9, 2016), compared with four control cities. Estimated on a propensity-score matched and weighted sample with time-varying controls.",
+ "design_notes": "Equation 2: DEMAND_it = intercept + a3 AUSTIN_i x AFTER_t + gamma CONTROLS_it + Property FE + Seasonality (calendar-month) FE. DV = monthly occupancy (booked days / open days). Controls are time-varying (log #reviews, log #photos, log nightly rate, log supplied days in zip code, log #passengers). Sample: 11,536 matched Airbnb properties in Austin, Boston, Los Angeles, San Diego, Seattle, Jan-Dec 2016; matching/weighting by propensity score with k-nearest neighbor (Stata psmatch2). SEs clustered at property. Table 2 is a relative-time event-study version (reference April 2016, N = 67,039), still a single treated city and date. Heterogeneity by transit score (Equation 4) uses triple interactions.",
+ "estimators_reported": [
+  "OLS DiD with property FE and month FE on matched sample",
+  "relative-time event study (Table 2)"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: single adoption date, matching-based DiD, time-varying controls. Data are licensed (AirDNA for Airbnb listings, STR for hotels) plus public sources (Walk Score, RideAustin, BTS, Zillow, OpenEI). Software inferred from the psmatch2 reference. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

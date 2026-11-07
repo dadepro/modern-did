@@ -1,0 +1,61 @@
+{
+ "suffix": "mksc.2022.0241",
+ "doi": "10.1287/mksc.2022.0241",
+ "journal": "mksc",
+ "title": "Frontiers: Smoke and Mirrors: Impact of E-cigarette Taxes on Underage Social Media Posting",
+ "authors": "Piyush Anand; Vrinda Kadiyali",
+ "year": 2024,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mksc/mksc.2022.0241",
+ "regressions_path": "./data/packages/mksc.2022.0241_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "main (generalized synthetic control, one treated state per estimate)",
+ "ineligible_specs": [
+  {
+   "spec_id": "main_CA_gsynth",
+   "reported_location": "main results (California e-cigarette tax; underage, female, male, white, non-white posting)",
+   "exclusion_reason": "single treated state (CA, treatment from week 79 of 157); estimator is gsynth interactive fixed effects (force='none', EM, CV r in 1..4) with the Li and Sonnier (2023) bootstrap correction; synthetic-control-type estimator, no TWFE"
+  },
+  {
+   "spec_id": "other_states_gsynth",
+   "reported_location": "PA and WV tax analyses (short- and long-term ATT)",
+   "exclusion_reason": "three treated states with different start weeks (WV 27, PA 39, CA 79), but each state's ATT is a separate gsynth IFE counterfactual; no TWFE or event-study regression"
+  }
+ ],
+ "screened_from": "package_and_abstract",
+ "eligible_reason": "Excluded estimator. All estimates come from generalized synthetic control (gsynth, interactive fixed effects without additive FE) on a state-week panel of underage Instagram posts (43 states, 157 weeks), followed by the Li and Sonnier (2023) inference correction in Python. The main analysis has one treated state (California). The extension with Pennsylvania and West Virginia has three adoption weeks, but each state's effect is estimated separately by gsynth. The package contains no TWFE or event-study regression.",
+ "design_notes": "Data.Rdata holds insta_data (state, time 1-157, treat, underage counts) and the function gsynth_analysis_main(); other_states_data.Rdata adds PA (treat from week 39) and WV (from week 27). step2.py/backend_step2.py compute short-term (26 weeks) and long-term ATTs per state. No article text available locally; Frontiers paper.",
+ "estimators_reported": [
+  "generalized synthetic control (gsynth IFE) with Li-Sonnier bootstrap"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Data.Rdata",
+  "other_states_data.Rdata",
+  "pickle_underage*.pkl"
+ ],
+ "data_files_note": "State-week analysis panels (constructed from scraped Instagram posts with inferred age/demographics) and pre-estimated gsynth pickles shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' aggregated state-week panel; irrelevant because the estimator is excluded.",
+ "software": "r",
+ "software_notes": "R (gsynth) then Python for inference",
+ "screener_notes": "No published text in data/text or papers/; screened from package code, data timing and OpenAlex abstract. Not a near miss: the paper uses a synthetic-control-type estimator throughout, with a single treated unit per estimate, consistent with earlier gsynth screens (e.g., mksc.2022.1415)."
+}

@@ -1,0 +1,30 @@
+{
+ "suffix": "00222437231169711",
+ "doi": "10.1177/00222437231169711",
+ "journal": "jmr",
+ "title": "Words Meet Photos: When and Why Photos Increase Review Helpfulness",
+ "year": "2023",
+ "eligible_design": false,
+ "design_notes": "Not a DiD or event-study paper. Review-level OLS on Yelp reviews (Has Photos, text-photo similarity) with restaurant and year-month fixed effects, clustered by restaurant, plus five laboratory experiments. No treatment adoption dates.",
+ "eligible_reason": "No treatment that switches on at unit-specific dates; cross-sectional review-level regressions and lab experiments. The Bertrand-Duflo-Mullainathan citation is only for clustering.",
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "estimators_reported": [
+  "OLS with restaurant and year-month FE",
+  "lab experiments"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "n/a",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Yelp review/photo data collected by the authors (7.4M reviews, 2004-2020); no package in batch and no data availability statement in the article text. Flagged only via citation of Bertrand, Duflo and Mullainathan (2004).",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

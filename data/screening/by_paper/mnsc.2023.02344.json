@@ -1,0 +1,73 @@
+{
+ "suffix": "mnsc.2023.02344",
+ "doi": "10.1287/mnsc.2023.02344",
+ "journal": "mnsc",
+ "title": "Exchanges for Government Bonds? Evidence During COVID-19",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_006",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single common shock date: post = dates after 27 Feb 2020 (main_analysis_new.do lines 176-190) for every country; DD compares stocks vs bonds (or Israel vs others, DDD) around the March 2020 liquidity crisis. One cohort; not staggered. All shipped inputs are labeled 'Synthetic data example'.",
+ "design_notes": "Security x day panel of log bid-ask spreads, Feb-Mar 2020, Israel (TASE) and other countries. Table 1: reghdfe LogBas stockXpost, absorb(Securities date), by country. Table 2: DDD bondXpost bondXILXpost with IL x date FE. Table 3: within-Israel exchange vs OTC DD. Appendix: GFC 2008 DD/DDD, futures, per-country DDs.",
+ "estimators_reported": [
+  "TWFE 2x2 DiD (single date)",
+  "DDD"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "T1_DD",
+   "eligible": false,
+   "exclusion_reason": "single common date (27 Feb 2020); synthetic data",
+   "code_file": "Replication Package/Main DD/main_analysis_new.do",
+   "code_line": 283,
+   "outcome": "LogBas",
+   "treatment_var": "stockXpost",
+   "unit_var": "Securities",
+   "time_var": "date2",
+   "fe": "Securities, date2 (country FE)",
+   "cluster": "Securities",
+   "static_or_event": "static",
+   "reported_location": "Table 1",
+   "data_provenance": "synthetic"
+  },
+  {
+   "spec_id": "T2_DDD",
+   "eligible": false,
+   "exclusion_reason": "single common date; DDD with extra regressor bondXpost; synthetic data",
+   "code_file": "Replication Package/Main DD/main_analysis_new.do",
+   "code_line": 355,
+   "outcome": "LogBas",
+   "treatment_var": "bondXILXpost",
+   "unit_var": "Securities",
+   "time_var": "date2",
+   "fe": "Securities, IL#date2",
+   "static_or_event": "static",
+   "reported_location": "Table 2",
+   "data_provenance": "synthetic"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "README.txt: TASE and Bank of Israel data are proprietary; every input CSV/XLSX for the DD analyses is named '... Synthetic data example' (e.g. Main DD/input/2024-11-03 - full_data ... -Synthetic data example.csv).",
+ "data_files_present": true,
+ "data_files": [
+  "Main DD/input/2024-11-03 - full_data (completed values) second version new countries-Synthetic data example.csv",
+  "DD within Israel OTC/input/...-Synthetic data example.csv",
+  "DD within US futures/input/...-Synthetic data example.csv",
+  "Financial crisis DD/input/...-Synthetic data example.csv"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and abstract. Add to data/synthetic_packages.txt if not already listed (lead's call)."
+}

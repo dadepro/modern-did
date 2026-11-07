@@ -1,0 +1,28 @@
+{
+  "suffix": "0022243720922853",
+  "doi": "10.1177/0022243720922853",
+  "journal": "jmr",
+  "title": "Opening the Umbrella: The Effects of Rebranding Multiple Category-Specific Private-Label Brands to One Umbrella Brand",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Although rebranding dates differ across categories, the estimating equation uses matching-based controls, category-specific trends, time-varying marketing-mix controls, treatment-by-covariate interactions, and SUR. None of the reported coefficients is a TWFE or event-study treatment effect.",
+  "design_notes": "Category-by-category (staggered) rebranding of the private-label tier at two Dutch banners, SPAR (53 categories) and Attent (47 categories), with rebranding dates set by supplier contract end dates; weekly category-level scanner data 2011-2015 (about 129 weeks before and 111 weeks after). Each rebranded category is matched by Mahalanobis distance on 52 pre-period characteristics to the same category at one of seven non-rebranding banners. Eq. 1 is a log-log sales model estimated separately for each category i, with category-specific intercepts, linear and quadratic time trends, own-price/promotion/assortment elasticities (time-varying marketing-mix controls), banner advertising, outlets, consumer confidence, holiday and 4-weekly dummies, and TREAT, POST and TREAT x POST interacted with all of these; jointly estimated with NB and other-PL-tier equations by SUR. Parameters of interest are the category-specific TREAT x POST intercept and elasticity shifts (b_rebr), then aggregated across categories. No unit and calendar-time FE specification; no binary-treatment TWFE coefficient is reported.",
+  "estimators_reported": [
+    "matched DiD with category-specific regressions (SUR)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: matching, category-specific trends, time-varying controls and treatment-by-covariate interactions. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Retailer store-scanner data from SPAR and Attent, plus GfK household panel and other proprietary retailer data."
+}

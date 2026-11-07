@@ -1,0 +1,2 @@
+twfe,twfe_se,csa,csa_se,bjs,bjs_se,csa_note,bjs_note,neg_rows,neg_abs,G_eff,L_max,n,n_units,n_cohorts,share_never,share_always,window,id_recoded_from_leading_zero,g_shift_units,controls,analysis_set,suffix,spec_id,published_coef,published_se,y_sd_regsample
+0.224737740579235,0.0287661952420243,0.149678402616517,0.0597896743925625,0.164397429760739,0.0302418733002243,csa_manual_balanced_cells,"",0.150484734481262,0.0437993968410043,507.684424623261,0.00335017752368701,46688,896,60,0.498436429061001,0,static,FALSE,,"",main,mksc.2017.1051,E5_1treat_newu_song,,,0.259823505174262

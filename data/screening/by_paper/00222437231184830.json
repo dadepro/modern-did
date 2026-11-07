@@ -1,0 +1,28 @@
+{
+  "suffix": "00222437231184830",
+  "doi": "10.1177/00222437231184830",
+  "journal": "jmr",
+  "title": "Sharing Food Can Backfire: When Healthy Choices for Children Lead Parents to Make Unhealthy Choices for Themselves",
+  "year": "2023",
+  "eligible_design": false,
+  "eligible_reason": "Five behavioral experiments, including a nursery school field study, with random assignment of conditions. The 'staggered' flag comes from the phrase 'eating at staggered times' and has no relation to staggered DiD adoption. No panel with unit and calendar-time fixed effects.",
+  "design_notes": "Between-subjects experiments testing whether choosing a healthy item for a child raises the chance a parent makes an unhealthy self-choice when sharing is anticipated. No difference-in-differences or event-study regressions.",
+  "estimators_reported": [
+    "randomized experiments"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Keyword hit is a false positive. No data-availability statement found in the article text."
+}

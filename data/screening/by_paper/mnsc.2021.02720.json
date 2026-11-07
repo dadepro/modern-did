@@ -1,0 +1,58 @@
+{
+ "suffix": "mnsc.2021.02720",
+ "doi": "10.1287/mnsc.2021.02720",
+ "journal": "mnsc",
+ "title": "Not Good Enough, but Try Again! The Impact of Improved Rejection Communications on Contributor Retention and Performance in Open Knowledge Collaboration",
+ "authors": "Aleksi Aaltonen; Sunil Wattal",
+ "year": 2025,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.02720",
+ "regressions_path": "./data/packages/mnsc.2021.02720_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 1,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (regression discontinuity in time around one platform-wide change, plus mediation model)",
+ "ineligible_specs": [
+  {
+   "spec_id": "rdit_retention",
+   "reported_location": "Tables 3 and 5 (RD results, base scenario and double data-driven bandwidths)",
+   "exclusion_reason": "regression discontinuity in time around a single Stack Overflow-wide change of rejection notices in 2013; one adoption date, no untreated comparison group (footnote 5: no valid DiD control group)"
+  },
+  {
+   "spec_id": "mediation_performance",
+   "reported_location": "mediation model results (questions asked, quality)",
+   "exclusion_reason": "mediation model of contributor performance; not a TWFE DiD"
+  }
+ ],
+ "eligible_reason": "Not staggered. The treatment is a single platform-wide change to Stack Overflow rejection notices in 2013, estimated with a regression discontinuity in time design (Tables 3, 5) and a mediation model. The authors state that a DiD control group is not available (footnote 5).",
+ "design_notes": "Daily retention rate of initially rejected contributors before/after the change; RDiT with data-driven bandwidths, plus a mediation model for performance. Regression inventory empty because the archive holds no code.",
+ "estimators_reported": [
+  "regression discontinuity in time (local linear)",
+  "mediation model"
+ ],
+ "data_access": "public",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "The archive contains only a .docx with an external Dropbox link to replication_package_MS-INS-21-02720.zip; no code or data in the archive (not downloaded). Underlying data are public Stack Overflow data dumps.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Package hosted externally (Dropbox link); nothing shipped in the INFORMS archive.",
+ "software": "other",
+ "software_notes": "No code in archive; software unknown",
+ "screener_notes": "Published text confirms RDiT plus mediation. Not a near miss: single treatment date and no comparison group."
+}

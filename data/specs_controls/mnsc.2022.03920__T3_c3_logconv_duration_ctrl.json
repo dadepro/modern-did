@@ -1,0 +1,32 @@
+{
+  "suffix": "mnsc.2022.03920",
+  "journal": "mnsc",
+  "data_provenance": "random_subsample",
+  "data_path": "~/did_packages/mnsc/mnsc.2022.03920/replication pacakge/AI_in_Online_Chats_Data.dta",
+  "id_var": "agent_id",
+  "time_var": "daily",
+  "treat_var": "AI_enabled",
+  "weight_var": "",
+  "cluster_var": "agent_id",
+  "xt_vars": [],
+  "sample_filter": "",
+  "log_y": "",
+  "static_or_event": "static",
+  "analysis_set": "controls",
+  "published_estimator": "twfe_static_with_controls",
+  "replication_status": "exact",
+  "row": "AI_enabled",
+  "spec_id": "T3_c3_logconv_duration_ctrl",
+  "y_var": "logconversation_duration",
+  "table": "Table 3",
+  "column": "column 3",
+  "controls": [
+    "logagent_tenure"
+  ],
+  "published_coef": -0.0393033,
+  "published_se": 0.0269929,
+  "preferred": true,
+  "in_abstract_intro": false,
+  "mediator_controls": false,
+  "notes": "Conversation-level data (shipped random 80% sample of the original conversations, agent ids disguised but consistent; PROTOCOL 5b random_subsample flag). Agents are the assignment unit, days (1-362, Dec 2020-Nov 2021) the calendar time; repeated cross-section of conversations within agent-day. xtreg fe vce(robust) with i.daily = agent FE + day FE, SE clustered by agent. AI_enabled absorbing (no switch-offs); 117 treated agents in 46 adoption-day cohorts, 18 never treated; 210 conversations on 43 mixed adoption days with AI_enabled = 0 are dropped by run_spec.R (onset dated at the first AI conversation). 32 treated agents are first observed on their adoption day, so after that drop they have no untreated rows (always treated within their own window). No article text or PDF in the project: published_coef/published_se are the authors' own code output (Stata MP 16 xtreg, ~/did_packages/_work/mnsc.2022.03920/authors_main_tables.log) on the shipped 80% sample, not the published table values from the full data; R/fixest reproduces that coefficient exactly. logagent_tenure = log(1 + days since the agent joined), varies within agent over time."
+}

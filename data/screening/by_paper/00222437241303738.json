@@ -1,0 +1,28 @@
+{
+  "suffix": "00222437241303738",
+  "doi": "10.1177/00222437241303738",
+  "journal": "jmr",
+  "title": "The Golden Halo of Defaults in Simple Choices",
+  "year": "2024",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences design. Eye-tracking lab experiments, cognitive modeling and preregistered naturalistic experiments.",
+  "design_notes": "Randomized lab and online experiments on default options; attentional drift diffusion model comparison.",
+  "estimators_reported": [
+    "randomized experiments; computational cognitive modeling"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. No DiD."
+}

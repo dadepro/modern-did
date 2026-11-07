@@ -1,0 +1,28 @@
+{
+  "suffix": "mksc.2023.0236",
+  "doi": "10.1287/mksc.2023.0236",
+  "journal": "mksc",
+  "title": "Bad Apples on Rotten Tomatoes: Critics, Crowds, and Gender Bias in Product Ratings",
+  "year": "2024",
+  "eligible_design": false,
+  "eligible_reason": "The 'difference-in-differences' compares female vs male movies (first difference) across crowd vs critic reviewers (second difference); there is no treatment adoption timing. The only policy date is Rotten Tomatoes' introduction of verified reviews (23 May 2019), used for subgroup interactions on a post-May-2019 sample.",
+  "design_notes": "Eq. (3): Score_im = d1*(FemaleMovie_m x Crowd_i) + lambda*ElapsedTime + phi*ReviewPosition + mu_m + eta_i + psi*ReviewYear + e_im, clustered by movie. Tables 3-6 and appendix tables vary fixed effects (movie, reviewer), outcomes (score, extreme-low-rating indicator, sentiment) and female-movie definitions. Treatment is a time-invariant movie attribute interacted with reviewer type, not a binary switch-on at unit-specific dates; includes time-varying controls and a review-year trend.",
+  "estimators_reported": [
+    "OLS triple-type DiD (female movie x crowd) with movie and reviewer FE"
+  ],
+  "main_or_robustness": "main (but not an adoption-timing design)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: no staggered adoption design. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Text file is the CESifo working paper (Oct 2024). Data: IMDb and Rotten Tomatoes ratings (scraped/web-collected), box office and Bechdel data; no data-availability statement in the text."
+}

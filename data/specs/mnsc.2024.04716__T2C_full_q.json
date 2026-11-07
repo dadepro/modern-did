@@ -1,0 +1,35 @@
+{
+  "suffix": "mnsc.2024.04716",
+  "spec_id": "T2C_full_q",
+  "journal": "mnsc",
+  "data_provenance": "synthetic",
+  "data_path": "~/did_packages/_work/mnsc.2024.04716/fullsample_work.csv",
+  "id_var": "locid",
+  "time_var": "quarter",
+  "y_var": "lntot_rec",
+  "treat_var": "post_yelp",
+  "weight_var": "",
+  "cluster_var": "locid",
+  "xt_vars": [],
+  "sample_filter": "",
+  "log_y": "",
+  "published_coef": null,
+  "published_se": null,
+  "published_n": null,
+  "published_source": "SCRAMBLED (synthetic-equivalent) DATA. The package README states the shipped files are a 20% sample of establishments with quarter, quarter_added, county, lntot_rec, county_quarter and relquarter shuffled across rows (Stata shufflevar) and that 'our results do not replicate using this scrambled data'. The shuffling destroys the panel: 16,805 duplicate locid-quarter rows, quarter_added varies within locid for 2,051 of 2,059 establishments, and treat_q no longer equals 1{quarter >= quarter_added}. No article text in the project; the paper's coefficients are unknown (abstract: revenue increase 'in the range of 5%-10%'). Published coefficient fields are therefore null. Numbers here carry no information about the paper and must be excluded from the main analysis.",
+  "table": "2 (OLS panel; location in paper unconfirmed)",
+  "column": "full sample, establishment + quarter FE",
+  "static_or_event": "static",
+  "preferred": false,
+  "in_abstract_intro": false,
+  "replication_status": "failed (scrambled package data; README: results do not replicate; article coefficients unknown)",
+  "authors_code_on_synthetic_data": {
+    "did2s": null,
+    "twfe_fixest_all_rows": [
+      -0.00698,
+      0.01416,
+      54454
+    ]
+  },
+  "notes": "scripts/table2c.do line 10: reghdfe lntot_rec post_yelp, absorb(locid quarter) vce(cluster locid), post_yelp = (quarter > quarter_added) [strict; adoption quarter itself untreated]. table2c.do is not listed in the README; whether these OLS columns appear in the main text is unconfirmed (no article text). Keep only if confirmed. Authors' estimator is Gardner did2s with treatment = treat_q (1 if listed on Yelp in the quarter), second stage i(treat_q, ref=0), cluster locid; TWFE counterpart feols(lntot_rec ~ treat_q | FE). run_spec.R derives g = first quarter with treat_q = 1 per locid and drops later rows with treat_q = 0 (switch-offs), which in the scrambled file are numerous because quarter is shuffled; the regression sample therefore differs from the authors' all-rows sample. Work file = shipped fullsample_for_r_sample.dta with treat_q non-missing, quarter_added0 (NA->0) and post_yelp added; package untouched."
+}

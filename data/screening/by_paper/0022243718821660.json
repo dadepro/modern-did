@@ -1,0 +1,30 @@
+{
+ "suffix": "0022243718821660",
+ "doi": "10.1177/0022243718821660",
+ "journal": "jmr",
+ "title": "Frugality Is Hard to Afford",
+ "year": "2019",
+ "eligible_design": false,
+ "design_notes": "Nielsen Consumer Panel (2006-2014, about 104,000 households, toilet paper, paper towels, laundry detergent, cigarettes). DiD compares low-income vs. higher-income households between the first week of the month (high liquidity) and the rest of the month, with household fixed effects; the 'treatment' is a recurring calendar-position indicator, not a one-time adoption. Includes IV-style robustness (liquidity instrument) and category-specific outcomes (bulk buying, purchase acceleration).",
+ "eligible_reason": "Treatment is a recurring within-month timing indicator interacted with income group, not a binary treatment switching on at unit-specific dates; no staggered adoption.",
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "estimators_reported": [
+  "DiD (liquidity x income)",
+  "household FE regressions"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Licensed Nielsen Consumer Panel data via the Kilts Center (cannot be redistributed); no package in batch. Ineligible on design.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

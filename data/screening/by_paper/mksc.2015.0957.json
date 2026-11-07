@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2015.0957",
+ "doi": "10.1287/mksc.2015.0957",
+ "journal": "mksc",
+ "title": "Invited Editorial—A Descriptive Analysis of Publications in Marketing Science Over Its History",
+ "authors": "B. P. S. Murthi; Ram C. Rao; Brian T. Ratchford",
+ "year": 2015,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0957",
+ "regressions_path": "./data/packages/mksc.2015.0957_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (invited editorial: descriptive tabulations of Marketing Science publications by school, country and coauthorship)",
+ "ineligible_specs": [
+  {
+   "spec_id": "descriptive_tabulations",
+   "reported_location": "Figures 1-5, Tables 1-6",
+   "exclusion_reason": "descriptive tabulations, Herfindahl indices and counts; no regressions"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Descriptive editorial on Marketing Science authorship; no regressions.",
+ "design_notes": "apr4_1.sas: proc freq/means/tabulate on UTD publication database merged with school rankings; Excel sheets for figures.",
+ "estimators_reported": [
+  "descriptive statistics"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "alldata.sas7bdat",
+  "magranks.sas7bdat",
+  "*.xlsx summary sheets"
+ ],
+ "data_files_note": "UTD publication database extract and B-school rankings shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Publication-level master data shipped.",
+ "software": "other",
+ "software_notes": "SAS and Excel",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

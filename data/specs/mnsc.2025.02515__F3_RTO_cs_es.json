@@ -1,0 +1,257 @@
+{
+ "suffix": "mnsc.2025.02515",
+ "spec_id": "F3_RTO_cs_es",
+ "journal": "mnsc",
+ "data_provenance": "authors_transformed",
+ "data_path": "~/did_packages/mnsc/mnsc.2025.02515/replication-code/data/main-atts-reg-data/final-reg-data.csv",
+ "id_var": "numeric_state_county",
+ "time_var": "time",
+ "y_var": "cs",
+ "gvar": "online_treat_time",
+ "weight_var": "num_individs_2015",
+ "cluster_var": "numeric_state_county",
+ "xt_vars": [],
+ "sample_filter": "rto_main_subset %in% TRUE",
+ "log_y": "",
+ "published_coef": null,
+ "published_se": null,
+ "authors_code_coef": -15.7341462475605,
+ "authors_code_se": 2.69605103963012,
+ "published_estimator": "callaway_santanna_dynamic_overall_att_e0_16",
+ "published_source": "Shown only in Figure 3 of the published article (papers/mnsc/mnsc.2025.02515.pdf); no printed value. Authors' code output recorded in authors_code_* (ruling (t) convention, applied Nov 4 2026). Earlier: Authors' code.R re-run on the package data: did::att_gt (dr, notyettreated, varying base period, weights num_individs_2015, cluster county) + aggte(type = 'dynamic', min_e = -8, max_e = 16); published_coef is the dynamic overall ATT (equal-weight average of horizons 0..16), SE analytical (bstrap = FALSE). The article shows the horizon path as a figure; the path from the re-run is in ~/did_packages/_work/mnsc.2025.02515/verify_authors_es_paths.csv. Nov 2: the article (data/text/mnsc/mnsc.2025.02515.txt) shows the path graphically only (Figure 2, credit score; the spec_id prefix F3 is historical) over -8..16 quarters; no printed coefficients, so the code re-run is the published reference.",
+ "table": "Figure 2",
+ "panel": "Retail-to-Online panel",
+ "column": "Retail-to-Online Access series",
+ "row": "Average Credit Score",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "replication_status": "exact_code_rerun (figure values not printed; window and outcome verified against the article)",
+ "notes": "Retail-to-Online Access design: gvar online_treat_time = quarter online/mobile betting launched (0 = retail-only, never online). Sample = authors' rto_main_subset flag (counties in states that first had retail betting; 1,576 counties, quarters 9-30, N = 20,837). 13 online cohorts (11,12,14,15,16,18,21,23,24,25,27,28,29); 498 never-online counties; no always-treated counties. Event study: authors' aggte(type = 'dynamic', min_e = -8, max_e = 16) with varying base period; pipeline uses universal base period (identical post-period coefficients, pre-period coefficients differ in definition). published_coef is the authors' dynamic overall ATT (equal-weight average of horizons 0..16), which is the quantity the pipeline's CSA post-average targets. Authors report Callaway-Sant'Anna (did::att_gt, control_group = 'notyettreated', est_method = 'dr', base_period = 'varying', allow_unbalanced_panel = TRUE, xformla = ~1, weightsname = 'num_individs_2015', clustervars = county, bstrap = TRUE without a seed). No TWFE regression exists in the package; the TWFE counterpart is D = 1[gvar > 0 & time >= gvar] with county FE + quarter FE, weights num_individs_2015, clustered by county. Treatment never switches off (defined from a unit-constant timing variable). Outcome levels were additively transformed by the authors to hide actual levels (README); county IDs anonymized; underlying UC Consumer Credit Panel is restricted. published_coef/published_se are the authors' code re-run on the package data (CSA point estimate, deterministic; analytical SE from bstrap = FALSE): the article (text now in data/text/mnsc/) plots this path without printing coefficients (Nov 2 check). Project member Davide Proserpio is a coauthor (PROTOCOL Section 6). CAVEAT: the RTO sample is an unbalanced panel with counties entering at their state's retail launch; did with allow_unbalanced_panel = TRUE uses repeated-cross-section 2x2 cells whose control composition changes between g-1 and t, which drives the authors' and the pipeline's CSA estimates (see replication log, 'composition-driven' section). TWFE and BJS are unaffected.",
+ "event_pre_min": -8,
+ "event_post_max": 16,
+ "event_structure": {
+  "bins": [
+   [
+    null,
+    -9
+   ],
+   [
+    -8,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    9,
+    9
+   ],
+   [
+    10,
+    10
+   ],
+   [
+    11,
+    11
+   ],
+   [
+    12,
+    12
+   ],
+   [
+    13,
+    13
+   ],
+   [
+    14,
+    14
+   ],
+   [
+    15,
+    15
+   ],
+   [
+    16,
+    16
+   ],
+   [
+    17,
+    null
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "ref",
+  "post_summary": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    9,
+    9
+   ],
+   [
+    10,
+    10
+   ],
+   [
+    11,
+    11
+   ],
+   [
+    12,
+    12
+   ],
+   [
+    13,
+    13
+   ],
+   [
+    14,
+    14
+   ],
+   [
+    15,
+    15
+   ],
+   [
+    16,
+    16
+   ]
+  ],
+  "pre_summary": [
+   [
+    -8,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "code.R line 237 (did::att_gt, control_group notyettreated, est_method dr, base_period varying, allow_unbalanced_panel TRUE, weights num_individs_2015, cluster county) and lines 656-664 (aggte type 'dynamic', min_e = -8, max_e = 16); article Section 5: 'event studies and ATTs covering 8 quarters before and 16 quarters after the policy'. Event time e = time - online_treat_time (quarters); time is consecutive in the sample (9..30), so e = rel = t - g in the pipeline index. Callaway-Sant'Anna path: single-quarter bins -8..16 as reported, reference -1 (universal base; the authors' varying base changes only the pre-period definition). Relative times outside the window get open endpoint bins (<= -9, >= 17), estimated but not summarized, so no treated row is uncovered: did keeps those rows and computes their cells (early pre-periods of late cohorts are not-yet-treated controls for earlier cohorts), so 'drop' would change the published path, and pooling them with the reference would subtract their effects from every CS bin. No authors' TWFE exists; the TWFE counterpart estimates the same bins.",
+  "verified": "did 2.5.1 on the authors' sample (verify_authors_csa.R): universal-base (pipeline) dynamic estimates for e = 0..16 equal the authors' varying-base path, max abs diff 3.0e-13; their equal-weight mean equals published_coef (the authors' dynamic overall ATT, e = 0..16) to 3.9e-14. es_parse/es_assign checked on the pipeline sample (nov2_check_02515.R): no uncovered treated rows."
+ },
+ "authors_rerun_twfe_raw": -0.164251370179332,
+ "authors_rerun_twfe_raw_se": 0.11815385361682,
+ "y_sd_weighted_regsample": 18.3583070170271,
+ "y_sd_unweighted_regsample": 23.6999168242402,
+ "pipeline_caveat": "csa_unbalanced_panel_composition",
+ "csa_weights": "did",
+ "csa_weights_note": "Nov 2: the published CSA comes from R did (or staggered, whose estimates did reproduces), which weights cells by fixed cohort shares; Hull's DiD-averaging weights cells by treated-observation counts. 'did' reproduces the published number (main analysis, option B); the strict-Hull run (CSA_STRICT_HULL=1, option A) ignores this field."
+}

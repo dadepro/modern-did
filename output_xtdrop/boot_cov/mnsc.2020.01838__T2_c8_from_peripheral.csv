@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2020.01838,T2_c8_from_peripheral,static,999,0.00624571267913672,0.0209489359186118,0.138104635443883,0.156928075622056,0.157092465305517,0.288186144368027,0.965602445971779,999,999,999,3.33066907387547e-16,2.22044604925031e-16,2.22044604925031e-16,TRUE,186,

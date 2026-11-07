@@ -1,0 +1,52 @@
+{
+ "suffix": "mnsc.2023.00872",
+ "doi": "10.1287/mnsc.2023.00872",
+ "journal": "mnsc",
+ "title": "Asset-Side Bank Runs and Liquidity Rationing: A Vicious Cycle",
+ "authors": "Zongbo Huang",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_028",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.00872",
+ "regressions_path": "./data/packages/mnsc.2023.00872_regressions.txt",
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_mismatch": false,
+ "eligible_reason": "Structural infinite-horizon banking model estimated by SMM (Julia); the empirical part computes moments and a cross-sectional crisis regression from Call Reports. No DiD design.",
+ "design_notes": "Julia (model solution, SMM, counterfactuals), Stata (Call Reports / CRSP cleaning and moments).",
+ "estimators_reported": [
+  "structural_smm"
+ ],
+ "specs": [
+  {
+   "spec_id": "T1-T6",
+   "eligible": false,
+   "code_file": "codes/AssetSideBankRun_SMM.jl",
+   "reported_location": "Tables 1-6",
+   "exclusion_reason": "structural estimation; no DiD"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "Call Reports, DealScan, CRSP from WRDS not shipped; only code and SMM logs.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data files in package.",
+ "software": "other",
+ "software_notes": "Julia 1.8.5 and Stata 16",
+ "screener_notes": "Screened from package only (no article text or PDF). Structural model; not DiD; no data."
+}

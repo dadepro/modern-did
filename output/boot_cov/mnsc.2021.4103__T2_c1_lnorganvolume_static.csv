@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2021.4103,T2_c1_lnorganvolume_static,static,999,0.00487405224735332,0.00870897971222164,0.107382397683403,0.0992324503238346,0.097776384848237,0.45740759126783,0.829469088973582,999,999,999,0,3.33066907387547e-16,2.77555756156289e-16,TRUE,40,

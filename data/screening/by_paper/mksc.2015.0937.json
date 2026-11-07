@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2015.0937",
+ "doi": "10.1287/mksc.2015.0937",
+ "journal": "mksc",
+ "title": "Managing User-Generated Content: A Dynamic Rational Expectations Equilibrium Approach",
+ "authors": "Dae-Yong Ahn; Jason A. Duan; Carl F. Mela",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0937",
+ "regressions_path": "./data/packages/mksc.2015.0937_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (dynamic rational-expectations equilibrium model of UGC consumption and creation, MPEC)",
+ "ineligible_specs": [
+  {
+   "spec_id": "ddc_mpec",
+   "reported_location": "estimation and counterfactual tables",
+   "exclusion_reason": "structural dynamic model estimated by MPEC; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural dynamic equilibrium model of user-generated content, MPEC estimation.",
+ "design_notes": "MATLAB ddcseg2.m (TomLab Knitro) with simulated sample data.",
+ "estimators_reported": [
+  "structural dynamic model (MPEC)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "code/simsampledata.mat",
+  "code/initialvalues.mat"
+ ],
+ "data_files_note": "readme: simsampledata is a simulated data set to test the estimation code.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated data only.",
+ "software": "other",
+ "software_notes": "MATLAB (TomLab Knitro)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

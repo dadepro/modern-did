@@ -1,0 +1,48 @@
+{
+ "suffix": "mksc.2022.1419",
+ "doi": "10.1287/mksc.2022.1419",
+ "journal": "mksc",
+ "title": "Frontiers: Unmasking Social Compliance Behavior During the Pandemic",
+ "authors": "Shunyuan Zhang; Kaiquan S. J. Xu; Kannan Srinivasan",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1419",
+ "regressions_path": "./data/packages/mksc.2022.1419_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not staggered. Transaction-level panel of loyalty-program customers at one store; Tables 2-4 run xtreg y b2.customer_groupInd##Covid + store-crowdedness controls + hour, weekend and day-of-week dummies, fe (customer FE). Covid = 1 from a single common date (2020-01-22, verified in data: pre 2020-01-01 to 01-21, post 01-22 to 05-31); the group is a three-valued mask-wearing category (fully, partially, unmasked). One onset date, multi-valued group, time-varying controls, no calendar-time FE.",
+ "design_notes": "Stata mask_analysis.do, single file; mask_data.dta (3,479 transactions). Outcomes: distance to cashier, time per item, store visits (Table 2); quantity, price, discount, popularity (Table 3); basket diversity (Table 4). Robust SE.",
+ "estimators_reported": [
+  "fe_group_x_post_common_date"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 2-4",
+   "reason": "single common post date (Covid onset); three-valued group x Covid; time-varying crowdedness controls; no calendar-time FE"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Replication Code and Data/mask_data.dta"
+ ],
+ "data_files_note": "Panel used in the manuscript; some variables pre-logged.",
+ "data_provenance": "original",
+ "data_provenance_note": "README describes it as the panel used in the manuscript.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). Common-timing pre/post pandemic comparison across mask groups."
+}

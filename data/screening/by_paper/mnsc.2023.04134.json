@@ -1,0 +1,62 @@
+{
+ "suffix": "mnsc.2023.04134",
+ "doi": "10.1287/mnsc.2023.04134",
+ "journal": "mnsc",
+ "title": "From Feeds to Inboxes: A Comparative Study of Polarization in Facebook and Email News Sharing",
+ "authors": "Hema Yoganarasimhan; Irina Yakovetskaya",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_028",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.04134",
+ "regressions_path": "./data/packages/mnsc.2023.04134_regressions.txt",
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_mismatch": false,
+ "eligible_reason": "Descriptive article-date regressions (feols) of the Facebook-vs-email rank difference on GPT/LDA polarization, topic shares, article age and article controls, clustered by date; an election-period indicator T_elect (single common date, post-2020 election) interacted with polarization. No treatment adoption, no staggered design.",
+ "design_notes": "R (fixest feols) plus Python notebooks for LDA and GPT scoring. NYT Most Emailed / Most Shared lists, 2019-2021.",
+ "estimators_reported": [
+  "ols_descriptive"
+ ],
+ "specs": [
+  {
+   "spec_id": "main_regs",
+   "eligible": false,
+   "code_file": "replication_package_MS-FTMKG-2023-04134/Code/5_Regressions.R",
+   "reported_location": "main regression tables",
+   "exclusion_reason": "descriptive cross-sectional association; no treatment timing"
+  },
+  {
+   "spec_id": "election_interaction",
+   "eligible": false,
+   "code_file": "replication_package_MS-FTMKG-2023-04134/Code/5_Regressions.R",
+   "reported_location": "election-period table",
+   "exclusion_reason": "single common date (2020 election) interacted with continuous polarization score"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-FTMKG-2023-04134/Data/panel_polarization_full.csv",
+  "replication_package_MS-FTMKG-2023-04134/Data/articles_data.csv"
+ ],
+ "data_files_note": "Ranking and article metadata from NYT trending pages (Internet Archive) and NYT API.",
+ "data_provenance": "original",
+ "data_provenance_note": "Full analysis panel shipped.",
+ "software": "r",
+ "software_notes": "R (fixest), Python (gensim LDA, OpenAI API)",
+ "screener_notes": "Screened from package only (no article text or PDF). Descriptive study; not DiD."
+}

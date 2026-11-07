@@ -1,0 +1,130 @@
+{
+ "suffix": "mnsc.2020.01838",
+ "spec_id": "F7b_to_others_eventstudy",
+ "journal": "mnsc",
+ "data_path": "~/did_packages/_work/mnsc.2020.01838/patent_to_others_prepared.rds",
+ "id_var": "uid",
+ "time_var": "year",
+ "y_var": "ihs_patent_utility",
+ "treat_var": "",
+ "gvar": "gN",
+ "weight_var": "",
+ "cluster_var": "cl",
+ "xt_vars": [
+  "naics4"
+ ],
+ "sample_filter": "",
+ "log_y": "",
+ "data_provenance": "real",
+ "published_coef": null,
+ "published_se": null,
+ "table": "Figure 7, Panel (b)",
+ "column": "other firms not in collusion",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "reverse_event": true,
+ "treatment_label": "cartel breakup, other-firm exposure (reverse event)",
+ "event_pre_min": -2,
+ "event_post_max": 6,
+ "authors_code_event_coefs": {
+  "TreatN:TimeToN-2": -0.0354139518635691,
+  "TreatN:TimeToN1": -0.0332226259629044,
+  "TreatN:TimeToN2": -0.00395928472499896,
+  "TreatN:TimeToN3": 0.00908897834147693,
+  "TreatN:TimeToN4": 0.00394920621403008,
+  "TreatN:TimeToN5": 0.0200591589032033,
+  "TreatN:TimeToN6": -0.00972938556356383
+ },
+ "authors_code_event_se": {
+  "TreatN:TimeToN-2": 0.0195807185911963,
+  "TreatN:TimeToN1": 0.0264432259368383,
+  "TreatN:TimeToN2": 0.0317462359721418,
+  "TreatN:TimeToN3": 0.0273852364212917,
+  "TreatN:TimeToN4": 0.0408965056403119,
+  "TreatN:TimeToN5": 0.0269782433129464,
+  "TreatN:TimeToN6": 0.037176246636398
+ },
+ "authors_code_n": 482932,
+ "published_source": "Figure 7, panel (b) of the published article (Management Science 71(11), 2025, pp. 9628-9649; papers/mnsc/mnsc.2020.01838.pdf): point estimates are plotted, not printed. authors_code_* = output of Replicate.R line 447 on the shipped data, which the figure plots. Panel labels checked against the article (Nov 2).",
+ "pipeline_sample_twfe_post_avg_raw": -0.00230232546558699,
+ "pipeline_sample_twfe_pre_avg_raw": -0.0354139518636202,
+ "pipeline_sample_twfe_post_avg_std_expected": -0.00303450077993067,
+ "y_sd_regsample_expected": 0.758716386172619,
+ "replication_status": "exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)",
+ "notes": "Kang (2025), 'Price-Fixing Cartels and Firm Innovation', Management Science 71(11). Package: Replicate.R + final cleaned/merged .rds files (real processed data; raw DOJ/VitalLaw, PatentsView and licensed Compustat not shipped). FE: unit + 4-digit-NAICS (patents) or Compustat industry group (R&D) x year (authors: felm(... | assignee_id + paste0(cl, year) | 0 | cl)); here xt_vars = naics4 (= cl) so the time FE is year + year x cl; SE clustered by cl. No controls, no weights. Outcomes are IHS-transformed counts/amounts, precomputed as ihs_* (log(x + sqrt(x^2 + 1)), as in Replicate.R). REVERSE EVENT (cartel breakup), eligible under ruling 5b(b) (own regression, single indicator; all pre-breakup exposed rows are collusion years). Event window -2..+6 around breakup (breakup year absent), reference -1; pre summary = rel -2 only, post summary = rel +1..+6 (event_structure). data_reg_patent_to_others.rds: 16,999 exposed other firms, 26 breakup years; gvar gN = year - TimeToN; binary absorbing regressor (ruling 5b(c)). Nov 2 audit: event_structure records the authors' bins and reference; sample_filter 'pre_sample_adopter == FALSE' removed, pre-sample adopters kept at their true dates (gvar already holds the calendar year; no adoption_var needed). See the log's Nov 2 section.",
+ "event_structure": {
+  "bins": [
+   [
+    -2,
+    -2
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "drop",
+  "post_summary": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ]
+  ],
+  "pre_summary": [
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "Replicate.R line 447: felm(depvar ~ TreatN + TreatN:TimeToN | assignee_id + paste0(cl, year) | 0 | cl) on data_reg_patent_to_others.rds; TimeToN is a factor whose first level is -1, so felm drops TreatN:TimeToN-1 (collinear with the unit FE): reference -1 (article, Figure 7 notes: 'Year -1 is used as the baseline'; year 0 omitted). Treated rows exist only at TimeToN -2, -1, +1..+6 (window trimmed in the shipped file). gvar gN = year - TimeToN (breakup year, constant within firm), so rel = t - g = TimeToN in the annual period index (years 1976-2020 consecutive). 'drop': the shipped file contains treated rows only inside the authors' coded window (the event year itself is omitted), so no ever-treated row falls outside bins and ref (0 rows, checked Nov 2); 'drop' and 'ref' are equivalent here.",
+  "verified": "fixest (es_assign bins; FE assignee_id + cl^year; cluster cl) on the authors' sample (all 482,932 rows of data_reg_patent_to_others.rds) reproduces the 7 coefficients of Replicate.R: max abs diff 2.4e-13 (SE max diff 7.8e-06, felm vs fixest small-sample factor). Pipeline sample equals the authors' (no multi-episode units in this file). No numbers are printed in the article; the figure plots the code output on the shipped data."
+ },
+ "pipeline_sample_twfe_source": "Nov 2: fixest on the pipeline sample (pre-sample adopters kept at true dates, uid FE + cl^year) with event_structure; post (pre) = equal-weight mean of the post_summary (pre_summary) bins, std = post / population SD of y over all estimation rows."
+}

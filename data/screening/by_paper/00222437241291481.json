@@ -1,0 +1,31 @@
+{
+ "eligible_design": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_expected": false,
+ "package_dir": null,
+ "journal": "jmr",
+ "doi": "10.1177/00222437241291481",
+ "year": 2024,
+ "title": "Groceries or School Cafeterias: How Households Respond to School Nutrition Mandates",
+ "eligible_reason": "Single nationwide treatment date (HHFKA nutrition standards, treatment start set to August 2012 for all treated households; window Aug 2011 - Jul 2013). Treated = households with school-age children (6-12), control = households without children, coarsened-exact matched. Equation 1 uses household FE plus county x month FE (additional nonredundant FE), so it is a 2x2 design with matching: not staggered and not eligible.",
+ "design_notes": "Eq. (1): DV_ht = beta (TreatGroup_h x TreatPer_t) + delta_h + lambda_ct + eps; DV = log calories per adult-equivalent per day (Table 2 col 1: effect -.064) and Nutrient Profile Score. NielsenIQ Consumer Panel + Label Insight; 34,793 households after CEM (7,645 treated, 27,148 control). SE clustered by household. Heterogeneity tables use treatment-by-characteristic interactions.",
+ "estimators_reported": [
+  "DiD with household FE and county-by-month FE on CEM sample",
+  "causal forest (heterogeneity)"
+ ],
+ "main_or_robustness": "main",
+ "data_access": "proprietary",
+ "screener_notes": "Ineligible: single adoption date, matching, county x month FE. Data: NielsenIQ Consumer Panel (licensed) and Label Insight; no package in batch.",
+ "suffix": "00222437241291481"
+}

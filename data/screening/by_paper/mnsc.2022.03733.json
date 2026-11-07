@@ -1,0 +1,94 @@
+{
+ "suffix": "mnsc.2022.03733",
+ "doi": "10.1287/mnsc.2022.03733",
+ "journal": "mnsc",
+ "title": "Climate Change and Mutual Fund Voting on Climate Proposals",
+ "authors": "Alberta Di Giuli; Alexandre Garel; Roni Michaely; Arthur Romec",
+ "year": 2026,
+ "publication": "Management Science 72(2), 1253-1276 (February 2026); Articles in Advance May 30, 2025",
+ "department": "finance",
+ "screened_from": "package_and_published_text",
+ "batch": "rescreen_nov4_three",
+ "rescreened_nov4": "Earlier record was unassessable: the package download was incomplete (.part, no central directory) and there was no article text. Re-screened from the published article text (data/text/mnsc/mnsc.2022.03733.txt) and the complete 810 MB package (76 archive entries, unpacked by the intake into package_dir): Readme.rtf, 'Stata - 7. Empirical analysis.do' and the intake inventory data/packages/mnsc.2022.03733_regressions.txt.",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.03733",
+ "regressions_path": "./data/packages/mnsc.2022.03733_regressions.txt",
+ "package_mismatch": false,
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": true,
+ "near_miss_reason": "Stacked difference-in-differences in every main-text column (Cengiz et al. 2019, following Baker et al. 2022). For each year-quarter of a first abnormal-heat shock, the authors build a cohort with the climate-proposal votes of first-shocked funds and never-shocked clean controls in the four quarters before and after the shock (shock quarter omitted). They stack 11 cohorts (2010Q1-2021Q2) and estimate reghdfe vote_for treated##post with cohort-fund and cohort-proposal FE (Tables 2-7; Table 2 Panel C and Table 9 use cohort-fund with cohort-year-quarter or cohort-firm-year-quarter FE). Every column also includes the time-varying fund controls Ln(TNA) and Avg. Turnover Ratio. Table 2 Panel B and Tables 4-7 and 9 add triple interactions of Treated x Post with proposal, firm or fund characteristics. The underlying design is a staggered binary adoption: first exposure of the fund's headquarters city to a quarterly abnormal temperature above 2 degrees C, absorbing, at fund-specific quarters, with never-treated funds. No unstacked unit and calendar-time FE column is reported; the Table B.3 robustness columns are stacked too.",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "No main-text column satisfies every rule. All DiD regressions are stacked with cohort-specific FE (not eligible) and include time-varying fund controls; the heterogeneity tables add triple interactions. Table 8 regresses proposal-level support on the continuous share of shocked funds with firm-year FE (not a DiD).",
+ "design_notes": "ISS Voting Analytics fund votes on shareholder proposals, 2006-2022, matched to CRSP mutual funds through SEC N-PX fund series; fund headquarters zip codes from CRSP; NOAA GSOD station temperatures. Abnormal temperature = monthly temperature minus the average for that calendar month over the previous 10 years, averaged over the quarter. Treated = first quarter with average abnormal temperature above 2 degrees C. Cohorts start after the first three sample years; cohorts with less than 1% treated votes are dropped. Main sample: 31,453 votes on 568 climate proposals (31,115 in the baseline regression). Outcome: Vote For (0/100). Linear probability model; SEs two-way clustered by cohort-fund and cohort-proposal. Headline: Table 2 Panel A column 3, 11.170 (2.245). Code in 'Stata - 7. Empirical analysis.do': lines 244/268/298/335 (Table 2A), 361/384 (2B), 414-420 (2C), 608/612 (Table 3 loops), 648-723 (Tables 4-7), 804-814 (Table 8), 1019-1023 (Table 9), 1208-1235 (Table B.3).",
+ "estimators_reported": [
+  "stacked DiD (Cengiz et al. 2019) with cohort-fund and cohort-proposal FE and time-varying fund controls (Tables 2-3, B.3)",
+  "stacked fund-quarter DiD with cohort-fund and cohort-year-quarter FE (Table 2 Panel C)",
+  "stacked triple-difference interactions (Table 2 Panel B, Tables 4-7, 9)",
+  "proposal-level OLS on the share of shocked funds with firm-year FE (Table 8)"
+ ],
+ "main_or_robustness": "main (the staggered heat-shock design is the paper's identification strategy, estimated only as a stacked DiD)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 11,
+ "n_adoption_cohorts_note": "Table B.2 Panel A: cohorts 2010Q1, 2010Q2, 2011Q3, 2012Q1, 2014Q1, 2015Q3, 2015Q4, 2017Q1, 2017Q4, 2020Q1, 2021Q2 (Figure 3); 2010Q2, 2015Q4 and 2020Q1 hold most treated votes.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "modern_estimators_note": "Stacked DiD only; not an admitted modern estimator (PROTOCOL 5b).",
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 2 Panel A, columns 1-4 (do lines 244, 268, 298, 335)",
+   "reason": "stacked DiD (cohort-fund + cohort-proposal FE); time-varying controls ln_tna avg_turn_ratio"
+  },
+  {
+   "location": "Table 2 Panel B, columns 1-2 (lines 361, 384)",
+   "reason": "stacked; triple interaction Treated x Post x Climate Proposal; controls"
+  },
+  {
+   "location": "Table 2 Panel C, columns 1-4 (lines 414-420)",
+   "reason": "stacked fund-quarter regressions (cohort-fund + cohort-year-quarter FE); controls"
+  },
+  {
+   "location": "Table 3 Panels A-B (lines 608, 612)",
+   "reason": "stacked; second to fourth shocks and longer horizons; controls"
+  },
+  {
+   "location": "Tables 4-7 (lines 648-723)",
+   "reason": "stacked; triple interactions with climate risk, proposal quality, indexer status, prior awareness; controls"
+  },
+  {
+   "location": "Table 8 (lines 804-814)",
+   "reason": "continuous share of shocked funds x climate proposal, firm-year FE, proposal controls; not a DiD"
+  },
+  {
+   "location": "Table 9 (lines 1019-1023)",
+   "reason": "stacked holdings regressions with triple and quadruple interactions; controls including portfolio importance"
+  },
+  {
+   "location": "Table B.3 (appendix; lines 1208-1235)",
+   "reason": "stacked robustness variants (alternative treatment, extra cohort-family/fund-year/state-year FE, clustering, extra controls, cold placebo); appendix only"
+  }
+ ],
+ "data_access": "partial (public inputs shipped: NOAA GSOD temperatures, SEC N-PX matching files, SimpleMaps, Sautner et al. climate exposure, Koelbel et al. climate risk, Ilhan et al. emission ranking, Yale climate opinion; commercial ISS Voting Analytics, CRSP mutual fund and stock, and Compustat data are not shipped, and the final estimation datasets are absent)",
+ "data_files_present": false,
+ "data_files": [
+  "0 - raw datasets/Temperature/US_1990.csv ... US_2022.csv (GSOD station data)",
+  "0 - raw datasets/SimpleMaps, Sautner et al. 2023, Koelbel et al. 2022, Ilhan et al. 2021, Yale Program on Climate Change Communication, Family",
+  "1 - intermediate datasets/US_abtemp_station_qt.dta, US_station_long_lat.dta, ES_classification_final.dta, npx_to_sec_fund_name_final.dta, list_npx.csv, npx_to_cik.csv, npx_series_contract.csv",
+  "2 - final datasets/ (empty cohort folders)"
+ ],
+ "data_files_note": "Readme.rtf section 2: public data are included; commercial data (ISS, CRSP, Compustat) are not. The final sample (sample_shareholder_proposals_final.dta) and the cohort files are not shipped, so the regressions cannot be run without ISS and CRSP licenses. The package also ships log_stata.pdf/.smcl.",
+ "software": "stata",
+ "software_notes": "Stata (reghdfe, matchit, geonear) for the analysis; Python (selenium, pandas) for SEC N-PX scraping; R (GSODR) for temperature data.",
+ "replication_feasible": "no",
+ "priority": 3,
+ "priority_note": "Near-miss (stacked DiD with controls and interactions); commercial data not shipped.",
+ "package_expected": true,
+ "needs_manual_review": false,
+ "screener_notes": "Empirical sections and every main-text table read in full; the data section and Appendix Tables B.2-B.3 checked. The intake inventory (data/packages/mnsc.2022.03733_regressions.txt, 42 reghdfe commands, all in 'Stata - 7. Empirical analysis.do') matches the do-file: every DiD command absorbs cohort-specific FE (cohort_fundid with cohort_prop_firm_fe, c_yq or cohort_cusip_yq) and includes ln_tna avg_turn_ratio; the six Table 8 commands regress general_support on the continuous mean_shocked/wtmean_shocked x climate_proposal with firm-year FE. The unpacked package (63 files, 6.4 GB) has no ISS, CRSP or Compustat data and the '2 - final datasets' cohort folders are empty. The archive is kept at package_dir/_archive_mnsc.2022.03733.zip.",
+ "n_regressions_in_inventory": 42
+}

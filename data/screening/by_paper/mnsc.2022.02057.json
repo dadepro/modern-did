@@ -1,0 +1,56 @@
+{
+ "suffix": "mnsc.2022.02057",
+ "doi": "10.1287/mnsc.2022.02057",
+ "journal": "mnsc",
+ "title": "Mapping U.S.-China Technology Decoupling: Policies, Innovation, and Firm Performance",
+ "year": "2024",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Two designs. (a) SEI-promotion policy: treat_post = SEI sector x 1(year>2012), a single adoption date, not eligible. (b) U.S. sanctions: post_sanction switches on at sector-specific years (staggered), but every main-text regression that uses it includes time-varying controls (log patent counts at the IPC level; log assets, age, capex, PPE, leverage, R&D ratios at the firm level). No main-text specification without time-varying controls, so zero eligible specifications.",
+ "design_notes": "Stata, one do-file and one .dta per table/figure. Sanction design: Table 7A (IPC x year, 2007-2018, 123 three-digit IPC classes): reg decoupling/dependence post_sanction n_pat_c n_pat_u i.year, absorb(IPC) vce(robust). post_sanction = 1 if the technology class had been exposed to U.S. sanctions before that year. In Table_7A_Data.dta, 8 treated classes: first-treated 2007 (3 classes, treated from the first sample year), 2014 (3), 2015 (2); 115 never-treated; one class switches back off. Table 8: event-time indicators sanction_yr2..sanction_yr10 with the same IPC controls plus n_cite_c n_cite_u (event study with time-varying controls). Table 9A (firm x year, 1,981 firms, 2007-2018): reg {n_pat,n_cite,TFP,ROIC,tobin_q} post_sanction asset age capex_ratio ppe_ratio leverage_ratio RnD_at_ratio i.year, absorb(firm_ID) vce(robust); 606 ever-treated firms with first-treated years spanning 2007-2018 (111 treated from 2007), 1,375 never treated. Tables 7B/9B use continuous network-exposure measures (sanction_exposure_up/dn), not binary. SEI design: Table 4 (IPC level) and Tables 5-6 (firm level) use treat_post with post = 1(year>2012), one adoption date; Figures 7-8 are event studies of the same single-date design (treat_yr1..treat_yr12). Tables 1-3 regress outcomes on the continuous decoupling measure. Note the code writes 'reg ..., absorb()' which is areg syntax; SEs are heteroskedasticity-robust, not clustered.",
+ "estimators_reported": [
+  "TWFE static (areg-style unit FE + year dummies, robust SE) with time-varying controls",
+  "TWFE event study with time-varying controls (Table 8, Figures 7-8)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "sanctions: 3 distinct first-treated years at the IPC level (2007 always-treated, 2014, 2015); 12 at the firm level (2007-2018). SEI policy: 1 (2012).",
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 4 (Table_4.do lines 6,8); Table 5 (Table_5.do); Table 6 (Table_6.do); Figures 7-8",
+   "reason": "SEI treatment has a single adoption date (post = year>2012); also time-varying controls"
+  },
+  {
+   "location": "Table 7A (Table_7.do lines 6,8), outcomes decoupling and dependence",
+   "reason": "time-varying controls n_pat_c n_pat_u (log patent counts by class-year); staggered post_sanction otherwise qualifies"
+  },
+  {
+   "location": "Table 8 (Table_8.do lines 6,8), event study",
+   "reason": "time-varying controls n_pat_c n_pat_u n_cite_c n_cite_u"
+  },
+  {
+   "location": "Table 9A (Table_9.do lines 6-14), five firm outcomes",
+   "reason": "time-varying firm controls asset age capex_ratio ppe_ratio leverage_ratio RnD_at_ratio"
+  },
+  {
+   "location": "Tables 7B, 9B",
+   "reason": "continuous treatment-exposure regressors (sanction_exposure_up/dn)"
+  },
+  {
+   "location": "Tables 1-3, Table 2A/2B",
+   "reason": "continuous regressor (decoupling measure), not a binary treatment"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Package: ~/did_packages/mnsc/mnsc.2022.02057/replication_package_MS-FIN-22-02057/ with Master.do, one .do and one _Data.dta per table/figure (e.g., Table_7A_Data.dta, Table_8_Data.dta, Table_9A_Data.dta), !ReadMe.txt data dictionary. Data are derived from USPTO/CNIPA patents merged with CSMAR and Compustat; the regression-ready .dta files are included. A no-controls TWFE version of Table 7A or 9A could be constructed from the shipped data, but the paper reports no such column, so the paper is not eligible under the main-text rule. Flag for the lead: if the project later admits specifications with time-varying controls as a secondary category, this package is complete and trivial to run."
+}

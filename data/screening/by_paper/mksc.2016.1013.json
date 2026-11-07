@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2016.1013",
+ "doi": "10.1287/mksc.2016.1013",
+ "journal": "mksc",
+ "title": "Can Retail Sales Volatility be Curbed Through Marketing Actions?",
+ "authors": "Mercedes Esteban-Bravo; Jose Manuel Vidal-Sanz; Gökhan Yıldırım",
+ "year": 2017,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2016.1013",
+ "regressions_path": "./data/packages/mksc.2016.1013_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (multivariate GARCH volatility/covolatility model of sales and marketing mix; Dominick's categories)",
+ "ineligible_specs": [
+  {
+   "spec_id": "mgarch",
+   "reported_location": "estimation and IRF tables/figures",
+   "exclusion_reason": "multivariate GARCH time-series model per category; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Multivariate volatility (GARCH) model on Dominick's brand-level time series.",
+ "design_notes": "MATLAB folders 1-6 (Figure1&2, Estimation with MFE/UCSD_GARCH toolboxes, Wald tests, conditional vol/corr, IRFs, planning simulation).",
+ "estimators_reported": [
+  "multivariate GARCH ML",
+  "impulse response functions"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Data/Data.xlsx",
+  "refrigerated_juice_2brands_original.xls",
+  "laundry_detergent_3brands_original.xls"
+ ],
+ "data_files_note": "Dominick's Finer Foods category data.",
+ "data_provenance": "original",
+ "data_provenance_note": "Public Dominick's data as used.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

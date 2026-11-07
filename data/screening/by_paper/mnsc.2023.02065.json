@@ -1,0 +1,98 @@
+{
+ "suffix": "mnsc.2023.02065",
+ "doi": "10.1287/mnsc.2023.02065",
+ "journal": "mnsc",
+ "title": "Earnings Conference Calls and the SEC Comment Letter Process",
+ "authors": "Alina Lerman; Thomas D. Steffen; Kangkang Zhang",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_010",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.02065",
+ "regressions_path": "./data/packages/mnsc.2023.02065_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "No staggered unit-by-time DiD. Tables 3-6 are comment-letter-level regressions of letter/review characteristics on cccl (letter references the conference call) with year-quarter and SEC office (or firm) FE and determinant controls: cccl is a letter attribute, not a treatment that switches on in a unit panel. The only DiD (Tables 7-8) is a matched-pair stacked design: each CCCL firm is paired with a matched comment-letter firm, regressions of 10-K text and spread/illiquidity on treatxpost + cccl + post + time-varying controls with pair_id and calendar year-quarter FE (sample5.dta: 208 pairs, 369 firms, 44 firms in 2-3 pairs). Stacked-only (pair FE, pair-level post main effect, firms duplicated across pairs) and every column also has time-varying controls, so not an eligible design and not a 5c near-miss.",
+ "design_notes": "Stata reghdfe. STATA Code.do lines 350-360 (Table 7 Panel B): reghdfe len10k treatxpost cccl post $licontrol, absorb(cyearqtr pair_id) vce(cluster pair_id); $licontrol = roa compound_ret acc log_mve mtb std_abs_ret earnvol num_segments foreign form10k. Table 7 Panel C splits treatxpost by agree/other; Table 8 Panel B spread/illiquidity with $sprdcontrol; Table 8 Panel C splits by management/volume groups. Tables 4-6: reghdfe y cccl $controls, absorb(lyearqtr dcf_office) or absorb(lyearqtr gvkey); comment-level absorb(upup).",
+ "estimators_reported": [
+  "letter_level_ols_with_fe",
+  "matched_pair_stacked_did_with_controls"
+ ],
+ "main_or_robustness": "main (DiD is secondary: Tables 7-8)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Comment-letter dates vary across pairs, but the design is a pair-stacked 2x2 DiD, not a unit-FE staggered panel.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [
+  {
+   "spec_id": "Table7_PanelB_textual",
+   "eligible": false,
+   "exclusion_reason": "Matched-pair stacked DiD (pair_id FE, cccl and post main effects, firms repeated across pairs) plus time-varying controls ($licontrol)",
+   "code_file": "STATA Code.do",
+   "code_line": 350,
+   "reported_location": "Table 7 Panel B"
+  },
+  {
+   "spec_id": "Table7_PanelC_agree_split",
+   "eligible": false,
+   "exclusion_reason": "Stacked matched-pair design; treatment split into agree/other interactions; time-varying controls",
+   "code_file": "STATA Code.do",
+   "code_line": 376,
+   "reported_location": "Table 7 Panel C"
+  },
+  {
+   "spec_id": "Table8_PanelB_spread",
+   "eligible": false,
+   "exclusion_reason": "Stacked matched-pair design with post main effect; time-varying controls ($sprdcontrol incl. lagged price)",
+   "code_file": "STATA Code.do",
+   "code_line": 435,
+   "reported_location": "Table 8 Panel B"
+  },
+  {
+   "spec_id": "Table8_PanelC_groups",
+   "eligible": false,
+   "exclusion_reason": "Stacked matched-pair design; subgroup-by-treatment interactions; time-varying controls",
+   "code_file": "STATA Code.do",
+   "code_line": 453,
+   "reported_location": "Table 8 Panel C"
+  },
+  {
+   "spec_id": "Tables3to6_letter_level",
+   "eligible": false,
+   "exclusion_reason": "Letter-level cross-sectional regressions on cccl with office/firm and quarter FE and controls; no staggered treatment",
+   "code_file": "STATA Code.do",
+   "reported_location": "Tables 3-6"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "sample1.dta",
+  "sample2.dta",
+  "sample3.dta",
+  "sample4.dta",
+  "sample5.dta",
+  "sample5a.dta",
+  "sample5b.dta",
+  "sample5b1.dta",
+  "recon.dta",
+  "sample_OA.dta",
+  "sample_OA1.dta",
+  "allcalls_nodups.dta",
+  "finalcccl.sas7bdat"
+ ],
+ "data_files_note": "Final analysis datasets shipped; raw Compustat/CRSP/Audit Analytics inputs not shared (SAS code provided).",
+ "data_provenance": "original",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Screened from package only (no article text). DiD exists only as a pair-stacked matched design with controls; not eligible."
+}

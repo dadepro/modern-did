@@ -1,0 +1,121 @@
+{
+ "suffix": "mnsc.2023.4972",
+ "doi": "10.1287/mnsc.2023.4972",
+ "journal": "mnsc",
+ "title": "Physical Frictions and Digital Banking Adoption",
+ "authors": "Hyun-Soo Choi; Roger K. Loh",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_026",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4972",
+ "regressions_path": "./data/packages/mnsc.2023.4972_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Time-varying controls (beginning-of-month balance, monthly salary) are the sole violation in Table 2 columns 1, 2, 4, 5, which regress ATM usage distance and log ATM transactions on a single absorbing closure indicator (dum_atmclose_fav6_f or dum_atmclose_near_f) with customer and calendar-month FE, clustered by postal code (article Table 2 notes: beginning balance, monthly salary, year-month and customer fixed effects). Table 2 columns 3 and 6 and Table 4 enter both closure indicators jointly, Tables 3 and 5-9 are IV (ivreg2hdfe) and Table 10 is a count model, so those columns fail further rules. Staggered ATM closures in Singapore (DBS customers, monthly 2015-2017); DBS data are under NDA and not shipped.",
+ "near_miss_5c_controls_only": true,
+ "near_miss_5c_note": "5c design-eligible columns: Table 2 cols 1, 2, 4, 5 (outcomes ATM usage distance and log ATM transactions). Excluded from 5c because the DBS data are not shipped.",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Closures occur at different ATMs in different months of 2015-2017 (README Figure 1; Figure 4 event time), but cohort counts cannot be verified without the DBS data.",
+ "never_treated_present": true,
+ "always_treated_present": null,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [
+  {
+   "location": "Table 2 col 1",
+   "outcome": "ewdist_fill",
+   "treatment": "dum_atmclose_fav6_f",
+   "coef": 0.1076434,
+   "se": 0.0406126,
+   "n_obs": 5994130,
+   "source": "tables1to10_and_fig4.smcl"
+  },
+  {
+   "location": "Table 2 col 2",
+   "outcome": "ewdist_fill",
+   "treatment": "dum_atmclose_near_f",
+   "coef": 0.1279671,
+   "se": 0.0174109,
+   "n_obs": 5994130,
+   "source": "tables1to10_and_fig4.smcl"
+  },
+  {
+   "location": "Table 2 col 4",
+   "outcome": "ln_natmtxn",
+   "treatment": "dum_atmclose_fav6_f",
+   "coef": -0.0587562,
+   "se": 0.0040689,
+   "n_obs": 5994130,
+   "source": "tables1to10_and_fig4.smcl"
+  }
+ ],
+ "main_or_robustness": "main (first stage of the IV design)",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "The headline design is IV (ATM closures instrument usage distance). The first-stage and reduced-form regressions are staggered absorbing-closure TWFE with customer and month FE, but every column includes time-varying controls (sumbegmthbal, summthsal); Table 2 cols 3/6 and Table 4 add a second closure indicator. No column satisfies every rule; DBS data are under NDA and not shipped.",
+ "design_notes": "Stata reghdfe/ivreg2hdfe/ppmlhdfe (SAS data preparation). Sample: random anonymized sample of 500,000 DBS retail customers, 2015-2017, no joint accounts, at least 6 GIRO or 1 salary credit; 5,994,130 customer-months. Table 9 uses PSM-matched samples (IV). Figure 4 plots residual event-time activity for treated vs PSM controls.",
+ "estimators_reported": [
+  "twfe_static_with_controls",
+  "iv_2sls",
+  "poisson"
+ ],
+ "specs": [
+  {
+   "spec_id": "T2_c1_c2_c4_c5",
+   "eligible": false,
+   "exclusion_reason": "time-varying controls (sumbegmthbal, summthsal) in every column (sole violation; 5c design-eligible)",
+   "code_file": "replication_package_MS-FIN-21-02794/tables1to10_and_fig4.do",
+   "code_line": 106,
+   "outcome": "ewdist_fill (cols 1-2); ln_natmtxn = ln(1+natmtxn) (cols 4-5)",
+   "treatment_var": "dum_atmclose_fav6_f (cols 1, 4) or dum_atmclose_near_f (cols 2, 5)",
+   "unit_var": "cid2",
+   "time_var": "calmth",
+   "fe": [
+    "cid2",
+    "calmth"
+   ],
+   "controls": [
+    "sumbegmthbal",
+    "summthsal"
+   ],
+   "cluster": "fav_or_hm_postal",
+   "static_or_event": "static",
+   "reported_location": "Table 2, columns 1, 2, 4, 5",
+   "data_provenance": "not_shipped"
+  },
+  {
+   "spec_id": "T2_c3_c6_T4",
+   "eligible": false,
+   "exclusion_reason": "two closure indicators jointly (extra treatment regressor) plus time-varying controls",
+   "code_file": "replication_package_MS-FIN-21-02794/tables1to10_and_fig4.do",
+   "reported_location": "Table 2 cols 3, 6; Table 4"
+  },
+  {
+   "spec_id": "T3_T5-T10",
+   "eligible": false,
+   "exclusion_reason": "IV (ivreg2hdfe) or Poisson (ppmlhdfe); Table 9 PSM-matched IV",
+   "code_file": "replication_package_MS-FIN-21-02794/tables1to10_and_fig4.do",
+   "reported_location": "Tables 3, 5-10"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "replication_package_MS-FIN-21-02794/singapore.sas7bdat",
+  "replication_package_MS-FIN-21-02794/singapore_attr.sas7bdat",
+  "replication_package_MS-FIN-21-02794/popdensity2016.sas7bdat"
+ ],
+ "data_files_note": "Only public map/population-density files for Figure 1 are shipped; DBS customer transaction data (MSpanel2_7feb22 and PSM panels) are under NDA.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "README: 'The underlying proprietary and confidential data from DBS bank cannot be provided due to a Non-Disclosure Agreement'.",
+ "software": "stata",
+ "software_notes": "Stata (reghdfe, ivreg2hdfe, ppmlhdfe, psmatch2) with SAS data preparation",
+ "screener_notes": "Screened from package only (no article text or PDF). Near-miss with controls as the sole violation in Table 2 cols 1, 2, 4, 5; no shipped data.",
+ "hand_check_nov4": "Controls-only confirmed: article Table 2 columns 1, 2, 4, 5 report one closure indicator with Beginning Balance and Monthly Salary, year-month and customer FE, so main-text columns exist whose only violation is time-varying controls. Flag true kept; reason text rewritten so the classifier reads a single violation (other columns' restrictions described without category terms; details stay in the spec list)."
+}

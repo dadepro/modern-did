@@ -1,0 +1,51 @@
+{
+ "suffix": "mksc.2025.0145",
+ "doi": "10.1287/mksc.2025.0145",
+ "journal": "mksc",
+ "title": "Visual Plant Imagery and Property Valuation: A Descriptive Analysis",
+ "authors": "Yuqian Chang; Nathan M. Fong; Ning Ye; Maureen Morrin",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mksc/mksc.2025.0145",
+ "regressions_path": "./data/packages/mksc.2025.0145_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a DiD. Cross-sectional hedonic regressions of log sale price (and days on market, views, favorites) on continuous counts of plant and non-plant images (plant_sum_gpt, nonplant_sum_gpt) with property, neighborhood, photo and text controls and zipcode FE (xtreg, fe i(zipcode)); robustness with zip3, geo-sector and realtor FE, CEM, DML and Frank's test. No treatment timing.",
+ "design_notes": "Stata main_study/code_main.do (builds data(n=31031).dta from data_raw(n=40294).csv); SPSS realtor survey; Python DML notebook.",
+ "estimators_reported": [
+  "ols_cross_sectional_with_fe",
+  "cem",
+  "double_ml"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "All tables",
+   "reason": "cross-sectional; continuous plant-image regressors; zipcode FE; no adoption over time"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "3. Data and Replication Files/main_study/data_raw(n=40294).csv",
+  "3. Data and Replication Files/realtor_survey/data_survey.csv"
+ ],
+ "data_files_note": "README: identifiable variables masked; property and zipcode IDs randomly recoded and Gaussian noise added to log price, age, size and price-related variables.",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Gaussian noise added to log sale price and other variables (masked).",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, README and OpenAlex abstract (no article text)."
+}

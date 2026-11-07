@@ -1,0 +1,37 @@
+{
+  "suffix": "mnsc.2023.4738",
+  "doi": "10.1287/mnsc.2023.4738",
+  "journal": "mnsc",
+  "title": "Combining Choice and Response Time Data: A Drift-Diffusion Model of Mobile Advertisements",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No DiD or event study. The package estimates a two-stage drift-diffusion model of click-through and response time by simulated nonlinear least squares with a neural-network surrogate (ddm_sim_dict.ipynb, ddm_NLS.ipynb, ddm_simulated_likelihood.ipynb). There is no treatment indicator, panel, or fixed-effects regression; the only statsmodels import is incidental. The ft_callaway flag is a false positive.",
+  "design_notes": "Field data on user responses to mobile video ads: (y_i, t_i) click and response time per user plus synthetic covariates (readme.html: covariates z-scored with N(0,1) noise added). GPU/Colab Python notebooks.",
+  "estimators_reported": [
+    "structural_ddm_simulated_nls"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial_synthetic",
+  "data_files_present": true,
+  "data_files": [
+    "click_response_dist.csv (2 MB; choices and response times)",
+    "click_response_covariates.csv (57 MB; covariates are synthetic)"
+  ],
+  "software": "python",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible: no DiD design.",
+  "screener_notes": "Screened from package only (readme.html, grep of notebooks)."
+}

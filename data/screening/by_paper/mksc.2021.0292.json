@@ -1,0 +1,41 @@
+{
+  "suffix": "mksc.2021.0292",
+  "doi": "10.1287/mksc.2021.0292",
+  "journal": "mksc",
+  "title": "Advertising as Information for Ranking E-Commerce Search Listings",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not eligible. (i) The paper is a large-scale randomized field experiment at JD.com (abstract); treatment is random assignment of the ranking algorithm, not staggered adoption. (ii) The replication package stored under this suffix belongs to a different paper: its README and code analyze Numerator household panel data on online (Instacart) versus offline grocery trips (Section3_Table2.R, replication_fact_details.csv.gz, offline/online distance files) and state that the shipped data are simulated 50% draws with added noise. Nothing in the package relates to JD.com or advertising.",
+  "package_mismatch": true,
+  "package_mismatch_note": "Package contents (0.ReadMe.txt: 'We utilize proprietary Numerator data ... we offer simulated data'; R scripts Section2_Figure1.R ... Section4_Table8.R on Instacart/grocery trips) do not match the title/DOI. The correct package for Yang, Sahni, Nair and Xi (2023) needs to be re-downloaded from the INFORMS supplemental material page.",
+  "design_notes": "From the abstract: field experiment at JD.com using ad-propensity information to rank new products; outcomes for platform and consumers. No staggered DiD design identifiable. The mismatched package runs fixest::feols regressions (Section4_Table8.R, Section4_Figure5.R) on simulated Numerator data for an unrelated paper.",
+  "estimators_reported": [
+    "randomized_experiment (per abstract); package regressions belong to another paper"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "synthetic",
+  "data_provenance": "synthetic (mismatched package ships simulated Numerator draws with noise)",
+  "data_files_present": false,
+  "data_files": [
+    "(mismatched) replication_fact_dt_groceries.csv.gz 210 MB",
+    "replication_fact_details.csv.gz 60 MB",
+    "replication_fact_dt_qsr.csv.gz",
+    "dispersion_*/offline_*/online_* csv.gz"
+  ],
+  "software": "r",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Flags ft_difference_in_differences/ft_staggered likely come from incidental mentions in the article. Action for lead: re-fetch the package for 10.1287/mksc.2021.0292 and identify which Marketing Science paper the current folder actually belongs to (Instacart/Numerator online-offline grocery comparison, R code dated Sept 2023)."
+}

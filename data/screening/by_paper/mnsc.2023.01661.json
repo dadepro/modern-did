@@ -1,0 +1,40 @@
+{
+ "suffix": "mnsc.2023.01661",
+ "doi": "10.1287/mnsc.2023.01661",
+ "journal": "mnsc",
+ "title": "Kinks as Goals: Accelerating Commissions and the Performance of Sales Teams",
+ "year": 2024,
+ "authors": "Peter Kuhn; Lizi Yu",
+ "screened_from": "package_only",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.01661",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Not a difference-in-differences design. The paper studies bunching of daily team sales at commission kink points: regressions of bin indicators (binsales) on indicators for bins at/below/above the attainable threshold with bin x store x day-of-week and bin x holiday FE (Tables 3-4), and daily sales on distance-to-threshold bins (Table 5). No binary treatment switching on at unit-specific dates.",
+ "design_notes": "Daily sales of 103 retail store teams in 2016 (kinks_2016sales.dta). GenerateMain.do reshapes to store-day-bin level; Table3.do/Table4.do: reghdfe binsales bin1below5..bin1above5 if pool1==1, absorb(binstoredow binholiday) vce(cluster storegroup). Appendix: placebo thresholds, leave-one-out, team-size splits. Full-text hit for de Chaisemartin and Cengiz et al. citations is unrelated to the estimation.",
+ "estimators_reported": [
+  "bunching regressions with high-dimensional FE (reghdfe)",
+  "OLS"
+ ],
+ "main_or_robustness": "n/a",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 0,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "Data/ folder is empty; kinks_main.dta, kinks_2016sales.dta, kinks_appendixC/D.dta referenced but not shipped (company data under confidentiality; contact Lizi Yu)"
+ ],
+ "data_provenance": "real",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (README docx, Kinks_Master.do, Codes/*.do, Outputs/*.log).",
+ "software_notes": "Stata/SE 17.0"
+}

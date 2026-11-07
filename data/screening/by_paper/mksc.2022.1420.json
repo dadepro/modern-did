@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2022.1420",
+ "doi": "10.1287/mksc.2022.1420",
+ "journal": "mksc",
+ "title": "The Design and Targeting of Compliance Promotions",
+ "authors": "Øystein Daljord; Carl F. Mela; Jason M.T. Roos; Jim Sprigg; Song Yao",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1420",
+ "regressions_path": "./data/packages/mksc.2022.1420_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (randomized hotel loyalty promotion experiment; LATE/MTE estimation and targeting)",
+ "ineligible_specs": [
+  {
+   "spec_id": "promotion_experiment",
+   "reported_location": "main tables",
+   "exclusion_reason": "cross-sectional randomized offer experiment (felm Y ~ E | G), IV/MTE; no panel or staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Randomized compliance-promotion experiment with IV-based heterogeneity and targeting.",
+ "design_notes": "Replication code shipped as R package MKSC.21.0487 with vignette.",
+ "estimators_reported": [
+  "felm with baseline-tier FE",
+  "IV/MTE (ivmte)",
+  "policy optimization (Gurobi)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "MKSC.21.0487/data/estimation_data.rda (inside tar.gz)"
+ ],
+ "data_files_note": "23,583 customers in the estimation data.",
+ "data_provenance": "original",
+ "data_provenance_note": "No disguise statement in README.",
+ "software": "r",
+ "software_notes": "R package",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

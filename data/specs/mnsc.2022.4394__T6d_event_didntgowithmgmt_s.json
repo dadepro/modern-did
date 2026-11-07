@@ -1,0 +1,80 @@
+{
+ "suffix": "mnsc.2022.4394",
+ "spec_id": "T6d_event_didntgowithmgmt_s",
+ "journal": "mnsc",
+ "data_provenance": "real",
+ "data_path": "~/did_packages/_work/mnsc.2022.4394/voting_sample.rds",
+ "id_var": "wficn1",
+ "time_var": "year",
+ "y_var": "didntgowithmgmt_s",
+ "gvar": "gy",
+ "weight_var": "",
+ "cluster_var": "wficn1",
+ "xt_vars": [],
+ "sample_filter": "",
+ "log_y": "",
+ "published_coef": -0.0215,
+ "published_se": null,
+ "published_n": 1521,
+ "authors_code_coef": -0.021296500000000003,
+ "authors_code_se": null,
+ "authors_code_n": 1521,
+ "authors_code_event_coefs": [-0.0248189, -0.0177741],
+ "authors_code_event_se": [0.0266456, 0.0418305],
+ "published_source": "Printed Table 14, column (6) [Dissent management recommendations, social issues, y+1..y+2] of the published article (papers/mnsc/mnsc.2022.4394.pdf), read Nov 4 2026; the article prints the 2 post bins y+1..y+2 = -0.025, -0.018 with t-statistics (-0.931, -0.425) in parentheses, not standard errors (published_event_coefs, published_event_tstat; published_se and published_event_se = null); published_coef = -0.0215 is the equal-weight average of the 2 printed post bins covered by event_structure.post_summary (-0.043/2); N = 1,521; every printed bin equals the authors' shipped log bin to the printed decimals (log bins kept in authors_code_event_coefs/authors_code_event_se, log post average -0.021296500000000003 in authors_code_coef). Earlier: authors_log",
+ "published_source_detail": "Authors' Stata log shipped in the package (11. table 6d/Table 6d_regression_log.pdf); article text not in the project, so printed table values are unverified. Event specs: published_coef is the equal-weight average of the logged post bins; published_se is null (bin covariance not in the log).",
+ "published_estimator": "twfe",
+ "authors_rerun_twfe_raw": -0.0212964909935667,
+ "authors_rerun_twfe_raw_se": 0.0334716425263096,
+ "table": "14",
+ "column": "6 (dynamic)",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": true,
+ "replication_status": "exact (authors' code reproduces the shipped log, whose 2 post bins equal printed Table 14 column (6) y+1..y+2 = -0.025, -0.018 (t = -0.931, -0.425) to the printed decimals; published_coef -0.0215 is their equal-weight average (log average -0.021296500000000003); N 1,521; verified against the article Nov 4 2026)",
+ "replication_vs_log": "exact (fixest = authors' reghdfe keepsing log to all printed digits; N and clusters match)",
+ "code_file": "replication_package_MS-ACC-21-00438/11. table 6d/Table 6d_regression.do",
+ "code_line": 12,
+ "n_cohorts": 12,
+ "n_cohorts_treated_and_untreated": 12,
+ "n_treated_periods": 12,
+ "n_treated_periods_with_other_cohort_untreated": 11,
+ "y_sd_regsample": 0.377272460741107,
+ "expected_std_twfe_authors": -0.0564485702235787,
+ "notes": "share of agenda items voted against management (s). Authors' code (11. table 6d/Table 6d_regression.do, line 12): reghdfe didntgowithmgmt_s t_plus1 t_plus2 if j>-3 & j<2, a(wficn1 year) cluster(wficn1) keepsing. Sample: annual fund-year panel iss_annual_shareholderonly_dik.dta, opentonewinv==1 (the j filter is vacuous: j==1 on every row); rows are fund classes 1-4 = two fund-years before and two after signing (post = class>=3). Treatment D = post_pri = 1 from the fund's first post-signing year (absorbing in calendar time, verified); gvar = gy. fixest (fixef.rm = none) reproduces the log: coef -0.02129649 vs -0.0212965, N 1521 vs 1521, clusters 553 vs 553. Regression sample: N = 1521, 553 funds, 14 consecutive years. Cohorts (first post-signing year): 12, of which 12 have both treated and untreated rows in the sample. In 11 of the 12 treated periods another cohort supplies untreated rows (not-yet-signed funds; 36 funds with no dated post-signing year are never treated within the sample). Funds observed only after signing in the sample (always-treated within sample): 214 (23.1% of rows); funds observed only before signing: 7. Event study: the authors' dynamic columns use post-only bins t_plus1..t_plus2 (= class 3, class 4) with all pre-signing rows pooled as the reference. run_spec.R with event_pre_min = 0 and event_post_max = 1 reproduces this structure (pre rows -> reference -1) but bins by CALENDAR relative time; 11 treated rows fall in a different bin and 11 rows with calendar relative time > 1 go to the separate endpoint bin (excluded from the post average). Authors' post average (equal weight over the 2 bins) = -0.0212965; calendar-bin TWFE post average on the same sample = -0.0275012 (raw units). A fully dynamic specification with leads is not used because, without never-treated funds, unit FE + period FE + all relative-time dummies are collinear. Table/column labels are inferred from package folder names and code order (no article text). run_spec.R also maps funds that signed before the first sample period to period 1, which shifts their relative-time bins (TVL spec: 35 funds, 113 rows).",
+ "event_pre_min": 0,
+ "event_post_max": 1,
+ "published_event_coefs": {
+  "y_plus1": -0.025,
+  "y_plus2": -0.018
+ },
+ "published_event_tstat": {
+  "y_plus1": -0.931,
+  "y_plus2": -0.425
+ },
+ "published_event_se": null,
+ "twfe_es_post_avg_raw_calendar_bins": -0.0275011755513881,
+ "expected_std_twfe_calendar_bins": -0.0728947336822975,
+ "runspec_check": "passed: run_spec TWFE post average equals the calendar-bin TWFE under run_spec's g mapping (|diff| = 8.3e-17 SD); it differs from the authors' row-count-bin average (published_coef / SD = -0.0564) by construction",
+ "table_column_package_labels": "package Table 6 Panel D, column 3 (dynamic) (labels before the Nov 2 audit)",
+ "table_column_source": "published article (data/text/mnsc/mnsc.2022.4394.txt; Table 8 read from the PDF page image), Nov 2 audit",
+ "event_structure": {
+  "bins": [
+   [0, 0],
+   [1, null]
+  ],
+  "ref": [
+   [null, -1]
+  ],
+  "uncovered": "ref",
+  "post_summary": [
+   [0, 0],
+   [1, null]
+  ],
+  "pre_summary": [],
+  "source": "11. table 6d/Table 6d_regression.do line 12: reghdfe didntgowithmgmt_s t_plus1 t_plus2 if j>-3 & j<2, a(wficn1 year) cluster(wficn1) keepsing. t_plus1 = class 3 (first post-signing fund-year), t_plus2 = class 4; classes 1-2 (the fund-years of and before signing) are the pooled reference; 36 funds without a dated post-signing year are never treated. Pipeline rel = year - gy: class 3 is rel 0 on every row and class 4 is rel 1 (378 rows), 2 (10) or 3 (1) after a gap year, hence the open bin [1,null]; classes 1-2 are rel <= -1.",
+  "verified": "fixest with this structure (es_assign, gvar gy) reproduces the 2 logged coefficients exactly, max abs diff 3.73e-08 (log rounding), N 1521 = reghdfe keepsing."
+ },
+ "presample_adopters_nov2": "0 funds (0 rows) signed before the first sample period; their true signing period is in gvar, so no adoption_var is needed.",
+ "event_time_authors_note": "event_time_authors_var deliberately not set: in the voting file j == 1 on every row (the authors' j filter is vacuous); the authors' event time is class (t_plus1 = class 3, t_plus2 = class 4), which calendar rel = year - gy reproduces exactly with these bins."
+}

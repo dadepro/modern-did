@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437231218969",
+  "doi": "10.1177/00222437231218969",
+  "journal": "jmr",
+  "title": "A Preemptive and Curative Solution to Mitigate Data Breaches: Corporate Social Responsibility as a Double Layer of Protection",
+  "year": "2024",
+  "eligible_design": false,
+  "eligible_reason": "No eligible DiD. Study 1 is a firm-year breach-likelihood model with continuous CSR scores; Study 2a is a stock-return event study (CAR) and Study 2b a Tobin's q regression with breach x CSR interactions, industry (not firm) fixed effects, many time-varying controls and a 2SLS estimator. Breaches recur and CSR is continuous, so there is no absorbing binary adoption.",
+  "design_notes": "KLD CSR scores merged to Compustat; 20,700 firm-years. Table 5: fixed-effects 2SLS of Tobin's q on Data Breach(t-1) and interactions with internal/external CSR and high-CSR dummies, industry and year indicators, Compustat controls. Authors state they use industry fixed effects instead of firm fixed effects.",
+  "estimators_reported": [
+    "fixed-effects 2SLS",
+    "financial event study (CAR)",
+    "breach-likelihood panel models",
+    "online experiments"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Data are KLD and Compustat (licensed). Excluded for IV, continuous treatment, interactions, controls and no unit FE."
+}

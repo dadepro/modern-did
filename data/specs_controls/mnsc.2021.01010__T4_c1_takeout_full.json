@@ -1,0 +1,30 @@
+{
+  "suffix": "mnsc.2021.01010",
+  "journal": "mnsc",
+  "data_path": "~/did_packages/mnsc/mnsc.2021.01010/fooddeliver.dta",
+  "id_var": "rest_numericID",
+  "time_var": "Week_Num",
+  "treat_var": "onplatform_weekly",
+  "weight_var": "",
+  "cluster_var": "rest_numericID",
+  "xt_vars": [],
+  "log_y": "log1p",
+  "table": "4",
+  "static_or_event": "static",
+  "preferred": null,
+  "in_abstract_intro": null,
+  "controls": [
+    "community_mobility_weekavg"
+  ],
+  "analysis_set": "controls",
+  "spec_id": "T4_c1_takeout_full",
+  "y_var": "takeout_visits",
+  "sample_filter": "",
+  "column": "1",
+  "published_coef": 0.038302,
+  "published_se": 0.008092,
+  "published_n": 603244,
+  "published_source": "Authors' code output (FoodDeliver.R, Table 4) re-run on the shipped data; no article text available. Mobility control coefficient reported in the same regression.",
+  "replication_status": "exact (authors' code output; article not available to compare)",
+  "notes": "Table 4 of FoodDeliver.R (lfe::felm(log1p(y) ~ onplatform_weekly + community_mobility_weekavg | Week_Num + rest_numericID | 0 | rest_numericID)). Restaurant-week panel, 53 weeks (2018-12-31 to 2019-12-30; Week_Num is week-of-year in a single year, so it is calendar time), unbalanced. Treatment onplatform_weekly = restaurant has joined any on-demand delivery platform; absorbing (0 switch-offs). Only protocol violation: the time-varying county-by-week mobility control community_mobility_weekavg (PROTOCOL 5c). No weights; clustered by restaurant. PUBLISHED COEFFICIENT = AUTHORS' CODE OUTPUT: no article text or PDF in the project; published_coef/se are from re-running the authors' felm call on the shipped fooddeliver.dta (fixest gives the same point estimate to 6 decimals). Column numbers are inferred from the code order (before-matching takeout, dine-in; after-matching takeout, dine-in) and must be checked against the article PDF. Full sample: 14,036 restaurants, 10,107 never treated (71.3% of rows), 2,908 already treated at first observation (21.4% of rows; 2,407 at week 1, the rest late entrants already on a platform), 1,021 within-sample switchers over 52 adoption weeks. preferred and in_abstract_intro set to null: unknown without the article text."
+}

@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2019.1159",
+ "doi": "10.1287/mksc.2019.1159",
+ "journal": "mksc",
+ "title": "Inference for Product Competition and Separable Demand",
+ "authors": "Adam Nicholas Smith; Peter E. Rossi; Greg M. Allenby",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1159",
+ "regressions_path": "./data/packages/mksc.2019.1159_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian separable demand model with random partitions on scanner data)",
+ "ineligible_specs": [
+  {
+   "spec_id": "separable_demand_mcmc",
+   "reported_location": "model tables",
+   "exclusion_reason": "Bayesian log-linear demand system with partition MCMC; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian demand-system methodology on retail scanner data.",
+ "design_notes": "R + Rcpp: separabledemand.R generates simulated data and runs the MCMC samplers.",
+ "estimators_reported": [
+  "Bayesian MCMC demand system"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme: separabledemand.R generates the simulated dataset from the paper.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated in separabledemand.R.",
+ "software": "r",
+ "software_notes": "R (Rcpp, bayesm)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

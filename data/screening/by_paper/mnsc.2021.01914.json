@@ -1,0 +1,73 @@
+{
+ "suffix": "mnsc.2021.01914",
+ "doi": "10.1287/mnsc.2021.01914",
+ "journal": "mnsc",
+ "year": 2024,
+ "department": "Accounting",
+ "title": "Investor-Paid Credit Ratings and Managerial Information Disclosure",
+ "authors": "Wei Li",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "The underlying design is a staggered binary treatment (post_ejr = firm-year covered by Egan-Jones Ratings; EJR initiates coverage of different firms in different years), but every reported main-text specification is estimated on a matched STACKED sample (sample_stacked.dta) with cohort-by-firm FE (cohort_firm_1perc) and cohort-by-year FE (cohort_year) - a stacked DiD, which PROTOCOL Section 2 excludes. Table III column 1 is the only column without controls, and it is stacked. The single non-stacked TWFE regression (Table A3 Panel H: absorb(gvkey_1_perc fyear)) is in the appendix and includes the additional treatment regressor post_sp (S&P coverage) plus 16 time-varying controls. Not classified as a near miss because the primary exclusion reason is the stacked design rather than controls.",
+ "design_notes": "Treatment: EJR coverage initiation (event_year by firm; post_ejr = fyear >= initiation). Matched sample: each EJR-covered firm matched to control firms by propensity score (pscore <= 1% caliper; cohort_firm_full = 1:3; cohort_firm_closest = 1:1), stacked by cohort with event_window relative years. FE globals: $FEs = cohort_firm_1perc cohort_year. Controls: lev mb mcap roe vroe ret_ann ret_std loss rd rd_miss zscore special_item ln_analysts io_total debtfinancing equityfinancing. Figure II: stacked event study (bef3..aft2 dummies with controls and post_sp). Figure III: placebo randomization. Table VII: forecast-level triple interactions. Table A3: robustness incl. ppmlhdfe and 'traditional TWFE'. sample_compustat.dta (full Compustat, with post_ejr, fyear, numgvkey, ln_badnews_freq) would permit constructing an unstacked TWFE, but no such specification is reported in the main text.",
+ "estimators_reported": [
+  "stacked matched DiD TWFE with cohort-firm and cohort-year FE (Tables III, IV, VI, VIII, A2, A3)",
+  "stacked event study (Figure II)",
+  "placebo permutation (Figure III)",
+  "probit coverage determinants (Table I)",
+  "Oster (2019) bounds (Table V)",
+  "PPML (Table A3 Panel F)",
+  "traditional TWFE with firm and year FE, controls and post_sp (Table A3 Panel H, appendix)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Multiple EJR initiation years (event_year varies across cohorts in sample_stacked); exact count not verified.",
+ "never_treated_present": true,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table III col 1 (results.do line 110): reghdfe ln_badnews_freq post_ejr, absorb(cohort_firm_1perc cohort_year)",
+   "reason": "stacked matched-cohort design (cohort x firm and cohort x year FE); no controls but stacked"
+  },
+  {
+   "location": "Table III cols 2-6, Tables IV, VI, VIII, A2 (lines 111-353)",
+   "reason": "stacked design plus post_sp (additional treatment) and 16 time-varying controls"
+  },
+  {
+   "location": "Figure II (line 37)",
+   "reason": "stacked event study with controls and post_sp"
+  },
+  {
+   "location": "Table A3 Panel H (line 398): absorb(gvkey_1_perc fyear)",
+   "reason": "appendix; unstacked TWFE but includes post_sp and time-varying controls (would be a near-miss spec if it were main text)"
+  },
+  {
+   "location": "Table VII (lines 297-298)",
+   "reason": "forecast-level regressions with badnews x post interactions and controls"
+  }
+ ],
+ "data_access": "partial",
+ "data_access_detail": "Analysis files shipped (sample_compustat.dta, sample_stacked.dta, sample_kothari.dta) with gvkeys; underlying Compustat/IBES/CRSP are licensed.",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-ACC-21-01914/sample_compustat.dta",
+  "replication_package_MS-ACC-21-01914/sample_stacked.dta",
+  "replication_package_MS-ACC-21-01914/sample_kothari.dta"
+ ],
+ "software": "stata",
+ "software_detail": "Stata (reghdfe, ppmlhdfe, psacalc, coefplot, xtfmb)",
+ "replication_feasible": "no",
+ "replication_feasible_note": "No eligible specification; an unstacked TWFE could be constructed from sample_compustat.dta but is not a reported main-text estimate.",
+ "priority": 3,
+ "screener_notes": "If the lead wants a secondary 'stacked-only' category, Table III col 1 is the clean no-controls stacked estimate. The package README table-numbering uses Roman numerals (Table III = main result, coefficient 0.100 per Oster code comments).",
+ "eligible_design_note": "set to false Nov 1 ~21:45 for consistency: stacked-only designs are excluded by the protocol (Hull), as in mnsc.2022.01211"
+}

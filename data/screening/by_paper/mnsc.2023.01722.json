@@ -1,0 +1,38 @@
+{
+ "doi": "10.1287/mnsc.2023.01722",
+ "journal": "mnsc",
+ "title": "Number Processing Constraints and Earnings News",
+ "year": 2024,
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "The paper's quasi-experiment uses stock splits (Post = 1 after a stock's split quarter, staggered across stocks) with stock and year-quarter FE, but no published specification qualifies: Table 7 (Post on CSGrowth, absEPS, decile_absEPS) includes time-varying controls (size, BM, roa, lev, growth, investment, mom, IO, num_analyst, l2_price, illiquidity); Tables 8-9 estimate Post x Decile_SUE (treatment interacted with a continuous moderator) with controls and control x Decile_SUE interactions; Figure 5 event studies include decile_SUE and its interactions with relative-time bins; Table 11 is a stacked DiD (Cengiz et al.) with controls. The main tests (Tables 2-6, 10) are not DiD designs at all (CAR-SUE sensitivity by abs(EPS) decile).",
+ "design_notes": "Stock-quarter panel of earnings announcements (PanelSample.dta, Tables 1A-6, 10, Figures 2-4) and a stock-split sample (StockSplitSample.dta, Tables 1B, 7-9, Figure 5) where Post indicates post-split quarters; splits occur at stock-specific dates; timetoevent gives quarters to the split. StackedDDSample.dta (Table 11) stacks each split event with never-treated controls and uses stock-by-dataset and year-quarter-by-dataset FE. Outcome of interest is the earnings-response coefficient (CAR x decile_SUE), i.e. an interaction, not a level effect.",
+ "estimators_reported": [
+  "twfe_static_with_time_varying_controls (Table 7)",
+  "twfe_with_treatment_x_continuous_moderator (Tables 8-9)",
+  "twfe_event_study_with_moderator_interactions (Figure 5)",
+  "stacked_did (Table 11)"
+ ],
+ "main_or_robustness": "robustness (stock-split DiD is a secondary identification check)",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "ineligible_specs_summary": "Replication Code.do lines 138-146 (Table 7): Post with 11 time-varying controls, absorb(stockID yq), cluster(stockID). Lines 156-183 (Tables 8-9): c.Post##c.decile_SUE with $control (controls and controls x decile_SUE). Lines 333-337 (Figure 5): relative-time bins B_min..A_max plus decile_SUE x bins, absorb(stockID yq). Lines 227-259 (Table 11): stacked DiD with c.Treat##c.Post##c.decile_SUE and control triple interactions, absorb(YQDataSetFE StockDatasetFE).",
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Not computed; splits are spread over 1983-2018 quarters (many cohorts) but no eligible spec exists.",
+ "never_treated_present": true,
+ "never_treated_note": "StockSplitSample appears to contain only splitting stocks (timetoevent defined for all); never-treated stocks appear only in StackedDDSample (NeverTreated flag).",
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [
+  "stacked DiD (Cengiz et al. 2019), Table 11"
+ ],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "public (anonymized WRDS-derived panel shipped)",
+ "data_files_present": true,
+ "data_files_note": "Inside _archive_mnsc.2023.01722.zip (valid): replication_package_MS-FIN-2023-01722/PanelSample.dta (23.7 MB), StockSplitSample.dta (4.7 MB), StackedDDSample.dta (118 MB), ForFigure3.xlsx, Replication Code.do, README.pdf. The inner file mnsc.2023.01722.zip in the package directory is truncated (no central directory) and the package was not extracted; the regressions list for this suffix is empty for that reason.",
+ "software": "stata",
+ "software_note": "Stata 18; reghdfe, estout, coefplot.",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "No article text. Screened from README.pdf and Replication Code.do extracted from the _archive zip into the scratchpad. The package directory contains only a corrupt inner zip, so the lead's extraction step should be re-run from _archive_mnsc.2023.01722.zip. Not eligible: every DiD specification carries time-varying controls, a treatment x continuous-moderator interaction, or a stacked design."
+}

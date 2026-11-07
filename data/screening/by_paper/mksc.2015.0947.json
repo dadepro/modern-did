@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2015.0947",
+ "doi": "10.1287/mksc.2015.0947",
+ "journal": "mksc",
+ "title": "Decision Stages and Asymmetries in Regular Retail Price Pass-Through",
+ "authors": "Blakeley B. McShane; Chaoqun Chen; Eric T. Anderson; Duncan I. Simester",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0947",
+ "regressions_path": "./data/packages/mksc.2015.0947_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (two-stage Bayesian response-surface model of regular retail price pass-through)",
+ "ineligible_specs": [
+  {
+   "spec_id": "two_stage_passthrough",
+   "reported_location": "model tables; Figures 5-7",
+   "exclusion_reason": "Bayesian two-stage (whether/how much) pass-through model in WinBUGS; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian two-stage model of wholesale-to-retail pass-through asymmetry.",
+ "design_notes": "1_fit_model.R + 1_fit_model.bug (WinBUGS); 2_simulation.R produces Figures 5-7 from posterior draws.",
+ "estimators_reported": [
+  "Bayesian hierarchical two-stage model (WinBUGS)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme: input stackdata.rdata is proprietary and not uploaded.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Retailer data not included.",
+ "software": "r",
+ "software_notes": "R calling WinBUGS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

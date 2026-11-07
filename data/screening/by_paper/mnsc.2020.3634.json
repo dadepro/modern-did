@@ -1,0 +1,34 @@
+{
+ "doi": "10.1287/mnsc.2020.3634",
+ "journal": "mnsc",
+ "year": 2020,
+ "title": "Risk-Mitigating Technologies: The Case of Radiation Diagnostic Devices",
+ "eligible_design": false,
+ "eligible_reason": "Single shock date (over-radiation accidents, late 2009, treatment from 2010) common to all treated technology classes. Treated-group-by-post DiD with subclass and year FE. No staggered adoption.",
+ "design_notes": "Eq. (1): patents (count) per subclass-year on RMT subclass x Post-2010 with subclass (or product-code) and year FE; sample 2005-2015. Table 2 col (1) estimate 1.78 patents (p=0.029). Table 3 uses alternative control groups, Tables 4-5 patent-level LPM and FDA 510(k) product-code panel, Table 6 Medicare services (CPT code and year FE), Table 7 equipment upgrades, Table 8 firm-size heterogeneity. All share the same single post date. Published in MS 67(5):3022-3040 (2021).",
+ "estimators_reported": [
+  "TWFE DiD (RMT subclass x post-2010)",
+  "year-specific treatment effects (pre-trend/time-specific effects)"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 2-8",
+   "reason": "single common adoption date (2010); treated-group x post"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "partial",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Data: USPTO patent subclasses (public), FDA 510(k) premarket notifications (public), Medicare services data (Table 6), plus hand-identified risk-mitigating-technology subclasses. No package or data-availability statement in the text. Text screened is the TSpace submitted manuscript (April 2019 version)."
+}

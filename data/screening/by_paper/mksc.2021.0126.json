@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2021.0126",
+ "doi": "10.1287/mksc.2021.0126",
+ "journal": "mksc",
+ "title": "Unlimited Testing: Let’s Test Your Emails with AI",
+ "authors": "Nguyen Nguyen; Joseph Johnson; Michael Tsiros",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2021.0126",
+ "regressions_path": "./data/packages/mksc.2021.0126_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (NLP emotion detector and email open-rate prediction; experimental validation)",
+ "ineligible_specs": [
+  {
+   "spec_id": "ml_open_rate",
+   "reported_location": "main tables",
+   "exclusion_reason": "ML prediction and survey validation; no staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Machine-learning system for email subject lines with experimental validation.",
+ "design_notes": "Notebooks for UED and EMOP.",
+ "estimators_reported": [
+  "deep learning models",
+  "gradient boosting",
+  "bootstrap tests"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "EMOP/EMOP-building/synthetic-data/*",
+  "UED emotion datasets (public)"
+ ],
+ "data_files_note": "Open-rate data are synthetic; proprietary Email Headline FOMO data not released.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Folder 'synthetic-data' for open-rate models; NDA data withheld.",
+ "software": "python",
+ "software_notes": "Python (PyTorch, notebooks)",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

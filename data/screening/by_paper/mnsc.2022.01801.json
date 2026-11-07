@@ -1,0 +1,62 @@
+{
+ "suffix": "mnsc.2022.01801",
+ "doi": "10.1287/mnsc.2022.01801",
+ "journal": "mnsc",
+ "title": "Market Liquidity and Competition Among Designated Market Makers",
+ "authors": "Mario Bellia; Loriana Pelizzon; Marti G. Subrahmanyam; Darya Yuferova",
+ "year": 2024,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.01801",
+ "regressions_path": "./data/packages/mnsc.2022.01801_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "main (single-date DiD, CAC 40 vs DAX 30)",
+ "ineligible_specs": [
+  {
+   "spec_id": "T3_T4_spreads",
+   "reported_location": "Tables 3-4 (overall effect and DMM competition; quoted/effective spreads, CAC 40 vs DAX 30)",
+   "exclusion_reason": "single common date (new SLP rules on June 3, 2013 for all CAC 40 stocks); time-varying controls (volatility, volume, market cap, inverse price) in every column"
+  },
+  {
+   "spec_id": "T5_T6",
+   "reported_location": "Tables 5-6 (transaction sizes, DMM behavior)",
+   "exclusion_reason": "same single-date design with controls"
+  },
+  {
+   "spec_id": "T7_rebate_reversal",
+   "reported_location": "Table 7 (rebate reversal)",
+   "exclusion_reason": "separate single-date event (rebate reversal, November 1, 2013) with controls"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "Not staggered. Quasi-natural experiment: NYSE Euronext Paris changed its Supplemental Liquidity Provider rules for all CAC 40 constituents on June 3, 2013; DAX 30 stocks are the control group. Equation (3): liquidity on SLP_d x CAC40_j with controls, stock x tick-size FE and day FE. One common date.",
+ "design_notes": "Text Section 4.2; Table234.do etc. Window April 1 to July 31, 2013.",
+ "estimators_reported": [
+  "2x2_did_single_date (OLS with controls, stock x tick size and day FE)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme describes pre-processed SAS/Stata datasets from BEDOFIH (Paris) and Thomson Reuters Tick History (Xetra) plus Bloomberg constituents; none are in the package (code and logs only).",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "",
+ "software": "stata",
+ "software_notes": "SAS for spread construction, Stata for tables",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2022.01801.txt). Clear exclusion."
+}

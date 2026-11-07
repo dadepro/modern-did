@@ -1,0 +1,53 @@
+{
+ "suffix": "mnsc.2021.4239",
+ "doi": "10.1287/mnsc.2021.4239",
+ "journal": "mnsc",
+ "title": "The Effect of Medicaid Expansion on Wait Time in the Emergency Department",
+ "authors": "Guihua Wang",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_030",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.4239",
+ "regressions_path": "./data/packages/mnsc.2021.4239_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Single-date DiD: hospitals in states that expanded Medicaid on Jan 1, 2014 vs states that did not expand before 2016; treat_medicaid switches on in 2014 for all 24 treated states (verified in AverageEffects.dta: first treated year 2014 for every treated state; annual 2012-2016). One adoption cohort, so not staggered. Column 1 (reg ln_score_num treat_medicaid Time* Hospital*, cl state) would otherwise satisfy the FE rule; other columns add ACS and hospital time-varying controls. Heterogeneity via first-difference causal forest (R).",
+ "design_notes": "Balanced hospital-year panel, 2,236 hospitals x 5 years (11,180 rows), outcome log ED wait time (CMS Hospital Compare). Treatment group excludes later expanders by design.",
+ "estimators_reported": [
+  "twfe_static (single treatment date)",
+  "twfe_static with controls",
+  "first-difference causal forest"
+ ],
+ "main_or_robustness": "main (single-date DiD)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  "Table 2 cols 1-4: treat_medicaid with hospital and year dummies, cols 2-4 add time-varying controls; single adoption date (2014)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "AverageEffects.dta",
+  "HeteroEffects1.dta",
+  "HeteroEffects2.dta"
+ ],
+ "data_files_note": "readme.txt: constructed from public CMS Hospital Compare and ACS data; analysis datasets shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' analysis datasets shipped.",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Excluded only because adoption is not staggered (2014 expanders vs non-expanders). Table numbering for the DiD regressions inferred from code order; no article text."
+}

@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2022.0071",
+ "doi": "10.1287/mksc.2022.0071",
+ "journal": "mksc",
+ "title": "Online Search and Optimal Product Rankings: An Empirical Framework",
+ "authors": "Giovanni Compiani; Gregory M Lewis; Sida Peng; Peichun Wang",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2022.0071",
+ "regressions_path": "./data/packages/mksc.2022.0071_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (structural search and click model with optimal ranking counterfactuals on Expedia data)",
+ "ineligible_specs": [
+  {
+   "spec_id": "structural_search",
+   "reported_location": "Tables 1-2, 5-8",
+   "exclusion_reason": "structural search model and ranking counterfactuals; no staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural model of online search with counterfactual rankings.",
+ "design_notes": "MATLAB scripts per table.",
+ "estimators_reported": [
+  "simulated maximum likelihood (mixture logit search model)",
+  "bootstrap SEs"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "preparedata_new.mat",
+  "preparedata_test.mat"
+ ],
+ "data_files_note": "Expedia application data for estimation and hold-out.",
+ "data_provenance": "original",
+ "data_provenance_note": "No disguise statement in README.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

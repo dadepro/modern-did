@@ -1,0 +1,55 @@
+{
+  "suffix": "mnsc.2024.08333",
+  "doi": "10.1287/mnsc.2024.08333",
+  "journal": "mnsc",
+  "title": "Small Business Judging Judges",
+  "year": 2026,
+  "authors": "Mehmet Canayaz; Matthew Gustafson",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Treatment is continuous: the change in the liberal-judge count on the county's federal appellate circuit (circuit_liberalchange_new = f1 count minus l6 count; district analogue liberalchange_new), regressed on the percent change in firms (changefirm) in border counties with border-pair x year FE (absorb(year##circuitborder)) and no county FE, weighted by lagged firms, clustered by border. The one binary specification (Table with c.post##c.lib_treated, Replicate_Circuit_Main_V1.do lines 115-133) is a windowed event design: lib_treated = circuit experienced its maximum liberal shock, event_year in (-4, 0], post = event_year > -2, first-differenced outcome, border-pair x year FE only, with an additive post term (absorbed) and lib_treated main effect; no unit FE and a single 'big shock' per circuit. Not a staggered binary adoption TWFE.",
+  "design_notes": "County-year panel (BDS) 1989-2016 restricted to counties on borders between federal judicial circuits (border_county==1) or districts (district_border_county==1). Main: reghdfe changefirm circuit_liberalchange_new circuit_liberalchange_1 [pweight=lag_firms] if border_county==1, absorb(year##circuitborder) cluster(circuitborder), with/without $controlvars5_chg (lagged growth controls). Heterogeneity by post2/gf (good-faith exemption), litigation risk by sector with year##circuitborder##sector2 and year##fipscty##fipstate FE. Data construction in Data_processing_main_V1.do (lines 1291, 1440-1463, 1673).",
+  "estimators_reported": [
+    "continuous_treatment_border_pair_year_fe (Tables 2-4, 6-8)",
+    "windowed_binary_shock_did_no_unit_fe (c.post##c.lib_treated)",
+    "lead-lag placebo (circuit_f5..f1_liberalchange)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": false,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "location": "Replicate_Circuit_Main_V1.do (main tables)",
+      "reason": "continuous ideology-change regressor; first-differenced outcome; no county FE"
+    },
+    {
+      "location": "Replicate_Circuit_Main_V1.do lines 115-133",
+      "reason": "binary shock spec within a 5-year window, post = event_year > -2, no unit FE; one shock per circuit"
+    }
+  ],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "raw_data/ (judgesnew.dta, bds_cty_year_ind.dta, bds_cty_year_age.dta, bds2020_st_cty.csv, CAINC1 BEA csv, county adjacency, US Chamber ratings, Fig1data.dta, etc.)",
+    "Replication_Data/ is empty in the archive (built by Data_processing_main_V1.do)",
+    "logs/Replication_main_30_Mar_2026_094532.log",
+    "paper/MS_FIN_2024_08333_Manuscript.pdf and OnlineAppendix.pdf"
+  ],
+  "data_files_note": "All inputs are public; processed datasets must be rebuilt by running the data-processing do-file.",
+  "software": "stata",
+  "software_detail": "Stata 15+ (reghdfe, estout)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not a staggered binary DiD.",
+  "screener_notes": "Screened from package only; the manuscript PDF is in the package (paper/) but was not needed to classify the design. The ft_borusyak flag likely reflects a Borusyak-Jaravel-Spiess citation rather than an imputation estimate (no did_imputation call in the code)."
+}

@@ -1,0 +1,133 @@
+{
+  "suffix": "mnsc.2020.03920",
+  "journal": "mnsc",
+  "data_provenance": "real",
+  "data_path": "~/did_packages/_work/mnsc.2020.03920/airbnbplus_prepared_v2_gtrue.csv",
+  "id_var": "zipcode",
+  "time_var": "timeperiod",
+  "treat_var": "policy_entry",
+  "weight_var": "",
+  "cluster_var": "zipcode",
+  "xt_vars": [],
+  "log_y": "",
+  "controls": [
+    "log_pop",
+    "employment_rate",
+    "log_median_income",
+    "log_median_rent",
+    "log_housing_units",
+    "renter_occupied_rate",
+    "percent_income_spent_on_rent",
+    "above_college_rate",
+    "year_built_to_now"
+  ],
+  "analysis_set": "controls",
+  "published_estimator": "twfe_xtreg_fe_with_controls",
+  "spec_id": "T5c1_bookednights_event",
+  "y_var": "average_booked_nights",
+  "sample_filter": "",
+  "published_coef": 0.693882743,
+  "published_coef_0_3": 0.7115,
+  "published_se": 0.220516168,
+  "published_se_0_3": 0.2296,
+  "published_n": 13176,
+  "table": "5",
+  "column": "1 (Full Sample)",
+  "static_or_event": "event",
+  "event_pre_min": -3,
+  "event_post_max": 3,
+  "event_structure": {
+    "bins": [
+      [
+        null,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        -1,
+        -1
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        null
+      ]
+    ],
+    "pre_summary": [
+      [
+        null,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ]
+    ],
+    "source": "airbnbplus_results_rep.do lines 113-114 (xtreg average_booked_nights relative_time_m4 m3 m2 0 p1 p2 p3 p4 acs_ctrls i.timeperiod, fe cluster(zipcode)); shipped dummies m4 = rel <= -4, p4 = rel >= 4, m1 omitted (article Table 5: 'Relative time <= -4' ... '>= +4', -1 = baseline), rel = timeperiod - adoption month. The adoption month implied by the dummies differs from the first observed row with policy_entry = 1 for 5 zips whose zip-months between launch and first observed row are absent from the data (20782, 37064, 70005, 80011 launched in 22; 94130 in 14): gvar g_true (airbnbplus_prepared_v2_gtrue.csv) uses the implied month; policy_entry equals 1[t >= g_true] on every row. Estimation-sample periods 9-34 are consecutive, so rel = t - g. Nothing uncovered. Endpoint bins excluded from the summaries.",
+    "verified": "fixest with these bins + 9 ACS controls on the authors' sample (13,176 rows, g_true) equals fixest on the authors' shipped dummies to 3.5e-14 and the published Table 5 col 1 coefficients (3 decimals) within 4.3e-04 (rounding); SEs within 4.9e-04. Post average (0..3) = 0.711609 (cluster SE 0.229632). With the old g_entry (first observed treated row) the max coefficient gap was 0.113. Nov 2 summary rule: with the reported endpoint bins added to the summaries, the authors'-normalization post average is 0.6938827 (SE 0.22052) and the pre average 0.08382699 (scratchpad/meta3/rule2/).",
+    "summary_rule": "Nov 2 rule: a bin is summarized iff the paper reports its coefficient, open endpoint bins included (Table 5 prints Relative time <= -4 and >= +4)."
+  },
+  "preferred": false,
+  "in_abstract_intro": false,
+  "replication_status": "exact (fixest reproduces the authors' Table 5 col 1 regression to 1e-13 with the dummies' adoption months; published 3-decimal values within rounding)",
+  "published_source": "Article Table 5 col 1 (data/text/mnsc/mnsc.2020.03920.txt; same digits as paper_results.log lines 1663-1677): <= -4 0.298 (0.264), -3 0.322 (0.303), -2 -0.369 (0.308), 0 -0.121 (0.355), +1 0.683 (0.312), +2 1.089 (0.332), +3 1.195 (0.289), >= +4 0.623 (0.215); baseline -1. published_coef = equal-weight average of horizons 0..3 = 0.7115 (endpoint bins excluded); delta-method SE 0.2296 from the fixest reproduction of the authors' regression. Nov 2 summary rule (team-lead: summaries average every reported bin, endpoint bins included): published_coef is now the equal-weight average of relative months 0..3 and >= +4 (all printed in Table 5) in the authors' normalization, 0.6938827 (delta-method SE 0.22052, cluster zipcode); the previous value 0.7115 is kept in published_coef_0_3. Pre-summary average 0.08382699.",
+  "notes": "Zip-code x month panel (timeperiod 8-34), 773 zips, unbalanced. Treatment policy_entry (Airbnb Plus available in the zip), absorbing, 6 adoption cohorts (14:29 zips, 22:127, 23:1, 26:2, 28:1, 32:1), 612 never-treated zips, no always-treated, no switch-offs. Controls: nine annual ACS covariates (acs_ctrls) that update at calendar-year breaks, entered linearly as published. xtreg fe with i.timeperiod, cluster(zipcode), unweighted. Only violation of PROTOCOL Section 2: time-varying controls (5c). Do-file line 115. The authors' relative_time_m4 / relative_time_p4 are endpoint bins (rel <= -4, rel >= 4) for the two large cohorts; run_spec.R with event_pre_min = -3 and event_post_max = 3 bins at -4 and +4 from g = first month with policy_entry = 1, reproducing the authors' design. Deviation: for 5 zips in the one- or two-zip cohorts (20782, 37064, 70005, 80011, 94130; 25 rows) the shipped dummies are not coded relative to that zip's first policy_entry month; run_spec.R codes event time from policy_entry, so its TWFE differs slightly from the published coefficients. Table 5 col 2 (CEM aweights) excluded (matching weights). NOV 2 AUDIT (event_structure): the 5-zip deviation is resolved: the shipped relative-time dummies are coded from the zip's launch month, which for these zips falls in months with no row in the data (the first observed treated row is 1-18 months later). gvar is now g_true (implied launch month; 5 zips move from cohorts 23/26/28/32 to 22/14; policy_entry unchanged on every row), so the event_structure bins reproduce the authors' regression exactly. fixest_runspec_coding_* refer to the old g_entry coding.",
+  "fixest_runspec_coding_post0_3": 0.7112,
+  "fixest_runspec_coding_post0_3_se": 0.2328,
+  "fixest_runspec_coding_pre_m3_m2": -0.0506,
+  "gvar": "g_true",
+  "data_source_note": "Prepared from the shipped airbnbplus_data.dta (column subset, rows unchanged) with g_entry = first timeperiod with policy_entry == 1 in the full zip panel (0 = never). gvar is used instead of treat_var so that six zips whose true first treated month has a missing outcome or control are not dated one month late (prep.R in the work directory).",
+  "fixest_eventstructure_post0_3": 0.711609,
+  "fixest_eventstructure_post0_3_se": 0.229632
+}

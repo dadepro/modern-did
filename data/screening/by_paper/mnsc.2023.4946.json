@@ -1,0 +1,62 @@
+{
+ "suffix": "mnsc.2023.4946",
+ "doi": "10.1287/mnsc.2023.4946",
+ "journal": "mnsc",
+ "title": "Virtual Shareholder Meetings",
+ "authors": "François Brochet; Roman Chychyla; Fabrizio Ferri",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_031",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.4946",
+ "regressions_path": "./data/packages/mnsc.2023.4946_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Determinants (logit/OLS on VSM adoption), matched-sample comparisons, transcript-feature regressions and event-window returns. The only DiD (Tables 7 and 8 Panel E, diff_in_diff_sample.dta) is a two-period pre/post comparison around the forced 2020 COVID switch: 145 treated vs 129 control firms, one pre and one post meeting each, estimated as difference of means (rc_stats.diff_diff_reg) or reg y treatment post treatment_post + time-varying controls + FF12 dummies, no firm FE. Single common adoption date; pooled treated dummy instead of unit FE.",
+ "design_notes": "Python/Stata/SAS. Voluntary VSM adopters pre-2020 are analyzed cross-sectionally (matched to in-person meetings), not as a staggered panel. COVID-forced VSMs in 2020 give a single treatment date.",
+ "estimators_reported": [
+  "logit_determinants",
+  "cross_section_ols_matched",
+  "two_period_did_means",
+  "pooled_ols_did_with_controls",
+  "event_window_returns"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 7 Panels A-D; Table 8 Panel E",
+   "reason": "two-period DiD around the common 2020 forced switch; pooled treatment dummy, no firm FE; Panel E adds time-varying controls"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "diff_in_diff_sample.dta",
+  "retvol_transcripts_forced.dta",
+  "am_transcripts_with_2020.dta",
+  "vm_comp_crsp_states_allow.sas7bdat",
+  "virtual_meetings.sas7bdat",
+  "transcript_text_metrics.xlsx",
+  "+ other .dta/.sas7bdat inputs"
+ ],
+ "data_files_note": "README (docx): input datasets for all tables shipped; raw WRDS/Capital IQ extraction code provided but needs subscriptions.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' merged analysis datasets shipped.",
+ "software": "other",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Software mix: Python (statsmodels), Stata, SAS. Not a staggered design."
+}

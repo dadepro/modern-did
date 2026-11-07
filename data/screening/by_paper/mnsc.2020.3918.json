@@ -1,0 +1,37 @@
+{
+ "suffix": "mnsc.2020.3918",
+ "doi": "10.1287/mnsc.2020.3918",
+ "journal": "mnsc",
+ "title": "Low-Wage Workers and the Enforceability of Noncompete Agreements",
+ "year": "2021",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Single treated unit and single adoption date: the 2008 Oregon ban on noncompete agreements for hourly-paid workers, compared with other states (and with salaried workers). Not a staggered design.",
+ "design_notes": "Abstract: effects of the 2008 Oregon low-wage NCA ban on hourly wages, occupational status, job-to-job mobility and hours, with heterogeneity by gender, age, education and NCA-prevalent occupations. The replication archive could not be opened: both zip files in the package directory (mnsc.2020.3918.zip, 235MB; _archive_mnsc.2020.3918.zip, 729MB) lack a central directory (truncated downloads). Scanning local file headers shows the top-level folder data_appendix_MS-ORG-19-03269/ with Readme.txt, Readme.rtf, Programs/ (00_master.do, 01_create_wage_dataset.do, 02_create_mobility_dataset.do, 03_create_quantile_dataset.do, T3.do, T4.do, T5.do, F1.do, F4-F9.do, AT4-AT16.do, AF13-AF14.do, FP_inference_program_TD.do, synthetic_controls.do), Data/, Logs/, Tables/, Figures/, Quantile Folder/. Stata. The regressions file for this suffix is empty because the archive was not extracted.",
+ "estimators_reported": [
+  "single-state DiD / triple-difference (inferred from abstract and file names)",
+  "synthetic control (Programs/synthetic_controls.do)",
+  "permutation/placebo inference (FP_inference_program_TD.do)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "all tables",
+   "reason": "single treated state (Oregon) with one adoption date (2008)"
+  }
+ ],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Package directory ~/did_packages/mnsc/mnsc.2020.3918/ holds only two corrupt/truncated zip files; nothing is extracted and the regressions file has zero lines. File names recovered from zip local headers indicate Stata code and a Data/ folder (likely CPS-based wage and mobility datasets). Re-download would be needed to inspect further, but the design (single adoption date) rules the paper out regardless."
+}

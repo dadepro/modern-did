@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2019.1194",
+ "doi": "10.1287/mksc.2019.1194",
+ "journal": "mksc",
+ "title": "Test & Roll: Profit-Maximizing A/B Tests",
+ "authors": "Elea McDonnell Feit; Ron Berman",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1194",
+ "regressions_path": "./data/packages/mksc.2019.1194_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (decision-theoretic A/B test sample sizes; Stan meta-analysis of past tests)",
+ "ineligible_specs": [
+  {
+   "spec_id": "test_and_roll",
+   "reported_location": "examples",
+   "exclusion_reason": "methods paper: optimal sample size formulas and Bayesian meta-analysis of A/B tests; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Methods paper on profit-maximizing A/B test sizes with Stan meta-analyses.",
+ "design_notes": "R + Stan (website.R, display.R, catalog.R, nn_functions.R).",
+ "estimators_reported": [
+  "Bayesian hierarchical model (Stan)",
+  "analytical sample-size formulas"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "display_LewisRao2015Retail.csv"
+ ],
+ "data_files_note": "Website and catalog data are proprietary and generated synthetically in the scripts; display example uses published Lewis-Rao (2015) summary data.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Website/catalog examples synthetic; display example uses published summary statistics.",
+ "software": "r",
+ "software_notes": "R + Stan",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

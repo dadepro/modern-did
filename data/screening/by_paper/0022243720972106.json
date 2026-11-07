@@ -1,0 +1,30 @@
+{
+  "suffix": "0022243720972106",
+  "doi": "10.1177/0022243720972106",
+  "journal": "jmr",
+  "title": "The Effect of Information Disclosure on Industry Payments to Physicians",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Single common adoption date (Oct 2014) for all treated units; control group is always-treated (prior-law states). Fewer than two distinct adoption dates. Main estimator is causal forest, which is outside the linear TWFE frame.",
+  "design_notes": "Two-group, two-period DiD around a single date: public release of CMS Open Payments data (Sept 2014; post = Oct 2014 onward, pre = Aug 2013-Sept 2014). Treated = physicians in states WITHOUT prior disclosure laws (D_i = 1); control = physicians in MA, VT, MN (prior laws; ME, WV, DC, CA dropped). Table 8 (Eq. 7): log monthly payment per physician-drug pair on D_i x POST_t with physician-drug FE and drug-month FE; Col 1 all treated states, coef ~.0096 (SE .0139), N = 5,826,361; Col 2 neighbor states only (CT, NH, WI), coef ~.016 (SE .0174), N = 225,939 (minus signs lost in text extraction, so signs unverified). Headline analysis is a causal forest / matching-style CATE estimator on physician-level pre/post differences (Y_i = post minus pre average monthly payment), with Tables 7, 9-12 as DiD means, CATE summaries and second-stage OLS. The abstract's phrase 'phased rollout of the disclosure laws across states' refers to the earlier state laws that define the control group; those states are always-treated, not adopters in the sample.",
+  "estimators_reported": [
+    "TWFE 2x2 DiD (Table 8)",
+    "causal forest / matching on pre-disclosure payments",
+    "raw DiD means (Table 7)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: one adoption date and the main results come from a causal forest. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data sources named are CMS Open Payments, Medicare Part D prescriber data, CMS physician master file, Census, FDA Orange Book, which are public sources, but the paper has no data-availability statement and the physician-level merged file is not confirmed available."
+}

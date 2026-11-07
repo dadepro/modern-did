@@ -1,0 +1,53 @@
+{
+ "suffix": "mksc.2016.0982",
+ "doi": "10.1287/mksc.2016.0982",
+ "journal": "mksc",
+ "title": "Experimental Designs and Estimation for Online Display Advertising Attribution in Marketplaces",
+ "authors": "Joel Barajas; Ram Akella; Marius Holtan; Aaron Flores",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0982",
+ "regressions_path": "./data/packages/mksc.2016.0982_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (randomized experimental designs and potential-outcomes estimation for display-ad attribution)",
+ "ineligible_specs": [
+  {
+   "spec_id": "randomized_ad_experiments",
+   "reported_location": "Tables 4, 7, 8; Figure 6",
+   "exclusion_reason": "randomized user-level experiments analyzed from aggregate counts; Bayesian/moment estimators; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Randomized ad experiments; potential-outcomes estimators on aggregate counts.",
+ "design_notes": "MATLAB (Matlab/ and nested Code_jbarajas.zip, near-identical): AB_campTreat.m, ATE_t_test.m, mixture/targeting scripts, simulations.",
+ "estimators_reported": [
+  "randomized experiment",
+  "Bayesian and moment estimators"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [],
+ "data_files_note": "README: aggregate counts from Tables 4 and 8 hard-coded in the code; user-level AOL data proprietary.",
+ "data_provenance": "original",
+ "data_provenance_note": "Only published aggregate counts; user-level experimental data not shipped.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

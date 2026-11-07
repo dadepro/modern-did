@@ -1,0 +1,41 @@
+{
+  "suffix": "mnsc.2022.00103",
+  "doi": "10.1287/mnsc.2022.00103",
+  "journal": "mnsc",
+  "title": "Non-Regular Employment and Payout Policy: Evidence from the Massachusetts Independent Contractor Law",
+  "year": 2022,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "eligible_reason": "Single adoption date: the treatment did_enf equals 1 for firms headquartered in Massachusetts after the June 10, 2004 Independent Contractor Law and 0 otherwise (one treated state, one date). In addition every regression includes nine time-varying firm- and state-level controls (cash_hold capex mtb debt nyp log_age ivol growth_rate ln_pop). Fails the at-least-two-adoption-cohorts rule and the no-time-varying-controls rule.",
+  "design_notes": "Firm-year Compustat/CRSP panel (Replication_20230523.dta), FE gvkey + sic2 x year (sic2_cyear) + headquarters state (state_numeric), cluster ma_state. Table 3: xsga_at, op_lev2, cashflow on did_enf + controls. Table 6: totalpay_at, div_at2, rep_at. Table 5/7A: chg_log_ebit on did_enf x chg_log_sale (operating leverage). Table 7B/8/9: did_enf x firm-characteristic interactions. Table 10: entropy-balanced weights [pw=_webal]. Table 11: alternative treatment alt_treat_post. Figure 1: event-study dummies did_enf_minus_4 .. did_enf_plus_3 with controls. Table 4: CAR t-tests around the event date.",
+  "estimators_reported": [
+    "twfe_static_with_controls (reghdfe)",
+    "twfe_event_study_with_controls (Figure 1)",
+    "entropy_balanced_twfe (Table 10)",
+    "did_x_characteristic_interactions",
+    "car_ttests"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "One cohort: Massachusetts firms, law effective June 10, 2004.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_access_note": "Final analysis panel shipped (Replication_20230523.dta, Compustat/CRSP-derived; README notes some underlying sources require licenses). CAR files for Table 4 also shipped.",
+  "data_files_present": true,
+  "data_files": [
+    "replication_package_MS-FIN-22-00103/Replication_20230523.dta",
+    "replication_package_MS-FIN-22-00103/car_*.dta (9 files, Table 4 only)"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Full-text flags (staggered, Goodman-Bacon) come from citations/discussion, not from a staggered design. Single-state, single-date DiD with controls in every column."
+}

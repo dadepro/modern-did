@@ -1,0 +1,28 @@
+{
+  "suffix": "mnsc.2023.4906",
+  "doi": "10.1287/mnsc.2023.4906",
+  "journal": "mnsc",
+  "title": "Gift Contagion in Online Groups: Evidence from Virtual Red Packets",
+  "year": "2023",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences design. Natural experiment from random allocation of red packet amounts; stratified randomized-experiment analysis with stratum fixed effects.",
+  "design_notes": "36 million red packets on a large social platform (Tencent); recipient response within 10 minutes and 24 hours regressed on amount received with stratum FE. Continuous treatment, no staggered adoption.",
+  "estimators_reported": [
+    "stratified randomization-based regressions"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Platform data (Tencent), anonymized, likely proprietary."
+}

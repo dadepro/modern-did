@@ -1,0 +1,31 @@
+{
+  "suffix": "mksc.2025.0159",
+  "doi": "10.1287/mksc.2025.0159",
+  "journal": "mksc",
+  "title": "Is Competition Only One Click Away? The Digital Markets Act's Impact on Google Maps",
+  "year": "2026",
+  "eligible_design": false,
+  "eligible_reason": "Single adoption date: all 25 EU countries treated at the same time (January 2024) versus 27 non-EU control countries. TWFE with country and week (search) or month (traffic) FE, log outcomes, but only one first-adoption date.",
+  "design_notes": "Eq. (1): ln Y_it = a_i + w_t + g*(EU_i x post_t) + e_it, clustered by country; Eq. (2) is a fully dynamic EU x time-dummy path with Jan 2024 as reference. Table 3: log Google search volume for 'maps' and 'google maps' (weekly, Jan 2023-Dec 2024), three control-group definitions. Table 4: log visits to google.com/maps, desktop and mobile (monthly). Appendix tables add SDiD and synthetic control. Footnote 12 notes the interface change was rolled out gradually over Jan-Feb 2024, but the authors code a single post date.",
+  "estimators_reported": [
+    "static TWFE DiD (Tables 3, 4)",
+    "TWFE event study (Figures 2, 3)",
+    "synthetic DiD",
+    "synthetic control"
+  ],
+  "main_or_robustness": "main (but single adoption date)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible under Protocol Section 2 (needs >= 2 distinct first-adoption dates). Clean single-date TWFE; if the project ever relaxes the rule to single-date designs this paper would qualify (static and event-study versions, no time-varying controls). No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data: Google Trends (public), Glimpse (subscription-based scaling), Semrush traffic (proprietary subscription)."
+}

@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2015.0971",
+ "doi": "10.1287/mksc.2015.0971",
+ "journal": "mksc",
+ "title": "Drug Detailing and Doctors’ Prescription Decisions: The Role of Information Content in the Face of Competitive Entry",
+ "authors": "Eelco Kappe; Stefan Stremersch",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0971",
+ "regressions_path": "./data/packages/mksc.2015.0971_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (hierarchical Bayesian distributed-lag NBD prescription model with detailing content and entry periods)",
+ "ineligible_specs": [
+  {
+   "spec_id": "hb_distributed_lag",
+   "reported_location": "estimation tables",
+   "exclusion_reason": "hierarchical Bayesian negative binomial distributed-lag model with continuous detailing-content regressors; entry periods act as moderators of detailing-content effects; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Hierarchical Bayesian NBD distributed-lag model of prescriptions on detailing content.",
+ "design_notes": "Estimation.R (bayesm-based sampler); SimulatedData.R generates comparable simulated data.",
+ "estimators_reported": [
+  "hierarchical Bayesian negative binomial distributed-lag model"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "ReadMe: SimulatedData.R generates simulated data comparable to the paper's data.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Only simulated data generator shipped.",
+ "software": "r",
+ "software_notes": "R (bayesm)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

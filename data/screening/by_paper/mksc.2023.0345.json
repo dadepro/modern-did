@@ -1,0 +1,105 @@
+{
+  "suffix": "mksc.2023.0345",
+  "doi": "10.1287/mksc.2023.0345",
+  "journal": "mksc",
+  "title": "Game Over? Assessing the Impact of Gamification Discontinuation on Mobile Banking Behaviors",
+  "year": 2024,
+  "authors": "Simon J. Blanchard; Mike Palazzolo",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date. The treatment `event` is 1 for every user on and after the one-time shutdown of the bank app's gamified reward module (January 2022; code comments date the shutdown to around Jan 19-20, 2022). All users are treated on the same calendar date, so there is only one adoption cohort and no never-treated group. Identification comes from an age-period-cohort structure (tenure fixed effects days_in_panel plus user, day-of-month and day-of-week FE; no calendar-date FE in the Table 2 ATT model), not from staggered adoption. Fails the at-least-two-adoption-dates rule. In addition, no data are shipped (NDA with Flourish; only one fictional user's rows in data_example.xlsx).",
+  "design_notes": "User-day panel of mobile-banking customers who signed up for a gamified reward module (monthly signup cohorts Aug 2021-Jan 2022). Table 2 (Model 1): reghdfe login_app / tbillpay / LoanRepays on event, a(userid day dow days_in_panel) cluster(userid) (Analyses_Stata.do lines 57-59); `day` is day of month, `dow` day of week, `days_in_panel` tenure since signup; no calendar-date FE. Table 3: event##i.cohort_2 (monthly cohort interactions). Table 4: event plus time-varying engagement regressors. Model 2 (R, felm with ~0 | days_in_panel + userid + date + day + dow) is an age-period-cohort decomposition with date FE and no treatment regressor (Figure 5). Appendix: twowayfeweights (A.2.4), de Chaisemartin-D'Haultfoeuille (A.2.5), placebo pseudo-shutdowns poct/pnov/pdec (A.4), cohort-week aggregation (A.5).",
+  "estimators_reported": [
+    "twfe_single_event_with_tenure_fe (Table 2)",
+    "event_x_cohort_interactions (Table 3)",
+    "event_with_time_varying_engagement_controls (Table 4)",
+    "age_period_cohort_felm (Model 2, Figure 5)",
+    "twowayfeweights diagnostics (Appendix A.2.4)",
+    "did_multiplegt (Appendix A.2.5)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "One shutdown date for all users; signup cohorts (Aug 2021-Jan 2022) differ in tenure at treatment but not in treatment date.",
+  "never_treated_present": false,
+  "always_treated_present": false,
+  "reports_modern_estimator": true,
+  "modern_estimators_named": [
+    "de Chaisemartin-D'Haultfoeuille did_multiplegt (Appendix A.2.5)",
+    "twowayfeweights (Appendix A.2.4)"
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {
+      "location": "Table 2 col 1 (Stata log Raw Outputs/Outputs_Stata.smcl)",
+      "outcome": "login_app",
+      "coef": -0.0543709,
+      "se": 0.002849
+    },
+    {
+      "location": "Table 2 col 2",
+      "outcome": "tbillpay (bp_exclude==0)",
+      "coef": -0.0025066,
+      "se": 0.0007765
+    },
+    {
+      "location": "Table 2 col 3",
+      "outcome": "LoanRepays (lr_exclude==0)",
+      "coef": -0.0014036,
+      "se": 0.0002598
+    }
+  ],
+  "specs": [
+    {
+      "spec_id": "mksc.2023.0345_T2_login_app",
+      "eligible": false,
+      "exclusion_reason": "single adoption date (one shutdown for all users); no calendar-date FE",
+      "code_file": "Analyses_Stata.do",
+      "code_line": 57,
+      "outcome": "login_app",
+      "treatment_var": "event",
+      "treatment_definition": "1 on and after the reward-module shutdown (same date for every user)",
+      "unit_var": "userid",
+      "time_var": "date (daily); FE use day-of-month, day-of-week and tenure instead of date",
+      "fe": "userid + day + dow + days_in_panel",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "userid",
+      "sample_condition": "all user-days",
+      "static_or_event": "static",
+      "data_file": "not shipped (NDA)",
+      "reported_location": "Table 2, Model 1",
+      "notes": "tbillpay (line 58, if bp_exclude==0) and LoanRepays (line 59, if lr_exclude==0) analogous."
+    }
+  ],
+  "ineligible_specs": [
+    {
+      "location": "Table 3 (lines 64-66)",
+      "reason": "event##i.cohort_2 interactions; single adoption date"
+    },
+    {
+      "location": "Table 4 (lines 73-75)",
+      "reason": "time-varying engagement regressors n_login_reward_last14, cash_last14; single adoption date"
+    },
+    {
+      "location": "Table 6 (lines 164-170)",
+      "reason": "alternative samples, single adoption date; twowayfeweights diagnostics"
+    }
+  ],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "data_files": [
+    "data_example.xlsx (one fictional user; column template only)",
+    "Raw Outputs/Outputs_Stata.smcl, r_bootstrap.log, r_WebApp_A.2.3.log (logs with reported estimates)"
+  ],
+  "data_files_note": "README: NDA with Flourish prohibits release of the data or any simulated version; only Stata/R logs and a one-user example are provided.",
+  "software": "stata",
+  "software_detail": "Stata (reghdfe, twowayfeweights, did_multiplegt) and R (lfe::felm, getfe)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible (single adoption date) and no data.",
+  "screener_notes": "Screened from package only (no article text). Treatment timing confirmed from the data dictionary (event = 1 during the shutdown) and from Analyses_Stata.do lines 24-28 (cohorts defined by signup date relative to the one shutdown). Published point estimates for Table 2 read from the shipped Stata log."
+}

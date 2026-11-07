@@ -1,0 +1,29 @@
+{
+  "suffix": "00222437221097108",
+  "doi": "10.1177/00222437221097108",
+  "journal": "jmr",
+  "title": "Building Brand Assets: The Role of Trademark Rights",
+  "year": "2022",
+  "eligible_design": false,
+  "eligible_reason": "Nonlinear models (negative binomial for applications, Tobit for classes, probit for extension) and a separate 12-month pre/post window for each of seven Supreme Court rulings. The control group is the same trademark networks observed around rights-neutral rulings, so there is no unit-level staggered adoption and no untreated comparison units in a common panel. Estimates also include network age, size, class and TTAB controls.",
+  "design_notes": "Equation 3: TM_ik = b0k + b1k (CHNG x SCD) + b2k (NEUTR x SCD) + B X_ik + Lambda + eps, where SCD = 0 for the 12 months before and 1 for the 12 months after a Supreme Court decision, estimated separately for each of seven cases (Two Pesos, Qualitex, Wal-Mart v. Samara, TrafFix, Moseley, KP Permanent Make-Up, Hana Financial). DiD estimate = b1k - b2k from Table 3 panels A-C (negative binomial, Tobit, probit). Table 4 (protected designs versus not) and Table 5 (single versus multiple brands) repeat the models for subgroups. Authors describe the control construction as akin to synthetic control and propensity matching.",
+  "estimators_reported": [
+    "negative binomial / Tobit / probit DiD by Supreme Court case (Tables 3-5)",
+    "nearest-neighbor matched control (robustness)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 7,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Trademark data are drawn from the USPTO case files (public source) but no data-availability statement or replication archive is mentioned in the article. Not eligible under PROTOCOL Section 2: nonlinear models and per-event two-period designs."
+}

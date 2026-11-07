@@ -1,0 +1,43 @@
+{
+ "suffix": "mksc.2019.1174",
+ "doi": "10.1287/mksc.2019.1174",
+ "journal": "mksc",
+ "title": "Protecting Consumers from Themselves: Assessing Consequences of Usage Restriction Laws on Online Game Usage and Spending",
+ "authors": "Wooyong Jo; Sarang Sunder; Jeonghye Choi; Minakshi Trivedi",
+ "year": 2020,
+ "screened_from": "package_only",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "main_or_robustness": "main",
+ "eligible_reason": "Not a staggered design, and the data are simulated with added noise. South Korea's gaming shutdown law applies from one common date to the treated age group, with older students as controls. The DiD regressions include lagged play time and lagged spending (lagged outcomes), a treatment x lagged-time interaction, and user tenure. Spending is a Tobit model (SAS PROC QLIM). The package also includes a propensity-matched regression discontinuity sample.",
+ "design_notes": "Full sample analysis time.do: xtreg log_total_playmin tr lagtime tr_lt lagspend usertenure wd1-wd8, fe vce(cluster memberno), with tr = treatmentgroup x post_period and 8 weeks. Full sample analysis spend.sas: proc qlim censored Tobit with member dummies. RD sample analysis time and spend.sas: RD on the RD_PSmatched sample.",
+ "estimators_reported": [
+  "fe_ols_single_date_did_with_lagged_dv",
+  "tobit",
+  "regression_discontinuity"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "0_data_Full_sample_analysis.csv (simulated)",
+  "0_data_RD_sample_analysis.csv (simulated)"
+ ],
+ "data_provenance": "synthetic",
+ "software": "stata",
+ "software_notes": "Stata and SAS.",
+ "screener_notes": "Screened from package only. The README says 'we provide simulated data' with random noise added because of NDA requirements."
+}

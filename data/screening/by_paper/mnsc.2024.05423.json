@@ -1,0 +1,115 @@
+{
+ "suffix": "mnsc.2024.05423",
+ "doi": "10.1287/mnsc.2024.05423",
+ "journal": "mnsc",
+ "title": "Third-Party Quality Certification in the Market for Financial Advice",
+ "authors": "William Christopher Gerken; Morteza Momeni",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_011",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.05423",
+ "regressions_path": "./data/packages/mnsc.2024.05423_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": true,
+ "eligible": true,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Firm-level panel of small RIA firms (<=50 employees), 2009-2020. Treatment top1000_owner = 1 if the firm is owned by a Barron's Top-1000 advisor in year t; it switches on at firm-specific years (278 ever-treated firms; first-treatment years 2009-2020, 12 cohorts, 104 already treated in their first observed year; ~21,600 never-treated firms). Table 2 col 2 (F.log_aum) and Table 5 col 1 (F.misconduct) regress the t+1 outcome on top1000_owner with firm FE and state-by-year FE, no controls, linear, cluster by firm. Treatment switches off (152 switch-off events; 496 post-adoption rows with treatment 0) -> drop those rows per Hull fn. 6. Shipped data are real (Form ADV / Barron's built panel).",
+ "design_notes": "Stata reghdfe. master_stata.do lines 70-91 (Table 2) and 211-221 (Table 5 cols 1-2): use final_firm_level_sample; drop if number_employee > 50; xtset fcrdn year; reghdfe f.log_aum top1000_owner, absorb(fcrdn year#grp_state) cluster(fcrdn). Outcome uses Stata's lead operator f. (missing when year t+1 is not observed; 2,655 gaps in the firm panel). Table 2 col 1 has no firm FE; col 3 adds l_top1000_owner (extra treatment regressor); col 4 and Table 5 col 2 are ppmlhdfe (Poisson). Advisor-level Tables 3, 4, 6, 7 use treat (Top-100 within Top-1000) or top100 with norm_ranking (continuous ranking score), time-varying license/tenure controls, and firm FE on top of advisor FE (advisors move across firms), and Table 4 is a state-cutoff RD-style design: not eligible. Figures 1-2 are PanelMatch matching event studies (R): not eligible. Table IA8 is a stacked cohort design (icrdn#cohort): not eligible. grp_state (firm HQ state) varies within firm for 1,433 of 21,865 firms (27 of 278 treated firms), so the state-by-year FE are not strictly a time-invariant characteristic x year; recommend fixing state at the firm's first (or modal) state for CSA/BJS and recording the deviation, or using the observed state as published for TWFE.",
+ "estimators_reported": [
+  "twfe_static",
+  "ppml",
+  "panelmatch_matching_event_study",
+  "rd_cutoff",
+  "stacked_cohort_twfe"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 2,
+ "n_adoption_cohorts": 12,
+ "never_treated_present": true,
+ "always_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [
+  "T2c2"
+ ],
+ "published_estimates": [],
+ "specs": [
+  {
+   "spec_id": "T2c2",
+   "code_file": "revised_replication_package_2025_11_30/code/master_stata.do",
+   "code_line": 79,
+   "data_file": "revised_replication_package_2025_11_30/source/final_firm_level_sample.dta",
+   "outcome": "F.log_aum (log firm AUM in year t+1; construct as lead of log_aum within fcrdn under xtset fcrdn year, missing if t+1 not observed)",
+   "treatment_var": "top1000_owner",
+   "unit_var": "fcrdn",
+   "time_var": "year",
+   "fe": [
+    "fcrdn",
+    "year#grp_state"
+   ],
+   "controls": [],
+   "weights": "",
+   "cluster": "fcrdn",
+   "sample_condition": "number_employee <= 50 (drop if number_employee > 50)",
+   "static_or_event": "static",
+   "reported_location": "Table 2, column 2",
+   "data_provenance": "real",
+   "notes": "Treatment switches off; drop post-adoption rows with top1000_owner == 0. grp_state varies within 1,433 firms; fix at first observed state for modern estimators (deviation). Approximate N ~97,500 with ~930 treated rows."
+  },
+  {
+   "spec_id": "T5c1",
+   "code_file": "revised_replication_package_2025_11_30/code/master_stata.do",
+   "code_line": 214,
+   "data_file": "revised_replication_package_2025_11_30/source/final_firm_level_sample.dta",
+   "outcome": "F.misconduct (indicator for >=1 firm misconduct event in year t+1; lead of misconduct within fcrdn)",
+   "treatment_var": "top1000_owner",
+   "unit_var": "fcrdn",
+   "time_var": "year",
+   "fe": [
+    "fcrdn",
+    "year#grp_state"
+   ],
+   "controls": [],
+   "weights": "",
+   "cluster": "fcrdn",
+   "sample_condition": "number_employee <= 50",
+   "static_or_event": "static",
+   "reported_location": "Table 5, column 1",
+   "data_provenance": "real",
+   "notes": "Linear probability model. Same treatment-switch-off and state caveats as T2c2. Approximate N ~100,000."
+  }
+ ],
+ "appendix_only_specs": [
+  {
+   "spec_id": "TIA2Ac2",
+   "code_file": "revised_replication_package_2025_11_30/code/master_stata.do",
+   "code_line": 440,
+   "outcome": "F.log_account",
+   "treatment_var": "top1000_owner",
+   "fe": [
+    "fcrdn",
+    "year#grp_state"
+   ],
+   "reported_location": "Internet Appendix Table IA.2 Panel A, column 2",
+   "notes": "Appendix-only; not counted."
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "revised_replication_package_2025_11_30/source/final_firm_level_sample.dta",
+  "revised_replication_package_2025_11_30/source/final_advisor_level_sample.dta",
+  "revised_replication_package_2025_11_30/source/final_discontinuity_sample.dta",
+  "revised_replication_package_2025_11_30/source/final_extended_bandwidth_sample.dta",
+  "revised_replication_package_2025_11_30/source/final_top_100_sample.dta",
+  "revised_replication_package_2025_11_30/source/raw_firm_level_sample.csv"
+ ],
+ "data_files_note": "README states the package contains all data needed; final firm panel has 143,539 firm-years (127,229 after the <=50-employee restriction), with plausible AUM values.",
+ "data_provenance": "original",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 1,
+ "screener_notes": "Screened from package only (no article text, no PDF, empty OpenAlex abstract in candidates.csv; abstract taken from data/frame/mnsc.jsonl). Table numbers come from the eststo names and esttab output file names in master_stata.do. Main-text status of Tables 2 and 5 inferred from README (Table1-Table7 = main paper). Confirm against the article when available."
+}

@@ -1,0 +1,28 @@
+{
+  "suffix": "mnsc.2023.01981",
+  "doi": "10.1287/mnsc.2023.01981",
+  "journal": "mnsc",
+  "title": "The Unequal Diffusion of Honesty and Dishonesty in Workplace Networks",
+  "year": "2025",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences design. Autoregressive linear probability model of behavior switching on the count of opposite-behavior neighbors (continuous peer exposure) with market and month fixed effects and time-varying controls.",
+  "design_notes": "Clerk-market-month panel (4,621 clerk-months); market and month FE, not unit FE; peer effect identified from algorithmic staffing as a natural experiment.",
+  "estimators_reported": [
+    "OLS linear probability model with market and month FE"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Proprietary firm data."
+}

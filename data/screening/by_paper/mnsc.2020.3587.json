@@ -1,0 +1,81 @@
+{
+ "suffix": "mnsc.2020.3587",
+ "doi": "10.1287/mnsc.2020.3587",
+ "journal": "mnsc",
+ "title": "Board Networks and Corporate Innovation",
+ "authors": "Chinghung Chang; Qingqing Wu",
+ "year": 2020,
+ "batch": "r2a_034",
+ "package_dir": "~/did_packages/mnsc/mnsc.2020.3587",
+ "regressions_path": "./data/packages/mnsc.2020.3587_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Staggered event design (director deaths and retirements in different years; treated = departing director had at least one connection, control = unconnected departures), but every Table 4/5 column includes an After indicator defined for all firms at their own event year (extra treatment regressor), all time-varying firm controls from Table 3, director FE as an additional additive FE, and event-stacked firm-year windows (five years around each event, firms with multiple events repeated). Models 3-4 use a continuous Connected (number of connections). The 2003 listing-rule DiD has a single common date.",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": false,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "robustness (identification section; baseline is OLS of innovation on board connectedness)",
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "spec_id": "T4A_c1_lnpatent",
+   "reported_location": "Table 4 Panel A, Model 1",
+   "coef": -0.336,
+   "t": -7.13,
+   "n_obs": 16630,
+   "exclusion_reason": "After (extra treatment regressor), time-varying controls, director FE, stacked event windows"
+  },
+  {
+   "spec_id": "T4A_c2_lncite",
+   "reported_location": "Table 4 Panel A, Model 2",
+   "coef": -0.269,
+   "t": -6.0,
+   "n_obs": 16630,
+   "exclusion_reason": "same as T4A_c1"
+  },
+  {
+   "spec_id": "T4A_c3_c4",
+   "reported_location": "Table 4 Panel A, Models 3-4",
+   "exclusion_reason": "continuous treatment (number of connections) plus the violations above"
+  },
+  {
+   "spec_id": "T4B_T4C",
+   "reported_location": "Table 4 Panels B (deaths) and C (sudden deaths)",
+   "exclusion_reason": "same as T4A_c1"
+  },
+  {
+   "spec_id": "T5",
+   "reported_location": "Table 5",
+   "exclusion_reason": "PSM-matched sample with the same violations as Table 4"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "No qualifying column. Table 4 (Panels A-F) and Table 5 (PSM-matched) estimate Ln(Patent)/Ln(Cite) on After x Connected and After with all Table 3 controls and director, firm and year FE on stacked five-year event windows; these violate the time-varying-controls, extra-treatment-regressor (After for all event firms), extra-FE (director) and stacking rules. The regulatory-shock DiD (2003 NYSE/NASDAQ listing rules, POSTSOX) uses one common date. Baseline Table 3 is OLS on continuous connectedness.",
+ "design_notes": "Text Section 4.2: 373 deaths and 2,502 retirements (283 and 2,012 connected); 'our panel includes firm-year observations for each event'; After = 1 for years after the event; Connected = 1 if the departing director had at least one connection; controls as in Table 3; director, firm and year FE; SE clustered by firm. Table 4 Panel A col 1: After x Connected -0.336 (t = -7.13), After -0.269, N = 16,630. Panels D-F are pseudo-event placebos. Table 5: PSM-matched sample.",
+ "estimators_reported": [
+  "ols_fe_continuous_connectedness",
+  "stacked_event_did_with_controls",
+  "psm_matched_did",
+  "2x2_did_single_date (listing rules)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "Package ships only a SAS data-preparation program (codeprep.sas) and a README; data come from Compustat, BoardEx and patent databases (licensed); no regression code or analysis data.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "",
+ "software": "sas",
+ "software_notes": "SAS data preparation only; estimation code not shipped",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2020.3587.txt). Near miss with several violations, so it does not enter the 5c controls-only analysis."
+}

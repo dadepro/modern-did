@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2020.01306,mnsc.2020.01306_T4_top_prodwageperworker_ln,static,999,0.00254634205173679,0.00286235556125467,0.047392711307336,0.123500794320673,0.0736393934353623,0.43504625682807,0.82016611596866,999,999,999,1.38777878078145e-17,4.16333634234434e-17,9.57567358739198e-15,TRUE,9354,

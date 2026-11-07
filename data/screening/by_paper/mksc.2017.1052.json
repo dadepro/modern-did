@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2017.1052",
+ "doi": "10.1287/mksc.2017.1052",
+ "journal": "mksc",
+ "title": "Pricing with Prescheduled Sales",
+ "authors": "Maxim Sinitsyn",
+ "year": 2017,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2017.1052",
+ "regressions_path": "./data/packages/mksc.2017.1052_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (theory: dynamic pricing model with prescheduled sales; numerical equilibrium solutions)",
+ "ineligible_specs": [
+  {
+   "spec_id": "theory_numerics",
+   "reported_location": "Sections 5-6",
+   "exclusion_reason": "analytical/numerical game-theoretic model; no data, no regressions"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Theory paper; MATLAB solves equilibrium sale-probability systems.",
+ "design_notes": "MATLAB: 'sale cancel/solcangen*.m', 'endogenous price/eq*.m, sol*.m, profit*.m'.",
+ "estimators_reported": [
+  "numerical equilibrium computation"
+ ],
+ "data_access": "public",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "No data (theory paper).",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No empirical data exist; package contains only numerical solvers.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

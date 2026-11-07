@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,csa_boot_updated
+mksc.2022.1353,T11a_log_photos_num_static,static,999,0.00062345638509235,0.000656946180354412,0.025564852254015,0.0414521996507631,0.0268762153674706,0.588322162278085,0.956133185911804,999,999,999,1.11022302462516e-16,2.4980018054066e-16,1.73722147778221e-13,TRUE,53,csa_only_nov2

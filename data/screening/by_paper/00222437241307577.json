@@ -1,0 +1,30 @@
+{
+ "eligible_design": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_expected": false,
+ "package_dir": null,
+ "journal": "jmr",
+ "doi": "10.1177/00222437241307577",
+ "year": 2024,
+ "title": "Multi-Segment and Single-Segment Sales Contests: Evidence of Their Effectiveness and the Underlying Mechanisms",
+ "eligible_reason": "Randomized field experiment with a single contest month (November) for all treated salespeople; Equation 1 is a standard DiD on four months (three pre-contest, one contest month) with Program-Period dummy, group dummies, group x period interactions and month FE. One treatment date; Studies 2 and 5 are online experiments (Study 2 uses a before/after DiD on Score), and Studies 3 and 4 are descriptive pre/post comparisons at two other firms. No staggered adoption and no unit FE.",
+ "design_notes": "Treatment groups: single-segment contest, multi-segment contest, and no-contest control; randomization at geographic level; Y = normalised monthly revenue per salesperson. Study 2 (online experiment, Table 7) is a before/after DiD on Score; Studies 3-4 report descriptive improvements by segment (Tables 8-9).",
+ "estimators_reported": [
+  "randomized-experiment DiD (group x period interaction, month FE)"
+ ],
+ "main_or_robustness": "main",
+ "data_access": "proprietary",
+ "screener_notes": "Ineligible: single treatment period, randomized experiment, no unit FE. Company sales data anonymised and rescaled at the firm's request; no data-availability statement found in text.",
+ "suffix": "00222437241307577"
+}

@@ -1,0 +1,30 @@
+{
+  "suffix": "mnsc.2022.02310",
+  "journal": "mnsc",
+  "weight_var": "",
+  "data_provenance": "real",
+  "static_or_event": "static",
+  "in_abstract_intro": true,
+  "spec_id": "T4_c1_ev0",
+  "data_path": "~/did_packages/_work/mnsc.2022.02310/main_prep.rds",
+  "id_var": "frs_cas",
+  "time_var": "cyear",
+  "y_var": "y1",
+  "gvar": "gvar_passage",
+  "cluster_var": "state",
+  "xt_vars": [
+    "cas"
+  ],
+  "sample_filter": "!(state == \"RI\" & cyear >= 2011)",
+  "log_y": "",
+  "published_coef": 0.056,
+  "published_se": 0.0193,
+  "published_n": 1350310,
+  "published_source": "Article (Management Science 72(4), 2026) Table 4 column (1): EVerify 0.056 (t = 2.90), Observations 1,350,310, plant-chemical and chemical-year FE, SE clustered by state; published_se = 0.056/2.90. Matches the authors' shipped output data/t4.csv and the fixest re-run 0.05630 (SE 0.01938), N 1,350,310.",
+  "table": "Table 4",
+  "column": "1",
+  "preferred": true,
+  "replication_status": "exact (fixest re-run of reghdfe y1 ev0, a(frs_cas cas_yr) vce(cluster state) equals the printed 0.056, t 2.90, N 1,350,310)",
+  "notes": "reghdfe y1 ev0, a(frs_cas cas_yr) vce(cluster state) on main.dta (2. stata code.do line 26). fixest replication: 0.05630 (SE 0.01938, t 2.90), N 1,350,310 with singletons dropped as in reghdfe; identical coefficient with singletons kept. Unit = facility x chemical (frs_cas), time = year 2000-2018, chemical-by-year FE passed as xt_vars = cas (chemical is a component of the unit id, hence time-invariant). TREATMENT TIMING: the authors delete each state's law-passage year and ev0 = 1 from the following year; the pipeline gvar is the state passage year (first ev0 year minus one where the passage-year rows are deleted: CO 2006, AZ/OK 2007, MO/MS/RI 2008, ID/NE 2009, VA 2010, AL/FL/IN/LA/MN/TN 2011, MI/PA/WV 2012, TX 2014) and the first ev0 year where it is not (GA/NC 2006, SC/UT 2008, hand-coded public mandates). On the retained rows 1{cyear >= gvar} equals ev0 exactly, so the pipeline TWFE is the authors' TWFE; the convention only fixes the CSA base period at passage year - 1 (the last untreated observed year; using first-treated year as gvar would put the base period in the deleted year and drop almost every treated unit from CSA). 8 passage-year cohorts vs 9 first-treated years (GA/NC 2006 vs CO 2007; SC/UT 2008 vs MO/MS/RI 2009 merge). SWITCH-OFF: RI public mandate in force 2009-2010 only (executive order rescinded); rows RI x 2011-2018 (1,872) dropped by sample_filter (gvar route bypasses the automatic drop). 17,909 of 96,725 treated-state units enter the panel after adoption (no untreated rows); only 41,723 have an observation in the base period g-1, so CSA/BJS use fewer treated units than TWFE.",
+  "published_estimator": "twfe"
+}

@@ -1,0 +1,48 @@
+{
+ "suffix": "mnsc.2023.03601",
+ "doi": "10.1287/mnsc.2023.03601",
+ "journal": "mnsc",
+ "title": "Financial Shocks and Firm Innovation in Supply Chain Networks",
+ "authors": "Emanuele Brancati; Raoul Minetti; Susan Chun Zhu",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.03601",
+ "regressions_path": "./data/packages/mnsc.2023.03601_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a binary staggered DiD. Firm-level panel of Italian MET survey waves (2009-2017). The regressions interact supply-chain participation (STABLE_SC / SC_NTW2) with continuous bank exposures to the financial and sovereign crises (expo_fin_L2CDS, expo_sov_L2CDS, lagged CDS-weighted exposure of lending banks), with many time-varying firm controls (ln_age, S_grad_employees, L.sales_growth, L.Scarce_mkt_demand_inv, ln_sales_ADJ, fixed_TA_ADJ, ln_VA_L_ADJ) and province/sector dummies; most columns are IV (xtivreg2 / ivregress, instrumenting credit constraints Short_collateral and their supply-chain interaction with the exposures and Fibra x EFIGE online-purchasing shares). Continuous treatment, IV and controls in every column; no data shipped.",
+ "design_notes": "Stata; DO_FILES_TABLES/TABLE 1.do ... TABLE 6.do, TABLE A2-A8.do. Outcomes Inn_all (innovation), product/process innovation (radical/imitative), R&D. Mostly 2SLS (40 ivregress, 32 xi: xtivreg2 lines), plus xtreg fe and pooled reg with sector-by-year dummies. Cluster PROVDEF.",
+ "estimators_reported": [
+  "iv_2sls",
+  "panel_fe_continuous_exposure",
+  "ols_pooled"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 1-6 and appendix",
+   "reason": "continuous bank-exposure treatment interacted with supply-chain indicator; IV for credit constraints; time-varying firm controls in every column"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "_DATA/ELABORATED DATA is empty. README: MET survey (subscription), AIDA (Bureau van Dijk), ISTAT confidential microdata (COE, FRAME SBS; secure lab only), EFIGE, Bloomberg CDS, Bankscope. Code only.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data files in package.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, README PDF and OpenAlex abstract (no article text)."
+}

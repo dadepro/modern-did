@@ -1,0 +1,61 @@
+{
+ "suffix": "mnsc.2023.02244",
+ "doi": "10.1287/mnsc.2023.02244",
+ "journal": "mnsc",
+ "title": "Learning More Than You Can Know: Introductory Education Produces Overly Expansive Self-Assessments of Knowledge",
+ "authors": "Stav Atir; David Alan Dunning",
+ "year": 2025,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.02244",
+ "regressions_path": "./data/packages/mnsc.2023.02244_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "main_or_robustness": "main (classroom field studies and online experiments)",
+ "ineligible_specs": [
+  {
+   "spec_id": "study1_2_class_by_session",
+   "reported_location": "Studies 1-2 (finance or psychology-and-law class vs. control class, start vs. end of semester)",
+   "exclusion_reason": "two-group, two-period comparison (lm(spe ~ session*cond)) with one common treatment period; not staggered, no unit FE"
+  },
+  {
+   "spec_id": "study3_4_experiments",
+   "reported_location": "Studies 3-4 (randomized GPS training)",
+   "exclusion_reason": "randomized online experiments; not DiD"
+  }
+ ],
+ "eligible_reason": "Not staggered. Studies 1-2 compare an introductory class with a control class at the start and end of one semester (a single 2x2 comparison); Studies 3-4 are randomized experiments.",
+ "design_notes": "R scripts per study (OC_Edu_FinanceMHR.R, OC_Edu_PsychLaw.R, OC_Edu_Experiment*.R, OC_Edu_Fit.R) with lm/ANOVA and mediation.",
+ "estimators_reported": [
+  "OLS / ANOVA with session x condition interaction",
+  "mediation analysis",
+  "randomized experiment comparisons"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Study 1-4 csv files (raw, exclusions, cleaned)"
+ ],
+ "data_files_note": "Survey data collected by the authors; raw and cleaned files shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' own survey data.",
+ "software": "r",
+ "software_notes": "R",
+ "screener_notes": "Published text confirms classroom and experimental design. Not a near miss."
+}

@@ -1,0 +1,123 @@
+{
+ "suffix": "mksc.2019.1176",
+ "doi": "10.1287/mksc.2019.1176",
+ "journal": "mksc",
+ "title": "Frontiers: Asymmetric Effects of Recreational Cannabis Legalization",
+ "authors": "Pengyuan Wang; Guiyang Xiong; Jian Yang",
+ "year": 2019,
+ "batch": "r2a_040",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1176",
+ "regressions_path": "./data/packages/mksc.2019.1176_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Staggered state recreational-cannabis legalization (7 treated, disguised states; adoption weeks clustered near weeks 57-63, 72-84 and 142-171 of 173, consistent with AK/DC Feb 2015, OR Jul 2015 and CA/MA/NV/ME Nov 2016-Jan 2017; 10 never-treated states) with state and week FE on weighted state-week-device-gender-age cells. Every column violates a rule: Model (1) adds additive device, gender and youth FE (nonredundant additive FE, 5b 'age FE'), Model (2) also interacts treat_post with youth. Data are a disguised 1,000-row subsample.",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 7,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "main",
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "eligible_reason": "Design is staggered but no column satisfies every rule (additive demographic/device FE in Model (1); youth x treatment interaction in Model (2)). Even if Model (1) were admitted, the package ships only a disguised, demeaned 1,000-row subsample per substance with disguised state IDs, so eligible = false either way.",
+ "design_notes": "sample_code.R estimates Models (1) and (2) of Section 2.3 for cannabis search and for alcohol and tobacco search, click-through and revenue per impression (7 outcome-substance pairs x 2 models = 14 columns). Unit of observation: state x week x device (desktop/tablet/mobile) x gender x youth cell, weighted (weight_search/click/revenue); no clustering in the code (default lm SE). Treatment treat_post = 1 for legalizing states after legalization. Unit = state, time = week (1-173).",
+ "estimators_reported": [
+  "twfe_static_with_additive_demographic_fe",
+  "twfe_ddd_youth_interaction"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "subsample and code/subsampleCan.txt",
+  "subsample and code/subsampleAlc.txt",
+  "subsample and code/subsampleTob.txt"
+ ],
+ "data_files_note": "readme.pdf: 'The proprietary data used in this paper is under non-disclosure agreement (NDA)... we provide a disguised random subsample of the dataset'; outcomes demeaned and state identifiers disguised 'as required by the data provider'. Each file has 1,000 rows (full panel ~17 states x 173 weeks x 12 cells).",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Disguised (demeaned outcomes, masked state IDs) 1,000-row random subsample; not in data/synthetic_packages.txt, lead may want to add it.",
+ "software": "r",
+ "software_notes": "Base R lm.",
+ "screener_notes": "No article text or PDF available locally and the OpenAlex abstract is empty; design read from readme.pdf and sample_code.R, adoption timing checked in the subsample (python3 -I pandas). Table numbers and published coefficients not confirmed. Judgment call for the lead: additive device/gender/youth dummies treated as nonredundant additive FE (protocol 5b 'age FE'), not as controls, so near_miss_5c_controls_only = false; the data rule excludes the paper regardless.",
+ "ineligible_specs_listed": [
+  {
+   "location": "Model (1), cannabis search (table location not confirmed)",
+   "spec": "lm(search ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_search)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), cannabis search (table location not confirmed)",
+   "spec": "lm(search ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_search)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  },
+  {
+   "location": "Model (1), alcohol search (table location not confirmed)",
+   "spec": "lm(search ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_search)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), alcohol search (table location not confirmed)",
+   "spec": "lm(search ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_search)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  },
+  {
+   "location": "Model (1), alcohol click (table location not confirmed)",
+   "spec": "lm(click ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_click)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), alcohol click (table location not confirmed)",
+   "spec": "lm(click ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_click)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  },
+  {
+   "location": "Model (1), alcohol revenue (table location not confirmed)",
+   "spec": "lm(revenue ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_revenue)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), alcohol revenue (table location not confirmed)",
+   "spec": "lm(revenue ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_revenue)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  },
+  {
+   "location": "Model (1), tobacco search (table location not confirmed)",
+   "spec": "lm(search ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_search)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), tobacco search (table location not confirmed)",
+   "spec": "lm(search ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_search)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  },
+  {
+   "location": "Model (1), tobacco click (table location not confirmed)",
+   "spec": "lm(click ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_click)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), tobacco click (table location not confirmed)",
+   "spec": "lm(click ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_click)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  },
+  {
+   "location": "Model (1), tobacco revenue (table location not confirmed)",
+   "spec": "lm(revenue ~ factor(week) + factor(state) + treat_post + factor(device) + factor(gender) + youth, weights=weight_revenue)",
+   "reason": "Additive device, gender and youth FE beyond state and week FE (cell-level demographic dummies; 5b 'age FE' rule)"
+  },
+  {
+   "location": "Model (2), tobacco revenue (table location not confirmed)",
+   "spec": "lm(revenue ~ factor(week)*youth + factor(state)*youth + treat_post + treat_post:youth + factor(device) + factor(gender), weights=weight_revenue)",
+   "reason": "Subgroup-by-treatment interaction (treat_post x youth) plus additive device and gender FE"
+  }
+ ]
+}

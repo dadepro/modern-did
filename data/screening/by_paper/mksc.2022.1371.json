@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2022.1371",
+ "doi": "10.1287/mksc.2022.1371",
+ "journal": "mksc",
+ "title": "Millennials and the Takeoff of Craft Brands: Preference Formation in the U.S. Beer Industry",
+ "authors": "Bart J. Bronnenberg; Jean‐Pierre Dubé; Joonhwi Joo",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1371",
+ "regressions_path": "./data/packages/mksc.2022.1371_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not a binary staggered DiD. Main reduced-form tables regress household craft-beer purchase on generation cohort dummies, education, income and household size, plus continuous local craft availability (avail, availY_21after1979), with scantrack (and in some columns panel_year) FE; IV versions (ivreghdfe) instrument availability with population and years since brewpub legalization (yearsLegal/years, a continuous exposure). The remaining results are a structural preference-formation model (MATLAB GMM). No binary treatment switching on at unit-specific dates enters any reported regression.",
+ "design_notes": "Stata (r2-r5), R (r1, r6 figures), MATLAB (r7 structural). Nielsen Homescan/RMS household-year data, American Breweriana Association brewery entry data, state brewpub legalization years (lawsStateYear.dta). Cluster gg.",
+ "estimators_reported": [
+  "ols_with_fe_continuous_regressors",
+  "iv_2sls",
+  "structural_gmm"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Descriptive regression tables (tables.do, revision.do)",
+   "reason": "generation cohort dummies and continuous availability with demographic controls; IV with population and years-since-legalization instruments"
+  },
+  {
+   "location": "Structural tables and counterfactual figures",
+   "reason": "structural model"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "No data files shipped; master_readme points to Nielsen-Kilts Homescan/RMS (licensed), American Breweriana Association, Elzinga et al. (2015), ratebeer.com and public SEER/Census data. Only make.log outputs are included.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Package contains code only.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). Brewpub legalization dates vary by state but enter only as a continuous years-since-legal instrument/regressor, not as a DiD treatment."
+}

@@ -1,0 +1,47 @@
+{
+  "suffix": "mnsc.2023.00140",
+  "doi": "10.1287/mnsc.2023.00140",
+  "journal": "mnsc",
+  "title": "The Benefit of the Doubt: Patent Examination Under Strategic Obfuscation",
+  "year": 2023,
+  "authors": "Nicolas Figueroa; Jorge Lemus",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not a DiD. The only regressions (Table 1 and robustness Tables 1a/1b) are cross-sectional OLS of application-text measures (claims indefiniteness, inclusiveness, word counts, concreteness, Jaccard) on a continuous, time-invariant art-unit leniency measure Prior_2015 (2015 patenting rate) for applications filed 2016-2017, with robust SEs and, in robustness, year/month/entity-size FE. No binary treatment, no unit FE, no adoption timing. The paper is primarily theoretical (Figure 5 and Table 1 are the empirical part).",
+  "design_notes": "replication_dataset.dta: 1,205,390 US patent applications 2015-2017 (PatentsView) with art unit, filing date, entity status, text measures. Figure5_Table1_replication.do: gen Prior_2015 = art-unit leniency in 2015; reg Y Prior_2015 if year>2015 & year<=2017, r (line 20); reghdfe ... absorb(year month small) vce(robust) (lines 32, 48). Note line 3 sets month = year(filing_date) (likely a bug; month FE collapse to year).",
+  "estimators_reported": [
+    "cross_sectional_ols_continuous_regressor (Table 1)",
+    "ols_with_year_month_entity_fe (Tables 1a, 1b)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": false,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "location": "Table 1 (line 20), Tables 1a/1b (lines 32, 48)",
+      "reason": "cross-sectional regression on continuous leniency; no DiD"
+    }
+  ],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "replication_package_MS-BDE-23-00140/replication_dataset.dta (1,205,390 applications, 13 variables)",
+    "Table1.tex, Table1a.tex, Table1b.tex (outputs)"
+  ],
+  "software": "stata",
+  "software_detail": "Stata (reg, reghdfe, esttab)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not a DiD design.",
+  "screener_notes": "Screened from package only (no article text). The ft_staggered flag is a false positive."
+}

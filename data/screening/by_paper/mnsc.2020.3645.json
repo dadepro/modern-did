@@ -1,0 +1,58 @@
+{
+ "suffix": "mnsc.2020.3645",
+ "doi": "10.1287/mnsc.2020.3645",
+ "journal": "mnsc",
+ "title": "When Ignorance Is Not Bliss: An Empirical Analysis of Subtier Supply Network Structure on Firm Risk",
+ "authors": "Yixin Wang; Jun Li; Di Wu; Ravi Anupindi",
+ "year": 2020,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2020.3645",
+ "regressions_path": "./data/packages/mnsc.2020.3645_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (firm-quarter FE panel with continuous network measures; CAR event study)",
+ "ineligible_specs": [
+  {
+   "spec_id": "risk_on_t2_sharing",
+   "reported_location": "Tables on total, idiosyncratic and industry risk (Eqs. 2-3)",
+   "exclusion_reason": "firm and quarter FE regressions of volatility on continuous network measures (spt2_vol, t2_sharing and interaction) with time-varying controls; continuous regressors, no binary staggered treatment"
+  },
+  {
+   "spec_id": "car_event_study",
+   "reported_location": "Tables 6-7 (abnormal returns around tier-2 supplier risk events)",
+   "exclusion_reason": "short-window CAR event study; not DiD"
+  }
+ ],
+ "eligible_reason": "Not a binary staggered design. Firm-quarter panel regressions with firm and quarter FE relate firm risk to continuous supply-network measures (tier-2 sharing) and many time-varying controls; causal evidence comes from a CAR event study around tier-2 supplier risk events.",
+ "design_notes": "Driscoll-Kraay SEs. Package holds only the LaTeX manuscript source and table .tex files.",
+ "estimators_reported": [
+  "firm and quarter FE panel OLS (continuous regressors)",
+  "CAR event study"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "Archive contains only LaTeX source (tex/, Table/*.tex); no code or data. FactSet Revere supply-chain data and Compustat are licensed.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data or code in archive.",
+ "software": "other",
+ "software_notes": "No code shipped (LaTeX only)",
+ "screener_notes": "Published text and tex source confirm design. Not a near miss (continuous treatment, not a controls-only violation)."
+}

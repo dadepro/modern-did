@@ -1,0 +1,62 @@
+{
+ "suffix": "mksc.2018.1140",
+ "doi": "10.1287/mksc.2018.1140",
+ "journal": "mksc",
+ "title": "Whose Voice Do We Hear in the Marketplace? Evidence from Consumer Complaining Behavior",
+ "authors": "Devesh R. Raval",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1140",
+ "regressions_path": "./data/packages/mksc.2018.1140_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (zip-level comparison of complaint vs victimization rates by demographics across FTC fraud cases)",
+ "ineligible_specs": [
+  {
+   "spec_id": "mixed_models",
+   "reported_location": "Figures 3, 5-7",
+   "exclusion_reason": "cross-sectional zip-code mixed/Poisson-type models of complaint vs victim rates by demographics; no time dimension or adoption"
+  },
+  {
+   "spec_id": "gss_table2",
+   "reported_location": "Table 2",
+   "exclusion_reason": "GSS survey regressions"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Cross-sectional zip-code comparison of complaint and victimization rates across legal cases.",
+ "design_notes": "Stata do-files run_mixed*.do (CRLF line endings, missed by the scan); R for weights and graphs.",
+ "estimators_reported": [
+  "mixed models",
+  "GSS regressions"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "data/dataWithPredictions.dta",
+  "data/dataAggCFPB.csv",
+  "ACS demographics"
+ ],
+ "data_files_note": "readme: zip-level complaint and victim counts are confidential; replaced by model predictions from eq. 1.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Confidential case data not shipped; fitted predictions substituted.",
+ "software": "stata",
+ "software_notes": "Stata and R",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

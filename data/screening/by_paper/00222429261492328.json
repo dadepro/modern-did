@@ -1,0 +1,53 @@
+{
+  "suffix": "00222429261492328",
+  "doi": "10.1177/00222429261492328",
+  "journal": "jm",
+  "title": "Political Extremism and Post-Purchase Customer–Brand Relationships",
+  "authors": "Forrest V. Morgeson, Udit Sharma, Yuyuan (Hana) Pan, G. Tomas M. Hult, Ayalla A. Ruvio, Shana L. Redd",
+  "year": 2026,
+  "screened_from": "package + author accepted manuscript text (JM-23-0362.R5)",
+  "package_dir": "~/did_packages/jm/00222429261492328/",
+  "package_source": {
+    "repository": "Harvard Dataverse, collection jom",
+    "dataset_doi": "10.7910/DVN/JQI6WY",
+    "dataset_title": "Replication Data for: Political Extremism and Post-Purchase Customer–Brand Relationships",
+    "dataset_version": "1.0",
+    "released": "2026-10-30",
+    "n_files": 23,
+    "n_public_files": 21,
+    "restricted_files_not_requested": [
+      "Study 1_Code NOT FOR PUBLIC-1.do",
+      "Study 1_Data NOT FOR PUBLIC-1.tab"
+    ],
+    "public_files_downloaded": 21,
+    "public_files_md5_match": 21,
+    "tabular_files_fetched_as_original": 10,
+    "skipped_or_failed": [],
+    "downloaded": "2026-11-02"
+  },
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "near_miss_5c_controls_only": false,
+  "eligible_reason": "Cross-sectional regressions on ACSI customer survey data 2016-2021 (Study 1, proprietary, restricted) with brand, industry, year and month FE and a continuous political-extremism regressor, plus online experiments (Studies 2A-4B and WA studies). No DiD.",
+  "design_notes": "Study 1 code and data marked 'NOT FOR PUBLIC' are restricted (not requested). 10 public do-files and .dta files for the experiments.",
+  "estimators_reported": [
+    "OLS (cross-section)",
+    "PROCESS mediation"
+  ],
+  "main_or_robustness": "none",
+  "n_eligible_specs": 0,
+  "specs": [],
+  "data_access": "partial (Study 1 proprietary, restricted; experiments public)",
+  "data_files_present": true,
+  "data_provenance": "original",
+  "data_provenance_note": "Experimental data shipped; Study 1 survey data restricted.",
+  "software": "stata, spss",
+  "replication_feasible": "no",
+  "priority": 3,
+  "main_text_unverified": false,
+  "screener_notes": "Ruled out from the abstract, README and do-files.",
+  "article_text": "data/text/jm/00222429261492328.txt; papers/jm/00222429261492328.pdf",
+  "main_text_note": "AAM checked: Study 1 pools ACSI customer survey responses 2016-2021 (repeated cross-sections) and regresses repurchase likelihood and price insensitivity on continuous political extremism with brand, industry, year and month FE and moderators (Table 3); a control-function approach addresses endogeneity. Continuous regressor, no treatment timing; not DiD."
+}

@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437231195551",
+  "doi": "10.1177/00222437231195551",
+  "journal": "jmr",
+  "title": "Soda Taxes and Marketing Conduct",
+  "year": "2023",
+  "eligible_design": false,
+  "eligible_reason": "Five soda-tax localities (Philadelphia Jan 2017; Boulder and Oakland Jul 2017; San Francisco and Seattle Jan 2018), but each locality is estimated against its own distance-matched control stores in other DMAs, with locality-by-week fixed effects, so no cross-locality comparison is used. The result is five separate single-date matched DiDs. UPC-store fixed effects are also estimated separately for pre and post periods, and Table 4 reports control variables. Matching-based controls and SynthDID robustness are outside the eligible class.",
+  "design_notes": "Equation 1: MKTG_m,u,s,t = sum_l alpha_m,l (TREAT_s x POST_t x LOCALITY_l) + UPC-store FE + locality-week FE, with POST = weeks 4-52 after introduction; SEs clustered by UPC-store. Table 4 reports Treat x Post x locality coefficients for ln regular price, promotion frequency, promotion depth and feature frequency (N = 7,107,822 for three outcomes, 87,571 UPC-store pairs). Because locality-week FE absorb all within-locality time effects, each alpha identifies a locality-specific two-group, single-date DiD. Equation 2 (Table 6) is a DiD with interactions of Treat x Post with continuous marketing conduct variables (sales effectiveness), which adds treatment-by-covariate interactions. Robustness: geographically proximate controls, SynthDID, control function. Control markets are chosen by distance-based matching on sociodemographics, health orientation and political orientation.",
+  "estimators_reported": [
+    "matched-control DiD by locality with locality-week and UPC-store FE (Table 4)",
+    "DiD with continuous interactions (Table 6)",
+    "SynthDID (Web Appendix)",
+    "control function IV (Web Appendix W5)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 3,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data are NielsenIQ Retail Measurement Services and Homescan data licensed through the Kilts Center (acknowledged in text), not redistributable. Three distinct implementation dates across five localities, but cohorts are never compared with each other, so the design is not an unstacked staggered TWFE. Not eligible."
+}

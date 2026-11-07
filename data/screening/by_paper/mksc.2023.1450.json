@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2023.1450",
+ "doi": "10.1287/mksc.2023.1450",
+ "journal": "mksc",
+ "title": "Put Your Mouth Where Your Money Is: A Field Experiment Encouraging Donors to Share About Charity",
+ "authors": "Ike Silver; Deborah A. Small",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2023.1450",
+ "regressions_path": "./data/packages/mksc.2023.1450_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (randomized field experiment and online experiments on charity sharing prompts)",
+ "ineligible_specs": [
+  {
+   "spec_id": "field_experiment",
+   "reported_location": "Experiment 2 tables",
+   "exclusion_reason": "cross-sectional randomized experiment (glm/lm on condition); no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Randomized field and survey experiments.",
+ "design_notes": "ResearchBox 105 materials with preregistrations.",
+ "estimators_reported": [
+  "logit and OLS on randomized condition"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Data/exp1data.csv",
+  "Data/exp2data.csv",
+  "Data/pilotdata.csv",
+  "Data/data.csv"
+ ],
+ "data_files_note": "Experimental data with codebooks.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data as collected.",
+ "software": "r",
+ "software_notes": "R",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

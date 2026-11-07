@@ -1,0 +1,232 @@
+{
+  "suffix": "mnsc.2021.4103",
+  "doi": "10.1287/mnsc.2021.4103",
+  "journal": "mnsc",
+  "title": "Does Transportation Mean Transplantation? Impact of New Airline Routes on Sharing of Cadaveric Kidneys",
+  "year": 2020,
+  "authors": "Guihua Wang; Ronghuo Zheng; Tinglong Dai",
+  "screened_from": "package_only",
+  "eligible": true,
+  "eligible_design": true,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Canonical staggered DiD. Binary absorbing treatment TreatmentAfter switches on when an airport pair gains a new direct airline route (pair-specific EventYear; 12 distinct adoption years 2002-2017 in the analysis sample, 11 with pre-periods), with 513 never-treated control pairs; linear regression with airport-pair FE and year FE, clustered by pair; column (1) of Tables 2, 4, 5 and 6 has no controls, and Table 3 column (1) is an unstacked event study with pair and year FE and no controls. Analysis data (aggregated OD-pair-year kidney volumes) are shipped.",
+  "design_notes": "Balanced airport-pair x year panel 2002-2017 (16 years). Treated pairs: new direct route introduced in EventYear (treatment_pair==1); controls: pairs that never gain a route (control_pair==1); pairs with EventYear==2018 dropped (line 36). Main sample restricts to pairs >= 800 miles apart (airport_dist computed from coordinates, line 86). Estimation by `reg` with full dummy sets TxYear* ODPair*, vce(cl OrgDestAirport). Columns (2)-(4) of every table add candidate features (destination-year averages) and/or donor features (origin-year averages), which are time-varying controls. Table 7 uses a continuous treatment (departures_performed/100 and its square). Full data: 1,958 pairs, 191 treated (EventYear 2002:79 ... 2017:10); analysis sample (dist>=800): 574 pairs, 61 treated with EventYear 2002:7, 2003:2, 2004:1, 2005:8, 2006:2, 2008:2, 2012:8, 2013:6, 2014:8, 2015:13, 2016:2, 2017:2; 7 pairs treated in 2002 are always-treated (no untreated observation). Mean OrganVolume in the analysis sample is 0.13 (many zeros; ln(1+y) outcome).",
+  "estimators_reported": [
+    "twfe_static (Tables 2, 4, 5, 6 col 1; cols 2-4 with controls)",
+    "twfe_event_study (Table 3; Figure 2)",
+    "twfe_continuous_treatment (Table 7)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 5,
+  "n_eligible_specs_note": "Column (1) of Tables 2-6; Tables 2-6 columns (2)-(4) add time-varying candidate/donor characteristics.",
+  "n_adoption_cohorts": 12,
+  "n_adoption_cohorts_note": "Analysis sample (airport_dist >= 800): EventYear in {2002, 2003, 2004, 2005, 2006, 2008, 2012, 2013, 2014, 2015, 2016, 2017}; the 2002 cohort (7 pairs) is always-treated since the panel starts in 2002, leaving 11 cohorts with pre-periods. Full data: 16 cohorts 2002-2017.",
+  "never_treated_present": true,
+  "never_treated_note": "513 control pairs in the analysis sample (control_pair==1, never gain a direct route).",
+  "always_treated_present": true,
+  "always_treated_note": "7 treated pairs with EventYear==2002 (5 in the RobustOutcomeAnalysis sample).",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [
+    "mnsc.2021.4103_T2_c1_lnorganvolume_static"
+  ],
+  "published_estimates": [
+    {
+      "spec_id": "mnsc.2021.4103_T2_c1_lnorganvolume_static",
+      "location": "Table 2 col (1)",
+      "coef": 0.073,
+      "se": 0.03,
+      "n_obs": 9184,
+      "source": "Tr_Tx_final_main_body.pdf in package (accepted manuscript)"
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T3_c1_lnorganvolume_eventstudy",
+      "location": "Table 3 col (1)",
+      "coefs": {
+        "-3": [
+          0.013,
+          0.044
+        ],
+        "-2": [
+          -0.021,
+          0.041
+        ],
+        "-1": [
+          0.018,
+          0.04
+        ],
+        "0": [
+          0.089,
+          0.053
+        ],
+        "1": [
+          0.05,
+          0.041
+        ],
+        "2": [
+          0.05,
+          0.046
+        ],
+        "3+": [
+          0.095,
+          0.035
+        ]
+      },
+      "n_obs": 9184
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T4_c1_lnkidneystransplanted_static",
+      "location": "Table 4 col (1)",
+      "coef": 0.04,
+      "se": 0.022,
+      "n_obs": 8784
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T5_c1_unrecoveredrate_static",
+      "location": "Table 5 col (1)",
+      "coef": -0.698,
+      "se": 0.28,
+      "n_obs": 8784,
+      "note": "outcome multiplied by 100 in the paper"
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T6_c1_survival3yr_static",
+      "location": "Table 6 col (1)",
+      "coef": 0.002,
+      "se": 0.003,
+      "n_obs": 4862
+    }
+  ],
+  "specs": [
+    {
+      "spec_id": "mnsc.2021.4103_T2_c1_lnorganvolume_static",
+      "code_file": "replication_package_MS-OPM-20-01137/MainAnalysis.do",
+      "code_line": 208,
+      "outcome": "LnOrganVolume = ln(OrganVolume+1), shared cadaveric kidneys between the two airports' areas",
+      "treatment_var": "TreatmentAfter",
+      "treatment_definition": "TreatmentAfter = treatment_pair==1 & EventYear <= tx_year: airport pair gained a new direct airline route in EventYear (pair-specific year, 2002-2017); control pairs (control_pair==1) never gain a route; absorbing",
+      "sample_condition": "airport_dist >= 800 (miles; great-circle distance between airports); balanced 16-year panel of 574 pairs (61 treated, 513 control) = 9,184 obs",
+      "static_or_event": "static",
+      "data_file": "replication_package_MS-OPM-20-01137/OriginDestKiVolAnalysis.dta (built at lines 9-87 from OriginDestKiVol.dta + DonorCharacteristics/CandidateCharacteristics/AirportCoordinate)",
+      "reported_location": "Table 2, column (1)",
+      "notes": "Published: 0.073 (0.030), N = 9,184, adj. R2 0.062. Columns 2-4 add time-varying candidate/donor features (not eligible). 7 of the 61 treated pairs have EventYear==2002 (first panel year) and are always-treated.",
+      "unit_var": "OrgDestAirport (origin-destination airport pair; ODPair* dummies)",
+      "time_var": "year (tx_year, 2002-2017; TxYear* dummies)",
+      "fe": "airport-pair FE + year FE (entered as dummy sets ODPair* TxYear* in `reg`)",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "OrgDestAirport (vce(cl OrgDestAirport))"
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T3_c1_lnorganvolume_eventstudy",
+      "code_file": "replication_package_MS-OPM-20-01137/MainAnalysis.do",
+      "code_line": 242,
+      "outcome": "LnOrganVolume",
+      "treatment_var": "Treatment3YrBefore Treatment2YrBefore Treatment1YrBefore Treatment0YrAfter Treatment1YrAfter Treatment2YrAfter Treatment3YrAfter",
+      "treatment_definition": "relative-time indicators for treated pairs (lines 41-47): rel = tx_year - EventYear; leads at rel -3, -2, -1 (single years), lags at 0, 1, 2 (single years) and 3+ (binned, EventYear - tx_year <= -3); reference = rel <= -4 and all control-pair observations",
+      "sample_condition": "airport_dist >= 800; 9,184 obs",
+      "static_or_event": "event_study",
+      "data_file": "replication_package_MS-OPM-20-01137/OriginDestKiVolAnalysis.dta",
+      "reported_location": "Table 3, column (1); Figure 2",
+      "notes": "Published: -3: 0.013 (0.044); -2: -0.021 (0.041); -1: 0.018 (0.040); 0: 0.089 (0.053); +1: 0.050 (0.041); +2: 0.050 (0.046); 3+: 0.095 (0.035). Note the omitted category is rel <= -4 (not rel -1); leads -3..-1 are estimated. Columns 2-4 add time-varying features.",
+      "unit_var": "OrgDestAirport (origin-destination airport pair; ODPair* dummies)",
+      "time_var": "year (tx_year, 2002-2017; TxYear* dummies)",
+      "fe": "airport-pair FE + year FE (entered as dummy sets ODPair* TxYear* in `reg`)",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "OrgDestAirport (vce(cl OrgDestAirport))"
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T4_c1_lnkidneystransplanted_static",
+      "code_file": "replication_package_MS-OPM-20-01137/MainAnalysis.do",
+      "code_line": 277,
+      "outcome": "lnKidneysTransplanted = ln(OriginKidneysTransplanted + DestKidneysTransplanted + 1) (total transplants at the two airports' areas)",
+      "treatment_var": "TreatmentAfter",
+      "treatment_definition": "TreatmentAfter = treatment_pair==1 & EventYear <= tx_year: airport pair gained a new direct airline route in EventYear (pair-specific year, 2002-2017); control pairs (control_pair==1) never gain a route; absorbing",
+      "sample_condition": "airport_dist >= 800; pairs with donor-disposition data for both airports in all 16 years (PairYear==15, lines 185-187): 549 pairs (57 treated), 8,784 obs",
+      "static_or_event": "static",
+      "data_file": "replication_package_MS-OPM-20-01137/RobustOutcomeAnalysis.dta (built at lines 89-191)",
+      "reported_location": "Table 4, column (1)",
+      "notes": "Published: 0.040 (0.022), N = 8,784. Cohorts in this sample: 2002:5, 2003:2, 2004:1, 2005:7, 2006:2, 2008:2, 2012:8, 2013:5, 2014:8, 2015:13, 2016:2, 2017:2.",
+      "unit_var": "OrgDestAirport (origin-destination airport pair; ODPair* dummies)",
+      "time_var": "year (tx_year, 2002-2017; TxYear* dummies)",
+      "fe": "airport-pair FE + year FE (entered as dummy sets ODPair* TxYear* in `reg`)",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "OrgDestAirport (vce(cl OrgDestAirport))"
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T5_c1_unrecoveredrate_static",
+      "code_file": "replication_package_MS-OPM-20-01137/MainAnalysis.do",
+      "code_line": 312,
+      "outcome": "UnrecoveredRate = (origin+dest kidneys unrecovered)/(unrecovered + wasted + transplanted) (discard rate; paper reports x100)",
+      "treatment_var": "TreatmentAfter",
+      "treatment_definition": "TreatmentAfter = treatment_pair==1 & EventYear <= tx_year: airport pair gained a new direct airline route in EventYear (pair-specific year, 2002-2017); control pairs (control_pair==1) never gain a route; absorbing",
+      "sample_condition": "airport_dist >= 800; RobustOutcomeAnalysis sample, 8,784 obs",
+      "static_or_event": "static",
+      "data_file": "replication_package_MS-OPM-20-01137/RobustOutcomeAnalysis.dta",
+      "reported_location": "Table 5, column (1)",
+      "notes": "Published: -0.698 (0.280) with outcome multiplied by 100 (code variable is a share; rescale by 100 to match). N = 8,784.",
+      "unit_var": "OrgDestAirport (origin-destination airport pair; ODPair* dummies)",
+      "time_var": "year (tx_year, 2002-2017; TxYear* dummies)",
+      "fe": "airport-pair FE + year FE (entered as dummy sets ODPair* TxYear* in `reg`)",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "OrgDestAirport (vce(cl OrgDestAirport))"
+    },
+    {
+      "spec_id": "mnsc.2021.4103_T6_c1_survival3yr_static",
+      "code_file": "replication_package_MS-OPM-20-01137/MainAnalysis.do",
+      "code_line": 369,
+      "outcome": "survival_3yr_weighted (transplant-volume-weighted average 3-year post-transplant survival rate at the two airports; built at lines 346-365 by merging CandidateKidneySurvival.dta)",
+      "treatment_var": "TreatmentAfter",
+      "treatment_definition": "TreatmentAfter = treatment_pair==1 & EventYear <= tx_year: airport pair gained a new direct airline route in EventYear (pair-specific year, 2002-2017); control pairs (control_pair==1) never gain a route; absorbing",
+      "sample_condition": "airport_dist >= 800 & year < 2015; pairs with survival data in all 16 years (PairYear==15); published N = 4,862",
+      "static_or_event": "static",
+      "data_file": "replication_package_MS-OPM-20-01137/RobustOutcomeAnalysis.dta + CandidateKidneySurvival.dta (merge in code, lines 346-365)",
+      "reported_location": "Table 6, column (1)",
+      "notes": "Published: 0.002 (0.003), N = 4,862. Paper text defines PairSurvival as a simple average; code uses the volume-weighted version (footnote 16 says results are qualitatively the same).",
+      "unit_var": "OrgDestAirport (origin-destination airport pair; ODPair* dummies)",
+      "time_var": "year (tx_year, 2002-2017; TxYear* dummies)",
+      "fe": "airport-pair FE + year FE (entered as dummy sets ODPair* TxYear* in `reg`)",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "OrgDestAirport (vce(cl OrgDestAirport))"
+    }
+  ],
+  "ineligible_specs": [
+    {
+      "location": "Tables 2-6, columns (2)-(4) (lines 212-235, 247-270, 282-305, 317-340, 374-397)",
+      "reason": "time-varying candidate (destination-year) and/or donor (origin-year) characteristics as controls"
+    },
+    {
+      "location": "Table 7 (lines 404-430)",
+      "reason": "continuous treatment intensity (departures_performed/100) and its square"
+    },
+    {
+      "location": "Online appendix spillover analyses (categories sharing origin/destination)",
+      "reason": "not in package code; appendix-only"
+    }
+  ],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "OriginDestKiVol.dta (pair-year organ volumes, treatment_pair, control_pair, EventYear, departures_performed)",
+    "OriginDestKiVolAnalysis.dta (31,328 pair-years x 2,058 cols incl. dummy sets; built by lines 9-87)",
+    "RobustOutcomeAnalysis.dta (28,208 rows; built by lines 89-191)",
+    "DonorCharacteristics.dta",
+    "CandidateCharacteristics.dta",
+    "DonorKidneyDisposition.dta",
+    "CandidateKidneySurvival.dta",
+    "AirportCoordinate.dta",
+    "Tr_Tx_final_main_body.pdf (manuscript)"
+  ],
+  "data_files_note": "README says raw UNOS data cannot be shared, but the aggregated airport-pair-year analysis files used by MainAnalysis.do are included and the pre-built OriginDestKiVolAnalysis.dta / RobustOutcomeAnalysis.dta load directly. Organ volumes are real aggregates (not synthetic).",
+  "software": "stata",
+  "software_detail": "Stata (reg with dummy sets, est table); R scripts only for raw BTS/CEI data construction",
+  "replication_feasible": "yes",
+  "priority": 1,
+  "priority_note": "Eligible, data shipped, published estimates recoverable from the manuscript PDF in the package.",
+  "screener_notes": "Screened from package only (article PDF of the accepted manuscript is inside the package: Tr_Tx_final_main_body.pdf; table/column references and published coefficients taken from it; re-check against the published version). Cohort counts computed with pandas from OriginDestKiVolAnalysis.dta. For the CSA step, drop the always-treated EventYear==2002 pairs. Table 3 reference category is rel <= -4 rather than rel -1."
+}

@@ -1,0 +1,28 @@
+{
+  "suffix": "0022243720941525",
+  "doi": "10.1177/0022243720941525",
+  "journal": "jmr",
+  "title": "Locational Choices: Modeling Consumer Preferences for Proximity to Others in Reserved Seating Venues",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences design. Locational choice experiments with a structural choice model.",
+  "design_notes": "Choice experiments with more than 2,000 participants; individual-level parameters from a spatial choice model and an optimization exercise.",
+  "estimators_reported": [
+    "individual-level structural choice model"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": false,
+  "software": "r/python",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Text says data and code (R and Python) are on GitHub (blasimon/locationalchoice), but no DiD."
+}

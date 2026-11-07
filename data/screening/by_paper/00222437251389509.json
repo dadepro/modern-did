@@ -1,0 +1,30 @@
+{
+  "suffix": "00222437251389509",
+  "doi": "10.1177/00222437251389509",
+  "journal": "jmr",
+  "title": "The Effects of Mergers and Acquisitions on Marketing Decisions and Effectiveness: Evidence from the Biopharma Industry",
+  "year": "2025",
+  "eligible_design": false,
+  "eligible_reason": "Main-text models are hierarchical Bayesian pre/post models with an instrumental-variable control function and lagged dependent variable; the only DiD (control drugs) is a robustness check reported only in Web Appendix G, with no estimates in the main text.",
+  "design_notes": "375 branded target drugs from 73 M&A deals (2007-2020), IQVIA monthly drug-level data, two years pre and post each deal. Main model: hierarchical Bayesian two-layer model with control-function approach for endogeneity of detailing and price, includes lagged dependent variable and a post-deal indicator, and a first-stage probit residual. Robustness (Discussion section): alternative windows, Arellano-Bond, and two DID models for price and detailing comparing target drugs with drugs in broader therapeutic categories marketed by firms not involved in M&A; specifications and results are in Web Appendix G only. Deal dates differ across drugs so that appendix DiD would be staggered, but it is not a main-text specification under the protocol.",
+  "estimators_reported": [
+    "hierarchical Bayesian regression with IV control function",
+    "dynamic panel / Arellano-Bond (robustness)",
+    "DiD with control drugs (Web Appendix G only)"
+  ],
+  "main_or_robustness": "robustness",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": null,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible under the main-text rule. Flag for possible re-screen only if the Web Appendix G DiD is admitted; even then it is likely a matched-style comparison to non-involved drugs with a post indicator and uncertain FE structure. Data: proprietary datasets licensed from IQVIA, Clarivate and MarketLine; stated as not shareable because of licensing. No replication package listed in batch file."
+}

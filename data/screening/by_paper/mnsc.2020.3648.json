@@ -1,0 +1,63 @@
+{
+ "suffix": "mnsc.2020.3648",
+ "doi": "10.1287/mnsc.2020.3648",
+ "journal": "mnsc",
+ "title": "The Effects of Quota Frequency: Sales Performance and Product Focus",
+ "authors": "Doug J. Chung; Das Narayandas; Dongkyu Chang",
+ "year": 2020,
+ "screened_from": "package_only",
+ "batch": "r2a_026",
+ "package_dir": "~/did_packages/mnsc/mnsc.2020.3648",
+ "regressions_path": "./data/packages/mnsc.2020.3648_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "n_adoption_cohorts_note": "Field experiment with a single treatment start (period 11 of 20 in the shipped simulated data); treatment group vs. control group of salespeople.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not staggered: field experiment changing quota frequency for a treatment group of salespeople at a single common date (trttm switches on at period 11 for all treated). The regression xtreg logq seg1-seg4 i.tm, fe interacts treatment x post with pre-period performance quartiles (subgroup-by-treatment interactions). The package ships only simulated data.",
+ "design_notes": "Stata xtreg with salesperson FE and period FE; treatment effects by pre-treatment performance quartile (seg1-seg4 = quartile x trtgr x trttm). Package contains only a simulation do-file and simulated data (300 salespeople x 20 periods) generated with effects 0.1, 0, 0, -0.1 by segment.",
+ "estimators_reported": [
+  "twfe_static_common_date_by_segment"
+ ],
+ "specs": [
+  {
+   "spec_id": "main_segments",
+   "eligible": false,
+   "exclusion_reason": "single common treatment date (not staggered); subgroup-by-treatment interactions; synthetic data",
+   "code_file": "DataSimulation/stata_sim.do",
+   "treatment_var": "seg1 seg2 seg3 seg4 (quartile x trtgr x trttm)",
+   "unit_var": "id",
+   "time_var": "tm",
+   "fe": [
+    "id",
+    "tm"
+   ],
+   "reported_location": "main results table (exact table unknown)"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "DataSimulation/data.csv"
+ ],
+ "data_files_note": "Data_description.docx: 'The data are simulated synthetic data and not the real data as data disclosure is prohibited via a NDA.'",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated data only (NDA with the Swedish retail chain).",
+ "software": "stata",
+ "software_notes": "Stata (xtreg)",
+ "screener_notes": "Screened from package only (no article text or PDF). Field experiment with common start date, segment interactions, synthetic data."
+}

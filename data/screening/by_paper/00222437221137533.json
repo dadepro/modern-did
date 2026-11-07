@@ -1,0 +1,57 @@
+{
+  "doi": "10.1177/00222437221137533",
+  "suffix": "00222437221137533",
+  "journal": "jmr",
+  "title": "Statistical Inference for the Factor Model Approach to Estimate Causal Effects in Quasi-Experimental Settings",
+  "authors": "Kathleen T. Li; Garrett P. Sonnier",
+  "year": "2022",
+  "year_in_article": "2023 (JMR 60(3))",
+  "eligible": false,
+  "eligible_design": false,
+  "eligible_reason": "Methods paper on inference for the factor-model (generalized synthetic control) ATT estimator. Both empirical applications have a single treated unit and a single adoption date: (a) California's legalization of recreational marijuana retail sales on January 1, 2018 (beer sales, 41 control states, T1=100, T2=30 weeks); (b) an eyewear e-tailer's Brooklyn showroom opening on July 7, 2011 (52 control cities, T1=76, T2=34 weeks). DiD appears only as a poorly fitting single-cohort benchmark (Figures 7 and 10), alongside synthetic control, modified SC, HCW and factor-model estimates. No staggered adoption, no unit-and-time TWFE specification with multiple cohorts.",
+  "design_notes": "Factor model y0_it = z_it'beta + lambda_i'F_t + e_it estimated on control units, loadings for the treated unit from pretreatment data, ATT = mean posttreatment gap. Inference theory (Theorems 3.1-3.5) including a multiple-treated-unit extension with unit-specific adoption dates T1i, but the applications are single-unit. Goodman-Bacon, Sun-Abraham, Borusyak-Jaravel-Spiess and de Chaisemartin-D'Haultfoeuille are cited in a literature paragraph only.",
+  "estimators_reported": ["factor model (Bai 2009 / Xu 2017 generalized synthetic control)", "synthetic control", "modified synthetic control (Doudchenko-Imbens)", "HCW (Hsiao-Ching-Wan)", "single-cohort DiD benchmark"],
+  "main_or_robustness": "not applicable (no staggered design)",
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "n_eligible_specs": 0,
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "spec_id": "T2_FM_CA_beer",
+      "reported_location": "Table 2, Factor model row",
+      "outcome": "weekly state beer revenue (levels, x 1e5)",
+      "treatment_var": "California x post-Jan-1-2018",
+      "fe": "latent factors (3), unit loadings",
+      "controls": "none (covariate version in Figure 6B)",
+      "coef": -0.884, "se": null, "n_obs": null,
+      "exclusion_reason": "single treated unit, single adoption date, factor model"
+    },
+    {
+      "spec_id": "T4_FM_Brooklyn",
+      "reported_location": "Table 4, Factor model row",
+      "outcome": "weekly city sales (dollars)",
+      "treatment_var": "Brooklyn x post-July-7-2011",
+      "fe": "latent factor (1), unit loadings",
+      "controls": "none",
+      "coef": 2446, "se": null, "n_obs": null,
+      "exclusion_reason": "single treated unit, single adoption date, factor model"
+    }
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {"spec_id": "T2_FM_CA_beer", "table": "Table 2", "column": "Factor model ATT (x1e5)", "coef": -0.884, "se": null, "n_obs": null},
+    {"spec_id": "T4_FM_Brooklyn", "table": "Table 4", "column": "Factor model ATT ($)", "coef": 2446, "se": null, "n_obs": null}
+  ],
+  "data_access": "proprietary",
+  "data_availability_statement": "No formal statement. Beer data are Nielsen retail scanner data via the Kilts Center (licensed); showroom data are a digitally native eyewear retailer's proprietary city-week sales. Web Appendix H provides MATLAB code and 'a publicly available data set' for the method.",
+  "data_files_present": false,
+  "software": "other",
+  "replication_feasible": "no",
+  "priority": 3,
+  "package_dir": null,
+  "regressions_path": null,
+  "screener_notes": "Software is MATLAB (Web Appendix H). Flagged by full-text hits for Borusyak, de Chaisemartin, Goodman-Bacon, Sun-Abraham and 'staggered' because of the literature discussion of heterogeneous-effects DiD; none of those estimators is applied. Not a candidate for re-estimation."
+}

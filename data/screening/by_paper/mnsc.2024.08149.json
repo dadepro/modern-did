@@ -1,0 +1,50 @@
+{
+  "suffix": "mnsc.2024.08149",
+  "doi": "10.1287/mnsc.2024.08149",
+  "journal": "mnsc",
+  "title": "Transaction Sequencing and House Price Pressures",
+  "year": 2026,
+  "authors": "Morten Haabeth Grindaker; Artashes Karapetyan; Espen R. Moen; Plamen T. Nenov",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No binary staggered treatment. The regressors of interest are continuous: the change in the share of movers who buy before selling (dbuy_first_within_ss, with 8 lags) in local housing market x quarter panels, instrumented or used in local projections (reghdfe / ivreghdfe with absorb of location and time FE, aweight=mean_sales, cluster location_ID quarter), plus shift-share style aggregations and hedonic price indices. The ft_borusyak flag reflects shift-share (Borusyak-Hull-Jaravel) references, not DiD imputation.",
+  "design_notes": "Norwegian housing-market (location_ID) x quarter panels built from Ambita transaction data 1993-2018 and Eiendomsverdi listings. main_results_table_HP.do / main_results_table_TOMs.do / Table2.do: reghdfe loghp_index_m`h' dbuy_first_within_ss L(1/8).dbuy_first_within_ss loghp_index_ss_`h' [aweight=mean_sales], absorb(`absorb') vce(cluster location_ID quarter); ivreghdfe for tightness/time-on-market; LP.do / LP_r1.do / LPR.do local projections; Generating_aggregated_data.do builds buy-first probabilities from micro data with reghdfe absorb(). Appendix tables: cross-sectional kappa regressions.",
+  "estimators_reported": [
+    "continuous_regressor_panel_fe (reghdfe, aweight)",
+    "iv (ivreghdfe)",
+    "local_projections",
+    "hedonic_price_index"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": false,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "location": "Tables 1-2, Figures 3-5, Appendix tables",
+      "reason": "continuous treatment (buy-first share changes), IV, local projections"
+    }
+  ],
+  "data_access": "partial",
+  "data_files_present": true,
+  "data_files": [
+    "Replication/Data/aggregated_data_quarterly.dta, aggregated_data_INVquarterly.dta, aggregate_data_month_to_quarter.dta, house_price_index*.dta, post_estimation_bydel.dta, Input/ (public series)",
+    "9months/, 18months/, postcodes/ subfolders"
+  ],
+  "data_files_note": "Aggregated market-level files are shipped; micro transaction data (Ambita, SSB registers) are proprietary and not included (Figure 2 / Table A1 need SSB access).",
+  "software": "stata",
+  "software_detail": "Stata 18 (reghdfe, ivreghdfe, ivreg2, outreg2)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not a DiD design.",
+  "screener_notes": "Screened from package only (no article text). All 76 regression commands inspected: none uses a binary adoption indicator."
+}

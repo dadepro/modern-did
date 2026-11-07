@@ -1,0 +1,141 @@
+{
+ "suffix": "mnsc.2022.03886",
+ "doi": "10.1287/mnsc.2022.03886",
+ "journal": "mnsc",
+ "title": "Human-Robot Interactions in Investment Decisions",
+ "authors": "Milo Bianchi Y; Marie Brière",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_026",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.03886",
+ "regressions_path": "./data/packages/mnsc.2022.03886_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": true,
+ "near_miss_reason": "Staggered individual take-up of a robo-advisor in French employee saving plans (monthly panel Jan 2016-Jun 2021; individual-by-saving-vehicle units, takers vs. 'curious' non-takers), reghdfe y robo_treated*after + controls, absorb(saving-vehicle or individual FE, month FE), two-way clustered. Every main-text column includes time-varying controls (variable remuneration received in t and t-1, yearly remuneration, and in most columns lagged log account value, past 12-month equity share and past return). Tables 2, 4, 5 and 7 (and the Figure 1 event studies) have controls as the sole violation; Table 3 adds alert regressors (extra treatment terms), Table 6 has no unit FE, Table A4 is IV.",
+ "near_miss_5c_controls_only": true,
+ "near_miss_5c_note": "5c-eligible on design (Tables 2, 4, 5, 7; Figure 1), but excluded because the data are confidential and not shipped (CASCAD on-site verification only).",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Take-up dates vary by individual (Figure 1 event time is relative to each investor's subscription month); cannot be counted without data.",
+ "never_treated_present": true,
+ "never_treated_note": "'Curious' investors who never subscribed serve as controls (Table 7 uses exposed non-takers and non-exposed investors).",
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [
+  {
+   "location": "Table 2 cols 1-6",
+   "coef": [
+    0.283,
+    0.27,
+    0.14,
+    0.094,
+    0.044,
+    0.003
+   ],
+   "se": [
+    0.074,
+    0.08,
+    0.04,
+    0.014,
+    0.004,
+    0.002
+   ],
+   "n_obs": [
+    881087,
+    675586,
+    871373,
+    3589424,
+    3589424,
+    3589424
+   ],
+   "source": "cascad_execution_report.pdf"
+  },
+  {
+   "location": "Table 4 cols 1-5",
+   "coef": [
+    0.03,
+    0.026,
+    0.023,
+    0.026,
+    0.021
+   ],
+   "se": [
+    0.003,
+    0.005,
+    0.005,
+    0.003,
+    0.003
+   ],
+   "source": "cascad_execution_report.pdf"
+  }
+ ],
+ "main_or_robustness": "main",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Staggered robo-advisor take-up with unit and month FE, but every main-text column includes time-varying controls (remuneration in t and t-1, yearly remuneration; lagged account value and past equity share/return in most), so no column satisfies every rule. Data are confidential (on-site access at the asset manager) and not shipped.",
+ "design_notes": "Stata reghdfe. Table 2: attention (connections per month, individual FE) and trades (total, robo, individual; saving-vehicle FE). Table 3: alerts and rebalancing (robo x alert and alert regressors). Tables 4-5: equity share and realized/expected returns (Table 5 restricts controls to 'curious close' investors). Table 6: cross-sectional probit-like LPMs with month FE only. Table 7: alternative control groups. Figure 1: event studies b6..b1, p0..p5 plus a 'rest' bin, with the same controls. Table A4: IV with share of colleagues using the robo.",
+ "estimators_reported": [
+  "twfe_static_with_controls",
+  "twfe_event_study_with_controls",
+  "iv",
+  "lpm"
+ ],
+ "specs": [
+  {
+   "spec_id": "T2_T4_T5_T7_F1",
+   "eligible": false,
+   "exclusion_reason": "time-varying controls in every column (sole violation; 5c design-eligible)",
+   "code_file": "replication_package_MS-SPI-22-03886/dorobo.do",
+   "code_line": 82,
+   "outcome": "i_nbconnect_month, i_nbarb_disp, i_nbarb_divep_ex0_disp, i_nbarb_libreauto_disp, i_equityshare, i_ret_disp_real, i_ret_disp_exp",
+   "treatment_var": "i_dum_aftsubscrib_firmdisp (robo treated x after; i_dum_aftsubscrib at individual level)",
+   "unit_var": "paneldisp (individual x saving vehicle) or panelind (individual)",
+   "time_var": "datemonth",
+   "fe": [
+    "paneldisp or panelind",
+    "datemonth"
+   ],
+   "controls": [
+    "i_w_disp_equity_bef1_12",
+    "i_ret_disp_bef1_12",
+    "i_ass_ln_bef1",
+    "i_amountrem_year",
+    "i_dum_receiverem_bef1",
+    "i_dum_receiverem"
+   ],
+   "cluster": "panelind datemonth (two-way)",
+   "static_or_event": "static (Figure 1 event study)",
+   "reported_location": "Table 2 cols 1-6; Table 4 cols 1-5; Table 5 cols 1-5; Table 7; Figure 1",
+   "data_provenance": "not_shipped",
+   "notes": "Controls vary by column: Table 4 cols 1, 2, 4 use only remuneration controls (i_amountrem_year, i_dum_receiverem_bef1, i_dum_receiverem); cols 3, 5 add past equity share."
+  },
+  {
+   "spec_id": "T3",
+   "eligible": false,
+   "exclusion_reason": "extra treatment regressors (robo x alert, alert counts) plus controls",
+   "code_file": "replication_package_MS-SPI-22-03886/dorobo.do",
+   "reported_location": "Table 3"
+  },
+  {
+   "spec_id": "T6_TA4",
+   "eligible": false,
+   "exclusion_reason": "Table 6 cross-sectional (no unit FE); Table A4 IV (appendix)",
+   "code_file": "replication_package_MS-SPI-22-03886/dorobo.do",
+   "reported_location": "Table 6; Table A4"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "Only dorobo.do, a variable list and CASCAD certificate/execution report are shipped; employee-saving-plan data are confidential and accessible only on a dedicated machine at the asset manager.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "CASCAD verified reproduction on-site via screen share (April 2024); no data in the package.",
+ "software": "stata",
+ "software_notes": "Stata (reghdfe, ivreghdfe, coefplot, esttab)",
+ "screener_notes": "Screened from package only (no article text or PDF). Near-miss with controls as the sole violation in several main tables, but no shipped data."
+}

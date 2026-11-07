@@ -1,0 +1,39 @@
+{
+  "suffix": "mnsc.2021.03106",
+  "doi": "10.1287/mnsc.2021.03106",
+  "journal": "mnsc",
+  "title": "Debt Contracting When Borrowers Face Transitory Uncertainty: Evidence from U.S. Gubernatorial Elections",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "The treatment 'gubern' is an election-year indicator that recurs every four years in each state (switches on and off), not a one-time adoption. Every column (Tables 3-8) includes time-varying state, borrower and deal controls (state GDP growth, per-capita GDP, unemployment, firm size, MTB, ROA, leverage, etc.), some with Heckman lambda or logit. Not a staggered-adoption design.",
+  "design_notes": "Package replication_package_MS-FIN-21-03106: Readme.txt, data-prep-do-file.do, Tables-3-8.do, Table-1/2-summ-stats.do, msci-data-comp-ds.dta (loan-level Dealscan-Compustat sample, ~20,219 packages 1990-2018), msci-data-elec.dta. Regressions: reghdfe lnspread gubern $state $borrower $dealcontrols dsize dmaturity, abs(_st fyear) or abs(id fyear), clu(_st).",
+  "estimators_reported": [
+    "ols_fe_with_controls_recurring_treatment",
+    "logit",
+    "heckman"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial (processed loan-level file shipped; sources Dealscan/Compustat licensed)",
+  "data_files_present": true,
+  "data_files": [
+    "msci-data-comp-ds.dta",
+    "msci-data-elec.dta"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Flagged 'staggered' in full text presumably because elections are staggered across states, but the treatment is cyclical."
+}

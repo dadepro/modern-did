@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2016.0989",
+ "doi": "10.1287/mksc.2016.0989",
+ "journal": "mksc",
+ "title": "Do Sympathy Biases Induce Charitable Giving? The Effects of Advertising Content",
+ "authors": "K. Sudhir; Subroto Roy; Mathew Cherian",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0989",
+ "regressions_path": "./data/packages/mksc.2016.0989_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (randomized direct-mail field experiments on sympathy biases in charitable giving)",
+ "ineligible_specs": [
+  {
+   "spec_id": "field_experiments",
+   "reported_location": "Tables 2b, 4b-4c and Studies 3-4",
+   "exclusion_reason": "cross-sectional randomized experiments; logit/Tobit/OLS on treatment-arm dummies; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Randomized mailing field experiments; cross-sectional logit/Tobit/OLS.",
+ "design_notes": "Study1.do-Study4.do: ci, logit donate on arm dummies, regress for survey studies.",
+ "estimators_reported": [
+  "randomized experiment (logit, Tobit, OLS)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Study1.dta (184,396)",
+  "Study2.dta (109,999)",
+  "Study3.dta (392)",
+  "Study4.dta (252)"
+ ],
+ "data_files_note": "Full experimental data.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental data as collected.",
+ "software": "stata",
+ "software_notes": "Stata",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

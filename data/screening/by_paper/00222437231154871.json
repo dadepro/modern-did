@@ -1,0 +1,29 @@
+{
+ "suffix": "00222437231154871",
+ "doi": "10.1177/00222437231154871",
+ "journal": "jmr",
+ "title": "Virtual Fitting Room Effect: Moderating Role of Body Mass Index",
+ "year": "2023",
+ "eligible_design": false,
+ "eligible_reason": "Study 1 is a two-period field experiment (4 weeks pre, 4 weeks post) with a single VFR launch date (August 25, 2016) and random assignment of products to treatment. The DiD also has Treat x Post x BMI interactions and a time-varying Promotion control. Studies 2-6 are lab experiments.",
+ "design_notes": "Study 1 (Table 3, Equation 1): Sales_ijt = a0 + a1 Post_t + a2 Treat_i x Post_t + a3 BMI_j + a4 Treat_i x BMI_j + a5 Post_t x BMI_j + a6 Treat_i x Post_t x BMI_j + a7 Promotion_it + u_i + e_ijt. Product-level data (917 products, 29,985 purchases by 8,233 customers, customers grouped into 10 BMI groups), product FE, only a Post dummy (no week FE), SEs clustered by product. Table 3 col 1: Treat x Post = 3.49 (.38); Treat x Post x BMI = -.44 (.05). Col 2 is a customer-level robustness check with customer FE (Treat x Post = 8.01 (1.14)). One adoption date, continuous BMI moderator, time-varying Promotion control.",
+ "estimators_reported": [
+  "OLS DiD / DDD with product FE (Table 3)",
+  "randomized lab experiments (Studies 2-6)"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: single adoption date, two periods, no calendar-time FE, triple interaction with continuous BMI, time-varying Promotion control. Field data are transactional records from a Chinese online women's apparel retailer (proprietary, not stated to be public); lab data availability not stated. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

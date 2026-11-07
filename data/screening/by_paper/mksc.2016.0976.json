@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2016.0976",
+ "doi": "10.1287/mksc.2016.0976",
+ "journal": "mksc",
+ "title": "Quantifying Cross and Direct Network Effects in Online Consumer-to-Consumer Platforms",
+ "authors": "Junhong Chu; Puneet Manchanda",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0976",
+ "regressions_path": "./data/packages/mksc.2016.0976_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (utility-based structural model of buyer and seller growth on Taobao; cross and direct network effects)",
+ "ineligible_specs": [
+  {
+   "spec_id": "network_effects_model",
+   "reported_location": "estimation tables",
+   "exclusion_reason": "aggregate daily time series of one platform; structural growth model estimated by ML in GAUSS; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural network-effects model on Taobao daily aggregate series.",
+ "design_notes": "GAUSS Code for MKSC-14-0295.txt (optmum ML); ReadMe PDF lists variables of Taobao.txt (3,472 days).",
+ "estimators_reported": [
+  "structural ML"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "ReadMe: Alibaba NDA, data cannot be released.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Taobao.txt not shipped (NDA).",
+ "software": "other",
+ "software_notes": "GAUSS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

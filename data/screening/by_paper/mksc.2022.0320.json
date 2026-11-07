@@ -1,0 +1,111 @@
+{
+ "suffix": "mksc.2022.0320",
+ "doi": "10.1287/mksc.2022.0320",
+ "journal": "mksc",
+ "title": "The Value of Professional Ties in B2B Markets",
+ "authors": "Navid Mojir; Sriya Anbil",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_021",
+ "package_dir": "~/did_packages/mksc/mksc.2022.0320",
+ "regressions_path": "./data/packages/mksc.2022.0320_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": true,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Design qualifies in one main-text column, but the package ships only simulated data. Buyer (dealer) x seller (money market fund complex) x business-day balanced panel of tri-party repo transactions, Aug 2014 - Dec 2019 (29 buyers, 45 sellers, 535 pairs in the simulated file). Treatment prof_tie = 1 if the seller's individual decision-maker previously worked for the buyer and signed the Form N-MFP on day t; it turns on at pair-specific dates as decision-makers change and can switch off. Table 4 column 1 (table4appendixd2.do line 13) is plain TWFE with no controls: reghdfe price prof_tie if date <= 13 Sep 2019, absorb(buyer_id seller_id rel_id date), cluster rel_id (buyer and seller FE are nested in the pair FE). Table 4 cols 2-3 add time-varying controls (rolling frequency, market shares, AUM, Treasury positions, funding dependence, recency, ln_amount) and lender_connection; Table 5 adds prof_tie x pre/post-COVID interactions; Table 6 is a prof_tie x Sept-2019-shock design with controls; Tables 7 and 9 are buyer-week regressions with controls (and Table 7 a shock interaction); Table 8 adds controls and deal-length interactions; Table 10 uses an alternative tie definition with controls. NOT ELIGIBLE on data: README and MASTER.do state that all datasets are simulated ('created to mimic the spirit of the original data'); in the simulated file prof_tie is idiosyncratic daily noise (about 26 on and 26 off switches per pair), so the real adoption timing cannot be verified.",
+ "design_notes": "Stata reghdfe, one do-file per table (MASTER.do). Unit = rel_id (buyer-seller pair), time = date (business day), FE rel_id + date, cluster rel_id. Outcome price = repo rate minus IORB. Real data: confidential tri-party repo transactions and FR 2004 Form C (Federal Reserve). The staggered-timing requirement (>= 2 first-tie dates among pairs with untreated pre-periods) is assumed from the setting (decision-maker turnover across 2014-2019) and cannot be checked from the simulated data; Hull fn. 6 switch-off rule would apply.",
+ "estimators_reported": [
+  "twfe_static",
+  "twfe_static_with_controls",
+  "twfe_shock_interaction",
+  "iv_appendix"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 1,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Unknown for the real data; the simulated file has 144 distinct first-tie dates but random daily treatment.",
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [
+  {
+   "spec_id": "T4c1_price",
+   "code_file": "MojirAnbil2025replicationcode/table4appendixd2.do",
+   "code_line": 13,
+   "data_file": "MojirAnbil2025replicationcode/balanced_panel_randomized.dta",
+   "outcome": "price (repo rate charged minus the Interest on Reserve Balances)",
+   "treatment_var": "prof_tie",
+   "treatment_definition": "1 if the individual decision-maker at the seller used to work for the buyer and signed the Form N-MFP on day t",
+   "unit_var": "rel_id",
+   "time_var": "date",
+   "fe": [
+    "rel_id",
+    "date",
+    "buyer_id (nested in rel_id)",
+    "seller_id (nested in rel_id)"
+   ],
+   "controls": [],
+   "weights": "",
+   "cluster": "rel_id",
+   "sample_condition": "date <= mdy(9,13,2019) (before the September 2019 repo-rate spike)",
+   "static_or_event": "static",
+   "reported_location": "Table 4, column 1",
+   "published_estimates": null,
+   "data_provenance": "synthetic",
+   "notes": "Treatment can switch off; apply the drop-switched-off-periods rule. Not runnable on real data (simulated package)."
+  }
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 4, columns 2-3",
+   "reason": "time-varying controls (col 3 also lender_connection)"
+  },
+  {
+   "location": "Table 5, columns 1-2",
+   "reason": "extra treatment regressors prof_tie x pre-COVID and x post-COVID; col 2 also controls"
+  },
+  {
+   "location": "Table 6",
+   "reason": "Sept-2019 shock x prof_tie interaction and controls"
+  },
+  {
+   "location": "Tables 7 and 9",
+   "reason": "buyer-week panel with time-varying controls; Table 7 also shock interaction and tie-share (continuous) treatment"
+  },
+  {
+   "location": "Table 8",
+   "reason": "controls and deal-length / tenure interactions"
+  },
+  {
+   "location": "Table 10",
+   "reason": "alternative tie definition with time-varying controls"
+  },
+  {
+   "location": "Appendix D1-D8",
+   "reason": "appendix-only; all with controls (D8 includes IV)"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "MojirAnbil2025replicationcode/balanced_panel_randomized.dta",
+  "balanced_panel_extended_randomized.dta",
+  "balanced_panel_evergreen_randomized.dta",
+  "balanced_panel_formc_randomized.dta",
+  "linkedin_randomized.dta"
+ ],
+ "data_files_note": "All shipped datasets are simulated (README and MASTER.do disclaimer); original tri-party repo and FR 2004 Form C data are confidential.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "README: 'data are simulated to protect identities of buyers and sellers'. In balanced_panel_randomized.dta prof_tie is random daily noise (14,106 of 686,940 rows = 1).",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text). eligible_design = true rests on Table 4 col 1 code; whether the real ties have staggered spells with untreated pre-periods needs the article. Excluded from the main analysis on synthetic data (candidate for data/synthetic_packages.txt)."
+}

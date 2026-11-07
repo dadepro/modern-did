@@ -1,0 +1,52 @@
+{
+ "suffix": "mnsc.2020.01979",
+ "doi": "10.1287/mnsc.2020.01979",
+ "journal": "mnsc",
+ "title": "Government Debt Maturity and Term Structure of Credit Spreads",
+ "authors": "Xiang Gao",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mnsc/mnsc.2020.01979",
+ "regressions_path": "./data/packages/mnsc.2020.01979_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a staggered binary DiD. Corporate-bond-level regressions of credit term spreads (ts_3y, ts_5y) on the aggregate maturity-weighted government debt to GDP (mwd_gdp, a continuous economy-wide time series) with bond, firm and macro controls, rating dummies, issuer (gvkey1) FE and year dummies; IV with month dummies as instruments. The 'exogenous event study' uses a single common date (post = offering_date >= 18 Feb 2002, the suspension of 30-year Treasury issuance; and a 2006 reintroduction date in another table) with a linear trend and controls, plus maturity-bucket x post interactions. No unit-specific adoption dates; time-varying controls and trend in every column; data not shipped.",
+ "design_notes": "SAS (data preparation, Tables 1, 5, 8, 11, Figure 1) and Stata (6_Stata_Code.do, reghdfe/ivreg2). Cluster gvkey1 and offering_date. Sample: corporate bonds 1987-2015 (FISD, CRSP, Compustat, Bloomberg, FRED).",
+ "estimators_reported": [
+  "ols_continuous_treatment",
+  "iv_2sls",
+  "single_event_pre_post_with_trend"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Main tables (mwd_gdp regressions)",
+   "reason": "continuous aggregate treatment; time-varying bond, firm and macro controls"
+  },
+  {
+   "location": "Event-study table (post = 2002-02-18)",
+   "reason": "single common event date, linear trend, controls; maturity-bucket x post interactions"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "SAS/ and Stata/ folders contain only README.txt files describing licensed datasets (FISD, CRSP, Compustat, Bloomberg, FRED); logs of the authors' runs are included.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data files in package.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, README and OpenAlex abstract (no article text). Software is SAS plus Stata."
+}

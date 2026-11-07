@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2023.4976",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "Costly Information Acquisition in Decentralized Markets: Experimental Evidence",
+ "eligible_design": false,
+ "eligible_reason": "Laboratory market experiment. The 'difference-in-difference' is a cross-condition interaction (Low-information-cost treatment x Informed) within experimental sessions. No unit-level binary treatment that switches on at staggered calendar dates.",
+ "design_notes": "Individual fixed effects appear in a panel regression of trading outcomes across trading periods (OLS, FE, RE comparison); the treatment is assigned by session, not staggered over calendar time.",
+ "estimators_reported": [
+  "lab experiment regressions (OLS/FE/RE)"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: lab experiment, no staggered adoption design."
+}

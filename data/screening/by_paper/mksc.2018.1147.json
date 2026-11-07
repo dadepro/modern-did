@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2018.1147",
+ "doi": "10.1287/mksc.2018.1147",
+ "journal": "mksc",
+ "title": "Measuring the Impact of Product Placement with Brand-Related Social Media Conversations and Website Traffic",
+ "authors": "Beth L. Fossen; David A. Schweidel",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1147",
+ "regressions_path": "./data/packages/mksc.2018.1147_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (placement-level regressions of post-placement social media and web traffic on placement characteristics)",
+ "ineligible_specs": [
+  {
+   "spec_id": "placement_level",
+   "reported_location": "placement-level tables",
+   "exclusion_reason": "placement-level OLS of 10-minute post outcome on 10-minute pre outcome (lagged outcome), placement attributes, brand and program dummies; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Placement-level pre/post window regressions with lagged outcomes and placement attributes.",
+ "design_notes": "Replication Model Code (R).txt: lm.cluster(LOG_WOM_10POST ~ LOG_WOM_10PRE + ... + factor(FINAL_ID) + factor(PROG_ID)).",
+ "estimators_reported": [
+  "OLS with clustered SE"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Replication Files/Replication Data.txt"
+ ],
+ "data_files_note": "readme: some variables disguised under NDA.",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Variables disguised per NDA.",
+ "software": "r",
+ "software_notes": "R (miceadds lm.cluster)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

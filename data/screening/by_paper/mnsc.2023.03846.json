@@ -1,0 +1,70 @@
+{
+ "suffix": "mnsc.2023.03846",
+ "doi": "10.1287/mnsc.2023.03846",
+ "journal": "mnsc",
+ "title": "Setup Costs and the Financing of Young Firms",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_006",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Single common shock date: the Dexia collapse, post = year > 2008 (or date >= 2008Q4) for every county/bank; treated = counties in the top half of Dexia loan share (quart_shareloatreat >= 3) or Dexia-exposed banks (treat08_b). One cohort, triple interactions with high setup cost, time-varying firm controls. Most Dexia results use confidential Banque de France data that are not shipped.",
+ "design_notes": "Diane part: firm-level cross-sections/panels of young French firms (data_panel_control.dta, a 20% random sample of firms created 2006-2016) for leverage and maturity by setup-cost tercile (Tables 1A, 2, 4, 5B, 9). Dexia DiD: loan-level and county-industry regressions on treated x post x high setup cost with deppost or naf3d/date/department FE and loan controls (Tables 3, 6-8, 10, BdF data via CASD); Table 9 and appendix Tables A4/A10 use Diane data with treated_post_highsuc.",
+ "estimators_reported": [
+  "OLS cross-section",
+  "DiD/DDD around single shock date"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "Dexia_DDD_diane",
+   "eligible": false,
+   "exclusion_reason": "single common date (post = year > 2008); triple interaction; time-varying firm controls; department-by-post FE only",
+   "code_file": "REPLICATION PACKAGE - RESULTS WITH DIANE DATA/REPLICATION - RESULTS WITH DIANE DATA - ALL TABLES.do",
+   "code_line": 974,
+   "outcome": "maturity, size_t2, immobtotal_t2",
+   "treatment_var": "treated_post_highsuc (treated x post x highsuc)",
+   "fe": "deppost",
+   "controls": "dettefinanciere size share_corp ebitda_assets",
+   "cluster": "naf3",
+   "reported_location": "Tables A4, A10 Panel B (Table 9 similar)",
+   "data_provenance": "original"
+  },
+  {
+   "spec_id": "Dexia_loan_level_bdf",
+   "eligible": false,
+   "exclusion_reason": "single common date; continuous/binary bank exposure x post with loan controls; BdF data not shipped",
+   "code_file": "REPLICATION_CODES_WITH_BDF_DATA/REVMS_r11_test_dexia_suite.do",
+   "outcome": "durini, ln_mtlicr, size_F2, ...",
+   "treatment_var": "treat_b_post",
+   "fe": "naf3d date depart_num / cib rp",
+   "controls": "$loancontrols",
+   "reported_location": "Tables 6-8, 10",
+   "data_provenance": "not_shipped"
+  }
+ ],
+ "data_access": "partial",
+ "data_provenance": "original",
+ "data_provenance_note": "Diane-based regression files are shipped (data_panel_control.dta is the paper's own 20% random sample of new firms, not a subsample drawn for the package). Banque de France credit-register and loan data (SCR, M-Contran, CEFIT) are confidential (CASD) and not shipped; only the county-level treatment file cefit_hhi_shrtreat_2007_tomerge.dta is included.",
+ "data_files_present": true,
+ "data_files": [
+  "data_panel_control.dta",
+  "cefit_hhi_shrtreat_2007_tomerge.dta",
+  "dep_treated_dexia_continuous.dta",
+  "data_all.dta",
+  "fixedcost_terciles.dta",
+  "data_sharenaf2*.dta"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and abstract."
+}

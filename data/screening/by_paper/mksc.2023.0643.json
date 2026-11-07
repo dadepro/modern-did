@@ -1,0 +1,64 @@
+{
+ "suffix": "mksc.2023.0643",
+ "doi": "10.1287/mksc.2023.0643",
+ "journal": "mksc",
+ "title": "Amplifying Consumers' Voice: The Federal Trade Commission's Report Fraud Website Redesign",
+ "authors": "Michel Grosz; Devesh R. Raval",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_022",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0643",
+ "regressions_path": "./data/packages/mksc.2023.0643_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not a staggered DiD. Single-date regression discontinuity in time around the October 2020 ReportFraud website redesign: reg y pre_absds1 pos_absds1 i.dow post if absds<61, absorb(org_cat) on daily complaint counts by FTC channel (online, mobile, call), with BBB/CFPB as placebo series estimated separately (gr_ana_main.do lines 118-152). No unit-specific adoption dates.",
+ "design_notes": "Stata. RD-in-time with local linear (and polynomial) trends on either side of the redesign date, day-of-week FE, robust SE; Table 4 adds broad-category interactions (post_<g>); Figure 6/8 and Tables 5-8 repeat the RD for text features, topics and keywords.",
+ "estimators_reported": [
+  "rd_in_time"
+ ],
+ "specs": [
+  {
+   "spec_id": "T1/T3/T5/T7",
+   "eligible": false,
+   "exclusion_reason": "regression discontinuity in time at a single redesign date; no staggered adoption",
+   "code_file": "marketing/prog/gr_ana_main.do",
+   "code_line": 118,
+   "reported_location": "Tables 1, 3, 5, 7; Figures 3-5, 7"
+  },
+  {
+   "spec_id": "T4",
+   "eligible": false,
+   "exclusion_reason": "RD in time with cubic trends and post x category interactions; single date",
+   "code_file": "marketing/prog/gr_ana_broadcompu.do",
+   "reported_location": "Table 4"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "marketing/data/website_ana_data_marketing.dta",
+  "marketing/data/popwords_cleaned_flesch.dta",
+  "marketing/data/hugface_topic_marketing.dta"
+ ],
+ "data_files_note": "Daily aggregates by organization/channel shipped; complaint-level data withheld (disclosure).",
+ "data_provenance": "original",
+ "data_provenance_note": "Daily aggregates of original complaint data.",
+ "software": "stata",
+ "software_notes": "Stata; R and Python for text processing",
+ "screener_notes": "Screened from package only (no article text or PDF). Single-date RD in time; ineligible on design."
+}

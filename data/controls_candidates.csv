@@ -1,0 +1,25 @@
+suffix,journal,year,title,sole_reason,other_categories,n_candidate_specs
+mksc.2021.1295,mksc,2021,Frontiers: Can an Artificial Intelligence Algorithm Mitigate Racial Ec,False,"Matching, IPW or entropy-balancing weights; Nonlinear model (Poisson, logit, PPML)",0
+mksc.2021.1313,mksc,2021,Does Gender Matter? The Effect of Management Responses on Reviewing Be,False,Extra treatment regressors or interactions; Unit-specific trends,0
+mksc.2021.1321,mksc,2021,Frontiers: Virus Shook the Streaming Star: Estimating the COVID-19 Imp,False,"Additional fixed effects (age, event time)",0
+mksc.2022.1402,mksc,2022,Frontiers: Framing Price Increase as Discount: A New Manipulation of R,True,,0
+mnsc.2020.03920,mnsc,2023,Quality Differentiation and Matching Performance in Peer-to-Peer Marke,True,,5
+mnsc.2020.3881,mnsc,2021,Destigmatization and Its Imbalanced Effects in Labor Markets,False,Extra treatment regressors or interactions,0
+mnsc.2021.01010,mnsc,2024,On-Demand Delivery Platforms and Restaurant Sales,True,,6
+mnsc.2021.4045,mnsc,2021,How Does Online Lending Influence Bankruptcy Filings?,False,"Matching, IPW or entropy-balancing weights",0
+mnsc.2022.01966,mnsc,2024,Fintech Platforms and Mutual Fund Distribution,True,,2
+mnsc.2022.02057,mnsc,2024,"Mapping U.S.–China Technology Decoupling: Policies, Innovation, and Fi",True,,6
+mnsc.2022.03486,mnsc,2024,Local Agglomeration and Household Mortgage Debt,True,,0
+mnsc.2022.03920,mnsc,2025,Engaging Customers with AI in Online Chats: Evidence from a Randomized,True,,3
+mnsc.2022.4337,mnsc,2021,"CDS Trading Initiation, Information Asymmetry, and Dividend Payout",False,"Matching, IPW or entropy-balancing weights",0
+mnsc.2022.4588,mnsc,2022,Scoring a Touchdown with Variable Pricing: Evidence from a Quasi-Exper,False,"Extra treatment regressors or interactions; Matching, IPW or entropy-balancing weights",5
+mnsc.2023.00087,mnsc,2025,Guaranteed Demand and Corporate R&D,True,,4
+mnsc.2023.01026,mnsc,2024,The Bullwhip Effect in Servitized Manufacturers,False,"Matching, IPW or entropy-balancing weights",0
+mnsc.2023.01538,mnsc,2025,"Sometimes, Always, Never: Regulatory Clarity and the Development of Di",False,"Matching, IPW or entropy-balancing weights",6
+mnsc.2023.01722,mnsc,2024,Number Processing Constraints and Earnings News,False,Extra treatment regressors or interactions; Stacked design,0
+mnsc.2023.03143,mnsc,2024,Carbon Emissions Trading and Environmental Protection: International E,True,,5
+mnsc.2024.04447,mnsc,2025,Capital Structure Effects Associated with the New Lease Accounting Sta,False,"Extra treatment regressors or interactions; Matching, IPW or entropy-balancing weights",0
+mnsc.2024.06349,mnsc,2026,Can Digitalization Improve Public Services? Evidence from Innovation i,False,"Nonlinear model (Poisson, logit, PPML)",0
+mnsc.2024.08765,mnsc,2022,Cross-Border Investments in Private Firms: The Benefits of Comparabili,False,"Matching, IPW or entropy-balancing weights",0
+mnsc.2024.09097,mnsc,2026,Spreading the Style: Firm Leaders’ Early Life Experiences and Employee,True,,0
+mnsc.2025.00954,mnsc,2026,From Bytes to Bites: Examining the Online and Offline Spillover Impact,True,,0

@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2015.0905",
+ "doi": "10.1287/mksc.2015.0905",
+ "journal": "mksc",
+ "title": "Mobile Ad Effectiveness: Hyper-Contextual Targeting with Crowdedness",
+ "authors": "Michelle Andrews; Xueming Luo; Zheng Fang; Anindya Ghose",
+ "year": 2015,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0905",
+ "regressions_path": "./data/packages/mksc.2015.0905_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (randomized mobile-ad field experiment; logit of purchase on subway crowdedness)",
+ "ineligible_specs": [
+  {
+   "spec_id": "purchase_logit",
+   "reported_location": "main results table",
+   "exclusion_reason": "logistic regression of purchase on crowdedness with usage, peak and weekend controls; cross-section of randomly targeted users; no adoption timing"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Cross-sectional logit of purchase on crowdedness in randomized mobile-ad experiment.",
+ "design_notes": "Syntax1.sps / Syntax2.sps: LOGISTIC REGRESSION v9 on v14-v17, v7, v3, then v8 (crowdedness).",
+ "estimators_reported": [
+  "logistic regression"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "Dataset1.sav",
+  "Data2.sav"
+ ],
+ "data_files_note": "Variable definitions: IDs from a randomly drawn subset of the data.",
+ "data_provenance": "random_subsample",
+ "data_provenance_note": "Random subset of the experimental sample per variable definitions.",
+ "software": "other",
+ "software_notes": "SPSS",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

@@ -1,0 +1,47 @@
+{
+  "suffix": "mnsc.2024.06050",
+  "doi": "10.1287/mnsc.2024.06050",
+  "journal": "mnsc",
+  "title": "Social Networks as Information Conduits for Online Credit Supply and Demand",
+  "year": 2026,
+  "authors": "Linda Allen; Lin Peng; Yu Shan",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "No binary treatment. All main-table regressions are IV (ivreghdfe) of 3-digit-ZIP-level LendingClub demand/supply/performance outcomes on continuous social-proximity measures (SPLCB, SPD, SPC, SPMisc) instrumented by SCI-weighted disaster exposure or misconduct, with zip3 and year (or year-month) FE, clustered by zip3 (dofiles/9-3 to 9-11). No adoption timing, no DiD.",
+  "design_notes": "ZIP3 x month (demand) and ZIP3 x year (supply, performance) panels built from LendingClub, Facebook SCI, FDIC SOD, ACS, FEMA, SEC IAPD. Table 1a/2: ivreghdfe focaldemand `controls' (l1_splcbp_dis100_apl = l1_spdisaster_dis100), absorb(zip3_id ym) cluster(zip3_id). Tables 3-7: ivreghdfe supply/performance outcomes with absorb(zip3_id year), interactions with disadvantage index.",
+  "estimators_reported": [
+    "iv_continuous_regressor (ivreghdfe, Tables 1-7)",
+    "first-stage reghdfe"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": false,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "location": "Tables 1-7",
+      "reason": "IV with continuous social-proximity regressors"
+    }
+  ],
+  "data_access": "partial",
+  "data_files_present": true,
+  "data_files": [
+    "data/demand_main.dta, demand_cs.dta, supply_main.dta, supply_cs.dta, performance_main.dta, performance_cs.dta, areadefault.dta, applications_originations.csv (final analysis files)",
+    "data_raw/, data_intermediate/ (large raw inputs not redistributed per README)"
+  ],
+  "software": "stata",
+  "software_detail": "Stata (ivreghdfe, reghdfe) with R for Figure 1 maps",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not a DiD design.",
+  "screener_notes": "Screened from package only (no article text). The ft_borusyak flag reflects shift-share/IV references, not DiD imputation."
+}

@@ -1,0 +1,29 @@
+{
+  "suffix": "0022243718811334",
+  "doi": "10.1177/0022243718811334",
+  "journal": "jmr",
+  "title": "The Sleepy Consumer and Variety Seeking",
+  "year": "2019",
+  "eligible_design": false,
+  "eligible_reason": "Single policy date (2007 DST rule change), two-period (pre/post year) design with a day-of-year treatment indicator, no unit fixed effects, includes a time-varying quantity control. Remaining studies are lab experiments.",
+  "design_notes": "Only Study 1 is a DiD (Table 1): Nielsen consumer panel trips for candy, Chicago-area households 2004-2014. Treatment = 1(DST Sunday) x PostPolicy where PostPolicy = year >= 2007 (2007 US DST start-date change to second Sunday of March) and DST Sunday = second Sunday of March; comparison is the DST Sunday vs the prior three weeks, 2007-2014 vs 2004-2006. Outcome = number of UPCs per trip. Controls: Quantity (time-varying, endogenous), week-of-month, day-of-week, Sunday-of-month, year and state dummies; SEs clustered by state; AZ and IN excluded. Table 1 Panel A: coef .41 (SE .21), N = 3,903 (trips with quantity > 1); coef .24 (SE .12), N = 6,718 (all trips). No unit FE (trip-level repeated cross-section of households, not assigned to stable units). Studies 2-5 are randomized lab/online experiments.",
+  "estimators_reported": [
+    "OLS DiD (Table 1)",
+    "randomized experiments (Studies 2-5)"
+  ],
+  "main_or_robustness": "robustness",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: single adoption date and no unit/time FE structure. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Nielsen Homescan data via Kilts Center (licensed, not redistributable)."
+}

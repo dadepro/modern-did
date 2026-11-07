@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2019.0121",
+ "doi": "10.1287/mksc.2019.0121",
+ "journal": "mksc",
+ "title": "Virtual Collaboration Technology and International Business Coaching: Examining the Impact on Marketing Strategies and Sales",
+ "authors": "Stephen J. Anderson; Pradeep K. Chintagunta; Naufel J. Vilcassim",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2019.0121",
+ "regressions_path": "./data/packages/mksc.2019.0121_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (randomized field experiment on remote business coaching; ANCOVA and IV/LATE)",
+ "ineligible_specs": [
+  {
+   "spec_id": "rct_ancova",
+   "reported_location": "main tables (sales, practices)",
+   "exclusion_reason": "single randomized assignment; endline on treatment plus baseline outcome (lagged outcome), IV; no staggered adoption or TWFE"
+  }
+ ],
+ "eligible_reason": "Not a DiD. RCT with one assignment date; ANCOVA and IV estimates of coaching effects.",
+ "design_notes": "Do-file has Windows line endings; regressions use robust SEs, no unit or time FE.",
+ "estimators_reported": [
+  "OLS ANCOVA with baseline outcome",
+  "ivreg2 (complier LATE)",
+  "probit"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "COACHING_ACV2023 (1).dta"
+ ],
+ "data_files_note": "Entrepreneur-level analysis file.",
+ "data_provenance": "original",
+ "data_provenance_note": "No disguise statement.",
+ "software": "stata",
+ "software_notes": "Stata",
+ "screener_notes": "No article text available; no README in archive. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

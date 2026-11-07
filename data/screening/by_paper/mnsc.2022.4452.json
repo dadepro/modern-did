@@ -1,0 +1,30 @@
+{
+  "suffix": "mnsc.2022.4452",
+  "doi": "10.1287/mnsc.2022.4452",
+  "journal": "mnsc",
+  "title": "On-Site Inspecting Zombie Lending",
+  "year": "2022",
+  "eligible_design": false,
+  "eligible_reason": "Triple-difference (Inspected x Zombie x Post) with firm x quarter, bank x quarter and firm x bank FE, estimated separately for each of two inspection episodes (sectoral mid-2012; general mid-2013), each with one adoption date, plus a continuous-exposure industry-level regression.",
+  "design_notes": "Eq. (1): NewLoan_fbt = a_ft + a_bt + a_bf + b*(Inspected_b x Zombie_f x Post_t) + e_fbt, 4 quarters before/after, inspection quarters dropped, clustered by bank-year-quarter. Less saturated models in the main tables include the lower-order terms Inspected x Post and Zombie x Post. Dynamic version replaces Post by quarter dummies. Table 10: industry-level regression of 2012-14 changes on a standardized continuous Industry exposure. Each regression has one adoption date; treatment is a triple interaction; extra non-redundant FE.",
+  "estimators_reported": [
+    "triple-difference OLS/LPM with saturated FE",
+    "dynamic triple-difference path",
+    "industry-level OLS with continuous exposure"
+  ],
+  "main_or_robustness": "main (but triple-difference, single date per regression)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: triple-difference with subgroup-by-treatment interaction, extra FE, single date per estimation sample, continuous exposure in industry regressions. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data: Portuguese Central Credit Register (Banco de Portugal), confidential."
+}

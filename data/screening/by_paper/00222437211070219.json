@@ -1,0 +1,30 @@
+{
+  "suffix": "00222437211070219",
+  "doi": "10.1177/00222437211070219",
+  "journal": "jmr",
+  "title": "Context Information Can Increase Revenue in Online Display Advertising Auctions: Evidence from a Policy Change",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "Single exchange-wide policy date for all sites (partial disclosure April 2016, full disclosure May 2016). Treatment varies by calendar period within 2016 versus the same weeks of 2015, not by unit adoption date. The main specification also has time-varying controls (impression supply, national ad spend). A separate synthetic control analysis covers one treated buyer.",
+  "design_notes": "Equation 2, Table 1: y_it = average revenue per impression (EUR CPM) on site i in week t; regressors partial_t x year16_t and full_t x year16_t plus partial_t, full_t, year16_t main effects, supply_t and adspend_t controls, site FE. 57 sites, weeks 1-27 of 2015 and 2016, N = 3,058, weighted by RTB impressions offered, SEs clustered by week. Col 1: partial x Year16 = .108 (.032), full x Year16 = .154 (.039). Col 2 (no controls): .098 (.028) and .111 (.043). Time effects enter only through the partial, full and year16 indicators, not calendar-week FE. Col 3 placebo. Figure 2 plots weekly year-over-year effects. The identifying comparison is year-over-year, so every site is treated at the same date and no site is untreated in the post period.",
+  "estimators_reported": [
+    "DiD with site FE (year-over-year, Table 1)",
+    "weekly year-over-year event-study plot (Figure 2)",
+    "synthetic control for one buyer (Figure 6)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Data come from a private European ad exchange under an agreement that precludes naming the sites or the country. Not eligible: one policy date, and the design compares years rather than units adopting at different dates."
+}

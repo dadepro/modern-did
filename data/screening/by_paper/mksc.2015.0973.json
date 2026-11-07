@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2015.0973",
+ "doi": "10.1287/mksc.2015.0973",
+ "journal": "mksc",
+ "title": "Try It, You’ll Like It—Or Will You? The Perils of Early Free-Trial Promotions for High-Tech Service Adoption",
+ "authors": "Bram Foubert; Els Gijsbrechts",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0973",
+ "regressions_path": "./data/packages/mksc.2015.0973_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (structural forward-looking model of free-trial and regular adoption with quality learning)",
+ "ineligible_specs": [
+  {
+   "spec_id": "structural_learning",
+   "reported_location": "estimation and simulation tables",
+   "exclusion_reason": "dynamic structural adoption model with Bayesian quality learning; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural forward-looking adoption model with learning; simulations.",
+ "design_notes": "R_EstimationCode.R (snow parallel ML with update3.dll), R_SimulationCode.R, R_IdentificationCheck.R, R_ReducedvsStructuralForm.R.",
+ "estimators_reported": [
+  "structural ML"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "README requires bgcdata.txt, coords.txt, simbgcdata.txt; none shipped.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Telecom customer data not in package.",
+ "software": "r",
+ "software_notes": "R with compiled C (update3.dll)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

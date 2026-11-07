@@ -1,0 +1,73 @@
+{
+ "suffix": "mksc.2021.1339",
+ "doi": "10.1287/mksc.2021.1339",
+ "journal": "mksc",
+ "title": "Regulatory Spillovers and Data Governance: Evidence from the GDPR",
+ "authors": "Christian Peukert; Stefan Bechtold; Michail Batikas; Tobias Kretschmer",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2021.1339",
+ "regressions_path": "./data/packages/mksc.2021.1339_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not staggered. The GDPR effective date (after = date >= 25 May 2018) is common to all websites. Main specifications (Tables 4-5) regress log third-party requests/cookies on trend, after and post-trend interacted with the continuous EU-audience share (eu_audience, noneu_audience), with website FE (h) only and no calendar-time FE (interrupted time series with trend breaks); Table 6 interacts after with continuous policy-disclosure measures; Table 7 is an HHI time series; Tables 8-10 compare Google vs non-Google vendors with the same trend-break specification. No unit-specific adoption dates.",
+ "design_notes": "Stata do/results.do (main text) and do/results_appendix.do. Website-day panel of EU/non-EU websites and vendor-level panels, 2018. reghdfe ... absorb(h) vce(cluster h) nocons. Appendix event study (ib21319.date##c.eu_audience) also uses the single GDPR date and a continuous exposure.",
+ "estimators_reported": [
+  "interrupted_time_series_trend_break",
+  "continuous_exposure_x_post"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 4-5",
+   "reason": "single common post date (GDPR); continuous EU-audience exposure; linear trend and post-trend terms; no time FE"
+  },
+  {
+   "location": "Table 6",
+   "reason": "continuous privacy-policy measures x after; trend terms"
+  },
+  {
+   "location": "Table 7",
+   "reason": "aggregate HHI time series"
+  },
+  {
+   "location": "Tables 8-10",
+   "reason": "Google vs non-Google with trend breaks at the common GDPR date"
+  },
+  {
+   "location": "Appendix Tables A1-A12, Figures A1-A6",
+   "reason": "appendix; same common-date designs"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "data/gdpr_website.dta",
+  "data/gdpr_vendors.dta",
+  "data/gdpr_vendors_cat.dta",
+  "data/gdpr_vendors_cat_head.dta",
+  "data/gdpr_vendors_eu.dta",
+  "data/gdpr_website_2016.dta",
+  "data/gdpr_website_wtm.dta",
+  "data/policies_before.dta",
+  "data/policies_panel.dta"
+ ],
+ "data_files_note": "Combined analysis datasets shipped (gdpr_website.dta 363 MB, gdpr_vendors.dta 252 MB); info.txt gives instructions to access the public raw data.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' combined analysis data built from public web-crawl sources.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). GDPR is a single-date policy; no staggered adoption."
+}

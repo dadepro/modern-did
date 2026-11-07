@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2019.1155",
+ "doi": "10.1287/mksc.2019.1155",
+ "journal": "mksc",
+ "title": "Word of Mouth, Observed Adoptions, and Anime-Watching Decisions: The Role of the Personal vs. the Community Network",
+ "authors": "Mina Ameri; Elisabeth Honka; Ying Xie",
+ "year": 2019,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1155",
+ "regressions_path": "./data/packages/mksc.2019.1155_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not a DiD. The single regression (regression180423.do) is a linear probability adoption model of y (user adopts anime in week) on continuous lagged word-of-mouth and adoption measures from friends and the community (lagLogNoFriends, LogFriendWOM, LogWOM, LogNoAdoption, average ratings), news flow, finale dummies and interactions, with user x anime, release-week and user x week FE. No binary policy adoption.",
+ "design_notes": "Stata reghdfe absorb(iaFE weeknumber iwFE). Data: sample5000.dta, 22.4 million user-anime-week rows for 4,994 users (MyAnimeList-type platform data).",
+ "estimators_reported": [
+  "lpm_hdfe_continuous_regressors"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Main adoption table (1-reg-main)",
+   "reason": "continuous lagged WOM/adoption regressors; social-influence model, not DiD"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Data_Replication_Files/sample5000.dta"
+ ],
+ "data_files_note": "1.8 GB file; readme.txt is a variable dictionary only (no statement on sampling or masking).",
+ "data_provenance": "random_subsample",
+ "data_provenance_note": "File name and 4,994 distinct users suggest a 5,000-user sample of the estimation data; README silent.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). code_prescore 2 from reghdfe with unit and week FE; regressors are continuous peer-effect measures."
+}

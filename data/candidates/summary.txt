@@ -1,0 +1,91 @@
+Full-text queries collected (journal, query): pages, reported total, unique DOIs
+  isre  Borusyak                         pages=1 total=6 dois=6
+  isre  Callaway                         pages=1 total=24 dois=24
+  isre  Goodman-Bacon                    pages=1 total=20 dois=20
+  isre  Sun and Abraham                  pages=1 total=10 dois=10
+  isre  de Chaisemartin                  pages=1 total=17 dois=17
+  isre  diff-in-diff                     pages=1 total=1 dois=1
+  isre  difference-in-difference         pages=1 total=44 dois=44
+  isre  difference-in-differences        pages=2 total=170 dois=170
+  isre  differences-in-differences       pages=1 total=8 dois=8
+  isre  staggered                        pages=1 total=44 dois=44
+  isre  two-way fixed effects            pages=1 total=42 dois=42
+  jmr   Borusyak                         pages=1 total=3 dois=0
+  jmr   Callaway                         pages=1 total=3 dois=0
+  jmr   Goodman-Bacon                    pages=1 total=4 dois=0
+  jmr   Sun and Abraham                  pages=1 total=3 dois=0
+  jmr   de Chaisemartin                  pages=1 total=2 dois=0
+  jmr   diff-in-diff                     pages=1 total=1 dois=0
+  jmr   difference-in-difference         pages=1 total=12 dois=0
+  jmr   difference-in-differences        pages=1 total=46 dois=0
+  jmr   differences-in-differences       pages=1 total=5 dois=0
+  jmr   staggered                        pages=1 total=9 dois=0
+  jmr   two-way fixed effects            pages=1 total=13 dois=0
+  mksc  Borusyak                         pages=1 total=7 dois=7
+  mksc  Callaway                         pages=1 total=15 dois=15
+  mksc  Goodman-Bacon                    pages=1 total=10 dois=10
+  mksc  Sun and Abraham                  pages=1 total=4 dois=4
+  mksc  de Chaisemartin                  pages=1 total=10 dois=10
+  mksc  diff-in-diff                     pages=1 total=9 dois=9
+  mksc  difference-in-difference         pages=1 total=35 dois=35
+  mksc  difference-in-differences        pages=2 total=101 dois=100
+  mksc  differences-in-differences       pages=1 total=8 dois=8
+  mksc  staggered                        pages=1 total=25 dois=25
+  mksc  two-way fixed effects            pages=1 total=26 dois=26
+  mnsc  Borusyak                         pages=1 total=34 dois=34
+  mnsc  Callaway                         pages=1 total=69 dois=69
+  mnsc  Goodman-Bacon                    pages=1 total=64 dois=64
+  mnsc  Sun and Abraham                  pages=1 total=37 dois=37
+  mnsc  de Chaisemartin                  pages=1 total=30 dois=30
+  mnsc  diff-in-diff                     pages=1 total=39 dois=39
+  mnsc  difference-in-difference         pages=3 total=210 dois=210
+  mnsc  difference-in-differences        pages=6 total=552 dois=552
+  mnsc  differences-in-differences       pages=1 total=50 dois=50
+  mnsc  staggered                        pages=3 total=230 dois=230
+  mnsc  two-way fixed effects            pages=1 total=82 dois=82
+  msom  Borusyak                         pages=1 total=4 dois=4
+  msom  Callaway                         pages=1 total=9 dois=9
+  msom  Goodman-Bacon                    pages=1 total=9 dois=9
+  msom  Sun and Abraham                  pages=1 total=2 dois=2
+  msom  de Chaisemartin                  pages=1 total=3 dois=3
+  msom  diff-in-diff                     pages=1 total=2 dois=2
+  msom  difference-in-difference         pages=1 total=27 dois=27
+  msom  difference-in-differences        pages=1 total=73 dois=73
+  msom  differences-in-differences       pages=1 total=6 dois=6
+  msom  staggered                        pages=1 total=19 dois=19
+  msom  two-way fixed effects            pages=1 total=16 dois=16
+  opre  Borusyak                         pages=1 total=0 dois=0
+  opre  Callaway                         pages=1 total=2 dois=2
+  opre  Goodman-Bacon                    pages=1 total=0 dois=0
+  opre  Sun and Abraham                  pages=1 total=0 dois=0
+  opre  de Chaisemartin                  pages=1 total=0 dois=0
+  opre  diff-in-diff                     pages=1 total=0 dois=0
+  opre  difference-in-difference         pages=1 total=2 dois=2
+  opre  difference-in-differences        pages=1 total=6 dois=6
+  opre  differences-in-differences       pages=1 total=0 dois=0
+  opre  staggered                        pages=1 total=0 dois=0
+  opre  two-way fixed effects            pages=1 total=0 dois=0
+  orsc  Borusyak                         pages=1 total=7 dois=7
+  orsc  Callaway                         pages=1 total=13 dois=13
+  orsc  Goodman-Bacon                    pages=1 total=11 dois=11
+  orsc  Sun and Abraham                  pages=1 total=3 dois=3
+  orsc  de Chaisemartin                  pages=1 total=6 dois=6
+  orsc  diff-in-diff                     pages=1 total=7 dois=7
+  orsc  difference-in-difference         pages=1 total=36 dois=36
+  orsc  difference-in-differences        pages=1 total=85 dois=85
+  orsc  differences-in-differences       pages=1 total=14 dois=14
+  orsc  staggered                        pages=1 total=17 dois=17
+  orsc  two-way fixed effects            pages=1 total=13 dois=13
+
+Citation flags: 393 citing works; JMR Dataverse matches: 46
+
+Candidates by journal and tier (1 = DiD + staggered/modern signal; 2 = DiD or staggered only; 3 = abstract only)
+  mnsc: tier1=242, tier2=479, tier3=41, tier9=2414
+  mksc: tier1=34, tier2=106, tier3=13, tier9=749
+  jmr: tier1=10, tier2=54, tier3=9, tier9=420
+  isre: tier1=57, tier2=150, tier3=18, tier9=860
+  msom: tier1=28, tier2=67, tier3=12, tier9=1044
+  opre: tier1=2, tier2=10, tier3=6, tier9=1611
+  orsc: tier1=26, tier2=88, tier3=37, tier9=896
+
+Full-text hits not matched to the frame: 57

@@ -1,0 +1,200 @@
+{
+  "suffix": "mnsc.2025.00954",
+  "spec_id": "F2_focal",
+  "journal": "mnsc",
+  "data_path": "~/did_packages/_work/mnsc.2025.00954/panel_F23_weekly.rds",
+  "id_var": "newid",
+  "time_var": "week",
+  "y_var": "focal",
+  "gvar": "g_week",
+  "weight_var": "",
+  "cluster_var": "newid",
+  "xt_vars": [],
+  "sample_filter": "",
+  "log_y": "",
+  "controls": [
+    "beauty_num",
+    "culture_num",
+    "transport_num",
+    "cafe_num",
+    "housing_num",
+    "mart_num",
+    "medical_num"
+  ],
+  "analysis_set": "controls",
+  "published_coef": 0.612276478,
+  "published_coef_0_7": 0.65178327,
+  "published_se": 0.034618631,
+  "published_se_0_7": null,
+  "published_n": 123234,
+  "published_source": "Figure 2 of the article is graphical (data/text/mnsc/mnsc.2025.00954.txt). published_coef (Nov 2 audit) = equal-weight average of the authors' t0..t7 coefficients in Figure2and3.log, in the authors' normalization (reference rel = -7); no SE (covariances not logged). fixest reproduces the log. Nov 2 summary rule (team-lead: summaries average every reported bin, endpoint bins included): published_coef is now the equal-weight average of weeks 0..7 and the aggregated 8 category (all plotted in Figure 2) in the authors' normalization, 0.6122765 (delta-method SE 0.034619, cluster user); the previous value 0.65178327 is kept in published_coef_0_7. Pre-summary average 0.02006611.",
+  "authors_code": {
+    "source": "Figure 2and3.do / Figure2and3.log; fixest reproduces all 16 coefficients and N exactly",
+    "reference_period": "relative week -7 omitted (t_7 not in the regression); t_dummy = rel <= -8, tdummy = rel >= 8",
+    "t_dummy": -0.1747454,
+    "t_1": 0.072997,
+    "t0": 0.9707904,
+    "tdummy": 0.2962221,
+    "n_obs": 123234,
+    "implied_post_avg_ref_m1_rel0_7": 0.57878627,
+    "implied_pre_avg_ref_m1_relm7_m2": -0.03262848
+  },
+  "table": "Figure 2",
+  "column": "focal",
+  "static_or_event": "event",
+  "event_pre_min": -7,
+  "event_post_max": 7,
+  "event_structure": {
+    "bins": [
+      [
+        null,
+        -8
+      ],
+      [
+        -6,
+        -6
+      ],
+      [
+        -5,
+        -5
+      ],
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        -7,
+        -7
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        null
+      ]
+    ],
+    "pre_summary": [
+      [
+        null,
+        -8
+      ],
+      [
+        -6,
+        -6
+      ],
+      [
+        -5,
+        -5
+      ],
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "source": "Figure 2and3.do (reghdfe focal t_dummy t_6..t_1 t0..t7 tdummy + 7 controls, absorb(week newid) vce(cluster newid)): t_dummy = sum of t_8..t_56 (rel <= -8), tdummy = sum of t8..t26 (rel >= 8), t_7 omitted (article Section 4: periods beyond two months aggregated into before/after categories; earliest unaggregated week t = -7 is the baseline). Authors' rel = week - first subscription week; g_week = week - rel (constant within user), weeks 1-57 consecutive and balanced, so rel = t - g in the pipeline index. Treated rel spans -56..26: every treated row is in a bin or the reference (nothing uncovered). Endpoint bins (<= -8, >= 8) are estimated but excluded from the summaries; pre summary = the six reported leads -6..-1 (reference -7).",
+    "verified": "fixest with these bins + the 7 controls on the authors' sample (Figure2and3_dataset, N = 123,234, 2,162 users) reproduces all 16 coefficients in Figure2and3.log, max abs diff 5.0e-08 (log rounding); SEs within 4.8e-08; post average (0..7, ref -7) = 0.65178327 Nov 2 summary rule: with the reported endpoint bins added to the summaries, the authors'-normalization post average is 0.6122765 (SE 0.034619) and the pre average 0.02006611 (scratchpad/meta3/rule2/).",
+    "summary_rule": "Nov 2 rule: a bin is summarized iff the paper reports its coefficient, open endpoint bins included (Figure 2 plots the aggregated -8 and 8 categories)."
+  },
+  "preferred": null,
+  "in_abstract_intro": null,
+  "data_provenance": "real (anonymized: README says identifiers and some variables were modified to protect proprietary information while preserving consistency; not synthetic; the shipped data reproduce the authors' logs exactly)",
+  "replication_status": "exact (vs authors' log; published figure values not available to compare)",
+  "code_file": "Figure 2and3.do",
+  "notes": "CONTROLS ANALYSIS (PROTOCOL 5c). Weekly event study of focal platform order frequency: reghdfe focal t_dummy t_6..t_1 t0..t7 tdummy + seven category counts, absorb(week newid) vce(cluster newid) on Data/Figure2and3_dataset.dta (balanced, 2,162 users x 57 weeks). Only violation: the seven time-varying controls. g_week = week minus the authors' relative week (constant within user; post = 1{rel >= 0} exactly); 27 weekly adoption cohorts (weeks 31-57), 50 percent never-treated, no always-treated. event_pre_min = -7 and event_post_max = 7 reproduce the authors' endpoint bins (<= -8, >= 8). DEVIATION: the authors omit rel = -7, run_spec omits rel = -1; same partition of event time, so the run_spec TWFE post average (rel 0..7) equals the authors' path re-centred on rel = -1 (authors_code implied_post_avg). The >= 8 bin is estimated but not averaged. NOV 2 AUDIT (event_structure): event_structure records the authors' bins (<= -8, -6..-1, 0..7, >= 8) and reference rel = -7; the earlier re-normalization to rel = -1 (implied_post_avg_ref_m1_rel0_7 in authors_code) is superseded. published_coef filled with the post average in the authors' normalization.",
+  "published_estimator": "twfe_event_with_controls"
+}

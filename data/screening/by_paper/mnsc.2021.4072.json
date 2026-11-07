@@ -1,0 +1,72 @@
+{
+ "suffix": "mnsc.2021.4072",
+ "doi": "10.1287/mnsc.2021.4072",
+ "journal": "mnsc",
+ "title": "Real Effects of Tax Uncertainty: Evidence from Firm Capital Investments",
+ "year": "2021",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Schedule UTP is phased in by firm size (assets >= $100M in 2010, >= $50M in 2012, >= $10M in 2014), so post_utp switches on at firm-specific years, but every reported regression includes about 18 standardized time-varying firm controls (cash ETR, cash flow, sales growth, Q, return volatility, leverage, size, KZ index, NOL, loss, working capital, acquisitions, R&D, managerial-ability rank, MNC indicator, etc.). The main sample (utp_firm==1) contains only eventually-treated firms; the columns that add never-UTP firms recode post_utp = 1 after 2009 for them and identify the effect from a second interaction term. No eligible specification. The package also contains no data (Compustat/CRSP via WRDS).",
+ "design_notes": "SAS (I_consolidated_sasfile_Mar2021.sas builds the panel from WRDS Compustat fundamentals/segments, CRSP, plus managerial-ability, Loughran-McDonald constraint and EPU files) then Stata (stata_consolidated_03032021.do). Treatment: meets_utp_req = 1 if tax_form_year 2010-2011 & at >= 100, 2012-2013 & at >= 50, 2014-2015 & at >= 10; post_utp = 1 once cumulative_utp_req_yrs > 0 (absorbing). Table 3 (main): reghdfe spell_length_ma post_utp [18 controls] mnc if utp_firm==1 & utp_prim_diffindiff_sample==1, cluster(gvkey1) a(cyear gvkey1); N = 23,841 firm-years, 3,217 firms, 10 calendar years (2005-2014); coefficient on post_utp 0.371 (SE 0.118). Col 2 restricts to utb_at_hms != 0 (0.395, SE 0.128). Cols 3-4 add never-UTP firms with post_utp = 1 for cyear > 2009 and post_utpXutp_firm as the DiD term (col 4 uses sic2 x year-style FE: a(cyear sic2_firm_numeric)). Outcome spell_length_ma = _t from stset, the running length of the spell since the last investment spike (linear 'spell length' regression following Whited). Tables 4-5: subsample splits and interactions; Table 6: cash holdings with many controls; Table 7: investment level, R&D, acquisitions, employment with controls; Table 8: streg exponential/Weibull hazard models (nonlinear); Figure A.2: lead test f.post_utp..f4.post_utp; Table A.3: breakdown by initial treatment year (c.post_utp#c.post_2010 ... post_2014).",
+ "estimators_reported": [
+  "reghdfe TWFE static with time-varying controls (firm + calendar-year FE, clustered by firm)",
+  "streg parametric hazard models (Table 8)",
+  "lead/lag TWFE with controls (Figure A.2, Table A.3)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "3 scheduled cohorts (2010, 2012, 2014) plus firms crossing thresholds in 2011, 2013, 2015",
+ "never_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [
+  {
+   "location": "Table 3 col 1",
+   "outcome": "spell_length_ma",
+   "coef": 0.3712,
+   "se": 0.1179,
+   "n_obs": 23841,
+   "source": "stata_log_mar2021.smcl",
+   "eligible": false
+  },
+  {
+   "location": "Table 3 col 2",
+   "outcome": "spell_length_ma",
+   "coef": 0.3951,
+   "se": 0.1282,
+   "n_obs": 21979,
+   "source": "stata_log_mar2021.smcl",
+   "eligible": false
+  }
+ ],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 3 cols 1-2 (do-file lines 969, 973)",
+   "reason": "about 18 standardized time-varying firm controls plus mnc; sample restricted to eventually-treated firms"
+  },
+  {
+   "location": "Table 3 cols 3-4 (lines 977, 981)",
+   "reason": "two treatment indicators (post_utp recoded to a 2009 post dummy for never-UTP firms, plus post_utpXutp_firm); time-varying controls"
+  },
+  {
+   "location": "Tables 4, 5, 7, A.3, A.4, A.5 (lines 994-1250, 1335-1356, 1872-1932, 1969-2067)",
+   "reason": "subsample splits, interactions, placebo dates; all with time-varying controls"
+  },
+  {
+   "location": "Table 6, Table 9 (cash holdings)",
+   "reason": "continuous UTB regressors; time-varying controls"
+  },
+  {
+   "location": "Table 8 (lines 1372-1395)",
+   "reason": "nonlinear parametric hazard models (streg)"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Package: ~/did_packages/mnsc/mnsc.2021.4072/replication_package_MS-ACC-19-02105/ contains only code and logs (SAS program, SAS log, Stata do-file, Stata .smcl log, README.txt). No data files: the SAS program reads Compustat/CRSP from WRDS (downloaded 5/4/2018) and three non-WRDS files; the Stata do-file expects master_sas_02232021.dta. Published coefficients can be read from stata_log_mar2021.smcl (e.g., Table 3 col 1 post_utp 0.3712, SE 0.1179, N 23,841). Earlier regression extraction truncated the control list; the log confirms all main regressions carry the full control vector."
+}

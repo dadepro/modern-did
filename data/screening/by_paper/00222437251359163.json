@@ -1,0 +1,61 @@
+{
+  "doi": "10.1177/00222437251359163",
+  "suffix": "00222437251359163",
+  "journal": "jmr",
+  "title": "The Power of Star Creators: Evidence from the Live Streaming Industry",
+  "authors": "Kun Qian; Ying Xie",
+  "year": "2022",
+  "year_in_article": "2025 (JMR 63(1), 2026 issue; copyright 2025; batch year 2022 appears wrong)",
+  "eligible": false,
+  "eligible_design": false,
+  "eligible_reason": "Single adoption date per analysis and a synthetic difference-in-differences estimator. The main analysis studies one star creator's exit (Ninja left Twitch on August 1, 2019): one treated category (Fortnite) versus five control categories, and FN streamers versus control-category streamers, all treated on the same day. The robustness analysis of Shroud's exit (October 24, 2019; four treated categories) is a separate single-date event. Estimation uses synthetic DiD (Arkhangelsky et al. 2021) with unit and time weights selected via the two-step synthetic control test, after residualizing outcomes on time-varying event controls (season, update, esports). No multi-cohort staggered design and no plain TWFE specification.",
+  "design_notes": "Category level: 1 treated + 5 control categories, daily, 60 days pre / 60 days post, SDiD with weights in Table 4, outcomes residualized on season/update/esports dummies; Table 5 (viewers tau=-15,197.70 (4,004.03); channels tau=-1,001.74 (86.36); N=720). Individual level: 1,024 treated FN streamers vs 945 control streamers, daily duration and log(1+viewers), SDiD with TWFE, clustered by streamer; Tables 6-7 with Partner interaction; Tables 8-9 ten-day-bin dynamic effects; Tables 10-12 Shroud exit. Sun and Abraham (2021) cited only as an example of a dynamic DiD pretrend plot.",
+  "estimators_reported": ["synthetic difference-in-differences (Arkhangelsky et al. 2021)", "two-step synthetic control tests (Li-Shankar 2024)", "dynamic DiD in ten-day bins (post-only)"],
+  "main_or_robustness": "not applicable (no staggered design)",
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": ["synthetic DiD (Arkhangelsky et al. 2021); Sun-Abraham cited for dynamic-DiD plotting only"],
+  "n_eligible_specs": 0,
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "spec_id": "T5_viewers",
+      "reported_location": "Table 5, column 1 (viewers)",
+      "outcome": "daily concurrent viewers, residualized on season/update/esports dummies",
+      "treatment_var": "FN x post-Aug-1-2019",
+      "fe": "category FE, day FE with SDiD unit and time weights",
+      "controls": "season_kt, update_kt, esports_kt (time-varying, first-stage residualization)",
+      "cluster": "robust",
+      "coef": -15197.70, "se": 4004.03, "n_obs": 720,
+      "exclusion_reason": "single treated unit and single adoption date; synthetic DiD weights; time-varying controls"
+    },
+    {
+      "spec_id": "T6_S1_duration",
+      "reported_location": "Table 6, Sample 1, column 1",
+      "outcome": "daily streaming duration in focal category (minutes)",
+      "treatment_var": "FN streamer x post-Aug-1-2019",
+      "fe": "streamer FE, day FE with SDiD weights",
+      "controls": "season/update/esports (residualized)",
+      "cluster": "streamer",
+      "coef": -15.74, "se": 6.24, "n_obs": 109440,
+      "exclusion_reason": "single adoption date; synthetic DiD weights; time-varying controls"
+    }
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {"spec_id": "T5_viewers", "table": "Table 5", "column": "1", "coef": -15197.70, "se": 4004.03, "n_obs": 720},
+    {"spec_id": "T5_channels", "table": "Table 5", "column": "2", "coef": -1001.74, "se": 86.36, "n_obs": 720},
+    {"spec_id": "T6_S1_duration", "table": "Table 6", "column": "1", "coef": -15.74, "se": 6.24, "n_obs": 109440},
+    {"spec_id": "T7_S1_logviewers", "table": "Table 7", "column": "1", "coef": -0.22, "se": 0.03, "n_obs": 62161}
+  ],
+  "data_access": "unclear",
+  "data_availability_statement": "No availability statement found. Data were collected from SullyGnome (third-party Twitch archive), Social Blade and Google Trends, so they are scraped/re-collectable in principle; no package is referenced in the text.",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "package_dir": null,
+  "regressions_path": null,
+  "screener_notes": "Flagged by 'Sun and Abraham' and 'two-way fixed effects' hits, but the only TWFE is inside the SDiD objective with a single treated cohort. Not a candidate for re-estimation."
+}

@@ -1,0 +1,107 @@
+{
+  "suffix": "mksc.2017.1051",
+  "spec_id": "T3_c4_lplays_oth",
+  "journal": "mksc",
+  "data_provenance": "original",
+  "data_path": "~/did_packages/_work/mksc.2017.1051/mksc1051_mainsample.rds",
+  "id_var": "user_id",
+  "time_var": "period",
+  "y_var": "lplays_oth",
+  "gvar": "g_adopt",
+  "weight_var": "",
+  "cluster_var": "user_id",
+  "xt_vars": [],
+  "sample_filter": "",
+  "log_y": "",
+  "published_coef": -0.110333,
+  "published_se": null,
+  "published_n": 52346,
+  "published_source": "Table 3 column 4, Marketing Science 37(1) (papers/mksc/mksc.2017.1051.pdf, read Nov 2): bins short_0_1 0.039 (0.067); medium_2_24 -0.1 (0.078); long_25plus -0.27 (0.11). published_coef = equal-weight mean of the 3 printed bins (Hull's post summary over event_structure.post_summary); no SE of the mean is printed. The printed values agree with authors_code (exact re-run) to printed precision.",
+  "published_estimator": "twfe",
+  "authors_code": {
+    "source": "replication agent's authors_regs.do (work dir code/): areg y adoption_shortterm adoption_mediumterm adoption_longterm _Iperiod*, abs(user_id) vce(cluster user_id) on the rebuilt preclean.dta with the authors' sample filters (tables.do line 253); fixest reproduces b and SE (fixef.K = 'full') to < 1e-11 and N exactly",
+    "short_0_1_coef": 0.0388146748162,
+    "short_0_1_se": 0.0670596359292,
+    "medium_2_24_coef": -0.101102043401,
+    "medium_2_24_se": 0.0778548710938,
+    "long_25plus_coef": -0.26812148088,
+    "long_25plus_se": 0.107599103528,
+    "static_1treat_coef": -0.0963855419339,
+    "static_1treat_se": 0.0736516885113,
+    "n_obs": 52346,
+    "n_clusters": 896,
+    "y_sd_esample_n1": 2.0502521012
+  },
+  "table": "3",
+  "column": "4",
+  "static_or_event": "event",
+  "event_pre_min": 0,
+  "event_post_max": 24,
+  "treat_bins": "authors' bins in event time (tables.do define_adoption_dummies, cutoffs lines 679-680): short run = weeks 0-1, medium run = 2-24, long run = 25+ since adoption, 1 only for adopters; reference = all pre-adoption weeks of adopters plus all weeks of matched never-adopters; no leads. Recorded in event_structure (Nov 2); the pipeline now estimates these bins directly. event_pre_min/event_post_max are the superseded legacy coding (single-week dummies 0..24 averaged, 25+ endpoint) and are ignored when event_structure is present.",
+  "preferred": false,
+  "in_abstract_intro": false,
+  "in_abstract_intro_status": "unverified (no abstract in frame.csv, no article text)",
+  "main_text_status": "verified Nov 2: Table 3 of the published article (main text)",
+  "replication_status": "exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with event_structure reproduces it to < 3e-12",
+  "code_file": "code/tables.do",
+  "code_line": 253,
+  "n_obs": 52346,
+  "n_users": 896,
+  "n_cohorts": 60,
+  "n_cohorts_treated_and_untreated": 60,
+  "y_sd_regsample": 2.05023251744958,
+  "expected_twfe_sd_units": -0.05371892320386136,
+  "expected_twfe_raw": -0.11013628315493333,
+  "expected_twfe_source": "Nov 2 event_structure: equal-weight mean of the authors' bin coefficients (authors_code; fixest with es_assign reproduces them to < 3e-12) divided by the population SD of y in the estimation sample (y_sd_regsample)",
+  "notes": "EVENT version of Table 3 column 4 (program table_quantity_log, tables.do line 352). Outcome: log(plays_other+1), other-platform playcount. Main sample (tables.do get_data_mainsample, lines 58-66): period > 4, overlap_min <= period <= overlap_max (common observation window of the matched pair), matched == 1; 896 users = 448 adopters + 448 matched never-adopters (1:1 Mahalanobis matching on the logit propensity index, min_period and max_period; mahapick top-3 then mahaselectunique, seed 12345; 59 of 507 adopters left unmatched). Matched controls carry their partner's adoption week in adopt_period but their adoption dummies are always 0, so gvar g_adopt is NA (never treated) for them. Authors' regression: areg lplays_oth adoption_shortterm adoption_mediumterm adoption_longterm _Iperiod*, abs(user_id) vce(cluster user_id); no controls, no weights. Estimation sample: 52346 user-weeks, 896 users; 448 adopters, of which 0 have no pre-adoption row in the outcome sample (always treated) and 2 no post-adoption row; 60 adoption cohorts (weeks) with both untreated and treated rows; never-treated row share 0.500; treatment absorbing, no switch-offs. Nov 2: the pipeline estimates the authors' bins (event_structure); the earlier single-week re-binning deviation is removed. data_provenance original: raw Last.fm CSVs shipped in the package (external/spotify_panel.csv, external/spotify_users.csv), rebuilt through the authors' importing_spotify_panel.do, matching.do and preclean.do (work copies with absolute paths; graphs, fitstat and coefplot commented out). Prepared file: mksc1051_mainsample.rds = preclean.dta restricted to the main sample plus g_adopt, adoption bins, adoption_one and the Table 8 rob_ outcomes.",
+  "event_structure": {
+    "bins": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        24
+      ],
+      [
+        25,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        null,
+        -1
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        24
+      ],
+      [
+        25,
+        null
+      ]
+    ],
+    "pre_summary": [],
+    "source": "code/tables.do define_adoption_dummies (lines 284-298; cutoffs $cutoff_shortterm = 1, $cutoff_mediumterm = 24, lines 679-680) and make_regression_table (line 253): areg y adoption_shortterm adoption_mediumterm adoption_longterm _Iperiod*, abs(user_id). Event time periods_since_adoption = period - adopt_period (preclean.do line 65); the dummies are 1 only for adopters with periods_since_adoption in 0-1, 2-24 and 25+; no leads, so every pre-adoption week of an adopter and every week of a matched never-adopter is the reference. Weekly periods 5-66 have no gaps in any outcome sample, every adopter's g_adopt (7-66) is a sample week, so rel = t - g equals periods_since_adoption exactly.",
+    "verified": "fixest y ~ i(ebin, ref = 0) | user_id + period (cluster user_id) with es_assign on the run_spec time index reproduces the authors' areg bin coefficients (Stata re-run on the rebuilt matched sample, authors_code) to max abs diff 8.4e-13 (SE 7.4e-14); rel equals the authors' periods_since_adoption on every adopter row and the bins equal the authors' dummies on every row (0 mismatches). N 52346 vs authors 52346. The rebuilt sample equals the published one: N, users and all printed coefficients and SEs agree to printed precision (Nov 2, article PDF). Same sample as the pipeline (no switch-offs, no pre-sample adopters). Script: ~/did_packages/_work/mksc.2017.1051/output/nov2_event_structure_check.csv (scratch verify_1051.R)."
+  },
+  "published_event_coefs": {
+    "short_0_1": 0.039,
+    "medium_2_24": -0.1,
+    "long_25plus": -0.27
+  },
+  "published_event_se": {
+    "short_0_1": 0.067,
+    "medium_2_24": 0.078,
+    "long_25plus": 0.11
+  }
+}

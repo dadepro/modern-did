@@ -1,0 +1,28 @@
+{
+ "doi": "10.1287/mnsc.2022.01871",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "Unconventional Monetary Policy Transmission and Bank Lending Relationships",
+ "eligible_design": false,
+ "eligible_reason": "Single policy date. ACC_f x Post_t with Post = months after February 2012 (VLTRO collateral eligibility of ACC-rated loans). There is only one adoption date and treatment is defined by a time-invariant firm group, so there is no staggered adoption. The regression also includes bank-month and industry-quarter fixed effects (non-redundant additional FE) and pre-period covariates interacted with Post.",
+ "design_notes": "Eq. (2): g_ft = b*(ACC_f x Post_t) + a_f + Lambda_b(f)t + Upsilon_i(f)t + Gamma*(X_f x Post_t) + e_ft, firm-month data, clustered by firm. Eq. (3) is the quarterly event-study version, also single-date. Appendix Table A3 varies the fixed effects and clustering.",
+ "estimators_reported": [
+  "static DiD (single date) with firm, bank-month and industry-quarter FE",
+  "event study (single date)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: single adoption date and extra bank-month/industry-quarter fixed effects. Banque de France credit-registry type data; likely restricted."
+}

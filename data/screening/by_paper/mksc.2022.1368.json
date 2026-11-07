@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2022.1368",
+ "doi": "10.1287/mksc.2022.1368",
+ "journal": "mksc",
+ "title": "Valuing Intrinsic and Instrumental Preferences for Privacy",
+ "authors": "Tesary Lin",
+ "year": 2022,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1368",
+ "regressions_path": "./data/packages/mksc.2022.1368_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (two-stage experiment with conjoint and privacy choices; structural preference model)",
+ "ineligible_specs": [
+  {
+   "spec_id": "privacy_preferences",
+   "reported_location": "main tables",
+   "exclusion_reason": "randomized experiment and structural choice model; no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Experimental and structural estimation of intrinsic vs instrumental privacy preferences.",
+ "design_notes": "Python/Stan scripts.",
+ "estimators_reported": [
+  "Bayesian structural choice model (Stan)",
+  "conjoint"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "replication_synthetic/data/final/Data-synthetic.csv"
+ ],
+ "data_files_note": "readme: original data cannot be shared; synthetic dataset provided.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Synthetic per readme.",
+ "software": "python",
+ "software_notes": "Python (Stan)",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

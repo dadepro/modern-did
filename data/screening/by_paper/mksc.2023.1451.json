@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2023.1451",
+ "doi": "10.1287/mksc.2023.1451",
+ "journal": "mksc",
+ "title": "Leveraging the Power of Images in Managing Product Return Rates",
+ "authors": "Daria Dzyabura; Siham El Kihal; John R. Hauser; Marat Ibragimov",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2023.1451",
+ "regressions_path": "./data/packages/mksc.2023.1451_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (ML prediction of product return rates from images; interpretable OLS of return rates on image clusters)",
+ "ineligible_specs": [
+  {
+   "spec_id": "return_rate_models",
+   "reported_location": "main tables",
+   "exclusion_reason": "cross-sectional prediction and OLS of product return rates on image features; no staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Product-level prediction of return rates from images.",
+ "design_notes": "Jupyter notebooks.",
+ "estimators_reported": [
+  "gradient boosting / deep features prediction",
+  "cross-sectional OLS (statsmodels)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "01_prediction_model/_data/*.parquet",
+  "02_interpretable_model/_data/*.parquet"
+ ],
+ "data_files_note": "README: data are proprietary; 'we constructed synthetic data which mimics the most important aspects of the data'.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Synthetic data per README.",
+ "software": "python",
+ "software_notes": "Python notebooks",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

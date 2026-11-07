@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mksc.2022.1356,Table2_cereals_perc_sku_cat,static,999,0.000859733598389569,0.00213898454838973,0.0393603988549648,0.0715041722191859,0.0673077554169849,0.305473137331494,0.807389409971245,999,999,999,0,1.66533453693773e-16,2.22044604925031e-16,TRUE,43,

@@ -1,0 +1,66 @@
+{
+ "suffix": "mksc.2018.1126",
+ "doi": "10.1287/mksc.2018.1126",
+ "journal": "mksc",
+ "title": "Sensor Data and Behavioral Tracking: Does Usage-Based Auto Insurance Benefit Drivers?",
+ "authors": "Miremad Soleymanian; Charles B. Weinberg; Ting Zhu",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2018.1126",
+ "regressions_path": "./data/packages/mksc.2018.1126_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (UBI adoption logit and within-adopter driving-score improvement over weeks since enrollment)",
+ "ineligible_specs": [
+  {
+   "spec_id": "adoption_logit",
+   "reported_location": "adoption model table",
+   "exclusion_reason": "linear-probability/logit adoption model, cross-sectional"
+  },
+  {
+   "spec_id": "ubi_score_week_fe",
+   "reported_location": "driving-behavior table",
+   "exclusion_reason": "panel of UBI adopters only: UBIscore on week-since-enrollment dummies with customer FE (plm within); no untreated comparison group, outcome observed only after enrollment"
+  },
+  {
+   "spec_id": "ubi_score_week_x_age",
+   "reported_location": "heterogeneity table",
+   "exclusion_reason": "week dummies interacted with age group; adopters only"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Driving scores exist only for adopters after enrollment; the panel regression traces scores over weeks since enrollment with no untreated comparison.",
+ "design_notes": "R code.R: plm(UBIscore ~ as.factor(week), index=customer_ID, model='within'); week indexes time since enrollment (1-26), not calendar time.",
+ "estimators_reported": [
+  "logit/LPM adoption model",
+  "within (customer FE) regression on weeks since enrollment"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "R Data and code/All customers.csv",
+  "R Data and code/UBI data.csv"
+ ],
+ "data_files_note": "Data Description: 5,000 customers and their weekly UBI scores are randomly generated from the paper's estimates.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated per Data Description.docx.",
+ "software": "r",
+ "software_notes": "R (plm)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2023.0308",
+ "doi": "10.1287/mksc.2023.0308",
+ "journal": "mksc",
+ "title": "An Empirical Investigation of a Digital Platform’s Release Strategy for Serialized Content",
+ "authors": "Clarice Zhao; Nitin Mehta; Mengze Shi",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0308",
+ "regressions_path": "./data/packages/mksc.2023.0308_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "No DiD or event-study design. The paper estimates a structural two-stage (platform visit, chapter purchase) latent-segment demand model for serialized e-books in MATLAB (Tables 7-8, main_tab7_fixed.m, main_tab8.m) and motivates it with reduced-form OLS in Tables 3-6 (table1_6.pdf): daily purchases on chapter updates / past-3-day updates and a weekend dummy, consumption rate on last purchase size, purchase on previous consumption rate, and visits on updates and lagged visits. All regressors are continuous release-speed or behavioural measures; no binary treatment switching on at unit-specific dates.",
+ "design_notes": "Book-reader-day purchase panel (14.5M rows per README_data_variable.docx), 138 books, chapter publishing records. Release-strategy counterfactuals come from the structural model with a control-function correction.",
+ "estimators_reported": [
+  "ols_reduced_form_continuous",
+  "structural_latent_class_demand_model"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 3-6",
+   "reason": "reduced-form OLS on continuous release-speed and behavioural regressors; no treatment timing"
+  },
+  {
+   "location": "Tables 7-8",
+   "reason": "structural model (maximum likelihood, MATLAB)"
+  }
+ ],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "README_data_variable.docx describes data_tab1_6.RData, data_tab7.mat and data_tab8.mat, none of which is in the package. 'Dropbox_link_to_the_datasets_used_in_the_paper(1).docx' gives only a local path (C:\\Users\\nmehta\\Dropbox\\...\\data.zip), not a URL. In addition, README(1).txt, main_tab1_6.Rmd, main_tab8.m, log_likelihood.m, param.mat and results.mat are entirely null bytes in both the extracted folder and _archive_mksc.2023.0308.zip (corrupt upload); only helpers.m, main_tab7_fixed.m, table7.csv, table8.csv, table1_6.pdf and the two docx files are readable.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Platform reader-level data; no data in package and no working download link.",
+ "software": "other",
+ "software_note": "MATLAB (structural model) and R Markdown (reduced form; file zero-filled)",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, table1_6.pdf and the OpenAlex abstract (no article text, no PDF). Abstract: hybrid release strategies balancing binge consumption and exploration. Not a near-miss."
+}

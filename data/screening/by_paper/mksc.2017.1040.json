@@ -1,0 +1,41 @@
+{
+ "suffix": "mksc.2017.1040",
+ "doi": "10.1287/mksc.2017.1040",
+ "journal": "mksc",
+ "title": "Does Offline TV Advertising Affect Online Chatter? Quasi-Experimental Analysis Using Synthetic Control",
+ "authors": "Seshadri Tirunillai; Gerard J. Tellis",
+ "year": 2016,
+ "screened_from": "package_only",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "main_or_robustness": "main",
+ "eligible_reason": "Not a staggered design. The package contains one treated brand (HP) with a single TV advertising campaign window (periods 71-92 of 92 daily periods), compared with five control brands (Apple, Dell, Canon, EMC, SanDisk). The main estimator is synthetic control, and the fixed-effects DiD is a single-cohort comparison of one treated unit.",
+ "design_notes": "regression.do: regress pop i.time i.firmno ad_dummy, cluster(firmno), and equivalently xtreg pop ad_dummy i.time, fe cluster(firmno). synthetic.R: Synth with special predictors (market cap, assets, advertising, SG&A, employees, revenue, D/E, media), with the treatment identifier set to brand 1 and controls 2-6. I verified that only firmno 1 has ad_dummy==1, from time 71 to 92.",
+ "estimators_reported": [
+  "synthetic_control",
+  "twfe_single_treated_unit"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "data.xlsx (552 rows: 6 brands x 92 days; described as a subset of the observations)"
+ ],
+ "data_provenance": "original",
+ "software": "stata",
+ "software_notes": "Stata for the FE regression; R (Synth) for synthetic control.",
+ "screener_notes": "Screened from package only. The data description calls data.xlsx 'the subset of the observations for the Synthetic Control and the fixed effects regression'. If the article studies further campaigns, they are not in the package, and the title names synthetic control as the method."
+}

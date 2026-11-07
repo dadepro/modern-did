@@ -1,0 +1,69 @@
+{
+ "suffix": "mksc.2023.0214",
+ "doi": "10.1287/mksc.2023.0214",
+ "journal": "mksc",
+ "title": "Regional Poverty Alleviation Partnership and E-Commerce Trade",
+ "authors": "Zemin Zhong; Wenyu Zhou; Jiewei Li; Peng Li",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_022",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0214",
+ "regressions_path": "./data/packages/mksc.2023.0214_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not a DiD design. City-pair gravity regressions and a spatial RD (Tables 2-7): reghdfe y lndist partnership, absorb(excity#month imcity#month [ex_seg100#im_seg100]) where partnership is a time-invariant pair indicator (verified in shipped data: no within-pair variation over the 60 months 2017-2021; 256 of 19,140 directed pairs partnered). Identification is cross-sectional (partnered vs non-partnered pairs within segment cells). Table 5 col 11 interacts partnership with a single-date pandemic 'post' (2020-01). The shipped data are synthetic.",
+ "design_notes": "Stata (reghdfe). Gravity model with exporter-city x month and importer-city x month FE plus log distance; 'spatial RD' adds exporter-segment x importer-segment FE (100-km segments); heterogeneity via partnership x city characteristics; mechanisms (migration, Baidu search, subsidies).",
+ "estimators_reported": [
+  "gravity_ols",
+  "spatial_rd"
+ ],
+ "specs": [
+  {
+   "spec_id": "T2/T3/T4",
+   "eligible": false,
+   "exclusion_reason": "time-invariant pair-level partnership indicator; cross-sectional gravity/spatial-RD comparison, no adoption timing",
+   "code_file": "replication files/code/Table3.do",
+   "reported_location": "Tables 2-4"
+  },
+  {
+   "spec_id": "T5_c11",
+   "eligible": false,
+   "exclusion_reason": "partnership x single-date pandemic post interaction (heterogeneity), not staggered",
+   "code_file": "replication files/code/Table5Column11.do",
+   "reported_location": "Table 5, column 11"
+  },
+  {
+   "spec_id": "T5-T7",
+   "eligible": false,
+   "exclusion_reason": "subgroup-by-treatment interactions on the cross-sectional partnership indicator",
+   "code_file": "replication files/code/Table5ButColumn11.do",
+   "reported_location": "Tables 5-7"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "replication files/input/Main_Regression_Data.dta"
+ ],
+ "data_files_note": "ReadMe.pdf lists Main_Regression_Data.dta as synthetic data (1,148,400 directed city-pair-months).",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Authors label the main regression data synthetic (Alibaba trade data not shareable).",
+ "software": "stata",
+ "software_notes": "Stata 18 (reghdfe); Python for the map",
+ "screener_notes": "Screened from package only (no article text or PDF). Time-invariant treatment and synthetic data; ineligible on design and data."
+}

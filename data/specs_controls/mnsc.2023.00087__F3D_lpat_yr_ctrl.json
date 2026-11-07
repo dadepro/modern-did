@@ -1,0 +1,140 @@
+{
+  "suffix": "mnsc.2023.00087",
+  "spec_id": "F3D_lpat_yr_ctrl",
+  "journal": "mnsc",
+  "data_provenance": "real",
+  "data_path": "~/did_packages/_work/mnsc.2023.00087/fig3_eventdd_sample.csv",
+  "id_var": "permno_adj",
+  "time_var": "year",
+  "y_var": "lpat_yr",
+  "gvar": "g",
+  "weight_var": "",
+  "cluster_var": "permno_adj",
+  "xt_vars": [],
+  "sample_filter": "",
+  "log_y": "",
+  "table": "Figure 3",
+  "column": "Panel D",
+  "row": "lead4-lead2, lag0-lag4 (lead1 omitted)",
+  "static_or_event": "event",
+  "event_pre_min": -4,
+  "event_post_max": 4,
+  "event_structure": {
+    "bins": [
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "ref": [
+      [
+        -1,
+        -1
+      ]
+    ],
+    "uncovered": "drop",
+    "post_summary": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "pre_summary": [
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ]
+    ],
+    "source": "code/3_main.do lines 293 and 318-327: gen yr_offset = year - event; eventdd lpat_yr lprivate_sales lprivate_sales_change, timevar(yr_offset) hdfe absorb(permno_adj year) cluster(permno_adj) keepbal(permno_adj) lags(4) leads(4): single-year leads 4..2 and lags 0..4, baseline -1 (eventdd default), no accumulation. keepbal keeps treated firms with all nine window years and only those years (re-implemented in keepbal_fig3.R), so treated rows outside -4..4 are trimmed: uncovered = drop (no such rows in fig3_eventdd_sample.csv). Article Eq. (2) and Figure 3. Years 1981-2015 consecutive, events 1991-1994 in sample, so rel = yr_offset = t - g.",
+    "verified": "fixest with these bins + the 2 controls, firm + year FE, cluster firm, on fig3_eventdd_sample.csv (N = 15965 incl. reghdfe singletons) reproduces the 8 eventdd coefficients in logs/3_main.log lines 788-803, max abs diff 4.8e-08 (SEs within 8e-07)"
+  },
+  "published_coef": -0.0289901,
+  "published_se": null,
+  "published_event_coefs": {
+    "-4": -0.0268706,
+    "-3": -0.0368953,
+    "-2": 0.0400919,
+    "0": 0.0411098,
+    "1": -0.015465,
+    "2": -0.0108765,
+    "3": -0.0325592,
+    "4": -0.1271595
+  },
+  "published_event_ses": {
+    "-4": 0.0835801,
+    "-3": 0.0737343,
+    "-2": 0.0564116,
+    "0": 0.0621614,
+    "1": 0.0579126,
+    "2": 0.0813006,
+    "3": 0.0875326,
+    "4": 0.1011099
+  },
+  "published_n": 15962,
+  "published_clusters": 1347,
+  "preferred": true,
+  "in_abstract_intro": false,
+  "replication_status": "exact",
+  "controls": [
+    "lprivate_sales",
+    "lprivate_sales_change"
+  ],
+  "analysis_set": "controls",
+  "published_estimator": "twfe_event_with_controls",
+  "replicated_coef": null,
+  "replicated_n": 15965,
+  "notes": "Figure 3 Panel D (ln(Patents)), end-of-Cold-War event study: eventdd lpat_yr lprivate_sales lprivate_sales_change, timevar(yr_offset) hdfe absorb(permno_adj year) cluster(permno_adj) keepbal(permno_adj) lags(4) leads(4) (code/3_main.do Figure 3 block). Data: shipped anonymized DISCERN_panel.dta (real firm-year values, anonymized firm ids; not on the synthetic list). Sample built in Stata from a copy of the authors' lines 193-308 (~/did_packages/_work/mnsc.2023.00087/build_fig3.do; counts match the authors' log exactly: 19,453 rows in 26 shocked sic3 industries, 2,520 treated rows). eventdd is not installed and could not be installed, so keepbal was re-implemented in R: treated firms are kept only if all 9 window years (-4..+4) are present in the data (irrespective of missing outcome/controls) and only their window years are kept; all control-firm years are kept (fig3_eventdd_sample.csv). This reproduces every lead/lag and control coefficient in the authors' 3_main.log to 7 decimals; N differs only by reghdfe-dropped singletons, which run_spec keeps. Treatment: event year 1991/1992/1993/1994 of the firm's sic3 procurement shock for firms with 1980-85 R&D contracts; after keepbal 73 treated firms (15/32/21/5 by cohort) and 1,284 never-treated control firms in the same industries; absorbing, no always-treated. Controls: lprivate_sales = ln(sales - all_contracts + 1e-6) and lprivate_sales_change = ln(private_sales) - ln(previous-row private_sales), both time-varying. published_coef = equal-weight average of the authors' lag0-lag4 coefficients from 3_main.log (no PDF/article text in the project; figure values taken from the authors' log), matching run_spec's post-window average; published_se not reported for the average. Window has no out-of-window treated rows, so run_spec's endpoint bins are empty and its TWFE event regression equals eventdd's. in_abstract_intro unknown (no article text); Figure 3 is the paper's only staggered binary design. NOV 2 AUDIT (event_structure): event_structure records eventdd's bins (leads 4..2, lags 0..4, baseline -1) and keepbal's trimming (uncovered = drop, a no-op on the prepared file).",
+  "published_source": "Figure 3 of the article is graphical (data/text/mnsc/mnsc.2023.00087.txt). published_coef = equal-weight average of the authors' lag0-lag4 eventdd coefficients in logs/3_main.log (authors' normalization, baseline -1); no published SE."
+}

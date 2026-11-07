@@ -1,0 +1,52 @@
+{
+ "suffix": "mnsc.2020.3840",
+ "doi": "10.1287/mnsc.2020.3840",
+ "journal": "mnsc",
+ "title": "Social Learning and Solar Photovoltaic Adoption",
+ "year": "2021",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "The main-text estimates are a stacked DiD: for each of five Solarize rounds the code keeps the round's treated towns and their matched control towns (caliper propensity-score, CEC-selected, or future-treated towns), restricts to 24 months before the campaign through the end of the campaign, reassigns town IDs by round (new_townid = townid + round*100) and appends the five stacks, then runs xtreg/areg with town-by-stack FE and calendar-month dummies. The treatment indicator (classicduring) is on only during the campaign and post-campaign periods are dropped. Stacked designs and matching-based control selection are excluded by the protocol. Tables 3 and 5 analyse single rounds (Round 4 Select, Round 5 Prime), which have a single adoption date.",
+ "design_notes": "Stata. FinalData.dta is built by 0_DataMatching_byTown.do (probit propensity scores r1classic..r5prime on town demographics; caliper/NN/CEC/future control flags) and 1_DataPrep.do from CTSolarData.dta (town x approvemonth panel of installations and cost per watt, 2004m11-2015m5). Round campaign windows: R1 2012m10-2013m2, R2 2013m4-2013m8, R3 2013m10-2014m3, R4 2014m6-2014m11, R5 2014m11-2015m4. 2_Results_MainText.do Table 2: stack by round, classicduring = r`rd'classic * during_r`rd'classic, then 'reg monthly_install classicduring i.townid i.approvemonth, cluster(townid)' (commented 'not used') and 'xtreg monthly_install classicduring monthdummy*, i(townid) fe vce(bootstrap, reps(1000))' with wild-cluster bootstrap p-values via cgmwildboot; columns differ by control set (caliper, CEC, future). Same for costperwatt. Table 4 adds costperwatt as a time-varying control and an IV (roofwage). Table 3 (Solarize Select, round 4 only) and Table 5 (Solarize Prime, round 5 only) are single-cohort stacks. Randomization inference in 3_Results_MainText_RI.do. Towns can appear as controls in one stack and treated in another.",
+ "estimators_reported": [
+  "stacked TWFE (town-by-round FE + calendar-month dummies) with matched controls, block-bootstrap and wild-cluster bootstrap inference, randomization inference",
+  "IV (Table 4)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "5 Solarize Classic rounds (2012m10, 2013m4, 2013m10, 2014m6, 2014m11) in the stacked design",
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 cols 1-6 (2_Results_MainText.do lines 82-93, 160-171, 238-249)",
+   "reason": "stacked by round with town-by-stack FE; matched (propensity-score caliper / CEC / future-treated) control towns; treatment switches off and post-campaign months are dropped"
+  },
+  {
+   "location": "Table 3 cols 1-4 (lines 275-308)",
+   "reason": "single cohort (Round 4 Solarize Select); matched controls"
+  },
+  {
+   "location": "Table 4 (lines 384-540)",
+   "reason": "time-varying control costperwatt; IV columns"
+  },
+  {
+   "location": "Table 5 (lines 571-698)",
+   "reason": "single cohort (Round 5 Prime / Round 5 Classic); matched controls"
+  },
+  {
+   "location": "Table 6 and Appendix tables (6_AppendixTables.do, 7_ExtraResults.do)",
+   "reason": "same stacked/matched structure; spillover (adjduring) and alternative outcomes"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Package: ~/did_packages/mnsc/mnsc.2020.3840/ (00_ReadMe.pdf, do-files 0_-7_, raw data CTSolarData.dta, ACS20092013_withgeoid.dta, CT_2013_VotingFinal.dta, Geostellar_PercViable.dta, ModulePrices.dta, WageRates2016.dta, NE_CPI.dta, SurveyResults.dta, logs). FinalData.dta is not shipped but is produced by 0_ and 1_. An unstacked town-month TWFE with a staggered during-campaign indicator could be built from these data, but it is not what the paper reports. Not eligible under the protocol's exclusion of stacked and matching-based DiD."
+}

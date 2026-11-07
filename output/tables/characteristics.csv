@@ -1,0 +1,801 @@
+section,item,group,value,n,detail
+paper,software,mksc.2017.1051,stata,,stata
+paper,software,mksc.2022.1356,stata,,stata
+paper,software,mksc.2022.1409,r,,r
+paper,software,mksc.2023.1437,both,,stata (reghdfe) and r (did package)
+paper,department,mnsc.2020.01306,"Strategy, innovation and organizations",,organizations [article text]
+paper,software,mnsc.2020.01306,stata,,stata
+paper,department,mnsc.2020.01838,"Strategy, innovation and organizations",,entrepreneurship and innovation [article text]
+paper,software,mnsc.2020.01838,r,,r
+paper,department,mnsc.2020.3626,Finance,,finance [article text]
+paper,software,mnsc.2020.3626,stata,,stata
+paper,department,mnsc.2020.3707,Finance,,finance [article text]
+paper,software,mnsc.2020.3707,stata,,stata
+paper,department,mnsc.2021.01740,"Strategy, innovation and organizations",,business strategy [article text]
+paper,software,mnsc.2021.01740,stata,,stata
+paper,department,mnsc.2021.02026,Information systems,,information systems [article text]
+paper,software,mnsc.2021.02026,r,,r
+paper,department,mnsc.2021.03484,Accounting,,Accounting [screening record]
+paper,software,mnsc.2021.03484,stata,,stata
+paper,department,mnsc.2021.4043,Finance,,finance [article text]
+paper,software,mnsc.2021.4043,stata,,stata
+paper,department,mnsc.2021.4057,Finance,,finance [screening record]
+paper,software,mnsc.2021.4057,stata,,stata
+paper,department,mnsc.2021.4092,Information systems,,information systems [article text]
+paper,software,mnsc.2021.4092,stata,,stata
+paper,department,mnsc.2021.4103,Operations and other,,operations management [article text]
+paper,software,mnsc.2021.4103,stata,,stata
+paper,department,mnsc.2021.4209,"Strategy, innovation and organizations",,entrepreneurship and innovation [article text]
+paper,software,mnsc.2021.4209,stata,,stata
+paper,department,mnsc.2022.01333,"Strategy, innovation and organizations",,business strategy [article text]
+paper,software,mnsc.2022.01333,stata,,"stata (regressions; did_imputation, reghdfe, estout); python (figures, descriptives) [ambiguous]"
+paper,department,mnsc.2022.01820,"Strategy, innovation and organizations",,business strategy [article text]
+paper,software,mnsc.2022.01820,stata,,stata
+paper,department,mnsc.2022.02310,Accounting,,accounting [article text]
+paper,software,mnsc.2022.02310,stata,,"stata (reghdfe 5.7.3, csdid 1.72); SAS 9.4 for data construction [ambiguous]"
+paper,department,mnsc.2022.03186,Information systems,,information systems [screening record]
+paper,software,mnsc.2022.03186,stata,,stata
+paper,department,mnsc.2022.03268,Accounting,,accounting [article text]
+paper,software,mnsc.2022.03268,stata,,stata
+paper,department,mnsc.2022.4326,Accounting,,accounting [article text]
+paper,software,mnsc.2022.4326,stata,,stata
+paper,department,mnsc.2022.4394,Accounting,,accounting [article text]
+paper,software,mnsc.2022.4394,stata,,stata
+paper,department,mnsc.2022.4660,Accounting,,Accounting [screening record]
+paper,software,mnsc.2022.4660,stata,,stata
+paper,department,mnsc.2023.00900,"Strategy, innovation and organizations",,business strategy [article text]
+paper,software,mnsc.2023.00900,stata,,"stata (reghdfe, bacondecomp)"
+paper,department,mnsc.2023.01357,Accounting,,accounting [screening record]
+paper,software,mnsc.2023.01357,stata,,stata
+paper,department,mnsc.2023.01390,Information systems,,information systems [article text]
+paper,software,mnsc.2023.01390,r,,r
+paper,department,mnsc.2023.01423,Finance,,finance [article text]
+paper,software,mnsc.2023.01423,stata,,stata
+paper,department,mnsc.2023.01572,Information systems,,information systems [article text]
+paper,software,mnsc.2023.01572,both,,stata+r
+paper,department,mnsc.2023.01987,"Strategy, innovation and organizations",,entrepreneurship and innovation [article text]
+paper,software,mnsc.2023.01987,stata,,stata
+paper,department,mnsc.2023.04090,Finance,,Finance [screening record]
+paper,software,mnsc.2023.04090,stata,,stata
+paper,department,mnsc.2023.4716,Marketing,,marketing [article text]
+paper,software,mnsc.2023.4716,r,,r
+paper,department,mnsc.2023.4800,Finance,,finance [article text]
+paper,software,mnsc.2023.4800,stata,,stata
+paper,department,mnsc.2023.4816,Accounting,,accounting [article text]
+paper,software,mnsc.2023.4816,r,,r
+paper,department,mnsc.2023.4884,Operations and other,,Special Section of Management Science on Business and Climate Change [article text]
+paper,software,mnsc.2023.4884,stata,,stata
+paper,department,mnsc.2023.4968,Information systems,,information systems [article text]
+paper,software,mnsc.2023.4968,stata,,stata
+paper,department,mnsc.2024.05423,Finance,,finance [article text]
+paper,software,mnsc.2024.05423,stata,,stata
+paper,department,mnsc.2024.08465,Operations and other,,data science [article text]
+paper,software,mnsc.2024.08465,r,,r
+paper,department,mnsc.2025.02515,Marketing,,marketing [article text]
+paper,software,mnsc.2025.02515,r,,r
+paper,department,mnsc.2025.03238,Accounting,,accounting [article text]
+paper,software,mnsc.2025.03238,stata,,stata
+characteristics,year,All specifications,2023.7,355,
+characteristics,y2021,All specifications,0.946479,355,
+characteristics,mksc,All specifications,0.166197,355,
+characteristics,cites,All specifications,122.104,355,
+characteristics,modern,All specifications,0.323944,355,
+characteristics,absintro,All specifications,0.259155,355,
+characteristics,preferred,All specifications,0.177465,355,
+characteristics,event,All specifications,0.267606,355,
+characteristics,always,All specifications,0.0443853,260,
+characteristics,never,All specifications,0.382709,355,
+characteristics,cites_med,All specifications,21,355,
+characteristics,cohorts_med,All specifications,13,355,
+characteristics,dept:Accounting,All specifications,0.327703,296,
+characteristics,dept:Finance,All specifications,0.121622,296,
+characteristics,dept:Information systems,All specifications,0.168919,296,
+characteristics,"dept:Strategy, innovation and organizations",All specifications,0.216216,296,
+characteristics,dept:Marketing,All specifications,0.111486,296,
+characteristics,dept:Operations and other,All specifications,0.0540541,296,
+characteristics,dept:Not recorded,All specifications,0,296,
+characteristics,specs,All specifications,355,355,
+characteristics,papers,All specifications,40,355,
+characteristics,ms_specs,All specifications,296,296,
+characteristics,year,Pass leverage screen,2023.69,307,
+characteristics,y2021,Pass leverage screen,0.938111,307,
+characteristics,mksc,Pass leverage screen,0.192182,307,
+characteristics,cites,Pass leverage screen,133.362,307,
+characteristics,modern,Pass leverage screen,0.351792,307,
+characteristics,absintro,Pass leverage screen,0.214984,307,
+characteristics,preferred,Pass leverage screen,0.172638,307,
+characteristics,event,Pass leverage screen,0.306189,307,
+characteristics,always,Pass leverage screen,0.0371331,213,
+characteristics,never,Pass leverage screen,0.366421,307,
+characteristics,cites_med,Pass leverage screen,35,307,
+characteristics,cohorts_med,Pass leverage screen,19,307,
+characteristics,dept:Accounting,Pass leverage screen,0.298387,248,
+characteristics,dept:Finance,Pass leverage screen,0.0887097,248,
+characteristics,dept:Information systems,Pass leverage screen,0.201613,248,
+characteristics,"dept:Strategy, innovation and organizations",Pass leverage screen,0.217742,248,
+characteristics,dept:Marketing,Pass leverage screen,0.133065,248,
+characteristics,dept:Operations and other,Pass leverage screen,0.0604839,248,
+characteristics,dept:Not recorded,Pass leverage screen,0,248,
+characteristics,specs,Pass leverage screen,307,307,
+characteristics,papers,Pass leverage screen,32,307,
+characteristics,ms_specs,Pass leverage screen,248,248,
+replication_spec,mksc.2017.1051__T3_c1_lplays_tot,exact,exact,,"label=exact; published=0.576667; ours_raw=0.5763497574; compared_with=twfe; gap=0.000317; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T3_c2_lplays_itun,exact,exact,,"label=exact; published=-0.29; ours_raw=-0.2900605658; compared_with=twfe; gap=6.06e-05; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T3_c3_lplays_wawmpfoo,exact,exact,,"label=exact; published=-0.376667; ours_raw=-0.3783353514; compared_with=twfe; gap=0.00167; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T3_c4_lplays_oth,exact,exact,,"label=exact; published=-0.110333; ours_raw=-0.1101362832; compared_with=twfe; gap=0.000197; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T4_c1_luniq_artist,exact,exact,,"label=exact; published=0.343333; ours_raw=0.3442761368; compared_with=twfe; gap=0.000943; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T4_c2_luniq_song,exact,exact,,"label=exact; published=0.31; ours_raw=0.3107474766; compared_with=twfe; gap=0.000747; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T4_c3_luniq_genre,exact,exact,,"label=exact; published=0.256667; ours_raw=0.2559581663; compared_with=twfe; gap=0.000709; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T5_c1_ss_shareu100_dyn,exact,exact,,"label=exact; published=-0.018333; ours_raw=-0.01860256712; compared_with=twfe; gap=0.00027; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T5_c2_ss_shareu500_dyn,exact,exact,,"label=exact; published=-0.030667; ours_raw=-0.0307370352; compared_with=twfe; gap=7e-05; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T5_c3_herf_artists,exact,exact,,"label=exact; published=-0.043; ours_raw=-0.04297565605; compared_with=twfe; gap=2.43e-05; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T5_c4_herf_songs,exact,exact,,"label=exact; published=-0.018333; ours_raw=-0.01850625498; compared_with=twfe; gap=0.000173; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T6_c1_newu_artist,exact,exact,,"label=exact; published=0.072333; ours_raw=0.07258529856; compared_with=twfe; gap=0.000252; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T6_c2_newu_song,approximate,approximate,,"label=exact; published=0.073; ours_raw=0.07171477454; compared_with=twfe; gap=0.00129; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T6_c3_mnewu_artist,exact,exact,,"label=exact; published=-0.059; ours_raw=-0.05906381766; compared_with=twfe; gap=6.38e-05; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T6_c4_mnewu_song,exact,exact,,"label=exact; published=-0.022667; ours_raw=-0.02290120392; compared_with=twfe; gap=0.000234; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T6_c5_top8_1_artist,approximate,approximate,,"label=exact; published=0.032147; ours_raw=0.031948396; compared_with=twfe; gap=0.000199; tol=5e-06; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T6_c6_top8_1_song,exact,exact,,"label=exact; published=0.078333; ours_raw=0.0780432564; compared_with=twfe; gap=0.00029; tol=0.0005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T8_c3_rob_luniq_artist_earlylate,exact,exact,,"label=exact; published=0.365; ours_raw=0.3650216105; compared_with=twfe; gap=2.16e-05; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2017.1051__T8_c4_rob_luniq_song_earlylate,exact,exact,,"label=exact; published=0.305; ours_raw=0.3064844201; compared_with=twfe; gap=0.00148; tol=0.005; flags=documented deviation; label_text=exact: the authors' areg re-run (Stata 16) on the rebuilt matched sample matches every printed coefficient, SE and N (published article, Nov 2); fixest with eve"
+replication_spec,mksc.2022.1356__Table2_cereals_ln_qty,failed,failed,,"label=exact; published=-0.065; ours_raw=-0.1067125064; compared_with=twfe; gap=0.0417; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output -0.064606545276 (0.021191052659), N 12891, equals printed Table 2, Panel A (log of quantity), column (2) -0.065 (0.021), N 12,891, t"
+replication_spec,mksc.2022.1356__Table2_cereals_perc_sku_cat,failed,failed,,"label=exact; published=-0.0008; ours_raw=-0.001608489623; compared_with=twfe; gap=0.000808; tol=5e-05; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output -0.000790983035 (0.000341788316), N 12891, equals printed Table 2, Panel B (percentage of transactions), column (2) -0.0008 (0.0003)"
+replication_spec,mksc.2022.1356__Table3_chocolates_ln_qty,failed,failed,,"label=exact; published=0.039; ours_raw=0.05603959277; compared_with=twfe; gap=0.017; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.038516786938 (0.020147097749), N 12094, equals printed Table 3, Panel A (log of quantity), column (2) 0.039 (0.020), N 12,094, to "
+replication_spec,mksc.2022.1356__Table3_chocolates_perc_sku_cat,failed,failed,,"label=exact; published=0.0003; ours_raw=0.000468046802; compared_with=twfe; gap=0.000168; tol=5e-05; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.000347851217 (0.000501925513), N 12094, equals printed Table 3, Panel B (percentage of transactions), column (2) 0.0003 (0.0005), "
+replication_spec,mksc.2022.1356__Table4_cookies_ln_qty,failed,failed,,"label=exact; published=0.019; ours_raw=0.01008808101; compared_with=twfe; gap=0.00891; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.019162352384 (0.0182513856), N 24925, equals printed Table 4, Panel A (log of quantity), column (2) 0.019 (0.018), N 24,925, to th"
+replication_spec,mksc.2022.1356__Table4_cookies_perc_sku_cat,failed,failed,,"label=exact; published=0.0004; ours_raw=0.0003114740716; compared_with=twfe; gap=8.85e-05; tol=5e-05; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.000354068887 (0.000238577203), N 24925, equals printed Table 4, Panel B (percentage of transactions), column (2) 0.0004 (0.0002), "
+replication_spec,mksc.2022.1356__Table6_cereals_priceT,failed,failed,,"label=failed; published=0.005; ours_raw=0.02199415899; compared_with=twfe; gap=0.017; tol=0.0005; flags=switch-off rows dropped,authors_transformed,documented deviation; label_text=failed (authors_transformed: printed Table 6, column (1) (Cereal) 0.005 (0.012), N 12,891; authors' code re-run on the shipped data 0.004467442384 (0.0114785739"
+replication_spec,mksc.2022.1356__Table6_chocolates_priceT,failed,failed,,"label=exact; published=-0.031; ours_raw=-0.06392219958; compared_with=twfe; gap=0.0329; tol=0.0005; flags=switch-off rows dropped,authors_transformed,documented deviation; label_text=exact (authors' code output -0.031043742441 (0.007101964123), N 12094, equals printed Table 6, column (2) (Chocolate) -0.031 (0.007), N 12,094, to the printed d"
+replication_spec,mksc.2022.1356__Table6_cookies_priceT,failed,failed,,"label=exact; published=-0.0004; ours_raw=-0.0005693062181; compared_with=twfe; gap=0.000169; tol=5e-05; flags=switch-off rows dropped,authors_transformed,documented deviation; label_text=exact (authors' code output -0.000416017655 (0.003851006114), N 24925, equals printed Table 6, column (3) (Cookies) -0.0004 (0.0039), N 24,925, to the printed d"
+replication_spec,mksc.2022.1409__F1_lnairbnb_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F1_lnpermit_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F3_lnairbnb_passage_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F3_lnpermit_passage_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F4_lnairbnb_balanced_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F4_lnpermit_balanced_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F5_lncpermit_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F5_lnncpermit_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__F6_lnnrpermit_dynamic,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact (exact_code_rerun: the authors' aggte dynamic overall ATT over horizons 0..35 reproduced from their code on the deduplicated package data and recorded in 
+replication_spec,mksc.2022.1409__T4_c1_lnairbnb_simple,approximate,approximate,,"label=approximate; published=-0.1791; ours_raw=-0.1808983973; compared_with=csa (authors' settings); gap=0.0018; tol=5e-05; flags=; label_text=approximate (same sign, within 10 percent: printed -0.1791 (0.0291) vs code -0.1809 (0.0284), 1.0 percent; did package version difference and the deduplicated d"
+replication_spec,mksc.2022.1409__T4_c2_lnpermit_simple,approximate,approximate,,"label=approximate; published=-0.0891; ours_raw=-0.08848288165; compared_with=csa (authors' settings); gap=0.000617; tol=5e-05; flags=; label_text=approximate (same sign, within 10 percent: printed -0.0891 (0.0327) vs code -0.0885 (0.0320), 0.7 percent; did package version difference and the deduplicated d"
+replication_spec,mksc.2023.1437__F3a_cs_es_all,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact_code_rerun: the authors' aggte(dynamic, -12..12) path is reproduced by hand-pooled did cells (event_structure.verified); the published figure is graphical"
+replication_spec,mksc.2023.1437__F3b_cs_es_low,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact_code_rerun: the authors' aggte(dynamic, -12..12) path is reproduced by hand-pooled did cells (event_structure.verified); the published figure is graphical"
+replication_spec,mksc.2023.1437__F3c_cs_es_high,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact_code_rerun: the authors' aggte(dynamic, -12..12) path is reproduced by hand-pooled did cells (event_structure.verified); the published figure is graphical"
+replication_spec,mksc.2023.1437__F4_cs_es_senti0,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=; label_text=exact_code_rerun: the authors' aggte(dynamic, -12..12) path is reproduced by hand-pooled did cells (event_structure.verified); the published figure is graphical"
+replication_spec,mksc.2023.1437__T5_cs_all,exact,exact,,"label=exact; published=0.039; ours_raw=0.03926314568; compared_with=csa (authors' settings); gap=0.000263; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.03926 (bootstrap SE 0.01847), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T5_cs_high,exact,exact,,"label=exact; published=-0.025; ours_raw=-0.02544348817; compared_with=csa (authors' settings); gap=0.000443; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives -0.02544 (bootstrap SE 0.01949), equal to the printed coefficient at its pri"
+replication_spec,mksc.2023.1437__T5_cs_low,exact,exact,,"label=exact; published=0.115; ours_raw=0.1150895127; compared_with=csa (authors' settings); gap=8.95e-05; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.11509 (bootstrap SE 0.03087), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T6_c1_all,exact,exact,,"label=exact; published=0.047; ours_raw=0.04733366243; compared_with=twfe; gap=0.000334; tol=0.0005; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T6_c2_lowrated,exact,exact,,"label=exact; published=0.11; ours_raw=0.1096499881; compared_with=twfe; gap=0.00035; tol=0.005; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T6_c3_highrated,approximate,approximate,,"label=exact; published=0.008; ours_raw=0.008718046817; compared_with=twfe; gap=0.000718; tol=0.0005; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T8_cs_senti0,exact,exact,,"label=exact; published=0.037; ours_raw=0.0367999824; compared_with=csa (authors' settings); gap=0.0002; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.03680 (bootstrap SE 0.01174), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T8_cs_senti1,exact,exact,,"label=exact; published=0.034; ours_raw=0.03412997051; compared_with=csa (authors' settings); gap=0.00013; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.03413 (bootstrap SE 0.00914), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T8_cs_senti2,exact,exact,,"label=exact; published=0.025; ours_raw=0.0247666548; compared_with=csa (authors' settings); gap=0.000233; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.02477 (bootstrap SE 0.00844), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T8_cs_senti3,exact,exact,,"label=exact; published=0.022; ours_raw=0.02158403432; compared_with=csa (authors' settings); gap=0.000416; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.02158 (bootstrap SE 0.00659), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T8_cs_senti4,exact,exact,,"label=exact; published=0.021; ours_raw=0.02115564748; compared_with=csa (authors' settings); gap=0.000156; tol=0.0005; flags=; label_text=exact_code_rerun: the authors' att_gt/aggte simple call re-run with did 2.5.1 gives 0.02116 (bootstrap SE 0.00716), equal to the printed coefficient at its prin"
+replication_spec,mksc.2023.1437__T9_c1_senti0,approximate,approximate,,"label=exact; published=0.0179; ours_raw=0.01778750921; compared_with=twfe; gap=0.000112; tol=5e-05; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T9_c2_senti1,approximate,approximate,,"label=exact; published=0.0136; ours_raw=0.01251214806; compared_with=twfe; gap=0.00109; tol=5e-05; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T9_c3_senti2,approximate,approximate,,"label=exact; published=0.0088; ours_raw=0.008527250468; compared_with=twfe; gap=0.000273; tol=5e-05; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T9_c4_senti3,exact,exact,,"label=exact; published=0.01; ours_raw=0.009713238394; compared_with=twfe; gap=0.000287; tol=0.005; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mksc.2023.1437__T9_c5_senti4,exact,exact,,"label=exact; published=0.0078; ours_raw=0.007814851632; compared_with=twfe; gap=1.49e-05; tol=5e-05; flags=; label_text=exact (authors' reghdfe line re-run in Stata 16 and in fixest with the review-date after_responding indicator reproduces coef, SE and N to all published digits;"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_def_export_w99_ln,failed,failed,,"label=exact; published=0.824; ours_raw=0.918117024; compared_with=twfe; gap=0.0941; tol=0.0005; flags=; label_text=exact (authors' code output 0.8235902 (0.2024086), N 1410990, equals printed Table 4 Panel A column B 0.824 (0.202), N 1,410,990, to the printed decimals; exact"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_employment_w99_ln,failed,failed,,"label=exact; published=0.230; ours_raw=0.2580506327; compared_with=twfe; gap=0.0281; tol=0.0005; flags=; label_text=exact (authors' code output 0.2295108 (0.0483259), N 1447830, equals printed Table 4 Panel A column D 0.230 (0.048), N 1,447,830, to the printed decimals; exact"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_exportsharesales_ln,approximate,approximate,,"label=exact; published=0.225; ours_raw=0.2369809305; compared_with=twfe; gap=0.012; tol=0.0005; flags=; label_text=exact (authors' code output 0.2254624 (0.0778145), N 1410990, equals printed Table 4 Panel A column C 0.225 (0.078), N 1,410,990, to the printed decimals; exact"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_livwage_compliance25,failed,failed,,"label=exact; published=-0.00688; ours_raw=-0.001780306597; compared_with=twfe; gap=0.0051; tol=5e-06; flags=; label_text=exact (authors' code output -0.0068751 (0.0166731), N 1421220, equals printed Table 4 Panel A column F -0.00688 (0.017), N 1,421,220, to the printed decimals; e"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_prodwageperworker_ln,failed,failed,,"label=exact; published=-0.0197; ours_raw=-0.02854859364; compared_with=twfe; gap=0.00885; tol=5e-05; flags=; label_text=exact (authors' code output -0.0196897 (0.0161688), N 1447830, equals printed Table 4 Panel A column G -0.0197 (0.016), N 1,447,830, to the printed decimals; ex"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_sales_domestic_ln,failed,failed,,"label=exact; published=-0.238; ours_raw=-0.2720997918; compared_with=twfe; gap=0.0341; tol=0.0005; flags=; label_text=exact (authors' code output -0.23819 (0.2311739), N 1410989, equals printed Table 4 Panel A column A -0.238 (0.231), N 1,410,989, to the printed decimals; exact"
+replication_spec,mnsc.2020.01306__mnsc.2020.01306_T4_top_wageperworker_ln,failed,failed,,"label=exact; published=-0.0291; ours_raw=-0.04107431038; compared_with=twfe; gap=0.012; tol=5e-05; flags=; label_text=exact (authors' code output -0.0290814 (0.029975), N 1447830, equals printed Table 4 Panel A column E -0.0291 (0.030), N 1,447,830, to the printed decimals; exa"
+replication_spec,mnsc.2020.01838__F4a_from_patents_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__F4b_timegroup_patents,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; pipeline sample drops the post-breakup bins, s"
+replication_spec,mnsc.2020.01838__F4c_from_breadth_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__F4d_timegroup_breadth,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; pipeline sample drops the post-breakup bins, s"
+replication_spec,mnsc.2020.01838__F7a_from_competitors_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__F7a_from_others_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__F7b_to_competitors_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__F7b_to_ext_cartelist_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__F7b_to_others_eventstudy,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact (fixest with event_structure reproduces the authors' Replicate.R event coefficients on the authors' sample; see event_structure.verified)
+replication_spec,mnsc.2020.01838__T2_c10_to_top10,approximate,approximate,,"label=exact; published=0.061; ours_raw=0.0583923419; compared_with=twfe; gap=0.00261; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 638: 0.060630 vs felm 0.060630, SE 0.045841 vs 0.045841, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c11_to_citation_weighted,approximate,approximate,,"label=exact; published=-0.318; ours_raw=-0.3198456458; compared_with=twfe; gap=0.00185; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 646: -0.317538 vs felm -0.317538, SE 0.114381 vs 0.114381, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c12_to_rnd,exact,exact,,"label=exact; published=-0.073; ours_raw=-0.07284165921; compared_with=twfe; gap=0.000158; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 655: -0.072842 vs felm -0.072842, SE 0.062804 vs 0.062804, N 149289; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c13_to_breadth,approximate,approximate,,"label=exact; published=-0.067; ours_raw=-0.06776275075; compared_with=twfe; gap=0.000763; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 401: -0.067001 vs felm -0.067001, SE 0.043040 vs 0.043040, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c14_to_tech_weighted,approximate,approximate,,"label=exact; published=-0.103; ours_raw=-0.1039368117; compared_with=twfe; gap=0.000937; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 667: -0.102611 vs felm -0.102611, SE 0.063533 vs 0.063533, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c15_to_primary,approximate,approximate,,"label=exact; published=-0.042; ours_raw=-0.04368475218; compared_with=twfe; gap=0.00168; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 675: -0.042340 vs felm -0.042340, SE 0.052013 vs 0.052013, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c16_to_peripheral,failed,failed,,"label=exact; published=-0.005; ours_raw=-0.006870209563; compared_with=twfe; gap=0.00187; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 683: -0.005061 vs felm -0.005061, SE 0.049322 vs 0.049322, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c1_from_patents,exact,exact,,"label=exact; published=0.249; ours_raw=0.2486655047; compared_with=twfe; gap=0.000334; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 209: 0.248985 vs felm 0.248985, SE 0.077997 vs 0.077997, N 432448; abstract: 28% increase in pate"
+replication_spec,mnsc.2020.01838__T2_c2_from_top10,approximate,approximate,,"label=exact; published=0.186; ours_raw=0.1902467143; compared_with=twfe; gap=0.00425; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 576: 0.185996 vs felm 0.185996, SE 0.056307 vs 0.056307, N 432448; abstract: 20% increase in top-"
+replication_spec,mnsc.2020.01838__T2_c3_from_citation_weighted,approximate,approximate,,"label=exact; published=0.240; ours_raw=0.2375182008; compared_with=twfe; gap=0.00248; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 584: 0.240084 vs felm 0.240084, SE 0.112641 vs 0.112641, N 432448; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c4_from_rnd,exact,exact,,"label=exact; published=0.152; ours_raw=0.1522238109; compared_with=twfe; gap=0.000224; tol=0.0005; flags=anticipation bin; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 593: 0.152224 vs felm 0.152224, SE 0.069428 vs 0.069428, N 149190; abstract: 16% increase in R&D;"
+replication_spec,mnsc.2020.01838__T2_c5_from_breadth,exact,exact,,"label=exact; published=0.147; ours_raw=0.146620704; compared_with=twfe; gap=0.000379; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 246: 0.146979 vs felm 0.146979, SE 0.054366 vs 0.054366, N 432448; abstract: innovation breadth +"
+replication_spec,mnsc.2020.01838__T2_c6_from_tech_weighted,approximate,approximate,,"label=exact; published=0.232; ours_raw=0.2310658889; compared_with=twfe; gap=0.000934; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 605: 0.232359 vs felm 0.232359, SE 0.079495 vs 0.079495, N 432448; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c7_from_primary,approximate,approximate,,"label=exact; published=0.251; ours_raw=0.2498508922; compared_with=twfe; gap=0.00115; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 613: 0.250623 vs felm 0.250623, SE 0.079500 vs 0.079500, N 432448; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c8_from_peripheral,approximate,approximate,,"label=exact; published=0.238; ours_raw=0.2389405958; compared_with=twfe; gap=0.000941; tol=0.0005; flags=pre-sample adopters; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 621: 0.237853 vs felm 0.237853, SE 0.069453 vs 0.069453, N 432448; article table unavailable)"
+replication_spec,mnsc.2020.01838__T2_c9_to_patents,approximate,approximate,,"label=exact; published=-0.076; ours_raw=-0.0778873492; compared_with=twfe; gap=0.00189; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 393: -0.076308 vs felm -0.076308, SE 0.055720 vs 0.055720, N 432993; article table unavailable)"
+replication_spec,mnsc.2020.01838__T4_c1a_from_patents_strong,exact,exact,,"label=exact; published=0.291; ours_raw=0.2906230405; compared_with=twfe; gap=0.000377; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 723: 0.290844 vs felm 0.290844, SE 0.082761 vs 0.082761, N 432275; article table unavailable)"
+replication_spec,mnsc.2020.01838__T4_c1b_from_patents_weak,exact,exact,,"label=exact; published=-0.052; ours_raw=-0.05173849246; compared_with=twfe; gap=0.000262; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 731: -0.051738 vs felm -0.051738, SE 0.191423 vs 0.191423, N 431000; article table unavailable)"
+replication_spec,mnsc.2020.01838__T4_c2a_from_rnd_strong,exact,exact,,"label=exact; published=0.203; ours_raw=0.2026404402; compared_with=twfe; gap=0.00036; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 741: 0.202640 vs felm 0.202640, SE 0.098082 vs 0.098082, N 149138; article table unavailable)"
+replication_spec,mnsc.2020.01838__T4_c2b_from_rnd_weak,exact,exact,,"label=exact; published=0.054; ours_raw=0.05365653979; compared_with=twfe; gap=0.000343; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 743: 0.053657 vs felm 0.053657, SE 0.048498 vs 0.048498, N 149089; article table unavailable)"
+replication_spec,mnsc.2020.01838__T5_c1_from_rnd_highdep,exact,exact,,"label=exact; published=0.083; ours_raw=0.08308343605; compared_with=twfe; gap=8.34e-05; tol=0.0005; flags=; label_text=exact (fixest with the authors' FE reproduces Replicate.R line 787: 0.083083 vs felm 0.083083, SE 0.057442 vs 0.057442, N 149085; article table unavailable)"
+replication_spec,mnsc.2020.3626__t2c1,exact,exact,,"label=exact; published=-0.142; ours_raw=-0.1418102233; compared_with=twfe; gap=0.00019; tol=0.0005; flags=; label_text=exact (authors' Stata do-file estimate.do line 44 rerun on the shipped validity2.dta, reghdfe keepsing: -0.141810 (0.064793), N 700; printed Table 4, column (1)"
+replication_spec,mnsc.2020.3626__t2c3,exact,exact,,"label=exact; published=-0.010; ours_raw=-0.01021038704; compared_with=twfe; gap=0.00021; tol=0.0005; flags=; label_text=exact (authors' Stata do-file estimate.do line 46 rerun on the shipped validity2.dta, reghdfe keepsing: -0.010210 (0.106993), N 900; printed Table 4, column (3)"
+replication_spec,mnsc.2020.3626__t2c5,exact,exact,,"label=exact; published=0.292; ours_raw=0.2922219737; compared_with=twfe; gap=0.000222; tol=0.0005; flags=; label_text=exact (authors' Stata do-file estimate.do line 48 rerun on the shipped validity2.dta, reghdfe keepsing: 0.292222 (0.292849), N 1,000; printed Table 4, column (5"
+replication_spec,mnsc.2020.3626__t3c1,failed,failed,,"label=exact; published=0.003; ours_raw=0.0008660281447; compared_with=twfe; gap=0.00213; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file estimate.do line 57 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.002956 (0.001166), N 19"
+replication_spec,mnsc.2020.3626__t5c1,approximate,approximate,,"label=exact; published=0.030; ours_raw=0.02844147092; compared_with=twfe; gap=0.00156; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file estimate.do line 68 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.029735 (0.008704), N 19"
+replication_spec,mnsc.2020.3626__t5c3,exact,exact,,"label=exact; published=0.016; ours_raw=0.01556904088; compared_with=twfe; gap=0.000431; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file estimate.do line 70 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.016252 (0.004359), N 19"
+replication_spec,mnsc.2020.3626__t6c1,failed,failed,,"label=exact; published=0.005; ours_raw=0.004325218915; compared_with=twfe; gap=0.000675; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file estimate.do line 74 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.004581 (0.001669), N 19"
+replication_spec,mnsc.2020.3626__t6c3,failed,failed,,"label=exact; published=0.005; ours_raw=0.004327906719; compared_with=twfe; gap=0.000672; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file estimate.do line 76 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.004620 (0.001616), N 19"
+replication_spec,mnsc.2020.3626__t6c5,failed,failed,,"label=exact; published=0.005; ours_raw=0.004265705668; compared_with=twfe; gap=0.000734; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file estimate.do line 78 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.004561 (0.001582), N 19"
+replication_spec,mnsc.2020.3707__T3_c1_idd_nocontrols,failed,failed,,"label=exact; published=0.008; ours_raw=0.01230908279; compared_with=twfe; gap=0.00431; tol=0.0005; flags=; label_text=exact (authors' code output 0.0079391 (0.0031983, p 0.0165), N 123,212, equals printed Table 3 column (1) 0.008 (p 0.016; no SE printed), N 123,212, to the prin"
+replication_spec,mnsc.2021.01740__T3_c1_l_visits,exact,exact,,"label=exact; published=3.256; ours_raw=3.256237164; compared_with=twfe; gap=0.000237; tol=0.0005; flags=anticipation bin; label_text=exact (authors' code output 3.256237 (0.0470163), N 101,803, equals printed Table 3 Panel A column (1) 3.256 (0.047), N 101,803, to the printed decimals; verifi"
+replication_spec,mnsc.2021.01740__T4_c1_visitsnotzero,exact,exact,,"label=exact; published=0.380; ours_raw=0.3798481197; compared_with=twfe; gap=0.000152; tol=0.0005; flags=anticipation bin; label_text=exact (authors' code output 0.3798481 (0.006057119), N 101,803, equals printed Table 4 Panel A column (1) 0.380 (0.006), N 101,803, to the printed decimals; ver"
+replication_spec,mnsc.2021.02026__Fig_eventstudy_logSales,failed,failed,,"label=failed; published=0.046625; ours_raw=0.008972141909; compared_with=twfe; gap=0.0377; tol=5e-05; flags=random_subsample,documented deviation; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data values are not"
+replication_spec,mnsc.2021.02026__T2_c1_ITT_logSales,failed,failed,,"label=failed; published=0.035; ours_raw=0.002466395649; compared_with=twfe; gap=0.0325; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T2_c4_TOT_adopters1wk_logSales,approximate,approximate,,"label=approximate; published=0.036; ours_raw=0.03262146207; compared_with=twfe; gap=0.00338; tol=0.0005; flags=random_subsample; label_text=approximate (random_subsample: the package ships a 10 percent random seller sample, so the printed full-data value is not reproducible from the shipped data; pr"
+replication_spec,mnsc.2021.02026__T3A_c1_ITT_logQuantity,failed,failed,,"label=failed; published=0.013; ours_raw=-0.002389779603; compared_with=twfe; gap=0.0154; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3A_c3_adopters_logQuantity,failed,failed,,"label=failed; published=0.012; ours_raw=-0.01275270276; compared_with=twfe; gap=0.0248; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3B_c1_ITT_logPrice,failed,failed,,"label=failed; published=0.002; ours_raw=0.01074478616; compared_with=twfe; gap=0.00874; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3B_c3_adopters_logPrice,failed,failed,,"label=failed; published=0.008; ours_raw=0.04007670116; compared_with=twfe; gap=0.0321; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3C_c1_ITT_logFeedback,failed,failed,,"label=failed; published=0.002; ours_raw=-0.000729208441; compared_with=twfe; gap=0.00273; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3C_c3_adopters_logFeedback,failed,failed,,"label=failed; published=0.004; ours_raw=0.004800763818; compared_with=twfe; gap=0.000801; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3D_c1_ITT_logNewListings,failed,failed,,"label=failed; published=0.009; ours_raw=-0.002644800063; compared_with=twfe; gap=0.0116; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.02026__T3D_c3_adopters_logNewListings,failed,failed,,"label=failed; published=-0.004; ours_raw=-0.04113560739; compared_with=twfe; gap=0.0371; tol=0.0005; flags=random_subsample; label_text=failed (random_subsample; same-sign-within-10-percent rule not met: the package ships a 10 percent random seller sample, so the printed full-data value is not r"
+replication_spec,mnsc.2021.03484__F2_eventdd_erp_integration,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters,documented deviation; label_text=exact (package reconstructed: the eventdd-equivalent reghdfe regression is reproduced identically in Stata MP 16.1 and fixest; Figure 2 matched visually against"
+replication_spec,mnsc.2021.03484__T2_c1_erp_integration,failed,failed,,"label=exact; published=0.044; ours_raw=0.05275212092; compared_with=twfe; gap=0.00875; tol=0.0005; flags=; label_text=exact (authors' code output 0.04429399 (0.0151523), N 15,243, equals printed Table 2 column (1) 0.044 (t 2.92; no SE printed), N 15,243, to the printed decimals"
+replication_spec,mnsc.2021.03484__T6C_c1_erp_group2,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact (authors' code est1, do-file line 1128, reproduced: 0.12203102 (0.052613), N 9,953; no printed value for this regression, the printed Table 6 Panel C colu"
+replication_spec,mnsc.2021.4043__S1,approximate,approximate,,"label=exact; published=-0.0036432291665965937; ours_raw=-0.003934925623; compared_with=twfe; gap=0.000292; tol=3.64e-09; flags=pre-sample adopters,documented deviation; label_text=exact_code_output"
+replication_spec,mnsc.2021.4043__S2,approximate,approximate,,"label=exact; published=-0.0058195; ours_raw=-0.006050029621; compared_with=twfe; gap=0.000231; tol=5e-08; flags=pre-sample adopters,documented deviation; label_text=exact (article Table 3 col 7: all four coefficients and t-statistics match at printed precision)"
+replication_spec,mnsc.2021.4057__T4_c1_oibdp_atw,approximate,approximate,,label=exact; published=-0.0075709483; ours_raw=-0.008224418142; compared_with=twfe; gap=0.000653; tol=7.57e-09; flags=pre-sample adopters; label_text=exact (authors' code re-run equals the printed coefficient and N; t-statistic differs by 0.001)
+replication_spec,mnsc.2021.4057__T4_c4_ni_atw,failed,failed,,"label=exact; published=-0.0013430228; ours_raw=-0.001679264333; compared_with=twfe; gap=0.000336; tol=1.34e-09; flags=pre-sample adopters; label_text=exact (authors' code re-run equals the printed coefficient, t-statistic and N)"
+replication_spec,mnsc.2021.4057__T4_c7_empgrw,approximate,approximate,,"label=exact; published=-0.0111048906; ours_raw=-0.01211603941; compared_with=twfe; gap=0.00101; tol=1.11e-08; flags=pre-sample adopters; label_text=exact (authors' code re-run equals the printed coefficient, t-statistic and N)"
+replication_spec,mnsc.2021.4057__T6_c1_lev_dlc_dltt_at,approximate,approximate,,"label=exact; published=-0.0132269604; ours_raw=-0.01412809393; compared_with=twfe; gap=0.000901; tol=1.32e-08; flags=pre-sample adopters; label_text=exact (authors' code re-run equals the printed coefficient, t-statistic and N)"
+replication_spec,mnsc.2021.4057__T6_c4_lev_lt_at,approximate,approximate,,label=exact; published=-0.0185126125; ours_raw=-0.01956677572; compared_with=twfe; gap=0.00105; tol=1.85e-08; flags=pre-sample adopters; label_text=exact (authors' code re-run equals the printed coefficient and N; t-statistic differs by 0.001)
+replication_spec,mnsc.2021.4057__T6_c7_lev_mkt,approximate,approximate,,"label=exact; published=-0.0199647867; ours_raw=-0.02173330391; compared_with=twfe; gap=0.00177; tol=2e-08; flags=pre-sample adopters; label_text=exact (authors' code re-run equals the printed coefficient, t-statistic and N)"
+replication_spec,mnsc.2021.4092__T7_price_twfe_plain,approximate,approximate,,"label=approximate; published=0.355; ours_raw=0.3746437846; compared_with=twfe; gap=0.0196; tol=0.0005; flags=random_subsample; label_text=approximate (same sign, within 10 percent: printed Table 7 Oster block 0.355 (0.020) vs code 0.3746438 (0.0876) on the shipped 5 percent random subsample, 5.6 p"
+replication_spec,mnsc.2021.4103__T2_c1_lnorganvolume_static,approximate,approximate,,"label=approximate; published=0.073; ours_raw=0.07373263902; compared_with=twfe; gap=0.000733; tol=0.0005; flags=; label_text=approximate (same sign, within 10 percent: printed 0.073 (0.030) vs code 0.0737 (0.0303), 1.0 percent; the printed coefficient appears truncated rather than rou"
+replication_spec,mnsc.2021.4103__T3_c1_lnorganvolume_eventstudy,exact,exact,,"label=exact; published=0.071; ours_raw=0.07087401294; compared_with=twfe; gap=0.000126; tol=0.0005; flags=; label_text=exact (authors' code output 0.070874 (0.0328222), N 9184, equals printed Table 3 column (1) post-bin average 0.071 (SE not printed), N 9,184, to the printed dec"
+replication_spec,mnsc.2021.4103__T4_c1_lnkidneystransplanted_static,exact,exact,,"label=exact; published=0.040; ours_raw=0.04014079834; compared_with=twfe; gap=0.000141; tol=0.0005; flags=; label_text=exact (authors' code output 0.0401408 (0.0223432), N 8784, equals printed Table 4 column (1) 0.040 (0.022), N 8,784, to the printed decimals; verified against t"
+replication_spec,mnsc.2021.4103__T5_c1_unrecoveredrate_static,exact,exact,,"label=exact; published=-0.698; ours_raw=-0.69756617; compared_with=twfe; gap=0.000434; tol=0.0005; flags=; label_text=exact (authors' code output -0.6975662 (0.2799118), N 8784, equals printed Table 5 column (1) -0.698 (0.280), N 8,784, to the printed decimals; verified against"
+replication_spec,mnsc.2021.4103__T6_c1_survival3yr_static,exact,exact,,"label=exact; published=0.002; ours_raw=0.002413217062; compared_with=twfe; gap=0.000413; tol=0.0005; flags=; label_text=exact (authors' code output 0.0024132 (0.0033676), N 4862, equals printed Table 6 column (1) 0.002 (0.003), N 4,862, to the printed decimals; verified against t"
+replication_spec,mnsc.2021.4209__T2_m3_twfe_nocontrols,failed,failed,,"label=exact; published=0.553; ours_raw=0.7205282733; compared_with=twfe; gap=0.168; tol=0.0005; flags=; label_text=exact (authors' code output 0.55346842 (0.0258747), N 7,334,496 (fixest re-run of the authors' reghdfe command on the package data; work log 01_prepare_and_twfe"
+replication_spec,mnsc.2022.01333__T3_isBestAnswer_bjs_basic,exact,exact,,"label=exact; published=0.105; ours_raw=0.1047051123; compared_with=bjs; gap=0.000295; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata did_imputation, Code/Table3.do line 60, cannot run here: the did_imputation ado is not installed and there is no network; the same BJS imp"
+replication_spec,mnsc.2022.01333__T3_isBestAnswer_twfe_basic,approximate,approximate,,"label=exact; published=0.0225; ours_raw=0.02276691251; compared_with=twfe; gap=0.000267; tol=5e-05; flags=documented deviation; label_text=exact (authors' Stata do-file Code/Table3.do line 61, xtreg isBestAnswer after i.weekdate, fe cluster(cohort) after xtset user, rerun on the shipped finJRSP_est"
+replication_spec,mnsc.2022.01333__T3_numCodes_bjs_basic,exact,exact,,"label=exact; published=0.574; ours_raw=0.5741717239; compared_with=bjs; gap=0.000172; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata did_imputation, Code/Table3.do line 19, cannot run here: the did_imputation ado is not installed and there is no network; the same BJS imp"
+replication_spec,mnsc.2022.01333__T3_numCodes_twfe_basic,approximate,approximate,,"label=exact; published=0.378; ours_raw=0.3807264835; compared_with=twfe; gap=0.00273; tol=0.0005; flags=documented deviation; label_text=exact (authors' Stata do-file Code/Table3.do line 20, xtreg numCodes after i.weekdate, fe cluster(cohort) after xtset user, rerun on the shipped finJRSP_estimat"
+replication_spec,mnsc.2022.01820__F5_A_S_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F5_A_W_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F5_B_S_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F5_B_W_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F5_C_S_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F5_C_W_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F6_A_S_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F6_A_W_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F6_B_S_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F6_B_W_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F6_C_S_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__F6_C_W_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=; label_text=exact
+replication_spec,mnsc.2022.01820__T2_A_S_odd,approximate,approximate,,label=exact; published=-0.141026835512619; ours_raw=-0.140797706; compared_with=twfe; gap=0.000229; tol=1.41e-07; flags=anticipation bin; label_text=exact
+replication_spec,mnsc.2022.01820__T2_A_W_odd,approximate,approximate,,label=exact; published=-0.129787641805364; ours_raw=-0.1313789106; compared_with=twfe; gap=0.00159; tol=1.3e-07; flags=anticipation bin; label_text=exact
+replication_spec,mnsc.2022.01820__T2_B_S_odd,failed,failed,,label=exact; published=-0.0087602525819309; ours_raw=-0.0115054461; compared_with=twfe; gap=0.00275; tol=8.76e-09; flags=anticipation bin; label_text=exact
+replication_spec,mnsc.2022.01820__T2_B_W_odd,failed,failed,,label=exact; published=-0.0058514288263973; ours_raw=-0.008071690563; compared_with=twfe; gap=0.00222; tol=5.85e-09; flags=anticipation bin; label_text=exact
+replication_spec,mnsc.2022.01820__T2_C_S_odd,approximate,approximate,,label=exact; published=-0.0223765087286732; ours_raw=-0.0235397851; compared_with=twfe; gap=0.00116; tol=2.24e-08; flags=anticipation bin; label_text=exact
+replication_spec,mnsc.2022.01820__T2_C_W_odd,approximate,approximate,,label=exact; published=0.079477890599266; ours_raw=0.07771500206; compared_with=twfe; gap=0.00176; tol=7.95e-08; flags=anticipation bin; label_text=exact
+replication_spec,mnsc.2022.02310__T11b_csdid_all,exact,exact,,label=exact; published=0.056; ours_raw=0.05563788894; compared_with=csa (authors' settings); gap=0.000362; tol=0.0005; flags=; label_text=exact (Stata csdid on the shipped file reproduces the printed coefficient and N; R hand implementation of csdid's pair-balanced cells with never-treated control
+replication_spec,mnsc.2022.02310__T11b_csdid_all_pub,exact,exact,,label=exact; published=0.046; ours_raw=0.04562830221; compared_with=csa (authors' settings); gap=0.000372; tol=0.0005; flags=; label_text=exact (Stata csdid on the shipped file reproduces the printed coefficient and N; R hand implementation of csdid's pair-balanced cells with never-treated control
+replication_spec,mnsc.2022.02310__T11b_csdid_pub,exact,exact,,label=exact; published=0.028; ours_raw=0.02811322087; compared_with=csa (authors' settings); gap=0.000113; tol=0.0005; flags=; label_text=exact (Stata csdid on the shipped file reproduces the printed coefficient and N; R hand implementation of csdid's pair-balanced cells with never-treated control
+replication_spec,mnsc.2022.02310__T4_c1_ev0,exact,exact,,"label=exact; published=0.056; ours_raw=0.05629773784; compared_with=twfe; gap=0.000298; tol=0.0005; flags=; label_text=exact (fixest re-run of reghdfe y1 ev0, a(frs_cas cas_yr) vce(cluster state) equals the printed 0.056, t 2.90, N 1,350,310)"
+replication_spec,mnsc.2022.03186__T4_csdid_page_view_per_million,exact,exact,,label=exact; published=-2.633232; ours_raw=-2.63323185; compared_with=csa (authors' settings); gap=1.5e-07; tol=2.63e-06; flags=; label_text=exact (authors' csdid call on the shipped data reproduces the printed coefficient and SE; R hand implementation of csdid's repeated-cross-section cells with cel
+replication_spec,mnsc.2022.03186__T4_csdid_page_view_per_user,exact,exact,,label=exact; published=-0.094296; ours_raw=-0.09429588661; compared_with=csa (authors' settings); gap=1.13e-07; tol=5e-07; flags=; label_text=exact (authors' csdid call on the shipped data reproduces the printed coefficient and SE; R hand implementation of csdid's repeated-cross-section cells with cel
+replication_spec,mnsc.2022.03186__T4_csdid_rank,exact,exact,,label=exact; published=2140.66651; ours_raw=2140.66651; compared_with=csa (authors' settings); gap=4.01e-07; tol=0.00214; flags=; label_text=exact (authors' csdid call on the shipped data reproduces the printed coefficient and SE; R hand implementation of csdid's repeated-cross-section cells with cel
+replication_spec,mnsc.2022.03186__T4_csdid_reach_per_million,exact,exact,,label=exact; published=-21.891075; ours_raw=-21.89107476; compared_with=csa (authors' settings); gap=2.36e-07; tol=2.19e-05; flags=; label_text=exact (authors' csdid call on the shipped data reproduces the printed coefficient and SE; R hand implementation of csdid's repeated-cross-section cells with cel
+replication_spec,mnsc.2022.03186__T4_csdid_reaction_mean,exact,exact,,label=exact; published=39.469387; ours_raw=39.46938736; compared_with=csa (authors' settings); gap=3.63e-07; tol=3.95e-05; flags=; label_text=exact (authors' csdid call on the shipped data reproduces the printed coefficient and SE; R hand implementation of csdid's repeated-cross-section cells with cel
+replication_spec,mnsc.2022.03186__T4_csdid_url_gdelt,exact,exact,,label=exact; published=-20.841967; ours_raw=-20.84196712; compared_with=csa (authors' settings); gap=1.19e-07; tol=2.08e-05; flags=; label_text=exact (authors' csdid call on the shipped data reproduces the printed coefficient and SE; R hand implementation of csdid's repeated-cross-section cells with cel
+replication_spec,mnsc.2022.03186__T5_c1_url_gdelt_ConsentMechanism,failed,failed,,"label=approximate; published=-18.686; ours_raw=-32.64889204; compared_with=twfe; gap=14; tol=0.0005; flags=; label_text=approximate (print -18.686, N 2,216; shipped data and code give -18.2602, N 2,243-2,247; coefficient 2.3% smaller in absolute value, 0.02 printed SEs)"
+replication_spec,mnsc.2022.03186__T5_c2_reach_per_million_ConsentMechanism,approximate,approximate,,"label=exact; published=-6.275; ours_raw=-6.564432586; compared_with=twfe; gap=0.289; tol=0.0005; flags=; label_text=exact_vs_print (coefficient equals the print; SE and N reproduced by areg, the shipped do-file's reghdfe gives a smaller SE)"
+replication_spec,mnsc.2022.03186__T5_c3_page_view_per_million_ConsentMechanism,failed,failed,,"label=exact; published=-0.639; ours_raw=-1.019825156; compared_with=twfe; gap=0.381; tol=0.0005; flags=; label_text=exact_vs_print (coefficient equals the print; SE and N reproduced by areg, the shipped do-file's reghdfe gives a smaller SE)"
+replication_spec,mnsc.2022.03186__T5_c4_page_view_per_user_ConsentMechanism,failed,failed,,"label=exact; published=0.00734; ours_raw=0.02973665203; compared_with=twfe; gap=0.0224; tol=5e-06; flags=; label_text=exact_vs_print (coefficient equals the print; SE and N reproduced by areg, the shipped do-file's reghdfe gives a smaller SE)"
+replication_spec,mnsc.2022.03186__T5_c5_rank_ConsentMechanism,failed,failed,,"label=exact; published=-5741.0; ours_raw=-4860.456305; compared_with=twfe; gap=881; tol=0.05; flags=; label_text=exact_vs_print (coefficient equals the print; SE and N reproduced by areg, the shipped do-file's reghdfe gives a smaller SE)"
+replication_spec,mnsc.2022.03186__T5_c6_reaction_mean_ConsentMechanism,failed,failed,,"label=exact; published=-3.467; ours_raw=2.505325353; compared_with=twfe; gap=5.97; tol=0.0005; flags=; label_text=exact_vs_print (coefficient equals the print; SE and N reproduced by areg, the shipped do-file's reghdfe gives a smaller SE)"
+replication_spec,mnsc.2022.03268__T4_c1_etr_sgaige,failed,failed,,"label=approximate; published=-0.017; ours_raw=-0.0111066857; compared_with=twfe; gap=0.00589; tol=0.0005; flags=; label_text=approximate_vs_print (print -0.017 (0.008), N 18,699; the authors' code on the shipped, disclosed-reduced data gives -0.02107 (0.00865), N 17,740: 24% larger in"
+replication_spec,mnsc.2022.4326__Table12_columnc1_lognum_directorshipspublic_FREP,exact,exact,,"label=exact; published=0.381; ours_raw=0.3809742858; compared_with=twfe; gap=2.57e-05; tol=0.0005; flags=; label_text=exact (authors' code output 0.3809743 (0.0851034), N 64231, equals printed Table 14, column (1) 0.381 (0.085), N 64,231, to the printed decimals; verified again"
+replication_spec,mnsc.2022.4326__Table12_columnc2_lognum_directorshipspublic_FREP,exact,exact,,"label=exact; published=0.399; ours_raw=0.3987375128; compared_with=twfe; gap=0.000262; tol=0.0005; flags=; label_text=exact (authors' code output 0.3987375 (0.0890654), N 7520, equals printed Table 14, column (2) 0.399 (0.089), N 7,520, to the printed decimals; verified against"
+replication_spec,mnsc.2022.4326__Table4_columnc1_errorfyear_treatboardtena,failed,failed,,"label=exact; published=-0.015; ours_raw=-0.02219419046; compared_with=twfe; gap=0.00719; tol=0.0005; flags=; label_text=exact (authors' code output -0.0148544 (0.0165252), N 6901, equals printed Table 5, column (1) -0.015 (0.017), N 6,901, to the printed decimals; verified agains"
+replication_spec,mnsc.2022.4326__Table4_columnc3_errorfyear_treatnonom,failed,failed,,"label=exact; published=-0.037; ours_raw=-0.0460643132; compared_with=twfe; gap=0.00906; tol=0.0005; flags=; label_text=exact (authors' code output -0.0371204 (0.0211273), N 6925, equals printed Table 5, column (3) -0.037 (0.021), N 6,925, to the printed decimals; verified agains"
+replication_spec,mnsc.2022.4326__Table4_columnc5_errorfyear_treatheadten,exact,exact,,"label=exact; published=-0.076; ours_raw=-0.07627254188; compared_with=twfe; gap=0.000273; tol=0.0005; flags=; label_text=exact (authors' code output -0.0762725 (0.0428216), N 6955, equals printed Table 5, column (5) -0.076 (0.043), N 6,955, to the printed decimals; verified agains"
+replication_spec,mnsc.2022.4326__Table5_columnc1_audproblem_treatboardtena,approximate,approximate,,"label=exact; published=0.071; ours_raw=0.06761342548; compared_with=twfe; gap=0.00339; tol=0.0005; flags=; label_text=exact (authors' code output 0.0706131 (0.0387067), N 6901, equals printed Table 6, column (1) 0.071 (0.039), N 6,901, to the printed decimals; verified against "
+replication_spec,mnsc.2022.4326__Table5_columnc3_audproblem_treatnonom,approximate,approximate,,"label=exact; published=0.096; ours_raw=0.09366814064; compared_with=twfe; gap=0.00233; tol=0.0005; flags=; label_text=exact (authors' code output 0.0963656 (0.0531468), N 6925, equals printed Table 6, column (3) 0.096 (0.053), N 6,925, to the printed decimals; verified against "
+replication_spec,mnsc.2022.4326__Table5_columnc5_audproblem_treatheadten,exact,exact,,"label=exact; published=0.173; ours_raw=0.1727430428; compared_with=twfe; gap=0.000257; tol=0.0005; flags=; label_text=exact (authors' code output 0.172743 (0.0964632), N 6955, equals printed Table 6, column (5) 0.173 (0.096), N 6,955, to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4326__Table6_columnc1_highriskf1_treatboardtena,failed,failed,,"label=exact; published=0.044; ours_raw=0.06437016104; compared_with=twfe; gap=0.0204; tol=0.0005; flags=; label_text=exact (authors' code output 0.0444558 (0.0254234), N 6901, equals printed Table 7, column (1) 0.044 (0.025), N 6,901, to the printed decimals; verified against "
+replication_spec,mnsc.2022.4326__Table6_columnc3_highriskf1_treatnonom,failed,failed,,"label=exact; published=0.041; ours_raw=0.05903177912; compared_with=twfe; gap=0.018; tol=0.0005; flags=; label_text=exact (authors' code output 0.0412993 (0.0245836), N 6925, equals printed Table 7, column (3) 0.041 (0.025), N 6,925, to the printed decimals; verified against "
+replication_spec,mnsc.2022.4326__Table6_columnc5_highriskf1_treatheadten,exact,exact,,"label=exact; published=0.098; ours_raw=0.09789218384; compared_with=twfe; gap=0.000108; tol=0.0005; flags=; label_text=exact (authors' code output 0.0978922 (0.0517031), N 6955, equals printed Table 7, column (5) 0.098 (0.052), N 6,955, to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T3_flow_event,exact,exact,,"label=exact; published=0.054; ours_raw=0.05416949459; compared_with=twfe; gap=0.000169; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 5 column (2) q+1..q+6 = 0.039, 0.055, 0.062, 0.058, 0.061, 0.049 (t = 1.7"
+replication_spec,mnsc.2022.4394__T3_flow_static,exact,exact,,"label=exact; published=0.049; ours_raw=0.04933943924; compared_with=twfe; gap=0.000339; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 5 column (1) 0.049 (t = 3.129), N 1,476 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T4_event_fullscore_alt,exact,exact,,"label=exact; published=-0.1383333; ours_raw=-0.1383740032; compared_with=twfe; gap=4.07e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 6 column (6) q+1..q+6 = -0.363, 0.418, 0.029, -0.305, -0.125, -0.484 (t ="
+replication_spec,mnsc.2022.4394__T4_event_sust_esgscore_alt,exact,exact,,"label=exact; published=-0.1355; ours_raw=-0.1353759781; compared_with=twfe; gap=0.000124; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 6 column (4) q+1..q+6 = 0.048, -0.118, -0.182, -0.122, -0.128, -0.311 (t "
+replication_spec,mnsc.2022.4394__T4_event_was_alt,exact,exact,,"label=exact; published=0.0011667; ours_raw=0.001305535056; compared_with=twfe; gap=0.000139; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 6 column (2) q+1..q+6 = -0.022, -0.022, -0.009, 0.006, 0.024, 0.030 (t = "
+replication_spec,mnsc.2022.4394__T4_static_fullscore_alt,exact,exact,,"label=exact; published=0.086; ours_raw=0.08621302284; compared_with=twfe; gap=0.000213; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 6 column (5) 0.086 (t = 0.188), N 4,041 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T4_static_sust_esgscore_alt,exact,exact,,"label=exact; published=0.031; ours_raw=0.03099688898; compared_with=twfe; gap=3.11e-06; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 6 column (3) 0.031 (t = 0.128), N 3,662 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T4_static_was_alt,exact,exact,,"label=exact; published=-0.039; ours_raw=-0.03906950051; compared_with=twfe; gap=6.95e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 6 column (1) -0.039 (t = -1.284), N 3,786 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5a_fullscore_alt_entry,exact,exact,,"label=exact; published=0.231; ours_raw=0.2311948441; compared_with=twfe; gap=0.000195; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 7 column (3) 0.231 (t = 0.453), N 3,524 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5a_fullscore_alt_exit,exact,exact,,"label=exact; published=0.109; ours_raw=0.1088166289; compared_with=twfe; gap=0.000183; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 7 column (6) 0.109 (t = 0.209), N 3,286 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5a_sust_esgscore_alt_entry,exact,exact,,"label=exact; published=0.129; ours_raw=0.12874538; compared_with=twfe; gap=0.000255; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 7 column (2) 0.129 (t = 0.394), N 3,130 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5a_sust_esgscore_alt_exit,exact,exact,,"label=exact; published=0.312; ours_raw=0.3116014683; compared_with=twfe; gap=0.000399; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 7 column (5) 0.312 (t = 0.839), N 2,878 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5a_was_alt_entry,exact,exact,,"label=exact; published=-0.074; ours_raw=-0.0742067989; compared_with=twfe; gap=0.000207; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 7 column (1) -0.074 (t = -1.679), N 3,257 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5a_was_alt_exit,exact,exact,,"label=exact; published=-0.003; ours_raw=-0.003133672564; compared_with=twfe; gap=0.000134; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 7 column (4) -0.003 (t = -0.057), N 3,026 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_amt_fullscore_alt_abovep75_pct,exact,exact,,"label=exact; published=-0.003; ours_raw=-0.002626943817; compared_with=twfe; gap=0.000373; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (6) -0.003 (t = -0.537), N 4,041 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_amt_fullscore_alt_belowp25_pct,exact,exact,,"label=exact; published=-0.004; ours_raw=-0.003528316648; compared_with=twfe; gap=0.000472; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (12) -0.004 (t = -0.202), N 4,041 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T5b_amt_sust_esgscore_alt_abovep75_pct,exact,exact,,"label=exact; published=-0.001; ours_raw=-0.001461227685; compared_with=twfe; gap=0.000461; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (5) -0.001 (t = -0.149), N 3,662 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_amt_sust_esgscore_alt_belowp25_pct,exact,exact,,"label=exact; published=0.007; ours_raw=0.006870750664; compared_with=twfe; gap=0.000129; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (11) 0.007 (t = 0.783), N 3,662 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T5b_amt_was_alt_abovep75_pct,exact,exact,,"label=exact; published=-0.006; ours_raw=-0.00645711395; compared_with=twfe; gap=0.000457; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (4) -0.006 (t = -0.712), N 3,786 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_amt_was_alt_belowp25_pct,exact,exact,,"label=exact; published=0.003; ours_raw=0.003099102529; compared_with=twfe; gap=9.91e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (10) 0.003 (t = 0.471), N 3,786 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T5b_n_fullscore_alt_abovep75_pct,exact,exact,,"label=exact; published=-0.002; ours_raw=-0.001737471909; compared_with=twfe; gap=0.000263; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (3) -0.002 (t = -0.371), N 4,041 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_n_fullscore_alt_belowp25_pct,exact,exact,,"label=exact; published=-0.007; ours_raw=-0.006623373817; compared_with=twfe; gap=0.000377; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (9) -0.007 (t = -0.395), N 4,041 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_n_sust_esgscore_alt_abovep75_pct,exact,exact,,"label=exact; published=0.002; ours_raw=0.002133895197; compared_with=twfe; gap=0.000134; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (2) 0.002 (t = 0.226), N 3,662 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5b_n_sust_esgscore_alt_belowp25_pct,exact,exact,,"label=exact; published=0.009; ours_raw=0.00882112158; compared_with=twfe; gap=0.000179; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (8) 0.009 (t = 1.003), N 3,662 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5b_n_was_alt_abovep75_pct,exact,exact,,"label=exact; published=-0.004; ours_raw=-0.0041748689; compared_with=twfe; gap=0.000175; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (1) -0.004 (t = -0.502), N 3,786 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5b_n_was_alt_belowp25_pct,exact,exact,,"label=exact; published=0.002; ours_raw=0.002322006747; compared_with=twfe; gap=0.000322; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 8 column (7) 0.002 (t = 0.356), N 3,786 to the printed decimals; verified against th"
+replication_spec,mnsc.2022.4394__T5c_event_econtro_pct,exact,exact,,"label=exact; published=0.0048333; ours_raw=0.004685072892; compared_with=twfe; gap=0.000148; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 9 column (4) q+1..q+6 = -0.000, 0.001, 0.004, 0.007, 0.008, 0.009 (t = -0"
+replication_spec,mnsc.2022.4394__T5c_event_gcontro_pct,exact,exact,,"label=exact; published=-0.0003333; ours_raw=-0.0001884135716; compared_with=twfe; gap=0.000145; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 9 column (8) q+1..q+6 = -0.001, -0.001, -0.001, 0.001, 0.000, 0.000 (t = "
+replication_spec,mnsc.2022.4394__T5c_event_scontro_pct,exact,exact,,"label=exact; published=-0.0041667; ours_raw=-0.00418215736; compared_with=twfe; gap=1.55e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 9 column (6) q+1..q+6 = -0.004, -0.007, -0.004, -0.003, -0.003, -0.004 (t"
+replication_spec,mnsc.2022.4394__T5c_event_totalcontro_pct,exact,exact,,"label=exact; published=0.0001667; ours_raw=0.0001171643355; compared_with=twfe; gap=4.95e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 9 column (2) q+1..q+6 = -0.005, -0.007, -0.001, 0.004, 0.005, 0.005 (t = "
+replication_spec,mnsc.2022.4394__T5c_static_econtro_pct,exact,exact,,"label=exact; published=-0.002; ours_raw=-0.001809110676; compared_with=twfe; gap=0.000191; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 9 column (3) -0.002 (t = -0.647), N 3,662 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5c_static_gcontro_pct,exact,exact,,"label=exact; published=-0.001; ours_raw=-0.001079625363; compared_with=twfe; gap=7.96e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 9 column (7) -0.001 (t = -1.481), N 3,662 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5c_static_scontro_pct,exact,exact,,"label=exact; published=-0.005; ours_raw=-0.005405445178; compared_with=twfe; gap=0.000405; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 9 column (5) -0.005 (t = -1.301), N 3,655 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5c_static_totalcontro_pct,exact,exact,,"label=exact; published=-0.009; ours_raw=-0.008545567299; compared_with=twfe; gap=0.000454; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 9 column (1) -0.009 (t = -1.336), N 3,662 to the printed decimals; verified against "
+replication_spec,mnsc.2022.4394__T5d_event_fullscore_alt,exact,exact,,"label=exact; published=-0.6353333; ours_raw=-0.6354162619; compared_with=twfe; gap=8.3e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 10 column (6) q+1..q+6 = -0.492, 0.510, -0.313, -0.947, -0.899, -1.671 (t"
+replication_spec,mnsc.2022.4394__T5d_event_sust_esgscore_alt,exact,exact,,"label=exact; published=-0.1026667; ours_raw=-0.1026184191; compared_with=twfe; gap=4.83e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 10 column (4) q+1..q+6 = 0.171, -0.067, -0.140, -0.120, -0.164, -0.296 (t"
+replication_spec,mnsc.2022.4394__T5d_event_was_alt,exact,exact,,"label=exact; published=-0.0191667; ours_raw=-0.01925514909; compared_with=twfe; gap=8.84e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 10 column (2) q+1..q+6 = -0.025, -0.027, -0.019, -0.007, -0.012, -0.025 ("
+replication_spec,mnsc.2022.4394__T5d_static_fullscore_alt,exact,exact,,"label=exact; published=0.322; ours_raw=0.322086534; compared_with=twfe; gap=8.65e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 10 column (5) 0.322 (t = 0.464), N 4,041 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T5d_static_sust_esgscore_alt,exact,exact,,"label=exact; published=0.148; ours_raw=0.1476645644; compared_with=twfe; gap=0.000335; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 10 column (3) 0.148 (t = 0.577), N 3,662 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T5d_static_was_alt,exact,exact,,"label=exact; published=-0.026; ours_raw=-0.02568319647; compared_with=twfe; gap=0.000317; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 10 column (1) -0.026 (t = -0.789), N 3,786 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T6a_event_fullscore_alt,exact,exact,,"label=exact; published=-0.54; ours_raw=-0.53991934; compared_with=twfe; gap=8.07e-05; tol=0.005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 11 column (6) q+1..q+6 = -0.781, -0.302, -0.516, -0.371, -0.423, -0.847 ("
+replication_spec,mnsc.2022.4394__T6a_event_sust_esgscore_alt,exact,exact,,"label=exact; published=0.1588333; ours_raw=0.1589605193; compared_with=twfe; gap=0.000127; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 11 column (4) q+1..q+6 = 0.153, 0.158, 0.182, 0.152, 0.145, 0.163 (t = 0."
+replication_spec,mnsc.2022.4394__T6a_event_was_alt,exact,exact,,"label=exact; published=0.1403333; ours_raw=0.1400686032; compared_with=twfe; gap=0.000265; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 11 column (2) q+1..q+6 = 0.057, 0.071, 0.118, 0.171, 0.217, 0.208 (t = 1."
+replication_spec,mnsc.2022.4394__T6a_static_fullscore_alt,exact,exact,,"label=exact; published=-0.507; ours_raw=-0.5067199468; compared_with=twfe; gap=0.00028; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 11 column (5) -0.507 (t = -1.159), N 2,326 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T6a_static_sust_esgscore_alt,exact,exact,,"label=exact; published=0.161; ours_raw=0.1608230256; compared_with=twfe; gap=0.000177; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 11 column (3) 0.161 (t = 0.806), N 2,013 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6a_static_was_alt,exact,exact,,"label=exact; published=0.040; ours_raw=0.03979020538; compared_with=twfe; gap=0.00021; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 11 column (1) 0.040 (t = 1.141), N 2,102 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6b_fullscore_alt_075,exact,exact,,"label=exact; published=-1.570; ours_raw=-1.570332522; compared_with=twfe; gap=0.000333; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 12 column (5) -1.570 (t = -1.057), N 1,389 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T6b_fullscore_alt_1,exact,exact,,"label=exact; published=0.066; ours_raw=0.06567177884; compared_with=twfe; gap=0.000328; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 12 column (6) 0.066 (t = 0.035), N 1,092 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6b_sust_esgscore_alt_075,exact,exact,,"label=exact; published=-1.000; ours_raw=-0.9999297054; compared_with=twfe; gap=7.03e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 12 column (3) -1.000 (t = -2.151), N 933 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6b_sust_esgscore_alt_1,exact,exact,,"label=exact; published=-1.276; ours_raw=-1.2757684; compared_with=twfe; gap=0.000232; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 12 column (4) -1.276 (t = -1.439), N 711 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6b_was_alt_075,exact,exact,,"label=exact; published=0.047; ours_raw=0.04733401796; compared_with=twfe; gap=0.000334; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 12 column (1) 0.047 (t = 0.523), N 1,067 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6b_was_alt_1,exact,exact,,"label=exact; published=-0.005; ours_raw=-0.005183346544; compared_with=twfe; gap=0.000183; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 12 column (2) -0.005 (t = -0.046), N 787 to the printed decimals; verified against t"
+replication_spec,mnsc.2022.4394__T6d_event_didntgowithmgmt_a,exact,exact,,"label=exact; published=-0.0335; ours_raw=-0.03382137726; compared_with=twfe; gap=0.000321; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, whose 2 post bins equal printed Table 14 column (2) y+1..y+2 = -0.045, -0.022 (t = -1.510, -0.459) to the print"
+replication_spec,mnsc.2022.4394__T6d_event_didntgowithmgmt_e,exact,exact,,"label=exact; published=-0.003; ours_raw=-0.002855782575; compared_with=twfe; gap=0.000144; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, whose 2 post bins equal printed Table 14 column (4) y+1..y+2 = -0.009, 0.003 (t = -0.418, 0.092) to the printed"
+replication_spec,mnsc.2022.4394__T6d_event_didntgowithmgmt_g,exact,exact,,"label=exact; published=-0.0785; ours_raw=-0.07890622721; compared_with=twfe; gap=0.000406; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, whose 2 post bins equal printed Table 14 column (8) y+1..y+2 = -0.086, -0.071 (t = -2.181, -1.251) to the print"
+replication_spec,mnsc.2022.4394__T6d_event_didntgowithmgmt_s,exact,exact,,"label=exact; published=-0.0215; ours_raw=-0.02129649099; compared_with=twfe; gap=0.000204; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, whose 2 post bins equal printed Table 14 column (6) y+1..y+2 = -0.025, -0.018 (t = -0.931, -0.425) to the print"
+replication_spec,mnsc.2022.4394__T6d_static_didntgowithmgmt_a,exact,exact,,"label=exact; published=-0.057; ours_raw=-0.05686227549; compared_with=twfe; gap=0.000138; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 14 column (1) -0.057 (t = -2.334), N 1,521 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T6d_static_didntgowithmgmt_e,exact,exact,,"label=exact; published=-0.014; ours_raw=-0.01424399864; compared_with=twfe; gap=0.000244; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 14 column (3) -0.014 (t = -0.838), N 1,521 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T6d_static_didntgowithmgmt_g,exact,exact,,"label=exact; published=-0.094; ours_raw=-0.09391513023; compared_with=twfe; gap=8.49e-05; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 14 column (7) -0.094 (t = -2.820), N 1,521 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T6d_static_didntgowithmgmt_s,exact,exact,,"label=exact; published=-0.028; ours_raw=-0.02831544838; compared_with=twfe; gap=0.000315; tol=0.0005; flags=; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 14 column (5) -0.028 (t = -1.243), N 1,521 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T7_event_quarterlynetalpha_capm,exact,exact,,"label=exact; published=-0.0078333; ours_raw=-0.008057764029; compared_with=twfe; gap=0.000224; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 15 column (2) q+1..q+6 = -0.003, -0.007, -0.004, -0.009, -0.011, -0.013 ("
+replication_spec,mnsc.2022.4394__T7_event_quarterlyret,exact,exact,,"label=exact; published=-0.0058333; ours_raw=-0.005733971315; compared_with=twfe; gap=9.93e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, whose 6 post bins equal printed Table 15 column (6) q+1..q+6 = -0.001, -0.005, -0.002, -0.007, -0.009, -0.011 ("
+replication_spec,mnsc.2022.4394__T7_static_quarterlynetalpha_capm,exact,exact,,"label=exact; published=-0.003; ours_raw=-0.003071415835; compared_with=twfe; gap=7.14e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 15 column (1) -0.003 (t = -1.017), N 1,476 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4394__T7_static_quarterlyret,exact,exact,,"label=exact; published=-0.001; ours_raw=-0.0009220634983; compared_with=twfe; gap=7.79e-05; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code reproduces the shipped log, which equals printed Table 15 column (5) -0.001 (t = -0.263), N 1,476 to the printed decimals; verified against"
+replication_spec,mnsc.2022.4660__T11_csdid_icc_nocontrols,exact,exact,,"label=exact; published=-0.431; ours_raw=-0.4310009045; compared_with=csa (authors' settings); gap=9.05e-07; tol=0.0005; flags=; label_text=exact (Stata csdid on the shipped data reproduces the printed -0.431 and N 19,432; R hand implementation of the pair-balanced cells with csdid's cell-count weig"
+replication_spec,mnsc.2022.4660__T2_c1_icc_twfe,exact,exact,,"label=exact; published=-0.31311126; ours_raw=-0.3131112606; compared_with=twfe; gap=5.98e-10; tol=3.13e-07; flags=; label_text=exact (re-run equals the printed coefficient, t and N)"
+replication_spec,mnsc.2023.00900__T5_c2_no_nda_atc3,exact,exact,,"label=exact; published=-0.082; ours_raw=-0.08190964428; compared_with=twfe; gap=9.04e-05; tol=0.0005; flags=; label_text=exact (authors' code output -0.0819096 (0.0251765), N 6,383, equals printed Table 5 column (2) -0.082 (0.025), N 6,383, to the printed decimals; fixest -0.08190"
+replication_spec,mnsc.2023.01357__T4_c1_it_insp,exact,exact,,"label=exact; published=-0.007; ours_raw=-0.006526302745; compared_with=twfe; gap=0.000474; tol=0.0005; flags=; label_text=exact (authors' code output -0.0065263 (0.002824), N 42,789, equals printed Table 4 column (1) -0.007 (t -2.31; no SE printed), N 42,789, to the printed decimal"
+replication_spec,mnsc.2023.01357__T5_c1_interaction,exact,exact,,"label=exact; published=-0.009; ours_raw=-0.00925525618; compared_with=twfe; gap=0.000255; tol=0.0005; flags=; label_text=exact (authors' code output -0.0085804 (0.0025554), N 42,789, equals printed Table 5 column (1) -0.009 (t -3.36; no SE printed), N 42,789, to the printed decima"
+replication_spec,mnsc.2023.01390__F11_csa_rating_postmon,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=anticipation bin; label_text=exact (did::att_gt with the authors' settings on the panel extracted from their fitted object: -0.5225599; the spec-field representation (never-treated controls
+replication_spec,mnsc.2023.01390__F11_csa_vol_postmon,exact,exact,,"label=exact; published=15.53; ours_raw=15.53444283; compared_with=csa (authors' settings); gap=0.00444; tol=0.005; flags=anticipation bin,documented deviation; label_text=exact (did::att_gt with the authors' settings reproduces the authors' simple aggregate 15.5344 (0.2691), which equals the printed 15.53 to the printed decimals;"
+replication_spec,mnsc.2023.01390__F11_csa_vol_premon,exact,exact,,"label=exact; published=5.75; ours_raw=5.746249794; compared_with=csa (authors' settings); gap=0.00375; tol=0.005; flags=anticipation bin,documented deviation; label_text=exact (did::att_gt with the authors' settings reproduces the authors' simple aggregate 5.7462 (0.1294), which equals the printed 5.75 to the printed decimals; v"
+replication_spec,mnsc.2023.01390__T4vol_c2_post_giveaway,exact,exact,,"label=exact; published=11.008; ours_raw=11.00767619; compared_with=twfe; gap=0.000324; tol=0.0005; flags=; label_text=exact (authors' code output 11.0077 (0.1822), N 2,036,383, equals printed Table 4 'Number of Ratings' first column 11.008 (0.182), N 2,036,383, to the printed d"
+replication_spec,mnsc.2023.01423__F4_large_high_es,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output: equal-weight mean of the post bins n = 1..6 -0.00753195, N 10470 (authors' log), reproduced by fixest to 5e-8 on the shipped data; "
+replication_spec,mnsc.2023.01423__F4_small_high_es,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output: equal-weight mean of the post bins n = 1..6 0.05279419999999999, N 10470 (authors' log), reproduced by fixest to 5e-8 on the shippe"
+replication_spec,mnsc.2023.01423__F5_mom_high_es,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output: equal-weight mean of the post bins n = 1..6 -0.023508716666666665, N 43154 (authors' log), reproduced by fixest to 5e-8 on the ship"
+replication_spec,mnsc.2023.01423__F5_mom_nonhigh_es,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output: equal-weight mean of the post bins n = 1..6 -0.0192184, N 41866 (authors' log), reproduced by fixest to 5e-8 on the shipped data; s"
+replication_spec,mnsc.2023.01423__T8_large_high_fe,failed,failed,,"label=exact; published=0.011; ours_raw=-0.01494066551; compared_with=twfe; gap=0.0259; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.0112158 (0.0130888, t = 0.86), N 10470, equals printed Table 8, Panel A (high-priced stocks), column (5) 0.011 (t = 0.86) (the tab"
+replication_spec,mnsc.2023.01423__T8_large_nonhigh_fe,failed,failed,,"label=exact; published=0.042; ours_raw=0.03443900261; compared_with=twfe; gap=0.00756; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.042369 (0.0131279, t = 3.23), N 11317, equals printed Table 8, Panel B (nonhigh-priced stocks), column (5) 0.042 (t = 3.23) (the t"
+replication_spec,mnsc.2023.01423__T8_small_high_fe,approximate,approximate,,"label=exact; published=0.113; ours_raw=0.1061625549; compared_with=twfe; gap=0.00684; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.1133207 (0.0223262, t = 5.08), N 10470, equals printed Table 8, Panel A (high-priced stocks), column (2) 0.113 (t = 5.08) (the tab"
+replication_spec,mnsc.2023.01423__T8_small_nonhigh_fe,approximate,approximate,,"label=exact; published=0.106; ours_raw=0.1086008676; compared_with=twfe; gap=0.0026; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.1059048 (0.02066, t = 5.13), N 11317, equals printed Table 8, Panel B (nonhigh-priced stocks), column (2) 0.106 (t = 5.13) (the ta"
+replication_spec,mnsc.2023.01423__T9_mom_high_fe,approximate,approximate,,"label=exact; published=-0.036; ours_raw=-0.03855569319; compared_with=twfe; gap=0.00256; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output -0.0364132 (0.0077994, t = -4.67), N 43154, equals printed Table 9, Panel A (high-priced stocks), column (2) -0.036 (t = -4.67) (the"
+replication_spec,mnsc.2023.01423__T9_mom_nonhigh_fe,failed,failed,,"label=exact; published=-0.010; ours_raw=-0.008138005515; compared_with=twfe; gap=0.00186; tol=0.0005; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output -0.0103625 (0.0066483, t = -1.56), N 41748, equals printed Table 9, Panel B (nonhigh-priced stocks), column (2) -0.010 (t = -1.56) ("
+replication_spec,mnsc.2023.01572__SDiD_P1P2_logprice,exact,exact,,"label=exact; published=-0.0107; ours_raw=-0.01069574229; compared_with=csa (authors' settings); gap=4.26e-06; tol=5e-05; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = -"
+replication_spec,mnsc.2023.01572__SDiD_P1P2_positivescore,exact,exact,,"label=exact; published=0.00132; ours_raw=0.001315599271; compared_with=csa (authors' settings); gap=4.4e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P2_saleslog,exact,exact,,"label=exact; published=0.03872; ours_raw=0.03871553877; compared_with=csa (authors' settings); gap=4.46e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P2_shippingdiscount,exact,exact,,"label=exact; published=0.00572; ours_raw=0.005724263401; compared_with=csa (authors' settings); gap=4.26e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P2_valence,exact,exact,,"label=exact; published=-0.00867; ours_raw=-0.008671951615; compared_with=csa (authors' settings); gap=1.95e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = -"
+replication_spec,mnsc.2023.01572__SDiD_P1P2_variance,exact,exact,,"label=exact; published=0.0539; ours_raw=0.05390269871; compared_with=csa (authors' settings); gap=2.7e-06; tol=5e-05; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P2_volume,exact,exact,,"label=exact; published=0.09448; ours_raw=0.0944797082; compared_with=csa (authors' settings); gap=2.92e-07; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 220 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_logprice,exact,exact,,"label=exact; published=-0.01891; ours_raw=-0.01891318066; compared_with=csa (authors' settings); gap=3.18e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = -"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_positivescore,exact,exact,,"label=exact; published=0.00279; ours_raw=0.002785337049; compared_with=csa (authors' settings); gap=4.66e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_saleslog,exact,exact,,"label=exact; published=0.09171; ours_raw=0.09170506837; compared_with=csa (authors' settings); gap=4.93e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_shippingdiscount,exact,exact,,"label=exact; published=-0.00004; ours_raw=-4.230631453e-05; compared_with=csa (authors' settings); gap=2.31e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = -"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_valence,exact,exact,,"label=exact; published=0.08996; ours_raw=0.08995803798; compared_with=csa (authors' settings); gap=1.96e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_variance,exact,exact,,"label=exact; published=0.00581; ours_raw=0.005806405038; compared_with=csa (authors' settings); gap=3.59e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = 0"
+replication_spec,mnsc.2023.01572__SDiD_P1P3_volume,exact,exact,,"label=exact; published=-0.18284; ours_raw=-0.1828368573; compared_with=csa (authors' settings); gap=3.14e-06; tol=5e-06; flags=; label_text=exact (did::att_gt, not-yet-treated, universal base, no covariates, on the prepared panel with the last period t_idx = 170 dropped, aggte(type = 'calendar') = -"
+replication_spec,mnsc.2023.01987__T2PA_C1,exact,exact,,"label=exact; published=-0.0165; ours_raw=-0.01651235108; compared_with=twfe; gap=1.24e-05; tol=5e-05; flags=; label_text=exact (authors' code output -0.0165124 (0.004358), N 29,838, equals printed Table 2 Panel A column (1) -0.0165 (0.0044), N 29,838, to the printed decimals; fixe"
+replication_spec,mnsc.2023.04090__T2B_c1_sp_arS,failed,failed,,"label=exact; published=-0.023; ours_raw=-0.03251237826; compared_with=twfe; gap=0.00951; tol=0.0005; flags=documented deviation; label_text=exact (authors' code output -0.023497 (0.013314), N 3,212, equals printed Table 2 Panel B column (1) -0.023 (t -1.76; no SE printed), N 3,212, to the printed de"
+replication_spec,mnsc.2023.04090__T2B_c1_sp_arS_supplierunit,failed,failed,,"label=exact; published=-0.023; ours_raw=-0.03127590141; compared_with=twfe; gap=0.00828; tol=0.0005; flags=documented deviation; label_text=exact (first word set by comparing the recorded authors' code output -0.023497 (0.013314), N 3,212 (the authors' own supplier + customer-by-year FE regression, "
+replication_spec,mnsc.2023.04090__T5C_c1_salescogs,exact,exact,,"label=exact; published=0.147; ours_raw=0.1470795425; compared_with=twfe; gap=7.95e-05; tol=0.0005; flags=; label_text=exact (authors' code output 0.147080 (0.064306), N 20,828, equals printed Table 5 Panel C column (1) 0.147 (t 2.29; no SE printed), N 20,828, to the printed dec"
+replication_spec,mnsc.2023.04090__T5C_c4_s_profit,exact,exact,,"label=exact; published=0.029; ours_raw=0.02881823285; compared_with=twfe; gap=0.000182; tol=0.0005; flags=; label_text=exact (authors' code output 0.028818 (0.008748), N 20,846, equals printed Table 5 Panel C column (4) 0.029 (t 3.29; no SE printed), N 20,846, to the printed dec"
+replication_spec,mnsc.2023.4716__T1_c1,approximate,approximate,,label=approximate; published=8.312; ours_raw=9.043881326; compared_with=twfe; gap=0.732; tol=0.0005; flags=random_subsample; label_text=approximate (random_subsample: the authors' plm code and fixest agree to 1e-12 on the shipped sample; full-panel coefficient not reproducible from shipped data;
+replication_spec,mnsc.2023.4716__T1_c2,approximate,approximate,,label=approximate; published=0.496; ours_raw=0.4942196123; compared_with=twfe; gap=0.00178; tol=0.0005; flags=random_subsample; label_text=approximate (random_subsample: the authors' plm code and fixest agree to 1e-12 on the shipped sample; full-panel coefficient not reproducible from shipped data;
+replication_spec,mnsc.2023.4716__T1_c3,approximate,approximate,,label=approximate; published=0.747; ours_raw=0.7425327955; compared_with=twfe; gap=0.00447; tol=0.0005; flags=random_subsample; label_text=approximate (random_subsample: the authors' plm code and fixest agree to 1e-12 on the shipped sample; full-panel coefficient not reproducible from shipped data;
+replication_spec,mnsc.2023.4800__T4_c1_cspread,exact,exact,,"label=exact; published=-0.085; ours_raw=-0.08476715085; compared_with=twfe; gap=0.000233; tol=0.0005; flags=; label_text=exact (authors' code output -0.0847672 (0.0301043, two-way clustered by state and year), N 1,509,041, equals printed Table 4 column (I) -0.085 (t -2.82; no SE p"
+replication_spec,mnsc.2023.4800__T5_c1_amt,exact,exact,,"label=exact; published=0.329; ours_raw=0.3294560536; compared_with=twfe; gap=0.000456; tol=0.0005; flags=; label_text=exact (authors' code output 0.3294561 (0.3538678, two-way clustered by state and year), N 2,700, equals printed Table 5 column (I) 0.329 (t 0.93; no SE printed)"
+replication_spec,mnsc.2023.4816__T7_c1,exact,exact,,"label=exact; published=0.076; ours_raw=0.07562476013; compared_with=twfe; gap=0.000375; tol=0.0005; flags=; label_text=exact (authors' code output 0.07562476 (0.03182122), N 1272, equals printed Table 10 column (1) 0.076 (0.032), N 1,272, to the printed decimals; verified agains"
+replication_spec,mnsc.2023.4816__T7_c2,exact,exact,,"label=exact; published=0.324; ours_raw=0.3244547531; compared_with=twfe; gap=0.000455; tol=0.0005; flags=; label_text=exact (authors' code output 0.3244548 (0.1925976), N 1272, equals printed Table 10 column (2) 0.324 (0.193), N 1,272, to the printed decimals; verified against "
+replication_spec,mnsc.2023.4816__T7_c3,exact,exact,,"label=exact; published=0.135; ours_raw=0.1347694637; compared_with=twfe; gap=0.000231; tol=0.0005; flags=; label_text=exact (authors' code output 0.1347695 (0.04384287), N 1272, equals printed Table 10 column (3) 0.135 (0.044), N 1,272, to the printed decimals; verified against"
+replication_spec,mnsc.2023.4816__T8_c1,exact,exact,,"label=exact; published=-0.077; ours_raw=-0.07727690892; compared_with=twfe; gap=0.000277; tol=0.0005; flags=; label_text=exact (authors' code output -0.07727691 (0.01012224), N 601, equals printed Table 11 column (1) -0.077 (0.010), N 601, to the printed decimals; verified against"
+replication_spec,mnsc.2023.4816__T8_c2,exact,exact,,"label=exact; published=-0.128; ours_raw=-0.128313994; compared_with=twfe; gap=0.000314; tol=0.0005; flags=; label_text=exact (authors' code output -0.128314 (0.0376899), N 547, equals printed Table 11 column (2) -0.128 (0.038), N 547, to the printed decimals; verified against th"
+replication_spec,mnsc.2023.4816__T8_c3,exact,exact,,"label=exact; published=0.029; ours_raw=0.02856397389; compared_with=twfe; gap=0.000436; tol=0.0005; flags=; label_text=exact (authors' code output 0.02856397 (0.03490215), N 456, equals printed Table 11 column (3) 0.029 (0.035), N 456, to the printed decimals; verified against t"
+replication_spec,mnsc.2023.4816__T8_c4,exact,exact,,"label=exact; published=-0.096; ours_raw=-0.09615549775; compared_with=twfe; gap=0.000155; tol=0.0005; flags=; label_text=exact (authors' code output -0.0961555 (0.03255285), N 404, equals printed Table 11 column (4) -0.096 (0.033), N 404, to the printed decimals; verified against "
+replication_spec,mnsc.2023.4816__T8_c5,exact,exact,,"label=exact; published=-0.311; ours_raw=-0.3108329941; compared_with=twfe; gap=0.000167; tol=0.0005; flags=; label_text=exact (authors' code output -0.310833 (0.09319292), N 404, equals printed Table 11 column (5) -0.311 (0.093), N 404, to the printed decimals; verified against t"
+replication_spec,mnsc.2023.4884__T2_c1_ln_forested,exact,exact,,label=exact; published=0.468; ours_raw=0.4683518953; compared_with=twfe; gap=0.000352; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T2_c3_ln_fire,exact,exact,,label=exact; published=0.495; ours_raw=0.4948695925; compared_with=twfe; gap=0.00013; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_acai_area,exact,exact,,label=exact; published=1.66; ours_raw=1.660318616; compared_with=twfe; gap=0.000319; tol=0.005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_bovinos,exact,exact,,label=exact; published=-0.165; ours_raw=-0.1654543488; compared_with=twfe; gap=0.000454; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_bubalinos,exact,exact,,label=exact; published=-0.204; ours_raw=-0.2036539776; compared_with=twfe; gap=0.000346; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_cacau_area,exact,exact,,label=exact; published=0.202; ours_raw=0.2016713169; compared_with=twfe; gap=0.000329; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_maracuja_area,exact,exact,,label=exact; published=-0.361; ours_raw=-0.361186567; compared_with=twfe; gap=0.000187; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_milho_area,exact,exact,,label=exact; published=-0.516; ours_raw=-0.5155369655; compared_with=twfe; gap=0.000463; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_soja_area,exact,exact,,label=exact; published=-0.54; ours_raw=-0.5399325378; compared_with=twfe; gap=6.75e-05; tol=0.005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4884__T45_ln_urucum_area,exact,exact,,label=exact; published=-0.043; ours_raw=-0.04298247778; compared_with=twfe; gap=1.75e-05; tol=0.0005; flags=; label_text=exact (areg re-run of the authors' line equals the printed coefficient and SE; table/column mapping confirmed in the article)
+replication_spec,mnsc.2023.4968__F5_es,exact,no printed value,,"label=exact; published=; ours_raw=; compared_with=twfe; gap=; tol=; flags=pre-sample adopters,documented deviation; label_text=exact (authors' saturated event study with omitted period 0 reproduced; run_spec event model differs by construction, see notes)"
+replication_spec,mnsc.2023.4968__T1_c1,exact,exact,,"label=exact; published=0.387; ours_raw=0.386817649; compared_with=twfe; gap=0.000182; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code output 0.386818 (0.0855215), N 133202, equals printed Table 1 column (1) 0.387 (0.0855), N 133,202, to the printed decimals; verified again"
+replication_spec,mnsc.2023.4968__T1_c2,exact,exact,,"label=exact; published=0.370; ours_raw=0.3697701252; compared_with=twfe; gap=0.00023; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code output 0.36977 (0.0860305), N 132446, equals printed Table 1 column (2) 0.370 (0.0860), N 132,446, to the printed decimals; verified agains"
+replication_spec,mnsc.2023.4968__T1_c3,exact,exact,,"label=exact; published=0.377; ours_raw=0.3767200967; compared_with=twfe; gap=0.00028; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code output 0.37672 (0.0856291), N 127796, equals printed Table 1 column (3) 0.377 (0.0856), N 127,796, to the printed decimals; verified agains"
+replication_spec,mnsc.2023.4968__T1_c4,exact,exact,,"label=exact; published=0.322; ours_raw=0.321660077; compared_with=twfe; gap=0.00034; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code output 0.32166 (0.097067), N 119201, equals printed Table 1 column (4) 0.322 (0.0971), N 119,201, to the printed decimals; verified against"
+replication_spec,mnsc.2023.4968__T1_c5,exact,exact,,"label=exact; published=0.750; ours_raw=0.7496166332; compared_with=twfe; gap=0.000383; tol=0.0005; flags=pre-sample adopters; label_text=exact (authors' code output 0.749617 (0.1403405), N 129670, equals printed Table 1 column (5) 0.750 (0.140), N 129,670, to the printed decimals; verified agains"
+replication_spec,mnsc.2023.4968__T1_c6,exact,exact,,"label=exact; published=0.260; ours_raw=0.2596899723; compared_with=twfe; gap=0.00031; tol=0.0005; flags=; label_text=exact (authors' code output 0.25969 (0.099663), N 130040, equals printed Table 1 column (6) 0.260 (0.0997), N 130,040, to the printed decimals; verified against"
+replication_spec,mnsc.2023.4968__T5_c7,failed,failed,,"label=failed; published=0.004; ours_raw=0.04063210326; compared_with=twfe; gap=0.0366; tol=0.0005; flags=switch-off rows dropped,pre-sample adopters,documented deviation; label_text=failed (sign: printed Table 5 column (7) 1.004 [t -0.06], i.e. ln 0.004, vs authors' code -0.0020584 (0.0356942), N 91,946 both; the printed coefficient contrad"
+replication_spec,mnsc.2024.05423__T2c2,failed,failed,,"label=exact; published=0.0940; ours_raw=0.1448178428; compared_with=twfe; gap=0.0508; tol=5e-05; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output 0.0940254 (0.0385763), N 92,911, equals printed Table 2 column (2) 0.0940 (0.0386), N 92,911, to the printed decimals; fixest equals"
+replication_spec,mnsc.2024.05423__T5c1,failed,failed,,"label=exact; published=-0.00815; ours_raw=0.0008735028169; compared_with=twfe; gap=0.00902; tol=5e-06; flags=switch-off rows dropped,documented deviation; label_text=exact (authors' code output -0.0081463 (0.0046331), N 95,216, equals printed Table 5 column (1) -0.00815 (0.0046), N 95,216, to the printed decimals; fixest equ"
+replication_spec,mnsc.2024.08465__T4C1,exact,exact,,"label=exact; published=0.061; ours_raw=0.06092711878; compared_with=twfe; gap=7.29e-05; tol=0.0005; flags=; label_text=exact (authors' code output 0.06092712 (0.02203268), N 6,308, equals printed Table 4 column (1) 0.061 (0.022), N 6,308, to the printed decimals; verified agains"
+replication_spec,mnsc.2025.02515__F3_GA_collection_on_acct_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_GA_cs_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_GA_filed_bankruptcy_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_GA_has_auto_loan_delinq_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_GA_has_cc_delinq_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_GA_mean_num_i_dc_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_RTO_collection_on_acct_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_RTO_cs_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_RTO_filed_bankruptcy_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_RTO_has_auto_loan_delinq_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_RTO_has_cc_delinq_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__F3_RTO_mean_num_i_dc_es,exact,no printed value,,label=exact; published=; ours_raw=; compared_with=csa (authors' settings); gap=; tol=; flags=authors_transformed; label_text=exact_code_rerun (figure values not printed; window and outcome verified against the article)
+replication_spec,mnsc.2025.02515__T4_GA_collection_on_acct,exact,exact,,label=exact; published=0.00188810243189116; ours_raw=0.001888102432; compared_with=csa (authors' settings); gap=1.35e-15; tol=1.89e-09; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_GA_cs,exact,exact,,label=exact; published=-0.690781512838406; ours_raw=-0.6907815128; compared_with=csa (authors' settings); gap=3.55e-15; tol=6.91e-07; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_GA_filed_bankruptcy,exact,exact,,label=exact; published=-0.000009285942125088; ours_raw=-9.285942125e-06; compared_with=csa (authors' settings); gap=6.59e-19; tol=9.29e-12; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_GA_has_auto_loan_delinq,exact,exact,,label=exact; published=0.0032972494767867; ours_raw=0.003297249477; compared_with=csa (authors' settings); gap=5.51e-17; tol=3.3e-09; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_GA_has_cc_delinq,exact,exact,,label=exact; published=-0.0000735377182624821; ours_raw=-7.353771826e-05; compared_with=csa (authors' settings); gap=1.46e-17; tol=7.35e-11; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_GA_mean_num_i_dc,exact,exact,,label=exact; published=0.000046804794942693; ours_raw=4.680479494e-05; compared_with=csa (authors' settings); gap=6.3e-19; tol=4.68e-11; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_RTO_collection_on_acct,exact,exact,,label=exact; published=0.0902752477790369; ours_raw=0.09027524778; compared_with=csa (authors' settings); gap=7.49e-16; tol=9.03e-08; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_RTO_cs,exact,exact,,label=exact; published=-12.0376609907503; ours_raw=-12.03766099; compared_with=csa (authors' settings); gap=8.53e-14; tol=1.2e-05; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_RTO_filed_bankruptcy,exact,exact,,label=exact; published=0.000114279564826449; ours_raw=0.0001142795648; compared_with=csa (authors' settings); gap=7.18e-19; tol=1.14e-10; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_RTO_has_auto_loan_delinq,exact,exact,,label=exact; published=0.00959283532555695; ours_raw=0.009592835326; compared_with=csa (authors' settings); gap=2.26e-17; tol=9.59e-09; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_RTO_has_cc_delinq,exact,exact,,label=exact; published=0.00625722074497419; ours_raw=0.006257220745; compared_with=csa (authors' settings); gap=1.65e-17; tol=6.26e-09; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T4_RTO_mean_num_i_dc,exact,exact,,label=exact; published=-0.0000842001783204963; ours_raw=-8.420017832e-05; compared_with=csa (authors' settings); gap=6.78e-19; tol=8.42e-11; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T5_RTO_subprime_collection_on_acct,exact,exact,,label=exact; published=-0.0676436926793487; ours_raw=-0.06764369268; compared_with=csa (authors' settings); gap=3.05e-16; tol=6.76e-08; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T5_RTO_subprime_cs,exact,exact,,label=exact; published=-3.23954353533983; ours_raw=-3.239543535; compared_with=csa (authors' settings); gap=4.88e-15; tol=3.24e-06; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T5_RTO_subprime_filed_bankruptcy,exact,exact,,label=exact; published=-0.000225768529695569; ours_raw=-0.0002257685297; compared_with=csa (authors' settings); gap=7.05e-19; tol=2.26e-10; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T5_RTO_subprime_has_auto_loan_delinq,exact,exact,,label=exact; published=0.0125764469013014; ours_raw=0.0125764469; compared_with=csa (authors' settings); gap=1.82e-16; tol=1.26e-08; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T5_RTO_subprime_has_cc_delinq,exact,exact,,label=exact; published=0.0167693513021748; ours_raw=0.0167693513; compared_with=csa (authors' settings); gap=3.47e-17; tol=1.68e-08; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.02515__T5_RTO_subprime_mean_num_i_dc,exact,exact,,label=exact; published=-0.0000896659493578181; ours_raw=-8.966594936e-05; compared_with=csa (authors' settings); gap=3.79e-19; tol=8.97e-11; flags=authors_transformed; label_text=exact_article_verified
+replication_spec,mnsc.2025.03238__T4_c1_new_default_static,exact,exact,,"label=exact; published=0.014; ours_raw=0.01369597097; compared_with=twfe; gap=0.000304; tol=0.0005; flags=; label_text=exact (authors' code output 0.013696 (0.0055677), N 234,609, equals printed Table 4 column (1) 0.014 (0.006), N 234,609, to the printed decimals; fixest reprodu"
+replication_spec,mnsc.2025.03238__T8_c1_npa_woff_static,exact,exact,,"label=exact; published=0.347; ours_raw=0.347369426; compared_with=twfe; gap=0.000369; tol=0.0005; flags=; label_text=exact (authors' code output 0.3473694 (0.1477096), N 423, equals printed Table 8 column (1) 0.347 (0.148), N 423, to the printed decimals; fixest reproduces the"
+replication_label,exact,all,333,,
+replication_label,failed,all,12,,
+replication_label,approximate,all,10,,
+replication_number,exact,all,201,,
+replication_number,approximate,all,46,,
+replication_number,failed,all,54,,
+replication_number,no printed value,all,54,,
+replication_cross,label=approximate,number=approximate,8,,
+replication_cross,label=approximate,number=failed,2,,
+replication_cross,label=exact,number=approximate,38,,
+replication_cross,label=exact,number=exact,201,,
+replication_cross,label=exact,number=failed,40,,
+replication_cross,label=exact,number=no printed value,54,,
+replication_cross,label=failed,number=failed,12,,
+replication_reason,altered_data,all,3,,mksc.2022.1356;mnsc.2022.03186;mnsc.2022.03268
+replication_reason,other,all,1,,mnsc.2023.4968
+replication_reason,package_version,all,2,,mksc.2022.1409
+replication_reason,random_subsample,all,15,,mnsc.2021.02026;mnsc.2021.4092;mnsc.2023.4716
+replication_reason,rounding,all,1,,mnsc.2021.4103
+replication_final,exact,all,255,,
+replication_final,approximate,all,46,,
+replication_final,failed,all,54,,
+replication_final,failed_subsample,all,10,,
+software,stata,papers,30,40,
+software,r,papers,8,40,
+software,both,papers,2,40,
+software,other,papers,0,40,
+adoption_paper,mksc.2015.0952,mksc,0,,year=2016 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2015.0965,mksc,0,,year=2016 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2017.1043,mksc,0,,year=2017 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2017.1051,mksc,0,,year=2018 [crossref]; eligible=True; near_miss=False
+adoption_paper,mksc.2018.1090,mksc,0,,year=2018 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2019.1176,mksc,0,,year=2019 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2019.1189,mksc,0,,year=2020 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2020.1239,mksc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2020.1282,mksc,0,,year=2021 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2021.0107,mksc,0,,year=2024 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2021.0242,mksc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2021.1295,mksc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2021.1309,mksc,0,,year=2021 [screening record]; eligible=True; near_miss=False
+adoption_paper,mksc.2021.1313,mksc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2021.1321,mksc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2021.1329,mksc,0,,year=2022 [screening record]; eligible=True; near_miss=False
+adoption_paper,mksc.2021.1342,mksc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.0205,mksc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.0273,mksc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.0320,mksc,0,,year=2025 [crossref]; eligible=True; near_miss=False
+adoption_paper,mksc.2022.0383,mksc,0,,year=2024 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.0437,mksc,1,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mksc.2022.1352,mksc,0,,year=2022 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.1353,mksc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.1356,mksc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mksc.2022.1396,mksc,1,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.1402,mksc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2022.1409,mksc,1,,year=2023 [crossref]; eligible=True; near_miss=False
+adoption_paper,mksc.2022.1415,mksc,0,,year=2022 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.0020,mksc,0,,year=2025 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.0118,mksc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.0233,mksc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.0480,mksc,1,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.0511,mksc,0,,year=2026 [screening record]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.0547,mksc,0,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mksc.2023.0552,mksc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mksc.2023.1437,mksc,1,,year=2023 [crossref]; eligible=True; near_miss=False
+adoption_paper,mksc.2024.0716,mksc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mksc.2024.0752,mksc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mksc.2024.0964,mksc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2019.3338,mnsc,0,,year=2020 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2019.3436,mnsc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.01306,mnsc,0,,year=2025 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2020.01838,mnsc,0,,year=2025 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2020.03920,mnsc,1,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3587,mnsc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3626,mnsc,0,,year=2021 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2020.3698,mnsc,0,,year=2020 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3707,mnsc,0,,year=2021 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2020.3805,mnsc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3824,mnsc,0,,year=2021 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3840,mnsc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3881,mnsc,0,,year=2021 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2020.3913,mnsc,0,,year=2021 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.00859,mnsc,0,,year=2023 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.01010,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.01717,mnsc,0,,year=2024 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.01740,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.01914,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.02026,mnsc,1,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.03484,mnsc,0,,year=2025 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.03884,mnsc,1,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4032,mnsc,0,,year=2021 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4043,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.4045,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4048,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4054,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.4057,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.4070,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4092,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.4103,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.4200,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4209,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2021.4238,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2021.4243,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.00544,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.00951,mnsc,0,,year=2021 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.00953,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.01120,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.01161,mnsc,0,,year=2024 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.01211,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.01333,mnsc,1,,year=2025 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.01559,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.01760,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.01820,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.01966,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02057,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02095,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02163,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02310,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.02414,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02560,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02658,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.02805,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03111,mnsc,0,,year=2024 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.03174,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03186,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.03264,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03268,mnsc,0,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.03452,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03486,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03569,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03733,mnsc,0,,year=2026 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03770,mnsc,1,,year=2024 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.03886,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.03905,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.03920,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.04040,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.04056,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.04062,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4326,mnsc,0,,year=2022 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.4337,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4346,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4394,mnsc,0,,year=2023 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.4461,mnsc,0,,year=2022 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4480,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4483,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4488,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4502,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4517,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4571,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4580,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4581,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4588,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4610,mnsc,0,,year=2022 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2022.4619,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4633,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4652,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2022.4660,mnsc,1,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.00075,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.00087,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.00153,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.00194,mnsc,1,,year=2024 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.00575,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.00600,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.00816,mnsc,0,,year=2025 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.00830,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.00900,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.01006,mnsc,1,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01026,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01168,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01357,mnsc,0,,year=2025 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.01390,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.01423,mnsc,0,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.01459,mnsc,1,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01486,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01538,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01572,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.01722,mnsc,0,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01928,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.01936,mnsc,1,,year=2025 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.01987,mnsc,0,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.02793,mnsc,1,,year=2024 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.02886,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.03143,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.03181,mnsc,0,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.03309,mnsc,0,,year=2025 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.03624,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.03696,mnsc,1,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.03991,mnsc,1,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.04090,mnsc,0,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.04127,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.04214,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.04231,mnsc,0,,year=2026 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.04285,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.04302,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.4703,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4716,mnsc,0,,year=2023 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4727,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.4753,mnsc,0,,year=2024 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4774,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.4780,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.4795,mnsc,0,,year=2023 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4800,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4816,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4820,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.4884,mnsc,0,,year=2023 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4886,mnsc,0,,year=2023 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2023.4896,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4968,mnsc,0,,year=2024 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2023.4972,mnsc,0,,year=2024 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.04447,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.04496,mnsc,0,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.04608,mnsc,0,,year=2021 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.04716,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.04717,mnsc,1,,year=2026 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.04778,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.05302,mnsc,0,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.05423,mnsc,0,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.05567,mnsc,1,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.05701,mnsc,0,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.05861,mnsc,1,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.05949,mnsc,1,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.06141,mnsc,1,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.06349,mnsc,1,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.06633,mnsc,0,,year=2026 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.06944,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.07233,mnsc,0,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.07615,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.08151,mnsc,0,,year=2025 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.08465,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.08526,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.08619,mnsc,1,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2024.08765,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.09016,mnsc,0,,year=2026 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2024.09097,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2025.00012,mnsc,1,,year=2025 [screening record]; eligible=False; near_miss=True
+adoption_paper,mnsc.2025.00535,mnsc,0,,year=2026 [screening record]; eligible=True; near_miss=False
+adoption_paper,mnsc.2025.00954,mnsc,0,,year=2026 [crossref]; eligible=False; near_miss=True
+adoption_paper,mnsc.2025.02515,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption_paper,mnsc.2025.03238,mnsc,1,,year=2026 [crossref]; eligible=True; near_miss=False
+adoption,2013-2018,mnsc,0,0,papers with modern estimator (value) of staggered designs (n)
+adoption,2013-2018,mksc,0,5,papers with modern estimator (value) of staggered designs (n)
+adoption,2019-2022,mnsc,0,29,papers with modern estimator (value) of staggered designs (n)
+adoption,2019-2022,mksc,0,14,papers with modern estimator (value) of staggered designs (n)
+adoption,2023-2024,mnsc,6,53,papers with modern estimator (value) of staggered designs (n)
+adoption,2023-2024,mksc,3,6,papers with modern estimator (value) of staggered designs (n)
+adoption,2025-2026,mnsc,29,89,papers with modern estimator (value) of staggered designs (n)
+adoption,2025-2026,mksc,4,15,papers with modern estimator (value) of staggered designs (n)
+adoption,all years,mnsc,35,171,
+adoption_year,2020,mnsc,0,2,
+adoption_year,2021,mnsc,0,12,
+adoption_year,2022,mnsc,0,15,
+adoption_year,2023,mnsc,0,21,
+adoption_year,2024,mnsc,6,32,
+adoption_year,2025,mnsc,13,37,
+adoption_year,2026,mnsc,16,52,
+adoption,all years,mksc,7,40,
+adoption_year,2016,mksc,0,2,
+adoption_year,2017,mksc,0,1,
+adoption_year,2018,mksc,0,2,
+adoption_year,2019,mksc,0,1,
+adoption_year,2020,mksc,0,1,
+adoption_year,2021,mksc,0,5,
+adoption_year,2022,mksc,0,7,
+adoption_year,2023,mksc,3,4,
+adoption_year,2024,mksc,0,2,
+adoption_year,2025,mksc,3,10,
+adoption_year,2026,mksc,1,5,
+macro,nReplExact,,255,,
+macro,nReplApprox,,46,,
+macro,nReplFail,,54,,
+macro,nReplUnclassified,,0,,
+macro,nReplTotal,,355,,
+macro,pctReplExact,,71.8,,
+macro,pctReplApprox,,13.0,,
+macro,pctReplFail,,15.2,,
+macro,nReplNoPrinted,,54,,
+macro,nReplPrinted,,301,,
+macro,nReplLabelExactPrinted,,279,,
+macro,nReplNonExactNoPrinted,,0,,
+macro,nReplFailSub,,10,,
+macro,nReplLabelExact,,333,,
+macro,nReplLabelApprox,,10,,
+macro,nReplLabelFail,,12,,
+macro,nReplLabelOther,,0,,
+macro,nReplLabelNonExact,,22,,
+macro,nReplApproxSub,,15,,
+macro,nReplApproxSubPapers,,3,,
+macro,nReplApproxAltered,,3,,
+macro,nReplApproxAlteredPapers,,3,,
+macro,nReplApproxVersion,,2,,
+macro,nReplApproxVersionPapers,,1,,
+macro,nReplApproxRounding,,1,,
+macro,nReplApproxRoundingPapers,,1,,
+macro,nReplApproxOther,,1,,
+macro,nReplApproxOtherPapers,,1,,
+macro,nReplStata,,30,,
+macro,nReplR,,8,,
+macro,nReplBoth,,2,,
+macro,nReplOther,,0,,
+macro,nReplStataAny,,32,,
+macro,nReplRAny,,10,,
+macro,nReplPapers,,40,,
+macro,nCharSpecs,,355,,
+macro,nCharPapers,,40,,
+macro,nCharPassSpecs,,307,,
+macro,nCharPassPapers,,32,,
+macro,charCitesMedian,,21,,
+macro,charModernShare,,32.4,,
+macro,charEventShare,,26.8,,
+macro,charMKSCShare,,16.6,,
+macro,adoptFirstPeriod,,2019--2022,,
+macro,adoptLastPeriod,,2025--2026,,
+macro,adoptMSfirstShare,,0.0,,
+macro,adoptMSlastShare,,32.6,,
+macro,adoptMSfirstN,,29,,
+macro,adoptMSlastN,,89,,
+macro,adoptMSShare,,20.5,,
+macro,adoptMSN,,171,,
+macro,adoptMSfirstYear,,2024,,
+macro,adoptMKSCfirstShare,,0.0,,
+macro,adoptMKSClastShare,,26.7,,
+macro,adoptMKSCfirstN,,14,,
+macro,adoptMKSClastN,,15,,
+macro,adoptMKSCShare,,17.5,,
+macro,adoptMKSCN,,40,,
+macro,adoptMKSCfirstYear,,2023,,

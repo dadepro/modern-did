@@ -1,0 +1,29 @@
+{
+  "suffix": "mksc.2017.1062",
+  "doi": "10.1287/mksc.2017.1062",
+  "journal": "mksc",
+  "title": "Advertising to Early Trend Propagators: Evidence from Twitter",
+  "year": "2018",
+  "eligible_design": false,
+  "eligible_reason": "Not a DiD or event-study design. Field tests compare early vs late posters on a Twitter trend using a continuous regressor (days since trend) in an aggregate logit model with day, trend and message fixed effects.",
+  "design_notes": "Two Twitter promoted-tweet field tests (a charity and a fashion firm). Equation (1): Engagement_ijkt = b1 DaysSinceTrend_ijt + b2 Targeting_j + b3 Message_k + delta_t + e, estimated as an aggregate logit by maximum likelihood on campaign-day data (impressions as trials, engagements as successes). Treatment is a continuous timing variable, not a binary switch at unit-specific dates; units are campaign-days, not stable units tracked over time. The Bertrand-Duflo-Mullainathan citation only justifies clustering SEs at the campaign level.",
+  "estimators_reported": [
+    "aggregate logit (MLE)",
+    "field experiment"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: no DiD design, continuous treatment, nonlinear model. Data from the authors' field tests with a charity and a fashion firm; no data availability statement and no replication package listed. Screened from article text only."
+}

@@ -1,0 +1,913 @@
+{
+ "doi": "10.1287/mnsc.2023.01572",
+ "journal": "mnsc",
+ "title": "Is It Always “the Faster, the Better?” The Role of a Nudging-Based Function in the Relationship Between Product Delivery and Online Sales",
+ "year": 2026,
+ "screened_from": "package_only",
+ "eligible_design": true,
+ "eligible_reason": "The headline design is a two-group single-date DiD (slow- vs fast-delivery eBay items around the guaranteed-delivery toggle announcement at day 86 and enforcement at day 221), which is NOT eligible. However, the paper also reports a 'Staggered DiD' using the Roth-Sant'Anna 'staggered' R package's staggered_cs() (Callaway-Sant'Anna estimator) with item-specific adoption dates (19 treated cohorts in P1 vs P2, 12 in P1 vs P3, plus 165 never-treated items), binary absorbing treatment, no controls or weights. Per PROTOCOL Section 2 explicitly reported CSA estimates of such a design are eligible and TWFE counterparts (item + day FE) can be constructed from the shipped CSVs.",
+ "design_notes": "Unit = seller_item (8,220 items), daily panel of 305 days. treat = slow-delivery item. Main Stata analyses: CBPS-weighted TWFE with continuous dose (delivery days x period) and time-varying controls (Table 7), pooled across-product DiD with controls (Table 3), synthetic DiD via sdid with covariates (Table 5), average DiD t-tests (Table 2), weekly relative-time model + HonestDiD (parallel trends), falsification/placebo loops. R analyses: staggered_cs for 7 outcomes x 2 windows x 3 aggregations. Adoption date = first day the item is slow-delivery within the post window (happen_pre_ann / happen_pre_post); cohort 86 (announcement day) holds >90% of treated items; items can revert to fast delivery later but the staggered coding treats adoption as absorbing. Never-treated items are coded with g equal to the last period (220 or 170), which the staggered package uses as the comparison cohort.",
+ "estimators_reported": [
+  "callaway_santanna via staggered_cs (R 'staggered')",
+  "twfe_two_group_single_date_with_cbps_weights_and_controls",
+  "continuous_dose_did",
+  "synthetic_did (sdid)",
+  "pooled_ols_across_product_did",
+  "relative_time_model_single_date + honestdid",
+  "sureg"
+ ],
+ "main_or_robustness": "robustness (staggered variant); main identification is a single-date two-group DiD",
+ "n_eligible_specs": 14,
+ "specs": [
+  {
+   "spec_id": "SDiD_P1P2_saleslog",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 9,
+   "code_lines_other_aggregations": {
+    "cohort": 15,
+    "calendar": 21
+   },
+   "outcome": "saleslog",
+   "outcome_description": "log daily product sales",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.03891487,
+     "se": 0.02666795,
+     "se_neyman": 0.02697474
+    },
+    "cohort": {
+     "coef": 0.03840289,
+     "se": 0.02633729,
+     "se_neyman": 0.02665758
+    },
+    "calendar": {
+     "coef": 0.03871554,
+     "se": 0.02654961,
+     "se_neyman": 0.02684878
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P2_valence",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 28,
+   "code_lines_other_aggregations": {
+    "cohort": 47,
+    "calendar": 66
+   },
+   "outcome": "valence",
+   "outcome_description": "product rating score (Study 3)",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Study 3 staggered results, probably Table 14 or an appendix table - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": -0.008693421,
+     "se": 0,
+     "se_neyman": 0.008278212
+    },
+    "cohort": {
+     "coef": -0.008394084,
+     "se": 0,
+     "se_neyman": 0.00810343
+    },
+    "calendar": {
+     "coef": -0.008671952,
+     "se": 0,
+     "se_neyman": 0.00825169
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P2_volume",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 34,
+   "code_lines_other_aggregations": {
+    "cohort": 53,
+    "calendar": 72
+   },
+   "outcome": "volume",
+   "outcome_description": "log number of ratings (Study 3)",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Study 3 staggered results, probably Table 14 or an appendix table - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.09489751,
+     "se": 0,
+     "se_neyman": 0.01611194
+    },
+    "cohort": {
+     "coef": 0.0937515,
+     "se": 0,
+     "se_neyman": 0.01586723
+    },
+    "calendar": {
+     "coef": 0.09447971,
+     "se": 0,
+     "se_neyman": 0.01603394
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P2_variance",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 40,
+   "code_lines_other_aggregations": {
+    "cohort": 59,
+    "calendar": 78
+   },
+   "outcome": "variance",
+   "outcome_description": "rating variance (Study 3)",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Study 3 staggered results, probably Table 14 or an appendix table - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.05430196,
+     "se": 0.006232342,
+     "se_neyman": 0.01470879
+    },
+    "cohort": {
+     "coef": 0.05313869,
+     "se": 0.005626414,
+     "se_neyman": 0.01449156
+    },
+    "calendar": {
+     "coef": 0.0539027,
+     "se": 0.006113854,
+     "se_neyman": 0.01460076
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P2_logprice",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 85,
+   "code_lines_other_aggregations": {
+    "cohort": 91,
+    "calendar": 97
+   },
+   "outcome": "logprice",
+   "outcome_description": "log list price",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": -0.01080814,
+     "se": 0.004226702,
+     "se_neyman": 0.004254003
+    },
+    "cohort": {
+     "coef": -0.01061795,
+     "se": 0.004229163,
+     "se_neyman": 0.004256727
+    },
+    "calendar": {
+     "coef": -0.01069574,
+     "se": 0.004171518,
+     "se_neyman": 0.004198722
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P2_shippingdiscount",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 104,
+   "code_lines_other_aggregations": {
+    "cohort": 110,
+    "calendar": 116
+   },
+   "outcome": "shippingdiscount",
+   "outcome_description": "shipping discount indicator",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.005720431,
+     "se": 0.0005289691,
+     "se_neyman": 0.0006453335
+    },
+    "cohort": {
+     "coef": 0.005622724,
+     "se": 0.0005388994,
+     "se_neyman": 0.000634311
+    },
+    "calendar": {
+     "coef": 0.005724263,
+     "se": 0.0005231792,
+     "se_neyman": 0.0006451276
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P2_positivescore",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 123,
+   "code_lines_other_aggregations": {
+    "cohort": 129,
+    "calendar": 135
+   },
+   "outcome": "positivescore",
+   "outcome_description": "% positive seller feedback",
+   "treatment_var": "happen_pre_ann (adoption period) -> D_it = 1[time_pre_ann >= happen_pre_ann]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P2 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_ann==220 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_ann (daily index 1-220; P1 = days 1-85 pre-announcement, P2 = days 86-220 post-announcement/pre-enforcement)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P2 column(s)",
+   "data_file": "Data/P1vsP2_data.csv (1,808,400 rows = 8,220 items x 220 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.001327864,
+     "se": 0.0002497308,
+     "se_neyman": 0.0003201667
+    },
+    "cohort": {
+     "coef": 0.001310409,
+     "se": 0.0002405569,
+     "se_neyman": 0.0003151638
+    },
+    "calendar": {
+     "coef": 0.001315599,
+     "se": 0.0002478639,
+     "se_neyman": 0.0003172008
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_saleslog",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 144,
+   "code_lines_other_aggregations": {
+    "cohort": 150,
+    "calendar": 156
+   },
+   "outcome": "saleslog",
+   "outcome_description": "log daily product sales",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.09159231,
+     "se": 0.03686014,
+     "se_neyman": 0.03961379
+    },
+    "cohort": {
+     "coef": 0.09171419,
+     "se": 0.03670263,
+     "se_neyman": 0.03946942
+    },
+    "calendar": {
+     "coef": 0.09170507,
+     "se": 0.03684001,
+     "se_neyman": 0.03958915
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_valence",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 163,
+   "code_lines_other_aggregations": {
+    "cohort": 182,
+    "calendar": 201
+   },
+   "outcome": "valence",
+   "outcome_description": "product rating score (Study 3)",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Study 3 staggered results, probably Table 14 or an appendix table - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.08986565,
+     "se": 0,
+     "se_neyman": 0.0278192
+    },
+    "cohort": {
+     "coef": 0.08991542,
+     "se": 0,
+     "se_neyman": 0.02773071
+    },
+    "calendar": {
+     "coef": 0.08995804,
+     "se": 0,
+     "se_neyman": 0.02779935
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_volume",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 169,
+   "code_lines_other_aggregations": {
+    "cohort": 188,
+    "calendar": 207
+   },
+   "outcome": "volume",
+   "outcome_description": "log number of ratings (Study 3)",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Study 3 staggered results, probably Table 14 or an appendix table - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": -0.1825405,
+     "se": 0.04540999,
+     "se_neyman": 0.05345784
+    },
+    "cohort": {
+     "coef": -0.1829813,
+     "se": 0.04526591,
+     "se_neyman": 0.05332939
+    },
+    "calendar": {
+     "coef": -0.1828369,
+     "se": 0.0453637,
+     "se_neyman": 0.05341127
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_variance",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 175,
+   "code_lines_other_aggregations": {
+    "cohort": 194,
+    "calendar": 213
+   },
+   "outcome": "variance",
+   "outcome_description": "rating variance (Study 3)",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Study 3 staggered results, probably Table 14 or an appendix table - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.005724535,
+     "se": 0,
+     "se_neyman": 0.02363221
+    },
+    "cohort": {
+     "coef": 0.005428798,
+     "se": 0,
+     "se_neyman": 0.02356461
+    },
+    "calendar": {
+     "coef": 0.005806405,
+     "se": 0,
+     "se_neyman": 0.02358996
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_logprice",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 220,
+   "code_lines_other_aggregations": {
+    "cohort": 226,
+    "calendar": 232
+   },
+   "outcome": "logprice",
+   "outcome_description": "log list price",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": -0.01893382,
+     "se": 0.01077074,
+     "se_neyman": 0.01080949
+    },
+    "cohort": {
+     "coef": -0.01885793,
+     "se": 0.01072681,
+     "se_neyman": 0.01076578
+    },
+    "calendar": {
+     "coef": -0.01891318,
+     "se": 0.0107535,
+     "se_neyman": 0.01079226
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_shippingdiscount",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 239,
+   "code_lines_other_aggregations": {
+    "cohort": 245,
+    "calendar": 251
+   },
+   "outcome": "shippingdiscount",
+   "outcome_description": "shipping discount indicator",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": -4.30405e-05,
+     "se": 0.000266601,
+     "se_neyman": 0.0002941545
+    },
+    "cohort": {
+     "coef": -4.28601e-05,
+     "se": 0.0002673696,
+     "se_neyman": 0.0002929216
+    },
+    "calendar": {
+     "coef": -4.230631e-05,
+     "se": 0.0002657952,
+     "se_neyman": 0.0002937083
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  },
+  {
+   "spec_id": "SDiD_P1P3_positivescore",
+   "code_file": "Code/Staggered_code.R",
+   "code_line": 258,
+   "code_lines_other_aggregations": {
+    "cohort": 264,
+    "calendar": 270
+   },
+   "outcome": "positivescore",
+   "outcome_description": "% positive seller feedback",
+   "treatment_var": "happen_pre_post (adoption period) -> D_it = 1[time_pre_post >= happen_pre_post]",
+   "treatment_definition": "Item-specific first period in which the item is a slow-delivery (>3 days) item after eBay's guaranteed-delivery toggle announcement (P3 window); always-slow items adopt at 86, items switching to slow delivery adopt later; never-treated = happen_pre_post==170 (165 always-fast-delivery items; coded as adopting in the last period). Binary, treated as absorbing by the authors.",
+   "unit_var": "seller_item",
+   "time_var": "time_pre_post (daily index 1-170; P1 = days 1-85, P3 = original days 221-305 re-indexed 86-170; P2 dropped)",
+   "fe": "none in the reported estimator (staggered_cs = Callaway-Sant'Anna via Roth-Sant'Anna 'staggered' R package); TWFE counterpart: absorb(seller_item time)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "seller_item (unit-level SEs from the staggered package)",
+   "sample_condition": "all 8,220 items in the balanced panel; Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "static_or_event": "static (aggregate ATT; estimand = simple; cohort and calendar aggregations also reported)",
+   "reported_location": "Table 4 (inferred: Staggered DiD; the only main-text table number missing from the Stata code labels) - P1 vs P3 column(s)",
+   "data_file": "Data/P1vsP3_data.csv (1,397,400 rows = 8,220 items x 170 days)",
+   "published_estimate": {
+    "simple": {
+     "coef": 0.002789011,
+     "se": 0,
+     "se_neyman": 0.0004730271
+    },
+    "cohort": {
+     "coef": 0.002777106,
+     "se": 0,
+     "se_neyman": 0.0004715253
+    },
+    "calendar": {
+     "coef": 0.002785337,
+     "se": 0,
+     "se_neyman": 0.0004722456
+    },
+    "source": "Output/Staggered_results.log"
+   },
+   "notes": "staggered_cs() reports the Callaway-Sant'Anna estimator (not-yet-treated controls) computed by the 'staggered' package; se==0 indicates the plug-in SE failed and only the Neyman SE is available."
+  }
+ ],
+ "ineligible_specs_summary": "All reghdfe specifications (Main_code.do lines 57-75, 178, 230, 280-315) use a single announcement/enforcement date (period or stage x treat), CBPS propensity weights and time-varying controls (payments, descriptions, returns, valence, volume, variance, invenlog) or a continuous dose (delivery days) -> excluded. sdid (lines 97-136) -> synthetic control, excluded. mysureg -> excluded.",
+ "n_adoption_cohorts": 19,
+ "n_adoption_cohorts_note": "P1 vs P2 window: 19 treated cohorts + never-treated (86 (7,475 items), 87 (13), 88 (253), 89 (39), 90 (3), 92 (3), 101 (8), 103 (12), 110 (4), 137 (37), 138 (2), 139 (9), 140 (8), 143 (4), 160 (104), 161 (8), 167 (66), 168 (5), 171 (2); never = 220 (165)). P1 vs P3 window: 12 treated cohorts + never-treated (86 (7,869 items), 87 (38), 88 (6), 89 (13), 90 (4), 91 (3), 102 (2), 103 (88), 104 (5), 118 (17), 127 (4), 151 (6); never = 170 (165)). Counted directly from the shipped CSVs. Cohort 86 dominates; later cohorts are small (items switching to slow delivery).",
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (staggered_cs, Roth-Sant'Anna 'staggered' R package)"
+ ],
+ "preferred_spec_ids": [
+  "SDiD_P1P2_saleslog",
+  "SDiD_P1P3_saleslog"
+ ],
+ "published_estimates": [
+  {
+   "spec_id": "SDiD_P1P2_saleslog",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.03891487,
+    "se": 0.02666795,
+    "se_neyman": 0.02697474
+   },
+   "cohort": {
+    "coef": 0.03840289,
+    "se": 0.02633729,
+    "se_neyman": 0.02665758
+   },
+   "calendar": {
+    "coef": 0.03871554,
+    "se": 0.02654961,
+    "se_neyman": 0.02684878
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P2_valence",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": -0.008693421,
+    "se": 0,
+    "se_neyman": 0.008278212
+   },
+   "cohort": {
+    "coef": -0.008394084,
+    "se": 0,
+    "se_neyman": 0.00810343
+   },
+   "calendar": {
+    "coef": -0.008671952,
+    "se": 0,
+    "se_neyman": 0.00825169
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P2_volume",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.09489751,
+    "se": 0,
+    "se_neyman": 0.01611194
+   },
+   "cohort": {
+    "coef": 0.0937515,
+    "se": 0,
+    "se_neyman": 0.01586723
+   },
+   "calendar": {
+    "coef": 0.09447971,
+    "se": 0,
+    "se_neyman": 0.01603394
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P2_variance",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.05430196,
+    "se": 0.006232342,
+    "se_neyman": 0.01470879
+   },
+   "cohort": {
+    "coef": 0.05313869,
+    "se": 0.005626414,
+    "se_neyman": 0.01449156
+   },
+   "calendar": {
+    "coef": 0.0539027,
+    "se": 0.006113854,
+    "se_neyman": 0.01460076
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P2_logprice",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": -0.01080814,
+    "se": 0.004226702,
+    "se_neyman": 0.004254003
+   },
+   "cohort": {
+    "coef": -0.01061795,
+    "se": 0.004229163,
+    "se_neyman": 0.004256727
+   },
+   "calendar": {
+    "coef": -0.01069574,
+    "se": 0.004171518,
+    "se_neyman": 0.004198722
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P2_shippingdiscount",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.005720431,
+    "se": 0.0005289691,
+    "se_neyman": 0.0006453335
+   },
+   "cohort": {
+    "coef": 0.005622724,
+    "se": 0.0005388994,
+    "se_neyman": 0.000634311
+   },
+   "calendar": {
+    "coef": 0.005724263,
+    "se": 0.0005231792,
+    "se_neyman": 0.0006451276
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P2_positivescore",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.001327864,
+    "se": 0.0002497308,
+    "se_neyman": 0.0003201667
+   },
+   "cohort": {
+    "coef": 0.001310409,
+    "se": 0.0002405569,
+    "se_neyman": 0.0003151638
+   },
+   "calendar": {
+    "coef": 0.001315599,
+    "se": 0.0002478639,
+    "se_neyman": 0.0003172008
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_saleslog",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.09159231,
+    "se": 0.03686014,
+    "se_neyman": 0.03961379
+   },
+   "cohort": {
+    "coef": 0.09171419,
+    "se": 0.03670263,
+    "se_neyman": 0.03946942
+   },
+   "calendar": {
+    "coef": 0.09170507,
+    "se": 0.03684001,
+    "se_neyman": 0.03958915
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_valence",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.08986565,
+    "se": 0,
+    "se_neyman": 0.0278192
+   },
+   "cohort": {
+    "coef": 0.08991542,
+    "se": 0,
+    "se_neyman": 0.02773071
+   },
+   "calendar": {
+    "coef": 0.08995804,
+    "se": 0,
+    "se_neyman": 0.02779935
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_volume",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": -0.1825405,
+    "se": 0.04540999,
+    "se_neyman": 0.05345784
+   },
+   "cohort": {
+    "coef": -0.1829813,
+    "se": 0.04526591,
+    "se_neyman": 0.05332939
+   },
+   "calendar": {
+    "coef": -0.1828369,
+    "se": 0.0453637,
+    "se_neyman": 0.05341127
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_variance",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.005724535,
+    "se": 0,
+    "se_neyman": 0.02363221
+   },
+   "cohort": {
+    "coef": 0.005428798,
+    "se": 0,
+    "se_neyman": 0.02356461
+   },
+   "calendar": {
+    "coef": 0.005806405,
+    "se": 0,
+    "se_neyman": 0.02358996
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_logprice",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": -0.01893382,
+    "se": 0.01077074,
+    "se_neyman": 0.01080949
+   },
+   "cohort": {
+    "coef": -0.01885793,
+    "se": 0.01072681,
+    "se_neyman": 0.01076578
+   },
+   "calendar": {
+    "coef": -0.01891318,
+    "se": 0.0107535,
+    "se_neyman": 0.01079226
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_shippingdiscount",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": -4.30405e-05,
+    "se": 0.000266601,
+    "se_neyman": 0.0002941545
+   },
+   "cohort": {
+    "coef": -4.28601e-05,
+    "se": 0.0002673696,
+    "se_neyman": 0.0002929216
+   },
+   "calendar": {
+    "coef": -4.230631e-05,
+    "se": 0.0002657952,
+    "se_neyman": 0.0002937083
+   },
+   "source": "Output/Staggered_results.log"
+  },
+  {
+   "spec_id": "SDiD_P1P3_positivescore",
+   "estimator": "staggered_cs (Callaway-Sant'Anna)",
+   "simple": {
+    "coef": 0.002789011,
+    "se": 0,
+    "se_neyman": 0.0004730271
+   },
+   "cohort": {
+    "coef": 0.002777106,
+    "se": 0,
+    "se_neyman": 0.0004715253
+   },
+   "calendar": {
+    "coef": 0.002785337,
+    "se": 0,
+    "se_neyman": 0.0004722456
+   },
+   "source": "Output/Staggered_results.log"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files_note": "Data/Main_data.csv (2,507,100 rows; 234 MB), Data/P1vsP2_data.csv (128 MB), Data/P1vsP3_data.csv (98 MB), Data/Average_data.csv, Data/E1_data.sav, Data/E2_data.sav. All variables needed for the staggered specs are in the P1vsP2/P1vsP3 files (seller_item, time_pre_ann/time_pre_post, happen_pre_ann/happen_pre_post, outcomes). Logs of the original runs included (Output/).",
+ "software": "stata+r",
+ "software_note": "Stata 17 (reghdfe, psweight, CBPS, sdid, mysureg, honestdid) for main tables; R 4.0 ('staggered', ggplot2) for the staggered DiD.",
+ "replication_feasible": "yes",
+ "priority": 1,
+ "screener_notes": "No article text. Table numbering for the staggered results is inferred: Stata code labels Tables 1, 2, 3, 5, 6, 7, 8, 14, 15, so the staggered DiD (R) is most likely Table 4 (Study 1 outcomes saleslog, logprice, shippingdiscount, positivescore) with the Study 3 rating outcomes (valence, volume, variance) in a later table (Table 14 is labelled 'Single-Equation Model Results' for Study 3) or appendix; confirm against the article. Caveats for the meta-analysis: (i) eligibility rests on the staggered variant, not the paper's headline design; (ii) treatment (slow delivery) is not truly absorbing for 1,206 switcher items; the authors' coding uses first slow-delivery date; (iii) the adoption-date distribution is extremely concentrated at day 86. TWFE counterpart: reghdfe y D, absorb(seller_item time_pre_ann) cluster(seller_item) with D = time>=happen & happen<last period."
+}

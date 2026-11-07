@@ -1,0 +1,63 @@
+{
+ "suffix": "mnsc.2023.4703",
+ "spec_id": "F4_p1_log_y1_ES",
+ "journal": "mnsc",
+ "data_path": "~/did_packages/_work/mnsc.2023.4703/banks_prepared.rds",
+ "id_var": "bank_id",
+ "time_var": "year",
+ "y_var": "log_y1",
+ "gvar": "g_year",
+ "weight_var": "",
+ "cluster_var": "country_id",
+ "xt_vars": [],
+ "sample_filter": "",
+ "log_y": "",
+ "published_coef": null,
+ "published_se": null,
+ "table": "Figure 4",
+ "column": "panel 1",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "replication_status": "not_run_event",
+ "notes": "Figs_4-6.do line 70. Authors' event study (Figs_4-6.do / Fig_5.do): distance_year = year - year_intro_first; dummies for -5..+5 with endpoints binned (d_year12 = 1 if distance <= -5, d_year22 = 1 if distance >= +5), reference -1 (d_year16 set to 0), never-treated countries 4 and 23 have all dummies = 0. Coefficients reported only graphically (no numbers). NOT RUN per lead instruction. gvar g_year = country connection year (year_intro_first) floored at 1997 (sample start) so always-treated units are classified as such; 1[year >= g_year] equals the authors' submarines_first on every row.",
+ "event_pre_min": -5,
+ "event_post_max": 5,
+ "event_structure": {
+  "bins": [
+   [null, -5],
+   [-4, -4],
+   [-3, -3],
+   [-2, -2],
+   [0, 0],
+   [1, 1],
+   [2, 2],
+   [3, 3],
+   [4, 4],
+   [5, null]
+  ],
+  "ref": [
+   [-1, -1]
+  ],
+  "uncovered": "ref",
+  "post_summary": [
+   [0, 0],
+   [1, 1],
+   [2, 2],
+   [3, 3],
+   [4, 4],
+   [5, null]
+  ],
+  "pre_summary": [
+   [null, -5],
+   [-4, -4],
+   [-3, -3],
+   [-2, -2]
+  ],
+  "source": "Figs_4-6.do lines 46-60 (dummies), 70 (Figure 4) and 89 (Figure 6) (dataset_banks, a(bank_id year) cluster(country_id)): reghdfe y d_year12-d_year22; distance_year = year - year_intro_first = rel; tab distance_year, gen(d_year) gives d_year1..41 for distance -16..24 (verified in all three datasets: d_year12 = -5, d_year16 = -1, d_year17 = 0, d_year22 = 5); d_year12 is also set to 1 for distance < -5 and d_year22 for distance > 5 (endpoint bins); d_year16 = 0 (reference -1); never-connected countries 4 and 23 have all dummies 0. The figure plots -5..5 (-5 and 5 are the endpoint bins), so all 10 bins are reported.",
+  "verified": "Authors' reghdfe re-run in Stata (~/did_packages/_work/mnsc.2023.4703/authors_events.do -> authors_events.csv); fixest with this structure and the true connection year (adoption_var year_intro_first) reproduces all 10 coefficients, max abs diff 2.55e-09 (SE 3.94e-08), N 6483 = reghdfe. With gvar g_year (floored at 1997) the max diff is 0.026."
+ },
+ "adoption_var": "year_intro_first",
+ "adoption_var_note": "True connection year (column already in the prepared file; NA = never connected). gvar g_year floors it at 1997, which dates the 43 units connected in 1994/1996 (583 rows) at the first sample year and shifts their event time by 1-3 years.",
+ "published_event_source_nov2": "~/did_packages/_work/mnsc.2023.4703/authors_events.csv (authors' Stata code re-run, Nov 2); coefficients are only plotted in the article."
+}

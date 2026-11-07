@@ -1,0 +1,206 @@
+{
+ "suffix": "mnsc.2025.02515",
+ "spec_id": "FC3_RTO_avg_GovernmentResponseIndex_es",
+ "journal": "mnsc",
+ "data_provenance": "original",
+ "data_path": "~/did_packages/mnsc/mnsc.2025.02515/replication-code/data/covid-policies-during-retail.csv",
+ "id_var": "state_id",
+ "time_var": "time",
+ "y_var": "avg_GovernmentResponseIndex",
+ "gvar": "online_treat_time",
+ "weight_var": "",
+ "cluster_var": "state_id",
+ "xt_vars": [],
+ "sample_filter": "",
+ "log_y": "",
+ "published_coef": null,
+ "published_se": null,
+ "published_estimator": "callaway_santanna_dynamic_overall_att_e0_10",
+ "published_source": "Published article, Appendix Figure C.3 (b) ('Event Study Estimates of Changes in OxCGRT COVID-19 Government Response Measures for Retail-to-Online Access States'): path plotted without printed coefficients, so published_coef/published_se are null. Reference values are the authors' code.R re-run (lines 989-1120; did 2.5.1, att_gt(idname = 'state_id', gname = 'online_treat_time', tname = 'time', control_group = 'notyettreated', est_method = 'dr', base_period = 'varying', allow_unbalanced_panel = TRUE, xformla = ~1, no weights, clustervars = 'state_id'), bstrap = FALSE; aggte(type = 'dynamic', min_e = -8, max_e = 16)): the path has estimates at e = -7..10 only; dynamic overall ATT (average of e = 0..10) -0.08799194113 (analytic SE 1.18774) in authors_rerun_coef; full path in ~/did_packages/_work/mnsc.2025.02515/appx_nov4/verify_appx_authors_es_paths_did251.csv (did 2.1.2 identical).",
+ "table": "Appendix Figure C.3",
+ "panel": "(b) Government Response index",
+ "column": "Retail-to-Online Access states",
+ "row": "Government Response index",
+ "static_or_event": "event",
+ "preferred": false,
+ "in_abstract_intro": false,
+ "replication_status": "exact_code_rerun (figure values not printed; window and outcome verified against the article)",
+ "notes": "PRINTED-APPENDIX SPECIFICATION (Nov 4, 2026): outside the main-text sample (PROTOCOL 5b ruling (r)); for the appendix-inclusive sensitivity analysis. PLACEBO OUTCOME (falsification test): Appendix Figure C.3, OxCGRT COVID-19 policy indices (Hale et al. 2021) as outcomes of the Retail-to-Online Access treatment, which they should not respond to. Real adoption dates (online launch quarter), so this is not an artificial-date placebo (PROTOCOL 5b excludes only those); the design rules hold: binary absorbing treatment, staggered state cohorts with untreated and treated rows in the window (quarters 18 (2 states), 21, 23, 24, 25 (3), 27, 28), never-online comparison states in every period. Data: data/covid-policies-during-retail.csv (the file code.R reads; the copy in secondary-datasets/ has an extra column, avg_ContainmentHealthIndex, and no row-name column), state-quarter averages of public OxCGRT indices, not transformed (data_provenance 'original'). Panel: 28 states, quarters 17-28 (2020-2022), 257 rows; states enter at their retail launch ('the same set of state-time observations from the Retail-to-Online Access analysis'), so the panel is unbalanced (16 of 28 states observed in all 12 quarters). 9 retail-only states never go online; 7 states went online before quarter 17 (cohorts 11, 12, 14, 15 (2), 16 (2)): always-treated in this window, dropped by did, kept by TWFE with their true dates; 2 states go online in quarter 29, after the window (D = 0 on all rows; never-treated for did and for the pipeline's DiD-averaging). Unweighted; 28 state clusters, so the leverage screen may bind. Specification relative to the template F3_RTO_cs_es: other data set (state level), outcome, unit (state_id), no weights, state clusters, and event window -7..10 (see event_structure$source). The figure prints no coefficients: published_coef is null and authors_rerun_coef holds the authors' dynamic overall ATT (e = 0..10). No TWFE regression exists in the package; the TWFE counterpart is D = 1[gvar > 0 & time >= gvar] with state FE + quarter FE, unweighted, clustered by state. Project member Davide Proserpio is a coauthor (PROTOCOL Section 6). CAVEAT: the sample is an unbalanced panel with states entering at their state's retail launch; did with allow_unbalanced_panel = TRUE uses repeated-cross-section 2x2 cells whose control composition changes between g-1 and t, which drives the authors' and the pipeline's CSA estimates (see the replication log, 'composition-driven' section). TWFE and BJS are unaffected.",
+ "event_pre_min": -7,
+ "event_post_max": 10,
+ "event_structure": {
+  "bins": [
+   [
+    null,
+    -8
+   ],
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    9,
+    9
+   ],
+   [
+    10,
+    10
+   ],
+   [
+    11,
+    null
+   ]
+  ],
+  "ref": [
+   [
+    -1,
+    -1
+   ]
+  ],
+  "uncovered": "ref",
+  "post_summary": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    8
+   ],
+   [
+    9,
+    9
+   ],
+   [
+    10,
+    10
+   ]
+  ],
+  "pre_summary": [
+   [
+    -7,
+    -7
+   ],
+   [
+    -6,
+    -6
+   ],
+   [
+    -5,
+    -5
+   ],
+   [
+    -4,
+    -4
+   ],
+   [
+    -3,
+    -3
+   ],
+   [
+    -2,
+    -2
+   ]
+  ],
+  "source": "code.R lines 989-1120 (three att_gt calls, settings in published_source) and 1124-1160 (ggplot of aggte(type = 'dynamic', min_e = -8, max_e = 16) estimates); article Appendix C.4. Event time e = time - online_treat_time (quarters); time is consecutive in the file (17..28), so e = rel = t - g in the pipeline index. The authors request -8..16, but in this 12-quarter state panel their path has estimates at e = -7..10 only (did drops the 7 states already online at the first quarter; e = -8 has no cell with a varying base period; the latest post horizon is 28 - 18 = 10), and the figure plots those. The reported bins are therefore the single quarters -7..10 with reference -1 (universal base; the varying base changes only the pre-period definition); relative times outside get open endpoint bins (<= -8, >= 11), estimated but not summarized, so no treated row is uncovered. The >= 11 bin holds only rows of the always-treated states (TWFE keeps them with their true adoption dates, PROTOCOL Nov 2 (b)); with the main template's -8..16 bins the TWFE post summary would average horizons 11..16 that only those states identify while DiD-averaging and imputation cannot, so the summaries cover the reported -7..10 for all three estimators.",
+  "verified": "pending (filled from the authors'-settings pipeline run, output_appxB)"
+ },
+ "authors_rerun_twfe_raw": -1.69216885969722,
+ "authors_rerun_twfe_raw_se": 1.97900073504771,
+ "y_sd_weighted_regsample": 13.4602745644805,
+ "y_sd_unweighted_regsample": 13.4865385398243,
+ "pipeline_caveat": "csa_unbalanced_panel_composition",
+ "csa_weights": "did",
+ "csa_weights_note": "Nov 2: the published CSA comes from R did (or staggered, whose estimates did reproduces), which weights cells by fixed cohort shares; Hull's DiD-averaging weights cells by treated-observation counts. 'did' reproduces the published number (main analysis, option B); the strict-Hull run (CSA_STRICT_HULL=1, option A) ignores this field.",
+ "authors_rerun_coef": -0.0879919411319056,
+ "authors_rerun_se_analytic": 1.18774372979219,
+ "appendix_printed": true,
+ "main_text": false,
+ "placebo": true,
+ "template_spec_id": "F3_RTO_cs_es",
+ "template_difference": "State-level OxCGRT placebo outcome instead of a county credit outcome: data set, unit (state_id), outcome, weights (none), clusters (state) and event window (-7..10, the horizons the authors' path reports in this panel) differ; estimator settings and treatment definition (online_treat_time) are the template's."
+}

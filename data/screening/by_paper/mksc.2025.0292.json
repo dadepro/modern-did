@@ -1,0 +1,65 @@
+{
+ "suffix": "mksc.2025.0292",
+ "doi": "10.1287/mksc.2025.0292",
+ "journal": "mksc",
+ "title": "From Data to Decisions: Marketing Analytics, Mental Performance, and Firm Growth in an Emerging Market",
+ "authors": "Stephen J. Anderson; Pradeep K. Chintagunta; Rupali Kaul; Naufel J. Vilcassim",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_029",
+ "package_dir": "~/did_packages/mksc/mksc.2025.0292",
+ "regressions_path": "./data/packages/mksc.2025.0292_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Randomized field experiment with 550 Rwandan firms (treatment, placebo, control arms). All estimates are cross-sectional endline regressions: reg y Treatment Placebo [b_y], vce(robust) (ANCOVA with the baseline outcome), IV (ivreg2 analytics_complier = Treatment), dose-response on visit_duration and compliance, and spillover interactions with competitor proximity (Code.do). No panel FE, no staggered adoption.",
+ "design_notes": "Baseline-endline survey data (All_Data.dta), intervention July 2019-January 2020, robust SEs.",
+ "estimators_reported": [
+  "rct_ancova_ols",
+  "iv_late",
+  "ols_dose_response"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 2-3 and later",
+   "reason": "RCT endline cross-section with single common intervention start; no unit/time FE"
+  },
+  {
+   "location": "IV tables",
+   "reason": "IV (ivreg2)"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "All_Data.dta",
+  "Night_Light.dta",
+  "GPS_lat_long.dta",
+  "GPS_data.dta",
+  "entrep_id_mapping.dta",
+  "intervention_duration_treatment.dta",
+  "app_sales_Jan.dta",
+  "compliance.dta"
+ ],
+ "data_files_note": "README.txt names the do file Rwanda_Study_vReplication_vFF.do; the package ships it as Code.do.",
+ "data_provenance": "original",
+ "data_provenance_note": "Experimental survey data shipped as collected.",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract. Not a DiD design; not a near-miss."
+}

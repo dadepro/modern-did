@@ -1,0 +1,33 @@
+{
+  "suffix": "mnsc.2020.3626",
+  "spec_id": "t6c3",
+  "journal": "mnsc",
+  "data_path": "~/did_packages/_work/mnsc.2020.3626/firmpanel_hq.rds",
+  "id_var": "gvkey_num",
+  "time_var": "fyear",
+  "y_var": "pv_mv2",
+  "treat_var": "law",
+  "weight_var": "",
+  "cluster_var": "incorp_hist_id",
+  "xt_vars": [
+    "hq_modal_chr"
+  ],
+  "sample_filter": "",
+  "log_y": "",
+  "published_coef": 0.005,
+  "published_se": 0.002,
+  "published_n": 19096,
+  "published_source": "Printed Table 8, column (3) of the published article (papers/mnsc/mnsc.2020.3626.pdf), read Nov 4 2026",
+  "authors_code_coef": 0.004620058345401893,
+  "authors_code_se": 0.001615965663387353,
+  "authors_code_n": 19096,
+  "table": "8",
+  "table_note": "published article numbering (Nov 4 2026); the authors' do-file block is 6, which earlier records used",
+  "data_provenance": "real",
+  "column": "3",
+  "static_or_event": "static",
+  "preferred": false,
+  "in_abstract_intro": true,
+  "replication_status": "exact (authors' Stata do-file estimate.do line 76 rerun on the shipped firmpanel.dta, reghdfe keepsing with gvkey_num + state_year FE: 0.004620 (0.001616), N 19,096; printed Table 8, column (3) [the do-file's Table 6 column 3, the spec's table field]: 0.005 (0.002), N 19,096)",
+  "notes": "reghdfe pv_mv2 law, a(gvkey_num state_year) vce(cluster incorp_hist_id). Modal-state TWFE (fixest): 0.004328 (0.001474) vs authors' 0.004620 (0.001616). DEVIATION: authors absorb gvkey_num + state_year, where state_year = group(state_hist, fyear) is the firm's (time-varying) headquarters state x year. state_year was decoded exactly into 40 HQ states (egen-group ordering; fixest with gvkey_num + hq_state^fyear reproduces the authors' coefficient exactly). 82/942 firms (8.7%) change HQ state; 371/19,096 firm-years (1.94%) are outside the firm's modal state. Hull allows only time-invariant group-by-time FE, so xt_vars uses the firm's MODAL HQ state (hq_modal_chr, character so that did/didimputation treat it as categorical). Data file: firmpanel_hq.rds in _work (ignore firmpanel_aug.rds). "
+}

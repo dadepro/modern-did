@@ -1,0 +1,69 @@
+{
+  "suffix": "mksc.2024.1170",
+  "doi": "10.1287/mksc.2024.1170",
+  "journal": "mksc",
+  "title": "The Value of Silence: The Effect of UMG's Licensing Dispute with TikTok on Music Demand",
+  "year": 2026,
+  "authors": "Mengjie Cheng; Elie Ofek; Hema Yoganarasimhan",
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date. The treatment is UMG-label track x post (the UMG-TikTok licensing dispute began on one date, February 1, 2024, for all UMG tracks); `post` is a common calendar indicator and sound_track_labels_universal_val is time-invariant. Every regression is reghdfe y 1.sound_track_labels_universal_val#1.post, absorb(sound_track_uid date_dt) (Tables 3, 7, 8, 9, 10). One treated cohort, so the at-least-two-adoption-dates rule fails.",
+  "design_notes": "Track-day panel (Soundcharts/Chartmetric): daily Spotify streams and YouTube views for UMG (treated) vs. Warner/Sony (control) tracks around the Feb 2024 UMG-TikTok dispute. Table 3: log outcomes, full sample (VoS_code.do lines 94-95). Table 7: split by on_tiktok_pre (lines 141-148). Table 8: tracks not on TikTok pre-dispute split by artist TikTok coverage (lines 155-161). Table 9: levels (168-169). Table 10: levels dropping >p99 (178-182). Track FE + date FE, cluster by track, no controls.",
+  "estimators_reported": [
+    "twfe_two_group_did (Tables 3, 7, 8, 9, 10)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "One event date (Feb 1, 2024) for all UMG tracks.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "mksc.2024.1170_T3_c1_log_spotify",
+      "eligible": false,
+      "exclusion_reason": "single adoption date (two-group DiD)",
+      "code_file": "replication_data_code/VoS_code.do",
+      "code_line": 94,
+      "outcome": "log_spotify_streams_total_daily",
+      "treatment_var": "1.sound_track_labels_universal_val#1.post",
+      "treatment_definition": "UMG-label track x on/after Feb 1, 2024",
+      "unit_var": "sound_track_uid",
+      "time_var": "date_dt (daily)",
+      "fe": "sound_track_uid + date_dt",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "sound_track_uid",
+      "sample_condition": "all tracks",
+      "static_or_event": "static",
+      "data_file": "replication_data_code/datasample.dta (10% random sample of tracks)",
+      "reported_location": "Table 3 col 1",
+      "notes": "YouTube views analogue at line 95; Tables 7-10 are subsamples/levels of the same spec."
+    }
+  ],
+  "ineligible_specs": [
+    {
+      "location": "Tables 3, 7, 8, 9, 10",
+      "reason": "single adoption date"
+    }
+  ],
+  "data_access": "partial",
+  "data_files_present": true,
+  "data_files": [
+    "replication_data_code/datasample.dta (random 10% of tracks from the proprietary full dataset; README says estimates differ from the paper)"
+  ],
+  "data_provenance_flag": "authors_random_subsample",
+  "software": "stata",
+  "software_detail": "Stata (reghdfe, esttab)",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not eligible (single adoption date).",
+  "screener_notes": "Screened from package only (no article text). Design read from VoS_code.do; `post` has no track-specific variation in the data dictionary ('whether it's after the dispute')."
+}

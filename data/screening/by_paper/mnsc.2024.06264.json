@@ -1,0 +1,56 @@
+{
+ "suffix": "mnsc.2024.06264",
+ "doi": "10.1287/mnsc.2024.06264",
+ "journal": "mnsc",
+ "title": "Attention in Motion: Using Scroll Tracking to Measure the Dynamics of Preferential Choice",
+ "authors": "Ilkka Leppänen",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_028",
+ "package_dir": "~/did_packages/mnsc/mnsc.2024.06264",
+ "regressions_path": "./data/packages/mnsc.2024.06264_regressions.txt",
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_mismatch": false,
+ "eligible_reason": "Methods paper with online choice experiments (scroll tracking): response-curve metrics, drift diffusion models and predictive models. No panel treatment adoption, no DiD.",
+ "design_notes": "R and Python notebooks (data processing, mixed models, DDM cross-validation); oTree apps for the experiment.",
+ "estimators_reported": [
+  "experimental_analysis",
+  "drift_diffusion_models"
+ ],
+ "specs": [
+  {
+   "spec_id": "study1-2",
+   "eligible": false,
+   "code_file": "study1_analysis_R.ipynb",
+   "reported_location": "all tables",
+   "exclusion_reason": "lab/online experiment; no DiD design"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "study1_rawdata.csv",
+  "study2_rawdata.csv"
+ ],
+ "data_files_note": "Raw experimental data with dictionaries shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Raw experiment data shipped.",
+ "software": "other",
+ "software_notes": "R and Python Jupyter notebooks",
+ "screener_notes": "Screened from package only (no README, article text or PDF). Experimental methods paper; not DiD."
+}

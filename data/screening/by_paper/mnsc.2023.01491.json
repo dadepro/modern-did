@@ -1,0 +1,28 @@
+{
+ "doi": "10.1287/mnsc.2023.01491",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Gender Gap in Startup Recruiting: Evidence from Changes in Termination Costs",
+ "eligible_design": false,
+ "eligible_reason": "Regression discontinuity in time around a single reform date (November 2011, Portugal) with individual-level data and gender x startup interactions. The firm-level DiD in the appendix (Table A7) compares startups vs. incumbents around the same single date. One adoption date, treatment defined by a time-invariant firm type, no staggered cohorts.",
+ "design_notes": "Main specification is individual-level RDiT with hiring-month fixed effects, age, education and industry controls, and a time-trend function f(Time) interacted with Post. The text explicitly says a firm-level DiD 'would have no real control group because all firms are affected by the reform'. Data from Quadro de Pessoal (Portuguese mandatory employer survey).",
+ "estimators_reported": [
+  "regression discontinuity in time",
+  "firm-level DiD (single date, appendix)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: single reform date, RDiT. QDP matched employer-employee data is restricted-access."
+}

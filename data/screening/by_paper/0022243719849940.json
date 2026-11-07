@@ -1,0 +1,30 @@
+{
+ "suffix": "0022243719849940",
+ "doi": "10.1177/0022243719849940",
+ "journal": "jmr",
+ "title": "The Value of Rapid Delivery in Omnichannel Retailing",
+ "year": "2019",
+ "eligible_design": false,
+ "design_notes": "Quasi-experiment around one event: a new western distribution center (DC) became operational in week 54 of a 104-week panel. Treated = zip codes/stores assigned to the western DC, control = zip codes/stores assigned to the eastern DC. TREAT x AFTER with zip code (store) and week fixed effects, propensity-score weights. Main models (Table 5) are panel Poisson on sales; Table 4 is a parallel-trends check, with treatment-intensity variants (IMPRV x AFTER, delivery-time reduction; Tables 6-8) and two-period aggregated versions. Cohort-level robustness is not staggered.",
+ "eligible_reason": "Single adoption date (week 54) for all treated units; main estimator is Poisson; also propensity-score weighted and treatment-intensity (continuous IMPRV) specifications.",
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "estimators_reported": [
+  "TWFE-style DiD (Poisson FE)",
+  "two-period aggregated DiD"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Retailer weekly zip-code and store sales supplied by the firm; no data availability statement or package found. Ineligible on design (one adoption date), so no re-estimation possible even with data.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

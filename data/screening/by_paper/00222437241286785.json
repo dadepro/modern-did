@@ -1,0 +1,29 @@
+{
+  "suffix": "00222437241286785",
+  "doi": "10.1177/00222437241286785",
+  "journal": "jmr",
+  "title": "The Last Hurrah Effect: End-of-Period Temporal Landmarks Increase Optimism and Financial Risk-Taking",
+  "year": "2024",
+  "eligible_design": false,
+  "eligible_reason": "Not a DiD or event-study design. Archival analysis compares bid-level risk-taking across weekdays and calendar landmarks (Fridays, month end, year end, pre-holiday) on the Prosper P2P lending platform, plus lab experiments.",
+  "design_notes": "JMR 62(2), 2025. Prosper bid-level data; outcome = reserve interest rate of the listing a lender bids on; regressor = End of Period indicator (Friday baseline); lender fixed effects plus lender, listing and platform controls (Equations 1-2); SEs clustered by lender. The Bertrand-Duflo-Mullainathan citation concerns clustering. No units adopt a treatment at unit-specific dates.",
+  "estimators_reported": [
+    "OLS/regression with calendar-landmark indicators",
+    "randomized lab experiments"
+  ],
+  "main_or_robustness": "n/a",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "unclear",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible. No policy or treatment adoption; the 'treatment' is recurring calendar position. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

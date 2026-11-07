@@ -1,0 +1,73 @@
+{
+  "suffix": "mksc.2022.1352",
+  "doi": "10.1287/mksc.2022.1352",
+  "journal": "mksc",
+  "title": "The Value of Descriptive Analytics: Evidence from Online Retailers",
+  "year": 2022,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible_reason": "The underlying adoption design is staggered and binary (retailer-channels adopt analytics in 18 monthly cohorts, Jan 2016-Jun 2017, with later adopters as never-treated controls), but no reported specification satisfies the rules. The only staggered-DiD code in the package (SDiD.do, Equations 2 and 3, Table 5 columns 1-2 and Figure 2) is a Wooldridge (2021) extended-TWFE regression with cohort dummies, cohort x post-month interactions and cohort-specific linear time trends (c.cohortK#c.month_id), absorbing month FE only (cohort FE instead of unit FE). Cohort-specific trends fall under the excluded 'unit/group-specific trends'. Table 5 columns 3-4 and Figure 3 are synthetic DiD (excluded). In addition the package data is a disguised 5% random sample, so published estimates cannot be reproduced.",
+  "design_notes": "Files: README.txt, SDiD.do (Stata, reghdfe), SynthDiD.R + SynthDiD-fun.R (R, custom synthetic-DiD functions), data_file_for_replication_small.csv (2,090 retailer-channel x month rows, 107 retailer-channels, months 1-24 = 7/2015-6/2017). Variables: company_id, company_source (unit), month_id, m_after (post-adoption indicator), month_join_id (adoption month; >24 = not treated in window -> cohort 999), join_lag, m_log_rev_usd (log avg weekly revenue). Eq (3): pre-trend test on m_after==0 sample with cohort dummies, cohort trends and lag dummies. Eq (2): cohort1-18 + cohortK#monthM for M>=adoption month + cohortK#c.month_id trends, absorb(month_id), vce(cluster company_id month_id); ATT for 3 and 6 months via lincom averages (Table 5 cols 1-2). README says the paper's main results in the SDiD section are these; other sections of the paper are not covered by the package.",
+  "estimators_reported": [
+    "wooldridge_extended_twfe_with_cohort_trends",
+    "synthetic_did"
+  ],
+  "main_or_robustness": "main (SDiD section)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 18,
+  "n_adoption_cohorts_note": "Code defines 18 monthly cohorts (month_id 7-24 = Jan 2016-Jun 2017); the 5% sample contains 12 of them plus later adopters (month_join_id 25-40) treated as controls.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [
+    "wooldridge_2021_etwfe (not in protocol list)",
+    "synthetic_did"
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [
+    {
+      "spec_id": "T5_c1c2_eq2_etwfe",
+      "eligible": false,
+      "exclusion_reason": "cohort-specific linear time trends (c.cohortK#c.month_id) and cohort-by-period saturated interactions; no unit FE (cohort dummies + month FE); ATT formed by lincom averaging",
+      "code_file": "data and replication files/SDiD.do",
+      "code_line": 46,
+      "outcome": "m_log_rev_usd",
+      "treatment_var": "cohortK#monthM interactions (K=1..18 cohorts, M>=adoption month); m_after is the underlying post indicator",
+      "treatment_definition": "adoption of descriptive analytics dashboard in month month_join_id; cohort 999 (= never treated in window) for month_join_id>24",
+      "unit_var": "company_source (retailer-channel); cluster company_id",
+      "time_var": "month_id (1-24)",
+      "fe": "absorb(month_id); cohort dummies cohort1-cohort18; cohort trends",
+      "controls": "none besides trends",
+      "weights": "none",
+      "cluster": "two-way company_id month_id",
+      "sample_condition": "all",
+      "static_or_event": "static ATT (3- and 6-month averages via lincom)",
+      "data_file": "data_file_for_replication_small.csv (5% disguised sample)",
+      "reported_location": "Table 5 columns 1-2; Figure 2 uses the same coefficients",
+      "notes": ""
+    },
+    {
+      "spec_id": "T5_c3c4_synthdid",
+      "eligible": false,
+      "exclusion_reason": "synthetic DiD",
+      "code_file": "data and replication files/SynthDiD.R",
+      "code_line": 30,
+      "outcome": "m_log_rev_usd",
+      "treatment_var": "m_after",
+      "unit_var": "company_source",
+      "time_var": "month_id",
+      "reported_location": "Table 5 columns 3-4; Figure 3",
+      "notes": "custom estNplot() in SynthDiD-fun.R, lags=6, leads=5, cohorts 7:18"
+    }
+  ],
+  "data_access": "proprietary (package has a disguised random 5% sample of retailer-channels)",
+  "data_files_present": true,
+  "data_files": [
+    "data and replication files/data_file_for_replication_small.csv (57 KB, 5% disguised sample)"
+  ],
+  "software": "stata and r",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Full text not available; the paper may contain additional TWFE/event-study specifications outside the SDiD section (flags include Callaway, Borusyak, de Chaisemartin, Goodman-Bacon mentions), but the README states the package covers the main SDiD-section results only, and the data provided cannot reproduce any published number. Re-screen if article text becomes available."
+}

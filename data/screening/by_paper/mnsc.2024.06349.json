@@ -1,0 +1,77 @@
+{
+ "doi": "10.1287/mnsc.2024.06349",
+ "journal": "mnsc",
+ "title": "Can Digitalization Improve Public Services? Evidence from Innovation in Energy Management",
+ "year": 2026,
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "The underlying design is a textbook staggered binary adoption (utility-level smart-meter / AMI deployment, 7 adoption cohorts 2010-2016, 601 never-treated of 1,306 utilities, absorbing treatment, utility FE + state-by-year FE), but no published specification satisfies the rules: every main-text regression is the Freyaldenhoven-Hansen-Shapiro 'augmented' DiD estimated by ivreghdfe with a time-varying control (buildunits) and log population instrumented by the one-year lead of treatment (logpop = lead1AMI); the event studies (Figures 2-4) use xtevent with the same proxy/proxy-IV and control; Table 3 adds AMI x DP/DR interactions; Table 4 is an MSA-occupation-year regression of AMI x occupation-type interactions with MSA-year FE; Table 5 is a bootstrapped Poisson (ppmlhdfe) with controls. Appendix Table C2 (OLS) and Table C3 (csdid) also include buildunits and logpop as covariates. IV, time-varying controls and nonlinear models are excluded by PROTOCOL Section 2.",
+ "design_notes": "Utility-year panel 2007-2018 from EIA Form 861 (Data/Analysis/EIA_Panel.dta; analysis sample incl==1 & winslr!=1: 15,580 utility-years, 1,306 utilities; 14,252 obs in the IV regressions because lead1AMI drops 2018). AMI = (DataYear >= AMIyear), absorbing (verified: no utility switches off). Cohorts: 2010 (99 utilities), 2011 (112), 2012 (62), 2013 (147), 2014 (66), 2015 (106), 2016 (113); 601 never-adopters. Outcomes: loss_rate (losses/disposition), logRevenue_tot, logrev_ps_tot (average price), logsales_total_pc, DP/DR adoption; continuous version p2ami (share of customers with AMI). FE: absorb(ID DataYear#statecode), cluster(ID). Sub-samples: avgprelpr >= Q1 (pre-treatment loss rate above first quartile), firsttwo != 1 (drop first three post years), ownership splits.",
+ "estimators_reported": [
+  "augmented_did_iv (ivreghdfe, FHS 2019 proxy-IV) static (Tables 2, 3, 6, C1, C4, C8)",
+  "augmented_did_iv event study (xtevent proxy/proxyiv; Figures 2, 3, 4, D3, D4b/d, D5, D7, D8)",
+  "twfe_ols_with_time_varying_controls (reghdfe loss_rate AMI buildunits logpop; Table C2, Table C5, Figure D4a/c)",
+  "callaway_santanna with covariates (csdid ... buildunits logpop, method(dripw), never-treated and notyet; Table C3)",
+  "continuous_dose (p2ami; Tables 2B, C2B, C8)",
+  "poisson_ppmlhdfe_bootstrap (Table 5, Texas feeders)",
+  "twfe with treatment x occupation interactions (Table 4, C6)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "ineligible_specs_summary": "C1a_Analyze_EIA_Main.do lines 143-175 (Table 2A), 193-225 (Table 2B, continuous), 253-286 (Table 3, interactions), 310-367 (Table 6), 384-470 (Figures 2-4, xtevent proxy IV): all IV + buildunits control. C1b_Analyze_EIA_Appendix.do lines 109-150 (Table C2 OLS with buildunits logpop), 178-212 (Table C3 csdid with buildunits logpop), 239-248 (Table C4 IV), 274-290 (Table C5 OLS with controls and interactions), 390-412 (Table C8 IV continuous), 503-933 (Figures D2-D8 xtevent with controls/IV). C2a/C2b (Table 4, C6): AMI x occupation-group interactions, absorb(MSAcode#laborcode MSAcode#DataYear). C3_Analyze_Texas.do (Table 5): ppmlhdfe with bootstrap.",
+ "n_adoption_cohorts": 7,
+ "n_adoption_cohorts_note": "Computed from Data/Analysis/EIA_Panel.dta in the analysis sample (incl==1 & winslr!=1): AMIyear 2010-2016, 705 adopters, 601 never-adopters.",
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid, method(dripw), never-treated and not-yet-treated controls, with covariates buildunits logpop) in Appendix Table C3"
+ ],
+ "preferred_spec_ids": [],
+ "published_estimates": [
+  {
+   "location": "Table 2 Panel A col 1 (augmented IV DiD)",
+   "coef": -0.002,
+   "se": 0.001,
+   "n_obs": 14252,
+   "source": "Results/Table2_PanelA.txt"
+  },
+  {
+   "location": "Table C2 Panel A col 1 (OLS TWFE with buildunits, logpop)",
+   "coef": -0.001,
+   "se": 0.001,
+   "n_obs": 15556,
+   "source": "Results/TableC2_PanelA.txt"
+  },
+  {
+   "location": "Table C3 cols 1-4 (csdid with covariates)",
+   "coefs": [
+    -0.002,
+    -0.003,
+    -0.002,
+    -0.003
+   ],
+   "ses": [
+    0.001,
+    0.001,
+    0.001,
+    0.001
+   ],
+   "n_obs": [
+    14259,
+    10786,
+    14259,
+    10786
+   ],
+   "source": "Results/TableC3.txt"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files_note": "Full package (1.2 GB) now extracted at ~/did_packages/mnsc/mnsc.2024.06349/: Data/Analysis/EIA_Panel.dta (19,849 utility-years, 107 variables, 13 MB), Labor_MSA_Occ.dta, Texas_Feeder_Reliability.dta; Data/Processed/* and Data/Raw/* (EIA-861, SEER population, building permits, OEWS, Texas PUC). Only the S&P Global SNL raw files are withheld (an intermediate Utility_Distribution.dta is provided). Stata logs of the authors' run in Log/. Note: at the time of screening the package was being re-downloaded (the earlier _archive zip was truncated), so the lead's regressions list for this suffix was regenerated mid-screen.",
+ "software": "stata+r",
+ "software_note": "Stata 19.5 (reghdfe, ivreghdfe, csdid, xtevent, ppmlhdfe, estout, coefplot, binscatter) and R 4.4.1 (maps only).",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "No article text. Not eligible as published: the authors deliberately 'augment' the staggered DiD with a pre-trend proxy IV (log population instrumented by the lead of AMI) plus a building-permit control in every table and figure, and even the OLS and csdid appendix versions keep buildunits and logpop as covariates. If the lead decides to admit a controls-free TWFE counterpart constructed by the team (reghdfe loss_rate AMI, absorb(ID DataYear#statecode) cluster(ID) on EIA_Panel.dta with incl==1 & winslr!=1), the data and sample definitions are fully available and the design (7 cohorts, 601 never-treated, absorbing) is clean; but that specification does not appear in the paper."
+}

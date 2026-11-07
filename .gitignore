@@ -1,0 +1,24 @@
+# Article PDFs and extracted text (copyrighted) and replication packages are never committed
+papers/
+data/text/
+packages/
+~/did_packages
+
+# Working files
+logs/
+backups/
+*.bak*
+.DS_Store
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+output*/boot_cov*/chunks/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.blg

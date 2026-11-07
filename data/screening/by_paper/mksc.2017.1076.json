@@ -1,0 +1,59 @@
+{
+ "suffix": "mksc.2017.1076",
+ "doi": "10.1287/mksc.2017.1076",
+ "journal": "mksc",
+ "title": "Learning from Online Social Ties",
+ "authors": "Yuchi Zhang; David Godes",
+ "year": 2013,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2017.1076",
+ "regressions_path": "./data/packages/mksc.2017.1076_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian hierarchical model of user ratings as a function of social-tie counts, experience and their interactions, with latent instrumental variables)",
+ "ineligible_specs": [
+  {
+   "spec_id": "ratings_social_ties",
+   "reported_location": "main estimation (Code.m, MainResults)",
+   "exclusion_reason": "MCMC latent-utility rating model with continuous friend/follower/source counts interacted with experience and latent instrumental variables; no unit and time FE; no staggered binary treatment; not a DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Bayesian rating model on continuous social-tie counts with latent IVs.",
+ "design_notes": "Code.m (MATLAB Gibbs sampler with rtrun_s.m); Newsfeed is a 0/1 covariate (716 of 87,946 rows), not a DiD treatment.",
+ "estimators_reported": [
+  "Bayesian hierarchical latent-utility model with latent instrumental variables (MCMC)"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "X_all.csv",
+  "X_book.csv",
+  "X_id.csv",
+  "Y_all.csv",
+  "book_id.csv",
+  "CovariateData.csv"
+ ],
+ "data_files_note": "87,946 rating observations from 4,406 users; user IDs included.",
+ "data_provenance": "original",
+ "data_provenance_note": "Appears to be the estimation data; no statement of simulation or noise.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly. OpenAlex record has no abstract and a wrong publication_year (batch year kept; published in Marketing Science 37(3), 2018); screened from package README and code."
+}

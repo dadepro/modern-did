@@ -1,0 +1,181 @@
+{
+ "suffix": "mnsc.2023.04090",
+ "doi": "10.1287/mnsc.2023.04090",
+ "journal": "mnsc",
+ "year": 2025,
+ "department": "Finance",
+ "title": "Access to Debt and the Provision of Trade Credit",
+ "authors": "Matthew T. Billett; Kayla M. Freeman; Janet Gao",
+ "screened_from": "package_only",
+ "eligible": true,
+ "eligible_design": true,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Staggered adoption of state anti-recharacterization laws (binary s_law by supplier state of incorporation, 7 adopting states at different years, with never-treated and always-treated suppliers). Three main-text columns regress outcomes on s_law alone with unit and calendar-time FE and no controls: Table 2 Panel B col 1 (pair-level trade credit, supplier FE + customer-by-year FE) and Table 5 Panel C cols 1 and 4 (supplier-level margins and profitability, supplier FE + year FE), all clustered by state of incorporation. Other columns add time-varying controls, a second treatment (customer's law c_law), PPML, entropy-balanced stacked samples, IV, or treatment-intensity regressors.",
+ "design_notes": "Three analysis panels: finalSEC.dta (hand-collected SEC supplier-customer trade credit, pair-year 1993-2010, 5,405 obs), finalSegmentSupplier.dta (supplier-year 1992-2010, 21,704 obs), finalCompustat.dta (firm-year, 105,745 obs, used only with controls in Table 6). s_law switches on once per supplier (no switch-off coded despite the 2003 Reaves decision). Second shock in the abstract corresponds to leverage/IV analysis (Table 4) and stacked entropy-balanced event sample (finalStacked.dta: Table 3 Panel C, Table 4, Figure 4 with pweight = eweight and event#year, cs_id#event FE). Table 2 Panel A and Table 6 Panel C include both s_law and c_law. Tables 7-10 use continuous treated_csale (share of sales to treated customers) and interactions. Clustering: s_incorp (34 states in finalSEC, 50 in segment file).",
+ "estimators_reported": [
+  "TWFE static with supplier FE and customer-by-year FE or year FE (Tables 2, 5C, 6, 7, 8)",
+  "two-treatment TWFE (s_law + c_law; Tables 2A, 6C, 8)",
+  "PPML (ppmlhdfe; Tables 2C, 5A, 5B)",
+  "entropy-balanced stacked event-sample DiD with pweights (Table 3C, Figure 4)",
+  "IV ivreghdfe with s_law instrumenting leverage (Table 4)",
+  "treatment-intensity regressions treated_csale (Tables 9-10, Figure 5)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 3,
+ "n_adoption_cohorts": 6,
+ "n_adoption_cohorts_note": "finalSegmentSupplier: switching cohorts 1998, 2002, 2003, 2005, 2006, 2007 (6); finalSEC: 1998, 2002, 2003, 2005, 2006 (5) plus states entering already treated.",
+ "never_treated_present": true,
+ "always_treated_present": true,
+ "always_treated_note": "finalSEC: 313 of 969 suppliers always treated; finalSegmentSupplier: 670 of 4,419.",
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [
+  "stacked event-sample DiD with entropy balancing (Table 3C, Table 4, Figure 4; not CSA/BJS)"
+ ],
+ "reports_modern_estimator_note": "Stacked design reported; no CSA/BJS/SA/dCDH. Full-text flags cite Goodman-Bacon, Callaway-Sant'Anna and Baker et al.",
+ "preferred_spec_ids": [
+  "mnsc.2023.04090_T2B_c1_sp_arS"
+ ],
+ "published_estimates": [],
+ "specs": [
+  {
+   "treatment_var": "s_law (0/1): = 1 if an anti-recharacterization statute is in force in the supplier's state of incorporation (s_incorp) in year t; absorbing in the shipped data (each supplier switches at most once, never switches off)",
+   "treatment_definition": "binary staggered state-law adoption (anti-recharacterization laws, 7 states adopting 1997-2005, coded in the data as switches in 1998, 2002, 2003, 2005, 2006, 2007 depending on sample) assigned to suppliers by state of incorporation; many never-treated and some always-treated suppliers",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "s_incorp (supplier state of incorporation)",
+   "static_or_event": "static",
+   "data_provenance": "real (gvkeys included; SEC trade-credit data hand-collected)",
+   "eligible": true,
+   "main_text": true,
+   "estimator_reported": "TWFE (reghdfe)",
+   "spec_id": "mnsc.2023.04090_T2B_c1_sp_arS",
+   "code_file": "Do_00_Master_FinalFiles.do",
+   "code_line": "178 (use == 1 for all rows, line 136)",
+   "outcome": "sp_arS",
+   "outcome_label": "Trade credit extended by supplier to customer, scaled by sales (supplier-customer pair-year)",
+   "unit_var": "cs_id (supplier-customer pair; FE at supplier level s_id); assignment unit = supplier (s_gvkey) via s_incorp",
+   "time_var": "year (1993-2010)",
+   "fe": "s_id + year#c_id (supplier FE and customer-by-year FE)",
+   "sample_condition": "finalSEC.dta, all pair-years (use == 1): 5,405 obs, 1,775 pairs, 969 suppliers, 623 customers",
+   "reported_location": "Table 2, Panel B, column 1",
+   "data_file": "finalfiles/finalSEC.dta",
+   "notes": "reghdfe sp_arS s_law, absorb(s_id year#c_id) vce(cluster s_incorp). Customer-by-year FE is a time-invariant pair characteristic interacted with calendar time (allowed). In finalSEC: 486 never-treated suppliers, 313 always treated, 170 switchers; in-sample switching cohorts 1998, 2002, 2003, 2005, 2006. Panel A column 1 (line 140) adds c_law (customer's law) as a second treatment regressor and is excluded; columns 2-4 add controls."
+  },
+  {
+   "treatment_var": "s_law (0/1): = 1 if an anti-recharacterization statute is in force in the supplier's state of incorporation (s_incorp) in year t; absorbing in the shipped data (each supplier switches at most once, never switches off)",
+   "treatment_definition": "binary staggered state-law adoption (anti-recharacterization laws, 7 states adopting 1997-2005, coded in the data as switches in 1998, 2002, 2003, 2005, 2006, 2007 depending on sample) assigned to suppliers by state of incorporation; many never-treated and some always-treated suppliers",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "s_incorp (supplier state of incorporation)",
+   "static_or_event": "static",
+   "data_provenance": "real (gvkeys included; SEC trade-credit data hand-collected)",
+   "eligible": true,
+   "main_text": true,
+   "estimator_reported": "TWFE (reghdfe)",
+   "spec_id": "mnsc.2023.04090_T5C_c1_salescogs",
+   "code_file": "Do_00_Master_FinalFiles.do",
+   "code_line": "444",
+   "outcome": "salescogs",
+   "outcome_label": "Supplier sales / cost of goods sold (margin)",
+   "unit_var": "s_id (supplier; s_gvkey)",
+   "time_var": "year (1992-2010)",
+   "fe": "s_id + year (supplier and year FE)",
+   "sample_condition": "finalSegmentSupplier.dta, use == 1 (all 21,704 supplier-years, 4,419 suppliers)",
+   "reported_location": "Table 5, Panel C, column 1",
+   "data_file": "finalfiles/finalSegmentSupplier.dta",
+   "notes": "reghdfe salescogs s_law, absorb(year s_id) vce(cluster s_incorp). 2,852 never-treated, 670 always-treated, 897 switching suppliers; cohorts 1998, 2002, 2003, 2005, 2006, 2007. Columns 2-3 add controls / industry-year FE with controls (excluded). Panels A-B use ppmlhdfe (excluded)."
+  },
+  {
+   "treatment_var": "s_law (0/1): = 1 if an anti-recharacterization statute is in force in the supplier's state of incorporation (s_incorp) in year t; absorbing in the shipped data (each supplier switches at most once, never switches off)",
+   "treatment_definition": "binary staggered state-law adoption (anti-recharacterization laws, 7 states adopting 1997-2005, coded in the data as switches in 1998, 2002, 2003, 2005, 2006, 2007 depending on sample) assigned to suppliers by state of incorporation; many never-treated and some always-treated suppliers",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "s_incorp (supplier state of incorporation)",
+   "static_or_event": "static",
+   "data_provenance": "real (gvkeys included; SEC trade-credit data hand-collected)",
+   "eligible": true,
+   "main_text": true,
+   "estimator_reported": "TWFE (reghdfe)",
+   "spec_id": "mnsc.2023.04090_T5C_c4_s_profit",
+   "code_file": "Do_00_Master_FinalFiles.do",
+   "code_line": "451",
+   "outcome": "s_profit",
+   "outcome_label": "Supplier profitability",
+   "unit_var": "s_id (supplier)",
+   "time_var": "year (1992-2010)",
+   "fe": "s_id + year",
+   "sample_condition": "finalSegmentSupplier.dta, use == 1",
+   "reported_location": "Table 5, Panel C, column 4",
+   "data_file": "finalfiles/finalSegmentSupplier.dta",
+   "notes": "reghdfe s_profit s_law, absorb(year s_id) vce(cluster s_incorp). Columns 5-6 add controls (excluded)."
+  }
+ ],
+ "near_miss_specs": [
+  {
+   "spec_id": "mnsc.2023.04090_T2A_c1_sp_arS_slaw_claw",
+   "code_file": "Do_00_Master_FinalFiles.do",
+   "code_line": "140",
+   "outcome": "sp_arS",
+   "treatment_var": "s_law and c_law (supplier's and customer's law indicators)",
+   "fe": "year + s_id + c_id",
+   "controls": "none",
+   "cluster": "s_incorp",
+   "reported_location": "Table 2, Panel A, column 1",
+   "exclusion_reason": "additional treatment regressor (customer's law c_law)"
+  },
+  {
+   "spec_id": "mnsc.2023.04090_T6C_c1_acite_slaw_claw",
+   "code_file": "Do_00_Master_FinalFiles.do",
+   "code_line": "526",
+   "outcome": "acite",
+   "treatment_var": "s_law and c_law",
+   "fe": "year + s_id + c_id",
+   "controls": "none",
+   "cluster": "s_incorp",
+   "sample_condition": "finalSegmentPair.dta, use == 1 (supplier patents, customer has patents)",
+   "reported_location": "Table 6, Panel C, column 1",
+   "exclusion_reason": "additional treatment regressor (c_law)"
+  }
+ ],
+ "ineligible_specs": [
+  {
+   "location": "Table 2 Panel A cols 1-4, Panel B cols 2-4 (lines 140-193)",
+   "reason": "second treatment c_law and/or time-varying controls"
+  },
+  {
+   "location": "Table 2 Panel C, Table 5 Panels A-B (ppmlhdfe)",
+   "reason": "nonlinear (Poisson) model"
+  },
+  {
+   "location": "Table 3, Table 4, Figure 4 (finalStacked, pweight eweight)",
+   "reason": "entropy-balanced stacked event sample; IV in Table 4"
+  },
+  {
+   "location": "Table 5 Panel C cols 2-3, 5-6; Table 6 (lines 446-502)",
+   "reason": "time-varying controls"
+  },
+  {
+   "location": "Tables 7-10, Figure 5",
+   "reason": "controls, interactions, continuous treated_csale regressor"
+  }
+ ],
+ "data_access": "partial",
+ "data_access_detail": "All final analysis files shipped (prefix final*) including gvkeys; raw Compustat/Capital IQ via WRDS license; SEC trade-credit data hand-collected by the authors.",
+ "data_files_present": true,
+ "data_files": [
+  "finalfiles/finalSEC.dta",
+  "finalfiles/finalSegmentSupplier.dta",
+  "finalfiles/finalCompustat.dta",
+  "finalfiles/finalStacked.dta",
+  "finalfiles/finalSegmentPair.dta",
+  "finalfiles/finalSegmentCustomer.dta",
+  "finalfiles/finalFigures.dta",
+  "finalfiles/finalEbalancePre.dta"
+ ],
+ "software": "stata",
+ "software_detail": "Stata (reghdfe, ppmlhdfe, ivreghdfe, estout, coefplot, astile)",
+ "replication_feasible": "yes",
+ "priority": 1,
+ "screener_notes": "Table 2 Panel B col 1 is pair-level with supplier FE (group FE) and customer-by-year FE; for CSA/BJS the assignment unit is the supplier (state of incorporation) and observations should be assigned to suppliers. Table output CSVs (Tables/output_2b.csv, output_5c.csv) contain the authors' estimates for published_estimates if needed. The README (RTF) states all final files are included."
+}

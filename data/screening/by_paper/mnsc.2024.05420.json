@@ -1,0 +1,49 @@
+{
+ "suffix": "mnsc.2024.05420",
+ "doi": "10.1287/mnsc.2024.05420",
+ "journal": "mnsc",
+ "title": "Who Is AI Replacing? The Impact of Generative AI on Online Freelancing Platforms",
+ "year": "2025",
+ "authors": "Ozge Demirci; Jonas Hannane; Xinrong Zhu",
+ "eligible_design": false,
+ "eligible_reason": "Single adoption date. Treatment = automation-prone job cluster x post-ChatGPT (week >= 2022w48; csdid gvar = 74 for all treated units) and, separately, image-related cluster x post text-to-image AI (week >= 2022w29; gvar = 54 for all treated units). Each analysis has one treated cohort and the two shocks are never pooled into a staggered design.",
+ "design_notes": "Cluster-country-week panel (main_sample.dta), July 2021-July 2023. Table 2: reghdfe log_n_posts treated_baseline_post, a(country_id#cluster_id week) cluster(cluster_id); rows 2-4 nbreg, csdid (one cohort), sdid. Table 4 same for text-to-image shock (graphic/3D clusters). Table 3 job-level outcomes with employer FE. Figures 1-3 monthly event-study dummies, csdid and sdid. csdid is used but with a single gvar value, so it is a 2-group DiD, not staggered.",
+ "estimators_reported": [
+  "TWFE DiD (reghdfe)",
+  "negative binomial",
+  "Callaway-Sant'Anna (csdid, single cohort)",
+  "synthetic DiD (sdid)",
+  "TWFE event study (monthly dummies)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid, drimp/dripw)",
+  "synthetic DiD (Arkhangelsky et al., sdid)"
+ ],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 2-4, Figures 1-3",
+   "reason": "single treatment date per analysis (ChatGPT 2022w48; text-to-image 2022w29)"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "Section 4/Data/main_sample.dta",
+  "Section 4/Data/sample_monthly.dta",
+  "Section 4/Data/intermediate_sample.dta",
+  "Section 4/Data/sample_local_jobs.dta"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Data are simulated: proprietary platform data replaced by versions with normally distributed noise added to outcomes (Alternative Disclosure Plan agreed with the DE). Logs of both original and simulated results are included. Not eligible regardless because of the single adoption date."
+}

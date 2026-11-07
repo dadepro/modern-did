@@ -1,0 +1,39 @@
+{
+  "suffix": "mnsc.2024.05295",
+  "doi": "10.1287/mnsc.2024.05295",
+  "journal": "mnsc",
+  "title": "COPPAcalypse? The YouTube Settlement's Impact on Kids' Content",
+  "year": 2026,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single adoption date. Code sets treat_time = 79 (the week YouTube implemented the COPPA settlement, January 2020) for every treated channel (channel_type_pre_ann != 0) and Inf for non-MFK controls; treated_mfk and treated_mixed are post x group indicators. All channels are treated in the same week, so there is one adoption cohort. Specifications also include anticipation-period dummies (anticipate_period_mfk, anticipate_period_mixed) and two treated-group regressors; Table 4 adds channel x content-type FE. The did package is loaded but with a single cohort the design is not staggered.",
+  "design_notes": "Package: README.txt, code/supply_demand.rmd (Figures 4-7, Tables 3, 5; fixest::feols static TWFE with channel_id_numeric + num_week FE and event-study i(rel_year, ref=c(51,-Inf)) per group), code/Table_4.rmd (content quality, split channel-week panel), code/descriptive_rep.ipynb (Tables 1-2, Figures 1-3). Data: weekly_dt_zl_final_2pct_nonsplit_rep.parquet and weekly_dt_zl_final_2pct_split_rep.parquet (channel-week panels; '2pct' in the filenames suggests a 2% sample or 2% noise, README does not explain; channel names anonymized). 5,066 top US channels per abstract.",
+  "estimators_reported": [
+    "twfe_static_two_groups_with_anticipation",
+    "twfe_event_study_single_cohort"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial (anonymized channel-week panel for replication only; possibly subsampled)",
+  "data_files_present": true,
+  "data_files": [
+    "weekly_dt_zl_final_2pct_nonsplit_rep.parquet",
+    "weekly_dt_zl_final_2pct_split_rep.parquet",
+    "results/Table2.csv"
+  ],
+  "software": "r, python",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Callaway-Sant'Anna citation flag; the did package is loaded in both Rmd files but the design has a single treatment date."
+}

@@ -1,0 +1,64 @@
+{
+ "suffix": "mksc.2021.1298",
+ "doi": "10.1287/mksc.2021.1298",
+ "journal": "mksc",
+ "title": "Can Facing the Truth Improve Outcomes? Effects of Information in Consumer Finance",
+ "authors": "Jessica Fong; Megan Hunter",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2021.1298",
+ "regressions_path": "./data/packages/mksc.2021.1298_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not a staggered DiD. Sections 3-4 (RandomSampleCode_Publication.R) regress checknextmonth (user checks credit score next month) on decreasing_trend = 1(csdiff < 0), a state that switches on and off with each monthly score change, and on left-digit-bias terms (level_change x decreasing_trend) with credit-score level FE, csdiff, account_age and checknum controls, plus user/month/weekday FE in some columns; one column adds a lagged outcome. Tables 7-10 (IV_Publication.do) are an ITT and 2SLS regressions of cs_post_trend on email click_rate with targeting-rule controls, using simulated data. No binary absorbing policy adoption, and every column carries time-varying controls or IV.",
+ "design_notes": "R (lfe::felm) for descriptive and left-digit regressions; Stata reg/ivregress for Tables 7-10; R simulations for Figure 8. Credit-score monitoring platform data (NDA).",
+ "estimators_reported": [
+  "ols_hdfe",
+  "left_digit_discontinuity",
+  "iv_2sls"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Sections 3-4 tables (decreasing_trend regressions)",
+   "reason": "time-varying state that switches on/off monthly, time-varying controls, lagged outcome in one column"
+  },
+  {
+   "location": "Left-digit-bias tables",
+   "reason": "discontinuity in score level crossing, not policy adoption"
+  },
+  {
+   "location": "Tables 7-10",
+   "reason": "IV (email campaigns as instruments) and ITT cross-section; continuous click_rate"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Replication_MktSci/credit_profile_history_sample101618.csv",
+  "Replication_MktSci/simulated_data_covar.csv"
+ ],
+ "data_files_note": "README.txt: NDA with data provider, so all data included is simulated (100,000 simulated users; IV data simulated from a covariance matrix).",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "All shipped data simulated per README.txt.",
+ "software": "r",
+ "software_notes": "R (felm) for Sections 3-4; Stata for IV tables.",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text, no PDF). code_prescore 2 from felm with user and month FE; the regressor is a switching credit-score-decline indicator, not a staggered policy."
+}

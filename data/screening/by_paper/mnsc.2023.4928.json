@@ -1,0 +1,40 @@
+{
+  "suffix": "mnsc.2023.4928",
+  "doi": "10.1287/mnsc.2023.4928",
+  "journal": "mnsc",
+  "title": "Optimal Experimental Design for Staggered Rollouts",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Methodological paper on designing staggered-rollout experiments. The package contains Python notebooks that solve optimal designs and run synthetic experiments on empirical panels (flu, loan, grocery, medical data matrices) with simulated treatment assignments; there is no observational DiD estimate of a real treatment and no regression command list (0 regressions extracted).",
+  "design_notes": "Package replication_package_MS-DSC-22-00071: README.md, code/*.ipynb and utils_*.py (within transformation, OLS/GLS, design solvers, adaptive algorithm), data/flu.csv loan.csv grocery.csv medical.csv home_medical.csv (preprocessed outcome matrices), result/*.pkl.",
+  "estimators_reported": [
+    "simulation_study"
+  ],
+  "main_or_robustness": "not applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 0,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": true,
+  "data_files": [
+    "data/flu.csv",
+    "data/loan.csv",
+    "data/grocery.csv",
+    "data/medical.csv",
+    "data/home_medical.csv"
+  ],
+  "software": "python",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Out of scope: no empirical treatment effect estimated."
+}

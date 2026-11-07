@@ -1,0 +1,47 @@
+{
+  "doi": "10.1177/00222437211016360",
+  "suffix": "00222437211016360",
+  "journal": "jmr",
+  "title": "Effects of Payment on User Engagement in Online Courses",
+  "authors": "Ali Goli; Pradeep K. Chintagunta; Srinivasaraghavan Sriram",
+  "year": "2021",
+  "year_in_article": "2021 (JMR 59(1), 2022 issue)",
+  "eligible": false,
+  "eligible_design": false,
+  "eligible_reason": "Not a staggered-adoption DiD. The 'treatment' is a user-specific event (crossing the course passing grade) interacted with a time-invariant paying-user indicator, plus a four-week post-payment window with an imposed linear decay. Fixed effects are user-course and quiz-by-paid-status; there are no calendar-time fixed effects. Every specification also includes a lagged-outcome control (prior cumulative time investment, with quiz-specific coefficients). No binary treatment switching on at unit-specific calendar dates with unit and calendar-time FE.",
+  "design_notes": "Quiz-block-level panel of Coursera users (2012-2016, 70+ courses). Equation 1: log(1+I_iq) = alpha*Paying_i*BeforeCrossing_iq + xi*BeforeCrossing_iq + omega*WithinFourWeeksAfterPayment_iq + gamma*(t_iq - tau_i)*WithinFourWeeksAfterPayment_iq + eta_i (user-course FE) + eta_{q,delta_i} (quiz x paid FE) + beta_{-q}*log(1+I_{i,-q}) (prior investment) + e. Tables 2-3 (full sample, conditional on passing), Table 5 (alternative thresholds), Tables 6-9 (forum activity, peer effects, churn), Table 10 (grades). Column 3 of Tables 2-3 uses a boosted-tree propensity, 5:1 nearest-neighbor matched sample. Table 4 regresses estimated user FE on ability tiers (cross-sectional).",
+  "estimators_reported": ["OLS with user-course and quiz-by-paid FE plus lagged-outcome control", "matched-sample OLS (propensity-score nearest neighbor 5:1)"],
+  "main_or_robustness": "not applicable (no staggered design)",
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "n_eligible_specs": 0,
+  "specs": [],
+  "ineligible_specs": [
+    {
+      "spec_id": "T2_c1",
+      "reported_location": "Table 2, column 1",
+      "outcome": "log(1 + time investment in quiz block)",
+      "treatment_var": "Paying user x Before crossing passing grade (alpha); Weeks after payment (omega); decay (gamma)",
+      "fe": "user-course FE, quiz x paid FE",
+      "controls": "prior cumulative investment log(1+I_{i,-q}) with quiz-specific coefficients (lagged outcome)",
+      "cluster": "user-course",
+      "coef": 0.081, "se": 0.026, "n_obs": 844939,
+      "exclusion_reason": "no calendar-time FE; treatment is a user-specific threshold event, not an adoption date; lagged-outcome control"
+    }
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [
+    {"spec_id": "T2_c1", "table": "Table 2", "column": "1", "coef": 0.081, "se": 0.026, "n_obs": 844939}
+  ],
+  "data_access": "proprietary",
+  "data_availability_statement": "None found in the article text. Data are Coursera clickstream, quiz and payment records for courses offered by a large public university, plus Coursera survey data.",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "package_dir": null,
+  "regressions_path": null,
+  "screener_notes": "Full-text hits for 'difference-in-differences' come from the keyword list and from describing the paying/nonpaying comparison; 'staggered' appears only in the implications section ('staggered payments'). No replication package listed in the batch. Not a candidate for re-estimation."
+}

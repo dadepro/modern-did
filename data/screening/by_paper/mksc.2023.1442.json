@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2023.1442",
+ "doi": "10.1287/mksc.2023.1442",
+ "journal": "mksc",
+ "title": "Price Dispersion and Legacy Discounts in the National Television Advertising Market",
+ "authors": "Sylvia Hristakeva; Julie Holland Mortimer",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_024",
+ "package_dir": "~/did_packages/mksc/mksc.2023.1442",
+ "regressions_path": "./data/packages/mksc.2023.1442_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "eligible_reason": "Not a DiD. Tables 7-10 (mainresults_replication.do) regress log upfront price (and audience/demographic indices) at the telecast-advertiser level on continuous advertiser tenure in the upfront market (age) and quantity, with program x month x conglomerate, network x day-of-week x month and network x season x month FE, plus agency, category, inventory-type, genre-exposure and firm-entry regressors in later columns. No binary treatment adoption.",
+ "design_notes": "Stata reghdfe, cluster prog_no x mon; Matlab for Figure 2. Nielsen-type proprietary telecast/advertiser data.",
+ "estimators_reported": [
+  "ols_hdfe_continuous_regressors"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 7-10, A2-A3",
+   "reason": "continuous regressors (advertiser age, quantity); many time-varying controls; price-dispersion regressions, not DiD"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "replication/sample_rep.dta",
+  "replication/brandlevelbudgets.dta",
+  "replication/Adspenderbudgets.dta"
+ ],
+ "data_files_note": "readme: actual data cannot be shared due to data agreements; simulated datasets do not recreate the paper's results.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated datasets per readme.",
+ "software": "stata",
+ "software_notes": "Stata plus Matlab (figure2.m).",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package only (OpenAlex abstract empty; no article text, no PDF). DOI suffix 2023 but year field 2021 in the batch; not relevant to eligibility."
+}

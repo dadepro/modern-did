@@ -1,0 +1,51 @@
+{
+ "suffix": "mksc.2022.1405",
+ "doi": "10.1287/mksc.2022.1405",
+ "journal": "mksc",
+ "title": "Advertising as a Reminder: Evidence from the Dutch State Lottery",
+ "authors": "Chen He; Tobias J. Klein",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2022.1405",
+ "regressions_path": "./data/packages/mksc.2022.1405_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not a DiD. Minute-level national lottery ticket sales regressed on distributed lags of continuous TV and radio advertising GRPs (grp_tvL0-grp_tvL235, grp_radioL0-L235) with date-by-hour FE (groupDayHour), clustered by date; additional OLS with draw, days-to-draw and hour dummies, draw-level sales regressions on jackpot size, and a structural goodwill model (MATLAB). Treatment is continuous ad exposure in a single national time series, not a binary staggered adoption.",
+ "design_notes": "Stata analysisHeKleinReminder.do (reduced form) and MATLAB main.m (Section 7 structural estimates). Placebo leads (grpF*) and small/big ad splits are robustness variants of the same distributed-lag model.",
+ "estimators_reported": [
+  "distributed_lag_time_series",
+  "structural"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Main reduced-form tables and figures",
+   "reason": "continuous GRP distributed lags in a national minute-level time series; no cross-sectional units with adoption dates"
+  },
+  {
+   "location": "Section 7",
+   "reason": "structural model"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "README: 'We are unfortunately not able to provide the data.' Code only.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "No data in package.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). Continuous advertising-response time series."
+}

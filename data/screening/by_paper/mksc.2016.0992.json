@@ -1,0 +1,57 @@
+{
+ "suffix": "mksc.2016.0992",
+ "doi": "10.1287/mksc.2016.0992",
+ "journal": "mksc",
+ "title": "Modeling Multimodal Continuous Heterogeneity in Conjoint Analysis—A Sparse Learning Approach",
+ "authors": "Yunpeng Chen; Raghuram Iyengar; Garud Iyengar",
+ "year": 2016,
+ "batch": "r2b_014",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0992",
+ "regressions_path": "./data/packages/mksc.2016.0992_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (sparse-learning model of multimodal heterogeneity in metric and choice conjoint)",
+ "ineligible_specs": [
+  {
+   "spec_id": "sparse_learning_conjoint",
+   "reported_location": "simulation and field-data tables",
+   "exclusion_reason": "conjoint part-worth estimation with sparse learning; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Sparse-learning conjoint heterogeneity model on simulated and field conjoint data.",
+ "design_notes": "MATLAB: CHOICE_SL_IMPLEMENTATION.m, METRIC_SL_IMPLEMENTATION.m and simulation generators.",
+ "estimators_reported": [
+  "sparse learning conjoint estimation"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "Choice Conjoint/Field Data/hotel_data.mat",
+  "Choice Conjoint/Field Data/cpp_data.mat",
+  "sample_data.mat (simulated)",
+  "Data_27Q.mat"
+ ],
+ "data_files_note": "Readme: hotel data complete; cell-phone-plan data partial (36 respondents); sample_data.mat simulated.",
+ "data_provenance": "original",
+ "data_provenance_note": "Field conjoint data shipped (one data set partial).",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); package_mismatch checked against title, authors and README/code. OpenAlex abstract read."
+}

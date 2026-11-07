@@ -1,0 +1,209 @@
+{
+ "doi": "10.1287/mnsc.2023.01928",
+ "journal": "mnsc",
+ "title": "“Be the Buyer”—Leveraging the Wisdom of the Crowd in E-Commerce Assortment Planning",
+ "year": 2025,
+ "screened_from": "package_only",
+ "eligible_design": true,
+ "eligible_reason": "Staggered introduction of crowdvoting across product categories (binary 'after' switching on at category-specific months; csdid shows 10 adoption cohorts g10-g19 over 16 months, 64 categories). Table 3 row 1 reports static TWFE with category and year-month FE, no controls, clustered by category; Table 1 / Figure 2 report Callaway-Sant'Anna (csdid, not-yet-treated) and Table 3 row 2 de Chaisemartin-D'Haultfoeuille (did_multiplegt_dyn) for the same two outcomes.",
+ "design_notes": "Subscription apparel-rental platform; category-month panel of average rental outcomes. Treatment = category has started using crowdvoting to select items. Item-level analyses (Tables 2, 4, 5, 8) regress item outcomes on prebuy (item bought via crowdvoting) with item characteristics and PSM weights; user-level analyses (Tables 6-7) use prebuy participation with time-varying controls or logit. Only the category-level TWFE/CSA/dCDH specs are staggered DiD.",
+ "estimators_reported": [
+  "twfe_static (Table 3 row 1)",
+  "callaway_santanna (csdid, Table 1, Figure 2)",
+  "de_chaisemartin_dhaultfoeuille (did_multiplegt_dyn, Table 3 row 2)",
+  "generalized_synthetic_control (fect, Table 3 row 3)",
+  "item-level OLS with controls and PSM (Tables 2,4,5,8)",
+  "user-level TWFE with time-varying control (Table 6)",
+  "logit (Table 7)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 2,
+ "n_eligible_specs_note": "2 distinct TWFE specifications (two outcomes); the csdid entries T1_csdid_c1/c2 are the reported CSA versions of the same two designs and are listed for the modern-estimator comparison, not as additional specs.",
+ "specs": [
+  {
+   "spec_id": "T3_r1_c1",
+   "code_file": "main_code.do",
+   "code_line": 51,
+   "outcome": "log_twoweek_turns_avg",
+   "outcome_description": "log of category-average 14-day rental turns",
+   "static_or_event": "static",
+   "reported_location": "Table 3, row 1 (TWFE), column 1",
+   "published_estimate": {
+    "coef": 0.4263518,
+    "se": 0.085068,
+    "n_obs": 827,
+    "n_clusters": 64,
+    "source": "main_log.log lines 669-696"
+   },
+   "notes": "Modern counterparts reported by the authors: csdid ATT 0.3349 (0.1061) [Table 1 col 1, Figure 2a]; did_multiplegt_dyn average total effect 0.3349 (0.1052) [Table 3 row 2].",
+   "unit_var": "n_subcategory (product category; 64 categories)",
+   "time_var": "running_month (year-month; 16 months, csdid periods 4-19)",
+   "treatment_var": "after",
+   "treatment_definition": "after = 1 from the month the category's first crowdvoting ('Be the Buyer' game) is introduced (csdid gvar month_first_game_cs) onward; staggered across categories, cohorts at months 10-19",
+   "fe": "running_month + n_subcategory",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "n_subcategory",
+   "sample_condition": "category-month panel (827 obs, unbalanced)",
+   "data_file": "data/table1_dta.dta (NOT shipped; NDA)"
+  },
+  {
+   "spec_id": "T3_r1_c2",
+   "code_file": "main_code.do",
+   "code_line": 52,
+   "outcome": "log_threemonth_turns_avg",
+   "outcome_description": "log of category-average 3-month rental turns",
+   "static_or_event": "static",
+   "reported_location": "Table 3, row 1 (TWFE), column 2",
+   "published_estimate": {
+    "coef": 0.5380273,
+    "se": 0.1132932,
+    "n_obs": 827,
+    "n_clusters": 64,
+    "source": "main_log.log lines 698-725"
+   },
+   "notes": "csdid ATT 0.4715 (0.1488) [Table 1 col 2, Figure 2b].",
+   "unit_var": "n_subcategory (product category; 64 categories)",
+   "time_var": "running_month (year-month; 16 months, csdid periods 4-19)",
+   "treatment_var": "after",
+   "treatment_definition": "after = 1 from the month the category's first crowdvoting ('Be the Buyer' game) is introduced (csdid gvar month_first_game_cs) onward; staggered across categories, cohorts at months 10-19",
+   "fe": "running_month + n_subcategory",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "n_subcategory",
+   "sample_condition": "category-month panel (827 obs, unbalanced)",
+   "data_file": "data/table1_dta.dta (NOT shipped; NDA)"
+  },
+  {
+   "spec_id": "T1_csdid_c1",
+   "code_file": "main_code.do",
+   "code_line": 7,
+   "outcome": "log_twoweek_turns_avg",
+   "outcome_description": "log of category-average 14-day rental turns",
+   "static_or_event": "static + event study (estat simple, estat event; Figure 2a)",
+   "reported_location": "Table 1, column 1; Figure 2a",
+   "published_estimate": {
+    "coef": 0.3349012,
+    "se": 0.1060697,
+    "pre_avg": 0.0256202,
+    "post_avg": 0.3555135,
+    "source": "main_log.log lines 205-245"
+   },
+   "notes": "csdid ... ivar(n_subcategory) time(running_month) gvar(month_first_game_cs) asinr method(reg) wboot rseed(3456) notyet. Same design as T3_r1_c1; CSA version.",
+   "unit_var": "n_subcategory (product category; 64 categories)",
+   "time_var": "running_month (year-month; 16 months, csdid periods 4-19)",
+   "treatment_var": "after",
+   "treatment_definition": "after = 1 from the month the category's first crowdvoting ('Be the Buyer' game) is introduced (csdid gvar month_first_game_cs) onward; staggered across categories, cohorts at months 10-19",
+   "fe": "n/a (csdid regression-adjustment, not-yet-treated controls)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "n_subcategory (default ivar); wild bootstrap",
+   "sample_condition": "category-month panel (827 obs, unbalanced)",
+   "data_file": "data/table1_dta.dta (NOT shipped; NDA)"
+  },
+  {
+   "spec_id": "T1_csdid_c2",
+   "code_file": "main_code.do",
+   "code_line": 15,
+   "outcome": "log_threemonth_turns_avg",
+   "outcome_description": "log of category-average 3-month rental turns",
+   "static_or_event": "static + event study (Figure 2b)",
+   "reported_location": "Table 1, column 2; Figure 2b",
+   "published_estimate": {
+    "coef": 0.4714804,
+    "se": 0.1488289,
+    "pre_avg": 0.0309025,
+    "post_avg": 0.5023358,
+    "source": "main_log.log lines 437-470"
+   },
+   "notes": "CSA version of T3_r1_c2.",
+   "unit_var": "n_subcategory (product category; 64 categories)",
+   "time_var": "running_month (year-month; 16 months, csdid periods 4-19)",
+   "treatment_var": "after",
+   "treatment_definition": "after = 1 from the month the category's first crowdvoting ('Be the Buyer' game) is introduced (csdid gvar month_first_game_cs) onward; staggered across categories, cohorts at months 10-19",
+   "fe": "n/a (csdid)",
+   "controls": "none",
+   "weights": "none",
+   "cluster": "n_subcategory; wild bootstrap",
+   "sample_condition": "category-month panel (827 obs, unbalanced)",
+   "data_file": "data/table1_dta.dta (NOT shipped; NDA)"
+  }
+ ],
+ "ineligible_specs_summary": "Tables 2, 4, 5, 8 (main_code.do lines 27-29, 89-91, 118-119, 138-139, 221-223): item-level cross-section regressions of item outcomes on prebuy with item characteristics (is_relaxed ... top_brand, log_retail_price), some with psmatch2 fweights -> not a staggered unit-level adoption design and include controls -> excluded. Table 6 (lines 162-164, 183): user-month panel with prebuy and time-varying control active_day_cnt -> excluded. Table 7 (lines 203-205): logit -> excluded. Table 3 row 3 fect -> synthetic control -> excluded.",
+ "n_adoption_cohorts": 10,
+ "n_adoption_cohorts_note": "csdid output lists cohorts g10 through g19 (adoption in running_month 10-19) over periods 4-19; counted from main_log.log.",
+ "never_treated_present": null,
+ "never_treated_note": "Unknown: csdid uses notyet; did_multiplegt_dyn shows 47 switchers at horizon 1 among 64 categories, so some categories may be never-treated within the window or adopt at the final month.",
+ "reports_modern_estimator": true,
+ "modern_estimators_named": [
+  "Callaway-Sant'Anna (csdid, method(reg), notyet, wild bootstrap)",
+  "de Chaisemartin-D'Haultfoeuille (did_multiplegt_dyn)",
+  "fect generalized synthetic control (not eligible)"
+ ],
+ "preferred_spec_ids": [
+  "T3_r1_c1",
+  "T1_csdid_c1"
+ ],
+ "published_estimates": [
+  {
+   "spec_id": "T3_r1_c1",
+   "estimator": "TWFE",
+   "coef": 0.4263518,
+   "se": 0.085068,
+   "n_obs": 827,
+   "n_clusters": 64
+  },
+  {
+   "spec_id": "T3_r1_c2",
+   "estimator": "TWFE",
+   "coef": 0.5380273,
+   "se": 0.1132932,
+   "n_obs": 827,
+   "n_clusters": 64
+  },
+  {
+   "spec_id": "T1_csdid_c1",
+   "estimator": "CSA (csdid)",
+   "coef": 0.3349012,
+   "se": 0.1060697
+  },
+  {
+   "spec_id": "T1_csdid_c2",
+   "estimator": "CSA (csdid)",
+   "coef": 0.4714804,
+   "se": 0.1488289
+  },
+  {
+   "spec_id": "T3_r2_c1",
+   "estimator": "dCDH (did_multiplegt_dyn, average total effect)",
+   "coef": 0.3349012,
+   "se": 0.1052448
+  },
+  {
+   "spec_id": "T3_r1_c1_event",
+   "estimator": "CSA event study (estat event)",
+   "coefs": {
+    "Tm5": -0.0015885,
+    "Tm4": 0.1104446,
+    "Tm3": -0.0392017,
+    "Tm2": 0.141478,
+    "Tm1": -0.0830312,
+    "Tp0": 0.4021158,
+    "Tp1": 0.1735366,
+    "Tp2": 0.3417525,
+    "Tp3": 0.1125069,
+    "Tp4": 0.3881615,
+    "Tp5": 0.4806122,
+    "Tp6": 0.589909
+   }
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files_note": "No data (strict NDA). Package contains main_code.do, main_log.log (full Stata log with all estimates), main_log_pdf.pdf, table/*.tex, figure/*.pdf. Data files referenced: data/table1_dta.dta (category-month panel), table2_dta.dta, table5_1.dta, table5_2.dta, table6_1.dta, table6_2.dta, table7.dta, table8.dta.",
+ "software": "stata",
+ "software_note": "Stata; reghdfe, csdid, did_multiplegt_dyn, fect, psmatch2, estout.",
+ "replication_feasible": "no",
+ "priority": 2,
+ "screener_notes": "No article text. Clean eligible design (category x month TWFE, binary absorbing adoption, 10 cohorts) but the analysis data are not shipped; replication requires author cooperation. All published point estimates and SEs are recoverable from main_log.log, so the TWFE-vs-CSA comparison for this paper could be recorded from the log alone (TWFE 0.426 vs CSA 0.335; 0.538 vs 0.471) if the protocol allows log-based entries."
+}

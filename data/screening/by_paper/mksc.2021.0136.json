@@ -1,0 +1,67 @@
+{
+ "suffix": "mksc.2021.0136",
+ "doi": "10.1287/mksc.2021.0136",
+ "journal": "mksc",
+ "title": "A Longitudinal Examination of the Relationship Between National-Level Per Capita Advertising Expenditure and National-Level Life Satisfaction Across 76 Countries",
+ "authors": "Michael A. Wiles; Saeed Janani; Darima Fotheringham; Chadwick J. Miller",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_023",
+ "package_dir": "~/did_packages/mksc/mksc.2021.0136",
+ "regressions_path": "./data/packages/mksc.2021.0136_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "priority": 3,
+ "replication_feasible": "no",
+ "eligible_reason": "Not a DiD. The regressor of interest is continuous national per capita advertising expenditure (advertising); every main regression (Table 2 models, Table 3 Griffith et al. replication) is xtreg/areg of LifeLadder on advertising with country FE, year dummies and about 23 time-varying country controls (Gini, social support, log GDP, CPI, etc.), plus advertising x moderator interactions. No binary treatment switching on at country-specific dates.",
+ "design_notes": "Stata Code.do. Country-year panel, 76 countries, 2006-2019 (Data.dta, 874 rows). Estimators: country FE (xtreg fe / areg absorb(ID)) with i.year, random effects comparisons, Gaussian-copula endogeneity term (capula), Granger causality (xtgcause), xtabond2 tests. Paper also has four online/lab experiments (CSV data shipped).",
+ "estimators_reported": [
+  "twfe_continuous_treatment",
+  "random_effects",
+  "gaussian_copula",
+  "experiments"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Table 2 (all models)",
+   "reason": "continuous treatment (advertising per capita) with time-varying controls and advertising x moderator interactions"
+  },
+  {
+   "location": "Table 3",
+   "reason": "replication of Griffith et al.: f.Life on continuous advertising, random effects and FE"
+  },
+  {
+   "location": "Web Appendix Tables W2-W8",
+   "reason": "appendix; continuous advertising (impressions, media types, by-year slopes, outlier and religion moderators)"
+  },
+  {
+   "location": "Experiments 1-4",
+   "reason": "randomized experiments, not panel DiD"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "21-0136 quantitative data and code/Data.dta",
+  "21-0136 quantitative data and code/data_table3.dta",
+  "21-0136 quantitative data and code/data_w3.dta",
+  "21-0136 quantitative data and code/data_w5.dta",
+  "21-0136 experiment stimuli and data/E1-E4 csv files"
+ ],
+ "data_files_note": "Country-year panel assembled from World Happiness Report and public country statistics; advertising expenditure source per paper.",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' estimation data; no masking or sampling stated.",
+ "software": "stata",
+ "screener_notes": "Screened from package and OpenAlex metadata (no article text). code_prescore 2 is driven by country and year FE; the treatment is continuous and every column has time-varying controls, so no staggered binary design exists."
+}

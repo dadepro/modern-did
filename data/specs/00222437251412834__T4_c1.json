@@ -1,0 +1,85 @@
+{
+  "suffix": "00222437251412834",
+  "spec_id": "T4_c1",
+  "journal": "jmr",
+  "data_path": "~/did_packages/_work/00222437251412834/t3t4_panel.rds",
+  "id_var": "user_id",
+  "time_var": "t_idx",
+  "y_var": "lnspend_qsr",
+  "gvar": "g_idx",
+  "weight_var": "",
+  "cluster_var": "user_id",
+  "xt_vars": [],
+  "sample_filter": "col_all == 1 & static_keep == 1",
+  "log_y": "",
+  "published_coef": -0.06115,
+  "published_se": null,
+  "published_n": 109817,
+  "published_source": "Table 4, column 1 (All), 'GLP-1 x months 1-6' row, from the JMR article text (data/text/jmr/00222437251412834.txt). Other bins: months 7-12: -0.0392 (0.0301); post-discontinuation: -0.0715 (0.0382). N = 109,817. Nov 2: published_coef = equal-weight mean of the two in-use bins (months 1-6 and 7-12; Hull's post summary over event_structure.post_summary); the stopped bin is a switch-off period and is not in the pipeline sample; the months 1-6 value is kept in published_coef_months_1_6.",
+  "table": "4",
+  "column": "1",
+  "static_or_event": "event",
+  "event_pre_min": -6,
+  "event_post_max": 12,
+  "treat_bins": "bin: '0' (reference: pre-adoption months -6..-1 and all control months), 'month 1 - 6', 'month 7 - 12', 'month 1 - 6 (stopped)'; months 13+ of use and >6 months post-discontinuation dropped. Nov 2: recorded in event_structure as bins rel [1,6], [7,12], ref [-6,-1], uncovered drop; the stopped bin's rows are dropped (switch-off); event_pre_min/event_post_max are superseded.",
+  "preferred": true,
+  "in_abstract_intro": true,
+  "replication_status": "runnable as an event spec since Nov 2 (event_structure); authors' code reproduced exactly on the synthetic data; published values not reproducible (synthetic data, by design)",
+  "notes": "AS PUBLISHED: Table 4 column 1 (All), Equation 1 with three post-adoption bins (fixest: lnspend_qsr ~ i(glp1use_anddiscontinuation) | user_id + month_num, cluster user_id). Recorded for completeness; NOT run through run_spec.R (the lead's instruction). The 'stopped' bin is a switched-off treatment period and would be dropped under the protocol. Authors' code re-run on the synthetic data (field authors_code_on_synthetic_data) gives months 1-6 = -0.0486 (0.0337), N = 109817, vs published -0.0831 (0.0198), N = 109817: no match, by design. Estimation sample follows the authors' Rmd: 2,602 adopters matched 1:1 (MatchIt nearest-neighbour logit, no replacement, on Jul-Dec 2022 covariates; match.csv re-created in the work dir because it is not shipped) to never-adopters; adoption month (month 0) dropped; the two months between last confirmed use and first confirmed non-use dropped; adopters' pre-period limited to months -6..-1; controls keep all 27 months (Jul 2022-Sep 2024). SYNTHETIC DATA: the Dataverse package (doi:10.7910/DVN/SVWBNT) ships only Data_clean_synth; spending profiles are reshuffled across households and rescaled, so by design no coefficient reproduces (README Section 4). Adoption timing, use duration, discontinuation and stated reason are preserved (N and adopter counts for columns 1-3 match the paper exactly); income is not (synthetic 1,856/746 vs published 1,814/788 adopters). Nov 2 audit: event_structure added; sample_filter changed from 'col_all == 1 & in_authors_sample == 1' to 'col_all == 1 & static_keep == 1' (stopped-bin rows dropped as switched-off treatment); published_coef is now the two-bin post summary.",
+  "authors_code_on_synthetic_data": {
+    "coef_months_1_6": -0.04855,
+    "se_months_1_6": 0.03373,
+    "coef_months_7_12": -0.05226,
+    "se_months_7_12": 0.04656,
+    "coef_stopped": -0.00765,
+    "se_stopped": 0.05491,
+    "n_obs": 109817,
+    "n_adopters": 2602,
+    "n_medium_term": 1495,
+    "n_discontinuing": 888
+  },
+  "event_structure": {
+    "bins": [
+      [
+        1,
+        6
+      ],
+      [
+        7,
+        12
+      ]
+    ],
+    "ref": [
+      [
+        -6,
+        -1
+      ]
+    ],
+    "uncovered": "drop",
+    "post_summary": [
+      [
+        1,
+        6
+      ],
+      [
+        7,
+        12
+      ]
+    ],
+    "pre_summary": [],
+    "source": "Rmd 'Prepare sample for regression analyses' and Table 3/4 blocks (work copy prep_00222437251412834.R lines 40-60, 97): fixest y ~ i(bin, ref = '0') | user_id + month_num, cluster user_id; bins 'month 1 - 6' and 'month 7 - 12' = in-use adopter months with time_to_treat 1..6 and 7..12, 'month 1 - 6 (stopped)' = months 3..8 after the last confirmed use; reference = adopters' months -6..-1 plus all matched-control months. Dropped by the authors: month 0, months < -6, in-use months 13+, the gap months and stopped months beyond 8 (hence uncovered = 'drop'). rel = t_idx - g_idx equals time_to_treat on every adopter row. The stopped bin is a switched-off treatment: its rows are dropped (Hull fn. 6; sample_filter static_keep == 1), so the pipeline estimates the two in-use bins.",
+    "verified": "On the authors' rows (N 109817) fixest with the es_assign bins plus the authors' separate stopped dummy reproduces the authors' code coefficients on the SYNTHETIC data (authors_binned_synthetic.csv) to max abs diff 4.9e-17; bin membership equals the authors' bin variable on every in-use row. The pipeline sample drops the 4233 stopped-bin rows (N 105584), which moves the in-use bins from -0.0486, -0.0523 to -0.0474, -0.0436. All numbers on this package are from SYNTHETIC data (excluded from the main analysis)."
+  },
+  "published_event_coefs": {
+    "months_1_6": -0.0831,
+    "months_7_12": -0.0392,
+    "stopped_1_6": -0.0715
+  },
+  "published_event_se": {
+    "months_1_6": 0.0198,
+    "months_7_12": 0.0301,
+    "stopped_1_6": 0.0382
+  },
+  "published_coef_months_1_6": -0.0831,
+  "published_se_months_1_6": 0.0198
+}

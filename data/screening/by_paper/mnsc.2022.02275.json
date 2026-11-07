@@ -1,0 +1,44 @@
+{
+  "suffix": "mnsc.2022.02275",
+  "doi": "10.1287/mnsc.2022.02275",
+  "journal": "mnsc",
+  "title": "Talent Poaching and Job Rotation",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single policy date and continuous exposure: the DiD (Table 5, Figure 3) interacts a post-policy indicator (month2 > 26, the anti-poaching policy change) with the worker's predicted poaching probability (ProbRF_SD, continuous from a random forest; HighRisk/HighProbHS splits in appendix), with time-varying controls (LogNWDayspm, LogExp_f) and worker, month, first-month and building-month FE, some with worker trends. The appendix did_imputation sets Ei = 136 for all high-probability workers (one cohort). Tables 2-4 regress productivity on continuous client-specific experience. No staggered binary treatment; shipped data are a mock-up.",
+  "design_notes": "Package: code/0_master.do, 1_cleandata.do, 2_table1-5.do, 2_figure1-3.do, 3_appendix.do, programs.do, RF.py/RF_BS.py; processed/MOCKUP_DATASET_REGRESSIONS.dta (code expects DATASET_REGRESSIONS.dta; the shipped file is explicitly a mock-up); input/ spreadsheets (IPC, UPZ, firm size survey); log/log.txt from the authors' run; MainTablesFigures.tex and Appendix.tex. Stata packages: reghdfe, did_imputation, event_plot, ppmlhdfe, ivreghdfe.",
+  "estimators_reported": [
+    "twfe_continuous_exposure_x_post_with_controls",
+    "event_study_single_date",
+    "did_imputation (appendix, single cohort)",
+    "iv",
+    "ppml"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": true,
+  "modern_estimators_named": [
+    "did_imputation (Borusyak-Jaravel-Spiess), appendix only, single cohort"
+  ],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "synthetic",
+  "data_files_present": true,
+  "data_files": [
+    "processed/MOCKUP_DATASET_REGRESSIONS.dta (mock-up)",
+    "temp/RForest_importance.dta",
+    "input/*.xls(x)"
+  ],
+  "software": "stata, python",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Personnel data from a security-service firm; the README-equivalent (master do-file header and file name) indicates the regression dataset is a mock-up."
+}

@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2024.0948",
+ "doi": "10.1287/mksc.2024.0948",
+ "journal": "mksc",
+ "title": "Shrinkflation and Consumer Demand",
+ "authors": "Aljoscha Janssen; Johannes Kasinger",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_021",
+ "package_dir": "~/did_packages/mksc/mksc.2024.0948",
+ "regressions_path": "./data/packages/mksc.2024.0948_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Not a binary staggered DiD. The demand estimations (Code/9_Demand_Estimations.R, 10_Demand_Estimations_Interaction.R) regress log(units + 0.5) on log(imputed_price) and log(size1_amount) with store-product and week FE (or store-product-week-of-year and store-product-year FE, or quarterly time FE), plus IV versions and ShrinkingProduct x log price / log size interactions. Package size changes occur at product-specific dates, but they enter as a continuous log-size regressor alongside continuous price, so the estimands are price and size elasticities, not a binary post-adoption effect. Remaining scripts produce descriptive tables and figures (prevalence of shrinkflation, average price/size changes).",
+ "design_notes": "R fixest::feols, NielsenIQ RMS store-week scanner data 2006-2019 (Kilts), estimation by product group; base-price imputation algorithm (C++). Abstract: consumers scarcely adjust demand despite higher per-ounce prices.",
+ "estimators_reported": [
+  "twfe_continuous_price_size_elasticity",
+  "iv_2sls"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "treatment_switches_off": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Demand estimation tables (9_Demand_Estimations.R)",
+   "reason": "continuous regressors log price and log size; IV variants"
+  },
+  {
+   "location": "Interaction tables (10_Demand_Estimations_Interaction.R)",
+   "reason": "ShrinkingProduct x continuous price/size interactions"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "README: NielsenIQ RMS/HMS data via Kilts Center; not shipped. Package ships code, RA coding spreadsheets and the imputation algorithm only.",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Licensed NielsenIQ data, not included.",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text). Continuous size/price demand design; licensed data not shipped."
+}

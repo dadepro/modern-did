@@ -1,0 +1,66 @@
+{
+ "suffix": "mnsc.2023.01856",
+ "doi": "10.1287/mnsc.2023.01856",
+ "journal": "mnsc",
+ "title": "Colonial Legacy and Informal Finance",
+ "authors": "Jiafu An; Chen Lin; Mingzhu Tai",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_028",
+ "package_dir": "~/did_packages/mnsc/mnsc.2023.01856",
+ "regressions_path": "./data/packages/mnsc.2023.01856_regressions.txt",
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "package_mismatch": false,
+ "eligible_reason": "Spatial regression discontinuity across colonial borders (British vs French) with cell and ethnic-group FE and distance polynomials; cross-country regressions of informal finance on a time-invariant British-colony indicator with year and grid-cell FE (Table 3). Treatment is time-invariant; no adoption timing.",
+ "design_notes": "Stata (reghdfe). Survey microdata (FinMark/FinScope Cameroon, Afrobarometer, Global Findex, FinTrust).",
+ "estimators_reported": [
+  "spatial_rd",
+  "ols_fe_cross_section"
+ ],
+ "specs": [
+  {
+   "spec_id": "T3",
+   "eligible": false,
+   "code_file": "code/06_Table_3.do",
+   "reported_location": "Table 3",
+   "exclusion_reason": "time-invariant colonial-origin indicator; cross-sectional comparison"
+  },
+  {
+   "spec_id": "T4-T10",
+   "eligible": false,
+   "code_file": "code/07_Table_4.do",
+   "reported_location": "Tables 4-10",
+   "exclusion_reason": "spatial RD across colonial borders; no treatment timing"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "data/CMA_FINMARK.dta",
+  "data/CROSS_COUNTRY.dta",
+  "data/AFRO6_CMA.dta",
+  "data/NGA_CMR.dta",
+  "data/GFIALL.dta"
+ ],
+ "data_files_note": "Analysis datasets for all tables shipped.",
+ "data_provenance": "original",
+ "data_provenance_note": "Survey analysis files shipped as used.",
+ "software": "stata",
+ "software_notes": "Stata (reghdfe v5, outreg2, custom x_ols.ado)",
+ "screener_notes": "Screened from package only (no article text or PDF). Spatial RD; not DiD."
+}

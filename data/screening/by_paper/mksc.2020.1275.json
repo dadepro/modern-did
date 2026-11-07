@@ -1,0 +1,28 @@
+{
+  "suffix": "mksc.2020.1275",
+  "doi": "10.1287/mksc.2020.1275",
+  "journal": "mksc",
+  "title": "Digital Piracy, Creative Productivity, and Customer Care Effort: Evidence from the Digital Publishing Industry",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "Single event date (termination of V-Disk free storage and search in June 2016); treated group = contracted writers, control = non-contracted writers after propensity-score matching; equation includes lagged feedback controls and interactions.",
+  "design_notes": "DiD at the writer-book-update level on a Chinese digital publishing platform (969 books). Equation (1): Y_kit = alpha_ki + b1 I_t + b2 Contract_i + b3 I_t x Contract_i + gamma Sales/Tips/Comments_{i,t-1} + interactions + delta C_it + e, with writer-book fixed effects; matched sample from 1:1 nearest-neighbor propensity-score matching. The event indicator I_t switches on at one calendar date for everyone (June 2016), so there is a single adoption date, a time-varying lagged-outcome control set, and matching. Robustness adds month fixed effects and chapter fixed effects.",
+  "estimators_reported": [
+    "matched DiD with writer/book FE (single event)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: single adoption date; propensity-score matching; time-varying lagged controls. Data: platform data supplied by a Chinese literature platform plus scraped reader tipping/comment data; no public replication package listed. Screened from article text only."
+}

@@ -1,0 +1,43 @@
+{
+  "suffix": "mnsc.2023.4779",
+  "doi": "10.1287/mnsc.2023.4779",
+  "journal": "mnsc",
+  "title": "Credit Ratings and the Hold-Up Problem in the Loan Market",
+  "year": 2023,
+  "screened_from": "package_only",
+  "eligible": false,
+  "eligible_design": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Single reform date: the Banque de France rating reform in 2004Q2 (policy_time = quarter - 2004q2; rating_surprise = treat x after). Treated firms receive a rating surprise at the common reform date. Two-group, one-date design. No staggered adoption.",
+  "design_notes": "CR_analysis.do: reghdfe D_tot_A rating_surprise, a(siren IND#REG#treat_group#policy_time) vce(cl siren) and variants with fewer FE, heterogeneity interactions, and a relative-quarter event study (treat_172-treat_180). CR_analysis_branch.do firm-bank level; BS_analysis.do firm-year balance-sheet outcomes.",
+  "estimators_reported": [
+    "twfe_two_group_single_date",
+    "event_study_common_date"
+  ],
+  "main_or_robustness": "main (not staggered)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "n_adoption_cohorts_note": "One reform date (2004Q2).",
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary (Banque de France data via CASD secure access on request)",
+  "data_files_present": false,
+  "data_files": [
+    "*.do and *.log only"
+  ],
+  "data_files_note": "readme.pdf: data are proprietary and under NDA; access via CASD. The folder also contains an unrelated nested archive mnsc.2023.4777.zip and its extracted package (MS-OPM-19-01547), which should be ignored for this paper.",
+  "data_provenance": "not_shipped",
+  "data_provenance_note": "",
+  "software": "stata",
+  "software_notes": "",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "Not an eligible design.",
+  "screener_notes": "Screened from package only. Note for lead: ~/did_packages/mnsc/mnsc.2023.4779 also contains mnsc.2023.4777.zip and an extracted mnsc.2023.4777/ folder (a different paper, MS-OPM-19-01547); not used here."
+}

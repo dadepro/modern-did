@@ -1,0 +1,30 @@
+{
+ "suffix": "0022243718821957",
+ "doi": "10.1177/0022243718821957",
+ "journal": "jmr",
+ "title": "Speaking for \"Free\": Word of Mouth in Free- and Paid-Product Settings",
+ "year": "2019",
+ "eligible_design": false,
+ "design_notes": "Study 4 uses 5,665 apps listed on both Google Play and Apple's App Store, observed in September 2014 and March 2015. Model: differenced across platforms (Eq. 2) in NewReviews on Free, Low Volume, High Dispersion and their interactions, with ranking and rating controls, comparing two time points. Studies 1-3 are a survey and experiments.",
+ "eligible_reason": "Two-period cross-platform difference design with interaction terms, count outcome and time-varying controls; no staggered adoption of a binary treatment.",
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "estimators_reported": [
+  "cross-platform differenced regression",
+  "experiments"
+ ],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "data_access": "unclear",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "App-store data on 6,300 randomly selected apps collected by the authors; no data availability statement or package found. Ineligible on design.",
+ "screened_from": "article text only (no package_dir or regressions file in batch_t2_004)"
+}

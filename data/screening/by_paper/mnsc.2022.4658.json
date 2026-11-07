@@ -1,0 +1,28 @@
+{
+ "doi": "10.1287/mnsc.2022.4658",
+ "journal": "mnsc",
+ "year": 2023,
+ "title": "Dropping Anchor: A Field Experiment Assessing a Salary History Ban with Archival Replication",
+ "eligible_design": false,
+ "eligible_reason": "Randomized field experiment (230 hires, UK) plus an interrupted time series of one recruitment firm that adopted a salary history ban on a single date in 2018. No unit-level staggered adoption; no panel TWFE with multiple adoption cohorts.",
+ "design_notes": "Study 1 is an ITT regression on randomized assignment with salary-band and covariate controls. Study 2 compares placements before/after one firm-level adoption date (3,687 placements, Nov 2009-Jun 2019); gender inferred from first names. The 'difference-in-differences' mention in the text refers to pre-experiment baseline hires and the female x SHB interaction, not staggered adoption. Prior literature cited (Sinha 2019; Bessen et al. 2021) uses state-staggered DiD but this paper does not.",
+ "estimators_reported": [
+  "randomized ITT regression",
+  "interrupted time series (single adoption date)"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: randomization plus single-date ITS. Data from a private UK educational institution and a recruitment firm; no replication package listed in batch."
+}

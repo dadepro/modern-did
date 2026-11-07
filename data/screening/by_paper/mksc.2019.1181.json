@@ -1,0 +1,42 @@
+{
+ "suffix": "mksc.2019.1181",
+ "doi": "10.1287/mksc.2019.1181",
+ "journal": "mksc",
+ "title": "“Let the Sunshine In”: The Impact of Industry Payment Disclosure on Physician Prescription Behavior",
+ "authors": "Tong Guo; Srinivasaraghavan Sriram; Puneet Manchanda",
+ "year": 2020,
+ "screened_from": "package_only",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "main_or_robustness": "main",
+ "eligible_reason": "Not a staggered design, and the outcome is simulated. Only Massachusetts' disclosure law is studied, a single state and a single date (post1), with physicians in border areas as controls. The treatment is split into brand and generic interactions (two treatment regressors). Every column adds time-varying zip-level controls (monthly enrolled members, log median income, percent private and public insurance). The FE set is brand x physician plus year-month x brand x border-area.",
+ "design_notes": "regression_simulate_data.do: areg y_sim MAxT1xbrand MAxT1xgeneric timetrend##branddummy##borderD c.monthlymemberno c.loginc_median c.pctprivate c.pctpublic, absorb(ib_num) vce(cluster npi), run for the statin, antidepressant and antipsychotic classes. Physician-heterogeneity regressions follow with further interactions.",
+ "estimators_reported": [
+  "twfe_single_state_did_with_controls"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "simulate_data_statin.csv",
+  "simulate_data_antidepr.csv",
+  "simulate_data_antipsych.csv"
+ ],
+ "data_provenance": "synthetic",
+ "software": "stata",
+ "software_notes": "Stata do-file.",
+ "screener_notes": "Screened from package only. The README says the dataset is simulated: confidential X variables are rescaled and Y is simulated from the authors' model estimates."
+}

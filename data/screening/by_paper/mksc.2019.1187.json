@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2019.1187",
+ "doi": "10.1287/mksc.2019.1187",
+ "journal": "mksc",
+ "title": "Mobile Hailing Technology and Taxi Driving Behaviors",
+ "authors": "Yanwen Wang; Chunhua Wu; Ting Zhu",
+ "year": 2019,
+ "batch": "r2b_010",
+ "package_dir": "~/did_packages/mksc/mksc.2019.1187",
+ "regressions_path": "./data/packages/mksc.2019.1187_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Bayesian joint model of latent app adoption and taxi driving behaviors, with survey-based adoption likelihood)",
+ "ineligible_specs": [
+  {
+   "spec_id": "bayesian_latent_adoption",
+   "reported_location": "main estimation tables",
+   "exclusion_reason": "MCMC hierarchical model in which adoption is latent and simulated each iteration, with peer adoption ratio and IV-type equation; no TWFE DiD on observed adoption dates"
+  }
+ ],
+ "eligible_reason": "Not an eligible DiD. Adoption is unobserved and modeled jointly with driving behavior in a Bayesian MCMC model.",
+ "design_notes": "MATLAB main.m: latent adoption status drawn from adoption probabilities; outcomes modeled by Bayesian regressions with driver and period random effects.",
+ "estimators_reported": [
+  "Bayesian MCMC joint adoption-behavior model"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "readme: simulation.m generates simulated data for 1,000 drivers x 100 periods.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated by simulation.m.",
+ "software": "other",
+ "software_notes": "MATLAB",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read; package_mismatch checked against title, authors and README."
+}

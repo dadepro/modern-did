@@ -1,0 +1,93 @@
+{
+ "suffix": "mnsc.2022.04040",
+ "doi": "10.1287/mnsc.2022.04040",
+ "journal": "mnsc",
+ "title": "How Does Artificial Intelligence Shape Audit Firms?",
+ "year": "2024",
+ "screened_from": "package_only",
+ "eligible_design": false,
+ "eligible_reason": "Staggered binary treatment (treat_ai = 1 after an audit office first hires an AI employee) with office and year FE, but every regression in the replication code includes six time-varying office-year controls ($controls = n_sic2 marketshare ln_n_clients hhi_deciles left_ratio ln_total_audit_fees) or, for client-level tables, a long vector of time-varying client controls. No specification without time-varying controls. The package ships no data (Revelio Labs, Burning Glass, Audit Analytics).",
+ "design_notes": "Stata 17, reghdfe 5.7.3 ('Replicate Code.do'; data expected under Data/main_sample, skill_sample, iv_sample, gc_sample, icmw_sample, rest_sample, none shipped). Table 3: reghdfe {ln_n_accounting, ln_n_audit, ln_n_tax, ln_n_consult} treat_ai $controls [aweight = n_employee], abs(officeid year) cluster(msaid#year); log shows N = 4,417 office-years, 648 offices, 9 years (2011-2019). Table 4: junior/middle/senior auditor counts, same design. Table 5: job-posting level skill indicators with officeid and cleantitleid#year FE, clustered by job title. Table 6: IV (ai_talent_supply). Table 7: robustness (alternative treatment treat_ai_alt, subsamples, alternative clustering). Tables 8-9: client-level outcomes (going-concern errors, restatements) with officeid, fyear, gvkey or sic2 FE and client controls. Logs in Log/*.smcl contain full output.",
+ "estimators_reported": [
+  "reghdfe TWFE static with time-varying controls and analysis weights (office + year FE, clustered by MSA x year)",
+  "IV (ivreghdfe, Table 6)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": "unknown (no data in package); offices adopt over 2011-2019",
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [
+  {
+   "location": "Table 3 col 1",
+   "outcome": "ln_n_accounting",
+   "coef": 0.023,
+   "se": 0.011,
+   "n_obs": 4417,
+   "source": "Log/Table 3 More Auditors.smcl",
+   "eligible": false
+  },
+  {
+   "location": "Table 3 col 2",
+   "outcome": "ln_n_audit",
+   "coef": 0.043,
+   "se": 0.013,
+   "n_obs": 4417,
+   "source": "Log/Table 3 More Auditors.smcl",
+   "eligible": false
+  },
+  {
+   "location": "Table 3 col 3",
+   "outcome": "ln_n_tax",
+   "coef": -0.004,
+   "se": 0.013,
+   "n_obs": 4417,
+   "source": "Log/Table 3 More Auditors.smcl",
+   "eligible": false
+  },
+  {
+   "location": "Table 3 col 4",
+   "outcome": "ln_n_consult",
+   "coef": 0.013,
+   "se": 0.019,
+   "n_obs": 4417,
+   "source": "Log/Table 3 More Auditors.smcl",
+   "eligible": false
+  }
+ ],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 3 (do-file line 88, four outcomes)",
+   "reason": "time-varying office controls n_sic2 marketshare ln_n_clients hhi_deciles left_ratio ln_total_audit_fees"
+  },
+  {
+   "location": "Table 4 (line 109, four outcomes)",
+   "reason": "same time-varying controls"
+  },
+  {
+   "location": "Table 5 (lines 130-175)",
+   "reason": "time-varying controls; job-posting level with title-by-year FE"
+  },
+  {
+   "location": "Table 6 (line 194)",
+   "reason": "IV"
+  },
+  {
+   "location": "Table 7 (lines 213-228)",
+   "reason": "time-varying controls; alternative treatment definition and subsamples"
+  },
+  {
+   "location": "Tables 8-9 (lines 245-275)",
+   "reason": "client-level time-varying controls; additional gvkey/sic2 FE"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Package: ~/did_packages/mnsc/mnsc.2022.04040/Replicate Kit/ (README.md with variable dictionary, Code/Replicate Code.do, Log/*.smcl for each table and figure). The Data/ folder referenced by the code is absent; sources are Revelio Labs, Burning Glass, Audit Analytics, ACS. Published coefficients are recoverable from the logs. A no-controls version of Table 3 would qualify in design but is neither reported nor runnable without the data."
+}

@@ -1,0 +1,38 @@
+{
+  "suffix": "mnsc.2021.01341",
+  "doi": "10.1287/mnsc.2021.01341",
+  "journal": "mnsc",
+  "title": "Management Practices and Resilience to Shocks: Evidence from COVID-19",
+  "year": 2024,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Not eligible. The design is a difference-in-difference with repeated cross sections around a single event (Italian lockdown, interview week 12-13 of 2020): the treatment is a continuous standardized management score (ZscoreMOPS) interacted with a post-lockdown indicator (inter_lockdown), with sector x post and firm-type x post fixed effects and time-varying firm controls. No binary treatment, no staggered adoption, no unit fixed effects (each firm is surveyed once). Data are Bank of Italy internal survey microdata and are not shipped.",
+  "design_notes": "analysis_t4.do: reghdfe v539_trim (expected 2020 sales growth) ZscoreMOPS inter_lockdown [controls] if week_invind!=12 & week!=13, absorb(sect_3dig#dummy_post_lockdown week_invind v3#dummy_post_lockdown inter_type) cluster(sect_3dig); columns split pre/post; Dsales (realized growth) in columns 6-7. Table 5: areg sw20 (smart working) on ZscoreMOPS with controls. Table 3: conditional logit. Only log files and do-files are shipped; README states the do-files 'can only be run internally in the Bank of Italy system'.",
+  "estimators_reported": [
+    "continuous_treatment_x_post_cross_section",
+    "conditional_logit",
+    "ols_with_controls"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_provenance": "not shipped (Bank of Italy INVIND/SONDTEL/ISECO surveys, INPS, CERVED)",
+  "data_files_present": false,
+  "data_files": [
+    "none (replication_data_ms.dta referenced in do-files is not included); LOG_FILES/*.txt show the Stata output"
+  ],
+  "software": "stata",
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Flags (diff-in-diff, two-way fixed effects, cite Roth et al. 2023) reflect the single-shock DiD with a continuous treatment. Screened from package only."
+}

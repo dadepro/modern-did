@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2022.0198",
+ "doi": "10.1287/mksc.2022.0198",
+ "journal": "mksc",
+ "title": "How Does a Firm Adapt in a Changing World? The Case of Prosper Marketplace",
+ "authors": "Xinlong Li; Andrew T. Ching",
+ "year": 2023,
+ "batch": "r2b_005",
+ "package_dir": "~/did_packages/mksc/mksc.2022.0198",
+ "regressions_path": "./data/packages/mksc.2022.0198_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (adaptive learning models of Prosper's credit-risk updating; MLE and counterfactuals)",
+ "ineligible_specs": [
+  {
+   "spec_id": "adaptive_learning",
+   "reported_location": "main tables",
+   "exclusion_reason": "structural adaptive-learning model with listing-level logits; no staggered treatment"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural model of how the platform adapts its risk models.",
+ "design_notes": "R scripts per algorithm.",
+ "estimators_reported": [
+  "logit learning models",
+  "MLE"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Replication files/Data/*.csv"
+ ],
+ "data_files_note": "Readme: 'The data sets under the data folder are disguised synthetic data.'",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Disguised synthetic data per Readme.",
+ "software": "r",
+ "software_notes": "R",
+ "screener_notes": "No article text available. Article text and OpenAlex abstract unavailable (INFORMS abstracts withheld); package_mismatch checked against title and authors."
+}

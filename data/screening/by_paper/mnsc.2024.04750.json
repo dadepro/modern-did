@@ -1,0 +1,28 @@
+{
+  "suffix": "mnsc.2024.04750",
+  "doi": "10.1287/mnsc.2024.04750",
+  "journal": "mnsc",
+  "title": "Investor Perceptions of the Corporate Alternative Minimum Tax",
+  "year": "2025",
+  "eligible_design": false,
+  "eligible_reason": "No difference-in-differences panel. Stock-return event study around legislative events for the Inflation Reduction Act minimum tax, comparing targeted and nontargeted firms with industry fixed effects. All firms face the same event dates, no unit-specific adoption.",
+  "design_notes": "Daily/cumulative abnormal returns on event days, targeted vs nontargeted firms, industry FE; ERC analysis. No unit fixed effects and no staggered adoption.",
+  "estimators_reported": [
+    "financial event study; cross-sectional return regressions"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Compustat and stock return data (licensed)."
+}

@@ -1,0 +1,2 @@
+suffix,spec_id,window,boot_B,cov_twfe_csa,cov_twfe_bjs,boot_sd_twfe,boot_sd_csa,boot_sd_bjs,boot_cor_twfe_csa,boot_cor_twfe_bjs,draws_ok_twfe,draws_ok_csa,draws_ok_bjs,draw0_diff_twfe,draw0_diff_bjs,draw0_diff_csa,csa_fast_path,seconds,es_source
+mnsc.2025.02515,TC3_RTO_filed_bankruptcy,static,999,0.00188902075731685,0.00224664128170305,0.0513097182359689,0.0832131015129571,0.0628057430113246,0.442430838861358,0.697163669516189,999,999,999,1.11022302462516e-16,5.55111512312578e-16,8.32667268468867e-17,TRUE,12,

@@ -1,0 +1,65 @@
+{
+ "suffix": "mksc.2024.1281",
+ "doi": "10.1287/mksc.2024.1281",
+ "journal": "mksc",
+ "title": "From Live to Recording: Consumer Demand and Response to Price Across the Livestreaming Lifecycle",
+ "authors": "Ziwei Cong; Jia Liu; Puneet Manchanda",
+ "year": 2026,
+ "screened_from": "package_only",
+ "batch": "r2a_021",
+ "package_dir": "~/did_packages/mksc/mksc.2024.1281",
+ "regressions_path": "./data/packages/mksc.2024.1281_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Not a staggered DiD. The unit is a Zhihu Live event (N = 2,299) observed in two windows: the 30 days before its livestream and the 30 days after (recording). df_combined stacks the two windows and the main specification (code.Rmd lines 230-262, Section 4.1-4.3) regresses log(demand30 + 1) on lnfull_price*after plus live_start_week*after, dayofweek*after and event/creator covariates (lm; felm with week x tag and dow x tag FE). Every event is 'treated' (after = 1 in its own second window), there is no event FE, no calendar-time FE and no untreated comparison; the coefficient of interest is the interaction of a continuous price with the post-livestream indicator (a change in price elasticity). Sections with ivreg (similar-event prices as instruments), DML (Python) and Oster bounds (Stata) are IV/ML variants of the same cross-event comparison.",
+ "design_notes": "R (lm, lfe::felm, AER::ivreg) in code/code.Rmd; Stata Oster2019_and_IV_test.do (reg, ivreg2); Python DML_lasso.py / DML_rf.py. Abstract: demand is more price sensitive before the event than after, explained by self-selection and lower quality uncertainty once the livestream ends.",
+ "estimators_reported": [
+  "ols_cross_section",
+  "ols_pooled_pre_post_price_interaction",
+  "iv_2sls",
+  "double_ml"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "n_adoption_cohorts_note": "Not applicable: event-relative pre/post windows, every unit treated, no calendar-time panel.",
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Section 4.1-4.3 pooled OLS (code.Rmd r0-r3)",
+   "reason": "continuous price x after interaction; no unit or calendar-time FE; all units treated"
+  },
+  {
+   "location": "Separate pre/post cross-sectional regressions",
+   "reason": "cross-sectional price elasticity, not DiD"
+  },
+  {
+   "location": "OLS-IV, DML, Oster",
+   "reason": "IV and ML estimators of the same price-elasticity contrast"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "code/df_scaled.csv",
+  "code/df_combined_scaled.csv"
+ ],
+ "data_files_note": "README: all price- and demand-related variables are rescaled for confidentiality; coefficient estimates may differ at the second decimal.",
+ "data_provenance": "authors_transformed",
+ "data_provenance_note": "Original Zhihu Live data with price and demand variables rescaled by the authors.",
+ "software": "r",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package, README and OpenAlex abstract (no article text). Pre/post-livestream price-elasticity design; nothing staggered."
+}

@@ -1,0 +1,29 @@
+{
+ "doi": "10.1287/mnsc.2020.02865",
+ "journal": "mnsc",
+ "year": 2026,
+ "title": "Information Transparency, Choice Confidence, and Customer Retention: Field and Laboratory Evidence from Markets for Credence Goods",
+ "eligible_design": false,
+ "eligible_reason": "Observational churn analysis with propensity-score matching plus a two-period DiD around a single 53-day delisting of the insurer from comparison platforms (14 July to 5 September 2012). One event, t in {0,1}, customer and period fixed effects, with controls. A randomized online experiment supplements the field evidence. No staggered adoption.",
+ "design_notes": "Eq. (2): Churn_it = a + rho*Comparison_it + X_it'beta + delta_i + gamma_t + e_it, t=1 during the disruption, t=0 before. Figure 4 reports baseline (-4.6 pp), matching (-6.2 pp) and DiD (-11.8 pp) estimates.",
+ "estimators_reported": [
+  "PSM",
+  "two-period DiD with customer and period FE",
+  "lab randomized experiment"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: two-period single-event DiD. Proprietary European insurer data."
+}

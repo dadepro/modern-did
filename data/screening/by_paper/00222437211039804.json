@@ -1,0 +1,30 @@
+{
+  "suffix": "00222437211039804",
+  "doi": "10.1177/00222437211039804",
+  "journal": "jmr",
+  "title": "Deceptive Claims Using Fake News Advertising: The Impact on Consumers",
+  "year": "2021",
+  "eligible_design": false,
+  "eligible_reason": "Single common shutdown date, no staggered adoption, nonlinear (zero-inflated Poisson) estimator and merchant-type-specific trends.",
+  "design_notes": "Event study around one date: the April 2011 FTC order shutting down ten fake-news-site operators (174 product domains), using comScore browsing data aggregated to domain-year-month. Eq. 5: y_jt = b Post_t + b_FTC Post_t x FTCY + merchant-type FE + merchant-type x 2011 FE + merchant-type-specific monthly trend, comparing a three-month post window in 2011 to the same months in 2010 (placebo date also used). Table 5 estimates a zero-inflated Poisson (nonlinear), with a linear version used only to illustrate. Appendix A adds a difference-in-difference-in-differences with control sites. Entire sample is treated at the same date.",
+  "estimators_reported": [
+    "zero-inflated Poisson DiD",
+    "linear DiD illustration (Eq. 5)",
+    "DDD (Appendix A)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: single date, nonlinear model, unit-type trends. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. comScore panel data (licensed)."
+}

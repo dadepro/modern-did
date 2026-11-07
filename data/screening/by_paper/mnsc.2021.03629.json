@@ -1,0 +1,66 @@
+{
+ "suffix": "mnsc.2021.03629",
+ "doi": "10.1287/mnsc.2021.03629",
+ "journal": "mnsc",
+ "title": "Too Long, Didn’t Read? The Impact of Length Limits on Microblogging Engagement",
+ "authors": "Shuting Ada Wang; Brad N. Greenwood",
+ "year": 2025,
+ "screened_from": "package_only",
+ "batch": "r2a_025",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.03629",
+ "regressions_path": "./data/packages/mnsc.2021.03629_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "eligible_reason": "Weibo extended its length limit for paid members in late January 2016 (Month 13; Wave 1) and for non-members in November 2016 (Month 23; Wave 2), but the two waves are estimated separately as single-date DiDs: Wave 1 columns (reghdfe ... Member1_After1 ... if Month<23, absorb(uid date)) have one treated cohort (members) and non-members as controls; Wave 2 columns (M_NM event-time terms, Month>=13) have one cohort (non-members) against already-treated members and add RM_Member1. No column pools both cohorts. All columns also include lagged/time-varying controls (l.CumVideoRatio, l.CumImageRatio, LnDaysSinceRegist, LnDaysSinceRegist_lnfans; lnPreCumulative* in post-level models). The Twitter/microWorkers and Chinese-university experiments are cross-sectional RCTs.",
+ "design_notes": "Stata (reghdfe). User-day panel of 8,534 randomly sampled Weibo users, Jan 2015-Dec 2017 (User_Level_Data.dta, 23.6 GB) and post-level data (Post_Level_Data.dta). Timing checked in the data: After1 switches on in Month 13 (partial) and After2 in Month 23; Member1 is fixed (users who changed status dropped).",
+ "estimators_reported": [
+  "twfe_static_with_controls",
+  "twfe_event_study_with_controls",
+  "ols_rct"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": true,
+ "treatment_switches_off": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs_listed": [
+  {
+   "location": "Wave 1 user-day DiD and event study (Code.do lines 63-82, 110-114)",
+   "reason": "single adoption date within the Month<23 window; lagged and time-varying controls"
+  },
+  {
+   "location": "Wave 2 event study (Code.do lines 85, 117-121, 145, 217-221)",
+   "reason": "single adoption date for non-members with already-treated members as controls; RM_Member1 extra regressor; controls"
+  },
+  {
+   "location": "Post-level likes models (Code.do lines 132-145)",
+   "reason": "single adoption date; hour FE; time-varying controls"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "User_Level_Data.dta",
+  "Post_Level_Data.dta",
+  "Experiment_Data_for_Analysis.dta",
+  "Experiment_Data_with_No_Monetary_Incentives.xlsx",
+  "Data_for_TableA1.dta"
+ ],
+ "data_files_note": "README: 'all data necessary to reproduce the results of the paper are included'; Weibo data scraped by the authors in 2020.",
+ "data_provenance": "original",
+ "data_provenance_note": "Full analysis sample of scraped Weibo users shipped (the random draw of 20,000 users is the authors' sampling frame, not a subsample of the analysis data).",
+ "software": "stata",
+ "replication_feasible": "yes",
+ "priority": 3,
+ "screener_notes": "Screened from README, Code.do, data timing check and OpenAlex abstract. The phased rollout has two cohorts, but each specification uses one wave only, so no published column is a staggered design; a pooled re-estimation would not reproduce any reported column."
+}

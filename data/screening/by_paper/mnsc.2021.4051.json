@@ -1,0 +1,64 @@
+{
+ "suffix": "mnsc.2021.4051",
+ "doi": "10.1287/mnsc.2021.4051",
+ "journal": "mnsc",
+ "title": "Focusing Provider Attention: An Empirical Examination of Incentives and Feedback in Flu Vaccinations",
+ "authors": "Robert J. Niewoehner; Bradley R. Staats",
+ "year": 2020,
+ "screened_from": "package_only",
+ "batch": "r2a_026",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.4051",
+ "regressions_path": "./data/packages/mnsc.2021.4051_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "n_adoption_cohorts_note": "Compliance Care program arms (Control, Ranking, Rebate) assigned for the 2018 flu season; arm x 2018 comparison against 2017 at a common date.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not staggered. Table 1: xtreg PctGrow Arm x 2018 with random effects (re), state dummies and patient count, a common-date arm-by-year comparison; Tables 2-3: within-season weekly clinic FE regressions on lagged rank (continuous) or lagged top/bottom-rank flags (time-varying, switching), not adoption; appendix Study 1 is a cross-sectional comparison. Data are under NDA with VaxCare; only a hypothetical one-clinic example is shipped.",
+ "design_notes": "Stata 14. Clinic-level flu-shot panels (Aug-Dec seasons 2017-2018). Random-effects (REML-type xtreg, re) arm x year models; weekly FE models of doses per patient on lagged ranking feedback; placebo tests on rebate and control arms.",
+ "estimators_reported": [
+  "random_effects_arm_x_year",
+  "fe_lagged_rank"
+ ],
+ "specs": [
+  {
+   "spec_id": "T1",
+   "eligible": false,
+   "exclusion_reason": "common-date arm x year comparison; random effects instead of unit FE; multi-arm treatment",
+   "code_file": "data_appendix_MS-OPM-19-02253/CC_revF_4a_PercentGrowth.do",
+   "reported_location": "Table 1"
+  },
+  {
+   "spec_id": "T2-T3",
+   "eligible": false,
+   "exclusion_reason": "continuous lagged rank or lagged rank flags (time-varying treatment intensity, switches on/off), not staggered adoption",
+   "code_file": "data_appendix_MS-OPM-19-02253/CC_revF_4b_RankResponse.do",
+   "reported_location": "Tables 2-3"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [
+  "data_appendix_MS-OPM-19-02253/CC - Synthetic Dataset Example (copy).csv"
+ ],
+ "data_files_note": "VaxCare shot records under NDA; the package ships only a hypothetical 44-row example for one clinic.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Single hypothetical clinic example (README: 'hypothetical example of 1 clinic's data'); analysis data not shipped.",
+ "software": "stata",
+ "software_notes": "Stata 14; R for figures",
+ "screener_notes": "Screened from package only (no article text or PDF). Common-date program evaluation; no data."
+}

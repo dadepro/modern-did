@@ -1,0 +1,46 @@
+{
+ "doi": "10.1287/mnsc.2023.4930",
+ "journal": "mnsc",
+ "year": 2023,
+ "title": "Tick Size and Earnings Guidance in Small-Cap Firms: Evidence from the SEC's Tick Size Pilot Program",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Single adoption date: the Tick Size Pilot treats all pilot firms from October 2016; post1 = 1 for 2017Q1-2018Q3 and 0 for 2015Q1-2016Q3 for every firm (2016Q4 dropped). Not a staggered design. Every column also includes 19 time-varying firm controls.",
+ "design_notes": "From CNOY_Replication Code.do. Unit: firm (gvkey); time: fiscal quarter (group_datafqtr FE); treatment post1_pilot = post1 x pilot (pilot = randomly selected test-group firm). Table 3: reghdfe DUMF / lnFREQ_w post1_pilot + 19 controls, a(gvkey group_datafqtr) cl(gvkey); cols 1 and 3 without FE. Table 4 / Figure 2: quarter-specific pilot interactions p6_pilot..pp7_pilot relative to 2016Q4. Table 5 alternative windows (post4/post6/post8) and placebo (post14). Tables 6-8: triple interactions with firm characteristics.",
+ "estimators_reported": [
+  "TWFE static (firm and quarter FE) with controls",
+  "TWFE event study (quarter x pilot dummies) with controls",
+  "pooled OLS without FE"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Tables 3-8, Figure 2",
+   "reason": "single common treatment date (pilot start Oct 2016); time-varying controls in every column; Tables 6-8 add subgroup x treatment triple interactions"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "public",
+ "data_files_present": true,
+ "package_files": {
+  "present": [
+   "CNOY_Main Dataset.dta",
+   "CNOY_Extended Dataset.dta",
+   "CNOY_Firms in the Pilot Program.dta",
+   "CNOY_Figure 1.xls"
+  ],
+  "note": "Analysis datasets shipped; underlying sources Compustat, CRSP, I/B/E/S, Thomson 13f (WRDS)."
+ },
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "The 'staggered' full-text flag likely refers to the pilot's three test groups phased in over October 2016 or to literature discussion; at quarterly frequency the design has one adoption date."
+}

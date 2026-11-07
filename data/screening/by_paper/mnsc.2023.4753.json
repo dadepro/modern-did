@@ -1,0 +1,247 @@
+{
+  "suffix": "mnsc.2023.4753",
+  "doi": "10.1287/mnsc.2023.4753",
+  "journal": "mnsc",
+  "title": "Country Reputation and Corporate Activity",
+  "year": 2024,
+  "year_note": "frame.csv lists 2023 (online date 2023-05-11); published volume 70 issue 3 (2024).",
+  "screened_from": "package_only",
+  "eligible": true,
+  "eligible_design": true,
+  "near_miss": false,
+  "near_miss_reason": null,
+  "eligible_reason": "Table 3 column 1 (Tables/Table 3.do line 54) is a static TWFE: reghdfe LOG_SEGMENT_SALES TREATMENT, absorb(SURVEY_YEAR FIRM_SEGMENT_GP), cluster(CLUSTER_GP), with no controls. TREATMENT = post x treatedpair (prep file line 416), where post = 1 in survey years strictly after the first successful terror attack in the firm's home country whose victims included nationals of the foreign segment country (first_event_year, defined at the home-country x foreign-country pair level; cohorts 2001-2013 after dropping 2000, 2014 and 2015 events) and never switches off; firm-segments in country pairs with no such attack are never treated. Figure 1's 'firms without name exposure' series (Figures/Figure 1.do line 47) is an unstacked event study with the same fixed effects and no controls. Both satisfy PROTOCOL.md Section 2. All other columns (Table 3 cols 2-7, Tables 4-7, Figures 2-3) include time-varying firm or country controls or treatment interactions.",
+  "design_notes": "Firm-segment-year panel from Worldscope geographic segments (ITEM6105 firm x survey_country foreign segment; FIRM_SEGMENT_GP), survey_year >= 1995 to 2015. Outcome LOG_SEGMENT_SALES = log(1 + USD segment sales / 10,000), winsorized at 2.5%. Treatment from the Global Terrorism Database (0. Prepare GTD data.do): successful attacks since 2000, excluding target type 4, with at least one victim of the foreign nationality; first_event_year = earliest such attack per (home country, victim country) pair; post = first_event_year < survey_year; TREATMENT = post x treatedpair. Sample restrictions (prep file lines 437-478): non-missing BVA, cash flow, leverage, Tobin's Q; positive total segment sales; at least 2 firms per country pair; firm present in at least 2 country pairs and more than one foreign segment; drop Fama-French-48 financials; total USD segment sales >= 100,000. Cluster CLUSTER_GP = foreign (survey) country, 92 clusters. Table 3 col 1 real-data log: N = 243,543; 21 year FE; 21,468 firm-segment FE; TREATMENT = -0.4116 (0.1590), t = -2.59. Cols 2-7 add controls and industry-year, foreign-country-year, home-country-year and firm-year FE. Table 4: interactions with name-resemblance indicators. Table 5: country-pair-year reputation outcomes (BAV) with country controls. Table 6: media coverage / promotion / reputation interactions. Table 7: firm-level Q, M/B, sales growth, ROE with controls. Figure 1 (Figure 1.do lines 35-48): event-time dummies m5..m1, p0..p5 relative to first_event_year on a window event_time in [-6, 5] plus never-treated (0. Prepare Figures.do lines 27-45; p6-p10 drop out), outcome LOG_SEGMENT_SALES1 = LOG_SEGMENT_SALES / 7.886; series 'together' and name-exposure subsamples include controls, series 'nottop1' (large2 == 0) has none: N = 164,279, 91 clusters, all coefficients within +/- 0.025 and insignificant.",
+  "estimators_reported": [
+    "twfe_static",
+    "twfe_static_with_controls",
+    "twfe_event_study",
+    "twfe_event_study_with_controls",
+    "twfe_treatment_interactions"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 2,
+  "n_adoption_cohorts": 13,
+  "n_adoption_cohorts_note": "first_event_year takes values 2001-2013 after the code drops 2000, 2014 and 2015 events (log line 70272: 2001 7,919; 2002 3,861; 2003 2,888; 2004 1,907; 2005 16,262; 2006 3,101; 2007 6,930; 2008 12,157; 2009 1,968; 2010 370; 2011 1,051; 2012 67; 2013 130 pair-year rows before sample restrictions). Post starts the year after the event.",
+  "never_treated_present": true,
+  "always_treated_present": false,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "preferred_spec_note": "Table 3 column 1 is the no-controls baseline of the main table; the authors' headline columns likely include controls (cols 2-7). Mark preferred = unclear until the article text is available.",
+  "published_estimates": [
+    {
+      "spec_id": "T3_c1",
+      "source": "LOG/MS-FIN-19-02808.smcl (authors' real-data log; Excel Outputs/Table3.xls rounds to 2 decimals)",
+      "coef": -0.4116166,
+      "se": 0.1590327,
+      "t": -2.59,
+      "n_obs": 243543,
+      "n_clusters": 92,
+      "within_r2": 0.0004
+    },
+    {
+      "spec_id": "F1_nottop1_event_study",
+      "source": "LOG/MS-FIN-19-02808.smcl",
+      "n_obs": 164279,
+      "n_clusters": 91,
+      "coefficients": {
+        "m5": [
+          -0.0054873,
+          0.0092662
+        ],
+        "m4": [
+          -0.00335,
+          0.0089396
+        ],
+        "m3": [
+          0.0084805,
+          0.0141219
+        ],
+        "m2": [
+          0.0057418,
+          0.012731
+        ],
+        "m1": [
+          0.0071172,
+          0.0180684
+        ],
+        "p0": [
+          -0.0108455,
+          0.0238247
+        ],
+        "p1": [
+          0.0032771,
+          0.027314
+        ],
+        "p2": [
+          0.0044937,
+          0.02936
+        ],
+        "p3": [
+          -0.022506,
+          0.0405402
+        ],
+        "p4": [
+          -0.0214315,
+          0.0386545
+        ],
+        "p5": [
+          -0.0248244,
+          0.0304781
+        ]
+      },
+      "note": "[coef, se]; outcome rescaled by 1/7.886; p6-p10 omitted (collinear) because the window is event_time in [-6, 5]."
+    }
+  ],
+  "specs": [
+    {
+      "spec_id": "T3_c1",
+      "eligible": true,
+      "exclusion_reason": null,
+      "code_file": "replication_package_MS-FIN-19-02808/Code and Data/Tables/Table 3.do",
+      "code_line": 54,
+      "outcome": "LOG_SEGMENT_SALES = log(1 + survey_country_sales x lagged HQ exchange rate / 10,000), winsorized 2.5%",
+      "treatment_var": "TREATMENT (= inter = post x treatedpair)",
+      "treatment_definition": "1 for firm-segment-years with survey_year > first_event_year of the (home country, foreign country) pair, where first_event_year is the first successful terror attack in the home country since 2000 with victims from the foreign country (GTD); absorbing; cohorts 2001-2013; pairs with no attack never treated",
+      "unit_var": "FIRM_SEGMENT_GP (firm x foreign country); assignment unit = country pair (BRAND_GP x SURVEY_COUNTRY_GP)",
+      "time_var": "SURVEY_YEAR (1995-2015, 21 years)",
+      "fe": "SURVEY_YEAR + FIRM_SEGMENT_GP",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "CLUSTER_GP (foreign country, 92 clusters)",
+      "sample_condition": "Table3.dta as built by '0. Prepare segment data and clean up data for Table 3.do' (lines 360-522): survey_year >= 1995; non-missing BVA, CF2AT2, LEVERAGE2, LOG_Q2; positive segment sales; >= 2 firms per pair; firm in >= 2 pairs and > 1 foreign segment; drop FF48 industry 48; total USD segment sales >= 1e5; first_event_year not in {2000, 2014, 2015}",
+      "static_or_event": "static",
+      "data_file": "Table3.dta (NOT shipped; built from Worldscope wrds_ws_segments_5*.dta, wrds_ws_company_2, wrds_ws_stock_2, wrds_ws_funda_2, currencymapping.dta and shipped GTD1.dta)",
+      "data_provenance": "real",
+      "reported_location": "Table 3, column 1",
+      "notes": "Firm-segment FE are nested within the foreign-country cluster. Within R2 0.0004."
+    },
+    {
+      "spec_id": "F1_nottop1_event_study",
+      "eligible": true,
+      "exclusion_reason": null,
+      "code_file": "replication_package_MS-FIN-19-02808/Code and Data/Figures/Figure 1.do",
+      "code_line": 47,
+      "outcome": "LOG_SEGMENT_SALES1 = LOG_SEGMENT_SALES / 7.886069",
+      "treatment_var": "m5 m4 m3 m2 m1 p0 p1 p2 p3 p4 p5 (p6-p10 included but collinear/omitted)",
+      "treatment_definition": "event_time = survey_year - first_event_year for treated pairs (missing for never-treated); m_k = 1[event_time == -k], p_k = 1[event_time == k]; sample keeps event_time in [-6, 5] plus never-treated, so t = -6 and never-treated form the reference",
+      "unit_var": "FIRM_SEGMENT_GP",
+      "time_var": "SURVEY_YEAR",
+      "fe": "FIRM_SEGMENT_GP + SURVEY_YEAR",
+      "controls": "none",
+      "weights": "none",
+      "cluster": "CLUSTER_GP (91 clusters)",
+      "sample_condition": "Figure1_data.dta: prefigure.dta with keep if abs(event_time)<=6 | first_event_year==.; keep if event_time>=-6; drop if p6; and large2 == 0 (firms without top-name resemblance to their home country)",
+      "static_or_event": "event_study",
+      "event_bins": "t = -5..-1, 0..+5; omitted t = -6 (and never-treated); window excludes t <= -7 and t >= +6",
+      "data_file": "Figure1_data.dta / prefigure.dta (NOT shipped)",
+      "data_provenance": "real",
+      "reported_location": "Figure 1, 'Firms without Name Exposure' series",
+      "notes": "The other three Figure 1 series (all firms; name-exposure firms, raw and adjusted outcome) include the six time-varying controls and are not eligible. Unusual reference period (t = -6)."
+    },
+    {
+      "spec_id": "T3_c2_c7_controls",
+      "eligible": false,
+      "exclusion_reason": "time-varying controls in every column (cols 3-7 also add industry-year, foreign-country-year, home-country-year, firm-year FE)",
+      "code_file": "replication_package_MS-FIN-19-02808/Code and Data/Tables/Table 3.do",
+      "code_line": 59,
+      "outcome": "LOG_SEGMENT_SALES",
+      "treatment_var": "TREATMENT",
+      "treatment_definition": "as T3_c1",
+      "unit_var": "FIRM_SEGMENT_GP",
+      "time_var": "SURVEY_YEAR",
+      "fe": "col 2: SURVEY_YEAR + FIRM_SEGMENT_GP; col 3: ind_yr_gp + FIRM_SEGMENT_GP; col 4: + SURVEY_YEAR##SURVEY_COUNTRY_GP; col 5: + SURVEY_YEAR##BRAND_GP; col 6: both; col 7: FIRM_SEGMENT_GP + SURVEY_YEAR##SURVEY_COUNTRY_GP + FIRM_GP##SURVEY_YEAR (lines 59-84)",
+      "controls": "LOG_SEGMENT_AGE LOG_NR_OTHER_SEGMENTS SEGMENT_HHI CASH_FLOW_TO_ASSETS LEVERAGE LOG_TOBINS_Q (time-varying firm/segment covariates)",
+      "weights": "none",
+      "cluster": "CLUSTER_GP",
+      "sample_condition": "Table3.dta",
+      "static_or_event": "static",
+      "data_file": "Table3.dta (not shipped)",
+      "data_provenance": "real",
+      "reported_location": "Table 3, columns 2-7",
+      "notes": "Col 2 real-data log: TREATMENT -0.4121 (0.1683), N 243,543. Controls-free versions of cols 3-6 would be eligible (time-invariant group x year FE) but are not reported."
+    },
+    {
+      "spec_id": "T4_name_resemblance",
+      "eligible": false,
+      "exclusion_reason": "treatment x name-resemblance interactions; time-varying controls",
+      "code_file": "replication_package_MS-FIN-19-02808/Code and Data/Tables/Table 4.do",
+      "code_line": 1,
+      "outcome": "LOG_SEGMENT_SALES",
+      "treatment_var": "TREATMENT##TOP_{1,3,5}_NAME_RESEMBLANCE",
+      "treatment_definition": "as T3_c1",
+      "unit_var": "FIRM_SEGMENT_GP",
+      "time_var": "SURVEY_YEAR",
+      "fe": "SURVEY_YEAR + FIRM_SEGMENT_GP",
+      "controls": "LOG_SEGMENT_AGE LOG_NR_OTHER_SEGMENTS SEGMENT_HHI CASH_FLOW_TO_ASSETS LEVERAGE LOG_TOBINS_Q (time-varying firm/segment covariates)",
+      "weights": "none",
+      "cluster": "CLUSTER_GP",
+      "sample_condition": "Table 4 sample",
+      "static_or_event": "static",
+      "data_file": "not shipped",
+      "data_provenance": "real",
+      "reported_location": "Table 4",
+      "notes": ""
+    },
+    {
+      "spec_id": "T5_country_reputation",
+      "eligible": false,
+      "exclusion_reason": "time-varying country controls (GDP, population, GATT/WTO, common currency); country-pair panel",
+      "code_file": "replication_package_MS-FIN-19-02808/Code and Data/Tables/Table 5.do",
+      "code_line": 1,
+      "outcome": "COUNTRY_REPUTATION; PCA_BASED_REPUTATION (BAV surveys)",
+      "treatment_var": "1.TREATMENT",
+      "treatment_definition": "post x treated at the country-pair level",
+      "unit_var": "COUNTRY_PAIRS",
+      "time_var": "SURVEY_YEAR",
+      "fe": "SURVEY_YEAR + COUNTRY_PAIRS",
+      "controls": "COMMON_CURRENCY GATT_WTO_MEMBER(_FC) LOG_GDP_PER_CAPITA(_FC) LOG_POPULATION(_FC)",
+      "weights": "none",
+      "cluster": "CLUSTER_GP",
+      "sample_condition": "country-pair-years with BAV coverage",
+      "static_or_event": "static",
+      "data_file": "not shipped (BAV licensed)",
+      "data_provenance": "real",
+      "reported_location": "Table 5",
+      "notes": "Figure 2 is the event-study version with controls."
+    },
+    {
+      "spec_id": "T7_firm_level",
+      "eligible": false,
+      "exclusion_reason": "time-varying firm controls (LOG_AGE LOG_BVA LOG_BVA_SQ, CF_TO_AT LEVERAGE)",
+      "code_file": "replication_package_MS-FIN-19-02808/Code and Data/Tables/Table 7.do",
+      "code_line": 1,
+      "outcome": "LOG_Q, LOG_MB, SALES_GROWTH, ROE",
+      "treatment_var": "TREATMENT (firm-level)",
+      "treatment_definition": "firm exposed to a reputation shock in any segment",
+      "unit_var": "FIRM_GP",
+      "time_var": "SURVEY_YEAR",
+      "fe": "FIRM_GP + SURVEY_YEAR (or INDUSTRY_YEAR_GP)",
+      "controls": "LOG_AGE LOG_BVA LOG_BVA_SQ (+ CF_TO_AT LEVERAGE for ROE)",
+      "weights": "none",
+      "cluster": "FFI_IND",
+      "sample_condition": "firm-years",
+      "static_or_event": "static",
+      "data_file": "not shipped",
+      "data_provenance": "real",
+      "reported_location": "Table 7",
+      "notes": "Figure 3 is the event-study version with controls."
+    }
+  ],
+  "data_access": "proprietary",
+  "data_access_note": "Worldscope segment, company, stock and fundamentals files (WRDS), BAV country reputation surveys, Factiva, Osiris are licensed and not shipped; the package ships only the GTD-derived treatment file GTD1.dta and the promotion-agency file IPA1.dta, plus the full Stata log and Excel outputs. The exchange-rate file currencymapping.dta used in the Table 3 build is not shipped.",
+  "data_files_present": false,
+  "data_files": [
+    "Code and Data/Data/GTD1.dta (country-pair first attack years; shipped)",
+    "Code and Data/Data/IPA1.dta (promotion agencies; shipped)",
+    "LOG/MS-FIN-19-02808.smcl (73k-line real-data log)",
+    "Code and Data/Excel Outputs/Table1-7 .xls"
+  ],
+  "software": "stata",
+  "software_notes": "Stata (reghdfe, outreg2, winsor, ffind, coefplot); Python notebook for tF values.",
+  "replication_feasible": "maybe",
+  "replication_feasible_note": "Table 3 column 1 needs only Worldscope segment data (available through WRDS subscriptions), the shipped GTD1.dta and the unshipped currencymapping.dta (HQ-currency to USD rates); the build code is complete. Figure 1 additionally needs prefigure.dta / large2 (name-resemblance flag from Table 4's build). Author contact recommended for Table3.dta and currencymapping.dta.",
+  "priority": 2,
+  "screener_notes": "Screened from package only. Treatment variable traced from GTD prep (first_event_year = min attack year by pair) through '0. Prepare segment data and clean up data for Table 3.do' (post, treatedpair, inter -> TREATMENT). Cohort counts and real-data estimates taken from the authors' log. Flags cite Goodman-Bacon and Callaway-Sant'Anna but no modern estimator appears in the code."
+}

@@ -1,0 +1,30 @@
+{
+  "suffix": "0022243720914271",
+  "doi": "10.1177/0022243720914271",
+  "journal": "jmr",
+  "title": "Can Viagra Advertising Make More Babies? Direct-to-Consumer Advertising on Public Health Outcomes",
+  "year": "2020",
+  "eligible_design": false,
+  "eligible_reason": "Treatment is a continuous intensity (ED drug TV advertising dollars per 100 capita at DMA-month level), not a binary switch. Panel regressions of zip-month birth rate on ad intensity with zip and month fixed effects (and border-time, school-year fixed effects) are not a DiD with binary staggered adoption.",
+  "design_notes": "Table 3 Models 1-5 (Massachusetts zip-month panel, 2001-2010): ED drug ads coefficient .008 (.003) in Model 1 (WLS, zip and month FE, N = 5,130), .007 (.003) with border-quarter FE, .007 (.003) with border-month FE, .007 (.003) with border-monthly FE, .008 (.003) with school-year FE (N = 4,940); SEs clustered by zip. The paper cites Shapiro's DMA-border design as 'akin to difference-in-differences' but the regressor is a continuous spending measure. The national birth certificate analysis (Table 5, 22,645 county-months) regresses imputed conceptions on log(1 + ED ad dollars per 100 capita) with county and month FE. No staggered binary adoption.",
+  "estimators_reported": [
+    "WLS panel regressions with continuous ad intensity (Table 3)",
+    "DMA-border fixed-effect designs (Tables 3-4)",
+    "county-month regressions on log(1 + ad dollars per 100 capita) with county and month FE (Table 5)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "No replication package or regressions file was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only. Advertising data are from Kantar Media (commercial), MA hospital birth records are restricted-access, and national birth certificate micro data (NVSS) are public-use. Not eligible under PROTOCOL Section 2 (continuous treatment intensity)."
+}

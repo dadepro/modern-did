@@ -1,0 +1,57 @@
+{
+ "suffix": "mnsc.2023.00456",
+ "doi": "10.1287/mnsc.2023.00456",
+ "journal": "mnsc",
+ "title": "The Allocation of Talent and Financial Development, 1897 to 1936",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_006",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "eligible_reason": "Continuous treatment with a single common date: lnquota_post = log civil-examination quota x post, post = 1 for 1905-1936 (abolition of the exam) in every prefecture. No binary staggered adoption.",
+ "design_notes": "Prefecture x year panel 1897-1936 (prefecture_data.dta). Tables 2-8: reghdfe banks (BanksAll, BanksChinese, bankers) on lnquota_post, absorb(year idprefID), cluster idprefID, with and without baseline-characteristic x post controls; year-by-year lnquota interactions for dynamics; cross-sectional regressions on lnquota for 1919/1934/1936. Table 9: prefecture-industry cross-section.",
+ "estimators_reported": [
+  "continuous-treatment TWFE DiD (single date)",
+  "cross-sectional OLS"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "specs": [
+  {
+   "spec_id": "T2_lnquota_post",
+   "eligible": false,
+   "exclusion_reason": "continuous treatment (lnquota x post); single common date 1905",
+   "code_file": "prefecture_do.do",
+   "outcome": "BanksAll, BanksChinese, NbBankers_panel",
+   "treatment_var": "lnquota_post",
+   "unit_var": "idprefID",
+   "time_var": "year",
+   "fe": "idprefID, year",
+   "controls": "none / $control (lnpop1880_post lncoastal_distance_post lnarea_post)",
+   "cluster": "idprefID",
+   "static_or_event": "static",
+   "reported_location": "Tables 2-8",
+   "data_provenance": "original"
+  }
+ ],
+ "data_access": "public",
+ "data_provenance": "original",
+ "data_provenance_note": "prefecture_data.dta and prefecture_industry_data.dta shipped (historical archival data); no indication of alteration.",
+ "data_files_present": true,
+ "data_files": [
+  "prefecture_data.dta",
+  "prefecture_industry_data.dta",
+  "Figure 2/Figure2_data.xls"
+ ],
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and README (OpenAlex abstract empty). Batch lists year 2021 (OpenAlex); DOI suffix suggests a 2023+ submission."
+}

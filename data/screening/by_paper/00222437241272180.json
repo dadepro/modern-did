@@ -1,0 +1,29 @@
+{
+  "suffix": "00222437241272180",
+  "doi": "10.1177/00222437241272180",
+  "journal": "jmr",
+  "title": "Getting the Board on Board: Marketing Department Power and Board Interlocks",
+  "year": "2024",
+  "eligible_design": false,
+  "eligible_reason": "No eligible DiD. The key regressor is the continuous marketing department power of interlocked firms (a network peer-effect variable), estimated on a firm-year panel with an instrumental-variables strategy. No binary treatment switching on at unit-specific dates.",
+  "design_notes": "Unbalanced firm-year panel (43,033 firm-years, 6,008 firms, 2007-2021) with Equilar interlock data and Compustat. Bayesian (Stan) linear-in-means panel IV model with four-digit SIC intercepts; endogeneity handled by lagged covariates and a control-function IV approach.",
+  "estimators_reported": [
+    "Bayesian linear-in-means panel model",
+    "instrumental variables (control function)"
+  ],
+  "main_or_robustness": "not_applicable",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "never_treated_present": "unclear",
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Licensed data (Equilar, Compustat). Excluded: continuous treatment, IV and no unit fixed effects."
+}

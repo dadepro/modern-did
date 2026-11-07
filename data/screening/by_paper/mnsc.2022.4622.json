@@ -1,0 +1,43 @@
+{
+  "suffix": "mnsc.2022.4622",
+  "doi": "10.1287/mnsc.2022.4622",
+  "journal": "mnsc",
+  "title": "The Impact of Social Nudges on User-Generated Content for Social Network Platforms",
+  "year": 2022,
+  "screened_from": "package_only",
+  "eligible_design": false,
+  "eligible": false,
+  "near_miss": false,
+  "near_miss_reason": "",
+  "eligible_reason": "Randomized field experiment on a video-sharing platform ('Platform O'): providers are randomly assigned to receive social nudges (treatment vs control), and almost every regression is a cross-sectional OLS of a provider-level outcome on the treatment indicator (sm.OLS 'y ~ 1 + treatment', Tables 2-13, 15, 17-21). The only pre/post designs are two-period comparisons: Table 14 column 1 (control-group providers, whether_follower_send_author_msg_exp_time x post, day before the experiment vs the first reception day, clustered by author) and Table 16 (matched like/comment users, treatment x post, two periods). There is no staggered binary adoption, no unit or calendar-time fixed effects, and no event study.",
+  "design_notes": "Empirical_Analyses.py (statsmodels, Jupyter export) and Simulation_Analyses.py (network model, Section 6). Code reads social_nudge_first_exp_*.csv, social_nudge_second_exp_production_diffusion.csv, platform_nudge_production.csv, social_nudge_first_exp_control_group_did.csv and social_nudge_first_exp_like_comment_cannibalize_data.csv; none of these files is in the package. Table 14 col 1 (line 1167): photo_id_cnt_fillzero ~ whether_follower_send_author_msg_exp_time*post, cluster author_id. Table 16 (lines 1483-1486): sending_like_cnt / sending_comment_cnt ~ treatment*post on a matched user sample.",
+  "estimators_reported": [
+    "ols_experimental_ate",
+    "two_period_did_interaction (Table 14 col 1, Table 16)",
+    "structural_network_simulation"
+  ],
+  "main_or_robustness": "n/a (no staggered design; RCT)",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": null,
+  "n_adoption_cohorts_note": "No staggered adoption: random assignment, outcomes measured on each provider's first reception day.",
+  "never_treated_present": null,
+  "always_treated_present": null,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "proprietary",
+  "data_files_present": false,
+  "data_files": [
+    "Data_Distributional_Information.pdf (summary tables only)"
+  ],
+  "data_files_note": "Social_Nudge_MS_Data_Readme.pdf gives a data dictionary, but no CSV used by Empirical_Analyses.py is shipped; only distributional summaries are included.",
+  "data_provenance": "not_shipped",
+  "software": "python",
+  "software_notes": "Python (pandas, statsmodels); Jupyter-exported scripts.",
+  "replication_feasible": "no",
+  "priority": 3,
+  "priority_note": "RCT without staggered adoption; data not shipped.",
+  "screener_notes": "Screened from package only (no article text). Ruled out on design: randomized experiment with provider-level ATE regressions; the full-text 'difference-in-differences' hit refers to the two-period Table 14/16 comparisons."
+}

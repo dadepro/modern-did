@@ -1,0 +1,86 @@
+{
+ "doi": "10.1287/mnsc.2022.03920",
+ "journal": "mnsc",
+ "year": 2025,
+ "title": "Engaging Customers with AI in Online Chats: Evidence from a Randomized Field Experiment",
+ "authors": "Shunyuan Zhang; Das Narayandas",
+ "eligible": false,
+ "eligible_design": false,
+ "eligible_reason": "Design qualifies formally (binary AI_enabled switches on at agent-specific days: 117 treated agents across 46 distinct first-adoption days, 18 never-treated agents; agent FE + day FE; clustered by agent), but every main-text regression includes the time-varying control logagent_tenure (log days since the agent joined, varies within agent over time), and sentiment regressions also control for start_sentiment. Per PROTOCOL 5b a time-varying control in every reported column is NOT eligible; recorded as a near-miss.",
+ "design_notes": "Conversation-level data (228,558 conversations, 80% random sample), xtset agent_id; xtreg y AI_enabled logagent_tenure i.daily, fe r (agent FE, day FE, vce robust = clustered by agent in xtreg fe). Table 2: logresponse_time (line 19). Table 3: logNmsg_agent, logNmsg_customer, logconversation_duration (lines 24-26). Table 5: end_sentiment with start_sentiment control (line 36). Tables 4, 6, 8, 9: AI_enabled interacted with tenure, start sentiment, intent category, chatbot issues. Table 7: adds mediators. Web Appendix: randomization checks (adoption_day on pre-period agent characteristics), SUTVA test with NumTreated interaction, first-week spillover test, logit for intent assignment, fect (IFE counterfactual estimator) on agent-day aggregates with cov(logagent_tenure). AI_enabled is absorbing at the agent-day level (no switch-off; 43 agent-days mixed = adoption day). Adoption days range 47-276 of 362, with two main waves (days 47-53 and 147-152).",
+ "estimators_reported": [
+  "TWFE static (xtreg fe with agent FE and day FE, time-varying tenure control, robust/cluster-agent SE)",
+  "Interaction-based heterogeneity TWFE",
+  "Logit (Web Appendix C)",
+  "fect interactive-fixed-effects counterfactual estimator (Web Appendix B)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 46,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [
+  "fect (Liu-Wang-Xu IFE counterfactual; appendix only, not in protocol list)"
+ ],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "near_miss_specs": [
+  {
+   "location": "Table 2 col 1 (AI_in_Online_Chats_Analysis.do line 19)",
+   "outcome": "logresponse_time",
+   "treatment_var": "AI_enabled",
+   "unit_var": "agent_id (xtset)",
+   "time_var": "daily",
+   "fe": "agent_id + i.daily",
+   "controls": "logagent_tenure (time-varying)",
+   "cluster": "agent_id (xtreg fe, vce(robust))",
+   "data_file": "replication pacakge/AI_in_Online_Chats_Data.dta",
+   "reason": "would be eligible if logagent_tenure were dropped"
+  },
+  {
+   "location": "Table 3 cols 1-3 (lines 24-26)",
+   "outcome": "logNmsg_agent; logNmsg_customer; logconversation_duration",
+   "treatment_var": "AI_enabled",
+   "fe": "agent_id + i.daily",
+   "controls": "logagent_tenure (time-varying)",
+   "reason": "same near-miss"
+  },
+  {
+   "location": "Table 5 (line 36); Table 7 col 1 (line 47)",
+   "outcome": "end_sentiment",
+   "controls": "start_sentiment, logagent_tenure (both time-varying)",
+   "reason": "two time-varying controls"
+  }
+ ],
+ "ineligible_specs": [
+  {
+   "location": "Tables 2, 3, 5, 7",
+   "reason": "time-varying control logagent_tenure in every column (Table 5/7 also start_sentiment and mediators)"
+  },
+  {
+   "location": "Tables 4, 6, 8, 9; Web Appendix Tables S5-S8",
+   "reason": "treatment interacted with tenure, start sentiment, intent category, chatbot issues, NumTreated, first-week indicator (subgroup/continuous interactions) plus time-varying controls"
+  },
+  {
+   "location": "Web Appendix Table S2 Panel B",
+   "reason": "logit"
+  },
+  {
+   "location": "Web Appendix B (fect)",
+   "reason": "interactive fixed effects counterfactual estimator with covariates; appendix"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "replication pacakge/AI_in_Online_Chats_Data.dta (228,558 conversations; 34 variables; random 80% sample of the original data; agent_id disguised but consistent; 135 agents; 362 days Dec 2020-Nov 2021)"
+ ],
+ "software": "stata",
+ "software_detail": "Stata/MP 17 (xtreg, estout, fect, csgvar)",
+ "replication_feasible": "maybe",
+ "replication_feasible_note": "Data and code present and simple; a TWFE without logagent_tenure can be run immediately, but it would not be a reported specification. Published estimates themselves reproducible only approximately (80% sample).",
+ "priority": 3,
+ "screened_from": "package_only",
+ "screener_notes": "Screened from package only. RCT with staggered rollout of AI assistance to agents; authors treat it as a staggered DiD with agent and day FE. Near-miss under the time-varying-control rule (same call as mnsc.2021.01010). If the lead decides to relax the rule for a single deterministic tenure control, Table 2 col 1 and Table 3 cols 1-3 would be eligible static specs with 46 cohorts and 18 never-treated agents, clustered by agent (135 clusters)."
+}

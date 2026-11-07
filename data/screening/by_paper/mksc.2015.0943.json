@@ -1,0 +1,69 @@
+{
+ "suffix": "mksc.2015.0943",
+ "doi": "10.1287/mksc.2015.0943",
+ "journal": "mksc",
+ "title": "Practice Prize Winner—ECO: Entega’s Profitable New Customer Acquisition on Online Price Comparison Sites",
+ "authors": "Martin Natter; Ana-Marija Ozimec; Ju‐Young Kim",
+ "year": 2015,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0943",
+ "regressions_path": "./data/packages/mksc.2015.0943_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Practice Prize: sales-potential model for ranks on price comparison sites and a bonus optimization tool; two field experiments evaluate the tool)",
+ "ineligible_specs": [
+  {
+   "spec_id": "sales_model",
+   "reported_location": "sales model parts 1-3",
+   "exclusion_reason": "aggregate demand, region-share and nonlinear rank-share models (MATLAB); no DiD"
+  },
+  {
+   "spec_id": "eco_optimization",
+   "reported_location": "optimization scenarios",
+   "exclusion_reason": "profit/budget optimization over regional bonus levels; not an estimation design"
+  },
+  {
+   "spec_id": "field_experiments",
+   "reported_location": "field experiments (per abstract)",
+   "exclusion_reason": "comparison of ECO against previous pricing heuristics; not in package; no indication of a staggered-adoption DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Sales-model estimation and price/bonus optimization; field-experiment evaluation not in package; data noised.",
+ "design_notes": "Sales_Main.m, salesV.m, region_share.m, rank_share.m, ECO_optimize.m. No panel regression with unit and time FE anywhere.",
+ "estimators_reported": [
+  "nonlinear least squares sales submodels",
+  "constrained optimization"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "online sales volume V.xlsx",
+  "region-share data.xls",
+  "ranks_share6.xlsx",
+  "ECO1.mat",
+  "Data in EXCEL format/*.xlsx"
+ ],
+ "data_files_note": "readme.rtf and Sales_Main.m: random noise added to all original data for confidentiality (NDA); outcomes similar but not identical to the paper.",
+ "data_provenance": "disguised",
+ "data_provenance_note": "Noise added to all original ENTEGA data per readme.",
+ "software": "other",
+ "software_notes": "MATLAB (Optimization and Statistics toolboxes)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

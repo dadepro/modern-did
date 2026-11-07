@@ -1,0 +1,65 @@
+{
+ "suffix": "mksc.2015.0932",
+ "doi": "10.1287/mksc.2015.0932",
+ "journal": "mksc",
+ "title": "Practice Prize Paper—Implementing Integrated Marketing Science Modeling at a Non-Profit Organization: Balancing Multiple Business Objectives at Georgia Aquarium",
+ "authors": "V. Kumar; Amalesh Sharma; Naveen Donthu; Carey Rountree",
+ "year": 2015,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0932",
+ "regressions_path": "./data/packages/mksc.2015.0932_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Practice Prize: DEA, competition, spatial, media optimization and pass-holder lifetime revenue models for Georgia Aquarium; field implementation in 2013)",
+ "ineligible_specs": [
+  {
+   "spec_id": "plnr_tobit2",
+   "reported_location": "Models 3b-3c",
+   "exclusion_reason": "type-II Tobit selection model (SAS qlim; Stata craggit) of pass repurchase and net revenue with lagged usage regressors; nonlinear; no DiD"
+  },
+  {
+   "spec_id": "media_optimization",
+   "reported_location": "Model 4c",
+   "exclusion_reason": "single-organization time-series regression of attendance on media spend with control-function residuals (OLS and MCMCregress); no DiD"
+  },
+  {
+   "spec_id": "field_implementation",
+   "reported_location": "2013 implementation results (per abstract)",
+   "exclusion_reason": "single organization before/after (10% attendance, 12% revenue increase); no staggered adoption"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Tobit-II, DEA, media time-series models for one aquarium; no data shipped.",
+ "design_notes": "Package is a 3-page PDF with SAS/Stata/R code snippets (proc qlim, craggit, proc reg, MCMCregress).",
+ "estimators_reported": [
+  "type-II Tobit",
+  "OLS with control-function residuals",
+  "Bayesian linear regression",
+  "DEA"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "No data in package (PDF only).",
+ "data_provenance": "not_shipped",
+ "data_provenance_note": "Only code listings in PDF.",
+ "software": "other",
+ "software_notes": "SAS (plus Stata craggit and R MCMCpack)",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly."
+}

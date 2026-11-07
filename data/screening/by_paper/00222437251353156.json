@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437251353156",
+  "doi": "10.1177/00222437251353156",
+  "journal": "jmr",
+  "title": "Rewarding Money or Time? The Sunk Cost Effects of Customized Rewards in Loyalty Programs",
+  "year": "2025",
+  "eligible_design": false,
+  "eligible_reason": "Randomized field and lab experiments. The only DiD is a two-period (pre/post) supplementary analysis of one outcome inside the Study 1 field experiment; no staggered adoption, no unit-by-calendar-time panel.",
+  "design_notes": "Six main studies are randomized experiments (one supermarket field experiment, Study 1, plus online/lab Studies 2a-4). In Study 1 customers were randomly assigned to RTE, RME or UR coupon conditions. A 'DID' robustness analysis (Table 1, columns DID and PSW-DID; Web Appendix E) takes each participant's repurchase frequency in the week after coupon expiry minus the average weekly purchase frequency over the prior six months, and compares that difference across randomized conditions with OLS. One adoption date, treatment is the randomized condition (three-arm, not a staggered binary switch), no calendar-time fixed effects. Other models are fractional response, negative binomial, ANOVA and PROCESS mediation.",
+  "estimators_reported": [
+    "randomized experiments (ANOVA, PROCESS)",
+    "fractional response model",
+    "negative binomial",
+    "propensity-score-weighted OLS pre/post difference (Table 1 DID columns)"
+  ],
+  "main_or_robustness": "robustness",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "public",
+  "data_files_present": null,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Not eligible: experimental paper; the single DiD-labeled analysis is a two-period pre/post difference across randomized arms (Table 1 DID: RTE vs RME .82 (.29), RTE vs UR 1.00 (.39), RME vs UR .19 (.37); PSW-DID .58 (.29), .96 (.31), .14 (.34)). No replication package listed in batch file. Article states all study data and stimulus materials are on OSF (view-only link osf.io/xrs8v); not verified here. Screened from article text only."
+}

@@ -1,0 +1,65 @@
+{
+ "suffix": "mnsc.2022.02084",
+ "doi": "10.1287/mnsc.2022.02084",
+ "journal": "mnsc",
+ "title": "The Effects of Real-Time Feedback on Effort and Performance: Evidence from a Natural Quasi-Experiment",
+ "authors": "Maximilian Margolin; Marko Reimer; Daniel Schaupp",
+ "year": 2021,
+ "batch": "r2a_038",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.02084",
+ "regressions_path": "./data/packages/mnsc.2022.02084_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "main_or_robustness": "main (single-date 2x2 DiD)",
+ "ineligible_specs": [
+  {
+   "spec_id": "T5_T6_T7",
+   "reported_location": "Tables 5-7 (initial decisions, final decisions, interruptions; full sample and by experience)",
+   "exclusion_reason": "single adoption date (VAR introduced in the 1st Division from the 2017-18 season; 2nd Division control); game-level time-varying controls game_close and game_important; no calendar-time FE (VAR_PERIOD dummy only)"
+  },
+  {
+   "spec_id": "T4_effort",
+   "reported_location": "Table 4 (referee effort)",
+   "exclusion_reason": "same single-date design; effort variables (DISTANCE, SPEED, RUNS) withheld under NDA"
+  },
+  {
+   "spec_id": "F1_event_quarters",
+   "reported_location": "Figure 1 (quarter-of-season leads/lags x VAR_GROUP)",
+   "exclusion_reason": "event study around one common date"
+  }
+ ],
+ "screened_from": "package_and_published_pdf",
+ "eligible_reason": "Not staggered. Treatment is the Video Assistant Referee, introduced for all 1st Division games at the start of the 2017-18 season; 2nd Division games (VAR only from 2019-20) are the control group. Sample is one season before and one after (1,224 referee-games). Equation (1): DV on VAR_GROUP x VAR_PERIOD with referee FE and game controls, SEs clustered by referee. One common adoption date, so no eligible column.",
+ "design_notes": "analysis.do: reg y i.var_group##i.var_period game_close game_important i.referee, vce(cluster referee); subsamples experienced==0/1; event study with tmin4..tplus4 quarter-season dummies interacted with var_group.",
+ "estimators_reported": [
+  "2x2_did_single_date (OLS, referee FE, game controls)",
+  "event study around common date"
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "dataset.dta"
+ ],
+ "data_files_note": "dataset.dta (1,224 games x 41 vars) shipped; referee effort variables (DFB data under NDA) removed, so Table 4 cannot be replicated.",
+ "data_provenance": "original",
+ "data_provenance_note": "Original game-level data minus the NDA effort variables.",
+ "software": "stata",
+ "software_notes": "analysis.do (analysis_incl_effort.do mentioned in readme but not in the extracted package)",
+ "screener_notes": "Published PDF read (data/text/mnsc/mnsc.2022.02084.txt). Single common date; clear exclusion."
+}

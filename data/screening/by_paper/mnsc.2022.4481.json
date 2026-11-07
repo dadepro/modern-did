@@ -1,0 +1,73 @@
+{
+ "suffix": "mnsc.2022.4481",
+ "doi": "10.1287/mnsc.2022.4481",
+ "journal": "mnsc",
+ "title": "The Impact of the Gig Economy on Product Quality Through the Labor Market: Evidence from Ridesharing and Restaurant Quality",
+ "authors": "Minkyu Shin; Jiwoong Shin; Soheil Ghili; Jaehwan Kim",
+ "year": 2022,
+ "screened_from": "package_only",
+ "batch": "r2a_026",
+ "package_dir": "~/did_packages/mnsc/mnsc.2022.4481",
+ "regressions_path": "./data/packages/mnsc.2022.4481_regressions.txt",
+ "code_prescore": 1,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "n_adoption_cohorts_note": "Single treated city (Austin) vs. control (Dallas restaurants in the shipped Yelp data); Uber/Lyft present before 2016-05, absent 2016-05 to 2017-04, present again from 2017-05. Common dates for all treated units.",
+ "never_treated_present": true,
+ "always_treated_present": false,
+ "treatment_switches_off": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not staggered. One treated city (Austin) with rideshare exit (May 2016) and re-entry (May 2017) at common dates; felm(y ~ austin:(month<2016-05) + austin:(month>=2017-05) | rest_id + month | 0 | rest_id) with two treatment regressors (pre-exit and post-reentry periods) relative to the exit period. No variation in adoption timing across treated units. The turnover analysis (Tables 7-9) is a Cox proportional hazards model on synthetic data.",
+ "design_notes": "R lfe::felm with restaurant and month FE, clustered by restaurant. Yelp review sentiment outcomes: neg_label_rate_service (Table 3, and by price tier Tables 5-6), neg_label_rate_food (Table 4). Shipped Yelp panel main_did_dat_all_dal.Rdata: 58,227 restaurant-months (Austin 17,699; Dallas 40,528), 2014-05 to 2019-05. Turnover: coxph with restaurant and month dummies, position FE, hourly wage, Austin x before/after indicators.",
+ "estimators_reported": [
+  "twfe_single_unit_on_off",
+  "cox_ph"
+ ],
+ "specs": [
+  {
+   "spec_id": "T3-T6",
+   "eligible": false,
+   "exclusion_reason": "single treated city with common exit/re-entry dates (not staggered); two treatment regressors (austin x pre-exit, austin x post-reentry)",
+   "code_file": "replication_package_MS-MKG-21-00515/did_review.R",
+   "treatment_var": "as.numeric(location=='austin'):as.numeric(month<'2016-05'); as.numeric(location=='austin'):as.numeric(month>='2017-05')",
+   "unit_var": "rest_id",
+   "time_var": "month",
+   "fe": [
+    "rest_id",
+    "month"
+   ],
+   "reported_location": "Tables 3-6"
+  },
+  {
+   "spec_id": "T7-T9",
+   "eligible": false,
+   "exclusion_reason": "Cox proportional hazards (nonlinear), time-varying wage control, single treated DMA, synthetic data",
+   "code_file": "replication_package_MS-MKG-21-00515/did_turnover.R",
+   "reported_location": "Tables 7-9"
+  }
+ ],
+ "data_access": "partial",
+ "data_files_present": true,
+ "data_files": [
+  "replication_package_MS-MKG-21-00515/main_did_dat_all_dal.Rdata",
+  "replication_package_MS-MKG-21-00515/syn_turnover_data.Rdata"
+ ],
+ "data_files_note": "Yelp review-sentiment panel shipped (scraped, processed); employee turnover data are under NDA and replaced by synthetic data.",
+ "data_provenance": "original",
+ "data_provenance_note": "Yelp panel is the processed analysis data (original); turnover data are synthetic (README).",
+ "software": "r",
+ "software_notes": "R (lfe, stargazer, survival)",
+ "screener_notes": "Screened from package only (no article text or PDF). Not a staggered design: single treated city with common on/off dates."
+}

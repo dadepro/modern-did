@@ -1,0 +1,52 @@
+{
+ "suffix": "mksc.2016.0995",
+ "doi": "10.1287/mksc.2016.0995",
+ "journal": "mksc",
+ "title": "Simultaneous or Sequential? Search Strategies in the U.S. Auto Insurance Industry",
+ "authors": "Elisabeth Honka; Pradeep K. Chintagunta",
+ "year": 2013,
+ "batch": "r2b_015",
+ "package_dir": "~/did_packages/mksc/mksc.2016.0995",
+ "regressions_path": "./data/packages/mksc.2016.0995_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (structural consumer search model distinguishing simultaneous and sequential search, U.S. auto insurance)",
+ "ineligible_specs": [
+  {
+   "spec_id": "search_models",
+   "reported_location": "main estimation",
+   "exclusion_reason": "structural simultaneous/sequential search models estimated by simulated maximum likelihood; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Structural search-model estimation; package simulates data.",
+ "design_notes": "Sim_Search.R and Seq_Search.R simulate 1,000 consumers x 6 brands and estimate each search model.",
+ "estimators_reported": [
+  "structural search model (simulated MLE)"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "data_files": [],
+ "data_files_note": "ReadMe: codes simulate data from the models; auto insurance survey data not shipped.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated data generated in code.",
+ "software": "r",
+ "software_notes": "R",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read where available; package_mismatch checked against title, authors and README. Regression inventory empty (0 lines); code read directly. OpenAlex record has no abstract and a wrong publication_year (batch year kept; published in Marketing Science 36(1), 2017); screened from package README and code."
+}

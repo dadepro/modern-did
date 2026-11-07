@@ -1,0 +1,27 @@
+{
+ "doi": "10.1287/mnsc.2024.08235",
+ "journal": "mnsc",
+ "year": 2026,
+ "title": "Design-Based Confidence Sequences: A General Approach to Risk Mitigation in Panel Experiments",
+ "eligible_design": false,
+ "eligible_reason": "Statistical methodology paper on anytime-valid inference for time series, switchback and panel experiments (Netflix applications). It does not estimate a DiD or event-study with staggered binary adoption by unit and TWFE; the 'staggered' hit refers to units entering the panel at different times.",
+ "design_notes": "Contribution is a design-based asymptotic confidence sequence. Empirical content is simulation plus three Netflix experiments, with randomized assignment. arXiv version dated Aug 2026.",
+ "estimators_reported": [
+  "design-based confidence sequences (not a DiD estimator)"
+ ],
+ "main_or_robustness": "not_applicable",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Ineligible: methods paper on sequential inference for randomized experiments."
+}

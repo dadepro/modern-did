@@ -1,0 +1,236 @@
+{
+  "suffix": "mnsc.2023.03143",
+  "spec_id": "F2",
+  "journal": "mnsc",
+  "data_path": "~/did_packages/_work/mnsc.2023.03143/ets_panel.rds",
+  "id_var": "Country_id",
+  "time_var": "year",
+  "y_var": "Electricity_Renewable",
+  "gvar": "g_ets",
+  "weight_var": "",
+  "cluster_var": "Country_id",
+  "xt_vars": [],
+  "sample_filter": "year >= 2000 & year <= 2020",
+  "log_y": "",
+  "controls": [
+    "LogGDP_final",
+    "Logpopulation_WB",
+    "Unemployment_WB",
+    "LogRevenue_LCU_IMF",
+    "LogExpenditure_LCU_IMF",
+    "LogDebtGross_LCU_IMF",
+    "LogAgriculture_ValueAdded_WB",
+    "LogIndustry_ValueAdded_WB",
+    "LogManufacturing_ValueAdded_WB",
+    "LogServices_ValueAdded_WB"
+  ],
+  "analysis_set": "controls",
+  "published_coef": 4.858820018,
+  "published_coef_1_9": 4.12491117,
+  "published_se": 0.424337861,
+  "published_se_1_9": null,
+  "published_n": 1407,
+  "published_source": "Figure 2 of the article is graphical (data/text/mnsc/mnsc.2023.03143.txt, Eq. (2), coefficients relative to the adoption year). published_coef (Nov 2 audit) = equal-weight average of Pst1..Pst9 from the authors' do-file re-run in Stata MP 16 (~/did_packages/_work/mnsc.2023.03143/authors_fig_t2.log), authors' normalization (rel 0 omitted); delta-method robust SE of that average from the fixest reproduction = 0.40703296 (not published). Nov 2 summary rule (team-lead: summaries average every reported bin, endpoint bins included): published_coef is now the equal-weight average of event years 1..9 and the accumulated +10 bin (all plotted in Figure 2) in the authors' normalization, 4.85882 (delta-method SE 0.42434, hetero); the previous value 4.12491117 is kept in published_coef_1_9. Pre-summary average -0.7283353.",
+  "authors_code": {
+    "source": "Bai Ru 2024.do Figure block re-run in Stata MP 16 (work copy ~/did_packages/_work/mnsc.2023.03143/authors_fig_t2.do); fixest reproduces all 20 coefficients and robust SEs to 8 decimals and N exactly",
+    "reference_period": "event year 0 (ETS launch year) omitted; Pre10 = rel <= -10, Pst10 = rel >= 10",
+    "Pre10": -0.21182768,
+    "Pre1": -0.56112402,
+    "Pst1": 0.2953654,
+    "Pst10": 11.46399969,
+    "Pst10_se_robust": 1.60609275,
+    "n_obs": 1407,
+    "implied_post_avg_ref_m1_rel0_9": 4.27354406,
+    "implied_pre_avg_ref_m1_relm9_m2": -0.2526761
+  },
+  "table": "Figure 2",
+  "column": "",
+  "static_or_event": "event",
+  "event_pre_min": -9,
+  "event_post_max": 9,
+  "event_structure": {
+    "bins": [
+      [
+        null,
+        -10
+      ],
+      [
+        -9,
+        -9
+      ],
+      [
+        -8,
+        -8
+      ],
+      [
+        -7,
+        -7
+      ],
+      [
+        -6,
+        -6
+      ],
+      [
+        -5,
+        -5
+      ],
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        10,
+        null
+      ]
+    ],
+    "ref": [
+      [
+        0,
+        0
+      ]
+    ],
+    "uncovered": "ref",
+    "post_summary": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        10,
+        null
+      ]
+    ],
+    "pre_summary": [
+      [
+        null,
+        -10
+      ],
+      [
+        -9,
+        -9
+      ],
+      [
+        -8,
+        -8
+      ],
+      [
+        -7,
+        -7
+      ],
+      [
+        -6,
+        -6
+      ],
+      [
+        -5,
+        -5
+      ],
+      [
+        -4,
+        -4
+      ],
+      [
+        -3,
+        -3
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "source": "Bai Ru 2024.do lines 117-121 (reg Electricity_Renewable CarbonExchange_dummy_Pre10..Pre1 Pst1..Pst10 $Control _I*, robust): PreK = K years before ETS launch, PstK = K years after, Pre10/Pst10 = 10 or more years before/after; the launch year (rel 0) is omitted (article Eq. (2): 'We exclude the year of ETS adoption'). Shipped dummies equal 1{year - g_ets = k} with the endpoint bins (verified, replication log); sample years 2000-2020 consecutive, g_ets in sample (2005-2015), so rel = t - g. Nothing uncovered. Endpoint bins excluded from the summaries; post summary = Pst1..Pst9, pre = Pre9..Pre1.",
+    "verified": "fixest feols(y ~ bins + 10 controls | country + year, vcov = hetero) on the authors' sample (N = 1407) reproduces the authors' 20 coefficients (authors_fig_t2.log, Stata re-run) to 5.0e-09 and robust SEs to 9.3e-05 (log printed to 5 decimals); post average (rel 1..9, ref 0) = 4.12491117 (delta-method robust SE 0.40703296) Nov 2 summary rule: with the reported endpoint bins added to the summaries, the authors'-normalization post average is 4.85882 (SE 0.42434) and the pre average -0.7283353 (scratchpad/meta3/rule2/).",
+    "summary_rule": "Nov 2 rule: a bin is summarized iff the paper reports its coefficient, open endpoint bins included (Figure 2 plots event years -10..10 (Pre10/Pst10 are the accumulated end bins))."
+  },
+  "preferred": false,
+  "in_abstract_intro": false,
+  "data_provenance": "real",
+  "replication_status": "exact (vs authors' code re-run; published figure values not available to compare)",
+  "code_file": "replication_package_MS-FTFIN-2023-03143/Bai Ru 2024.do",
+  "notes": "CONTROLS ANALYSIS (PROTOCOL 5c). Event study of renewable share of electricity production (percent) on ETS launch: reg Electricity_Renewable CarbonExchange_dummy_Pre10..Pre1 Pst1..Pst10 $Control _I* (xi i.year i.Country_id), robust; sample 2000-2020, 100 countries. Only violation: ten time-varying macro controls ($Control), entered linearly. Onset g_ets = first year with ETS = 1 (absorbing, no switch-offs); 7 cohorts in the sample (2005: 23 EU countries; 2007: 2; 2008: 3; 2009: 1; 2010: 1; 2013: 3; 2015: 1); no always-treated countries; about 65 percent of countries never treated. The authors' endpoint bins (<= -10, >= 10) are reproduced by event_pre_min = -9 and event_post_max = 9. DEVIATIONS: (1) run_spec normalizes on event year -1, the authors on event year 0; the model is the same reparameterization, so the run_spec TWFE post average (rel 0..9) equals the authors' path re-centred on rel -1 (authors_code implied_post_avg). (2) Published SEs are heteroskedasticity-robust, not clustered; run_spec clusters by country. (3) Panel is unbalanced after listwise deletion of missing controls/outcome, so the CSA step uses the composition-fixed cells and ignores the controls (controls_ignored). preferred = false because the paper's headline estimates are the static Table 2 (not eligible: two lead dummies ETS_Pre1/ETS_Pre2). in_abstract_intro unverified (no article text). NOV 2 AUDIT (event_structure): event_structure keeps the authors' reference (launch year, rel 0) and endpoint bins (<= -10, >= 10); the deviation (1) re-normalization to rel -1 is superseded. published_coef filled with the Pst1..Pst9 average in the authors' normalization.",
+  "published_estimator": "twfe_event_with_controls"
+}

@@ -1,0 +1,87 @@
+{
+ "doi": "10.1287/mnsc.2022.01161",
+ "journal": "mnsc",
+ "year": 2024,
+ "title": "Information Disclosure and Competitive Dynamics: Evidence from the Pharmaceutical Industry",
+ "screened_from": "package_only",
+ "eligible": false,
+ "eligible_design": true,
+ "near_miss": true,
+ "near_miss_reason": "Time-varying trial-level controls in every reported column: Table 3 columns 1 and 4 add only the phase indicators p2 and p3, columns 2-3 and 5-6 add log enrollment, duration, market size and sponsor experience, and the Figure 2 event study and Table 4 carry the same controls; Table 2 uses a continuous competition measure and is not the binary design. Otherwise a staggered binary design (post_pr_app = a competitor priority-review drug approved in the trial's 9-digit MeSH market, approval years varying across markets, never-treated markets present) on a repeated cross-section of trials with MeSH-market and start-year FE, clustered by market. Controls are the sole violation (5c candidate), but the Cortellis trial data are proprietary and not shipped.",
+ "near_miss_5c_controls_only": true,
+ "eligible_reason": "The design qualifies structurally (binary post_pr_app = a competitor priority-review drug has been approved in the trial's 9-digit MeSH market, with approval years varying across markets; repeated cross-section of trials assigned to MeSH units with MeSH and start-year FE; never-treated markets present), but every reported column includes trial-level covariates: at minimum phase indicators (p2 p3), and most add enrollment, duration, market size and sponsor experience. Marked not eligible under the no-controls rule as a near-miss; flag for lead review. Replication is infeasible anyway: the package has only programs and logs (Cortellis data are proprietary).",
+ "design_notes": "From Programs/prepare_analytic.do, table3.do, figure2.do and Logs. Observation: trial x MeSH (nct_id, mesh9), phase II/II-III/III trials started 2007-2019 (analytic_trial.dta, 147,413 rows; 78,938 industry-funded). Unit FE: mesh_id (9-digit MeSH code); time FE: start_year. Treatment post_pr_app = 1 if a competitor priority-review drug was approved in the MeSH before the trial start (pre_pr_app marks trials in ever-treated markets before approval; pr_app_year = approval year); treat = post_pr_app | pre_pr_app identifies ever-treated markets. Table 3 (ind==1): col 1/4 reghdfe result_year2 / ln_result_time post_pr_app p2 p3, absorb(mesh_id start_year) cluster(mesh_id); cols 2-3/5-6 add ln_enrollment ln_duration ln_diag (+ missing flags) and ln_firm_exp. Figure 2: event study with two-year bins (-5..-1, 1..7 relative to approval year minus one) plus controls. Table 2 uses continuous ln_competition. Table 4 / Figures 3-4: subsamples and treatment subtypes (same/different technology) with controls.",
+ "estimators_reported": [
+  "TWFE static with MeSH and start-year FE (reghdfe) and trial controls",
+  "TWFE binned event study with controls (Figure 2)"
+ ],
+ "main_or_robustness": "main",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 3 cols (1) and (4) [table3.do line 64]",
+   "reason": "near-miss: only controls are phase indicators p2 p3 (trial-level covariates); otherwise binary staggered treatment with mesh_id + start_year FE, cluster mesh_id, sample ind==1"
+  },
+  {
+   "location": "Table 3 cols (2)-(3), (5)-(6) [lines 68, 72]",
+   "reason": "time-varying trial controls (enrollment, duration, market size, firm experience)"
+  },
+  {
+   "location": "Figure 2 event study [figure2.do lines 130-132]",
+   "reason": "controls (ln_firm_exp p2 p23 enrollment duration diag)"
+  },
+  {
+   "location": "Table 2",
+   "reason": "continuous competition measure"
+  },
+  {
+   "location": "Table 4, Figures 3-4",
+   "reason": "controls; subsamples and treatment subtypes"
+  }
+ ],
+ "published_estimates": [
+  {
+   "location": "Table 3 col (1) (from Logs/table3.log)",
+   "outcome": "result_year2",
+   "treatment": "post_pr_app",
+   "coef": -0.0543348,
+   "se": 0.0193348,
+   "n_obs": 78781,
+   "controls": "p2 p3",
+   "note": "log output, not the published table"
+  },
+  {
+   "location": "Table 3 col (4) (from Logs/table3.log)",
+   "outcome": "ln_result_time",
+   "treatment": "post_pr_app",
+   "coef": 0.0420655,
+   "se": 0.0253503,
+   "n_obs": 51073,
+   "controls": "p2 p3",
+   "note": "log output, not the published table"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "package_files": {
+  "present": [
+   "Programs/*.do (prepare_analytic, table1-4, figure1-4)",
+   "Logs/*.log (full Stata output for all tables and figures)",
+   "readme.pdf"
+  ],
+  "missing": [
+   "trial.dta, prog_trial.dta, cancer_trial.dta, analytic_trial.dta (not shipped; AACT public but Cortellis proprietary)"
+  ]
+ },
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Lead decision needed on whether phase indicators (p2 p3) count as excluded controls; if not, Table 3 cols (1) and (4) would be eligible static specs, but the analytic data would still have to be obtained from the author. Number of adoption cohorts (distinct pr_app_year) not recoverable without data. Flags ft_borusyak/ft_callaway/ft_de_chaisemartin etc. indicate text discussion only; no modern estimator in the code.",
+ "hand_check_nov4": "Near-miss, controls-only. Record coded under the earlier rule; the screener already called it a near-miss in eligible_reason but never set the flag. Table 3 cols 1 and 4 have only the phase dummies as covariates (observation-level controls in a repeated cross-section, treated as time-varying controls under 5c), so no other restriction is violated in those columns. Added eligible=false so code/17 picks the flag up."
+}

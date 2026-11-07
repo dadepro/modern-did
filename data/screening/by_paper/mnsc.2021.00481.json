@@ -1,0 +1,59 @@
+{
+ "suffix": "mnsc.2021.00481",
+ "doi": "10.1287/mnsc.2021.00481",
+ "journal": "mnsc",
+ "title": "Do Job Applicants Consider Founder Race and Gender? Evidence from a Field Experiment",
+ "authors": "Kaisa Snellman; Peter Younkin",
+ "year": 2026,
+ "batch": "r2a_043",
+ "package_dir": "~/did_packages/mnsc/mnsc.2021.00481",
+ "regressions_path": "./data/packages/mnsc.2021.00481_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_and_published_text",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (field experiment and survey experiments)",
+ "ineligible_specs": [
+  {
+   "spec_id": "field_exp_logit_ols",
+   "reported_location": "Tables 4-5 (application and salary request by founder-race/gender condition)",
+   "exclusion_reason": "randomized field experiment; logit/probit/OLS on condition dummies with city FE; cross-sectional, not DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD design. Job seekers are randomized to three founder-demographics conditions; outcomes are application and requested salary, estimated with logit, probit and OLS on condition dummies. Two survey experiments follow.",
+ "design_notes": "KSPY-Shared.do runs logit dv_a i.Condition i.city i.initial_position ... cluster(city), and reg annual_salary i.Condition ...",
+ "estimators_reported": [
+  "logit",
+  "probit",
+  "OLS",
+  "ANOVA / t-tests"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "KSPY-shared.dta",
+  "E1-Survey-shared.dta",
+  "E2-Survey-Shared.dta"
+ ],
+ "data_files_note": "De-identified experimental data shipped; some variables are coarsened codings for anonymity (do-file header).",
+ "data_provenance": "original",
+ "data_provenance_note": "Authors' experimental data, de-identified and partly coarsened.",
+ "software": "stata",
+ "software_notes": "Stata",
+ "screener_notes": "Published text confirms field experiment. Not a near miss."
+}

@@ -1,0 +1,28 @@
+{
+ "suffix": "0022243720972368",
+ "doi": "10.1177/0022243720972368",
+ "journal": "jmr",
+ "title": "Gender (Still) Matters in Business School",
+ "year": "2020",
+ "eligible_design": false,
+ "eligible_reason": "Treatment is instructor gender interacted with student gender within course-term cells. No unit-specific adoption dates, so there is no staggered-adoption design.",
+ "design_notes": "Equation 3 (Table 6) is described as a difference-in-differences specification: grade_ictgs on female instructor and female instructor x female student, with term x course x student-gender fixed effects, student-term controls interacted with subject and instructor-term controls interacted with student gender. Administrative grades for 6,312 undergraduates (2005-2018 graduating cohorts). Table 6 col 1 N = 48,498. Cols 2-4 use survey data (N = 851-864) with course x student-gender FE. SEs clustered at course-instructor. Treatment is non-absorbing, repeatedly reassigned across courses, and not an adoption event.",
+ "estimators_reported": [
+  "OLS with course-term-student-gender FE (Table 6)"
+ ],
+ "main_or_robustness": "not applicable (no staggered design)",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Not eligible: no adoption-date design, time-varying controls. Data are confidential administrative records from a U.S. Midwest public university business school plus authors' survey. No replication package was listed in the batch file (package_dir and regressions_path empty); screening is from the article text only."
+}

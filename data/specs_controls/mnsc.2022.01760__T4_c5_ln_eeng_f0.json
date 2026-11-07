@@ -1,0 +1,38 @@
+{
+  "suffix": "mnsc.2022.01760",
+  "journal": "mnsc",
+  "data_provenance": "real",
+  "data_path": "~/did_packages/_work/mnsc.2022.01760/analysis_panel_ctrl.csv",
+  "id_var": "id",
+  "time_var": "year",
+  "treat_var": "post_cutover",
+  "weight_var": "",
+  "cluster_var": "id",
+  "xt_vars": [
+    "statefip"
+  ],
+  "log_y": "",
+  "controls": [
+    "ln_citypop",
+    "ln_citypop_y1920",
+    "ln_citypop_y1930",
+    "ln_citypop_y1940"
+  ],
+  "analysis_set": "controls",
+  "published_estimator": "twfe_reghdfe_with_controls",
+  "spec_id": "T4_c5_ln_eeng_f0",
+  "y_var": "ln_eeng_f0",
+  "sample_filter": "",
+  "published_coef": 0.13,
+  "published_se": 0.038,
+  "published_n": 10852,
+  "table": "4",
+  "column": "5",
+  "static_or_event": "static",
+  "preferred": false,
+  "in_abstract_intro": false,
+  "replication_status": "exact",
+  "published_source": "Published article (Management Science 70(12), 2024) Table 4 5 (Ln(1+male electrical engineers)); identical to the package's Output/Table 3.tex. Stata reghdfe re-run in the work directory: 0.130372 (0.038002), N = 10852; fixest with the pre-expanded controls: 0.130372 (0.038008).",
+  "diagnostic_twfe_without_pop_control": 0.472603,
+  "notes": "City x census-year panel 1910-1940 (2,713 cities, 48 states), cities with 1920 population <= 100,000. Treatment post_cutover = (census_year >= city's first dial cutover date), absorbing; cohorts by first treated census: 1920: 9, 1930: 111, 1940: 126 cities; 2,467 never treated by 1940 (90.9%); none treated in 1910; no switch-offs. Published regression ('Table 3, 4.do' line 206, unweighted): reghdfe y post_cutover, absorb(id year i.statefip##i.year c.ln_citypop##i.year) cluster(id). State-by-year FE enter as xt_vars statefip (t^statefip). The absorbed c.ln_citypop##i.year (log census-year city population with year-specific slopes) is pre-expanded into the four numeric controls ln_citypop, ln_citypop x 1(year=1920/1930/1940) (1910 base), which span the same space. Only violation of PROTOCOL Section 2: time-varying controls (5c)."
+}

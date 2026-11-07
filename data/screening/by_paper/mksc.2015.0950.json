@@ -1,0 +1,56 @@
+{
+ "suffix": "mksc.2015.0950",
+ "doi": "10.1287/mksc.2015.0950",
+ "journal": "mksc",
+ "title": "Visualizing Asymmetric Competition Among More Than 1,000 Products Using Big Search Data",
+ "authors": "Daniel M. Ringel; Bernd Skiera",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0950",
+ "regressions_path": "./data/packages/mksc.2015.0950_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (DRMABS mapping of asymmetric competition from price-comparison search data, LED-TV market)",
+ "ineligible_specs": [
+  {
+   "spec_id": "market_mapping",
+   "reported_location": "maps and validation tables",
+   "exclusion_reason": "visualization/mapping algorithm on consideration-set data; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Market-structure mapping from consideration-set search logs.",
+ "design_notes": "Methodolgy (nested .7z/.zip extracted): Excel matrices, community-detection script, VOS MATLAB/C mapping, C# submarket code.",
+ "estimators_reported": [
+  "multidimensional mapping (VOS)",
+  "community detection"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Data/Data/LOG-FILE-ledtv-sep2012.zip",
+  "LEDTV-Sep2012-Product-Attributes.csv"
+ ],
+ "data_files_note": "Price-comparison site log file.",
+ "data_provenance": "original",
+ "data_provenance_note": "Log data as used.",
+ "software": "other",
+ "software_notes": "MATLAB, C, C#, Excel",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

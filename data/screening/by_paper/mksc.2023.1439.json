@@ -1,0 +1,55 @@
+{
+ "suffix": "mksc.2023.1439",
+ "doi": "10.1287/mksc.2023.1439",
+ "journal": "mksc",
+ "title": "Do Incentives to Review Help the Market? Evidence from a Field Experiment on Airbnb",
+ "authors": "Andrey Fradkin; David Holtz",
+ "year": 2023,
+ "screened_from": "package_only",
+ "batch": "r2a_022",
+ "package_dir": "~/did_packages/mksc/mksc.2023.1439",
+ "regressions_path": "./data/packages/mksc.2023.1439_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not a DiD design. Randomized field experiment (listing-level assignment to a review-incentive coupon): feols(outcome ~ treatment) difference-in-means regressions (Tables 1, 2, 4, 5, 6) and IV with has_submitted instrumented by treatment (Tables 3-4). No unit-specific adoption dates or panel FE. The package ships simulated data only.",
+ "design_notes": "R (fixest). Cross-sectional treatment-control comparisons, IV (has_submitted ~ treatment), and some columns with guest covariates.",
+ "estimators_reported": [
+  "rct_difference_in_means",
+  "iv_2sls"
+ ],
+ "specs": [
+  {
+   "spec_id": "T1-T6",
+   "eligible": false,
+   "exclusion_reason": "randomized experiment, cross-sectional OLS on treatment indicator and IV; no staggered adoption",
+   "code_file": "mkt_sci_incentivized_reviews_replication/src/dh_review_impact.R",
+   "reported_location": "Tables 1-6"
+  }
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "mkt_sci_incentivized_reviews_replication/simulated_data/*_sim.csv"
+ ],
+ "data_files_note": "README: simulated data for validating code; does not represent actual Airbnb data.",
+ "data_provenance": "synthetic",
+ "data_provenance_note": "Simulated data shipped by the authors.",
+ "software": "r",
+ "software_notes": "R (fixest, data.table)",
+ "screener_notes": "Screened from package only (no article text or PDF). RCT; synthetic data. Ineligible on design and data."
+}

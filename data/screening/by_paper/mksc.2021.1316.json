@@ -1,0 +1,64 @@
+{
+ "suffix": "mksc.2021.1316",
+ "doi": "10.1287/mksc.2021.1316",
+ "journal": "mksc",
+ "title": "Winning Big: Scale and Success in Retail Entrepreneurship",
+ "authors": "Brett Hollenbeck; Renato Giroldo",
+ "year": 2021,
+ "screened_from": "package_only",
+ "batch": "r2a_020",
+ "package_dir": "~/did_packages/mksc/mksc.2021.1316",
+ "regressions_path": "./data/packages/mksc.2021.1316_regressions.txt",
+ "code_prescore": 2,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "main_or_robustness": "none",
+ "n_eligible_specs": 0,
+ "specs": [],
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "eligible_reason": "Not a DiD. The treatment msever (multi-store firm, narrow definition) is built with bysort license: egen msever = max(msnarrow), so it is time-invariant within store; it never switches on within a unit. All main regressions (Tables 4, 5, 6, 9, 10) compare multi-store and single-store cannabis retailers with market (mktid), year-month (date) and store-age (agemon) fixed effects plus number-of-applications dummies (i.max_apps), identified by the lottery allocation of retail licenses; there are no store fixed effects. Table 7 and Table 9 cols 3-4 interact msever with calendar year (time-varying effect of a fixed group), and Appendix Table 14 and the bundles table use ivreg2 with lottery-approved licenses as the instrument.",
+ "design_notes": "Stata (reghdfe, ivreg2), single do-file Replication_files/replication_code_final_submission.do. Store-month data (data_master_m_v4_MS.dta), store-category-month data (data_ret_proc_type_firm_MS.dta), store-category-week data for demand estimation (data_master_w_t_v4_prod_IV.csv). Washington State recreational cannabis retail, 2014-2017. Lottery natural experiment: comparison of lottery winners of multiple licenses vs one license, conditional on number of applications (max_apps > 1). Cluster mktid#date.",
+ "estimators_reported": [
+  "ols_cross_sectional_with_fe",
+  "iv_2sls",
+  "structural_demand"
+ ],
+ "ineligible_specs_listed": [
+  {
+   "location": "Tables 4, 5, 6, 9 cols 1-2, 10",
+   "reason": "msever is time-invariant within store; market, date and age FE only (no unit FE); between-store comparison under lottery assignment, not a switching treatment"
+  },
+  {
+   "location": "Table 7; Table 9 cols 3-4",
+   "reason": "msever x calendar-year interactions of a fixed group indicator, no unit FE"
+  },
+  {
+   "location": "Appendix Table 14; bundles table",
+   "reason": "IV (ivreg2) with lottery-approved licenses as instrument"
+  },
+  {
+   "location": "Table 18",
+   "reason": "entry-order and licenses-held regressors among multi-store stores; not a DiD"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "Replication_files/data_master_m_v4_MS.dta",
+  "Replication_files/data_ret_proc_type_firm_MS.dta",
+  "Replication_files/data_master_w_t_v4_prod_IV.csv"
+ ],
+ "data_files_note": "Three analysis files shipped (3.3 MB, 477 MB, 73 MB). README does not state the source; the paper uses Washington State cannabis traceability and license-lottery records.",
+ "data_provenance": "original",
+ "data_provenance_note": "Analysis files appear to be the authors' estimation data; no statement of masking or sampling.",
+ "software": "stata",
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Screened from package and OpenAlex abstract (no article text). code_prescore 2 is driven by reghdfe with date and market FE; the treatment is a store-level constant, so no staggered adoption exists."
+}

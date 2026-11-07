@@ -1,0 +1,66 @@
+{
+ "suffix": "mksc.2023.0454",
+ "doi": "10.1287/mksc.2023.0454",
+ "journal": "mksc",
+ "title": "Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis",
+ "authors": "Peiyao Li; Noah Castelo; Zsolt Katona; Miklós Sárváry",
+ "year": 2024,
+ "screened_from": "package_only",
+ "batch": "r2a_022",
+ "package_dir": "~/did_packages/mksc/mksc.2023.0454",
+ "regressions_path": "./data/packages/mksc.2023.0454_regressions.txt",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": null,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "main_or_robustness": "none",
+ "replication_feasible": "no",
+ "priority": 3,
+ "eligible_reason": "Not a DiD design. The paper compares LLM (GPT-Neo, GPT-4) and human perceptual similarity judgments of car brands (triplet agreement rates, perceptual maps). The only panel-style regression (triplet_method_calculations.R line 879) is plm(agree ~ treatment, index='year', model='within') on 160 GPT-4 runs, where treatment = 1 if the prompt specifies the trade-in year; it is a prompt-variation comparison with year FE, not a unit-level adoption design.",
+ "design_notes": "R (plm, lm) plus Python EvoMap notebook. Regressions: lm of perceived attributes on respondent income/gender/age (heterogeneity), and the prompt-year 'treatment' regression on JD Power trade-in agreement rates. No units, no adoption dates, no event time.",
+ "estimators_reported": [
+  "descriptive_agreement_rates",
+  "ols_cross_section",
+  "within_year_fe_prompt_comparison"
+ ],
+ "specs": [
+  {
+   "spec_id": "prompt_year",
+   "eligible": false,
+   "exclusion_reason": "not a DiD: prompt-condition indicator (year specified vs not) across GPT-4 runs with year FE; no units adopting a treatment over time",
+   "code_file": "replication_data_code/triplet_method_calculations.R",
+   "code_line": 879,
+   "reported_location": "car trade-in validation (location unknown; no article text)"
+  },
+  {
+   "spec_id": "cov_lm",
+   "eligible": false,
+   "exclusion_reason": "cross-sectional OLS of perceived attributes on respondent demographics",
+   "code_file": "replication_data_code/triplet_method_calculations.R",
+   "reported_location": "heterogeneity analysis"
+  }
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "replication_data_code/*.csv",
+  "replication_data_code/car_prompt_engineering/*.csv",
+  "replication_data_code/jdpower/*.csv"
+ ],
+ "data_files_note": "Survey and LLM output CSVs shipped. readme.txt: JD Power trade-in tables have noise added for confidentiality.",
+ "data_provenance": "original",
+ "data_provenance_note": "LLM outputs and survey data appear original; the JD Power trade-in tables are disguised (noise added). Moot: no DiD design.",
+ "software": "r",
+ "software_notes": "R (plm, lmtest, ggplot2) and Python (evomap notebook)",
+ "screener_notes": "Screened from package only (no article text or PDF). Prescore 2 came from the plm within regression on a prompt-condition indicator; no staggered adoption design."
+}

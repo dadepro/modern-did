@@ -1,0 +1,33 @@
+{
+ "doi": "10.1287/mnsc.2020.3901",
+ "journal": "mnsc",
+ "year": 2021,
+ "title": "Team Incentives, Social Cohesion, and Performance: A Natural Field Experiment",
+ "eligible_design": false,
+ "eligible_reason": "Randomized field experiment with one treatment window (weeks 42-47 of 2013) common to all treated stores. Single adoption date, no staggering.",
+ "design_notes": "Eq. (1): g_sw = alpha_s + gamma_w + beta*T_sw + eps, store and week FE, SEs clustered by store; T_sw=1 for treatment stores during weeks 42-47 only (switches off after). Outcome is weekly sales growth vs same week of previous year. Table 4 col (1): ATE 1.5 pp (not significant), 5,722 store-week obs. Eq. (2) adds T x social cohesion (continuous interaction) and E x C (all stores x experimental period x cohesion). Employee-level survey regression (Eq. 3) uses individual and questionnaire FE with two survey waves. Published in MS 68(1):230-256 (2022).",
+ "estimators_reported": [
+  "TWFE (store and week FE) in a randomized two-group design"
+ ],
+ "main_or_robustness": null,
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": true,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "specs": [],
+ "ineligible_specs": [
+  {
+   "location": "Table 4 cols (1)-(4); Table 6; Table 5 (survey outcomes)",
+   "reason": "single common treatment start/end; continuous interaction with social cohesion in cols (2)-(4); two-wave survey panel"
+  }
+ ],
+ "published_estimates": [],
+ "data_access": "proprietary",
+ "data_files_present": false,
+ "software": null,
+ "replication_feasible": "no",
+ "priority": 3,
+ "screener_notes": "Field experiment in a Dutch retail chain of 122 stores; store-level sales data and employee surveys come from the firm (company administrative data, not public). No data-availability statement in the text. Cites Bertrand-Duflo-Mullainathan for clustering only."
+}

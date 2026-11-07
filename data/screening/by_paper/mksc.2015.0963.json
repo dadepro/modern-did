@@ -1,0 +1,54 @@
+{
+ "suffix": "mksc.2015.0963",
+ "doi": "10.1287/mksc.2015.0963",
+ "journal": "mksc",
+ "title": "Ticking Away the Moments: Timing Regularity Helps to Better Predict Customer Activity",
+ "authors": "Michael Platzer; Thomas Reutterer",
+ "year": 2016,
+ "batch": "r2b_013",
+ "package_dir": "~/did_packages/mksc/mksc.2015.0963",
+ "regressions_path": "./data/packages/mksc.2015.0963_regressions.txt",
+ "code_prescore": 0,
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "near_miss_5c_controls_only": false,
+ "n_eligible_specs": 0,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "specs": [],
+ "screened_from": "package_only",
+ "n_adoption_cohorts": 0,
+ "never_treated_present": false,
+ "always_treated_present": false,
+ "main_or_robustness": "main (Pareto/GGG stochastic customer-base model with purchase-timing regularity)",
+ "ineligible_specs": [
+  {
+   "spec_id": "pareto_ggg",
+   "reported_location": "forecast accuracy tables",
+   "exclusion_reason": "probabilistic customer-base model estimated by MCMC; no DiD"
+  }
+ ],
+ "eligible_reason": "Not a DiD. Pareto/GGG customer-activity model, simulation and forecasting comparisons.",
+ "design_notes": "load.r, empirical.r (BTYDplus-style MCMC).",
+ "estimators_reported": [
+  "Bayesian MCMC"
+ ],
+ "data_access": "public",
+ "data_files_present": true,
+ "data_files": [
+  "data/*-elog.csv (CDNOW, grocery, office, donations, dietary, m18)"
+ ],
+ "data_files_note": "Transaction event logs.",
+ "data_provenance": "original",
+ "data_provenance_note": "Event logs as used.",
+ "software": "r",
+ "software_notes": "R",
+ "screener_notes": "No article text or published PDF available (data/text and papers/ checked Nov 2); OpenAlex abstract read (data/frame/mksc.jsonl; candidates.csv abstract empty); package_mismatch checked against title, authors and README; code grep for DiD/FE keywords (incl. CRLF files) found no DiD."
+}

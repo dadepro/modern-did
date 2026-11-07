@@ -1,0 +1,31 @@
+{
+  "suffix": "00222437261483524",
+  "doi": "10.1177/00222437261483524",
+  "journal": "jmr",
+  "title": "EXPRESS: When AI Assists at the Frontline: External and Internal Marketing Effects in the Context of Banking Mortgages",
+  "year": "2026",
+  "eligible_design": false,
+  "eligible_reason": "Single treatment date. Studies 1 and 2 are DiD/TWFE on branch-level data comparing 294 AI-treated and 115 control branches around one two-month pilot (January-February 2020); authors state 'the unique treatment time'. Only one adoption cohort, so not staggered. Specifications also use matching/IPW reweighting and time-varying covariates.",
+  "design_notes": "Table 3 (two-period DiD, Study 1) and Table 4 (two-period DiD, Study 2) plus TWFE versions with bimonthly pre-periods (branch and period FE, clustered by branch or area, wild bootstrap). Reported TWFE ATETs: mortgage-grant ratio -0.056 (p<.001, branch clusters), defaulted payments -0.071 (p=.030). Also doubly robust IPW DiD (Sant'Anna-Zhao) and HonestDiD-style sensitivity (Roth 2022). Studies 3-4 are text analysis, survey and a preregistered experiment.",
+  "estimators_reported": [
+    "two-period DiD",
+    "TWFE DiD with pre-period splits",
+    "doubly robust IPW DiD",
+    "randomized experiment (Study 4)"
+  ],
+  "main_or_robustness": "main",
+  "n_eligible_specs": 0,
+  "n_adoption_cohorts": 1,
+  "never_treated_present": true,
+  "reports_modern_estimator": false,
+  "modern_estimators_named": [],
+  "preferred_spec_ids": [],
+  "published_estimates": [],
+  "specs": [],
+  "data_access": "partial",
+  "data_files_present": false,
+  "software": null,
+  "replication_feasible": "no",
+  "priority": 3,
+  "screener_notes": "Text-only screen. No package_dir. Author statement: partially open data at Harvard Dataverse doi 10.7910/DVN/U96KIB; Study 4 public; Studies 1-3 are proprietary bank data, anonymized versions and syntax given only to the JMR Data Editor. Not eligible: single adoption date."
+}

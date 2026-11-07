@@ -1,0 +1,42 @@
+{
+ "suffix": "mksc.2021.1299",
+ "doi": "10.1287/mksc.2021.1299",
+ "journal": "mksc",
+ "title": "What Happens When a Retailer Drops a Product Category? Investigating the Consequences of Ending Tobacco Sales",
+ "authors": "Ali Goli; Pradeep K. Chintagunta",
+ "year": 2021,
+ "screened_from": "package_only",
+ "package_mismatch": false,
+ "eligible_design": false,
+ "eligible": false,
+ "near_miss": false,
+ "near_miss_reason": "",
+ "n_eligible_specs": 0,
+ "n_adoption_cohorts": 1,
+ "never_treated_present": null,
+ "always_treated_present": null,
+ "reports_modern_estimator": false,
+ "modern_estimators_named": [],
+ "preferred_spec_ids": [],
+ "published_estimates": [],
+ "specs": [],
+ "replication_feasible": "no",
+ "priority": 3,
+ "main_or_robustness": "main",
+ "eligible_reason": "Not a staggered design, and the data are simulated. The retailer (EC, i.e., CVS) stopped selling tobacco in September 2014, a single common date. Treated stores are those within 1 km of an EC store, and controls are stores more than 2.5 km away. Columns add a time-varying cigarette price index and treatment x distance/size interactions. The FE set is retailer-state-week, county-week, store-year and store-month-of-year (no plain unit FE). The main demand estimates are IV/LIML.",
+ "design_notes": "code.R: felm(log.cig.sales ~ dummy [+ dummy:ec_dist + dummy:tot.size ...] + price.idx | ChainStateWeek + CountyWeek + StoreYear + StoreMonthY | 0 | store_id), with dummy = treat x afterSep14. Price regressions on dummy. Reduced-form log non-tobacco sales on dummy. OLS, 2SLS and LIML of log.sales on price.idx and log.cig.sales, instrumented by the treatment and its interactions.",
+ "estimators_reported": [
+  "twfe_single_date_did_with_controls",
+  "iv_2sls",
+  "liml"
+ ],
+ "data_access": "proprietary",
+ "data_files_present": true,
+ "data_files": [
+  "Synth_data.RDS (simulated)"
+ ],
+ "data_provenance": "synthetic",
+ "software": "r",
+ "software_notes": "R (lfe::felm).",
+ "screener_notes": "Screened from package only. The ReadMe says the dataset 'is simulated and bears no relationship to the real data used in the paper' (Nielsen RMS). The code is illustrative only."
+}
