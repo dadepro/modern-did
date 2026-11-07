@@ -72,5 +72,7 @@ paper/tables/, paper/tables_appx/, paper/figures/   generated tables, macros and
 
 ## Software
 
-R 4.x with data.table, fixest, did, didimputation, jsonlite; Python 3.11 with pandas. Stata was used only to validate
-a few Callaway-Sant'Anna estimates against `csdid`.
+R 4.6.0 with data.table 1.18.6.1, fixest 0.14.2, did 2.5.1, DRDID 1.3.0, didimputation 0.5.1, Matrix 1.7.5,
+jsonlite 2.0.0, haven 2.5.5 and arrow 25.0.0; Python 3.9.13 with the standard library only. Stata 16.1 with csdid 1.81
+was used only to validate a few Callaway-Sant'Anna estimates. The full list, with the server used for the re-runs, is in
+`docs/SOFTWARE.md`.
