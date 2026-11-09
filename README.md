@@ -1,7 +1,7 @@
 # Do Modern Difference-in-Differences Estimators Change Published Findings in Business Research?
 
-Replication materials for the paper of the same title (Proserpio, 2026; PDF at
-https://dadepro.github.io/papers/modern-did.pdf). The study follows the
+Replication materials for the paper of the same title (Proserpio, 2026; SSRN:
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7682393). The study follows the
 protocol of Hull (2026), "How Different are Different Differences-in-Differences? A Large-Scale Meta-Analysis"
 (arXiv:2610.39995), for business-school journals: published staggered-adoption specifications are re-estimated with
 two-way fixed effects (TWFE), DiD-averaging (Callaway and Sant'Anna, 2021) and imputation (Borusyak, Jaravel and
