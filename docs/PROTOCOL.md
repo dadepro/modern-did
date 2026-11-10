@@ -553,6 +553,40 @@ negative-weight distributions, Table 2 Gaussian hierarchical model with precisio
   code/R/bal_unbal_check.R) is -0.45 [-0.66, 0.20] for DiD-averaging and -0.43 [-0.88, -0.11] for imputation in outcome-SD
   units, and the balanced panels stay more correlated under TWFE-SE normalization (0.79 vs 0.42; 0.97 vs 0.39).
 
+- Addendum (Nov 10, 2026), Journal of Marketing and Quantitative Marketing and Economics join the frame. decision: "what do we need
+  to do to att qme and jme to the list of papers *add" ... "ok let's start doewnload what we need" ... "ok let's continue". Frame: OpenAlex sources
+  S142990027 (JM, 2015-2026, 681 records, 614 articles) and S4210206015 (QME, 2015-2026, 149 records, 142 articles);
+  code/01_openalex_frame.py and code/04_citation_flags.py now take journal keys as arguments and replace only those journals'
+  rows (frame 10,886 rows; cites.csv 419 rows). Full-text hits: JM from the SAGE search engine through the USC proxy
+  (SeriesKey=jmxa, the eleven queries, 109 unique DOIs, data/hits/readout_jm.txt, full DOIs accepted by 02b); QME from the
+  article texts on disk (the eleven queries as regular expressions, scratchpad qme_text_hits.py -> data/hits/raw/qme__*.json,
+  "source": "local text search"), because the Springer search engine is not query-stable. Candidates (tier <= 3): JM 90
+  (21 / 56 / 13), QME 20 (6 / 14 / 0). Full texts: JM candidates from SAGE (journals.sagepub.com, 86 PDFs
+  on Nov 10 plus 18 fetched earlier; all 90 candidates), QME whole frame from Springer (link.springer.com,
+  141 PDFs); each file is named by its DOI suffix and the DOI is verified in the PDF text before filing (scratchpad
+  filer_jmqme.py). Screening: 13 Opus readers (10 papers each at most) screened the 110 candidates from the article text with
+  the no-package brief (scratchpad jm_screen/brief.md); every eligible or near-miss verdict and the four borderline
+  "ineligible" calls the readers flagged (32 papers) were then re-read blind by 7 Fable readers (brief_second_opinion.md,
+  data/screening/second_opinion/jm_qme_rescreen_nov10.json). Agreement 31 of 32; the one disagreement (00222429251363144:
+  first read near-miss, second read ineligible because the main design has a single policy date and the staggered CSA run
+  rests on a "small portion" of late converters) is resolved to the Fable read, the rule for this round. Verdicts:
+  data/screening/other_journals/jm_screen_nov10.json (90: 3 eligible, 21 near-miss, 66 ineligible) and
+  qme_screen_nov10.json (20: 0 / 3 / 17), each record carrying both reads. One JM candidate (00222429241282414, BNPL) has a
+  Nov 2 package record (not near-miss) that both text reads call a near-miss (TWFE on a matched sample; logit for incidence):
+  the by_paper record now carries near_miss = true with the two reasons (backup backups/screening_nov10/). Eligible JM
+  designs: 00222429251351859 (household TWFE on a binary at-home-internet indicator, household and year FE, six outcomes;
+  licensed NielsenIQ data, no package) and two Callaway-Sant'Anna cases that await the PI's ruling and are recorded with
+  ruling_pending: 00222429261436003 (doubly robust CSA with propensity reweighting on pretreatment covariates, six outcomes
+  with SEs in Table 4; disguised data in a restricted JM Dataverse deposit) and 00222429261507094 (CSA ATT reported in prose
+  with a p-value only, no SE, N, covariates or comparison group; licensed data). Neither can be re-estimated, so the ruling
+  moves only the "eligible staggered design" count of JM. Ruling (decision, Nov 10, "ok with your reccs"): 00222429261436003 eligible (CSA with pretreatment covariates admitted), 00222429261507094 near-miss (CSA reported in prose only, design not verifiable), so JM has 2 eligible designs and 22 near-misses. The near-miss appendix memo row "No staggered binary design" keeps its all-journal definition (152 -> 160). None of the 110 candidates posts analysis data. Code:
+  EXTRA in code/15_tables.py adds jm and qme; journal_of() maps s11129- suffixes to qme; macro \nJMdeposits (21) keeps the
+  Nov 2 deposit count while \nJMscreened (107) now includes the text screens; code/22 shows JM's non-candidate deposits (17)
+  and its synthetic/disguised row. Table 3 has nine journal columns and needs \footnotesize with 3pt column separation in
+  the wrapper (main.tex edit proposed to the PI). Funnel after the rerun: JM 614 / 90 / 107 screened / 3 eligible (1
+  disguised, 2 no package) / 21 near-miss; QME 142 / 20 / 20 / 0 / 3; other-journal totals 611 candidates, 625 screened, 30
+  eligible designs, 158 near-misses. The re-estimation sample (40 papers) is unchanged.
+
 ## 6. Access and ethics constraints
 
 - INFORMS download terms restrict use to verifying replicability "using the same data and

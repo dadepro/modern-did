@@ -41,7 +41,10 @@ METHOD = {  # key: (DOI, modern-estimator flag)
     "abadie_2005": ("10.1111/0034-6527.00321", 0),
 }
 JOURNALS = {"mnsc": ("S33323087", 2019, 2026), "mksc": ("S163534328", 2013, 2026), "jmr": ("S119950638", 2019, 2026),
-            "isre": ("S202812398", 2015, 2026), "msom": ("S81410195", 2015, 2026), "opre": ("S125775545", 2015, 2026), "orsc": ("S206124708", 2015, 2026)}
+            "isre": ("S202812398", 2015, 2026), "msom": ("S81410195", 2015, 2026), "opre": ("S125775545", 2015, 2026), "orsc": ("S206124708", 2015, 2026),
+            "jm": ("S142990027", 2015, 2026), "qme": ("S4210206015", 2015, 2026)}
+# With journal keys as arguments only those journals are queried and their rows replace the same journals' rows in cites.csv.
+ONLY = [a for a in sys.argv[1:] if a in JOURNALS]
 
 ids = {}
 for key, (doi, _) in METHOD.items():
@@ -54,7 +57,8 @@ for key, (doi, _) in METHOD.items():
 
 rows = {}
 for key, wid in ids.items():
-    for j, (sid, y0, y1) in JOURNALS.items():
+    for j in (ONLY or list(JOURNALS)):
+        sid, y0, y1 = JOURNALS[j]
         page = 1
         while True:
             flt = f"cites:{wid},primary_location.source.id:{sid},publication_year:{y0}-{y1}"
@@ -75,8 +79,12 @@ for r in rows.values():
     r["cite_modern"] = int(any(r["cite_" + k] for k, (_, m) in METHOD.items() if m))
     r["cite_any"] = 1
 fields = ["doi", "journal", "year", "title", "type"] + ["cite_" + k for k in METHOD] + ["cite_modern", "cite_any"]
+if ONLY and OUT.exists():
+    for r in csv.DictReader(open(OUT, newline="")):
+        if r["journal"] not in ONLY and r["doi"].lower() not in rows:
+            rows[r["doi"].lower()] = r
 with open(OUT, "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(sorted(rows.values(), key=lambda r: (r["journal"], r["doi"])))
+    w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore"); w.writeheader(); w.writerows(sorted(rows.values(), key=lambda r: (r["journal"], r["doi"])))
 c = collections.Counter((r["journal"], r["cite_modern"]) for r in rows.values())
 print(f"wrote {len(rows)} citing works to {OUT}", file=sys.stderr)
 for j in JOURNALS:

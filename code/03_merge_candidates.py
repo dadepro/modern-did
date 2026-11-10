@@ -109,12 +109,12 @@ with open(OUT / "hits_not_in_frame.csv", "w", newline="") as f:
 # ---- 5. summary --------------------------------------------------------------
 lines = ["Full-text queries collected (journal, query): pages, reported total, unique DOIs"]
 for (j, q), cnt in sorted(counts.items()):
-    n = sum(1 for d_, h in hits.items() if slug(q) in h and d_.startswith(f"10.1287/{j}"))
+    n = sum(1 for d_, h in hits.items() if slug(q) in h and frame.get(d_, {}).get("journal_key") == j)
     lines.append(f"  {j:5s} {q:32s} pages={pages[(j,q)]} total={cnt} dois={n}")
 lines.append(f"\nCitation flags: {len(cites)} citing works; JMR Dataverse matches: {len(dv)}")
 lines.append("\nCandidates by journal and tier (1 = DiD + staggered/modern signal; 2 = DiD or staggered only; 3 = abstract only)")
 tab = collections.Counter((r["journal"], r["tier"]) for r in rows)
-for j in ("mnsc", "mksc", "jmr", "isre", "msom", "opre", "orsc"):
+for j in ("mnsc", "mksc", "jmr", "isre", "msom", "opre", "orsc", "jm", "qme"):
     lines.append(f"  {j}: " + ", ".join(f"tier{t}={tab[(j,t)]}" for t in (1, 2, 3, 9)))
 lines.append(f"\nFull-text hits not matched to the frame: {len(missing)}")
 (OUT / "summary.txt").write_text("\n".join(lines))

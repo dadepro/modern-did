@@ -24,6 +24,9 @@ JOURNALS = {
     "msom": ("Manufacturing & Service Operations Management", "S81410195", 2015, 2026),
     "opre": ("Operations Research", "S125775545", 2015, 2026),
     "orsc": ("Organization Science", "S206124708", 2015, 2026),
+    # added Nov 10, 2026: the two marketing journals outside INFORMS, screened from the article text like the four above
+    "jm":   ("Journal of Marketing", "S142990027", 2015, 2026),
+    "qme":  ("Quantitative Marketing and Economics", "S4210206015", 2015, 2026),
 }
 FIELDS = ",".join([
     "id","doi","title","publication_year","publication_date","type","biblio",
@@ -117,11 +120,23 @@ def flatten(w):
     }
 
 if __name__ == "__main__":
+    # With journal keys as arguments (e.g. `01_openalex_frame.py jm qme`) only those journals are pulled and their
+    # rows replace the same journals' rows in frame.csv; every other row and column is kept.
+    only = [a for a in sys.argv[1:] if a in JOURNALS]
     allrows = []
-    for key, (name, sid, y0, y1) in JOURNALS.items():
+    for key in (only or list(JOURNALS)):
+        name, sid, y0, y1 = JOURNALS[key]
         allrows += pull(key, name, sid, y0, y1)
     flat = [flatten(w) for w in allrows]
-    with open(OUT / "frame.csv", "w", newline="") as f:
-        wr = csv.DictWriter(f, fieldnames=list(flat[0].keys()))
+    out = OUT / "frame.csv"
+    if only and out.exists():
+        old = list(csv.DictReader(open(out, newline="")))
+        fields = list(old[0].keys())
+        flat = [r for r in old if r["journal_key"] not in only] + \
+               [{**{k: "" for k in fields}, **{k: v for k, v in r.items() if k in fields}} for r in flat]
+    else:
+        fields = list(flat[0].keys())
+    with open(out, "w", newline="") as f:
+        wr = csv.DictWriter(f, fieldnames=fields)
         wr.writeheader(); wr.writerows(flat)
-    print(f"wrote {len(flat)} records to {OUT/'frame.csv'}", file=sys.stderr)
+    print(f"wrote {len(flat)} records to {out}" + (f" ({len(allrows)} new for {', '.join(only)})" if only else ""), file=sys.stderr)

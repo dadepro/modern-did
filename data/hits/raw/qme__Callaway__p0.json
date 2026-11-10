@@ -1,0 +1,11 @@
+{
+"journal": "qme",
+"query": "Callaway",
+"page": 0,
+"count": "2",
+"dois": [
+"10.1007/s11129-026-09310-4",
+"10.1007/s11129-026-09312-2"
+],
+"source": "local text search"
+}

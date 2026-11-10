@@ -4,7 +4,9 @@ Writes paper/tables/journal_funnel.tex and paper/tables/journal_funnel_numbers.t
 
 Every count comes from code/15_tables.py (screening, eligibility, data status, re-estimation) and code/20_nearmiss_table.py
 (near-misses), so Table 3 agrees with Table 2 and with the near-miss appendix by construction; see the docstring of
-code/15_tables.py for the definitions. Journal of Marketing deposits are not in the frame and are reported in the text only.
+code/15_tables.py for the definitions. Journal of Marketing and Quantitative Marketing and Economics joined the frame on
+Nov 10, 2026 as journals without an archive (text screens); the 21 JM Dataverse deposits screened on Nov 2 count as
+screened papers (17 of them outside the candidate list).
 Run from the project root:  python3 code/22_journal_funnel.py"""
 import importlib.util
 import pathlib
@@ -22,8 +24,8 @@ def _load(name, fname):
 T = _load("tables15", "15_tables.py")
 NM = _load("nearmiss20", "20_nearmiss_table.py")
 J = list(T.MAIN) + list(T.EXTRA)
-LAB = {"mnsc": "MS", "mksc": "MKSC", "jmr": "JMR", "isre": "ISR", "msom": "M\\&SOM", "orsc": "OrgSci", "opre": "OR"}
-MAC = {"mnsc": "MS", "mksc": "MKSC", "jmr": "JMR", "isre": "ISR", "msom": "MSOM", "orsc": "OrgSci", "opre": "OR"}
+LAB = {"mnsc": "MS", "mksc": "MKSC", "jmr": "JMR", "isre": "ISR", "msom": "M\\&SOM", "orsc": "OrgSci", "opre": "OR", "jm": "JM", "qme": "QME"}
+MAC = {"mnsc": "MS", "mksc": "MKSC", "jmr": "JMR", "isre": "ISR", "msom": "MSOM", "orsc": "OrgSci", "opre": "OR", "jm": "JM", "qme": "QME"}
 
 
 def pct(a, b):
@@ -51,11 +53,11 @@ def main():
             ("Replication package obtained", "pkg", {"jmr": "n/a", **{j: "n/a" for j in T.EXTRA}}),
             ("Candidates without a package", "nopkg", {"jmr": "--", **no_archive}),
             ("Papers screened", "scr", {}),
-            ("\\quad of which non-candidates", "scr_noncand", no_archive),
+            ("\\quad of which non-candidates", "scr_noncand", {j: "--" for j in T.EXTRA if j != "jm"}),   # JM: deposits outside the candidate list
             ("\\quad of which from the article text alone", "scr_text", {}),
             ("Candidates not screened", "notscr", {}),
             ("Eligible staggered design", "elig", {}),
-            ("\\quad synthetic or disguised data", "synthetic", no_archive),
+            ("\\quad synthetic or disguised data", "synthetic", {j: "--" for j in T.EXTRA if j != "jm"}),   # JM: restricted Dataverse deposits can be disguised
             ("\\quad analysis data not shipped", "not_shipped", no_archive),
             ("\\quad no replication package", "no_package", {}),
             ("\\quad usable data", "usable", no_archive),
@@ -90,7 +92,8 @@ def main():
             mac[f"fn{m}pkg"] = k["pkg"]
     for j in T.EXTRA:
         mac.update({f"fn{MAC[j]}cand": R[j]["cand"], f"fn{MAC[j]}tierone": R[j]["tier1"], f"fn{MAC[j]}screened": R[j]["scr"],
-                    f"fn{MAC[j]}notscr": R[j]["notscr"], f"fn{MAC[j]}design": R[j]["elig"], f"fn{MAC[j]}nearmiss": R[j]["nearmiss"]})
+                    f"fn{MAC[j]}notscr": R[j]["notscr"], f"fn{MAC[j]}design": R[j]["elig"], f"fn{MAC[j]}nearmiss": R[j]["nearmiss"],
+                    f"fn{MAC[j]}text": R[j]["scr_text"], f"fn{MAC[j]}noncand": R[j]["scr_noncand"]})
     (ROOT / "paper/tables/journal_funnel_numbers.tex").write_text(
         "".join(f"\\newcommand{{\\{k}}}{{{T.fmt(v) if isinstance(v, int) else v}}}\n" for k, v in mac.items()))
     print("\n".join(tex))

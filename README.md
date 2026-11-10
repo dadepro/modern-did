@@ -20,7 +20,7 @@ Spiess, 2024), and the estimates are compared.
 docs/               PROTOCOL.md (rules and rulings), screening and replication instructions
 code/               pipeline (numbered Python steps) and R estimation and analysis code (code/R/)
 data/
-  frame/frame.csv   bibliographic frame of the seven journals (OpenAlex)
+  frame/frame.csv   bibliographic frame of the nine journals (OpenAlex)
   candidates/       candidate list, replication-package manifest, hits outside the frame
   hits/             archive search results per journal and method keyword
   screening/        one JSON record per screened candidate (by_paper/), text-only screens of the other journals

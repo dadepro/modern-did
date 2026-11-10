@@ -22,6 +22,9 @@ def main(path):
         journal, query, page, count, dois = line.split("|", 4)
         # DOI prefix and suffix pattern by journal: INFORMS 10.1287/<j>.YYYY.NNNN ; SAGE (JMR) 10.1177/<digits>
         prefix, pat = (f"10.1287/{journal}.", r"[0-9]{2,4}\.[0-9A-Za-z.]+") if journal in ("mnsc", "mksc", "isre", "msom", "opre", "orsc") else ("10.1177/", r"[0-9A-Za-z._-]{8,}")
+        if journal in ("jm", "qme"):
+            # JM (SAGE, 10.1177/... and pre-2019 10.1509/jm.*) and QME (Springer, 10.1007/s11129-...): tokens are full DOIs
+            prefix, pat = "", r"10\.\d{4,5}/[0-9A-Za-z._/-]+"
         suffixes = [s for s in dois.split() if re.fullmatch(pat, s)]
         bad = [s for s in dois.split() if s not in suffixes]
         if bad:

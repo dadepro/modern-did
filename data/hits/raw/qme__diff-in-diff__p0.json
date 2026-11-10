@@ -1,0 +1,11 @@
+{
+"journal": "qme",
+"query": "diff-in-diff",
+"page": 0,
+"count": "2",
+"dois": [
+"10.1007/s11129-018-9198-0",
+"10.1007/s11129-018-9203-7"
+],
+"source": "local text search"
+}

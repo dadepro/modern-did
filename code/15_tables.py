@@ -17,8 +17,11 @@ Definitions (source in brackets)
                eligible_design true or false. A record with eligible_design null could not be assessed (wrong or unreadable
                file) and counts as not screened. A paper can be screened without being a candidate: Management Science
                full-text search hits missing from the OpenAlex frame (data/candidates/hits_not_in_frame.csv) and Marketing
-               Science packages screened beyond the candidate list. Journal of Marketing deposits (DOI prefix 00222429) are
-               outside the frame and reported in the text only.
+               Science packages screened beyond the candidate list, and the Journal of Marketing Dataverse deposits
+               (DOI prefix 00222429) screened on Nov 2 from their packages. Since Nov 10, 2026 the Journal of Marketing
+               (SAGE, 2015-) and Quantitative Marketing and Economics (Springer, 2015-) are in the frame as journals
+               without an archive (EXTRA); their candidates were screened from the article text
+               (data/screening/other_journals/{jm,qme}_screen_nov10.json).
                Text screens (Nov 5): candidates without a package, and every candidate of the four journals without an
                archive, were screened from the article text alone; the verdicts are in data/screening/other_journals/*.json
                (one list per journal, plus mnsc_nopackage_screen_nov5.json). load_screening() converts each verdict to a
@@ -59,7 +62,7 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / "paper" / "tables"
 MAIN = ("mnsc", "mksc", "jmr")              # replication journals (Tables 1-2)
-EXTRA = ("isre", "msom", "orsc", "opre")    # frame-only journals (Table 3)
+EXTRA = ("isre", "msom", "orsc", "opre", "jm", "qme")    # frame-only journals (Table 3); JM and QME added Nov 10, 2026
 LONG = {"mnsc": r"\emph{Management Science}, 2019--2026", "mksc": r"\emph{Marketing Science}, 2013--2026",
         "jmr": r"\emph{Journal of Marketing Research}, 2019--2026"}
 SPEC_SYN = re.compile(r"synth|disguis|pseudo|simulat|scrambl|fuzz", re.I)
@@ -82,8 +85,10 @@ def fmt(n):
 def journal_of(suffix):
     if suffix.startswith("00222437"):
         return "jmr"
-    if suffix.startswith("00222429"):
-        return "jm"            # Journal of Marketing: outside the frame, text only
+    if suffix.startswith("00222429") or suffix.startswith("jm."):
+        return "jm"            # Journal of Marketing (SAGE 10.1177/00222429..., pre-2019 10.1509/jm.*); in the frame since Nov 10, 2026
+    if suffix.startswith("s11129-"):
+        return "qme"           # Quantitative Marketing and Economics (Springer 10.1007/s11129-...)
     return suffix.split(".")[0]
 
 
@@ -343,6 +348,7 @@ def main():
         "nScreenedText": fmt(total(R, "scr_text")), "nScreenedFromPkg": fmt(total(R, "scr_cand") - total(R, "scr_text")),
         "nEligNoPkg": fmt(total(R, "no_package")),
         "nCandExtra": fmt(total(R, "cand", EXTRA)), "nScreenedExtra": fmt(total(R, "scr", EXTRA)),
+        "nScreenedCandExtra": fmt(total(R, "scr_cand", EXTRA)),   # JM's 17 non-candidate deposits are screened but not candidates
         "nNotScreenedExtra": fmt(total(R, "notscr", EXTRA)), "nEligibleExtra": fmt(total(R, "elig", EXTRA)),
         "nNearMissExtra": fmt(total(R, "nm_flag", EXTRA)),
         "nUnassessable": fmt(total(R, "unassessable") + total(R, "unassessable_noncand")),
@@ -351,7 +357,8 @@ def main():
         "nEligSynth": fmt(total(R, "synthetic")), "nEligNoData": fmt(total(R, "not_shipped")),
         "nEligUsable": fmt(total(R, "usable")), "nUsableNotReest": fmt(total(R, "usable_not_reestimated")),
         "nSpecs": fmt(len(specs_real)), "nSpecPapers": fmt(len(reest)),
-        "nJMscreened": fmt(jm["scr"]), "nJMeligible": fmt(jm["elig"]),
+        # JM: all screened (deposits + text screens of the Nov 10 frame), deposits screened from a package (Nov 2 audit), eligible designs
+        "nJMscreened": fmt(jm["scr"]), "nJMdeposits": fmt(jm["scr"] - jm["scr_text"]), "nJMeligible": fmt(jm["elig"]),
     }
     # files the journals' server returned for MS and MKSC (candidates and the articles outside the candidate list that were
     # also requested and screened); review Nov 4: the text used to call the candidate count "the files the server returned"
